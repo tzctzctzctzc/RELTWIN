@@ -1,0 +1,78 @@
+{
+  "status": "independent_development_only",
+  "partition_sizes": {
+    "train": 76,
+    "calibration": 41,
+    "heldout": 43
+  },
+  "calibration": {
+    "rows": 41,
+    "official_mIoU_percent": 24.29415898629038,
+    "router_mIoU_percent": 30.482972013717507,
+    "oracle_mIoU_percent": 31.07853287685969,
+    "oracle_capture": 0.9122157957759306,
+    "mean_downside_points": 0.15904643741753777,
+    "mean_upside_points": 6.347859464844661,
+    "regressed_rows": 2,
+    "improved_rows": 15,
+    "selection_counts": {
+      "official": 22,
+      "sft": 7,
+      "setpo": 12
+    }
+  },
+  "heldout": {
+    "rows": 43,
+    "official_mIoU_percent": 22.153355826652298,
+    "router_mIoU_percent": 22.861083936361716,
+    "oracle_mIoU_percent": 25.096758271962173,
+    "oracle_capture": 0.24044558053457446,
+    "mean_downside_points": 1.1897319016648562,
+    "mean_upside_points": 1.897460011374276,
+    "regressed_rows": 3,
+    "improved_rows": 6,
+    "selection_counts": {
+      "official": 15,
+      "sft": 4,
+      "setpo": 24
+    }
+  },
+  "heldout_candidate_mIoU_percent": {
+    "official": 23.333792302125765,
+    "sft": 20.730688145930646,
+    "setpo": 22.153355826652298
+  },
+  "gate": {
+    "min_heldout_capture": 0.2,
+    "requires_router_above_best_single": true,
+    "passed": false
+  },
+  "model": {
+    "method": "relative_ridge_with_official_fallback",
+    "feature_names": [
+      "component_mean",
+      "component_min",
+      "complement_no"
+    ],
+    "official": "setpo",
+    "mean": [
+      -0.08888432017543861,
+      -0.140625,
+      0.20476973684210525
+    ],
+    "scale": [
+      3.352020866689358,
+      3.4159405401512313,
+      2.351404139496663
+    ],
+    "weights": [
+      -0.01636320884155359,
+      0.05235249762135955,
+      0.036948507995828404,
+      -0.00113591089184687
+    ],
+    "alpha": 1.0,
+    "threshold": -0.013355007196039659,
+    "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+  }
+}

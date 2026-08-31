@@ -1,0 +1,24 @@
+{
+  "method": "relative_ridge_with_official_fallback",
+  "feature_names": [
+    "component_mean",
+    "component_min"
+  ],
+  "official": "setpo",
+  "mean": [
+    -0.08888432017543861,
+    -0.140625
+  ],
+  "scale": [
+    3.352020866689358,
+    3.4159405401512313
+  ],
+  "weights": [
+    -0.016363208841553588,
+    0.03364239448279498,
+    0.03330620078587937
+  ],
+  "alpha": 100.0,
+  "threshold": -0.016573334786279266,
+  "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+}

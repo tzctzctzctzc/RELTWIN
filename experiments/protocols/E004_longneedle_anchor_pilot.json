@@ -1,0 +1,27 @@
+{
+  "experiment_id": "E004_longneedle_anchor_pilot",
+  "status": "locked_before_LongNeedle_generation_and_candidate_evaluation",
+  "date": "2026-08-31",
+  "motivation": "E003 failed because its high-density two-event development mixtures reversed the public candidate ranking. E004 matches SpotSound-Bench clip length and target density without using SpotSound labels.",
+  "development_data": {
+    "name": "LongNeedle-ESC50-v1",
+    "rows": 160,
+    "clip_duration_seconds": 60,
+    "target_duration_seconds": "1.2 to 2.5 per occurrence",
+    "occurrences": "1/2/3 with probabilities 0.6/0.3/0.1",
+    "source_overlap": "exclude every ESC-50 source file used by RelTwin v1 train and test"
+  },
+  "candidate_pool": ["official", "ordinary_SFT_seed0", "E002_SetPO_seed1"],
+  "anchor": "E002_SetPO_seed1",
+  "router": {
+    "primary_features": ["component_mean", "component_min", "complement_no", "duration_fraction", "interval_count"],
+    "selection": "retain SetPO unless a challenger has calibrated positive predicted IoU delta",
+    "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+  },
+  "gate": {
+    "router_mIoU_must_exceed_every_single_candidate": true,
+    "heldout_oracle_capture_min": 0.2,
+    "public_rerun_allowed_only_if_passed": true
+  },
+  "disclosure": "SpotSound-Bench was already observed in E003. Any later public rerun is iterative evidence, not a pristine confirmatory test."
+}

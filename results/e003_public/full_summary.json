@@ -1,0 +1,12 @@
+{
+  "rows": 400,
+  "selection_counts": {
+    "official": 10,
+    "sft": 326,
+    "setpo": 64
+  },
+  "mIoU_percent": 58.43970287207503,
+  "selection_is_label_free": true,
+  "router_model": "/root/autodl-tmp/SpotSound-ICASSP/spotsound_e003/results/e003_ordinary/router.json",
+  "features": "/root/autodl-tmp/SpotSound-ICASSP/spotsound_e003/results/e003_public/features.jsonl"
+}

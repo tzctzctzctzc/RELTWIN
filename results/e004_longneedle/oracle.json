@@ -1,0 +1,165 @@
+{
+  "claim_scope": "diagnostic_only_ground_truth_oracle_not_deployable",
+  "baseline": {
+    "name": "setpo",
+    "path": "results/e004_longneedle/setpo/predictions.jsonl",
+    "metrics": {
+      "mIoU_percent": 25.678523441497276,
+      "R1@0.3_percent": 40.0,
+      "R1@0.5_percent": 18.75,
+      "R1@0.7_percent": 8.75
+    }
+  },
+  "records": 160,
+  "models": {
+    "official": {
+      "path": "results/e004_longneedle/official/predictions.jsonl",
+      "metrics": {
+        "mIoU_percent": 26.88814794711903,
+        "R1@0.3_percent": 40.625,
+        "R1@0.5_percent": 20.625,
+        "R1@0.7_percent": 11.875
+      }
+    },
+    "sft": {
+      "path": "results/e004_longneedle/sft/predictions.jsonl",
+      "metrics": {
+        "mIoU_percent": 23.290630081933863,
+        "R1@0.3_percent": 35.625,
+        "R1@0.5_percent": 14.374999999999998,
+        "R1@0.7_percent": 6.25
+      }
+    }
+  },
+  "group_oracles": {
+    "pool": {
+      "members": [
+        "official",
+        "sft"
+      ],
+      "metrics": {
+        "mIoU_percent": 28.82666248660386,
+        "R1@0.3_percent": 43.75,
+        "R1@0.5_percent": 21.25,
+        "R1@0.7_percent": 11.875
+      },
+      "delta_vs_baseline_mIoU_points": 3.1481390451065803,
+      "rows_improved_vs_baseline": 54,
+      "rows_regressed_vs_baseline": 15,
+      "rows_tied_vs_baseline": 91,
+      "unique_winner_counts": {
+        "official": 51,
+        "sft": 40
+      },
+      "winner_tie_rows": 69
+    }
+  },
+  "all_nonbaseline_oracle": {
+    "members": [
+      "official",
+      "sft"
+    ],
+    "metrics": {
+      "mIoU_percent": 28.82666248660386,
+      "R1@0.3_percent": 43.75,
+      "R1@0.5_percent": 21.25,
+      "R1@0.7_percent": 11.875
+    },
+    "delta_vs_baseline_mIoU_points": 3.1481390451065803,
+    "rows_improved_vs_baseline": 54,
+    "rows_regressed_vs_baseline": 15,
+    "rows_tied_vs_baseline": 91,
+    "unique_winner_counts": {
+      "official": 51,
+      "sft": 40
+    },
+    "winner_tie_rows": 69
+  },
+  "baseline_plus_all_oracle": {
+    "members": [
+      "setpo",
+      "official",
+      "sft"
+    ],
+    "metrics": {
+      "mIoU_percent": 30.136056792176735,
+      "R1@0.3_percent": 45.625,
+      "R1@0.5_percent": 22.5,
+      "R1@0.7_percent": 12.5
+    },
+    "delta_vs_baseline_mIoU_points": 4.457533350679453,
+    "rows_improved_vs_baseline": 54,
+    "rows_regressed_vs_baseline": 0,
+    "rows_tied_vs_baseline": 106,
+    "unique_winner_counts": {
+      "setpo": 15,
+      "official": 41,
+      "sft": 13
+    },
+    "winner_tie_rows": 91,
+    "breakdowns": {
+      "target_cardinality": {
+        "single_interval": {
+          "rows": 90,
+          "baseline_mIoU_percent": 27.857817991355894,
+          "oracle_mIoU_percent": 32.55155181297382,
+          "headroom_points": 4.6937338216179265,
+          "rows_improved": 29
+        },
+        "multi_interval": {
+          "rows": 70,
+          "baseline_mIoU_percent": 22.876573305964776,
+          "oracle_mIoU_percent": 27.03042033686619,
+          "headroom_points": 4.153847030901415,
+          "rows_improved": 25
+        }
+      },
+      "duration_seconds": {
+        "le_30": {
+          "rows": 0
+        },
+        "gt_30_le_60": {
+          "rows": 160,
+          "baseline_mIoU_percent": 25.678523441497276,
+          "oracle_mIoU_percent": 30.136056792176735,
+          "headroom_points": 4.457533350679453,
+          "rows_improved": 54
+        },
+        "gt_60": {
+          "rows": 0
+        }
+      },
+      "baseline_iou": {
+        "lt_0.3": {
+          "rows": 96,
+          "baseline_mIoU_percent": 6.06261059777033,
+          "oracle_mIoU_percent": 10.88957248363554,
+          "headroom_points": 4.82696188586521,
+          "rows_improved": 23
+        },
+        "0.3_to_0.5": {
+          "rows": 34,
+          "baseline_mIoU_percent": 40.51764821522787,
+          "oracle_mIoU_percent": 42.687260199698414,
+          "headroom_points": 2.1696119844705346,
+          "rows_improved": 14
+        },
+        "0.5_to_0.7": {
+          "rows": 16,
+          "baseline_mIoU_percent": 58.82699698074827,
+          "oracle_mIoU_percent": 67.12411161603117,
+          "headroom_points": 8.2971146352829,
+          "rows_improved": 10
+        },
+        "ge_0.7": {
+          "rows": 14,
+          "baseline_mIoU_percent": 86.26579587456378,
+          "oracle_mIoU_percent": 89.3583925480729,
+          "headroom_points": 3.0925966735091235,
+          "rows_improved": 7
+        }
+      }
+    }
+  },
+  "group_oracle_comparisons": {}
+}

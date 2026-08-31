@@ -19,16 +19,23 @@
     "outcome": "No later paper reporting SpotSound-Bench numbers was found in the searched web/arXiv results.",
     "qualification": "This is a dated literature audit, not proof that no unpublished or unindexed result exists."
   },
-  "our_locked_result": {
+  "previous_locked_result": {
     "system": "RelTwin-RBEE plus SetPO",
     "seeds": 3,
     "mIoU_mean_percent": 59.192659,
-    "R1@0.3_mean_percent": 76.583333,
-    "R1@0.5_mean_percent": 62.416667,
-    "mIoU_delta_vs_same_harness_points": 0.875434,
-    "mIoU_hierarchical_ci95_points": [-0.242564, 2.04253],
-    "all_seeds_exceed_same_harness_mIoU": true
+    "best_single_seed_mIoU_percent": 59.233805
   },
-  "claim_rule": "A new open-extra-data, same-harness point-estimate SOTA must exceed both the published number and the same-harness official checkpoint under the 400-row v2 protocol; it must not be described as a same-training-data comparison.",
-  "decision": "The point-estimate rule passes. The preregistered significance rule fails because the hierarchical mIoU interval includes zero. Claims must say point-estimate SOTA and must not say statistically significant SOTA."
+  "our_locked_result": {
+    "system": "E004 LongNeedle-calibrated NOVA full router",
+    "deterministic": true,
+    "mIoU_percent": 59.328548,
+    "R1@0.3_percent": 78.75,
+    "R1@0.5_percent": 62.25,
+    "mIoU_delta_vs_previous_best_single_points": 0.094743,
+    "paired_mIoU_ci95_points": [-0.706133, 0.926146],
+    "p_nonpositive": 0.41478,
+    "public_iteration_is_pristine_confirmatory": false
+  },
+  "claim_rule": "A new open-extra-data, same-harness point-estimate SOTA must exceed the published number, the same-harness official checkpoint, and every earlier audited repository result under the 400-row v2 protocol; it must not be described as a same-training-data comparison.",
+  "decision": "The E004 point-estimate rule passes. The paired mIoU interval includes zero, so claims must not say statistically significant. E003 public aggregates were observed before E004, so the E004 rerun must also be described as iterative rather than pristine confirmatory evidence."
 }

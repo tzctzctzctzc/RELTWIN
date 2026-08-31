@@ -1,13 +1,14 @@
-# RelTwin-SetPO for SpotSound
+# NOVA + RelTwin-SetPO for SpotSound
 
-This repository contains the code, locked protocols, and raw evidence for a relation-aware, setwise preference optimization extension of [SpotSound](https://github.com/LoieSun/SpotSound). The target task is open-vocabulary audio temporal grounding on SpotSound-Bench.
+This repository contains the code, locked protocols, and raw evidence for a relation-aware adaptation and a label-free candidate router for [SpotSound](https://github.com/LoieSun/SpotSound). The target task is open-vocabulary audio temporal grounding on SpotSound-Bench.
 
-The method has two training stages:
+The pipeline has two training stages and one inference stage:
 
 1. **RelTwin-RBEE** (Relation-Boundary Exchange Equivariance) constructs the same audio with both `A→B` and `B→A` windows. It trains the model to prefer the query-consistent boundary sequence and makes the two inverse-query candidate distributions exchange-equivariant.
 2. **SetPO** (Setwise Preference Optimization) scores six deterministic interval-set candidates. The target distribution combines temporal set IoU and symmetric soft interval F1, while a Jensen-Shannon term enforces relation exchange and ordinary localization rehearsal limits forgetting.
+3. **NOVA** (Necessity-Oriented Verification over Audio) treats the official, SFT, and SetPO predictions as candidates. A frozen SpotSound detector checks whether each predicted interval is sufficient when kept and necessary when removed. A conservative router is fitted only on source-disjoint 60-second LongNeedle-ESC50 mixtures and retains SetPO unless a challenger has calibrated positive value.
 
-This is not an architecture-module stack. The contribution is a paired-data construction plus a task-specific listwise objective over structured interval sets. Its ingredients—preference learning, equivariance, and rehearsal—are established ideas; the novelty claim is their formulation for inverse audio-relation queries and multi-interval boundary quality.
+This is not an indiscriminate architecture-module stack. The training contribution is a paired-data construction plus a task-specific listwise objective over structured interval sets. The inference contribution is a candidate-level causal audit: preserve the timeline, keep or remove the proposed interval set, and use the resulting sufficiency/necessity evidence for conservative checkpoint routing. Preference learning, equivariance, rehearsal, occlusion, and linear routing are established ingredients; the novelty claim is their formulation for inverse audio relations and set-valued audio temporal grounding.
 
 ## Evidence status
 
@@ -18,11 +19,16 @@ All headline comparisons use the same 400-row evaluator and start from the same 
 | SpotSound-A, paper Table 3 | 1 | 57.90 | 76.50 | 59.50 | published reference |
 | SpotSound-A, reconstructed same harness | 1 | 58.317 | 77.00 | 60.75 | matched baseline |
 | ordinary SFT, seed 0 | 1 | 58.313 | 76.50 | 61.75 | controlled ablation; no mIoU gain |
+| **E004 NOVA, locked full-feature router** | deterministic | **59.329** | **78.75** | 62.25 | new point-estimate SOTA; not statistically significant |
 | E002 RBEE-256, mean ± SD | 3 | **59.166 ± 0.020** | 76.917 ± 0.629 | **62.417 ± 0.144** | all three mIoU seeds exceed the matched baseline |
-| E002 RBEE-256 → SetPO-64, mean ± SD | 3 | **59.193 ± 0.068** | 76.583 ± 0.629 | **62.417 ± 0.289** | audited mIoU point-estimate SOTA; not statistically significant vs. baseline |
+| E002 RBEE-256 → SetPO-64, mean ± SD | 3 | **59.193 ± 0.068** | 76.583 ± 0.629 | **62.417 ± 0.289** | previous point-estimate SOTA |
 | E001 SetPO on unequal parents, mean of 3 | 3 | 58.593 | 76.75 | 61.417 | failed stability audit; not a SOTA result |
 
 E002 passed its independent RelTwin development gate in every seed. On SpotSound-Bench, SetPO improves the primary mIoU point estimate over the same-harness official checkpoint by `+0.875` point, and all three seeds exceed that checkpoint. The conservative hierarchical seed-record bootstrap 95% interval is nevertheless `[-0.243, +2.043]` points (`p_nonpositive=0.063`). The preregistered significance criterion therefore **fails**: this repository claims a new audited point estimate, not a statistically significant improvement. R1@.5 also improves by `+1.667` points, while R1@.3 is `-0.417` point below the same-harness checkpoint.
+
+E004 fixes SetPO seed 1 as a strong fallback and fits NOVA on LongNeedle-ESC50, whose 60-second clips have 4.76% mean target density. On the 43-row held-out development partition, NOVA reaches 24.358 mIoU versus 23.334 for the best single candidate and captures 74.9% of candidate-oracle headroom. The frozen router then reaches **59.329 mIoU** on SpotSound-Bench, `+0.095` point over the previous best single checkpoint and `+1.011` over official SpotSound-A. Its paired-record 95% interval against the previous best is `[-0.706, +0.926]` point (`p_nonpositive=0.415`), so the improvement is a **point estimate only**. It improves R1@.3 by `+1.5` points, leaves R1@.5 unchanged, and lowers R1@.7 by `-0.5` point.
+
+The public rerun is iterative evidence, not a pristine confirmatory test: E003 public aggregates had already been observed before E004 was designed. E004 never uses SpotSound labels for coefficients, normalization, thresholds, or row selection; all fitting is on LongNeedle-ESC50. The locked full-feature result is the headline. Post-result ablations reach 59.515 with Keep-only verification and 59.536 with a seven-switch geometry guard, but are explicitly exploratory.
 
 SetPO is mechanistically supported on the class-disjoint RelTwin development task: relative to its matched RBEE parent it raises mIoU by `+3.358` points (95% CI `[+2.469, +4.275]`) and PairAcc@.5 by `+5.208` points (95% CI `[+2.917, +7.708]`). On the public benchmark, however, SetPO adds only `+0.027` mIoU point over RBEE (95% CI `[-0.313, +0.412]`). The robust public gain is therefore attributable primarily to RBEE; SetPO should not be presented as an independently validated public-set improvement.
 
@@ -37,11 +43,11 @@ The [Oracle analysis](results/e002/oracle_headroom.json) uses ground-truth IoU t
 | all six adapted models | 60.466 | 78.50 | 63.50 |
 | official + ordinary SFT + all six adapted models | **62.462** | **81.25** | **65.75** |
 
-The full Oracle improves 199 of 400 rows and never regresses because the official prediction is included as a fallback. Its largest headroom is on audio longer than 60 seconds (`+7.752` mIoU points) and rows where the official checkpoint has IoU below 0.3 (`+7.742` points). The large jump from the adapted-only Oracle to the full Oracle shows that the main opportunity is a label-free conservative router between the original and adapted behaviors, not additional seed selection. Any router must be developed on independent data; SpotSound ground truth may not be used to train or tune it.
+The full Oracle improves 199 of 400 rows and never regresses because the official prediction is included as a fallback. Its largest headroom is on audio longer than 60 seconds (`+7.752` mIoU points) and rows where the official checkpoint has IoU below 0.3 (`+7.742` points). This motivated NOVA. E003 showed that a high-density two-event synthetic set reverses the public candidate ranking and fails to generalize. E004 therefore uses an independent low-density LongNeedle distribution and a SetPO fallback; SpotSound ground truth is never consumed by the fitting or application code.
 
 E001 is intentionally retained as a negative result. Its seed-0 parent used the full 256-step/512-group RBEE stage, while seed 1 and 2 used earlier 64-step/32-group parents. The mismatch was detected after evaluation; the [original protocol](experiments/protocols/E001_public_multiseed.json) is preserved verbatim and the correction is isolated in a [post-hoc amendment](experiments/protocols/E001_posthoc_amendment.json). E002 repeats the complete pipeline under [a locked matched protocol](experiments/protocols/E002_matched_pipeline_multiseed.json).
 
-We call a result an **open-extra-data, same-harness point-estimate SOTA** only if the locked three-seed mean exceeds both the paper value and the same-harness official baseline. The dated literature audit found no later indexed SpotSound-Bench result. Statistical uncertainty is reported separately with paired record and hierarchical seed-record bootstrap intervals; a confidence interval crossing zero is never described as a significant improvement.
+We call a result an **open-extra-data, same-harness point-estimate SOTA** only if its locked aggregate exceeds the paper value, the same-harness official baseline, and every earlier audited result in this repository. The dated literature audit found no later indexed SpotSound-Bench result. Statistical uncertainty is reported separately; a confidence interval crossing zero is never described as a significant improvement.
 
 ## Reproduction pins
 
@@ -98,6 +104,49 @@ python scripts/build_esc50_reltwin.py \
 
 Ten ESC-50 classes are held out from training. The test set contains 320 inverse-relation queries; SpotSound-Bench is not used to select hyperparameters or checkpoints.
 
+## Build and gate NOVA on LongNeedle
+
+LongNeedle uses unused ESC-50 source clips to build 160 dense 60-second mixtures. Targets last 1.2–2.5 seconds per occurrence and occupy 4.76% of the waveform on average.
+
+```bash
+python scripts/build_esc50_longneedle.py \
+  --metadata data/ESC-50/meta/esc50.csv \
+  --audio-dir data/ESC-50/audio \
+  --output-dir data/longneedle_esc50_v1/audio \
+  --manifest data/longneedle_esc50_v1/test.json \
+  --exclude-manifest data/reltwin_esc50_v1/train.json \
+  --exclude-manifest data/reltwin_esc50_v1/test.json
+
+PROJECT_ROOT="$PWD" \
+BASE_MODEL=models/audio-flamingo-3-hf \
+OFFICIAL_ADAPTER=models/SpotSound \
+SFT_ADAPTER=outputs/reltwin_esc50_v1/sft/adapter \
+SETPO_ADAPTER=outputs/e002/seed_1/setpo/adapter \
+LONGNEEDLE_DATA=data/longneedle_esc50_v1 \
+OUTPUT_DIR=outputs/e004_longneedle \
+bash scripts/run_e004_longneedle_gate.sh
+```
+
+The script stops with exit code 42 unless the hashed held-out partition exceeds every single candidate and captures at least 20% of SetPO-to-oracle headroom. Public routing is a separate label-free application step using the locked router; the committed [decision record](results/e004_longneedle/sota_decision.json) and raw predictions contain the exact result and caveats.
+
+```bash
+python scripts/extract_nova_features.py \
+  --base models/audio-flamingo-3-hf \
+  --verifier-adapter models/SpotSound \
+  --manifest datasets/SpotSound-Bench/annotations_processed.json \
+  --audio-dir datasets/SpotSound-Bench/audio \
+  --candidate official=results/official_spotsound_a/public_predictions.jsonl \
+  --candidate sft=results/controlled/sft_seed0/public_predictions.jsonl \
+  --candidate setpo=results/e002/seed_1/setpo/public_predictions.jsonl \
+  --output outputs/e004_public/features.jsonl
+
+python scripts/apply_nova_router.py \
+  --features outputs/e004_public/features.jsonl \
+  --model outputs/e004_longneedle/router.json \
+  --output outputs/e004_public/predictions.jsonl \
+  --summary outputs/e004_public/summary.json
+```
+
 ## Run the locked three-seed pipeline
 
 ```bash
@@ -128,7 +177,7 @@ python scripts/summarize_public_multiseed.py \
 
 ## Tests
 
-The metric, candidate-construction, relation-objective, and token-KL tests do not load the base model:
+The metric, candidate-construction, relation-objective, counterfactual intervention, router, and token-KL tests do not load the base model:
 
 ```bash
 python -m pytest -q

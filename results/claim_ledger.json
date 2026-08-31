@@ -66,6 +66,50 @@
         "rbee_three_seed_mean_mIoU_percent": 59.16601,
         "raw_predictions": "results/controlled/sft_seed0/public_predictions.jsonl"
       }
+    },
+    {
+      "id": "C006",
+      "claim": "A router calibrated on high-density two-event mixtures generalizes to SpotSound-Bench.",
+      "status": "falsified_by_E003_public_confirmatory_run",
+      "evidence": {
+        "ordinary_heldout_router_mIoU_percent": 82.647925,
+        "ordinary_heldout_best_single_mIoU_percent": 79.822367,
+        "public_router_mIoU_percent": 58.439703,
+        "public_previous_best_mIoU_percent": 59.233805,
+        "analysis": "results/e003_ordinary/gate_report.json"
+      }
+    },
+    {
+      "id": "C007",
+      "claim": "The locked E004 LongNeedle-calibrated NOVA router yields a new open-extra-data, same-harness mIoU point estimate on SpotSound-Bench.",
+      "status": "supported_point_estimate_only_iterative_public_evidence",
+      "evidence": {
+        "previous_best_single_mIoU_percent": 59.233805,
+        "nova_mIoU_percent": 59.328548,
+        "delta_points": 0.094743,
+        "R1@0.3_percent": 78.75,
+        "R1@0.5_percent": 62.25,
+        "paired_mIoU_ci95_points": [-0.706133, 0.926146],
+        "p_nonpositive": 0.41478,
+        "point_estimate_rule_passed": true,
+        "statistically_significant": false,
+        "pristine_confirmatory_test": false,
+        "analysis": "results/e004_longneedle/sota_decision.json"
+      }
+    },
+    {
+      "id": "C008",
+      "claim": "NOVA audio intervention features are load-bearing on independent LongNeedle held-out data.",
+      "status": "supported_with_small_keep_only_margin",
+      "evidence": {
+        "setpo_anchor_mIoU_percent": 22.153356,
+        "best_single_mIoU_percent": 23.333792,
+        "keep_only_router_mIoU_percent": 23.386662,
+        "intervention_router_mIoU_percent": 22.861084,
+        "geometry_only_router_mIoU_percent": 22.153356,
+        "full_router_mIoU_percent": 24.358306,
+        "analysis": "results/e004_longneedle/gate_report.json"
+      }
     }
   ]
 }

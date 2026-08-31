@@ -1,0 +1,24 @@
+{
+  "method": "relative_ridge_with_official_fallback",
+  "feature_names": [
+    "duration_fraction",
+    "interval_count"
+  ],
+  "official": "official",
+  "mean": [
+    -0.03733204783441308,
+    -0.1388888888888889
+  ],
+  "scale": [
+    0.09928883801097649,
+    0.5245515427368934
+  ],
+  "weights": [
+    -0.013628954432498083,
+    0.05849423797527869,
+    0.08466907705193233
+  ],
+  "alpha": 100.0,
+  "threshold": -0.1461967071481974,
+  "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+}

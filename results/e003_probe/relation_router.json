@@ -1,0 +1,36 @@
+{
+  "method": "relative_ridge_with_official_fallback",
+  "feature_names": [
+    "component_mean",
+    "component_min",
+    "complement_no",
+    "duration_fraction",
+    "interval_count"
+  ],
+  "official": "official",
+  "mean": [
+    3.692574786324789,
+    4.859775641025641,
+    -4.602163461538462,
+    -0.06009509604806634,
+    -1.2371794871794872
+  ],
+  "scale": [
+    3.129460400101717,
+    3.8860559541970363,
+    4.338241795234715,
+    0.1758344143209679,
+    0.730403642245072
+  ],
+  "weights": [
+    0.4243291174631068,
+    0.08164610828126584,
+    -0.0182438713029217,
+    -0.08382864319785031,
+    0.07500092354435965,
+    0.021203050497149437
+  ],
+  "alpha": 1.0,
+  "threshold": 0.49569339306710575,
+  "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+}
