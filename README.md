@@ -26,6 +26,19 @@ E002 passed its independent RelTwin development gate in every seed. On SpotSound
 
 SetPO is mechanistically supported on the class-disjoint RelTwin development task: relative to its matched RBEE parent it raises mIoU by `+3.358` points (95% CI `[+2.469, +4.275]`) and PairAcc@.5 by `+5.208` points (95% CI `[+2.917, +7.708]`). On the public benchmark, however, SetPO adds only `+0.027` mIoU point over RBEE (95% CI `[-0.313, +0.412]`). The robust public gain is therefore attributable primarily to RBEE; SetPO should not be presented as an independently validated public-set improvement.
 
+### Diagnostic Oracle headroom
+
+The [Oracle analysis](results/e002/oracle_headroom.json) uses ground-truth IoU to select a prediction per benchmark row. It is a diagnostic upper bound and is **not** a deployable method or SOTA result.
+
+| Oracle candidate pool | mIoU | R1@.3 | R1@.5 |
+|---|---:|---:|---:|
+| three RBEE seeds | 59.924 | 77.75 | 63.25 |
+| three SetPO seeds | 60.073 | 78.00 | 63.50 |
+| all six adapted models | 60.466 | 78.50 | 63.50 |
+| official + ordinary SFT + all six adapted models | **62.462** | **81.25** | **65.75** |
+
+The full Oracle improves 199 of 400 rows and never regresses because the official prediction is included as a fallback. Its largest headroom is on audio longer than 60 seconds (`+7.752` mIoU points) and rows where the official checkpoint has IoU below 0.3 (`+7.742` points). The large jump from the adapted-only Oracle to the full Oracle shows that the main opportunity is a label-free conservative router between the original and adapted behaviors, not additional seed selection. Any router must be developed on independent data; SpotSound ground truth may not be used to train or tune it.
+
 E001 is intentionally retained as a negative result. Its seed-0 parent used the full 256-step/512-group RBEE stage, while seed 1 and 2 used earlier 64-step/32-group parents. The mismatch was detected after evaluation; the [original protocol](experiments/protocols/E001_public_multiseed.json) is preserved verbatim and the correction is isolated in a [post-hoc amendment](experiments/protocols/E001_posthoc_amendment.json). E002 repeats the complete pipeline under [a locked matched protocol](experiments/protocols/E002_matched_pipeline_multiseed.json).
 
 We call a result an **open-extra-data, same-harness point-estimate SOTA** only if the locked three-seed mean exceeds both the paper value and the same-harness official baseline. The dated literature audit found no later indexed SpotSound-Bench result. Statistical uncertainty is reported separately with paired record and hierarchical seed-record bootstrap intervals; a confidence interval crossing zero is never described as a significant improvement.

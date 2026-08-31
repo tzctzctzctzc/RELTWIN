@@ -36,6 +36,7 @@
     "statistically significant SOTA",
     "same-training-data SOTA",
     "improvement on every reported metric",
-    "SetPO independently improves public performance"
+    "SetPO independently improves public performance",
+    "ground-truth Oracle upper bound as a method result"
   ]
 }

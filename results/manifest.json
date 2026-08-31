@@ -133,6 +133,11 @@
       "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
     },
     {
+      "path": "e002/oracle_headroom.json",
+      "bytes": 8337,
+      "sha256": "963b6d75ec43bf43feba03cf105e54a00d34331d1330b60bc3f6adbdd841558a"
+    },
+    {
       "path": "e002/rbee_vs_official.json",
       "bytes": 2396,
       "sha256": "50de3d35b71661c43cd53aa89c22c4083bb582a40a0611a2afdf48de66bf0e1e"
@@ -314,8 +319,8 @@
     },
     {
       "path": "e002/sota_decision.json",
-      "bytes": 1299,
-      "sha256": "e5a16e68f37b3f796ab6f237cbef61eb160c3bdb1fe2c48e6426703dc4484153"
+      "bytes": 1357,
+      "sha256": "62a8e5a680972102fd6fa86eabd6ac993258f0b3c798aa6e1c9afa7f00a5e272"
     },
     {
       "path": "official_spotsound_a/public_dual_metrics.json",
