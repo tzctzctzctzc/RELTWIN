@@ -1,0 +1,32 @@
+{
+  "experiment_id": "E001",
+  "hypothesis_id": "H001-SetPO",
+  "label": "confirmatory-config-locked-before-completion",
+  "question": "Does the fixed 64-step RelTwin-SetPO recipe improve SpotSound-Bench across three independently trained seeds?",
+  "causal_rationale": "Set-aware candidate preference and relation-exchange equivariance should reduce wrong-window selection without sacrificing ordinary audio grounding.",
+  "code_config_delta": "No delta from the locked seed-0 recipe: 64 steps, lr=2e-6, method_weight=0.5, exchange_weight=1.0, rehearsal_weight=0.5 every 4 steps, target_temperature=0.15, jitter_ratio=0.15.",
+  "baseline": "Official SpotSound-A adapter evaluated by the same 400-record harness.",
+  "dataset": "SpotSound-Bench revision 2e64ad197b90d6bd3b43efc73738cb9f86810735, all 400 records.",
+  "evaluator": "Frozen SpotSound temporal-set IoU protocol plus the audited Auto-AEG-compatible interval metrics.",
+  "primary_metric": "SpotSound mIoU, higher is better.",
+  "diagnostics": [
+    "R1@0.3",
+    "R1@0.5",
+    "Auto-AEG mIoU",
+    "paper-faithful F1-IoU@0.5",
+    "paired per-record bootstrap delta versus SpotSound-A"
+  ],
+  "seed_policy": [0, 1, 2],
+  "checkpoint_policy": "Final adapter after exactly 64 steps; no validation or test checkpoint selection.",
+  "resource_estimate": "Two remaining full evaluations on one 32GB GPU, under 0.5 GPU-hours total.",
+  "success_criterion": "Mean improvement is positive across all three seeds and the paired stratified 95% bootstrap CI for the seed-averaged per-record mIoU delta excludes zero.",
+  "failure_criterion": "Any seed materially regresses or the seed-averaged mIoU confidence interval includes zero.",
+  "stop_criterion": "Do not tune this recipe on SpotSound-Bench after observing E001; any subsequent method must be selected on independent RelTwin/ESC-50 diagnostics before a new locked evaluation.",
+  "expected_artifacts": [
+    "per-seed raw predictions",
+    "per-seed dual metrics",
+    "paired bootstrap summary",
+    "runtime and checkpoint hashes"
+  ],
+  "timing_note": "Written while seed-1 evaluation had produced 21/400 records and before any seed-1/2 aggregate metric was observed. Seed-0 had been observed previously."
+}

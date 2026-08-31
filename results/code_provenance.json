@@ -1,0 +1,13 @@
+{
+  "statement": "These files are byte-identical to the server-side files used for the reported E001 and E002 training/evaluation runs.",
+  "algorithm": "sha256",
+  "files": {
+    "scripts/train_reltwin_setpo.py": "34b635f52d0ee047ef1ae6aa73cfe958584aeac94f21a7cfa490a5369f13f6db",
+    "scripts/train_reltwin_micro.py": "b55e59823023079cbc818364632edef50ad3f76dcad08ff08e96b938bc3191ea",
+    "scripts/setpo_candidates.py": "99c3918cf9124baf5c058dce675fd13e146a3082f694055bb236f92a06e6b741",
+    "scripts/interval_metrics.py": "18d5f53638190cb43efbf5bd9291ded675fa53aa6a612d3948e11cd6704354ec",
+    "scripts/evaluate_checkpoint.py": "17572ea623461b98497b209404881cc359f465bcdf25a1d33d22e63eb50eeb10",
+    "scripts/spotsound.py": "1b5dee854f798b7cceac330940e7ce95adda2ec614873878aebe8082298761a2"
+  },
+  "test_note": "tests/test_objective_source_sync.py enforces AST identity between the lightweight objective test module and the executed training source."
+}

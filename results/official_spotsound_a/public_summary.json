@@ -1,0 +1,13 @@
+{
+  "base": "/root/autodl-tmp/SpotSound-ICASSP/models/audio-flamingo-3-hf",
+  "adapter": "/root/autodl-tmp/SpotSound-ICASSP/models/SpotSound",
+  "torch": "2.8.0+cu128",
+  "device": "NVIDIA vGPU-32GB",
+  "load_seconds": 33.79843345656991,
+  "expected_count": 400,
+  "completed_count": 400,
+  "R1@0.3": 77.0,
+  "R1@0.5": 60.75000000000001,
+  "mIoU": 58.31722535959376,
+  "mean_inference_seconds": 1.0399647805001586
+}

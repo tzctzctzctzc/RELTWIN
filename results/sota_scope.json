@@ -1,0 +1,34 @@
+{
+  "audit_date": "2026-08-31",
+  "benchmark_scope": "SpotSound-Bench v2, 400 audio-query-timestamp rows",
+  "strongest_published_result_found": {
+    "system": "SpotSound-A",
+    "paper": "https://arxiv.org/abs/2604.13023v2",
+    "R1@0.3_percent": 76.5,
+    "R1@0.5_percent": 59.5,
+    "mIoU_percent": 57.9
+  },
+  "same_harness_reference": {
+    "system": "official SpotSound-A checkpoint",
+    "R1@0.3_percent": 77.0,
+    "R1@0.5_percent": 60.75,
+    "mIoU_percent": 58.317225,
+    "evaluator": "reconstructed from the released response format and paper metric definition"
+  },
+  "follow_up_search": {
+    "outcome": "No later paper reporting SpotSound-Bench numbers was found in the searched web/arXiv results.",
+    "qualification": "This is a dated literature audit, not proof that no unpublished or unindexed result exists."
+  },
+  "our_locked_result": {
+    "system": "RelTwin-RBEE plus SetPO",
+    "seeds": 3,
+    "mIoU_mean_percent": 59.192659,
+    "R1@0.3_mean_percent": 76.583333,
+    "R1@0.5_mean_percent": 62.416667,
+    "mIoU_delta_vs_same_harness_points": 0.875434,
+    "mIoU_hierarchical_ci95_points": [-0.242564, 2.04253],
+    "all_seeds_exceed_same_harness_mIoU": true
+  },
+  "claim_rule": "A new open-extra-data, same-harness point-estimate SOTA must exceed both the published number and the same-harness official checkpoint under the 400-row v2 protocol; it must not be described as a same-training-data comparison.",
+  "decision": "The point-estimate rule passes. The preregistered significance rule fails because the hierarchical mIoU interval includes zero. Claims must say point-estimate SOTA and must not say statistically significant SOTA."
+}

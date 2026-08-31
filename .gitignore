@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+.venv/
+env-conda/
+models/
+datasets/
+data/
+outputs/
+runs/
+*.safetensors
+*.pt
+*.pth
+*.wav
+*.flac
+*.mp3

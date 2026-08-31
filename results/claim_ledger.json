@@ -1,0 +1,71 @@
+{
+  "claims": [
+    {
+      "id": "C001",
+      "claim": "The official SpotSound-A checkpoint is reproduced closely under the reconstructed 400-row evaluator.",
+      "status": "supported_with_evaluator_caveat",
+      "evidence": {
+        "paper_mIoU_percent": 57.9,
+        "reproduced_mIoU_percent": 58.317225,
+        "absolute_gap_points": 0.417225,
+        "raw_predictions": "results/official_spotsound_a/public_predictions.jsonl"
+      }
+    },
+    {
+      "id": "C002",
+      "claim": "The initial SetPO stage is stable across the three available parents.",
+      "status": "falsified",
+      "evidence": {
+        "mean_mIoU_delta_points": 0.275751,
+        "hierarchical_ci95_points": [-0.8867, 1.44701],
+        "one_seed_regressed": true,
+        "analysis": "results/e001/public_multiseed.json",
+        "amendment": "experiments/protocols/E001_posthoc_amendment.json"
+      }
+    },
+    {
+      "id": "C003",
+      "claim": "RBEE and SetPO address inverse-relation window selection on class-disjoint RelTwin-ESC50.",
+      "status": "supported_matched_multiseed",
+      "evidence": {
+        "rbee_query_mIoU_mean_percent": 86.546123,
+        "setpo_query_mIoU_mean_percent": 89.903811,
+        "mIoU_delta_points": 3.357689,
+        "mIoU_ci95_points": [2.468743, 4.275417],
+        "rbee_pair_acc_0.5_mean_percent": 81.458333,
+        "setpo_pair_acc_0.5_mean_percent": 86.666667,
+        "pair_acc_delta_points": 5.208333,
+        "pair_acc_ci95_points": [2.916667, 7.708333],
+        "analysis": "results/e002/reltwin_setpo_vs_rbee.json"
+      }
+    },
+    {
+      "id": "C004",
+      "claim": "The locked full pipeline yields a new audited open-extra-data, same-harness mIoU point estimate on SpotSound-Bench.",
+      "status": "supported_point_estimate_only_confirmatory_significance_failed",
+      "evidence": {
+        "official_same_harness_mIoU_percent": 58.317225,
+        "setpo_per_seed_mIoU_percent": [59.11361, 59.233805, 59.230562],
+        "setpo_mean_mIoU_percent": 59.192659,
+        "mean_delta_points": 0.875434,
+        "hierarchical_ci95_points": [-0.242564, 2.04253],
+        "p_nonpositive": 0.06312,
+        "all_three_seeds_exceed_official": true,
+        "point_estimate_rule_passed": true,
+        "preregistered_significance_rule_passed": false,
+        "analysis": "results/e002/setpo_vs_official.json"
+      }
+    },
+    {
+      "id": "C005",
+      "claim": "Ordinary SFT alone explains the public mIoU gain.",
+      "status": "falsified_single_seed_control",
+      "evidence": {
+        "official_same_harness_mIoU_percent": 58.317225,
+        "ordinary_sft_seed0_mIoU_percent": 58.313494,
+        "rbee_three_seed_mean_mIoU_percent": 59.16601,
+        "raw_predictions": "results/controlled/sft_seed0/public_predictions.jsonl"
+      }
+    }
+  ]
+}

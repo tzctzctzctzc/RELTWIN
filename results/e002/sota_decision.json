@@ -1,0 +1,41 @@
+{
+  "experiment_id": "E002",
+  "audit_date": "2026-08-31",
+  "primary_metric": "SpotSound protocol mIoU",
+  "development_gate_passed": true,
+  "official_same_harness": {
+    "mIoU_percent": 58.317225,
+    "R1@0.3_percent": 77.0,
+    "R1@0.5_percent": 60.75
+  },
+  "rbee_three_seed_mean": {
+    "mIoU_percent": 59.16601,
+    "R1@0.3_percent": 76.916667,
+    "R1@0.5_percent": 62.416667
+  },
+  "setpo_three_seed_mean": {
+    "mIoU_percent": 59.192659,
+    "R1@0.3_percent": 76.583333,
+    "R1@0.5_percent": 62.416667
+  },
+  "setpo_vs_official": {
+    "mIoU_delta_points": 0.875434,
+    "mIoU_hierarchical_ci95_points": [-0.242564, 2.04253],
+    "p_nonpositive": 0.06312,
+    "all_three_seeds_exceed_official_mIoU": true
+  },
+  "setpo_vs_rbee": {
+    "mIoU_delta_points": 0.026649,
+    "mIoU_hierarchical_ci95_points": [-0.313259, 0.41221]
+  },
+  "ordinary_sft_seed0_mIoU_percent": 58.313494,
+  "point_estimate_sota_rule_passed": true,
+  "preregistered_significance_rule_passed": false,
+  "allowed_claim": "Audited open-extra-data, reconstructed-same-harness mIoU point-estimate SOTA as of 2026-08-31.",
+  "disallowed_claims": [
+    "statistically significant SOTA",
+    "same-training-data SOTA",
+    "improvement on every reported metric",
+    "SetPO independently improves public performance"
+  ]
+}

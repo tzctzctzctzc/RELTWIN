@@ -1,0 +1,100 @@
+{
+  "baseline_predictions": "results/official_spotsound_a/public_predictions.jsonl",
+  "method_predictions": [
+    "results/e001/seed_0/public_predictions.jsonl",
+    "results/e002/seed_1/setpo/public_predictions.jsonl",
+    "results/e002/seed_2/setpo/public_predictions.jsonl"
+  ],
+  "records": 400,
+  "seeds": 3,
+  "bootstrap_samples": 50000,
+  "bootstrap_seed": 20260831,
+  "metrics_fraction": {
+    "mIoU": {
+      "baseline": 0.5831722535959376,
+      "method_per_seed": [
+        0.5911361007501589,
+        0.5923380530882034,
+        0.5923056225139267
+      ],
+      "method_mean": 0.5919265921174297,
+      "mean_delta": 0.0087543385214921
+    },
+    "R1@0.3": {
+      "baseline": 0.77,
+      "method_per_seed": [
+        0.76,
+        0.7725,
+        0.765
+      ],
+      "method_mean": 0.7658333333333333,
+      "mean_delta": -0.004166666666666763
+    },
+    "R1@0.5": {
+      "baseline": 0.6075,
+      "method_per_seed": [
+        0.6275,
+        0.6225,
+        0.6225
+      ],
+      "method_mean": 0.6241666666666666,
+      "mean_delta": 0.016666666666666607
+    }
+  },
+  "delta_bootstrap": {
+    "mIoU": {
+      "paired_record": {
+        "mean": 0.008757793105719041,
+        "ci95": [
+          -0.0023037733530988425,
+          0.020242882851184252
+        ],
+        "p_nonpositive": 0.0601
+      },
+      "hierarchical_seed_record": {
+        "mean": 0.008723240336639218,
+        "ci95": [
+          -0.002425636319370597,
+          0.02042529679725748
+        ],
+        "p_nonpositive": 0.06312
+      }
+    },
+    "R1@0.3": {
+      "paired_record": {
+        "mean": -0.0042199666666666675,
+        "ci95": [
+          -0.02666666666666667,
+          0.01916666666666666
+        ],
+        "p_nonpositive": 0.65852
+      },
+      "hierarchical_seed_record": {
+        "mean": -0.004260499999999999,
+        "ci95": [
+          -0.02833333333333332,
+          0.019999999999999907
+        ],
+        "p_nonpositive": 0.65212
+      }
+    },
+    "R1@0.5": {
+      "paired_record": {
+        "mean": 0.01660113333333333,
+        "ci95": [
+          -0.0058333333333333345,
+          0.03916666666666666
+        ],
+        "p_nonpositive": 0.07812
+      },
+      "hierarchical_seed_record": {
+        "mean": 0.01662665,
+        "ci95": [
+          -0.005833333333333357,
+          0.040000000000000036
+        ],
+        "p_nonpositive": 0.08486
+      }
+    }
+  }
+}

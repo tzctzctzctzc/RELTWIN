@@ -1,0 +1,58 @@
+{
+  "paper": {
+    "source": "https://arxiv.org/abs/2604.13023v2",
+    "version": "v2"
+  },
+  "repository": {
+    "source": "https://github.com/LoieSun/SpotSound",
+    "commit": "d60c0e214ab685d0aa916db655fc59191900fb92",
+    "archive_sha256": "0578b65e39b42287bad236f5f8f6836e711f8fbf6bf6ea389d62bdd37a42febe",
+    "license": "No license file declared in the pinned GitHub archive"
+  },
+  "artifact_completeness": {
+    "data_preparation_path_complete": true,
+    "training_code_complete": true,
+    "training_recipe_complete": false,
+    "evaluation_code_complete": false,
+    "missing_substantive_code": true,
+    "notes": [
+      "SpotSound-Bench provides ready-to-use audio and annotations.",
+      "The complete 77.6k training corpus and exact validation split are not released.",
+      "No official batch evaluator or prediction file is released.",
+      "The author Space releases the compatible parser and inference path used by this audit."
+    ]
+  },
+  "official_checkpoint": {
+    "available": true,
+    "source": "https://huggingface.co/Loie/SpotSound",
+    "revision": "07eca9f048599fde92a55f2376e429deaa73c21a",
+    "sha256": "ab87de32fc6ae5acfaccc22c5f9792230a4ac8f11ca15f968d21b9c26075cf5e"
+  },
+  "base_checkpoint": {
+    "source": "https://huggingface.co/nvidia/audio-flamingo-3-hf",
+    "revision": "7d4bae64ee29878af6504ae6f6bb3e40492838ad",
+    "license": "NVIDIA OneWay Noncommercial License"
+  },
+  "official_evaluator": {
+    "available": false,
+    "entrypoint": ""
+  },
+  "dataset": {
+    "name": "SpotSound-Bench",
+    "version": "2e64ad197b90d6bd3b43efc73738cb9f86810735",
+    "split": "400 public benchmark triplets",
+    "accessible": true,
+    "annotations_sha256": "b914d9fb4035913cb42167380f12b7cc1f2f79a3ad4afd76fe1c2b7ba7ac77a9"
+  },
+  "compute_fit": {
+    "selected_route_fits_budget": true,
+    "estimate": "Checkpoint evaluation fits one 32GB vGPU; observed peak 16.4GB on five samples."
+  },
+  "research_headroom": {
+    "assessment": "High diagnostic headroom in fine-grained boundaries and multi-event interval sets.",
+    "saturation_risk": "low-to-moderate"
+  },
+  "reproduction_route": "official-checkpoint-evaluation-with-reconstructed-evaluator",
+  "decision": "admitted-checkpoint-route-with-explicit-evaluator-caveat",
+  "decision_reason": "Official checkpoint and public benchmark are runnable; missing evaluator prevents an unqualified one-click reproduction claim."
+}

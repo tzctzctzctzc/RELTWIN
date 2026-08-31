@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E001",
+  "amendment_type": "post-completion parent-configuration correction",
+  "original_protocol": "experiments/protocols/E001_public_multiseed.json",
+  "issue": "The SetPO stage was matched, but its parents were not: seed 0 started from a 256-step RBEE run over 512 available groups, while seeds 1 and 2 started from earlier 64-step RBEE runs over 32 cached groups.",
+  "impact": "E001 cannot support a claim about seed stability of the full end-to-end pipeline. It remains a prospective stability audit of the SetPO stage on the three parents that happened to be available.",
+  "corrected_question": "Does the fixed 64-step RelTwin-SetPO stage improve SpotSound-Bench when applied to the three available RBEE parents?",
+  "corrected_success_criterion": "All three available-parent runs improve the official same-harness baseline and the hierarchical seed-record bootstrap 95% interval excludes zero.",
+  "outcome": "failed",
+  "reason": "One seed regressed in mIoU and the hierarchical mIoU delta CI crossed zero.",
+  "follow_up": "E002 repeats the complete RBEE-256 plus SetPO-64 pipeline under a matched seed protocol.",
+  "audit_rule": "The original protocol is preserved verbatim; this file does not rewrite its pre-result wording."
+}
