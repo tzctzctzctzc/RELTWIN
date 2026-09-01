@@ -29,6 +29,13 @@ def parse_args():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--start-index", type=int, default=0)
     parser.add_argument("--max-rows", type=int)
+    parser.add_argument(
+        "--drop-replacement",
+        choices=("silence", "neighbor", "matched_noise"),
+        default="silence",
+    )
+    parser.add_argument("--replacement-seed", type=int, default=0)
+    parser.add_argument("--context-seconds", type=float, default=1.0)
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
@@ -104,6 +111,11 @@ def main():
                 "template": item.get("template"),
                 "variant": item.get("variant", 0),
                 "relation": item.get("relation"),
+                "intervention": {
+                    "drop_replacement": args.drop_replacement,
+                    "replacement_seed": args.replacement_seed + index,
+                    "context_seconds": args.context_seconds,
+                },
                 "candidates": {},
             }
             for name, rows in candidates.items():
@@ -112,7 +124,14 @@ def main():
                     "prediction": prediction,
                     "iou": float(rows[index]["iou"]),
                     "features": counterfactual_features_fast(
-                        model, processor, wave, row["query"], prediction
+                        model,
+                        processor,
+                        wave,
+                        row["query"],
+                        prediction,
+                        drop_replacement=args.drop_replacement,
+                        replacement_seed=args.replacement_seed + index,
+                        context_seconds=args.context_seconds,
                     ),
                 }
             handle.write(json.dumps(row) + "\n")
