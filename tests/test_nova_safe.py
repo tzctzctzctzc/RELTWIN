@@ -12,7 +12,7 @@ from nova_safe import (
     pair_feature_map,
     prediction_error,
 )
-from prepare_nova_safe_pilot import choose_groups
+from prepare_nova_safe_pilot import choose_groups, stratum
 
 
 def candidate(prediction, iou=0.5, **features):
@@ -129,3 +129,12 @@ def test_grouped_pilot_never_splits_an_audio_group():
     assert len(selected) == 3
     assert counts["a.wav"] in (0, 2)
 
+
+def test_pilot_stratum_ignores_explicit_null_duration_and_uses_manifest_value():
+    manifest = {
+        "duration": 60.0,
+        "annotations": [[10.0, 20.0]],
+        "caption": "target sound",
+    }
+    prediction = {"duration_seconds": None, "prediction": [[10.0, 20.0]]}
+    assert stratum(manifest, prediction).startswith("single|")

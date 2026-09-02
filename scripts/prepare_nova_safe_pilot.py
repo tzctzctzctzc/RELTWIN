@@ -39,14 +39,27 @@ def _bucket(value: float, first: float, second: float) -> str:
 
 
 def stratum(row: dict, prediction: dict) -> str:
-    duration = float(
-        prediction.get(
-            "duration_seconds",
-            prediction.get("duration", row.get("duration_seconds", row.get("duration"))),
-        )
+    duration_values = (
+        prediction.get("duration_seconds"),
+        prediction.get("duration"),
+        row.get("duration_seconds"),
+        row.get("duration"),
     )
+    duration_value = next((value for value in duration_values if value is not None), None)
+    raw_ground_truth = prediction.get(
+        "ground_truth", row.get("ground_truth", row.get("annotations", []))
+    )
+    if duration_value is None:
+        endpoints = [float(item[1]) for item in raw_ground_truth if len(item) >= 2]
+        endpoints.extend(
+            float(item[1]) for item in prediction.get("prediction", []) if len(item) >= 2
+        )
+        if not endpoints:
+            raise ValueError("Duration is absent and cannot be inferred from interval endpoints")
+        duration_value = max(endpoints)
+    duration = float(duration_value)
     ground_truth = normalize_intervals(
-        prediction.get("ground_truth", row.get("ground_truth", row.get("annotations", []))),
+        raw_ground_truth,
         duration,
     )
     count = "single" if len(ground_truth) == 1 else ("multi" if ground_truth else "empty")
@@ -157,4 +170,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
