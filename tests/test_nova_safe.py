@@ -190,9 +190,31 @@ def test_failure_audit_rejects_threshold_tuning_when_margin_has_no_signal():
             }
         )
     summary = summarize_predictions(rows)
-    audit = build_audit([summary], {"chosen": {"mode": "keep"}})
+    audit = build_audit(
+        [summary],
+        {
+            "gate": {"chosen_mode": "keep"},
+            "mode_reports": [
+                {
+                    "mode": "keep",
+                    "passed": True,
+                    "alpha": 0.1,
+                    "threshold": 0.09,
+                    "worst_source_delta_points": 0.0,
+                    "selected_cv": {
+                        "overall": {
+                            "delta_mIoU_points": 0.01,
+                            "improved_rows": 1,
+                            "regressed_rows": 0,
+                        }
+                    },
+                }
+            ],
+        },
+    )
     assert summary["candidate_oracle_headroom_points"] > 0
     assert summary["oracle_headroom_capture_fraction"] == 0
     assert abs(summary["decision_margin_actual_gain_correlation"]) < 0.1
     assert audit["diagnosis"]["threshold_only_change_rejected"]
+    assert audit["development_choice"]["effective_improvements"] == 1
     assert audit["next_single_factor_change"]["factor"] == "candidate_family_matched_development_data"

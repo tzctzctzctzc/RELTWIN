@@ -122,7 +122,30 @@ def build_audit(summaries: list[dict], development_report: dict) -> dict:
         and (summary["oracle_headroom_capture_fraction"] or 0.0) <= 0.0
         for summary in summaries
     )
-    chosen = development_report.get("chosen", development_report.get("selected_mode", {}))
+    gate = development_report.get("gate", {})
+    chosen_mode = gate.get("chosen_mode")
+    chosen_report = next(
+        (
+            report
+            for report in development_report.get("mode_reports", [])
+            if report.get("mode") == chosen_mode
+        ),
+        None,
+    )
+    if chosen_report is None:
+        chosen = development_report.get("chosen", development_report.get("selected_mode", {}))
+    else:
+        overall = chosen_report.get("selected_cv", {}).get("overall", {})
+        chosen = {
+            "mode": chosen_mode,
+            "passed": bool(chosen_report.get("passed")),
+            "alpha": chosen_report.get("alpha"),
+            "threshold": chosen_report.get("threshold"),
+            "worst_source_delta_points": chosen_report.get("worst_source_delta_points"),
+            "overall_delta_points": overall.get("delta_mIoU_points"),
+            "effective_improvements": overall.get("improved_rows"),
+            "effective_regressions": overall.get("regressed_rows"),
+        }
     return {
         "decision": "rollback_and_rethink",
         "baseline_or_default_pointer_modified": False,
