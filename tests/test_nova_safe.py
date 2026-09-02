@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 
 from extract_nova_safe_features import validate_alignment
-from fit_nova_safe_router import _fit_mode, choose_mode
+from fit_nova_safe_router import _excluded_groups, _fit_mode, choose_mode
 from nova_safe import (
     SCHEMA_VERSION,
     choose_candidate,
@@ -161,3 +161,12 @@ def test_leave_one_source_out_fit_keeps_a_real_incumbent_action():
     assert report["passed"]
     assert report["selected_cv"]["overall"]["selection_counts"] == {"setpo": 15}
     assert choose_mode([report])["mode"] == "geometry"
+
+
+def test_leakage_guard_compares_audio_across_different_source_names(tmp_path):
+    manifest = tmp_path / "pilot.json"
+    manifest.write_text(
+        '[{"source":"public","audio_group":"nested/shared.wav"}]',
+        encoding="utf-8",
+    )
+    assert _excluded_groups([manifest]) == {"shared.wav"}

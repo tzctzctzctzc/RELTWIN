@@ -46,10 +46,9 @@ def _excluded_groups(paths: list[Path]) -> set[str]:
     for path in paths:
         rows = json.loads(path.read_text(encoding="utf-8"))
         for row in rows:
-            source = row.get("source")
             audio = row.get("audio_group", row.get("audio", row.get("audio_path")))
-            if source is not None and audio is not None:
-                groups.add(f"{source}|{Path(str(audio)).name}")
+            if audio is not None:
+                groups.add(Path(str(audio)).name)
     return groups
 
 
@@ -200,7 +199,8 @@ def main():
         raise ValueError(f"Unexpected feature schema: {sorted(set(map(str, invalid_schema)))}")
     groups = [f"{row['source']}|{row['audio_group']}" for row in rows]
     excluded = _excluded_groups(args.exclude_manifest)
-    leaked = sorted(set(groups) & excluded)
+    development_audio = {Path(str(row["audio_group"])).name for row in rows}
+    leaked = sorted(development_audio & excluded)
     if leaked:
         raise ValueError(f"Pilot/development audio leakage: {leaked[:5]}")
     modes = args.feature_mode or ["geometry", "keep", "full"]
@@ -260,4 +260,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
