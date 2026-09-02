@@ -101,8 +101,10 @@ def stratified_gate(rows: list[dict], size: int, seed: int) -> list[dict]:
     if not 0 < size <= len(rows):
         raise ValueError("gate size must be within the manifest size")
     groups = defaultdict(list)
-    for row in rows:
-        groups[row_stratum(row)].append(row)
+    for source_index, row in enumerate(rows):
+        indexed_row = dict(row)
+        indexed_row["source_index"] = source_index
+        groups[row_stratum(row)].append(indexed_row)
     allocation = proportional_allocation(groups, size)
     rng = random.Random(seed)
     selected = []

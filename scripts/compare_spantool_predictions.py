@@ -85,9 +85,19 @@ def compare(
     seed: int,
 ) -> dict:
     if baseline.keys() != candidate.keys():
-        missing = sorted(baseline.keys() - candidate.keys())
-        extra = sorted(candidate.keys() - baseline.keys())
-        raise ValueError(f"Prediction indices differ; missing={missing[:5]}, extra={extra[:5]}")
+        source_indices = {
+            index: row.get("source_index") for index, row in candidate.items()
+        }
+        if all(value is not None and int(value) in baseline for value in source_indices.values()):
+            baseline = {
+                index: baseline[int(source_indices[index])] for index in candidate
+            }
+        else:
+            missing = sorted(baseline.keys() - candidate.keys())
+            extra = sorted(candidate.keys() - baseline.keys())
+            raise ValueError(
+                f"Prediction indices differ; missing={missing[:5]}, extra={extra[:5]}"
+            )
     indices = sorted(baseline)
     for index in indices:
         if baseline[index]["ground_truth"] != candidate[index]["ground_truth"]:

@@ -33,6 +33,7 @@ def test_stratified_gate_uses_full_manifest_not_prefix():
     assert len(gate) == 60
     assert len({row["qid"] for row in gate}) == 60
     assert max(row["qid"] for row in gate) > 100
+    assert all("source_index" in row for row in gate)
     source_strata = {row_stratum(row) for row in source}
     gate_strata = {row_stratum(row) for row in gate}
     assert gate_strata == source_strata

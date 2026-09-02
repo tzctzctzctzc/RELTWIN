@@ -100,6 +100,15 @@ def test_boundary_refinement_cannot_reorder_close_spans():
     assert refined[0][1] < refined[1][0]
 
 
+def test_boundary_refinement_partitions_a_wide_interspan_gap():
+    onsets = torch.zeros(8)
+    offsets = torch.zeros(8)
+    onsets[3] = 10
+    offsets[4] = 10
+    refined = refine_boundaries([(2, 2), (5, 5)], onsets, offsets, 1, 10)
+    assert refined[0][1] < refined[1][0]
+
+
 def test_proposal_refinement_preserves_cardinality_and_order():
     onsets = torch.zeros(20)
     offsets = torch.zeros(20)

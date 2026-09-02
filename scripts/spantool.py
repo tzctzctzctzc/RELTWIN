@@ -463,13 +463,17 @@ def refine_boundaries(
     for index, (start, end) in enumerate(spans):
         coarse_start = start * primary_pool
         coarse_end = min(fine_steps - 1, (end + 1) * primary_pool - 1)
-        previous_limit = (
-            (spans[index - 1][1] + 1) * primary_pool if index else 0
-        )
-        next_limit = (
-            spans[index + 1][0] * primary_pool
-            if index + 1 < len(spans) else fine_steps
-        )
+        # Partition every inter-span gap at its midpoint.  Constraining each
+        # side only by the neighbour's original edge leaves overlapping search
+        # windows, so two independently selected extrema can still cross.
+        previous_limit = 0
+        if index:
+            previous_end = (spans[index - 1][1] + 1) * primary_pool - 1
+            previous_limit = (previous_end + coarse_start) // 2 + 1
+        next_limit = fine_steps
+        if index + 1 < len(spans):
+            next_start = spans[index + 1][0] * primary_pool
+            next_limit = (coarse_end + next_start) // 2 + 1
         left = max(previous_limit, coarse_start - radius_frames)
         right = min(coarse_end + 1, coarse_start + radius_frames + 1)
         fine_start = left + int(torch.argmax(fine_onset_logits[left:right]))

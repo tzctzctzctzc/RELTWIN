@@ -55,6 +55,7 @@ def parse_args() -> argparse.Namespace:
 
 def checkpoint_id(args: argparse.Namespace) -> str:
     digest = hashlib.sha256()
+    digest.update(evaluator_code_sha256().encode())
     digest.update(file_sha256(args.spantool_checkpoint / "spantool_head.pt").encode())
     digest.update(file_sha256(args.spantool_checkpoint / "spantool_config.json").encode())
     digest.update(artifact_sha256(args.adapter).encode())
@@ -66,6 +67,15 @@ def checkpoint_id(args: argparse.Namespace) -> str:
     if args.proposal_predictions:
         digest.update(file_sha256(args.proposal_predictions).encode())
     return digest.hexdigest()[:16]
+
+
+def evaluator_code_sha256() -> str:
+    digest = hashlib.sha256()
+    script_dir = Path(__file__).resolve().parent
+    for name in ("evaluate_spantool.py", "spantool.py", "spantool_runtime.py", "spotsound.py"):
+        digest.update(name.encode())
+        digest.update(file_sha256(script_dir / name).encode())
+    return digest.hexdigest()
 
 
 def load_proposals(path: Path | None) -> dict[int, list[list[float]]]:
@@ -108,7 +118,11 @@ def main() -> int:
     indices = list(range(args.start, stop))
     proposals = load_proposals(args.proposal_predictions)
     if args.decode_mode != "standalone":
-        missing = [index for index in indices if index not in proposals]
+        missing = [
+            int(rows[index].get("source_index", index))
+            for index in indices
+            if int(rows[index].get("source_index", index)) not in proposals
+        ]
         if missing:
             raise ValueError(
                 f"{args.decode_mode} decoding needs proposals for every row; "
@@ -145,6 +159,8 @@ def main() -> int:
             if index in completed:
                 continue
             row = rows[index]
+            proposal_index = int(row.get("source_index", index))
+            proposal = proposals.get(proposal_index, [])
             wave = load_wave(args.audio_dir, row)
             duration = len(wave) / 16000.0
             inputs = move_model_inputs(
@@ -174,7 +190,7 @@ def main() -> int:
                 )
                 if args.decode_mode == "refine":
                     prediction = refine_proposal_intervals(
-                        proposals[index],
+                        proposal,
                         head_output["fine_onset_logits"][0, : int(frame_mask.sum())],
                         head_output["fine_offset_logits"][0, : int(frame_mask.sum())],
                         duration,
@@ -188,7 +204,8 @@ def main() -> int:
                         duration,
                         refinement_radius_seconds=args.refinement_radius_seconds,
                         proposal_intervals=(
-                            proposals[index] if args.decode_mode == "guided" else None
+                            proposal
+                            if args.decode_mode == "guided" else None
                         ),
                         proposal_weight=args.proposal_weight,
                     )
@@ -199,6 +216,7 @@ def main() -> int:
                 "status": "ok",
                 "checkpoint_id": run_id,
                 "index": index,
+                "source_index": proposal_index,
                 "audio": row["audio_path"],
                 "query": row["caption"],
                 "ground_truth": ground_truth,
@@ -225,6 +243,7 @@ def main() -> int:
     ]
     summary = {
         "checkpoint_id": run_id,
+        "evaluator_code_sha256": evaluator_code_sha256(),
         "base": str(args.base.resolve()),
         "adapter": str(args.adapter.resolve()),
         "adapter_sha256": artifact_sha256(args.adapter),

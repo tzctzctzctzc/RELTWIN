@@ -23,3 +23,11 @@ def test_compare_reports_paired_gain_and_oracle():
 
 def test_bootstrap_can_be_disabled():
     assert paired_bootstrap_ci(np.asarray([1.0]), 0, 1) is None
+
+
+def test_compare_aligns_stratified_gate_by_source_index():
+    baseline = {3: record(3, [[0.0, 0.5]])}
+    candidate_row = record(0, [[0.0, 1.0]])
+    candidate_row["source_index"] = 3
+    result = compare(baseline, {0: candidate_row}, bootstrap_samples=0, seed=1)
+    assert result["delta_mIoU"] == 50.0
