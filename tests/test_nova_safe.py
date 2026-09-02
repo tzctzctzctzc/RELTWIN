@@ -1,9 +1,10 @@
-import json
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
 
 from extract_nova_safe_features import validate_alignment
+from fit_nova_safe_router import _fit_mode, choose_mode
 from nova_safe import (
     SCHEMA_VERSION,
     choose_candidate,
@@ -138,3 +139,25 @@ def test_pilot_stratum_ignores_explicit_null_duration_and_uses_manifest_value():
     }
     prediction = {"duration_seconds": None, "prediction": [[10.0, 20.0]]}
     assert stratum(manifest, prediction).startswith("single|")
+
+
+def test_leave_one_source_out_fit_keeps_a_real_incumbent_action():
+    rows = []
+    for source_index, source in enumerate(("a", "b", "c")):
+        for index in range(5):
+            example = row(
+                incumbent_prediction=[[5.0, 15.0]],
+                challenger_prediction=[[25.0 + index, 35.0 + index]],
+            )
+            example["source"] = source
+            example["source_index"] = source_index * 10 + index
+            example["audio"] = f"{source}-{index}.wav"
+            example["audio_group"] = example["audio"]
+            example["candidates"]["official"]["iou"] = 0.2
+            example["candidates"]["setpo"]["iou"] = 0.8
+            rows.append(example)
+    args = SimpleNamespace(seed=20260902, cv_bootstrap_models=8)
+    report = _fit_mode(rows, "geometry", args)
+    assert report["passed"]
+    assert report["selected_cv"]["overall"]["selection_counts"] == {"setpo": 15}
+    assert choose_mode([report])["mode"] == "geometry"
