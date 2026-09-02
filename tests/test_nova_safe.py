@@ -3,6 +3,7 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
+from audit_nova_safe_failure import build_audit, summarize_predictions
 from extract_nova_safe_features import validate_alignment
 from fit_nova_safe_router import _excluded_groups, _fit_mode, choose_mode
 from nova_safe import (
@@ -170,3 +171,28 @@ def test_leakage_guard_compares_audio_across_different_source_names(tmp_path):
         encoding="utf-8",
     )
     assert _excluded_groups([manifest]) == {"shared.wav"}
+
+
+def test_failure_audit_rejects_threshold_tuning_when_margin_has_no_signal():
+    rows = []
+    for index, (margin, candidate_iou) in enumerate(
+        ((-0.3, 0.8), (-0.2, 0.2), (-0.1, 0.8))
+    ):
+        rows.append(
+            {
+                "benchmark": "bench",
+                "source_index": index,
+                "incumbent_name": "official",
+                "selected_candidate": "official",
+                "candidate_ious": {"official": 0.5, "setpo": candidate_iou},
+                "candidate_scores": {"setpo": {"decision_margin": margin}},
+                "guarded_candidates": {},
+            }
+        )
+    summary = summarize_predictions(rows)
+    audit = build_audit([summary], {"chosen": {"mode": "keep"}})
+    assert summary["candidate_oracle_headroom_points"] > 0
+    assert summary["oracle_headroom_capture_fraction"] == 0
+    assert abs(summary["decision_margin_actual_gain_correlation"]) < 0.1
+    assert audit["diagnosis"]["threshold_only_change_rejected"]
+    assert audit["next_single_factor_change"]["factor"] == "candidate_family_matched_development_data"
