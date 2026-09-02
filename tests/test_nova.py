@@ -1,6 +1,6 @@
 import numpy as np
 
-from nova import interval_gain, intervene_audio
+from nova import counterfactual_keep_features_fast, interval_gain, intervene_audio
 
 
 def test_keep_and_drop_reconstruct_wave_away_from_fades():
@@ -72,3 +72,19 @@ def test_invalid_drop_replacement_is_rejected():
         assert "Unknown drop replacement" in str(error)
     else:
         raise AssertionError("Expected invalid drop replacement to fail")
+
+
+def test_empty_keep_candidate_needs_no_model_forward():
+    features = counterfactual_keep_features_fast(
+        None,
+        None,
+        np.zeros(16000, dtype=np.float32),
+        "target",
+        [],
+    )
+    assert features == {
+        "component_mean": -20.0,
+        "component_min": -20.0,
+        "duration_fraction": 0.0,
+        "interval_count": 0.0,
+    }

@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument("--audio-dir", type=Path)
     parser.add_argument("--base", type=Path)
     parser.add_argument("--verifier-adapter", type=Path)
-    parser.add_argument("--feature-mode", choices=("geometry", "full"), default="full")
+    parser.add_argument("--feature-mode", choices=("geometry", "keep", "full"), default="full")
     parser.add_argument("--drop-replacement", choices=("silence", "neighbor", "matched_noise"), default="matched_noise")
     parser.add_argument("--replacement-seed", type=int, default=20260902)
     parser.add_argument("--context-seconds", type=float, default=1.0)
@@ -242,23 +242,33 @@ def main():
                 for name, candidate in row["candidates"].items()
                 if name != args.incumbent and hard_guard(incumbent, candidate, duration) is None
             ]
-            if args.feature_mode == "full" and eligible:
+            if args.feature_mode in ("keep", "full") and eligible:
                 import librosa
-                from nova import counterfactual_features_fast
+                from nova import counterfactual_features_fast, counterfactual_keep_features_fast
 
                 audio_path = resolve_audio(args.audio_dir, audio, manifest_row)
                 wave, _ = librosa.load(audio_path, sr=16000, mono=True)
                 wave = np.asarray(wave, dtype=np.float32)
                 for name in [args.incumbent, *eligible]:
-                    row["candidates"][name]["features"] = counterfactual_features_fast(
+                    extractor = (
+                        counterfactual_keep_features_fast
+                        if args.feature_mode == "keep"
+                        else counterfactual_features_fast
+                    )
+                    keyword_arguments = {}
+                    if args.feature_mode == "full":
+                        keyword_arguments = {
+                            "drop_replacement": args.drop_replacement,
+                            "replacement_seed": args.replacement_seed + key[1],
+                            "context_seconds": args.context_seconds,
+                        }
+                    row["candidates"][name]["features"] = extractor(
                         model,
                         processor,
                         wave,
                         query,
                         row["candidates"][name]["prediction"],
-                        drop_replacement=args.drop_replacement,
-                        replacement_seed=args.replacement_seed + key[1],
-                        context_seconds=args.context_seconds,
+                        **keyword_arguments,
                     )
             row["pair_features"] = {
                 name: pair_feature_map(row, name)
@@ -271,4 +281,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -260,6 +260,45 @@ def counterfactual_features(
     }
 
 
+def counterfactual_keep_features_fast(
+    model,
+    processor,
+    wave: np.ndarray,
+    query: str,
+    candidate: Sequence[Sequence[float]],
+    sample_rate: int = 16000,
+    fade_ms: float = 10.0,
+) -> dict[str, float]:
+    """Extract sufficiency-only features with one forward pass per kept interval."""
+    duration = len(wave) / float(sample_rate)
+    intervals = normalize_intervals(candidate, duration)
+    if not intervals:
+        return {
+            "component_mean": -20.0,
+            "component_min": -20.0,
+            "duration_fraction": 0.0,
+            "interval_count": 0.0,
+        }
+    component_scores = [
+        binary_first_token_log_odds(
+            model,
+            processor,
+            intervene_audio(
+                wave, [interval], "keep", sample_rate=sample_rate, fade_ms=fade_ms
+            ),
+            query,
+        )
+        for interval in intervals
+    ]
+    covered = sum(end - start for start, end in intervals)
+    return {
+        "component_mean": float(np.mean(component_scores)),
+        "component_min": float(np.min(component_scores)),
+        "duration_fraction": covered / duration if duration else 0.0,
+        "interval_count": float(len(intervals)),
+    }
+
+
 def counterfactual_features_fast(
     model,
     processor,
@@ -275,48 +314,33 @@ def counterfactual_features_fast(
     """One-pass-per-intervention variant used for full candidate extraction."""
     duration = len(wave) / float(sample_rate)
     intervals = normalize_intervals(candidate, duration)
-    if not intervals:
-        full_score = binary_first_token_log_odds(model, processor, wave, query)
-        return {
-            "component_mean": -20.0,
-            "component_min": -20.0,
-            "complement_no": -full_score,
-            "mean_plus_complement": -20.0 - full_score,
-            "min_plus_complement": -20.0 - full_score,
-            "duration_fraction": 0.0,
-            "interval_count": 0.0,
-        }
-    component_scores = [
-        binary_first_token_log_odds(
-            model,
-            processor,
-            intervene_audio(
-                wave, [interval], "keep", sample_rate=sample_rate, fade_ms=fade_ms
-            ),
-            query,
-        )
-        for interval in intervals
-    ]
-    dropped = intervene_audio(
+    keep = counterfactual_keep_features_fast(
+        model,
+        processor,
         wave,
-        intervals,
-        "drop",
+        query,
+        candidate,
         sample_rate=sample_rate,
         fade_ms=fade_ms,
-        drop_replacement=drop_replacement,
-        replacement_seed=replacement_seed,
-        context_seconds=context_seconds,
     )
-    complement_no = -binary_first_token_log_odds(model, processor, dropped, query)
-    component_mean = float(np.mean(component_scores))
-    component_min = float(np.min(component_scores))
-    covered = sum(end - start for start, end in intervals)
+    if not intervals:
+        full_score = binary_first_token_log_odds(model, processor, wave, query)
+        complement_no = -full_score
+    else:
+        dropped = intervene_audio(
+            wave,
+            intervals,
+            "drop",
+            sample_rate=sample_rate,
+            fade_ms=fade_ms,
+            drop_replacement=drop_replacement,
+            replacement_seed=replacement_seed,
+            context_seconds=context_seconds,
+        )
+        complement_no = -binary_first_token_log_odds(model, processor, dropped, query)
     return {
-        "component_mean": component_mean,
-        "component_min": component_min,
+        **keep,
         "complement_no": complement_no,
-        "mean_plus_complement": component_mean + complement_no,
-        "min_plus_complement": component_min + complement_no,
-        "duration_fraction": covered / duration if duration else 0.0,
-        "interval_count": float(len(intervals)),
+        "mean_plus_complement": keep["component_mean"] + complement_no,
+        "min_plus_complement": keep["component_min"] + complement_no,
     }
