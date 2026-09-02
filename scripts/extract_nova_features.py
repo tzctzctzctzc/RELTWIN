@@ -73,8 +73,8 @@ def main():
     reference = next(iter(candidates.values()))
     for name, rows in candidates.items():
         assert_aligned(reference, rows, candidate_paths[name])
-    if len(manifest) != len(reference):
-        raise ValueError(f"Manifest/prediction count mismatch: {len(manifest)} != {len(reference)}")
+    if len(manifest) < len(reference):
+        raise ValueError(f"Manifest is shorter than predictions: {len(manifest)} < {len(reference)}")
 
     processor = AudioFlamingo3TemporalProcessor.from_pretrained(args.base)
     model = AudioFlamingo3ForTemporalConditionalGeneration.from_pretrained(

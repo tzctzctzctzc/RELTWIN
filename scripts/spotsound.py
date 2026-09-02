@@ -24,6 +24,8 @@ import re
 import torch
 from transformers import AudioFlamingo3ForConditionalGeneration, AudioFlamingo3Processor
 
+from spantool import SPANTOOL_PROMPT, timestamped_audio_expansion
+
 # AF3 emits 25 post-pool audio tokens per second of audio.
 TOKENS_PER_SECOND = 25
 
@@ -36,8 +38,6 @@ DETECTION_PROMPT = (
     "This is a sequence of audio stream. Your task is to identify whether the "
     "sound event in the query occurs. The query is: "
 )
-
-
 class AudioFlamingo3TemporalProcessor(AudioFlamingo3Processor):
     """AF3 processor with SpotSound's timestamp-interleaved audio-token expansion."""
 
@@ -54,6 +54,30 @@ class AudioFlamingo3TemporalProcessor(AudioFlamingo3Processor):
                 for t in range(audio_duration)
             )
             text[i] = audio_token_pattern.sub(lambda _m: expanded, text[i], count=1)
+        return text
+
+
+class AudioFlamingo3SpanToolProcessor(AudioFlamingo3TemporalProcessor):
+    """Query-first processor that preserves the final partial second of audio.
+
+    The official temporal processor expands only complete groups of 25 audio
+    tokens.  SpanTool consumes frame states directly, so dropping the remainder
+    would make the end of every non-integer-duration clip unobservable.
+    """
+
+    def _expand_audio_tokens(self, text, padding_mask, per_sample_windows):
+        audio_lengths = torch.stack(
+            [s.sum() for s in torch.split(padding_mask.sum(-1), per_sample_windows)]
+        )
+        audio_tokens_lengths = self._get_audio_token_length(audio_lengths)
+        audio_token_pattern = re.compile(re.escape(self.audio_token))
+        for index, num_audio_tokens in enumerate(audio_tokens_lengths):
+            expanded = timestamped_audio_expansion(
+                self.audio_token, int(num_audio_tokens), TOKENS_PER_SECOND
+            )
+            text[index] = audio_token_pattern.sub(
+                lambda _match: expanded, text[index], count=1
+            )
         return text
 
 
@@ -124,6 +148,24 @@ def build_conversation(audio, query: str, prompt: str = GROUNDING_PROMPT):
             "content": [
                 audio_content,
                 {"type": "text", "text": prompt + query + " Answer: "},
+            ],
+        }
+    ]
+
+
+def build_spantool_conversation(audio, query: str):
+    """Put the query before audio so causal audio states are query-conditioned."""
+    audio_content = (
+        {"type": "audio", "path": audio}
+        if isinstance(audio, str)
+        else {"type": "audio", "audio": audio}
+    )
+    return [
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": SPANTOOL_PROMPT + query + "\nAudio: "},
+                audio_content,
             ],
         }
     ]

@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import time
 from pathlib import Path
 
@@ -13,6 +12,8 @@ import librosa
 import numpy as np
 import torch
 from peft import PeftModel
+
+from interval_metrics import parse_canonical_intervals
 
 from spotsound import (
     AudioFlamingo3ForTemporalConditionalGeneration,
@@ -22,13 +23,12 @@ from spotsound import (
 )
 
 
-_INTERVAL_RE = re.compile(
-    r"from\s*(-?\d+(?:\.\d+)?)\s*s?\s*(?:econds)?\s*to\s*(-?\d+(?:\.\d+)?)\s*s?",
-    re.I,
-)
-_PAIR_RE = re.compile(
-    r"(-?\d+(?:\.\d+)?)\s*s\s*(?:-|to|–)\s*(-?\d+(?:\.\d+)?)\s*s",
-    re.I,
+AEGBENCH_PROMPT = (
+    'The audio contains the sound event: "{query}". '
+    "List ALL time intervals (start, end in seconds) when this event occurs. "
+    "Reply ONLY with a JSON array inside <answer> tags, "
+    "e.g. <answer>[[0.5, 2.1], [5.0, 7.3]]</answer> or "
+    "<answer>[]</answer> if not present."
 )
 
 
@@ -43,21 +43,37 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--limit", type=int, default=0, help="0 evaluates all remaining rows")
     parser.add_argument("--max-new-tokens", type=int, default=128)
+    parser.add_argument("--prompt-mode", choices=("spotsound", "aegbench"), default="spotsound")
     return parser.parse_args()
 
 
 def parse_intervals(answer: str, duration: float) -> list[tuple[float, float]]:
-    matches = _INTERVAL_RE.findall(answer) or _PAIR_RE.findall(answer)
-    intervals = []
-    for start, end in matches:
-        start_value, end_value = float(start), float(end)
-        if end_value < start_value:
-            start_value, end_value = end_value, start_value
-        start_value = max(0.0, min(start_value, duration))
-        end_value = max(0.0, min(end_value, duration))
-        if end_value - start_value > 1e-3:
-            intervals.append((start_value, end_value))
-    return intervals
+    return parse_canonical_intervals(answer, duration)
+
+
+def resolve_audio_path(audio_dir: Path, item: dict) -> Path:
+    relative = Path(item["audio_path"])
+    candidates = [audio_dir / relative, audio_dir / relative.name]
+    for base in list(candidates):
+        candidates.extend(base.with_suffix(suffix) for suffix in (".wav", ".flac", ".mp3"))
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    return candidates[0]
+
+
+def make_conversation(wav: np.ndarray, query: str, prompt_mode: str):
+    if prompt_mode == "spotsound":
+        return build_conversation(wav, query, prompt=GROUNDING_PROMPT)
+    return [
+        {
+            "role": "user",
+            "content": [
+                {"type": "audio", "audio": wav},
+                {"type": "text", "text": AEGBENCH_PROMPT.format(query=query)},
+            ],
+        }
+    ]
 
 
 def merge_intervals(intervals: list[list[float]] | list[tuple[float, float]]):
@@ -118,9 +134,9 @@ def main() -> int:
     stop = len(annotations) if args.limit <= 0 else min(len(annotations), args.start + args.limit)
     selected_indices = list(range(args.start, stop))
     missing = [
-        Path(annotations[index]["audio_path"]).name
+        annotations[index]["audio_path"]
         for index in selected_indices
-        if not (args.audio_dir / Path(annotations[index]["audio_path"]).name).is_file()
+        if not resolve_audio_path(args.audio_dir, annotations[index]).is_file()
     ]
     if missing:
         raise FileNotFoundError(f"Missing {len(missing)} audio files; first five: {missing[:5]}")
@@ -151,11 +167,11 @@ def main() -> int:
             if index in completed:
                 continue
             item = annotations[index]
-            audio_path = args.audio_dir / Path(item["audio_path"]).name
+            audio_path = resolve_audio_path(args.audio_dir, item)
             wav, _ = librosa.load(audio_path, sr=16000, mono=True)
             wav = np.asarray(wav, dtype=np.float32)
             duration = len(wav) / 16000.0
-            conversation = build_conversation(wav, item["caption"], prompt=GROUNDING_PROMPT)
+            conversation = make_conversation(wav, item["caption"], args.prompt_mode)
             inputs = processor.apply_chat_template(
                 conversation,
                 tokenize=True,
@@ -191,6 +207,10 @@ def main() -> int:
                 "input_tokens": int(inputs["input_ids"].shape[1]),
                 "inference_seconds": elapsed,
                 "peak_gpu_memory_mib": torch.cuda.max_memory_allocated() / 2**20,
+                "benchmark": item.get("benchmark"),
+                "benchmark_id": item.get("benchmark_id", item.get("qid")),
+                "category": item.get("category"),
+                "hardcase_tags": item.get("hardcase_tags", []),
             }
             output_handle.write(json.dumps(record, ensure_ascii=False) + "\n")
             output_handle.flush()
@@ -204,6 +224,7 @@ def main() -> int:
         "adapter": str(args.adapter.resolve()),
         "torch": torch.__version__,
         "device": torch.cuda.get_device_name(0),
+        "prompt_mode": args.prompt_mode,
         "load_seconds": load_seconds,
         "expected_count": len(selected_indices),
         "completed_count": len(records),

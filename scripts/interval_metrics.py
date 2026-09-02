@@ -262,3 +262,50 @@ def setpo_quality(ground_truth: Sequence[Interval], prediction: Sequence[Interva
     _, _, soft_f1 = soft_precision_recall(ground_truth, prediction)
     return 0.5 * temporal_set_iou(ground_truth, prediction) + 0.5 * soft_f1
 
+
+def _threshold_margin(
+    ground_truth: Sequence[Interval], prediction: Sequence[Interval], threshold: float
+) -> float:
+    """Continuous precision/recall margin above an evaluation IoU threshold."""
+
+    def margin(interval: Interval, choices: Sequence[Interval]) -> float:
+        best = max((interval_iou(interval, other) for other in choices), default=0.0)
+        return max(0.0, min(1.0, (best - threshold) / (1.0 - threshold)))
+
+    recall = (
+        sum(margin(gt, prediction) for gt in ground_truth) / len(ground_truth)
+        if ground_truth
+        else 0.0
+    )
+    precision = (
+        sum(margin(pred, ground_truth) for pred in prediction) / len(prediction)
+        if prediction
+        else 0.0
+    )
+    return 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+
+
+def setpo_quality_axes(
+    ground_truth: Sequence[Interval],
+    prediction: Sequence[Interval],
+    duration: float | None = None,
+) -> tuple[float, float, float, float]:
+    """Independent SetPO axes: coverage, threshold margin, count, and boundaries."""
+    gt = normalize_intervals(ground_truth, duration)
+    pred = normalize_intervals(prediction, duration)
+    set_iou = temporal_set_iou(gt, pred)
+    threshold_margin = sum(_threshold_margin(gt, pred, value) for value in (0.3, 0.5)) / 2
+
+    largest_count = max(len(gt), len(pred), 1)
+    cardinality = 1.0 - abs(len(gt) - len(pred)) / largest_count
+
+    if not gt or not pred:
+        boundary = float(not gt and not pred)
+    else:
+        errors = []
+        for start, end in gt:
+            matched = max(pred, key=lambda item: interval_iou((start, end), item))
+            scale = max(end - start, 0.1)
+            errors.append((abs(start - matched[0]) + abs(end - matched[1])) / (2 * scale))
+        boundary = math.exp(-sum(errors) / len(errors))
+    return set_iou, threshold_margin, cardinality, boundary

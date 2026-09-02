@@ -6,6 +6,7 @@ from setpo_candidates import (
     candidate_qualities,
     ordinary_candidates,
     relation_candidates,
+    scale_cardinality_candidates,
 )
 
 
@@ -31,6 +32,15 @@ class SetPOCandidateTests(unittest.TestCase):
         self.assertTrue(all(qualities[0] > value for value in qualities[1:]))
         self.assertEqual(len(candidates[2]), 1)
         self.assertGreater(len(candidates[4]), len(ground_truth))
+
+    def test_scale_cardinality_candidates_cover_asymmetric_boundaries(self):
+        ground_truth = [(2.0, 4.0), (8.0, 10.0)]
+        candidates = scale_cardinality_candidates(ground_truth, 14.0, 0.15)
+        self.assertEqual(candidates[0], ground_truth)
+        self.assertTrue(any(len(candidate) < len(ground_truth) for candidate in candidates))
+        self.assertTrue(any(len(candidate) > len(ground_truth) for candidate in candidates))
+        self.assertTrue(any(candidate[0][0] < ground_truth[0][0] for candidate in candidates if candidate))
+        self.assertTrue(any(candidate[0][1] < ground_truth[0][1] for candidate in candidates if candidate))
 
 
 if __name__ == "__main__":

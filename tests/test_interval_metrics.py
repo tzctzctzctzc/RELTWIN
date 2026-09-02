@@ -8,6 +8,7 @@ from interval_metrics import (
     parse_canonical_intervals,
     parse_spotsound_intervals,
     setpo_quality,
+    setpo_quality_axes,
     soft_precision_recall,
     temporal_set_iou,
 )
@@ -46,6 +47,16 @@ class IntervalMetricTests(unittest.TestCase):
         dense = setpo_quality(ground_truth, [(0.0, 10.0)])
         self.assertGreater(exact, dropped)
         self.assertGreater(dropped, dense)
+
+    def test_pareto_axes_separate_boundary_and_cardinality_errors(self):
+        ground_truth = [(1.0, 3.0), (7.0, 9.0)]
+        exact = setpo_quality_axes(ground_truth, ground_truth, 12.0)
+        shifted = setpo_quality_axes(ground_truth, [(0.5, 3.0), (6.5, 9.0)], 12.0)
+        dropped = setpo_quality_axes(ground_truth, [(1.0, 3.0)], 12.0)
+        self.assertEqual(exact, (1.0, 1.0, 1.0, 1.0))
+        self.assertLess(shifted[3], exact[3])
+        self.assertEqual(shifted[2], 1.0)
+        self.assertLess(dropped[2], exact[2])
 
 
 if __name__ == "__main__":
