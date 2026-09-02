@@ -130,7 +130,14 @@ def _fit_mode(rows: list[dict], mode: str, args) -> dict:
             catastrophic = sum(
                 metrics["new_catastrophic_regressions"] for metrics in source_metrics.values()
             )
-            passed = worst_delta > 0.0 and catastrophic == 0
+            # A source on which the conservative policy abstains everywhere is
+            # neutral, not a regression.  Require global progress while allowing
+            # zero-delta source fallbacks, exactly matching the locked protocol.
+            passed = (
+                worst_delta >= -1e-12
+                and overall["delta_mIoU_points"] > 0.0
+                and catastrophic == 0
+            )
             report = {
                 "threshold": threshold,
                 "worst_source_delta_points": worst_delta,

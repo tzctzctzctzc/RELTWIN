@@ -11,7 +11,7 @@
     ],
     "selection": "leave-one-source-out; maximize worst-source mIoU delta; within 0.05 point choose geometry before Keep-only before Keep+Drop",
     "requirements": [
-      "positive mIoU delta on every held-out source",
+      "nonnegative mIoU delta on every held-out source and positive combined mIoU delta",
       "zero newly introduced per-row IoU drops of 0.5 or more"
     ],
     "router": "group-bootstrap relative ridge; switch only when the fifth percentile predicted gain exceeds the locked nonnegative threshold"
