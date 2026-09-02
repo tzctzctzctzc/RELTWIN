@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create source-disjoint dev splits and unbiased stratified evaluation gates."""
+"""Create rendered-audio-disjoint dev splits and stratified evaluation gates."""
 
 from __future__ import annotations
 

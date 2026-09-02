@@ -69,7 +69,7 @@ def test_conditional_nll_prefers_gold_set():
         scores[2, 2] = 4.0
         scores[0, 2] = 1.0
     loss = conditional_segmental_nll(scores, [(0, 0), (2, 2)])
-    assert 0 <= float(loss) < 0.1
+    assert 0 <= float(loss.detach()) < 0.1
     loss.backward()
     assert torch.isfinite(scores.grad).all()
 
