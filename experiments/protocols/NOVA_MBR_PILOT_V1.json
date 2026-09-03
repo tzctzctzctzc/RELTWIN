@@ -1,0 +1,63 @@
+{
+  "protocol": "NOVA-MBR-PILOT-V1",
+  "seed": 20260903,
+  "run_dir": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/nova_mbr_pilot_v1",
+  "base": "/root/autodl-tmp/SpotSound-ICASSP/models/audio-flamingo-3-hf",
+  "adapter": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/e002_matched_pipeline_corrected/seed_1/setpo/adapter",
+  "spantool_checkpoint": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/spantool_v1/expanded_standard_v2_s20260902/best",
+  "radii_seconds": [0.25, 0.5, 1.0, 2.0],
+  "fixed_thresholds": [0.3, 0.4, 0.5, 0.6, 0.7],
+  "bootstrap_calibrators": 200,
+  "evaluation_bootstrap_samples": 10000,
+  "development": {
+    "longneedle": {
+      "manifest": "results/e004_longneedle/development_manifest.json",
+      "features": "results/e004_longneedle/features.jsonl",
+      "router_model": "results/e004_longneedle/router.json",
+      "audio_dir": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio"
+    },
+    "clotho": {
+      "benchmark": "Clotho-Moment-development",
+      "manifest": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/spantool_v1/clotho_dev.json",
+      "incumbent": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/spantool_v1/dev_baselines/clotho/predictions.jsonl",
+      "incumbent_name": "official",
+      "audio_dir": "/root/autodl-tmp/SpotSound-ICASSP/datasets/Clotho-Moment/train_subset/materialized_full/audio"
+    },
+    "sc": {
+      "benchmark": "SC-development",
+      "manifest": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/spantool_v1/sc_dev.json",
+      "incumbent": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/spantool_v1/dev_baselines/sc/predictions.jsonl",
+      "incumbent_name": "official",
+      "audio_dir": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/sc_rehearsal_v1/audio"
+    }
+  },
+  "pilots": {
+    "spotsound": {
+      "benchmark": "SpotSound-Bench",
+      "manifest": "/root/autodl-tmp/SpotSound-ICASSP/datasets/SpotSound-Bench/annotations_processed.json",
+      "incumbent": "results/e004_longneedle/public_predictions.jsonl",
+      "incumbent_name": "E004_NOVA",
+      "audio_dir": "/root/autodl-tmp/SpotSound-ICASSP/datasets/SpotSound-Bench/audio",
+      "expected_full_miou": 59.32854803009654,
+      "size": 100,
+      "smoke_size": 10,
+      "exclude": [
+        "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/nova_safe_v2/data/spotsound_pilot100.json"
+      ]
+    },
+    "clotho": {
+      "benchmark": "Clotho-Moment",
+      "manifest": "/root/autodl-tmp/SpotSound-ICASSP/datasets/Clotho-Moment/annotations_processed.json",
+      "incumbent": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/external_public_v1/clotho_moment/official/predictions.jsonl",
+      "incumbent_name": "official",
+      "audio_dir": "/root/autodl-tmp/SpotSound-ICASSP/datasets/Clotho-Moment/audio",
+      "expected_full_miou": 86.85426304851973,
+      "size": 1000,
+      "smoke_size": 10,
+      "exclude": [
+        "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/nova_safe_v2/data/clotho_pilot1000.json",
+        "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/spantool_v1/clotho_gate1000.json"
+      ]
+    }
+  }
+}
