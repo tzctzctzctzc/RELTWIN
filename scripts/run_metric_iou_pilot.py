@@ -569,6 +569,7 @@ def command_select(args) -> None:
     radii = [float(value) for value in config["radii_seconds"]]
     thresholds = [float(value) for value in config["fixed_thresholds"]]
     candidates = {}
+    diagnostics: dict[float, list[dict]] = {radius: [] for radius in radii}
     calibrator_samples = int(config["bootstrap_calibrators"])
     for radius in radii:
         candidates[str(radius)] = {"sources": {}, "pooled_dinkelbach": [], "pooled_threshold": [], "pooled_records": []}
@@ -618,6 +619,33 @@ def command_select(args) -> None:
                 "dinkelbach_switches": sum(item.switch for item in d_results),
                 "threshold_switches": sum(item.switch for item in t_results),
             }
+            for record, d_result, t_result in zip(heldout_rows, d_results, t_results):
+                incumbent_iou = temporal_set_iou(record["annotations"], record["incumbent_prediction"])
+                d_iou = temporal_set_iou(record["annotations"], d_result.selected)
+                t_iou = temporal_set_iou(record["annotations"], t_result.selected)
+                diagnostics[radius].append(
+                    {
+                        "source": heldout,
+                        "source_index": int(record["source_index"]),
+                        "audio_group": _audio_group(record),
+                        "query": record["caption"],
+                        "ground_truth": record["annotations"],
+                        "incumbent_prediction": record["incumbent_prediction"],
+                        "dinkelbach_candidate": d_result.candidate,
+                        "dinkelbach_prediction": d_result.selected,
+                        "fixed_threshold_prediction": t_result.selected,
+                        "incumbent_iou": incumbent_iou,
+                        "dinkelbach_iou": d_iou,
+                        "fixed_threshold_iou": t_iou,
+                        "delta_iou": d_iou - incumbent_iou,
+                        "dinkelbach_minus_threshold_iou": d_iou - t_iou,
+                        "dinkelbach_switch": d_result.switch,
+                        "fixed_threshold_switch": t_result.switch,
+                        "gain_lower_quantile": d_result.gain_lower_quantile,
+                        "abstain_reason": d_result.abstain_reason,
+                        "radius_seconds": radius,
+                    }
+                )
             candidates[key]["pooled_records"].extend(heldout_rows)
             candidates[key]["pooled_dinkelbach"].extend(d_predictions)
             candidates[key]["pooled_threshold"].extend(item.selected for item in t_results)
@@ -685,6 +713,45 @@ def command_select(args) -> None:
     report = {"development_gate_passed": selected_radius is not None, "selected_radius_seconds": selected_radius, "radii": candidates}
     _write_json(args.output, artifact)
     _write_json(args.report, report)
+    diagnostic_radius = max(
+        radii, key=lambda radius: candidates[str(radius)]["combined_dinkelbach"]["delta_mIoU_points"]
+    )
+    if args.diagnostics_dir is not None:
+        for radius in radii:
+            _write_jsonl(args.diagnostics_dir / f"radius_{radius}.jsonl", diagnostics[radius])
+        failure_rows = []
+        for row in diagnostics[diagnostic_radius]:
+            category = None
+            if row["delta_iou"] <= -0.5:
+                category = "catastrophic_wrong_window"
+            elif row["dinkelbach_switch"] and row["delta_iou"] < 0:
+                category = "false_switch"
+            elif not row["dinkelbach_switch"] and temporal_set_iou(
+                row["ground_truth"], row["dinkelbach_candidate"]
+            ) > row["incumbent_iou"] + 1e-12:
+                category = "missed_rescue"
+            if category:
+                failure_rows.append(dict(row, failure_category=category))
+        failure_rows.sort(key=lambda row: (row["delta_iou"], row["source"], row["source_index"]))
+        _write_jsonl(args.diagnostics_dir / "development_failures.jsonl", failure_rows)
+        report["diagnostic_radius_seconds"] = diagnostic_radius
+        report["diagnostics_sha256"] = file_sha256(args.diagnostics_dir / f"radius_{diagnostic_radius}.jsonl")
+        report["failures_sha256"] = file_sha256(args.diagnostics_dir / "development_failures.jsonl")
+        _write_json(args.report, report)
+    if args.promotion is not None:
+        _write_json(
+            args.promotion,
+            {
+                "decision": "READY_FOR_SMOKE" if selected_radius is not None else "DO_NOT_PROMOTE",
+                "stage": "development",
+                "public_smoke_started": False,
+                "public_pilot_started": False,
+                "selected_radius_seconds": selected_radius,
+                "diagnostic_radius_seconds": diagnostic_radius,
+                "reasons": [] if selected_radius is not None else ["development_gate_failed"],
+                "report_sha256": file_sha256(args.report),
+            },
+        )
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
@@ -880,6 +947,8 @@ def parse_args():
     select.add_argument("--logits", type=Path, action="append", required=True)
     select.add_argument("--output", type=Path, required=True)
     select.add_argument("--report", type=Path, required=True)
+    select.add_argument("--diagnostics-dir", type=Path)
+    select.add_argument("--promotion", type=Path)
     select.set_defaults(function=command_select)
 
     decode = subparsers.add_parser("decode")
