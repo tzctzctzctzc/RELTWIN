@@ -417,6 +417,10 @@ def command_export(args) -> None:
                     "primary_steps": primary_steps,
                     "fine_steps": fine_steps,
                     "occupancy_logits": head_output["occupancy_logits"][0, :primary_steps].float().cpu().tolist(),
+                    "onset_logits": head_output["onset_logits"][0, :primary_steps].float().cpu().tolist(),
+                    "offset_logits": head_output["offset_logits"][0, :primary_steps].float().cpu().tolist(),
+                    "fine_onset_logits": head_output["fine_onset_logits"][0, :fine_steps].float().cpu().tolist(),
+                    "fine_offset_logits": head_output["fine_offset_logits"][0, :fine_steps].float().cpu().tolist(),
                     "inference_seconds": time.perf_counter() - started,
                     "audio_sha256": file_sha256(audio_path),
                     "input_hash": hashlib.sha256(
