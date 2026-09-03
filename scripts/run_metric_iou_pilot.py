@@ -768,14 +768,16 @@ def _validate_logit_alignment(manifest: Sequence[dict], records: Sequence[dict])
 
 def command_decode(args) -> None:
     artifact = _json(args.calibrator)
-    if not artifact["development_gate_passed"]:
+    if not artifact["development_gate_passed"] and not args.diagnostic_override:
         raise RuntimeError("development gate failed; pilot decoding is forbidden")
+    if args.diagnostic_override and args.radius_seconds is None:
+        raise ValueError("--diagnostic-override requires --radius-seconds")
     manifest, records = _json(args.manifest), _jsonl(args.logits)
     _validate_logit_alignment(manifest, records)
     by_index = _strict_index(records, "logits")
     ordered = [by_index[int(row["source_index"])] for row in manifest]
-    radius = float(artifact["selected_radius_seconds"])
-    threshold = float(artifact["selected_fixed_threshold"])
+    radius = float(args.radius_seconds) if args.diagnostic_override else float(artifact["selected_radius_seconds"])
+    threshold = float(args.fixed_threshold) if args.diagnostic_override else float(artifact["selected_fixed_threshold"])
     config_hash = artifact["config_sha256"]
     output = []
     for record in ordered:
@@ -827,6 +829,8 @@ def command_decode(args) -> None:
                 "checkpoint_hash": record["export_id"],
                 "input_hash": record["input_hash"],
                 "config_hash": config_hash,
+                "diagnostic_override": bool(args.diagnostic_override),
+                "development_gate_passed": bool(artifact["development_gate_passed"]),
             }
         )
     _write_jsonl(args.output, output)
@@ -841,6 +845,7 @@ def command_evaluate(args) -> None:
     incumbent = np.asarray([row["incumbent_iou"] for row in rows])
     selected = np.asarray([row["selected_iou"] for row in rows])
     threshold = np.asarray([row["fixed_threshold_iou"] for row in rows])
+    diagnostic_only = any(bool(row.get("diagnostic_override")) for row in rows)
     delta = selected - incumbent
     event_f1 = [event_f1_iou(row["ground_truth"], row["selected_prediction"], 0.5)["f1"] for row in rows]
     shifts = [
@@ -882,12 +887,18 @@ def command_evaluate(args) -> None:
             "positive_delta": float(delta.mean()) > 0,
             "zero_catastrophic": int((delta <= -0.5).sum()) == 0,
             "beats_fixed_threshold": float(selected.mean()) > float(threshold.mean()),
+            "diagnostic_only": diagnostic_only,
         },
         "predictions_sha256": file_sha256(args.predictions),
         "seed": args.seed,
         "bootstrap_samples": args.bootstrap_samples,
     }
-    report["promotion_gate"]["passed"] = all(report["promotion_gate"].values())
+    report["promotion_gate"]["passed"] = (
+        report["promotion_gate"]["positive_delta"]
+        and report["promotion_gate"]["zero_catastrophic"]
+        and report["promotion_gate"]["beats_fixed_threshold"]
+        and not diagnostic_only
+    )
     failures = []
     for row in rows:
         category = None
@@ -956,6 +967,9 @@ def parse_args():
     decode.add_argument("--logits", type=Path, required=True)
     decode.add_argument("--calibrator", type=Path, required=True)
     decode.add_argument("--output", type=Path, required=True)
+    decode.add_argument("--diagnostic-override", action="store_true")
+    decode.add_argument("--radius-seconds", type=float)
+    decode.add_argument("--fixed-threshold", type=float, default=0.5)
     decode.set_defaults(function=command_decode)
 
     evaluate = subparsers.add_parser("evaluate")
