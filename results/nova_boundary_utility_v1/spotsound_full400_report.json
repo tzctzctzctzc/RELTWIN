@@ -1,0 +1,44 @@
+{
+  "benchmark": "SpotSound-Bench",
+  "rows": 400,
+  "audio_groups": 387,
+  "incumbent_mIoU_percent": 59.32854803009654,
+  "nova_mbr_mIoU_percent": 59.38551086382214,
+  "delta_mIoU_points": 0.05696283372560321,
+  "delta_mIoU_audio_group_bootstrap_95ci": [
+    -0.11466738999178404,
+    0.23625970682701658
+  ],
+  "fixed_threshold_mIoU_percent": 59.32854803009654,
+  "dinkelbach_minus_threshold_points": 0.05696283372560451,
+  "R1@0.3_percent": 79.25,
+  "R1@0.5_percent": 62.5,
+  "R1@0.7_percent": 42.5,
+  "event_F1@0.5_percent": 57.37837301587302,
+  "wins": 20,
+  "ties": 365,
+  "losses": 15,
+  "new_catastrophic_regressions": 0,
+  "switches": 36,
+  "switch_rate": 0.09,
+  "abstain_reasons": {
+    "gain_lower_bound_below_margin": 360,
+    "identity_or_non_positive_gain": 4
+  },
+  "boundary_shift_seconds": {
+    "mean": 0.028580172413793115,
+    "p95": 0.2359999999999971,
+    "max": 0.25
+  },
+  "alignment_valid": true,
+  "promotion_gate": {
+    "positive_delta": true,
+    "zero_catastrophic": true,
+    "beats_fixed_threshold": true,
+    "diagnostic_only": false,
+    "passed": true
+  },
+  "predictions_sha256": "5651d83d0b7310917808fce125f5bd1c274a83c4a65660966d7b9360bbaaac92",
+  "seed": 20260903,
+  "bootstrap_samples": 10000
+}
