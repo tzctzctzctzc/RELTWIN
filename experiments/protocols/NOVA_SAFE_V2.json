@@ -1,0 +1,46 @@
+{
+  "name": "NOVA-Safe v2 common-failure repair",
+  "status": "locked_before_pilot_scoring",
+  "seed": 20260902,
+  "feature_schema_version": "nova-safe-v2",
+  "development": {
+    "sources": [
+      "LongNeedle-ESC50",
+      "Clotho development",
+      "SC development"
+    ],
+    "selection": "leave-one-source-out; maximize worst-source mIoU delta; within 0.05 point choose geometry before Keep-only before Keep+Drop",
+    "requirements": [
+      "nonnegative mIoU delta on every held-out source and positive combined mIoU delta",
+      "zero newly introduced per-row IoU drops of 0.5 or more"
+    ],
+    "router": "group-bootstrap relative ridge; switch only when the fifth percentile predicted gain exceeds the locked nonnegative threshold"
+  },
+  "pilots": {
+    "Clotho-Moment": {
+      "rows": 1000,
+      "incumbent": "official",
+      "candidate_pool": ["official", "SetPO seed 1"]
+    },
+    "SpotSound-Bench": {
+      "rows": 100,
+      "incumbent": "E004 locked NOVA",
+      "candidate_pool": ["E004 locked NOVA", "official", "ordinary SFT seed 0", "SetPO seed 1"]
+    },
+    "sampling": "exact-size deterministic stratification with all queries from an audio kept in one group",
+    "promotion": "both pilots must have delta_mIoU > 0 and zero newly introduced per-row IoU drops of 0.5 or more"
+  },
+  "full_evaluation": {
+    "condition": "only after both pilot reports pass without changing code, model, feature set, or threshold",
+    "rows": {
+      "Clotho-Moment": 6649,
+      "SpotSound-Bench": 400
+    },
+    "incumbent_full_mIoU_percent": {
+      "Clotho-Moment": 86.85426304851973,
+      "SpotSound-Bench": 59.32854803009654
+    },
+    "failure_action": "leave all incumbent pointers and claim ledgers unchanged; preserve the rejected run as diagnostic evidence"
+  },
+  "disclosure": "Both public benchmarks were observed by prior experiments. These pilots and any full rerun are iterative evidence, not pristine confirmatory tests. Pilot labels are never used to fit or tune the router that is evaluated on them."
+}
