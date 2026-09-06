@@ -1,0 +1,21 @@
+{
+  "benchmark": "AEGBench-public-v3-positive-query-expansion",
+  "public_revision": "49a1d919b6df6717c4a34ef9c01e75aa4b3fc8a5",
+  "audio_groups": 3424,
+  "queries": 9924,
+  "leaderboard_comparable": false,
+  "incumbent_raw_set_mIoU_percent": 44.80320073713895,
+  "nova_raw_set_mIoU_percent": 45.276990549084736,
+  "delta_mIoU_points": 0.4737898119457815,
+  "delta_audio_group_bootstrap_95ci": [
+    0.39786309101672207,
+    0.5541119165091154
+  ],
+  "wins": 497,
+  "ties": 9307,
+  "losses": 120,
+  "switches": 661,
+  "new_catastrophic_regressions": 0,
+  "selected_predictions_sha256": "da410b790d19fe27925cb7e38091c9d77d64ae53568d31c68973eecc28eebea32",
+  "note": "Complete public-v3 diagnostic expansion; counts differ from the paper table and therefore must not be presented as its official leaderboard score."
+}

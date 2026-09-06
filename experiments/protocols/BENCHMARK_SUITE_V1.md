@@ -21,6 +21,11 @@ frozen NOVA model, boundary model, confidence margin, or adaptive radius:
 - DESED public evaluation: query rows are constructed by grouping the official
   strong labels by `(audio file, event label)` and retaining all disjoint
   intervals for that query.
+- LAT-Bench English TAG: 104 long-form audio files and 426 released queries.
+  The fixed prompt wrapper is removed before the semantic query is passed to
+  the SpotSound harness, while the full released prompt is retained in each
+  normalized row for audit.  Direct full-context inference is smoke-tested
+  before any long-audio chunking policy is considered.
 
 Every benchmark first runs the locked SpotSound-A adapter to create the
 incumbent, then exports the frozen SpanTool evidence and applies the locked

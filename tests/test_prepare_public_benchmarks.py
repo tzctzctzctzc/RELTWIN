@@ -6,6 +6,8 @@ from prepare_public_benchmarks import (
     prepare_amr_jsonl,
     prepare_audiogrounding,
     prepare_clotho,
+    prepare_lat_tag,
+    parse_lat_timestamp,
 )
 
 
@@ -126,3 +128,86 @@ def test_prepare_amr_jsonl_rejects_duplicate_qid(tmp_path):
         assert "Duplicate qid" in str(error)
     else:
         raise AssertionError("duplicate qid was accepted")
+
+
+def test_prepare_lat_tag_strips_only_fixed_instruction_wrapper(tmp_path):
+    metadata = tmp_path / "meta.jsonl"
+    metadata.write_text(
+        json.dumps({"id": "Bench_EN_1", "duration": 1225.712}) + "\n",
+        encoding="utf-8",
+    )
+    source = tmp_path / "tag.jsonl"
+    source.write_text(
+        json.dumps(
+            {
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": (
+                            "<audio>Please listen to the audio carefully and locate "
+                            "the section where a person whistles while a dog barks. "
+                            "Please strictly output the result in the format of "
+                            "[Start Time - End Time]. Do not output any extra explanatory text."
+                        ),
+                    },
+                    {"role": "assistant", "content": "[11:13 - 12:13]"},
+                ],
+                "audios": ["Bench_EN_1"],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    rows = prepare_lat_tag(source, metadata, language="en")
+    assert rows == [
+        {
+            "benchmark": "LAT-Bench-EN-TAG",
+            "qid": "Bench_EN_1:673-733",
+            "audio_group": "Bench_EN_1",
+            "audio_path": "Bench_EN_1.wav",
+            "caption": "the section where a person whistles while a dog barks.",
+            "annotations": [[673.0, 733.0]],
+            "duration": 1225.712,
+            "released_prompt": (
+                "<audio>Please listen to the audio carefully and locate "
+                "the section where a person whistles while a dog barks. "
+                "Please strictly output the result in the format of "
+                "[Start Time - End Time]. Do not output any extra explanatory text."
+            ),
+        }
+    ]
+
+
+def test_parse_lat_timestamp_supports_hour_form_and_rejects_invalid():
+    assert parse_lat_timestamp("01:02:03") == 3723.0
+    try:
+        parse_lat_timestamp("12:60")
+    except ValueError as error:
+        assert "Invalid LAT timestamp" in str(error)
+    else:
+        raise AssertionError("invalid LAT timestamp was accepted")
+
+
+def test_prepare_lat_tag_requires_metadata(tmp_path):
+    metadata = tmp_path / "meta.jsonl"
+    metadata.write_text("", encoding="utf-8")
+    source = tmp_path / "tag.jsonl"
+    source.write_text(
+        json.dumps(
+            {
+                "messages": [
+                    {"role": "user", "content": "unsupported"},
+                    {"role": "assistant", "content": "[00:01 - 00:02]"},
+                ],
+                "audios": ["missing"],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    try:
+        prepare_lat_tag(source, metadata, language="en")
+    except ValueError as error:
+        assert "Missing LAT metadata" in str(error)
+    else:
+        raise AssertionError("LAT record without metadata was accepted")

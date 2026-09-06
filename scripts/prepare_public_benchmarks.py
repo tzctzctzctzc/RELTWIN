@@ -5,8 +5,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
+
+
+LAT_PROMPT_PREFIX = "<audio>Please listen to the audio carefully and locate "
+LAT_PROMPT_SUFFIX = (
+    " Please strictly output the result in the format of "
+    "[Start Time - End Time]. Do not output any extra explanatory text."
+)
+LAT_INTERVAL = re.compile(
+    r"^\[(?P<start>\d{2}:\d{2}(?::\d{2})?)\s*-\s*"
+    r"(?P<end>\d{2}:\d{2}(?::\d{2})?)\]$"
+)
 
 
 def clotho_audio_name(vid: str) -> str:
@@ -81,6 +93,108 @@ def prepare_amr_jsonl(source: Path, *, benchmark: str) -> list[dict]:
     return rows
 
 
+def parse_lat_timestamp(value: str) -> float:
+    parts = [int(part) for part in value.split(":")]
+    if len(parts) == 2:
+        minutes, seconds = parts
+        hours = 0
+    elif len(parts) == 3:
+        hours, minutes, seconds = parts
+    else:
+        raise ValueError(f"Unsupported LAT timestamp: {value!r}")
+    if minutes >= 60 or seconds >= 60:
+        raise ValueError(f"Invalid LAT timestamp: {value!r}")
+    return float(hours * 3600 + minutes * 60 + seconds)
+
+
+def prepare_lat_tag(source: Path, metadata: Path, *, language: str) -> list[dict]:
+    """Normalize LAT-Bench temporal-audio-grounding conversations.
+
+    The released task prompt wraps its semantic query in fixed generation
+    instructions.  The SpotSound harness already supplies an output-format
+    instruction, so only that fixed wrapper is removed; the complete semantic
+    description is preserved verbatim.
+    """
+    durations: dict[str, float] = {}
+    for line_number, line in enumerate(
+        metadata.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if not line.strip():
+            continue
+        item = json.loads(line)
+        audio_id = str(item["id"])
+        if audio_id in durations:
+            raise ValueError(
+                f"Duplicate LAT metadata id {audio_id!r} at line {line_number}"
+            )
+        durations[audio_id] = float(item["duration"])
+
+    rows = []
+    seen_qids: set[str] = set()
+    for line_number, line in enumerate(
+        source.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if not line.strip():
+            continue
+        item = json.loads(line)
+        messages = item.get("messages", [])
+        audio_ids = item.get("audios", [])
+        if (
+            len(messages) != 2
+            or messages[0].get("role") != "user"
+            or messages[1].get("role") != "assistant"
+            or len(audio_ids) != 1
+        ):
+            raise ValueError(f"Unexpected LAT record at line {line_number}")
+
+        audio_id = str(audio_ids[0])
+        if audio_id not in durations:
+            raise ValueError(
+                f"Missing LAT metadata for {audio_id!r} at line {line_number}"
+            )
+        raw_prompt = str(messages[0]["content"])
+        if not raw_prompt.startswith(LAT_PROMPT_PREFIX) or not raw_prompt.endswith(
+            LAT_PROMPT_SUFFIX
+        ):
+            raise ValueError(f"Unexpected LAT prompt template at line {line_number}")
+        caption = raw_prompt[
+            len(LAT_PROMPT_PREFIX) : len(raw_prompt) - len(LAT_PROMPT_SUFFIX)
+        ].strip()
+        if not caption:
+            raise ValueError(f"Empty LAT semantic query at line {line_number}")
+
+        raw_interval = str(messages[1]["content"]).strip()
+        match = LAT_INTERVAL.fullmatch(raw_interval)
+        if match is None:
+            raise ValueError(f"Unexpected LAT answer at line {line_number}: {raw_interval!r}")
+        start = parse_lat_timestamp(match.group("start"))
+        end = parse_lat_timestamp(match.group("end"))
+        duration = durations[audio_id]
+        if start < 0 or end <= start or end > duration + 1.0:
+            raise ValueError(
+                f"Invalid LAT interval {[start, end]} for duration {duration} "
+                f"at line {line_number}"
+            )
+
+        qid = f"{audio_id}:{start:g}-{end:g}"
+        if qid in seen_qids:
+            raise ValueError(f"Duplicate LAT qid {qid!r} at line {line_number}")
+        seen_qids.add(qid)
+        rows.append(
+            {
+                "benchmark": f"LAT-Bench-{language.upper()}-TAG",
+                "qid": qid,
+                "audio_group": audio_id,
+                "audio_path": f"{audio_id}.wav",
+                "caption": caption,
+                "annotations": [[start, end]],
+                "duration": duration,
+                "released_prompt": raw_prompt,
+            }
+        )
+    return rows
+
+
 def prepare_aegbench(source: Path) -> list[dict]:
     items = json.loads(source.read_text(encoding="utf-8"))
     if isinstance(items, dict):
@@ -143,10 +257,16 @@ def parse_args() -> argparse.Namespace:
             "audiogrounding",
             "unav100-subset",
             "tut2017",
+            "lat-bench-en-tag",
         ),
         required=True,
     )
     parser.add_argument("--source", type=Path, required=True)
+    parser.add_argument(
+        "--metadata",
+        type=Path,
+        help="Required metadata JSONL for LAT-Bench.",
+    )
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -163,14 +283,20 @@ def main() -> None:
         "tut2017": lambda source: prepare_amr_jsonl(
             source, benchmark="TUT-Sound-Events-2017"
         ),
-    }[args.benchmark]
-    rows = prepare(args.source)
+    }.get(args.benchmark)
+    if args.benchmark == "lat-bench-en-tag":
+        if args.metadata is None:
+            raise ValueError("--metadata is required for LAT-Bench")
+        rows = prepare_lat_tag(args.source, args.metadata, language="en")
+    else:
+        rows = prepare(args.source)
     expected = {
         "clotho-moment": 6649,
         "aegbench": 9924,
         "audiogrounding": 997,
         "unav100-subset": 100,
         "tut2017": 104,
+        "lat-bench-en-tag": 426,
     }[args.benchmark]
     if len(rows) != expected:
         raise ValueError(f"Unexpected {args.benchmark} row count: {len(rows)} != {expected}")
