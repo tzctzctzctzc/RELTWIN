@@ -393,6 +393,23 @@ def command_export(args) -> None:
             if index in completed:
                 continue
             wave = load_wave(args.audio_dir, row)
+            full_duration = len(wave) / 16000.0
+            window_start = float(row.get("audio_window_start_seconds", 0.0))
+            window_end = float(
+                row.get("audio_window_end_seconds", full_duration)
+            )
+            if (
+                window_start < 0
+                or window_end <= window_start
+                or window_end > full_duration + 1e-3
+            ):
+                raise ValueError(
+                    f"invalid audio window for source_index {index}: "
+                    f"{window_start}, {window_end}, full={full_duration}"
+                )
+            left = int(round(window_start * 16000))
+            right = min(len(wave), int(round(window_end * 16000)))
+            wave = wave[left:right]
             duration = len(wave) / 16000.0
             if row.get("duration") is not None and abs(duration - float(row["duration"])) > 1e-3:
                 raise ValueError(f"duration mismatch for source_index {index}: {duration} vs {row['duration']}")
