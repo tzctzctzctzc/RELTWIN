@@ -8,7 +8,7 @@ Branch: `codex/benchmark-suite-20260906`. Parent method commit: `cf57a33`.
 | UnAV100-subset public AMR | 77 audio / 100 queries | completed | 73.451288 -> **73.464610** mIoU (`+0.013323`), 0 catastrophic regressions |
 | TUT Sound Events 2017 public AMR | 32 audio / 104 queries | completed | **24.762326 -> 24.762326** mIoU (all 104 abstained) |
 | DESED public evaluation | grouped audio-label query sets | data preparation | pending |
-| LAT-Bench English TAG | 104 audio / 426 queries | audio download and adapter validation | pending |
+| LAT-Bench English TAG | 104 audio / 426 queries | corrected long-audio smoke | direct run stopped after processor revealed silent 600s truncation; label-free window selector pending |
 
 Protocol mismatches against paper-reported counts are recorded explicitly and
 will not be hidden by renaming a local expansion as an official table result.
@@ -31,3 +31,10 @@ therefore inherited from the SpotSound-A incumbent and points to event
 recall/multi-instance localization rather than a boundary-refinement failure:
 61 of 104 rows contain multiple ground-truth intervals, while the incumbent
 emits no multi-interval prediction.
+
+The first LAT full run was intentionally stopped after 188 rows and is not a
+reported result.  Its logs exposed the AF3 processor's hard 600-second cap;
+continuing would make later events inaudible to the model.  The replacement
+runner uses overlapping windows and the frozen SpotSound existence score for
+label-free window selection.  The abandoned partial predictions remain on the
+server only as diagnostic evidence.

@@ -28,8 +28,11 @@ frozen NOVA model, boundary model, confidence margin, or adaptive radius:
 - LAT-Bench English TAG: 104 long-form audio files and 426 released queries.
   The fixed prompt wrapper is removed before the semantic query is passed to
   the SpotSound harness, while the full released prompt is retained in each
-  normalized row for audit.  Direct full-context inference is smoke-tested
-  before any long-audio chunking policy is considered.
+  normalized row for audit.  Audio Flamingo 3 silently truncates inputs beyond
+  600 seconds, so LAT uses deterministic 600-second windows with a 300-second
+  stride.  The frozen SpotSound Yes/No existence score selects one window and
+  grounding is run only there; local timestamps are then mapped to the global
+  timeline.  This selection uses no LAT labels or tuned threshold.
   The public `Bench_EN_97.wav` is 349.693 seconds while metadata says 818
   seconds; two released TAG intervals begin after the WAV ends.  Both rows stay
   in the 426-query primary score as flagged unreachable labels, with a separate
