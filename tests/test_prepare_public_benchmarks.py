@@ -6,6 +6,7 @@ from prepare_public_benchmarks import (
     prepare_amr_jsonl,
     prepare_audiogrounding,
     prepare_clotho,
+    prepare_desed_public,
     prepare_lat_tag,
     parse_lat_timestamp,
 )
@@ -332,3 +333,46 @@ def test_prepare_lat_tag_requires_metadata(tmp_path):
         assert "Missing LAT metadata" in str(error)
     else:
         raise AssertionError("LAT record without metadata was accepted")
+
+
+def test_prepare_desed_public_groups_all_intervals_per_audio_label(tmp_path):
+    import wave
+
+    audio_dir = tmp_path / "audio"
+    audio_dir.mkdir()
+    with wave.open(str(audio_dir / "clip.wav"), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(2)
+        handle.setframerate(10)
+        handle.writeframes(b"\x00\x00" * 110)
+    source = tmp_path / "public.tsv"
+    source.write_text(
+        "filename\tonset\toffset\tevent_label\n"
+        "clip.wav\t0.858\t5.000\tAlarm_bell_ringing\n"
+        "clip.wav\t7.000\t11.000\tAlarm_bell_ringing\n"
+        "clip.wav\t5.500\t6.500\tSpeech\n",
+        encoding="utf-8",
+    )
+    rows = prepare_desed_public(source, audio_dir=audio_dir)
+    assert rows == [
+        {
+            "benchmark": "DESED-public-eval",
+            "qid": "clip.wav:Alarm_bell_ringing",
+            "audio_group": "clip.wav",
+            "audio_path": "clip.wav",
+            "caption": "Alarm bell ringing",
+            "event_label": "Alarm_bell_ringing",
+            "annotations": [[0.858, 5.0], [7.0, 11.0]],
+            "duration": 11.0,
+        },
+        {
+            "benchmark": "DESED-public-eval",
+            "qid": "clip.wav:Speech",
+            "audio_group": "clip.wav",
+            "audio_path": "clip.wav",
+            "caption": "Speech",
+            "event_label": "Speech",
+            "annotations": [[5.5, 6.5]],
+            "duration": 11.0,
+        },
+    ]

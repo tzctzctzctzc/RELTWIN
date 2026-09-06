@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import re
 import wave
@@ -234,6 +235,62 @@ def prepare_lat_tag(
     return rows
 
 
+def prepare_desed_public(source: Path, *, audio_dir: Path) -> list[dict]:
+    """Group DESED strong labels into one query-conditioned interval set."""
+    grouped: dict[tuple[str, str], list[list[float]]] = defaultdict(list)
+    with source.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        expected_fields = {"filename", "onset", "offset", "event_label"}
+        if set(reader.fieldnames or []) != expected_fields:
+            raise ValueError(
+                f"Unexpected DESED columns: {reader.fieldnames}; "
+                f"expected {sorted(expected_fields)}"
+            )
+        for line_number, item in enumerate(reader, start=2):
+            filename = str(item["filename"])
+            event_label = str(item["event_label"])
+            if Path(filename).name != filename or not event_label:
+                raise ValueError(f"Invalid DESED identity at line {line_number}")
+            start, end = float(item["onset"]), float(item["offset"])
+            if start < 0 or end <= start:
+                raise ValueError(f"Invalid DESED interval at line {line_number}")
+            grouped[(filename, event_label)].append([start, end])
+
+    durations: dict[str, float] = {}
+    rows = []
+    for (filename, event_label), annotations in grouped.items():
+        if filename not in durations:
+            audio_path = audio_dir / filename
+            if not audio_path.is_file():
+                raise FileNotFoundError(f"Missing DESED audio: {audio_path}")
+            durations[filename] = wav_duration(audio_path)
+        duration = durations[filename]
+        annotations.sort()
+        for previous, current in zip(annotations, annotations[1:]):
+            if current[0] < previous[1]:
+                raise ValueError(
+                    f"Overlapping DESED intervals for {filename!r}, {event_label!r}"
+                )
+        if annotations[-1][1] > duration + 0.1:
+            raise ValueError(
+                f"DESED annotation exceeds audio duration for {filename!r}, "
+                f"{event_label!r}: {annotations[-1][1]} > {duration}"
+            )
+        rows.append(
+            {
+                "benchmark": "DESED-public-eval",
+                "qid": f"{filename}:{event_label}",
+                "audio_group": filename,
+                "audio_path": filename,
+                "caption": event_label.replace("_", " "),
+                "event_label": event_label,
+                "annotations": annotations,
+                "duration": duration,
+            }
+        )
+    return rows
+
+
 def prepare_aegbench(source: Path) -> list[dict]:
     items = json.loads(source.read_text(encoding="utf-8"))
     if isinstance(items, dict):
@@ -297,6 +354,7 @@ def parse_args() -> argparse.Namespace:
             "unav100-subset",
             "tut2017",
             "lat-bench-en-tag",
+            "desed-public-eval",
         ),
         required=True,
     )
@@ -347,6 +405,10 @@ def main() -> None:
             audio_dir=args.audio_dir,
             allow_annotation_overshoot=args.allow_annotation_overshoot,
         )
+    elif args.benchmark == "desed-public-eval":
+        if args.audio_dir is None:
+            raise ValueError("--audio-dir is required for DESED")
+        rows = prepare_desed_public(args.source, audio_dir=args.audio_dir)
     else:
         rows = prepare(args.source)
     expected = {
@@ -356,6 +418,7 @@ def main() -> None:
         "unav100-subset": 100,
         "tut2017": 104,
         "lat-bench-en-tag": 426,
+        "desed-public-eval": 1112,
     }[args.benchmark]
     if len(rows) != expected:
         raise ValueError(f"Unexpected {args.benchmark} row count: {len(rows)} != {expected}")
