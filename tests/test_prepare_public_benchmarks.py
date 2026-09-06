@@ -168,6 +168,8 @@ def test_prepare_lat_tag_strips_only_fixed_instruction_wrapper(tmp_path):
             "caption": "the section where a person whistles while a dog barks.",
             "annotations": [[673.0, 733.0]],
             "duration": 1225.712,
+            "metadata_duration": 1225.712,
+            "duration_mismatch": False,
             "released_prompt": (
                 "<audio>Please listen to the audio carefully and locate "
                 "the section where a person whistles while a dog barks. "
@@ -176,6 +178,50 @@ def test_prepare_lat_tag_strips_only_fixed_instruction_wrapper(tmp_path):
             ),
         }
     ]
+
+
+def test_prepare_lat_tag_uses_audio_duration_over_incorrect_metadata(tmp_path):
+    import wave
+
+    metadata = tmp_path / "meta.jsonl"
+    metadata.write_text(
+        json.dumps({"id": "Bench_EN_36", "duration": 6.0}) + "\n",
+        encoding="utf-8",
+    )
+    audio_dir = tmp_path / "audio"
+    audio_dir.mkdir()
+    with wave.open(str(audio_dir / "Bench_EN_36.wav"), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(2)
+        handle.setframerate(10)
+        handle.writeframes(b"\x00\x00" * 120)
+    source = tmp_path / "tag.jsonl"
+    source.write_text(
+        json.dumps(
+            {
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": (
+                            "<audio>Please listen to the audio carefully and locate "
+                            "the late event. Please strictly output the result in the format of "
+                            "[Start Time - End Time]. Do not output any extra explanatory text."
+                        ),
+                    },
+                    {"role": "assistant", "content": "[00:08 - 00:10]"},
+                ],
+                "audios": ["Bench_EN_36"],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    rows = prepare_lat_tag(
+        source, metadata, language="en", audio_dir=audio_dir
+    )
+    assert rows[0]["duration"] == 12.0
+    assert rows[0]["metadata_duration"] == 6.0
+    assert rows[0]["duration_mismatch"] is True
 
 
 def test_parse_lat_timestamp_supports_hour_form_and_rejects_invalid():

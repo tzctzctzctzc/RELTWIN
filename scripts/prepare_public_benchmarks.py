@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import wave
 from collections import defaultdict
 from pathlib import Path
 
@@ -107,7 +108,21 @@ def parse_lat_timestamp(value: str) -> float:
     return float(hours * 3600 + minutes * 60 + seconds)
 
 
-def prepare_lat_tag(source: Path, metadata: Path, *, language: str) -> list[dict]:
+def wav_duration(path: Path) -> float:
+    with wave.open(str(path), "rb") as handle:
+        frame_rate = handle.getframerate()
+        if frame_rate <= 0:
+            raise ValueError(f"Invalid WAV frame rate: {path}")
+        return handle.getnframes() / frame_rate
+
+
+def prepare_lat_tag(
+    source: Path,
+    metadata: Path,
+    *,
+    language: str,
+    audio_dir: Path | None = None,
+) -> list[dict]:
     """Normalize LAT-Bench temporal-audio-grounding conversations.
 
     The released task prompt wraps its semantic query in fixed generation
@@ -169,7 +184,13 @@ def prepare_lat_tag(source: Path, metadata: Path, *, language: str) -> list[dict
             raise ValueError(f"Unexpected LAT answer at line {line_number}: {raw_interval!r}")
         start = parse_lat_timestamp(match.group("start"))
         end = parse_lat_timestamp(match.group("end"))
-        duration = durations[audio_id]
+        metadata_duration = durations[audio_id]
+        audio_path = f"{audio_id}.wav"
+        duration = (
+            wav_duration(audio_dir / audio_path)
+            if audio_dir is not None
+            else metadata_duration
+        )
         if start < 0 or end <= start or end > duration + 1.0:
             raise ValueError(
                 f"Invalid LAT interval {[start, end]} for duration {duration} "
@@ -185,10 +206,12 @@ def prepare_lat_tag(source: Path, metadata: Path, *, language: str) -> list[dict
                 "benchmark": f"LAT-Bench-{language.upper()}-TAG",
                 "qid": qid,
                 "audio_group": audio_id,
-                "audio_path": f"{audio_id}.wav",
+                "audio_path": audio_path,
                 "caption": caption,
                 "annotations": [[start, end]],
                 "duration": duration,
+                "metadata_duration": metadata_duration,
+                "duration_mismatch": abs(duration - metadata_duration) > 1.0,
                 "released_prompt": raw_prompt,
             }
         )
@@ -267,6 +290,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="Required metadata JSONL for LAT-Bench.",
     )
+    parser.add_argument(
+        "--audio-dir",
+        type=Path,
+        help="Required WAV directory for LAT-Bench duration validation.",
+    )
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -287,7 +315,14 @@ def main() -> None:
     if args.benchmark == "lat-bench-en-tag":
         if args.metadata is None:
             raise ValueError("--metadata is required for LAT-Bench")
-        rows = prepare_lat_tag(args.source, args.metadata, language="en")
+        if args.audio_dir is None:
+            raise ValueError("--audio-dir is required for LAT-Bench")
+        rows = prepare_lat_tag(
+            args.source,
+            args.metadata,
+            language="en",
+            audio_dir=args.audio_dir,
+        )
     else:
         rows = prepare(args.source)
     expected = {
