@@ -14,6 +14,7 @@ boundary_model=${BOUNDARY_MODEL:?set BOUNDARY_MODEL}
 output_dir=${OUTPUT_DIR:?set OUTPUT_DIR}
 python_bin=${PYTHON_BIN:-python}
 duration_source=${DURATION_SOURCE:-strict}
+annotation_tolerance_seconds=${ANNOTATION_TOLERANCE_SECONDS:-0.1}
 
 mkdir -p "$output_dir/logs" "$output_dir/logits"
 
@@ -24,6 +25,7 @@ mkdir -p "$output_dir/logs" "$output_dir/logits"
   --incumbent-name official \
   --expected-rows "$expected_rows" \
   --duration-source "$duration_source" \
+  --annotation-tolerance-seconds "$annotation_tolerance_seconds" \
   --output "$output_dir/manifest.json" \
   > "$output_dir/logs/prepare.log" 2>&1
 

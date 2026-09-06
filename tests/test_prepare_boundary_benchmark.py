@@ -47,6 +47,7 @@ def test_build_manifest_preserves_alignment_and_incumbent():
             "annotation_duration": 4.0,
             "prediction_duration": 4.0,
             "duration_mismatch": False,
+            "annotation_overshoot_seconds": 0.0,
             "incumbent_name": "official",
             "incumbent_prediction": [[0.9, 2.1]],
             "benchmark_id": "item:0",
@@ -117,3 +118,17 @@ def test_prediction_duration_mode_rejects_ground_truth_beyond_audio():
             incumbent_name="official",
             duration_source="prediction",
         )
+
+
+def test_small_annotation_rounding_overshoot_is_audited():
+    annotation = _annotation()
+    annotation.pop("duration")
+    annotation["annotations"] = [[3.0, 4.05]]
+    rows = build_manifest(
+        [annotation],
+        [_prediction()],
+        benchmark_name="External-Bench",
+        incumbent_name="official",
+    )
+    assert rows[0]["duration"] == 4.0
+    assert rows[0]["annotation_overshoot_seconds"] == pytest.approx(0.05)

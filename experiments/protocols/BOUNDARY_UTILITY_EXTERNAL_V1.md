@@ -21,6 +21,11 @@ rows use the cached inference-time audio duration, after checking that every gro
 truth interval lies inside it. The manifest records both durations and a mismatch
 flag; AudioGrounding keeps strict duration equality.
 
+AudioGrounding annotations exceed the materialized waveform duration by at most
+`0.0735` seconds on 132 rows because of annotation/audio rounding. The intervals
+are preserved for metric compatibility, and the overshoot is recorded per row;
+the manifest builder rejects any overshoot above `0.1` seconds.
+
 The incumbent is the cached official SpotSound-A prediction for each row. Boundary
 features use the frozen SetPO seed-1 adapter and frozen SpanTool checkpoint, matching
 the released Boundary Utility evaluation. The selected development parameters remain

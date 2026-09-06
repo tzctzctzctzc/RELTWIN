@@ -28,6 +28,7 @@ def build_manifest(
     incumbent_name: str,
     expected_rows: int | None = None,
     duration_source: str = "strict",
+    annotation_tolerance_seconds: float = 0.1,
 ) -> list[dict]:
     if expected_rows is not None and len(annotations) != expected_rows:
         raise ValueError(
@@ -118,8 +119,14 @@ def build_manifest(
         assert duration is not None
         if duration <= 0:
             raise ValueError(f"non-positive duration at index {index}: {duration}")
+        maximum_overshoot = 0.0
         for start, end in annotation["annotations"]:
-            if float(start) < 0 or float(end) <= float(start) or float(end) > duration + 0.05:
+            maximum_overshoot = max(maximum_overshoot, float(end) - duration)
+            if (
+                float(start) < 0
+                or float(end) <= float(start)
+                or float(end) > duration + annotation_tolerance_seconds
+            ):
                 raise ValueError(
                     f"annotation interval is outside selected duration at index {index}: "
                     f"{[start, end]} vs {duration}"
@@ -139,6 +146,7 @@ def build_manifest(
                 "annotation_duration": annotation_duration,
                 "prediction_duration": prediction_duration,
                 "duration_mismatch": duration_mismatch,
+                "annotation_overshoot_seconds": max(0.0, maximum_overshoot),
                 "incumbent_name": incumbent_name,
                 "incumbent_prediction": prediction["prediction"],
                 "benchmark_id": annotation_id,
@@ -160,6 +168,7 @@ def parse_args() -> argparse.Namespace:
         choices=("strict", "annotation", "prediction"),
         default="strict",
     )
+    parser.add_argument("--annotation-tolerance-seconds", type=float, default=0.1)
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -176,6 +185,7 @@ def main() -> None:
         incumbent_name=args.incumbent_name,
         expected_rows=args.expected_rows,
         duration_source=args.duration_source,
+        annotation_tolerance_seconds=args.annotation_tolerance_seconds,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
@@ -188,6 +198,12 @@ def main() -> None:
                 "rows": len(manifest),
                 "duration_source": args.duration_source,
                 "duration_mismatches": sum(row["duration_mismatch"] for row in manifest),
+                "annotation_overshoot_rows": sum(
+                    row["annotation_overshoot_seconds"] > 0 for row in manifest
+                ),
+                "maximum_annotation_overshoot_seconds": max(
+                    row["annotation_overshoot_seconds"] for row in manifest
+                ),
                 "output": str(args.output),
             },
             ensure_ascii=False,
