@@ -27,6 +27,7 @@ def build_manifest(
     benchmark_name: str,
     incumbent_name: str,
     expected_rows: int | None = None,
+    duration_source: str = "strict",
 ) -> list[dict]:
     if expected_rows is not None and len(annotations) != expected_rows:
         raise ValueError(
@@ -78,15 +79,51 @@ def build_manifest(
                 f"{annotation_audio!r} != {prediction_audio!r}"
             )
 
-        duration = annotation.get("duration", prediction.get("duration_seconds"))
-        if duration is None:
-            raise ValueError(f"duration is missing at index {index}")
-        duration = float(duration)
+        annotation_duration = annotation.get("duration")
         prediction_duration = prediction.get("duration_seconds")
-        if prediction_duration is not None and abs(duration - float(prediction_duration)) > 1e-3:
+        if annotation_duration is None and prediction_duration is None:
+            raise ValueError(f"duration is missing at index {index}")
+        annotation_duration = (
+            None if annotation_duration is None else float(annotation_duration)
+        )
+        prediction_duration = (
+            None if prediction_duration is None else float(prediction_duration)
+        )
+        duration_mismatch = (
+            annotation_duration is not None
+            and prediction_duration is not None
+            and abs(annotation_duration - prediction_duration) > 1e-3
+        )
+        if duration_source == "strict" and duration_mismatch:
             raise ValueError(
-                f"duration mismatch at index {index}: {duration} != {prediction_duration}"
+                f"duration mismatch at index {index}: "
+                f"{annotation_duration} != {prediction_duration}"
             )
+        if duration_source == "prediction":
+            if prediction_duration is None:
+                raise ValueError(f"prediction duration is missing at index {index}")
+            duration = prediction_duration
+        elif duration_source == "annotation":
+            if annotation_duration is None:
+                raise ValueError(f"annotation duration is missing at index {index}")
+            duration = annotation_duration
+        elif duration_source == "strict":
+            duration = (
+                annotation_duration
+                if annotation_duration is not None
+                else prediction_duration
+            )
+        else:
+            raise ValueError(f"unknown duration source: {duration_source}")
+        assert duration is not None
+        if duration <= 0:
+            raise ValueError(f"non-positive duration at index {index}: {duration}")
+        for start, end in annotation["annotations"]:
+            if float(start) < 0 or float(end) <= float(start) or float(end) > duration + 0.05:
+                raise ValueError(
+                    f"annotation interval is outside selected duration at index {index}: "
+                    f"{[start, end]} vs {duration}"
+                )
 
         output.append(
             {
@@ -98,6 +135,10 @@ def build_manifest(
                 "caption": annotation_query,
                 "annotations": annotation["annotations"],
                 "duration": duration,
+                "duration_source": duration_source,
+                "annotation_duration": annotation_duration,
+                "prediction_duration": prediction_duration,
+                "duration_mismatch": duration_mismatch,
                 "incumbent_name": incumbent_name,
                 "incumbent_prediction": prediction["prediction"],
                 "benchmark_id": annotation_id,
@@ -114,6 +155,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--benchmark-name", required=True)
     parser.add_argument("--incumbent-name", default="official")
     parser.add_argument("--expected-rows", type=int)
+    parser.add_argument(
+        "--duration-source",
+        choices=("strict", "annotation", "prediction"),
+        default="strict",
+    )
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -129,6 +175,7 @@ def main() -> None:
         benchmark_name=args.benchmark_name,
         incumbent_name=args.incumbent_name,
         expected_rows=args.expected_rows,
+        duration_source=args.duration_source,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
@@ -139,6 +186,8 @@ def main() -> None:
             {
                 "benchmark": args.benchmark_name,
                 "rows": len(manifest),
+                "duration_source": args.duration_source,
+                "duration_mismatches": sum(row["duration_mismatch"] for row in manifest),
                 "output": str(args.output),
             },
             ensure_ascii=False,

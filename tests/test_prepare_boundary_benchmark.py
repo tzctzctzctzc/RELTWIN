@@ -43,6 +43,10 @@ def test_build_manifest_preserves_alignment_and_incumbent():
             "caption": "a dog barks",
             "annotations": [[1.0, 2.0]],
             "duration": 4.0,
+            "duration_source": "strict",
+            "annotation_duration": 4.0,
+            "prediction_duration": 4.0,
+            "duration_mismatch": False,
             "incumbent_name": "official",
             "incumbent_prediction": [[0.9, 2.1]],
             "benchmark_id": "item:0",
@@ -82,4 +86,34 @@ def test_build_manifest_rejects_duplicate_indices():
             benchmark_name="External-Bench",
             incumbent_name="official",
             expected_rows=2,
+        )
+
+
+def test_prediction_duration_mode_audits_segment_metadata_mismatch():
+    annotation = _annotation()
+    annotation["duration"] = 400.0
+    rows = build_manifest(
+        [annotation],
+        [_prediction()],
+        benchmark_name="External-Bench",
+        incumbent_name="official",
+        expected_rows=1,
+        duration_source="prediction",
+    )
+    assert rows[0]["duration"] == 4.0
+    assert rows[0]["annotation_duration"] == 400.0
+    assert rows[0]["duration_mismatch"] is True
+
+
+def test_prediction_duration_mode_rejects_ground_truth_beyond_audio():
+    annotation = _annotation()
+    annotation["duration"] = 400.0
+    annotation["annotations"] = [[3.0, 5.0]]
+    with pytest.raises(ValueError, match="outside selected duration"):
+        build_manifest(
+            [annotation],
+            [_prediction()],
+            benchmark_name="External-Bench",
+            incumbent_name="official",
+            duration_source="prediction",
         )

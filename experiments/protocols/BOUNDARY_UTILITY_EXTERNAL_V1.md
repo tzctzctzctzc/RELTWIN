@@ -15,6 +15,12 @@ the item/query counts reported by the later Auto-AEG v4 paper. It is diagnostic 
 must not be presented as a directly comparable official-paper score until the
 revision and expansion rules are reconciled.
 
+For 114 rows from segmented `yt_life` audio, the downloaded manifest stores the
+duration of the original full video rather than the materialized segment. These
+rows use the cached inference-time audio duration, after checking that every ground
+truth interval lies inside it. The manifest records both durations and a mismatch
+flag; AudioGrounding keeps strict duration equality.
+
 The incumbent is the cached official SpotSound-A prediction for each row. Boundary
 features use the frozen SetPO seed-1 adapter and frozen SpanTool checkpoint, matching
 the released Boundary Utility evaluation. The selected development parameters remain

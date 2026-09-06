@@ -13,6 +13,7 @@ spantool_checkpoint=${SPANTOOL_CHECKPOINT:?set SPANTOOL_CHECKPOINT}
 boundary_model=${BOUNDARY_MODEL:?set BOUNDARY_MODEL}
 output_dir=${OUTPUT_DIR:?set OUTPUT_DIR}
 python_bin=${PYTHON_BIN:-python}
+duration_source=${DURATION_SOURCE:-strict}
 
 mkdir -p "$output_dir/logs" "$output_dir/logits"
 
@@ -22,6 +23,7 @@ mkdir -p "$output_dir/logs" "$output_dir/logits"
   --benchmark-name "$benchmark_name" \
   --incumbent-name official \
   --expected-rows "$expected_rows" \
+  --duration-source "$duration_source" \
   --output "$output_dir/manifest.json" \
   > "$output_dir/logs/prepare.log" 2>&1
 
