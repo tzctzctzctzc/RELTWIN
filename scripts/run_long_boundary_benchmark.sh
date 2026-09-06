@@ -18,6 +18,7 @@ radius_cap_seconds=${RADIUS_CAP_SECONDS:-0.25}
 margin=${MARGIN:-0.02}
 shards=${SHARDS:-8}
 boundary_context_seconds=${BOUNDARY_CONTEXT_SECONDS:-2.0}
+max_boundary_window_seconds=${MAX_BOUNDARY_WINDOW_SECONDS:-300.0}
 
 mkdir -p "$output_dir/evidence/logits" "$output_dir/evidence/logs" "$output_dir/local"
 
@@ -27,6 +28,7 @@ mkdir -p "$output_dir/evidence/logits" "$output_dir/evidence/logs" "$output_dir/
   --benchmark-name "$benchmark_name" \
   --expected-rows "$expected_rows" \
   --boundary-context-seconds "$boundary_context_seconds" \
+  --max-boundary-window-seconds "$max_boundary_window_seconds" \
   --output "$output_dir/evidence/manifest.json" \
   > "$output_dir/evidence/logs/prepare.log" 2>&1
 

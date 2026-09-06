@@ -100,6 +100,19 @@ def test_invalid_trust_region_abstains_instead_of_aborting(monkeypatch):
     assert result.abstain_reason == "invalid_trust_region:synthetic failure"
 
 
+def test_decode_honors_forced_memory_abstention_without_evidence():
+    record = {
+        "duration": 404.0,
+        "incumbent_prediction": [[2.0, 402.0]],
+        "force_abstain_reason": "boundary_crop_exceeds_memory_budget",
+    }
+    model = boundary_utility.RidgeUtilityModel(1.0, [1.0], [0.0])
+    result = decode_boundary_utility(record, model, [], 0.25, 0.02)
+    assert result.selected == [(2.0, 402.0)]
+    assert not result.switch
+    assert result.abstain_reason == "boundary_crop_exceeds_memory_budget"
+
+
 def test_evidence_arrays_are_aligned_and_bounded():
     arrays = evidence_arrays(_record())
     assert len(arrays) == 5

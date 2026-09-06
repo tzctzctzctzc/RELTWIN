@@ -437,6 +437,16 @@ def decode_boundary_utility(
         return UtilityDecodeResult(raw, raw, raw, 0.0, 0.0, False, f"invalid_incumbent:{error}")
     if not incumbent:
         return UtilityDecodeResult([], [], [], 0.0, 0.0, False, "empty_incumbent")
+    if record.get("force_abstain_reason"):
+        return UtilityDecodeResult(
+            incumbent,
+            incumbent,
+            incumbent,
+            0.0,
+            0.0,
+            False,
+            str(record["force_abstain_reason"]),
+        )
     try:
         radii = interval_radii(incumbent, radius, radius_ratio)
         layers = [

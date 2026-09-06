@@ -36,9 +36,12 @@ def build_manifest(
     benchmark_name: str,
     expected_rows: int,
     boundary_context_seconds: float = 2.0,
+    max_boundary_window_seconds: float = 300.0,
 ) -> list[dict]:
     if boundary_context_seconds < 0:
         raise ValueError("boundary_context_seconds must be non-negative")
+    if max_boundary_window_seconds <= 0:
+        raise ValueError("max_boundary_window_seconds must be positive")
     if len(annotations) != expected_rows or len(predictions) != expected_rows:
         raise ValueError(
             f"row count mismatch: annotations={len(annotations)}, "
@@ -102,6 +105,12 @@ def build_manifest(
         local_truth = localize_intervals(
             global_truth, boundary_start, boundary_end
         )
+        boundary_duration = boundary_end - boundary_start
+        force_abstain_reason = (
+            "boundary_crop_exceeds_memory_budget"
+            if boundary_duration > max_boundary_window_seconds
+            else None
+        )
         output.append(
             {
                 "benchmark": benchmark_name,
@@ -113,12 +122,14 @@ def build_manifest(
                 "audio_path": annotation["audio_path"],
                 "caption": str(annotation["caption"]).strip(),
                 "annotations": local_truth,
-                "duration": boundary_end - boundary_start,
+                "duration": boundary_duration,
                 "audio_window_start_seconds": boundary_start,
                 "audio_window_end_seconds": boundary_end,
                 "selected_chunk_start_seconds": window_start,
                 "selected_chunk_end_seconds": window_end,
                 "boundary_context_seconds": boundary_context_seconds,
+                "max_boundary_window_seconds": max_boundary_window_seconds,
+                "force_abstain_reason": force_abstain_reason,
                 "full_duration": full_duration,
                 "global_annotations": global_truth,
                 "global_incumbent_prediction": incumbent,
@@ -145,6 +156,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--benchmark-name", required=True)
     parser.add_argument("--expected-rows", type=int, required=True)
     parser.add_argument("--boundary-context-seconds", type=float, default=2.0)
+    parser.add_argument("--max-boundary-window-seconds", type=float, default=300.0)
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -157,6 +169,7 @@ def main() -> None:
         benchmark_name=args.benchmark_name,
         expected_rows=args.expected_rows,
         boundary_context_seconds=args.boundary_context_seconds,
+        max_boundary_window_seconds=args.max_boundary_window_seconds,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(

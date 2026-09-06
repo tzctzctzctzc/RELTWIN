@@ -392,6 +392,43 @@ def command_export(args) -> None:
             index = int(row["source_index"])
             if index in completed:
                 continue
+            if row.get("force_abstain_reason"):
+                audio_path = resolve_audio_path(args.audio_dir, row)
+                audio_hash = file_sha256(audio_path)
+                record = dict(row)
+                record.update(
+                    {
+                        "export_id": expected,
+                        "primary_steps": 0,
+                        "fine_steps": 0,
+                        "occupancy_logits": [],
+                        "onset_logits": [],
+                        "offset_logits": [],
+                        "fine_onset_logits": [],
+                        "fine_offset_logits": [],
+                        "inference_seconds": 0.0,
+                        "audio_sha256": audio_hash,
+                        "input_hash": hashlib.sha256(
+                            json.dumps(row, sort_keys=True, ensure_ascii=False).encode()
+                            + audio_hash.encode()
+                        ).hexdigest(),
+                    }
+                )
+                handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+                handle.flush()
+                completed[index] = record
+                print(
+                    json.dumps(
+                        {
+                            "ordinal": ordinal,
+                            "source_index": index,
+                            "seconds": 0.0,
+                            "abstain_reason": row["force_abstain_reason"],
+                        }
+                    ),
+                    flush=True,
+                )
+                continue
             wave = load_wave(args.audio_dir, row)
             full_duration = len(wave) / 16000.0
             window_start = float(row.get("audio_window_start_seconds", 0.0))

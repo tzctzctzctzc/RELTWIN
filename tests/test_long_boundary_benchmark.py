@@ -91,6 +91,36 @@ def test_negative_boundary_context_is_rejected():
         raise AssertionError("negative context should fail")
 
 
+def test_long_boundary_crop_is_marked_for_safe_abstention():
+    annotations = [
+        {
+            "audio_path": "clip.wav",
+            "caption": "event",
+            "annotations": [[100.0, 500.0]],
+        }
+    ]
+    predictions = [
+        {
+            "index": 0,
+            "audio": "clip.wav",
+            "query": "event",
+            "prediction": [[100.0, 500.0]],
+            "duration_seconds": 600.0,
+            "selected_chunk": 0,
+            "chunk_bounds_seconds": [[0.0, 600.0]],
+        }
+    ]
+    row = build_manifest(
+        annotations,
+        predictions,
+        benchmark_name="LAT",
+        expected_rows=1,
+        max_boundary_window_seconds=300.0,
+    )[0]
+    assert row["duration"] == 404.0
+    assert row["force_abstain_reason"] == "boundary_crop_exceeds_memory_budget"
+
+
 def test_restore_record_maps_every_decoder_action_to_global_time():
     local = {
         "source_index": 0,
