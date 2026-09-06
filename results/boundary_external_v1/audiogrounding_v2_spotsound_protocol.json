@@ -1,0 +1,10 @@
+{
+  "benchmark": "AudioGrounding-v2",
+  "protocol": "SpotSound set-IoU with ground-truth and prediction intervals clipped to audio duration",
+  "rows": 997,
+  "incumbent_mIoU_percent": 70.41813764571617,
+  "selected_mIoU_percent": 70.35342022473267,
+  "delta_mIoU_points": -0.06471742098354541,
+  "source_report": "audiogrounding_v2_report.json",
+  "note": "The source report preserves the raw annotation endpoints for Boundary Utility auditing. Clipping 132 sub-frame annotation overshoots reproduces the pre-existing SpotSound-protocol incumbent exactly."
+}
