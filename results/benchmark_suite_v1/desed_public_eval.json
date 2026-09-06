@@ -1,0 +1,38 @@
+{
+  "benchmark": "DESED-public-evaluation",
+  "audio_groups": 692,
+  "queries": 1112,
+  "multi_ground_truth_queries": 556,
+  "incumbent_multi_prediction_queries": 239,
+  "incumbent_mIoU_percent": 56.592085168399834,
+  "nova_mIoU_percent": 57.000100279144064,
+  "delta_mIoU_points": 0.4080151107442465,
+  "delta_audio_group_bootstrap_95ci": [
+    0.2590727764392562,
+    0.5671535996911626
+  ],
+  "nova_R1@0.3_percent": 66.00719424460432,
+  "nova_R1@0.5_percent": 57.10431654676259,
+  "nova_R1@0.7_percent": 49.10071942446043,
+  "nova_event_F1@0.5_percent": 56.47881025261474,
+  "wins": 53,
+  "ties": 1052,
+  "losses": 7,
+  "switches": 60,
+  "new_catastrophic_regressions": 0,
+  "alignment_valid": true,
+  "frozen_radius_ratio": 0.625,
+  "frozen_radius_cap_seconds": 0.25,
+  "frozen_margin": 0.02,
+  "paper_table_reference": {
+    "SpotSound-A_mIoU_percent": 57.8,
+    "SpotSound-Q_mIoU_percent": 61.1,
+    "nova_minus_SpotSound-A_points": -0.7998997208559333,
+    "nova_minus_table_best_points": -4.099899720855939,
+    "claim": "not_sota"
+  },
+  "official_archive_md5": "67697d75672b1b4418a54bc5f3a443e1",
+  "annotations_sha256": "5dc32a63856a4ec7a1481988769beb8e14a1fb5db1ee725ba553f7dfc00c15ee",
+  "incumbent_predictions_sha256": "906c3813d31f30ccb0b69610a7d6d0c64d7d0d42f85b8bb0085be0877006211b",
+  "nova_predictions_sha256": "ac785dfc7ce38892f4c4fb092a7af9d1b8c75c33526d17822ed31e9f385d4ead"
+}

@@ -24,7 +24,10 @@ frozen NOVA model, boundary model, confidence margin, or adaptive radius:
   60-second WAV segmentation.
 - DESED public evaluation: query rows are constructed by grouping the official
   strong labels by `(audio file, event label)` and retaining all disjoint
-  intervals for that query.
+  intervals for that query.  The official Zenodo archive MD5 is verified as
+  `67697d75672b1b4418a54bc5f3a443e1`; its bundled public annotations exactly
+  match the upstream DESED repository file.  This produces 1,112 queries over
+  692 WAV files, including 556 queries with multiple target intervals.
 - LAT-Bench English TAG: 104 long-form audio files and 426 released queries.
   The fixed prompt wrapper is removed before the semantic query is passed to
   the SpotSound harness, while the full released prompt is retained in each

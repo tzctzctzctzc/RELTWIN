@@ -7,8 +7,8 @@ Branch: `codex/benchmark-suite-20260906`. Parent method commit: `cf57a33`.
 | AEGBench public v3 | 3,424 audio / 9,924 queries | completed | 44.803201 -> **45.276991** raw set-mIoU (`+0.473790`), 0 catastrophic regressions |
 | UnAV100-subset public AMR | 77 audio / 100 queries | completed | 73.451288 -> **73.464610** mIoU (`+0.013323`), 0 catastrophic regressions |
 | TUT Sound Events 2017 public AMR | 32 audio / 104 queries | completed | **24.762326 -> 24.762326** mIoU (all 104 abstained) |
-| DESED public evaluation | grouped audio-label query sets | data preparation | pending |
-| LAT-Bench English TAG | 104 audio / 426 queries | corrected long-audio smoke | direct run stopped after processor revealed silent 600s truncation; label-free window selector pending |
+| DESED public evaluation | 692 audio / 1,112 queries | completed | 56.592085 -> **57.000100** mIoU (`+0.408015`), 0 catastrophic regressions |
+| LAT-Bench English TAG | 104 audio / 426 queries | full evaluation running | direct run stopped after processor revealed silent 600s truncation; label-free windowed run resumed |
 
 Protocol mismatches against paper-reported counts are recorded explicitly and
 will not be hidden by renaming a local expansion as an official table result.
@@ -31,6 +31,14 @@ therefore inherited from the SpotSound-A incumbent and points to event
 recall/multi-instance localization rather than a boundary-refinement failure:
 61 of 104 rows contain multiple ground-truth intervals, while the incumbent
 emits no multi-interval prediction.
+
+On DESED, the locked adaptive-radius decoder switches 60 of 1,112 rows and
+raises mIoU by `+0.408015` points.  The audio-group bootstrap 95% interval is
+`[+0.259073, +0.567154]`; 53 rows improve, seven decline by less than 0.5 IoU,
+and 1,052 tie.  The resulting `57.000100` remains below the SpotSound paper's
+same-backbone SpotSound-A result of `57.8` by `0.799900` points, and below the
+table-best SpotSound-Q result of `61.1` by `4.099900` points.  This is a valid
+cross-benchmark improvement result, not a DESED SOTA claim.
 
 The first LAT full run was intentionally stopped after 188 rows and is not a
 reported result.  Its logs exposed the AF3 processor's hard 600-second cap;
