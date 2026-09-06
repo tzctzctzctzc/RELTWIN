@@ -47,7 +47,12 @@ def prepare_clotho(source: Path) -> list[dict]:
     return rows
 
 
-def prepare_amr_jsonl(source: Path, *, benchmark: str) -> list[dict]:
+def prepare_amr_jsonl(
+    source: Path,
+    *,
+    benchmark: str,
+    annotation_tolerance_seconds: float = 0.0,
+) -> list[dict]:
     """Normalize the public Lighthouse AMR evaluation JSONL files.
 
     UnAV100-subset and TUT Sound Events 2017 use ``<vid>.wav`` in the
@@ -75,8 +80,13 @@ def prepare_amr_jsonl(source: Path, *, benchmark: str) -> list[dict]:
             raise ValueError(f"Non-positive duration at line {line_number}")
         if not annotations:
             raise ValueError(f"Missing relevant window at line {line_number}")
+        maximum_overshoot = max(end - duration for _, end in annotations)
         for start, end in annotations:
-            if start < 0 or end <= start or end > duration + 1e-6:
+            if (
+                start < 0
+                or end <= start
+                or end > duration + annotation_tolerance_seconds + 1e-6
+            ):
                 raise ValueError(
                     f"Invalid interval {[start, end]} for duration {duration} "
                     f"at line {line_number}"
@@ -89,6 +99,7 @@ def prepare_amr_jsonl(source: Path, *, benchmark: str) -> list[dict]:
                 "caption": item["query"],
                 "annotations": annotations,
                 "duration": duration,
+                "annotation_overshoot_seconds": max(0.0, maximum_overshoot),
             }
         )
     return rows
@@ -306,7 +317,9 @@ def main() -> None:
         "aegbench": prepare_aegbench,
         "audiogrounding": prepare_audiogrounding,
         "unav100-subset": lambda source: prepare_amr_jsonl(
-            source, benchmark="UnAV100-subset-public100"
+            source,
+            benchmark="UnAV100-subset-public100",
+            annotation_tolerance_seconds=2.0,
         ),
         "tut2017": lambda source: prepare_amr_jsonl(
             source, benchmark="TUT-Sound-Events-2017"

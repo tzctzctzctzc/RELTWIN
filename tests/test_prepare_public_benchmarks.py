@@ -106,8 +106,33 @@ def test_prepare_amr_jsonl_preserves_multi_interval_sets(tmp_path):
             "caption": "cars pass",
             "annotations": [[1.0, 2.5], [10.0, 15.0]],
             "duration": 60.0,
+            "annotation_overshoot_seconds": 0.0,
         }
     ]
+
+
+def test_prepare_amr_jsonl_preserves_explicitly_tolerated_overshoot(tmp_path):
+    source = tmp_path / "unav.jsonl"
+    source.write_text(
+        json.dumps(
+            {
+                "qid": 83,
+                "query": "an event at the truncated tail",
+                "duration": 46,
+                "vid": "clip",
+                "relevant_windows": [[26, 48]],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    rows = prepare_amr_jsonl(
+        source,
+        benchmark="UnAV100-subset-public100",
+        annotation_tolerance_seconds=2.0,
+    )
+    assert rows[0]["annotations"] == [[26.0, 48.0]]
+    assert rows[0]["annotation_overshoot_seconds"] == 2.0
 
 
 def test_prepare_amr_jsonl_rejects_duplicate_qid(tmp_path):

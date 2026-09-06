@@ -16,6 +16,10 @@ frozen NOVA model, boundary model, confidence margin, or adaptive radius:
 - UnAV100-subset public AMR test: 77 audio files and 100 queries from the
   Lighthouse/Zenodo release.  It is not silently equated with SpotSound's
   stated 492-audio / 997-query evaluation, whose manifest is not public.
+  The released query `qid=83` has `[26, 48]` as ground truth despite a
+  46-second metadata duration and a 46.022-second WAV.  Its released interval
+  is preserved with an explicit 2-second overshoot flag rather than silently
+  clipped.
 - TUT Sound Events 2017 public AMR test: 104 queries over the author-released
   60-second WAV segmentation.
 - DESED public evaluation: query rows are constructed by grouping the official
