@@ -41,6 +41,15 @@ def load_rows(path: Path) -> list[dict]:
     return rows
 
 
+def select_prediction(row: dict, duration: float):
+    for name in ("prediction", "pred", "selected_prediction"):
+        if name in row:
+            return normalize_intervals(row[name], duration or None)
+    return parse_canonical_intervals(
+        row.get("raw_answer", row.get("response", "")), duration or None
+    )
+
+
 def main():
     args = parse_args()
     rows = load_rows(args.predictions)
@@ -64,10 +73,7 @@ def main():
     for row in rows:
         duration = float(row.get("duration_seconds", row.get("duration", 0.0)))
         ground_truth = normalize_intervals(row.get("ground_truth", row.get("gt", [])), duration or None)
-        if "prediction" in row or "pred" in row:
-            prediction = normalize_intervals(row.get("prediction", row.get("pred", [])), duration or None)
-        else:
-            prediction = parse_canonical_intervals(row.get("raw_answer", row.get("response", "")), duration or None)
+        prediction = select_prediction(row, duration)
         raw_answer = row.get("raw_answer", row.get("response", ""))
         raw_spot_nonempty += bool(parse_spotsound_intervals(raw_answer, duration or None))
         raw_auto_nonempty += bool(parse_auto_aeg_intervals(raw_answer))
@@ -160,4 +166,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
