@@ -1,0 +1,21 @@
+{
+  "benchmark": "TUT-Sound-Events-2017-public-AMR",
+  "audio_groups": 32,
+  "queries": 104,
+  "multi_ground_truth_queries": 61,
+  "incumbent_multi_prediction_queries": 0,
+  "incumbent_mIoU_percent": 24.76232612236994,
+  "nova_mIoU_percent": 24.76232612236994,
+  "delta_mIoU_points": 0.0,
+  "nova_R1@0.3_percent": 37.5,
+  "nova_R1@0.5_percent": 13.461538461538462,
+  "nova_R1@0.7_percent": 4.807692307692308,
+  "wins": 0,
+  "ties": 104,
+  "losses": 0,
+  "switches": 0,
+  "new_catastrophic_regressions": 0,
+  "alignment_valid": true,
+  "incumbent_predictions_sha256": "1c47eff6de2401671d216f9efef25aff759f58f970281df000935730f9a86d96",
+  "nova_predictions_sha256": "3becaa37d317d8ebdb47a298b3d9633b4d547865153fa1d62242f499f20c10af4"
+}

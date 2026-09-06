@@ -1,0 +1,29 @@
+{
+  "benchmark": "UnAV100-subset-public100",
+  "audio_groups": 77,
+  "queries": 100,
+  "comparable_to_spotsound_paper_997_query_result": false,
+  "primary_duration_clipped": {
+    "incumbent_mIoU_percent": 73.4512877190421,
+    "nova_mIoU_percent": 73.46461028036114,
+    "delta_mIoU_points": 0.013322561319040194,
+    "nova_R1@0.3_percent": 89.0,
+    "nova_R1@0.5_percent": 80.0,
+    "nova_R1@0.7_percent": 72.0
+  },
+  "released_interval_unclipped_audit": {
+    "incumbent_mIoU_percent": 73.37413908696986,
+    "nova_mIoU_percent": 73.3874616482889,
+    "delta_mIoU_points": 0.0133225613190322,
+    "delta_audio_group_bootstrap_95ci": [0.0, 0.042071246270628]
+  },
+  "wins": 1,
+  "ties": 99,
+  "losses": 0,
+  "switches": 1,
+  "new_catastrophic_regressions": 0,
+  "alignment_valid": true,
+  "release_data_warning": "qid=83 has [26,48] ground truth, 46-second metadata duration, and a 46.022-second WAV.",
+  "incumbent_predictions_sha256": "17f315ba498477572ec5d2bb8fe5a2a6f3435376c2d00268751481f3ea896140",
+  "nova_predictions_sha256": "598d7179b8b4c3c5d40900d7ff452d6ad17edc6aac471acd7b96631342fd0020"
+}
