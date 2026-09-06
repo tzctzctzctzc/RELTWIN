@@ -29,6 +29,7 @@ from run_metric_iou_pilot import file_sha256
 
 ACTION_SCALE_SECONDS = 0.25
 FEATURE_VERSION = "boundary-utility-v1"
+DECODER_VERSION = "boundary-utility-adaptive-radius-v1"
 
 
 @dataclass(frozen=True)
@@ -253,6 +254,31 @@ def interval_options(record: dict, interval_index: int, radius: float) -> list[_
     return sorted(options, key=lambda item: (item.end, item.start))
 
 
+def interval_radii(
+    intervals: Sequence[tuple[float, float]],
+    radius_cap_seconds: float,
+    radius_ratio: float | None = None,
+) -> list[float]:
+    """Return a fixed radius or a duration-relative radius for every event.
+
+    The adaptive policy is benchmark-independent: ``min(cap, ratio * length)``.
+    Keeping the cap at the released 0.25 seconds makes the new search region a
+    strict subset of the frozen decoder's search region.
+    """
+    if radius_cap_seconds < 0 or not math.isfinite(radius_cap_seconds):
+        raise ValueError("radius cap must be finite and non-negative")
+    if radius_ratio is not None and (radius_ratio < 0 or not math.isfinite(radius_ratio)):
+        raise ValueError("radius ratio must be finite and non-negative")
+    if any(end <= start for start, end in intervals):
+        raise ValueError("intervals must have positive length")
+    if radius_ratio is None:
+        return [float(radius_cap_seconds) for _ in intervals]
+    return [
+        min(float(radius_cap_seconds), float(radius_ratio) * (end - start))
+        for start, end in intervals
+    ]
+
+
 def make_training_examples(records: Sequence[dict], radius: float) -> list[dict]:
     examples = []
     for record in records:
@@ -400,6 +426,8 @@ def decode_boundary_utility(
     bootstrap_models: Sequence[RidgeUtilityModel],
     radius: float,
     margin: float,
+    *,
+    radius_ratio: float | None = None,
 ) -> UtilityDecodeResult:
     duration = float(record["duration"])
     try:
@@ -410,7 +438,11 @@ def decode_boundary_utility(
     if not incumbent:
         return UtilityDecodeResult([], [], [], 0.0, 0.0, False, "empty_incumbent")
     try:
-        layers = [interval_options(record, index, radius) for index in range(len(incumbent))]
+        radii = interval_radii(incumbent, radius, radius_ratio)
+        layers = [
+            interval_options(record, index, radii[index])
+            for index in range(len(incumbent))
+        ]
     except (RuntimeError, ValueError) as error:
         return UtilityDecodeResult(
             incumbent, incumbent, incumbent, 0.0, 0.0,
@@ -565,20 +597,54 @@ def command_decode(args) -> None:
     diagnostic = not artifact["development_gate_passed"]
     if diagnostic and not args.diagnostic_override:
         raise RuntimeError("development gate failed; use explicit --diagnostic-override only for analysis")
-    radius = float(artifact["diagnostic_radius_seconds"] if diagnostic else artifact["selected_radius_seconds"])
-    margin = float(artifact["diagnostic_margin"] if diagnostic else artifact["selected_margin"])
+    artifact_radius = float(artifact["diagnostic_radius_seconds"] if diagnostic else artifact["selected_radius_seconds"])
+    artifact_margin = float(artifact["diagnostic_margin"] if diagnostic else artifact["selected_margin"])
+    radius = artifact_radius if args.radius_cap_seconds is None else float(args.radius_cap_seconds)
+    margin = artifact_margin if args.margin_override is None else float(args.margin_override)
+    radius_ratio = None if args.radius_ratio is None else float(args.radius_ratio)
+    # Validate runtime overrides before any potentially long decode starts.
+    interval_radii([], radius, radius_ratio)
+    if not math.isfinite(margin):
+        raise ValueError("margin must be finite")
     model = RidgeUtilityModel.from_dict(artifact["model"])
     ensemble = [RidgeUtilityModel.from_dict(payload) for payload in artifact["bootstrap_models"]]
     manifest, records = _json(args.manifest), _jsonl(args.logits)
     indexed = {int(row["source_index"]): row for row in records}
     if len(indexed) != len(records) or set(indexed) != {int(row["source_index"]) for row in manifest}:
         raise ValueError("manifest/logit alignment failed")
+    if args.num_shards < 1:
+        raise ValueError("num-shards must be positive")
+    if args.shard_index < 0 or args.shard_index >= args.num_shards:
+        raise ValueError("shard-index must be in [0, num-shards)")
+    model_hash = file_sha256(args.model)
+    decoder_code_hash = _git_hash()
+    runtime_config = {
+        "decoder_version": DECODER_VERSION,
+        "model_hash": model_hash,
+        "radius_policy": "relative_capped" if radius_ratio is not None else "fixed",
+        "radius_cap_seconds": radius,
+        "radius_ratio": radius_ratio,
+        "margin": margin,
+    }
+    runtime_config_hash = hashlib.sha256(
+        json.dumps(runtime_config, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
     output = []
-    for manifest_row in manifest:
+    selected_manifest = [
+        row for position, row in enumerate(manifest)
+        if position % args.num_shards == args.shard_index
+    ]
+    for manifest_row in selected_manifest:
         row = indexed[int(manifest_row["source_index"])]
         if str(row["audio_group"]) != str(manifest_row["audio_group"]):
             raise ValueError(f"audio mismatch at {row['source_index']}")
-        result = decode_boundary_utility(row, model, ensemble, radius, margin)
+        result = decode_boundary_utility(
+            row, model, ensemble, radius, margin, radius_ratio=radius_ratio
+        )
+        try:
+            decoded_radii = interval_radii(result.incumbent, radius, radius_ratio)
+        except ValueError:
+            decoded_radii = []
         incumbent_iou = temporal_set_iou(row["annotations"], result.incumbent)
         candidate_iou = temporal_set_iou(row["annotations"], result.candidate)
         selected_iou = temporal_set_iou(row["annotations"], result.selected)
@@ -602,6 +668,10 @@ def command_decode(args) -> None:
                 "predicted_gain": result.predicted_gain,
                 "gain_lower_quantile": result.gain_lower_quantile,
                 "radius_seconds": radius,
+                "radius_policy": runtime_config["radius_policy"],
+                "radius_cap_seconds": radius,
+                "radius_ratio": radius_ratio,
+                "interval_radii_seconds": decoded_radii,
                 "margin": margin,
                 "switch": result.switch,
                 "selected_candidate": "boundary_utility" if result.switch else row["incumbent_name"],
@@ -612,13 +682,58 @@ def command_decode(args) -> None:
                 "development_gate_passed": bool(artifact["development_gate_passed"]),
                 "feature_version": FEATURE_VERSION,
                 "code_hash": artifact["code_hash"],
+                "decoder_version": DECODER_VERSION,
+                "decoder_code_hash": decoder_code_hash,
                 "checkpoint_hash": row["export_id"],
                 "input_hash": row["input_hash"],
-                "config_hash": file_sha256(args.model),
+                "model_hash": model_hash,
+                "config_hash": runtime_config_hash,
             }
         )
     _write_jsonl(args.output, output)
-    print(json.dumps({"rows": len(output), "switches": sum(row["switch"] for row in output), "sha256": file_sha256(args.output)}, indent=2))
+    print(json.dumps({
+        "rows": len(output),
+        "switches": sum(row["switch"] for row in output),
+        "shard_index": args.shard_index,
+        "num_shards": args.num_shards,
+        "config_hash": runtime_config_hash,
+        "sha256": file_sha256(args.output),
+    }, indent=2))
+
+
+def command_merge(args) -> None:
+    """Strictly merge sharded decode outputs back into manifest order."""
+    manifest = _json(args.manifest)
+    expected = [int(row["source_index"]) for row in manifest]
+    if len(expected) != len(set(expected)):
+        raise ValueError("manifest contains duplicate source_index values")
+    indexed = {}
+    config_hashes = set()
+    for path in args.inputs:
+        for row in _jsonl(path):
+            source_index = int(row["source_index"])
+            if source_index in indexed:
+                raise ValueError(f"duplicate decoded source_index {source_index}")
+            indexed[source_index] = row
+            config_hashes.add(str(row["config_hash"]))
+    missing = sorted(set(expected) - set(indexed))
+    extra = sorted(set(indexed) - set(expected))
+    if missing or extra:
+        raise ValueError(f"shard alignment failed: missing={missing[:10]}, extra={extra[:10]}")
+    if len(config_hashes) != 1:
+        raise ValueError(f"shards used different runtime configs: {sorted(config_hashes)}")
+    ordered = []
+    for manifest_row in manifest:
+        row = indexed[int(manifest_row["source_index"])]
+        if str(row["audio_group"]) != str(manifest_row["audio_group"]):
+            raise ValueError(f"audio mismatch at {row['source_index']}")
+        ordered.append(row)
+    _write_jsonl(args.output, ordered)
+    print(json.dumps({
+        "rows": len(ordered),
+        "config_hash": next(iter(config_hashes)),
+        "sha256": file_sha256(args.output),
+    }, indent=2))
 
 
 def parse_args():
@@ -640,7 +755,17 @@ def parse_args():
     decode.add_argument("--model", type=Path, required=True)
     decode.add_argument("--output", type=Path, required=True)
     decode.add_argument("--diagnostic-override", action="store_true")
+    decode.add_argument("--radius-ratio", type=float)
+    decode.add_argument("--radius-cap-seconds", type=float)
+    decode.add_argument("--margin-override", type=float)
+    decode.add_argument("--num-shards", type=int, default=1)
+    decode.add_argument("--shard-index", type=int, default=0)
     decode.set_defaults(function=command_decode)
+    merge = commands.add_parser("merge")
+    merge.add_argument("--manifest", type=Path, required=True)
+    merge.add_argument("--inputs", type=Path, action="append", required=True)
+    merge.add_argument("--output", type=Path, required=True)
+    merge.set_defaults(function=command_merge)
     return parser.parse_args()
 
 
