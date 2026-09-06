@@ -30,6 +30,21 @@ from run_metric_iou_pilot import file_sha256
 ACTION_SCALE_SECONDS = 0.25
 FEATURE_VERSION = "boundary-utility-v1"
 DECODER_VERSION = "boundary-utility-adaptive-radius-v1"
+LONG_AUDIO_PASSTHROUGH_FIELDS = (
+    "audio_window_start_seconds",
+    "audio_window_end_seconds",
+    "selected_chunk_start_seconds",
+    "selected_chunk_end_seconds",
+    "full_duration",
+    "global_annotations",
+    "global_incumbent_prediction",
+    "selected_chunk",
+    "chunk_detection_log_odds",
+    "annotation_overshoot_seconds",
+    "boundary_context_seconds",
+    "max_boundary_window_seconds",
+    "force_abstain_reason",
+)
 
 
 @dataclass(frozen=True)
@@ -87,6 +102,15 @@ def _write_jsonl(path: Path, rows: Iterable[dict]) -> None:
     with path.open("w", encoding="utf-8") as handle:
         for row in rows:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def long_audio_passthrough(record: dict) -> dict:
+    """Preserve the coordinates needed to restore local boundary edits."""
+    return {
+        name: record[name]
+        for name in LONG_AUDIO_PASSTHROUGH_FIELDS
+        if name in record
+    }
 
 
 def _git_hash() -> str:
@@ -660,6 +684,7 @@ def command_decode(args) -> None:
         selected_iou = temporal_set_iou(row["annotations"], result.selected)
         output.append(
             {
+                **long_audio_passthrough(row),
                 "benchmark": row["benchmark"],
                 "source_index": int(row["source_index"]),
                 "audio_group": row["audio_group"],

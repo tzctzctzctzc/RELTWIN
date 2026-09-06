@@ -10,6 +10,7 @@ from boundary_utility import (
     fit_ridge_utility,
     interval_radii,
     interval_options,
+    long_audio_passthrough,
     make_training_examples,
 )
 
@@ -111,6 +112,20 @@ def test_decode_honors_forced_memory_abstention_without_evidence():
     assert result.selected == [(2.0, 402.0)]
     assert not result.switch
     assert result.abstain_reason == "boundary_crop_exceeds_memory_budget"
+
+
+def test_long_audio_restore_coordinates_are_passed_through():
+    record = {
+        "audio_window_start_seconds": 123.0,
+        "full_duration": 700.0,
+        "global_annotations": [[200.0, 210.0]],
+        "unrelated": "drop me",
+    }
+    assert long_audio_passthrough(record) == {
+        "audio_window_start_seconds": 123.0,
+        "full_duration": 700.0,
+        "global_annotations": [[200.0, 210.0]],
+    }
 
 
 def test_evidence_arrays_are_aligned_and_bounded():
