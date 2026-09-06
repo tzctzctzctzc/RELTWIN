@@ -46,3 +46,10 @@ incumbent, then exports the frozen SpanTool evidence and applies the locked
 NOVA adaptive-radius decoder.  Metrics are paired on identical rows.  All
 manifests and outputs must pass duplicate, missing-row, duration, and audio-file
 checks before scores are reported.
+
+For LAT boundary verification, the verifier receives the incumbent span plus
+two seconds of context on each side.  This crop is determined without labels
+and contains every feasible edit under the frozen 0.25-second radius cap.
+Boundary crops longer than 300 seconds are retained as explicit identity
+actions with `boundary_crop_exceeds_memory_budget` rather than risking an OOM;
+10 of 426 LAT rows meet this condition.

@@ -8,7 +8,7 @@ Branch: `codex/benchmark-suite-20260906`. Parent method commit: `cf57a33`.
 | UnAV100-subset public AMR | 77 audio / 100 queries | completed | 73.451288 -> **73.464610** mIoU (`+0.013323`), 0 catastrophic regressions |
 | TUT Sound Events 2017 public AMR | 32 audio / 104 queries | completed | **24.762326 -> 24.762326** mIoU (all 104 abstained) |
 | DESED public evaluation | 692 audio / 1,112 queries | completed | 56.592085 -> **57.000100** mIoU (`+0.408015`), 0 catastrophic regressions |
-| LAT-Bench English TAG | 104 audio / 426 queries | full evaluation running | direct run stopped after processor revealed silent 600s truncation; label-free windowed run resumed |
+| LAT-Bench English TAG | 104 audio / 426 queries | completed, gate failed | **15.146085 -> 15.141936** primary mIoU (`-0.004149`), 0 catastrophic regressions |
 
 Protocol mismatches against paper-reported counts are recorded explicitly and
 will not be hidden by renaming a local expansion as an official table result.
@@ -46,3 +46,15 @@ continuing would make later events inaudible to the model.  The replacement
 runner uses overlapping windows and the frozen SpotSound existence score for
 label-free window selection.  The abandoned partial predictions remain on the
 server only as diagnostic evidence.
+
+The corrected label-free windowed LAT run completes all 426 rows.  On the
+primary score, which keeps the two unreachable released annotations as zero,
+NOVA changes mIoU from `15.146085` to `15.141936` (`-0.004149`); the
+audio-group bootstrap 95% interval is `[-0.008941, -0.000435]`.  The separate
+424-valid-row diagnostic is `15.217528 -> 15.213360`.  There are three wins,
+six losses, 417 ties, 15 switches, and no catastrophic regression, so the
+promotion gate fails.  The incumbent itself has zero IoU on 243 rows, and 22
+released targets are outside the label-free selected 600-second window.  LAT
+therefore exposes a long-audio retrieval/localization failure upstream of
+NOVA's sub-second boundary refinement, rather than evidence that a different
+boundary radius can solve this benchmark.

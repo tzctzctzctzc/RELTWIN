@@ -1,0 +1,45 @@
+{
+  "benchmark": "LAT-Bench-English-TAG",
+  "audio_groups": 104,
+  "queries": 426,
+  "unreachable_release_annotations": 2,
+  "primary_all_426": {
+    "incumbent_mIoU_percent": 15.146084602674323,
+    "nova_mIoU_percent": 15.141935777620061,
+    "delta_mIoU_points": -0.004148825054260022,
+    "delta_audio_group_bootstrap_95ci": [
+      -0.008940521275809066,
+      -0.00043507401624045595
+    ],
+    "nova_R1@0.3_percent": 23.474178403755868,
+    "nova_R1@0.5_percent": 9.859154929577464,
+    "nova_R1@0.7_percent": 4.694835680751173
+  },
+  "valid_424_diagnostic": {
+    "incumbent_mIoU_percent": 15.217528397969954,
+    "nova_mIoU_percent": 15.21336000298619,
+    "delta_mIoU_points": -0.004168394983763868,
+    "nova_R1@0.3_percent": 23.58490566037736,
+    "nova_R1@0.5_percent": 9.90566037735849,
+    "nova_R1@0.7_percent": 4.716981132075472
+  },
+  "wins": 3,
+  "ties": 417,
+  "losses": 6,
+  "switches": 15,
+  "new_catastrophic_regressions": 0,
+  "oversized_boundary_window_abstentions": 10,
+  "selected_window_empty_truth_rows": 22,
+  "incumbent_zero_iou_rows": 243,
+  "alignment_valid": true,
+  "promotion_gate_passed": false,
+  "frozen_radius_ratio": 0.625,
+  "frozen_radius_cap_seconds": 0.25,
+  "frozen_margin": 0.02,
+  "boundary_context_seconds": 2.0,
+  "max_boundary_window_seconds": 300.0,
+  "incumbent_predictions_sha256": "8c899e75adb68381f076b7197d552e79bafe21b69d7e989d0371e535f8b634a2",
+  "nova_predictions_sha256": "4658ab721f530c7eb79d1db0036fdd508b3db47d94c3e30a273afbd17f37b2a3",
+  "annotations_sha256": "abcf8226f2439e9d66acb11ed5fa346d09ed84e5afbbd1d039bc76354139202f",
+  "runner_commit": "6e9b478"
+}
