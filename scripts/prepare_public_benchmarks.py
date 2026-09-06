@@ -34,6 +34,53 @@ def prepare_clotho(source: Path) -> list[dict]:
     return rows
 
 
+def prepare_amr_jsonl(source: Path, *, benchmark: str) -> list[dict]:
+    """Normalize the public Lighthouse AMR evaluation JSONL files.
+
+    UnAV100-subset and TUT Sound Events 2017 use ``<vid>.wav`` in the
+    author-released WAV archives.  Clotho-Moment is deliberately kept on its
+    existing converter because its WebDataset filenames remove decimal points.
+    """
+    rows = []
+    seen_qids: set[str] = set()
+    for line_number, line in enumerate(
+        source.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if not line.strip():
+            continue
+        item = json.loads(line)
+        qid = str(item["qid"])
+        if qid in seen_qids:
+            raise ValueError(f"Duplicate qid {qid!r} at line {line_number}")
+        seen_qids.add(qid)
+        duration = float(item["duration"])
+        annotations = [
+            [float(start), float(end)]
+            for start, end in item["relevant_windows"]
+        ]
+        if duration <= 0:
+            raise ValueError(f"Non-positive duration at line {line_number}")
+        if not annotations:
+            raise ValueError(f"Missing relevant window at line {line_number}")
+        for start, end in annotations:
+            if start < 0 or end <= start or end > duration + 1e-6:
+                raise ValueError(
+                    f"Invalid interval {[start, end]} for duration {duration} "
+                    f"at line {line_number}"
+                )
+        rows.append(
+            {
+                "benchmark": benchmark,
+                "qid": qid,
+                "audio_path": f'{item["vid"]}.wav',
+                "caption": item["query"],
+                "annotations": annotations,
+                "duration": duration,
+            }
+        )
+    return rows
+
+
 def prepare_aegbench(source: Path) -> list[dict]:
     items = json.loads(source.read_text(encoding="utf-8"))
     if isinstance(items, dict):
@@ -90,7 +137,13 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--benchmark",
-        choices=("clotho-moment", "aegbench", "audiogrounding"),
+        choices=(
+            "clotho-moment",
+            "aegbench",
+            "audiogrounding",
+            "unav100-subset",
+            "tut2017",
+        ),
         required=True,
     )
     parser.add_argument("--source", type=Path, required=True)
@@ -104,12 +157,20 @@ def main() -> None:
         "clotho-moment": prepare_clotho,
         "aegbench": prepare_aegbench,
         "audiogrounding": prepare_audiogrounding,
+        "unav100-subset": lambda source: prepare_amr_jsonl(
+            source, benchmark="UnAV100-subset-public100"
+        ),
+        "tut2017": lambda source: prepare_amr_jsonl(
+            source, benchmark="TUT-Sound-Events-2017"
+        ),
     }[args.benchmark]
     rows = prepare(args.source)
     expected = {
         "clotho-moment": 6649,
         "aegbench": 9924,
         "audiogrounding": 997,
+        "unav100-subset": 100,
+        "tut2017": 104,
     }[args.benchmark]
     if len(rows) != expected:
         raise ValueError(f"Unexpected {args.benchmark} row count: {len(rows)} != {expected}")

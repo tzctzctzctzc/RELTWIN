@@ -3,6 +3,7 @@ import json
 from prepare_public_benchmarks import (
     clotho_audio_name,
     prepare_aegbench,
+    prepare_amr_jsonl,
     prepare_audiogrounding,
     prepare_clotho,
 )
@@ -77,3 +78,51 @@ def test_prepare_audiogrounding_expands_phrases(tmp_path):
     assert [row["caption"] for row in rows] == ["a dog barks", "a person speaks"]
     assert rows[0]["benchmark_id"] == "42:0"
     assert rows[0]["annotations"] == [[0.5, 1.5], [3.0, 4.0]]
+
+
+def test_prepare_amr_jsonl_preserves_multi_interval_sets(tmp_path):
+    source = tmp_path / "unav.jsonl"
+    source.write_text(
+        json.dumps(
+            {
+                "qid": 7,
+                "query": "cars pass",
+                "duration": 60,
+                "vid": "clip_with.dots",
+                "relevant_windows": [[1, 2.5], [10, 15]],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    rows = prepare_amr_jsonl(source, benchmark="UnAV100-subset-public100")
+    assert rows == [
+        {
+            "benchmark": "UnAV100-subset-public100",
+            "qid": "7",
+            "audio_path": "clip_with.dots.wav",
+            "caption": "cars pass",
+            "annotations": [[1.0, 2.5], [10.0, 15.0]],
+            "duration": 60.0,
+        }
+    ]
+
+
+def test_prepare_amr_jsonl_rejects_duplicate_qid(tmp_path):
+    source = tmp_path / "duplicate.jsonl"
+    row = {
+        "qid": "same",
+        "query": "event",
+        "duration": 10,
+        "vid": "clip",
+        "relevant_windows": [[1, 2]],
+    }
+    source.write_text(
+        json.dumps(row) + "\n" + json.dumps(row) + "\n", encoding="utf-8"
+    )
+    try:
+        prepare_amr_jsonl(source, benchmark="TUT-Sound-Events-2017")
+    except ValueError as error:
+        assert "Duplicate qid" in str(error)
+    else:
+        raise AssertionError("duplicate qid was accepted")
