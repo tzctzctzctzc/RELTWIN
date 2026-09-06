@@ -1,11 +1,14 @@
 import numpy as np
 
+import boundary_utility
+
 from boundary_utility import (
     bootstrap_utility_models,
     boundary_edit_features,
     decode_boundary_utility,
     evidence_arrays,
     fit_ridge_utility,
+    interval_options,
     make_training_examples,
 )
 
@@ -40,6 +43,36 @@ def test_identity_boundary_edit_has_exact_zero_features():
     assert np.array_equal(features, np.zeros_like(features))
 
 
+def test_identity_survives_sub_picosecond_gap_between_intervals():
+    record = _record()
+    record["incumbent_prediction"] = [
+        [0.8, 1.0000000000004],
+        [1.00000000000049, 1.8],
+    ]
+    for interval_index in range(2):
+        options = interval_options(record, interval_index, 0.25)
+        assert any(option.identity for option in options)
+
+
+def test_invalid_trust_region_abstains_instead_of_aborting(monkeypatch):
+    record = _record()
+    features = boundary_edit_features(record, 0, 0.8, 1.8)
+    model = boundary_utility.RidgeUtilityModel(
+        alpha=1.0,
+        scale=np.ones_like(features).tolist(),
+        weights=np.zeros_like(features).tolist(),
+    )
+
+    def fail_options(*_args, **_kwargs):
+        raise RuntimeError("synthetic failure")
+
+    monkeypatch.setattr(boundary_utility, "interval_options", fail_options)
+    result = decode_boundary_utility(record, model, [model], 0.25, 0.02)
+    assert not result.switch
+    assert result.selected == result.incumbent
+    assert result.abstain_reason == "invalid_trust_region:synthetic failure"
+
+
 def test_evidence_arrays_are_aligned_and_bounded():
     arrays = evidence_arrays(_record())
     assert len(arrays) == 5
@@ -63,4 +96,3 @@ def test_learned_utility_keeps_cardinality_and_improves_training_pattern():
     assert len(result.selected) == 1
     assert result.switch
     assert result.selected != result.incumbent
-

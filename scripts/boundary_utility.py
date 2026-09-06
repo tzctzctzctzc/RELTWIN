@@ -216,8 +216,11 @@ def _endpoint_choices(value: float, duration: float, steps: int, radius: float) 
     low, high = max(0.0, value - radius), min(duration, value + radius)
     first = max(0, int(math.ceil(low / step - 1e-12)))
     last = min(steps, int(math.floor(high / step + 1e-12)))
-    values = [index * step for index in range(first, last + 1)] + [value]
-    return sorted(set(round(item, 12) for item in values))
+    # Quantise only generated grid points.  Rounding the incumbent boundary can
+    # collapse a valid sub-picosecond gap between adjacent intervals and remove
+    # the identity action from the trust region.
+    grid = [round(index * step, 12) for index in range(first, last + 1)]
+    return sorted(set(grid + [float(value)]))
 
 
 def interval_options(record: dict, interval_index: int, radius: float) -> list[_Option]:
@@ -406,7 +409,13 @@ def decode_boundary_utility(
         return UtilityDecodeResult(raw, raw, raw, 0.0, 0.0, False, f"invalid_incumbent:{error}")
     if not incumbent:
         return UtilityDecodeResult([], [], [], 0.0, 0.0, False, "empty_incumbent")
-    layers = [interval_options(record, index, radius) for index in range(len(incumbent))]
+    try:
+        layers = [interval_options(record, index, radius) for index in range(len(incumbent))]
+    except (RuntimeError, ValueError) as error:
+        return UtilityDecodeResult(
+            incumbent, incumbent, incumbent, 0.0, 0.0,
+            False, f"invalid_trust_region:{error}",
+        )
     candidate, selected_options, predicted_gain = _best_option_set(layers, model)
     if candidate == incumbent or predicted_gain <= 0:
         return UtilityDecodeResult(
