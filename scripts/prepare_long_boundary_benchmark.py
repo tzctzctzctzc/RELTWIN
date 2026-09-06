@@ -35,7 +35,10 @@ def build_manifest(
     *,
     benchmark_name: str,
     expected_rows: int,
+    boundary_context_seconds: float = 2.0,
 ) -> list[dict]:
+    if boundary_context_seconds < 0:
+        raise ValueError("boundary_context_seconds must be non-negative")
     if len(annotations) != expected_rows or len(predictions) != expected_rows:
         raise ValueError(
             f"row count mismatch: annotations={len(annotations)}, "
@@ -70,11 +73,35 @@ def build_manifest(
         ):
             raise ValueError(f"invalid window bounds at index {index}")
         incumbent = normalize_intervals(prediction["prediction"], full_duration)
-        local_incumbent = localize_intervals(incumbent, window_start, window_end)
-        if len(local_incumbent) != len(incumbent):
+        selected_window_incumbent = localize_intervals(
+            incumbent, window_start, window_end
+        )
+        if len(selected_window_incumbent) != len(incumbent):
             raise ValueError(f"incumbent escapes selected window at index {index}")
+        # Boundary Utility can only move an existing boundary by a fraction of
+        # a second.  Re-encoding the complete long-audio selection wastes memory
+        # and can exceed the GPU limit without changing the feasible actions.
+        # Crop using the incumbent only; labels never influence this window.
+        if incumbent:
+            boundary_start = max(
+                window_start,
+                min(left for left, _ in incumbent) - boundary_context_seconds,
+            )
+            boundary_end = min(
+                window_end,
+                max(right for _, right in incumbent) + boundary_context_seconds,
+            )
+        else:
+            boundary_start, boundary_end = window_start, window_end
+        local_incumbent = localize_intervals(
+            incumbent, boundary_start, boundary_end
+        )
+        if len(local_incumbent) != len(incumbent):
+            raise ValueError(f"incumbent escapes boundary crop at index {index}")
         global_truth = normalize_intervals(annotation["annotations"])
-        local_truth = localize_intervals(global_truth, window_start, window_end)
+        local_truth = localize_intervals(
+            global_truth, boundary_start, boundary_end
+        )
         output.append(
             {
                 "benchmark": benchmark_name,
@@ -86,9 +113,12 @@ def build_manifest(
                 "audio_path": annotation["audio_path"],
                 "caption": str(annotation["caption"]).strip(),
                 "annotations": local_truth,
-                "duration": window_end - window_start,
-                "audio_window_start_seconds": window_start,
-                "audio_window_end_seconds": window_end,
+                "duration": boundary_end - boundary_start,
+                "audio_window_start_seconds": boundary_start,
+                "audio_window_end_seconds": boundary_end,
+                "selected_chunk_start_seconds": window_start,
+                "selected_chunk_end_seconds": window_end,
+                "boundary_context_seconds": boundary_context_seconds,
                 "full_duration": full_duration,
                 "global_annotations": global_truth,
                 "global_incumbent_prediction": incumbent,
@@ -114,6 +144,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--predictions", type=Path, required=True)
     parser.add_argument("--benchmark-name", required=True)
     parser.add_argument("--expected-rows", type=int, required=True)
+    parser.add_argument("--boundary-context-seconds", type=float, default=2.0)
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -125,6 +156,7 @@ def main() -> None:
         read_jsonl(args.predictions),
         benchmark_name=args.benchmark_name,
         expected_rows=args.expected_rows,
+        boundary_context_seconds=args.boundary_context_seconds,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(

@@ -17,6 +17,7 @@ radius_ratio=${RADIUS_RATIO:-0.625}
 radius_cap_seconds=${RADIUS_CAP_SECONDS:-0.25}
 margin=${MARGIN:-0.02}
 shards=${SHARDS:-8}
+boundary_context_seconds=${BOUNDARY_CONTEXT_SECONDS:-2.0}
 
 mkdir -p "$output_dir/evidence/logits" "$output_dir/evidence/logs" "$output_dir/local"
 
@@ -25,6 +26,7 @@ mkdir -p "$output_dir/evidence/logits" "$output_dir/evidence/logs" "$output_dir/
   --predictions "$incumbent" \
   --benchmark-name "$benchmark_name" \
   --expected-rows "$expected_rows" \
+  --boundary-context-seconds "$boundary_context_seconds" \
   --output "$output_dir/evidence/manifest.json" \
   > "$output_dir/evidence/logs/prepare.log" 2>&1
 
