@@ -1,0 +1,32 @@
+{
+  "benchmark": "AEGBench-local-expansion-v1",
+  "protocol": "Auto-AEG public-code metrics with intervals clipped to materialized audio duration",
+  "rows": 9924,
+  "incumbent": {
+    "spotsound_mIoU_percent": 44.803272476040846,
+    "auto_aeg_mIoU_percent": 40.82016475479905,
+    "R_IoU@0.3_percent": 51.93543769233394,
+    "R_IoU@0.5_percent": 38.299823492475696,
+    "R_IoU@0.7_percent": 27.964198700721198,
+    "All_R_IoU@0.3_percent": 45.082627972591695,
+    "All_R_IoU@0.5_percent": 32.285368802902056,
+    "All_R_IoU@0.7_percent": 23.518742442563482,
+    "segment_F1_percent": 66.54626154551524,
+    "event_F1_public_code_onset_0.5s_percent": 49.34453517650443
+  },
+  "selected": {
+    "spotsound_mIoU_percent": 45.586466863808255,
+    "auto_aeg_mIoU_percent": 41.552586338147584,
+    "R_IoU@0.3_percent": 53.482802066979765,
+    "R_IoU@0.5_percent": 39.059113000298176,
+    "R_IoU@0.7_percent": 28.190573914248755,
+    "All_R_IoU@0.3_percent": 46.59411527609835,
+    "All_R_IoU@0.5_percent": 32.889963724304714,
+    "All_R_IoU@0.7_percent": 23.70012091898428,
+    "segment_F1_percent": 66.70922356630581,
+    "event_F1_public_code_onset_0.5s_percent": 49.40625525627347
+  },
+  "delta_auto_aeg_mIoU_points": 0.732421583348534,
+  "source_report": "aegbench_local_expansion_report.json",
+  "note": "This local positive-category expansion does not match the later Auto-AEG v4 item/query counts and is not a directly comparable official-paper score."
+}

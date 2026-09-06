@@ -1,0 +1,47 @@
+{
+  "benchmark": "AEGBench-local-expansion-v1",
+  "rows": 9924,
+  "audio_groups": 3424,
+  "incumbent_mIoU_percent": 44.80320073713895,
+  "nova_mbr_mIoU_percent": 45.58639736917376,
+  "delta_mIoU_points": 0.7831966320347973,
+  "delta_mIoU_audio_group_bootstrap_95ci": [
+    0.666583879869499,
+    0.9047087696280433
+  ],
+  "fixed_threshold_mIoU_percent": 44.80320073713895,
+  "dinkelbach_minus_threshold_points": 0.7831966320348105,
+  "R1@0.3_percent": 61.467150342603794,
+  "R1@0.5_percent": 42.69447803305118,
+  "R1@0.7_percent": 28.375654977831523,
+  "event_F1@0.5_percent": 37.56020795527685,
+  "wins": 600,
+  "ties": 9186,
+  "losses": 138,
+  "new_catastrophic_regressions": 1,
+  "switches": 787,
+  "switch_rate": 0.07930270052398226,
+  "abstain_reasons": {
+    "gain_lower_bound_below_margin": 8953,
+    "identity_or_non_positive_gain": 92,
+    "empty_incumbent": 85,
+    "invalid_trust_region:trust region lost the identity boundary edit": 3,
+    "invalid_incumbent:incumbent intervals must be strictly ordered and disjoint": 4
+  },
+  "boundary_shift_seconds": {
+    "mean": 0.023064609780884947,
+    "p95": 0.22299999999999986,
+    "max": 0.25
+  },
+  "alignment_valid": true,
+  "promotion_gate": {
+    "positive_delta": true,
+    "zero_catastrophic": false,
+    "beats_fixed_threshold": true,
+    "diagnostic_only": false,
+    "passed": false
+  },
+  "predictions_sha256": "fc642d9e70c44068bdce895dcc2bfdfd40eaf02f4f5ed42f086c62e453040096",
+  "seed": 20260903,
+  "bootstrap_samples": 10000
+}
