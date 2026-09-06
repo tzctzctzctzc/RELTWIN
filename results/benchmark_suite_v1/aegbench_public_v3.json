@@ -11,6 +11,16 @@
     0.39786309101672207,
     0.5541119165091154
   ],
+  "auto_aeg_public_code_metrics": {
+    "incumbent_mIoU_percent": 40.82016475479921,
+    "nova_mIoU_percent": 41.24250359361496,
+    "delta_mIoU_points": 0.4223388388157481,
+    "nova_R_IoU@0.3_percent": 52.856470518640954,
+    "nova_R_IoU@0.5_percent": 38.74276830441902,
+    "nova_R_IoU@0.7_percent": 28.11105288778094,
+    "nova_segment_F1_percent": 66.6344075820915,
+    "nova_event_F1_onset_0.5s_percent": 49.37975486634931
+  },
   "wins": 497,
   "ties": 9307,
   "losses": 120,

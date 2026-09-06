@@ -17,7 +17,8 @@ The AEGBench number above is the complete current public-v3 expansion and is
 not directly comparable to the paper's earlier 9,790-query table.  Its
 audio-group bootstrap 95% interval for the NOVA gain is
 `[+0.397863, +0.554112]`; 497 rows improve, 120 decline by less than 0.5 IoU,
-and 9,307 tie.
+and 9,307 tie.  Under the released Auto-AEG public-code metric, the same
+predictions change mIoU from `40.820165` to `41.242504` (`+0.422339`).
 
 UnAV uses the released 100-query AMR protocol, not the unreleased 997-query
 subset reported in the SpotSound paper.  Primary scoring clips intervals to
