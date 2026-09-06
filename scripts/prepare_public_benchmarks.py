@@ -133,6 +133,7 @@ def prepare_lat_tag(
     *,
     language: str,
     audio_dir: Path | None = None,
+    allow_annotation_overshoot: bool = False,
 ) -> list[dict]:
     """Normalize LAT-Bench temporal-audio-grounding conversations.
 
@@ -202,13 +203,16 @@ def prepare_lat_tag(
             if audio_dir is not None
             else metadata_duration
         )
-        if start < 0 or end <= start or end > duration + 1.0:
+        annotation_overshoot = max(0.0, end - duration)
+        if start < 0 or end <= start or (
+            annotation_overshoot > 1.0 and not allow_annotation_overshoot
+        ):
             raise ValueError(
                 f"Invalid LAT interval {[start, end]} for duration {duration} "
                 f"at line {line_number}"
             )
 
-        qid = f"{audio_id}:{start:g}-{end:g}"
+        qid = f"{audio_id}:{line_number - 1}"
         if qid in seen_qids:
             raise ValueError(f"Duplicate LAT qid {qid!r} at line {line_number}")
         seen_qids.add(qid)
@@ -223,6 +227,7 @@ def prepare_lat_tag(
                 "duration": duration,
                 "metadata_duration": metadata_duration,
                 "duration_mismatch": abs(duration - metadata_duration) > 1.0,
+                "annotation_overshoot_seconds": annotation_overshoot,
                 "released_prompt": raw_prompt,
             }
         )
@@ -306,6 +311,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="Required WAV directory for LAT-Bench duration validation.",
     )
+    parser.add_argument(
+        "--allow-annotation-overshoot",
+        action="store_true",
+        help="Preserve and flag released intervals beyond the actual audio duration.",
+    )
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -335,6 +345,7 @@ def main() -> None:
             args.metadata,
             language="en",
             audio_dir=args.audio_dir,
+            allow_annotation_overshoot=args.allow_annotation_overshoot,
         )
     else:
         rows = prepare(args.source)

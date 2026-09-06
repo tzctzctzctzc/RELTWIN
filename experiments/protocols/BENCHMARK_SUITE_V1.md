@@ -30,6 +30,10 @@ frozen NOVA model, boundary model, confidence margin, or adaptive radius:
   the SpotSound harness, while the full released prompt is retained in each
   normalized row for audit.  Direct full-context inference is smoke-tested
   before any long-audio chunking policy is considered.
+  The public `Bench_EN_97.wav` is 349.693 seconds while metadata says 818
+  seconds; two released TAG intervals begin after the WAV ends.  Both rows stay
+  in the 426-query primary score as flagged unreachable labels, with a separate
+  424-valid-row diagnostic reported rather than silently deleting them.
 
 Every benchmark first runs the locked SpotSound-A adapter to create the
 incumbent, then exports the frozen SpanTool evidence and applies the locked

@@ -187,7 +187,7 @@ def test_prepare_lat_tag_strips_only_fixed_instruction_wrapper(tmp_path):
     assert rows == [
         {
             "benchmark": "LAT-Bench-EN-TAG",
-            "qid": "Bench_EN_1:673-733",
+            "qid": "Bench_EN_1:0",
             "audio_group": "Bench_EN_1",
             "audio_path": "Bench_EN_1.wav",
             "caption": "the section where a person whistles while a dog barks.",
@@ -195,6 +195,7 @@ def test_prepare_lat_tag_strips_only_fixed_instruction_wrapper(tmp_path):
             "duration": 1225.712,
             "metadata_duration": 1225.712,
             "duration_mismatch": False,
+            "annotation_overshoot_seconds": 0.0,
             "released_prompt": (
                 "<audio>Please listen to the audio carefully and locate "
                 "the section where a person whistles while a dog barks. "
@@ -247,6 +248,55 @@ def test_prepare_lat_tag_uses_audio_duration_over_incorrect_metadata(tmp_path):
     assert rows[0]["duration"] == 12.0
     assert rows[0]["metadata_duration"] == 6.0
     assert rows[0]["duration_mismatch"] is True
+    assert rows[0]["annotation_overshoot_seconds"] == 0.0
+
+
+def test_prepare_lat_tag_can_preserve_released_unreachable_label(tmp_path):
+    import wave
+
+    metadata = tmp_path / "meta.jsonl"
+    metadata.write_text(
+        json.dumps({"id": "Bench_EN_97", "duration": 818.0}) + "\n",
+        encoding="utf-8",
+    )
+    audio_dir = tmp_path / "audio"
+    audio_dir.mkdir()
+    with wave.open(str(audio_dir / "Bench_EN_97.wav"), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(2)
+        handle.setframerate(10)
+        handle.writeframes(b"\x00\x00" * 100)
+    source = tmp_path / "tag.jsonl"
+    source.write_text(
+        json.dumps(
+            {
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": (
+                            "<audio>Please listen to the audio carefully and locate "
+                            "the unreachable released event. Please strictly output the result in the format of "
+                            "[Start Time - End Time]. Do not output any extra explanatory text."
+                        ),
+                    },
+                    {"role": "assistant", "content": "[00:08 - 00:12]"},
+                ],
+                "audios": ["Bench_EN_97"],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    rows = prepare_lat_tag(
+        source,
+        metadata,
+        language="en",
+        audio_dir=audio_dir,
+        allow_annotation_overshoot=True,
+    )
+    assert rows[0]["annotations"] == [[8.0, 12.0]]
+    assert rows[0]["duration"] == 10.0
+    assert rows[0]["annotation_overshoot_seconds"] == 2.0
 
 
 def test_parse_lat_timestamp_supports_hour_form_and_rejects_invalid():
