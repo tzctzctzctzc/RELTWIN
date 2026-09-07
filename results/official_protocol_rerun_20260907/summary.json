@@ -1,0 +1,112 @@
+{
+  "code_commit": "671fba7473c16f19f721e48e79e6b65b7770c874",
+  "branch": "codex/official-ag-unav-20260907",
+  "completed_at": "2026-09-08",
+  "seed": 20260903,
+  "tests": {
+    "passed": 125,
+    "failed": 0
+  },
+  "datasets": [
+    {
+      "benchmark": "AudioGrounding-v2",
+      "released_protocol": {
+        "source_audio_records": 492,
+        "query_rows": 997,
+        "evaluated_audio_groups": 483
+      },
+      "spotsound_table2_reported_counts": {
+        "audio": 70,
+        "queries": 100
+      },
+      "paper_table3_best": {
+        "model": "SpotSound-A",
+        "mIoU_percent": 70.3,
+        "R1@0.3_percent": 90.1,
+        "R1@0.5_percent": 74.8
+      },
+      "duration_clipped": {
+        "incumbent_mIoU_percent": 70.41813764571614,
+        "nova_mIoU_percent": 70.46983094751438,
+        "delta_vs_incumbent_points": 0.051693301798238146,
+        "delta_vs_paper_best_points": 0.16983094751438443,
+        "R1@0.3_percent": 89.16750250752257,
+        "R1@0.5_percent": 76.32898696088265,
+        "R1@0.7_percent": 59.779338014042125,
+        "event_F1@0.5_percent": 67.85409452911959,
+        "audio_group_bootstrap_95ci_points": [
+          -0.1358597705270482,
+          0.22756868923728366
+        ],
+        "wins": 28,
+        "ties": 956,
+        "losses": 13,
+        "switches": 41,
+        "new_catastrophic_regressions": 0
+      },
+      "released_endpoint_audit": {
+        "incumbent_mIoU_percent": 70.39005930188411,
+        "nova_mIoU_percent": 70.44171790496382,
+        "delta_vs_incumbent_points": 0.05165860307972797,
+        "delta_vs_paper_best_points": 0.1417179049638264
+      },
+      "alignment_valid": true,
+      "hashes": {
+        "released_source_sha256": "426378178ecea5f87e4f927431bb987a598bcc59c7c6113ec268970c7364d4661",
+        "processed_annotations_sha256": "bdcfaff95e015f14c2adab930a3217289cca05d7c0811e16894c315d9d12e09e",
+        "official_predictions_sha256": "cb84e8a3448974f85bb3403c143ebc18cbc3a8add51113d4e41ee340e20faac48",
+        "nova_predictions_sha256": "d1878375cc604466deb18f8b61823d846aad0501279a504e372a263f9d335851"
+      }
+    },
+    {
+      "benchmark": "UnAV-100 subset",
+      "released_protocol": {
+        "audio_groups": 77,
+        "query_rows": 100
+      },
+      "spotsound_table2_reported_counts": {
+        "audio": 492,
+        "queries": 997
+      },
+      "paper_table3_best": {
+        "model": "SpotSound-Q",
+        "mIoU_percent": 72.4,
+        "R1@0.3_percent": 88.0,
+        "R1@0.5_percent": 74.0
+      },
+      "duration_clipped": {
+        "incumbent_mIoU_percent": 73.4512877190421,
+        "nova_mIoU_percent": 73.46461028036113,
+        "delta_vs_incumbent_points": 0.0133225613190322,
+        "delta_vs_paper_best_points": 1.0646102803611228,
+        "R1@0.3_percent": 89.0,
+        "R1@0.5_percent": 80.0,
+        "R1@0.7_percent": 72.0,
+        "event_F1@0.5_percent": 77.0,
+        "audio_group_bootstrap_95ci_points": [
+          0.0,
+          0.042071246270628
+        ],
+        "wins": 1,
+        "ties": 99,
+        "losses": 0,
+        "switches": 1,
+        "new_catastrophic_regressions": 0
+      },
+      "released_endpoint_audit": {
+        "incumbent_mIoU_percent": 73.37413908696986,
+        "nova_mIoU_percent": 73.3874616482889,
+        "delta_vs_incumbent_points": 0.0133225613190322,
+        "delta_vs_paper_best_points": 0.9874616482888996
+      },
+      "alignment_valid": true,
+      "hashes": {
+        "released_source_sha256": "e7e471117f658108e92adb313238e2609234ef5f85c9ddf26d6c09d14d10ffdec",
+        "processed_annotations_sha256": "1dc96c6cca4bbaa5f09f2c0db5706466025bce224ccd86b69e4563a5995663c4f",
+        "official_predictions_sha256": "31b658bf08f6b75435088ee4f278026f6a8d3f3ff53757a12978359acc9982531",
+        "nova_predictions_sha256": "37e70046e159f1d0156276b46edeab7515c0e5147ebd3575a99567368f18d1af"
+      }
+    }
+  ],
+  "protocol_note": "SpotSound Table 2 reports AudioGrounding and UnAV cardinalities that conflict with the named upstream releases and align with the opposite datasets. Results use the complete upstream public releases and disclose this table inconsistency."
+}

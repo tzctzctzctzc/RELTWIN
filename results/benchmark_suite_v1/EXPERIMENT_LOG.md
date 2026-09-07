@@ -20,9 +20,13 @@ audio-group bootstrap 95% interval for the NOVA gain is
 and 9,307 tie.  Under the released Auto-AEG public-code metric, the same
 predictions change mIoU from `40.820165` to `41.242504` (`+0.422339`).
 
-UnAV uses the released 100-query AMR protocol, not the unreleased 997-query
-subset reported in the SpotSound paper.  Primary scoring clips intervals to
-the actual audio duration.  The unclipped audit score is
+UnAV uses the released 100-query AMR protocol. A later source audit found that
+SpotSound Table 2's 492-audio/997-query count is the exact cardinality of the
+complete AudioGrounding-v2 test release, while the named UnAV AMR release has
+100 queries. The earlier interpretation of a separate unreleased 997-query
+UnAV subset is therefore withdrawn; see
+`results/official_protocol_rerun_20260907/EXPERIMENT_LOG.md`. Primary scoring
+clips intervals to the actual audio duration. The unclipped audit score is
 `73.374139 -> 73.387462`; both conventions give the same `+0.013323` paired
 gain.  NOVA changes one row, improves it, and introduces no loss.
 
