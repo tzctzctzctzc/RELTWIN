@@ -22,6 +22,8 @@ def main():
     p.add_argument("--stress", type=Path, required=True)
     p.add_argument("--qa-dir", type=Path, required=True)
     p.add_argument("--zip", type=Path)
+    p.add_argument("--clean-build", type=Path, help="An independently extracted and compiled ZIP directory")
+    p.add_argument("--visual-reviewed", action="store_true", help="Set only after viewing every rendered page")
     args = p.parse_args()
     repo, package, qa = args.repository.resolve(), args.package.resolve(), args.qa_dir.resolve()
     evidence = json.loads(args.evidence.read_text(encoding="utf-8"))
@@ -83,6 +85,17 @@ def main():
         assert bad not in log, bad
     pdf = pymupdf.open(package / "main.pdf")
     assert len(pdf) <= 5
+    clean_build = None
+    if args.clean_build:
+        clean_log = (args.clean_build / "main.log").read_text(encoding="utf-8", errors="replace")
+        for bad in ("Overfull ", "undefined references", "Citation `", "LaTeX Error", "multiply defined"):
+            assert bad not in clean_log, ("clean build", bad)
+        clean_pdf = pymupdf.open(args.clean_build / "main.pdf")
+        assert len(clean_pdf) == len(pdf)
+        for expected, actual in zip(pdf, clean_pdf):
+            assert expected.get_text() == actual.get_text()
+            assert expected.get_pixmap(alpha=False).samples == actual.get_pixmap(alpha=False).samples
+        clean_build = {"path": str(args.clean_build.resolve()), "pages": len(clean_pdf), "text_and_render_identical": True}
     text = "\n".join(page.get_text() for page in pdf)
     assert "REFERENCES" in text
     if len(pdf) == 5:
@@ -107,9 +120,9 @@ def main():
                 if not name.endswith("/"):
                     assert z.read(name) == (package / name).read_bytes(), name
         archive = {"path": str(args.zip), "sha256": sha(args.zip), "files": len(names)}
-    report = {"validated": True, "pages": len(pdf), "abstract_words": word_count, "fonts": sorted(fonts), "pdf_sha256": sha(package / "main.pdf"), "evidence_sha256": sha(args.evidence), "timing_stress_sha256": sha(args.stress), "archive": archive,
+    report = {"validated": True, "pages": len(pdf), "abstract_words": word_count, "fonts": sorted(fonts), "pdf_sha256": sha(package / "main.pdf"), "evidence_sha256": sha(args.evidence), "timing_stress_sha256": sha(args.stress), "archive": archive, "clean_build": clean_build, "visual_review_completed": args.visual_reviewed,
               "checks": ["15 complete aligned models", "matched-runtime bridge included", "frozen timing stress complete and primary result checked", "unchanged waveforms reproduce predictions", "no pending claims", "published main-table transcription", "controlled numerical table", "input/source separation", "template byte identity", "no overfull or unresolved citations", "US Letter and <=5 pages", "fifth page references only", "font embedding and no Type3"],
-              "manual_checks_remaining": ["visual inspection of rendered pages", "author approval and ORCID/contact confirmation", "submission portal inspection"]}
+              "manual_checks_remaining": ([] if args.visual_reviewed else ["visual inspection of rendered pages"]) + ["author approval and ORCID/contact confirmation", "submission portal inspection"]}
     (qa / "validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report))
 

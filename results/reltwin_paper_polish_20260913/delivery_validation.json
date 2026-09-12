@@ -1,0 +1,59 @@
+{
+  "validated": true,
+  "pages": 5,
+  "abstract_words": 138,
+  "fonts": [
+    "CASRNQ+CMSY10",
+    "CJHFBF+CMMI10",
+    "FTFVNX+CMMI7",
+    "FZTOSQ+CMR9",
+    "HBIEHQ+CMSY6",
+    "HMPEFZ+CMSY5",
+    "IJORQO+CMSY9",
+    "IRWAJI+CMR6",
+    "JUOZBQ+NimbusMonL-Regu",
+    "KLYABB+NimbusRomNo9L-Medi",
+    "MRCOSU+CMMI9",
+    "NBHGOG+CMR7",
+    "PXBGHL+CMSY7",
+    "RGNAUA+NimbusRomNo9L-ReguItal",
+    "SJISBO+NimbusRomNo9L-MediItal",
+    "UZQLUM+CMR5",
+    "XIXLAF+NimbusRomNo9L-Regu",
+    "YAHGDS+CMR10",
+    "YQJSDJ+CMEX10"
+  ],
+  "pdf_sha256": "36a0a7611d376f2fe5c834ebf8fae4fe5f23d37293a707a0bb89e19496f1637b",
+  "evidence_sha256": "1717d22f3b2cdfa75e971279ef82a4f45f92785697271702cc8e087ae567a5c2",
+  "timing_stress_sha256": "3a2e840782b4f72addac58ea96bafb4c7de3846525576c3daeb585be14d1e4b6",
+  "archive": {
+    "path": "I:\\AI科研\\SpotSound\\RelTwin_ICASSP2027_Binding_Overleaf_20260913.zip",
+    "sha256": "a09a650280eb6786efbea65476395f60c8d07e6ac16e2e1570c77e89a8697ae2",
+    "files": 31
+  },
+  "clean_build": {
+    "path": "I:\\AI科研\\SpotSound\\reltwin_final_v4_clean_build",
+    "pages": 5,
+    "text_and_render_identical": true
+  },
+  "visual_review_completed": true,
+  "checks": [
+    "15 complete aligned models",
+    "matched-runtime bridge included",
+    "frozen timing stress complete and primary result checked",
+    "unchanged waveforms reproduce predictions",
+    "no pending claims",
+    "published main-table transcription",
+    "controlled numerical table",
+    "input/source separation",
+    "template byte identity",
+    "no overfull or unresolved citations",
+    "US Letter and <=5 pages",
+    "fifth page references only",
+    "font embedding and no Type3"
+  ],
+  "manual_checks_remaining": [
+    "author approval and ORCID/contact confirmation",
+    "submission portal inspection"
+  ]
+}

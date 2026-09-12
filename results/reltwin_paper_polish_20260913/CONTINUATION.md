@@ -22,7 +22,7 @@
 
 桥接最终结果：Cand 相较同环境 SFT，关系 mIoU +13.97、JointPairAcc +31.25，SpotSound +1.02；对应来源/音频组 CI 均不跨零。只有一个匹配种子，不与三种子 Cand 对 official 的区间混用。`evidence_complete.json` 和 `FINAL_RESULTS.md` 已记录完整数值。历史其它对照仍有训练环境限制。
 
-**当前剩余仅交付：** 新英文源 `paper/overleaf_icassp2027_reltwin_final_v4/` 已集成两项新结果，正在压缩到四页技术内容并校验。中文 `paper/ICASSP_DRAFT_ZH_v8_BINDING.md` 已更新。接下来导出英文 Markdown、复制证据至包内 notes、数值/编译/逐页视觉检查、Git 提交、生成可导入 Overleaf 的根目录 ZIP 和预览 PDF、同步新分支到远端（不 push GitHub）。交付后更新此记录并删除 heartbeat。
+**成品与检查已完成：** 英文源 `paper/overleaf_icassp2027_reltwin_final_v4/` 已集成两项新结果，四页技术内容加第五页参考文献。中英文 v8 Markdown、PDF、Overleaf ZIP 均已生成；29 项测试、数值检查、全部五页视觉检查和 ZIP 解压后从零编译都通过。见 `DELIVERY.md` 与 `delivery_validation.json`。不再补实验或修改冻结稿件，只完成新分支的远端同步和关闭本轮 heartbeat；随后等待作者审阅，不自动 push GitHub、合并或投稿。
 
 主表文献成绩引用 SpotSound Table 3，不引用 87.2 的 Clotho 消融。完整系统的 Clotho 86.855592 来自 official+边界，不能作为 RelTwin 迁移。UnAV 协议受限，不参加公平排名。原用户 v1/v2/v4 的未提交文件保持不动。
 
