@@ -1,0 +1,17 @@
+{
+  "state": "COMPLETE",
+  "pid": 2929,
+  "time": 1789232579.7053597,
+  "completed": [
+    "train",
+    "smoke_relation",
+    "smoke_public",
+    "relation",
+    "public",
+    "relation_analysis"
+  ],
+  "total_tasks": 6,
+  "current_task": null,
+  "error": null,
+  "used_seconds": 1848.2266656477004
+}

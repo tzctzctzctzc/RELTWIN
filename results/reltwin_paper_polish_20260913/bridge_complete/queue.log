@@ -1,0 +1,6 @@
+{"completed": "train", "progress": [1, 6]}
+{"completed": "smoke_relation", "progress": [2, 6]}
+{"completed": "smoke_public", "progress": [3, 6]}
+{"completed": "relation", "progress": [4, 6]}
+{"completed": "public", "progress": [5, 6]}
+{"completed": "relation_analysis", "progress": [6, 6]}

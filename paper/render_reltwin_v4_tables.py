@@ -2,6 +2,11 @@
 import argparse
 import json
 from pathlib import Path
+from decimal import Decimal, ROUND_HALF_UP
+
+
+def fmt2(value):
+    return str(Decimal(str(value)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
 
 
 def main():
@@ -21,13 +26,13 @@ def main():
     for name, label in [("official", "Official"), ("sft_seed0", "Historical SFT, s0"),
                         ("sft_current_seed0", "Current SFT, s0"), ("no_exchange_seed0", "Cand, s0")]:
         m = report["models"][name]
-        lines.append(f"{label} & {m['public']['mIoU']:.2f} & {m['relation']['mIoU']:.2f} & {m['relation']['JointPairAcc@0.5']:.2f}" + r"\\")
+        lines.append(f"{label} & {fmt2(m['public']['mIoU'])} & {fmt2(m['relation']['mIoU'])} & {fmt2(m['relation']['JointPairAcc@0.5'])}" + r"\\")
     lines.append(r"\midrule")
     for name, label in [("no_exchange", "Cand, 3 seeds"), ("rbee", "RBEE, 3 seeds"),
                         ("continue_rbee", "RBEE +64 updates"), ("setpo", "SetPO +64 updates")]:
         m = report["stage_means"][name]
         a, b, joint = m["public"]["mIoU"], m["relation"]["mIoU"], m["relation"]["JointPairAcc@0.5"]["mean"]
-        lines.append(f"{label} & ${a['mean']:.2f}\\pm{a['sample_sd']:.2f}$ & ${b['mean']:.2f}\\pm{b['sample_sd']:.2f}$ & {joint:.2f}" + r"\\")
+        lines.append(f"{label} & ${fmt2(a['mean'])}\\pm{fmt2(a['sample_sd'])}$ & ${fmt2(b['mean'])}\\pm{fmt2(b['sample_sd'])}$ & {fmt2(joint)}" + r"\\")
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     path = args.package / "tables/training_results.tex"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")

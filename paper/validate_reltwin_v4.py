@@ -7,6 +7,7 @@ import re
 import zipfile
 
 import pymupdf
+from render_reltwin_v4_tables import fmt2
 
 
 def sha(path):
@@ -43,11 +44,11 @@ def main():
     for name in ("official", "sft_seed0", "sft_current_seed0", "no_exchange_seed0"):
         row = evidence["models"][name]
         values = [row["public"]["mIoU"], row["relation"]["mIoU"], row["relation"]["JointPairAcc@0.5"]]
-        assert " & ".join(f"{x:.2f}" for x in values) in table, name
+        assert " & ".join(fmt2(x) for x in values) in table, name
     for stage in ("no_exchange", "rbee", "continue_rbee", "setpo"):
         for split in ("relation", "public"):
             row = evidence["stage_means"][stage][split]["mIoU"]
-            assert f"${row['mean']:.2f}\\pm{row['sample_sd']:.2f}$" in table, (stage, split)
+            assert f"${fmt2(row['mean'])}\\pm{fmt2(row['sample_sd'])}$" in table, (stage, split)
     main_table = (package / "tables/main_results.tex").read_text(encoding="utf-8")
     old_table = (repo / "paper/overleaf_icassp2027_reltwin_review_v3/tables/main_results.tex").read_text(encoding="utf-8")
     for method in ("WTATG", "AM-DETR", "Gemini-2.5-Flash", "Gemini-2.5-Pro", "Kimi-Audio", "Qwen2-Audio", "Audio Flamingo 3", "TimeAudio", "SpotSound-Q", "SpotSound-A"):

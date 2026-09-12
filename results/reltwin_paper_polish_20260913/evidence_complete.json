@@ -1,0 +1,2390 @@
+{
+  "bridge_complete": true,
+  "scope": "All relation results are previously observed synthetic development evidence. CIs condition on fixed seeds. No test-set tuning or natural-generalization claim.",
+  "models": {
+    "continue_rbee_seed0": {
+      "relation": {
+        "mIoU": 89.17732747315611,
+        "PairAcc@0.5": 85.625,
+        "SwapError": 6.25,
+        "JointPairAcc@0.5": 85.0
+      },
+      "public": {
+        "mIoU": 59.30969933911936,
+        "R1@0.3": 77.0,
+        "R1@0.5": 62.74999999999999,
+        "R1@0.7": 43.5
+      },
+      "train": {
+        "mode": "rbee",
+        "steps": 64,
+        "learning_rate": 2e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 1.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 0,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 421.018811551854,
+        "peak_gpu_memory_mib": 18643.05859375,
+        "final_event": {
+          "step": 64,
+          "loss": 0.5333537086844444,
+          "grad_norm": 3.3292510509490967,
+          "sft": 0.11402623355388641,
+          "candidate_ce": 0.3479597866535187,
+          "exchange_js": 0.0010580047965049744,
+          "p_ab_correct": 0.6854966878890991,
+          "p_ba_correct": 0.7273787260055542,
+          "rehearsal": 0.14061932265758514
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/continue_rbee_seed0/adapter"
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 136,
+        "pair_pass_without_joint": 1
+      }
+    },
+    "continue_rbee_seed1": {
+      "relation": {
+        "mIoU": 88.9133208402543,
+        "PairAcc@0.5": 86.875,
+        "SwapError": 5.0,
+        "JointPairAcc@0.5": 86.875
+      },
+      "public": {
+        "mIoU": 59.16245857870338,
+        "R1@0.3": 77.25,
+        "R1@0.5": 62.25000000000001,
+        "R1@0.7": 44.0
+      },
+      "train": {
+        "mode": "rbee",
+        "steps": 64,
+        "learning_rate": 2e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 1.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 1,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 434.0413000797853,
+        "peak_gpu_memory_mib": 18643.072265625,
+        "final_event": {
+          "step": 64,
+          "loss": 0.44758589565753937,
+          "grad_norm": 3.0082430839538574,
+          "sft": 0.05724278464913368,
+          "candidate_ce": 0.33877766132354736,
+          "exchange_js": 3.600120544433594e-05,
+          "p_ab_correct": 0.7164919972419739,
+          "p_ba_correct": 0.7088104486465454,
+          "rehearsal": 0.10305890440940857
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/continue_rbee_seed1/adapter"
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 139,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "continue_rbee_seed2": {
+      "relation": {
+        "mIoU": 89.04238082480512,
+        "PairAcc@0.5": 85.0,
+        "SwapError": 6.25,
+        "JointPairAcc@0.5": 85.0
+      },
+      "public": {
+        "mIoU": 59.05835209281087,
+        "R1@0.3": 76.75,
+        "R1@0.5": 62.25000000000001,
+        "R1@0.7": 43.75
+      },
+      "train": {
+        "mode": "rbee",
+        "steps": 64,
+        "learning_rate": 2e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 1.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 2,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 432.0933850761503,
+        "peak_gpu_memory_mib": 18645.02099609375,
+        "final_event": {
+          "step": 64,
+          "loss": 0.7589975371956825,
+          "grad_norm": 3.6892364025115967,
+          "sft": 0.1157044768333435,
+          "candidate_ce": 0.5200808644294739,
+          "exchange_js": 0.002980738878250122,
+          "p_ab_correct": 0.5578073263168335,
+          "p_ba_correct": 0.6335476636886597,
+          "rehearsal": 0.24046285450458527
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/continue_rbee_seed2/adapter"
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 136,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "no_exchange_seed0": {
+      "relation": {
+        "mIoU": 88.54619867561681,
+        "PairAcc@0.5": 85.0,
+        "SwapError": 7.5,
+        "JointPairAcc@0.5": 84.375
+      },
+      "public": {
+        "mIoU": 59.43287334410579,
+        "R1@0.3": 78.0,
+        "R1@0.5": 62.0,
+        "R1@0.7": 44.25
+      },
+      "train": {
+        "mode": "rbee",
+        "steps": 256,
+        "learning_rate": 5e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 0.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 0,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 1708.0054881414399,
+        "peak_gpu_memory_mib": 18645.02099609375,
+        "final_event": {
+          "step": 256,
+          "loss": 0.9719342440366745,
+          "grad_norm": 8.21689510345459,
+          "sft": 0.16384448111057281,
+          "candidate_ce": 0.6534261703491211,
+          "exchange_js": 0.018753796815872192,
+          "p_ab_correct": 0.6254715919494629,
+          "p_ba_correct": 0.432746559381485,
+          "rehearsal": 0.30932721495628357
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/no_exchange_seed0/adapter"
+      },
+      "behavior": {
+        "same_pairs": 1,
+        "same_percent": 0.625,
+        "equivalent_pairs": 1,
+        "both_empty": 0,
+        "joint_correct": 135,
+        "pair_pass_without_joint": 1
+      }
+    },
+    "no_exchange_seed1": {
+      "relation": {
+        "mIoU": 86.88992885444458,
+        "PairAcc@0.5": 80.0,
+        "SwapError": 8.125,
+        "JointPairAcc@0.5": 80.0
+      },
+      "public": {
+        "mIoU": 59.13476292499562,
+        "R1@0.3": 77.25,
+        "R1@0.5": 62.25000000000001,
+        "R1@0.7": 43.75
+      },
+      "train": {
+        "mode": "rbee",
+        "steps": 256,
+        "learning_rate": 5e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 0.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 1,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 1731.2766960849985,
+        "peak_gpu_memory_mib": 18648.9296875,
+        "final_event": {
+          "step": 256,
+          "loss": 1.0393384844064713,
+          "grad_norm": 4.68613338470459,
+          "sft": 0.2854486405849457,
+          "candidate_ce": 0.5232886075973511,
+          "exchange_js": 0.012753874063491821,
+          "p_ab_correct": 0.519573450088501,
+          "p_ba_correct": 0.675818920135498,
+          "rehearsal": 0.4612024128437042
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/no_exchange_seed1/adapter"
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 128,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "no_exchange_seed2": {
+      "relation": {
+        "mIoU": 85.70420559627608,
+        "PairAcc@0.5": 80.0,
+        "SwapError": 8.75,
+        "JointPairAcc@0.5": 80.0
+      },
+      "public": {
+        "mIoU": 58.9209990681924,
+        "R1@0.3": 76.25,
+        "R1@0.5": 62.0,
+        "R1@0.7": 44.75
+      },
+      "train": {
+        "mode": "rbee",
+        "steps": 256,
+        "learning_rate": 5e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 0.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 2,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 1736.8253655368462,
+        "peak_gpu_memory_mib": 18645.03466796875,
+        "final_event": {
+          "step": 256,
+          "loss": 0.6006996855139732,
+          "grad_norm": 2.736952066421509,
+          "sft": 0.05079425871372223,
+          "candidate_ce": 0.4816463887691498,
+          "exchange_js": 0.00024424493312835693,
+          "p_ab_correct": 0.6071199774742126,
+          "p_ba_correct": 0.6285976767539978,
+          "rehearsal": 0.13651804625988007
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/no_exchange_seed2/adapter"
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 128,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "official": {
+      "relation": {
+        "mIoU": 37.644557829650275,
+        "PairAcc@0.5": 0.625,
+        "SwapError": 65.0,
+        "JointPairAcc@0.5": 0.625
+      },
+      "public": {
+        "mIoU": 58.41535280888225,
+        "R1@0.3": 76.75,
+        "R1@0.5": 60.75000000000001,
+        "R1@0.7": 42.5
+      },
+      "behavior": {
+        "same_pairs": 15,
+        "same_percent": 9.375,
+        "equivalent_pairs": 21,
+        "both_empty": 0,
+        "joint_correct": 1,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "rbee_seed0": {
+      "relation": {
+        "mIoU": 87.92899278340516,
+        "PairAcc@0.5": 83.75,
+        "SwapError": 8.75,
+        "JointPairAcc@0.5": 83.125
+      },
+      "public": {
+        "mIoU": 59.48220985389601,
+        "R1@0.3": 77.0,
+        "R1@0.5": 62.74999999999999,
+        "R1@0.7": 44.75
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 133,
+        "pair_pass_without_joint": 1
+      }
+    },
+    "rbee_seed1": {
+      "relation": {
+        "mIoU": 86.68249376498258,
+        "PairAcc@0.5": 81.875,
+        "SwapError": 6.875000000000001,
+        "JointPairAcc@0.5": 81.875
+      },
+      "public": {
+        "mIoU": 59.289843354043306,
+        "R1@0.3": 76.75,
+        "R1@0.5": 62.25000000000001,
+        "R1@0.7": 44.25
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 131,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "rbee_seed2": {
+      "relation": {
+        "mIoU": 85.72001984335095,
+        "PairAcc@0.5": 80.0,
+        "SwapError": 8.75,
+        "JointPairAcc@0.5": 80.0
+      },
+      "public": {
+        "mIoU": 59.109743098339706,
+        "R1@0.3": 77.0,
+        "R1@0.5": 62.0,
+        "R1@0.7": 44.5
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 128,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "setpo_seed0": {
+      "relation": {
+        "mIoU": 90.246765296658,
+        "PairAcc@0.5": 87.5,
+        "SwapError": 6.25,
+        "JointPairAcc@0.5": 87.5
+      },
+      "public": {
+        "mIoU": 59.158605231319925,
+        "R1@0.3": 76.5,
+        "R1@0.5": 62.74999999999999,
+        "R1@0.7": 43.5
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 1,
+        "both_empty": 0,
+        "joint_correct": 140,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "setpo_seed1": {
+      "relation": {
+        "mIoU": 89.40122545911615,
+        "PairAcc@0.5": 86.25,
+        "SwapError": 5.625,
+        "JointPairAcc@0.5": 86.25
+      },
+      "public": {
+        "mIoU": 59.40573880209008,
+        "R1@0.3": 77.25,
+        "R1@0.5": 62.5,
+        "R1@0.7": 44.25
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 0,
+        "both_empty": 0,
+        "joint_correct": 138,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "setpo_seed2": {
+      "relation": {
+        "mIoU": 89.7925596091491,
+        "PairAcc@0.5": 86.25,
+        "SwapError": 5.625,
+        "JointPairAcc@0.5": 86.25
+      },
+      "public": {
+        "mIoU": 59.023123630762285,
+        "R1@0.3": 76.75,
+        "R1@0.5": 62.0,
+        "R1@0.7": 44.0
+      },
+      "behavior": {
+        "same_pairs": 0,
+        "same_percent": 0.0,
+        "equivalent_pairs": 1,
+        "both_empty": 0,
+        "joint_correct": 138,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "sft_seed0": {
+      "relation": {
+        "mIoU": 75.337159697274,
+        "PairAcc@0.5": 55.625,
+        "SwapError": 38.125,
+        "JointPairAcc@0.5": 55.625
+      },
+      "public": {
+        "mIoU": 58.756570253219124,
+        "R1@0.3": 76.75,
+        "R1@0.5": 62.25000000000001,
+        "R1@0.7": 44.0
+      },
+      "behavior": {
+        "same_pairs": 35,
+        "same_percent": 21.875,
+        "equivalent_pairs": 35,
+        "both_empty": 0,
+        "joint_correct": 89,
+        "pair_pass_without_joint": 0
+      }
+    },
+    "sft_current_seed0": {
+      "relation": {
+        "mIoU": 74.5751993562979,
+        "PairAcc@0.5": 53.125,
+        "SwapError": 40.0,
+        "JointPairAcc@0.5": 53.125
+      },
+      "public": {
+        "mIoU": 58.41640973402447,
+        "R1@0.3": 76.0,
+        "R1@0.5": 61.75000000000001,
+        "R1@0.7": 44.0
+      },
+      "train": {
+        "mode": "sft",
+        "steps": 256,
+        "learning_rate": 5e-06,
+        "temperature": 1.0,
+        "method_weight": 1.0,
+        "exchange_weight": 0.0,
+        "rehearsal_weight": 0.5,
+        "margin": 0.2,
+        "seed": 0,
+        "relation_pairs": 512,
+        "rehearsal_examples": 512,
+        "trainable_parameters": 20185088,
+        "elapsed_seconds": 876.2953904271126,
+        "peak_gpu_memory_mib": 18645.02001953125,
+        "final_event": {
+          "step": 256,
+          "loss": 0.13240066077560186,
+          "grad_norm": 2.0261218547821045,
+          "sft": 0.05008607264608145,
+          "rehearsal": 0.16462917625904083
+        },
+        "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_paper_bridge_20260913/sft_current_seed0/adapter"
+      },
+      "behavior": {
+        "same_pairs": 37,
+        "same_percent": 23.125,
+        "equivalent_pairs": 37,
+        "both_empty": 0,
+        "joint_correct": 85,
+        "pair_pass_without_joint": 0
+      }
+    }
+  },
+  "stage_means": {
+    "no_exchange": {
+      "relation": {
+        "mIoU": {
+          "mean": 87.04677770877916,
+          "sample_sd": 1.4274741111784466
+        },
+        "PairAcc@0.5": {
+          "mean": 81.66666666666667,
+          "sample_sd": 2.8867513459481287
+        },
+        "SwapError": {
+          "mean": 8.125,
+          "sample_sd": 0.625
+        },
+        "JointPairAcc@0.5": {
+          "mean": 81.45833333333333,
+          "sample_sd": 2.5259074277046127
+        }
+      },
+      "public": {
+        "mIoU": {
+          "mean": 59.162878445764605,
+          "sample_sd": 0.25709274681824135
+        },
+        "R1@0.3": {
+          "mean": 77.16666666666667,
+          "sample_sd": 0.8779711460710615
+        },
+        "R1@0.5": {
+          "mean": 62.083333333333336,
+          "sample_sd": 0.14433756729741054
+        },
+        "R1@0.7": {
+          "mean": 44.25,
+          "sample_sd": 0.5
+        }
+      }
+    },
+    "rbee": {
+      "relation": {
+        "mIoU": {
+          "mean": 86.77716879724623,
+          "sample_sd": 1.1075255679999119
+        },
+        "PairAcc@0.5": {
+          "mean": 81.875,
+          "sample_sd": 1.875
+        },
+        "SwapError": {
+          "mean": 8.125,
+          "sample_sd": 1.0825317547305477
+        },
+        "JointPairAcc@0.5": {
+          "mean": 81.66666666666667,
+          "sample_sd": 1.5728821740147396
+        }
+      },
+      "public": {
+        "mIoU": {
+          "mean": 59.29393210209301,
+          "sample_sd": 0.1862670378626346
+        },
+        "R1@0.3": {
+          "mean": 76.91666666666667,
+          "sample_sd": 0.14433756729740643
+        },
+        "R1@0.5": {
+          "mean": 62.333333333333336,
+          "sample_sd": 0.381881307912982
+        },
+        "R1@0.7": {
+          "mean": 44.5,
+          "sample_sd": 0.25
+        }
+      }
+    },
+    "continue_rbee": {
+      "relation": {
+        "mIoU": {
+          "mean": 89.04434304607184,
+          "sample_sd": 0.13201425411016268
+        },
+        "PairAcc@0.5": {
+          "mean": 85.83333333333333,
+          "sample_sd": 0.9547032697824667
+        },
+        "SwapError": {
+          "mean": 5.833333333333333,
+          "sample_sd": 0.7216878364870322
+        },
+        "JointPairAcc@0.5": {
+          "mean": 85.625,
+          "sample_sd": 1.0825317547305484
+        }
+      },
+      "public": {
+        "mIoU": {
+          "mean": 59.1768366702112,
+          "sample_sd": 0.12628898088618357
+        },
+        "R1@0.3": {
+          "mean": 77.0,
+          "sample_sd": 0.25
+        },
+        "R1@0.5": {
+          "mean": 62.41666666666667,
+          "sample_sd": 0.28867513459480465
+        },
+        "R1@0.7": {
+          "mean": 43.75,
+          "sample_sd": 0.25
+        }
+      }
+    },
+    "setpo": {
+      "relation": {
+        "mIoU": {
+          "mean": 89.81351678830775,
+          "sample_sd": 0.42315931602209855
+        },
+        "PairAcc@0.5": {
+          "mean": 86.66666666666667,
+          "sample_sd": 0.7216878364870322
+        },
+        "SwapError": {
+          "mean": 5.833333333333333,
+          "sample_sd": 0.3608439182435161
+        },
+        "JointPairAcc@0.5": {
+          "mean": 86.66666666666667,
+          "sample_sd": 0.7216878364870322
+        }
+      },
+      "public": {
+        "mIoU": {
+          "mean": 59.195822554724096,
+          "sample_sd": 0.1940037092521093
+        },
+        "R1@0.3": {
+          "mean": 76.83333333333333,
+          "sample_sd": 0.3818813079129867
+        },
+        "R1@0.5": {
+          "mean": 62.416666666666664,
+          "sample_sd": 0.3818813079129836
+        },
+        "R1@0.7": {
+          "mean": 43.916666666666664,
+          "sample_sd": 0.3818813079129867
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "cand_minus_historical_sft_seed0": {
+      "relation": {
+        "paired_models": [
+          [
+            "sft_seed0",
+            "no_exchange_seed0"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 13.209038978342802,
+              "per_seed_delta_points": [
+                13.209038978342802
+              ],
+              "groups": 80,
+              "ci95_points": [
+                8.68075417970323,
+                17.939319855011217
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 13.209038978342802,
+              "per_seed_delta_points": [
+                13.209038978342802
+              ],
+              "groups": 39,
+              "ci95_points": [
+                8.669911641583399,
+                16.581268402406664
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 29.375,
+              "per_seed_delta_points": [
+                29.375
+              ],
+              "groups": 80,
+              "ci95_points": [
+                20.0,
+                39.375
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 29.375,
+              "per_seed_delta_points": [
+                29.375
+              ],
+              "groups": 39,
+              "ci95_points": [
+                19.81132075471698,
+                37.5
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -30.625000000000004,
+              "per_seed_delta_points": [
+                -30.625000000000004
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -40.625,
+                -20.625
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -30.625000000000004,
+              "per_seed_delta_points": [
+                -30.625000000000004
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -38.54198042168675,
+                -21.153846153846153
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 28.749999999999996,
+              "per_seed_delta_points": [
+                28.749999999999996
+              ],
+              "groups": 80,
+              "ci95_points": [
+                19.375,
+                38.75
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 28.749999999999996,
+              "per_seed_delta_points": [
+                28.749999999999996
+              ],
+              "groups": 39,
+              "ci95_points": [
+                18.999137931034486,
+                37.121212121212125
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 86,
+          "ties": 165,
+          "losses": 69,
+          "catastrophic_drops": 3
+        }
+      },
+      "public": {
+        "paired_models": [
+          [
+            "sft_seed0",
+            "no_exchange_seed0"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 0.6763030908866774,
+              "per_seed_delta_points": [
+                0.6763030908866774
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.10339642876112558,
+                1.4713487256721418
+              ],
+              "bootstrap_nonpositive_fraction": 0.0458,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.3": {
+            "audio_cluster": {
+              "mean_delta_points": 1.25,
+              "per_seed_delta_points": [
+                1.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.2518891687657431,
+                2.977667493796526
+              ],
+              "bootstrap_nonpositive_fraction": 0.0832,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": -0.25,
+              "per_seed_delta_points": [
+                -0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -2.2222222222222223,
+                1.7326732673267329
+              ],
+              "bootstrap_nonpositive_fraction": 0.6551,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.7": {
+            "audio_cluster": {
+              "mean_delta_points": 0.25,
+              "per_seed_delta_points": [
+                0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.25,
+                1.7500000000000002
+              ],
+              "bootstrap_nonpositive_fraction": 0.4379,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 84,
+          "ties": 247,
+          "losses": 69,
+          "catastrophic_drops": 2
+        }
+      }
+    },
+    "exchange_increment": {
+      "relation": {
+        "paired_models": [
+          [
+            "no_exchange_seed0",
+            "rbee_seed0"
+          ],
+          [
+            "no_exchange_seed1",
+            "rbee_seed1"
+          ],
+          [
+            "no_exchange_seed2",
+            "rbee_seed2"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": -0.26960891153292366,
+              "per_seed_delta_points": [
+                -0.6172058922116354,
+                -0.20743508946199993,
+                0.015814247074864354
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -0.6418311058652265,
+                0.07561745763184934
+              ],
+              "bootstrap_nonpositive_fraction": 0.93695,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -0.26960891153292366,
+              "per_seed_delta_points": [
+                -0.6172058922116354,
+                -0.20743508946199993,
+                0.015814247074864354
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -0.7004849245269834,
+                0.05934601615076903
+              ],
+              "bootstrap_nonpositive_fraction": 0.9442,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 0.2083333333333333,
+              "per_seed_delta_points": [
+                -1.25,
+                1.875,
+                0.0
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -0.625,
+                1.0416666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.41585,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 0.2083333333333333,
+              "per_seed_delta_points": [
+                -1.25,
+                1.875,
+                0.0
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -0.8771929824561403,
+                0.9578544061302682
+              ],
+              "bootstrap_nonpositive_fraction": 0.40635,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": 0.0,
+              "per_seed_delta_points": [
+                1.25,
+                -1.25,
+                0.0
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -0.625,
+                0.625
+              ],
+              "bootstrap_nonpositive_fraction": 0.64765,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 0.0,
+              "per_seed_delta_points": [
+                1.25,
+                -1.25,
+                0.0
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -0.423728813559322,
+                0.7575757575757576
+              ],
+              "bootstrap_nonpositive_fraction": 0.6562,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 0.2083333333333333,
+              "per_seed_delta_points": [
+                -1.25,
+                1.875,
+                0.0
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -0.625,
+                1.0416666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.41585,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 0.2083333333333333,
+              "per_seed_delta_points": [
+                -1.25,
+                1.875,
+                0.0
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -0.8771929824561403,
+                0.9578544061302682
+              ],
+              "bootstrap_nonpositive_fraction": 0.40635,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 6,
+          "ties": 294,
+          "losses": 20,
+          "catastrophic_drops": 2
+        }
+      },
+      "public": {
+        "paired_models": [
+          [
+            "no_exchange_seed0",
+            "rbee_seed0"
+          ],
+          [
+            "no_exchange_seed1",
+            "rbee_seed1"
+          ],
+          [
+            "no_exchange_seed2",
+            "rbee_seed2"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 0.13105365632839716,
+              "per_seed_delta_points": [
+                0.049336509790222076,
+                0.15508042904767316,
+                0.1887440301472964
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.13996052926363364,
+                0.43935393427976027
+              ],
+              "bootstrap_nonpositive_fraction": 0.18765,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.3": {
+            "audio_cluster": {
+              "mean_delta_points": -0.25,
+              "per_seed_delta_points": [
+                -1.0,
+                -0.5,
+                0.75
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.0101010101010102,
+                0.4975124378109453
+              ],
+              "bootstrap_nonpositive_fraction": 0.767,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 0.25,
+              "per_seed_delta_points": [
+                0.75,
+                0.0,
+                0.0
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.16877637130801687,
+                0.7556675062972292
+              ],
+              "bootstrap_nonpositive_fraction": 0.19375,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.7": {
+            "audio_cluster": {
+              "mean_delta_points": 0.25,
+              "per_seed_delta_points": [
+                0.5,
+                0.5,
+                -0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.1692047377326565,
+                0.7537688442211055
+              ],
+              "bootstrap_nonpositive_fraction": 0.19205,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 37,
+          "ties": 329,
+          "losses": 34,
+          "catastrophic_drops": 1
+        }
+      }
+    },
+    "setpo_minus_equal_updates": {
+      "relation": {
+        "paired_models": [
+          [
+            "continue_rbee_seed0",
+            "setpo_seed0"
+          ],
+          [
+            "continue_rbee_seed1",
+            "setpo_seed1"
+          ],
+          [
+            "continue_rbee_seed2",
+            "setpo_seed2"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 0.7691737422359111,
+              "per_seed_delta_points": [
+                1.0694378235019222,
+                0.48790461886184816,
+                0.7501787843439631
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -0.11940875799147121,
+                1.6424542931127062
+              ],
+              "bootstrap_nonpositive_fraction": 0.04485,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 0.7691737422359111,
+              "per_seed_delta_points": [
+                1.0694378235019222,
+                0.48790461886184816,
+                0.7501787843439631
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -0.04934884046820194,
+                1.95611332057165
+              ],
+              "bootstrap_nonpositive_fraction": 0.03445,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 0.8333333333333334,
+              "per_seed_delta_points": [
+                1.875,
+                -0.625,
+                1.25
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -2.0833333333333335,
+                3.75
+              ],
+              "bootstrap_nonpositive_fraction": 0.3024,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 0.8333333333333334,
+              "per_seed_delta_points": [
+                1.875,
+                -0.625,
+                1.25
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -1.3661202185792354,
+                4.487179487179486
+              ],
+              "bootstrap_nonpositive_fraction": 0.2897,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": 0.0,
+              "per_seed_delta_points": [
+                0.0,
+                0.625,
+                -0.625
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -2.083333333333333,
+                2.0833333333333335
+              ],
+              "bootstrap_nonpositive_fraction": 0.5221,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 0.0,
+              "per_seed_delta_points": [
+                0.0,
+                0.625,
+                -0.625
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -2.525252525252525,
+                1.9324210662525834
+              ],
+              "bootstrap_nonpositive_fraction": 0.5122,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 1.0416666666666665,
+              "per_seed_delta_points": [
+                2.5,
+                -0.625,
+                1.25
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -1.875,
+                3.958333333333333
+              ],
+              "bootstrap_nonpositive_fraction": 0.26015,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 1.0416666666666665,
+              "per_seed_delta_points": [
+                2.5,
+                -0.625,
+                1.25
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -1.2411347517730498,
+                4.761904761904762
+              ],
+              "bootstrap_nonpositive_fraction": 0.2404,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 22,
+          "ties": 280,
+          "losses": 18,
+          "catastrophic_drops": 1
+        }
+      },
+      "public": {
+        "paired_models": [
+          [
+            "continue_rbee_seed0",
+            "setpo_seed0"
+          ],
+          [
+            "continue_rbee_seed1",
+            "setpo_seed1"
+          ],
+          [
+            "continue_rbee_seed2",
+            "setpo_seed2"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 0.0189858845128916,
+              "per_seed_delta_points": [
+                -0.151094107799428,
+                0.2432802233867034,
+                -0.03522846204860064
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.3255469175549418,
+                0.360938275783888
+              ],
+              "bootstrap_nonpositive_fraction": 0.453,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.3": {
+            "audio_cluster": {
+              "mean_delta_points": -0.16666666666666669,
+              "per_seed_delta_points": [
+                -0.5,
+                0.0,
+                0.0
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.9876543209876542,
+                0.5818786367414795
+              ],
+              "bootstrap_nonpositive_fraction": 0.6823,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 2.7755575615628914e-17,
+              "per_seed_delta_points": [
+                0.0,
+                0.25,
+                -0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.6552006552006552,
+                0.5862646566164155
+              ],
+              "bootstrap_nonpositive_fraction": 0.5322,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.7": {
+            "audio_cluster": {
+              "mean_delta_points": 0.16666666666666666,
+              "per_seed_delta_points": [
+                0.0,
+                0.25,
+                0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.5037783375314862,
+                0.8481764206955046
+              ],
+              "bootstrap_nonpositive_fraction": 0.35215,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 24,
+          "ties": 348,
+          "losses": 28,
+          "catastrophic_drops": 0
+        }
+      }
+    },
+    "cand_minus_official": {
+      "relation": {
+        "paired_models": [
+          [
+            "official",
+            "no_exchange_seed0"
+          ],
+          [
+            "official",
+            "no_exchange_seed1"
+          ],
+          [
+            "official",
+            "no_exchange_seed2"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 49.40221987912889,
+              "per_seed_delta_points": [
+                50.90164084596655,
+                49.24537102479432,
+                48.059647766625815
+              ],
+              "groups": 80,
+              "ci95_points": [
+                46.19283708709154,
+                52.46173028018274
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 49.40221987912889,
+              "per_seed_delta_points": [
+                50.90164084596655,
+                49.24537102479432,
+                48.059647766625815
+              ],
+              "groups": 39,
+              "ci95_points": [
+                46.015975856376826,
+                51.96922237531854
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 81.04166666666669,
+              "per_seed_delta_points": [
+                84.375,
+                79.375,
+                79.375
+              ],
+              "groups": 80,
+              "ci95_points": [
+                73.125,
+                88.33333333333331
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 81.04166666666669,
+              "per_seed_delta_points": [
+                84.375,
+                79.375,
+                79.375
+              ],
+              "groups": 39,
+              "ci95_points": [
+                73.74985730593606,
+                87.25490196078431
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -56.875,
+              "per_seed_delta_points": [
+                -57.49999999999999,
+                -56.875,
+                -56.25
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -66.45833333333334,
+                -46.875
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -56.875,
+              "per_seed_delta_points": [
+                -57.49999999999999,
+                -56.875,
+                -56.25
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -65.67200760901376,
+                -45.71410533910535
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 80.83333333333333,
+              "per_seed_delta_points": [
+                83.75,
+                79.375,
+                79.375
+              ],
+              "groups": 80,
+              "ci95_points": [
+                72.91666666666666,
+                88.125
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 80.83333333333333,
+              "per_seed_delta_points": [
+                83.75,
+                79.375,
+                79.375
+              ],
+              "groups": 39,
+              "ci95_points": [
+                73.61111111111111,
+                86.90476190476191
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 308,
+          "ties": 4,
+          "losses": 8,
+          "catastrophic_drops": 0
+        }
+      },
+      "public": {
+        "paired_models": [
+          [
+            "official",
+            "no_exchange_seed0"
+          ],
+          [
+            "official",
+            "no_exchange_seed1"
+          ],
+          [
+            "official",
+            "no_exchange_seed2"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 0.7475256368823544,
+              "per_seed_delta_points": [
+                1.0175205352235384,
+                0.7194101161133687,
+                0.5056462593101558
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.24270012940826036,
+                1.744301498006793
+              ],
+              "bootstrap_nonpositive_fraction": 0.0663,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.3": {
+            "audio_cluster": {
+              "mean_delta_points": 0.4166666666666667,
+              "per_seed_delta_points": [
+                1.25,
+                0.5,
+                -0.5
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.6625103906899419,
+                2.5451559934318553
+              ],
+              "bootstrap_nonpositive_fraction": 0.3508,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 1.3333333333333335,
+              "per_seed_delta_points": [
+                1.25,
+                1.5,
+                1.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.7407865786578659,
+                3.4339850357438175
+              ],
+              "bootstrap_nonpositive_fraction": 0.10525,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.7": {
+            "audio_cluster": {
+              "mean_delta_points": 1.7500000000000002,
+              "per_seed_delta_points": [
+                1.7500000000000002,
+                1.25,
+                2.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.32601834539846897,
+                3.881997885060347
+              ],
+              "bootstrap_nonpositive_fraction": 0.0496,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 175,
+          "ties": 59,
+          "losses": 166,
+          "catastrophic_drops": 2
+        }
+      }
+    },
+    "cand_minus_current_sft_seed0": {
+      "relation": {
+        "paired_models": [
+          [
+            "sft_current_seed0",
+            "no_exchange_seed0"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 13.970999319318924,
+              "per_seed_delta_points": [
+                13.970999319318924
+              ],
+              "groups": 80,
+              "ci95_points": [
+                9.469795860280449,
+                18.71140140058057
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 13.970999319318924,
+              "per_seed_delta_points": [
+                13.970999319318924
+              ],
+              "groups": 39,
+              "ci95_points": [
+                9.839493256634075,
+                17.512055809273782
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 31.874999999999996,
+              "per_seed_delta_points": [
+                31.874999999999996
+              ],
+              "groups": 80,
+              "ci95_points": [
+                22.5,
+                41.875
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 31.874999999999996,
+              "per_seed_delta_points": [
+                31.874999999999996
+              ],
+              "groups": 39,
+              "ci95_points": [
+                23.25581395348837,
+                40.963855421686745
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -32.5,
+              "per_seed_delta_points": [
+                -32.5
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -42.5,
+                -22.5
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -32.5,
+              "per_seed_delta_points": [
+                -32.5
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -41.9811320754717,
+                -23.437005537974727
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 31.25,
+              "per_seed_delta_points": [
+                31.25
+              ],
+              "groups": 80,
+              "ci95_points": [
+                21.875,
+                41.25
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 31.25,
+              "per_seed_delta_points": [
+                31.25
+              ],
+              "groups": 39,
+              "ci95_points": [
+                22.352628285356698,
+                40.50015822784809
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 88,
+          "ties": 165,
+          "losses": 67,
+          "catastrophic_drops": 3
+        }
+      },
+      "public": {
+        "paired_models": [
+          [
+            "sft_current_seed0",
+            "no_exchange_seed0"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 1.0164636100813258,
+              "per_seed_delta_points": [
+                1.0164636100813258
+              ],
+              "groups": 387,
+              "ci95_points": [
+                0.23349040292355996,
+                1.8139033058170322
+              ],
+              "bootstrap_nonpositive_fraction": 0.00555,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.3": {
+            "audio_cluster": {
+              "mean_delta_points": 2.0,
+              "per_seed_delta_points": [
+                2.0
+              ],
+              "groups": 387,
+              "ci95_points": [
+                0.24937655860349126,
+                3.970223325062035
+              ],
+              "bootstrap_nonpositive_fraction": 0.01855,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 0.25,
+              "per_seed_delta_points": [
+                0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.530612244897959,
+                2.2277227722772275
+              ],
+              "bootstrap_nonpositive_fraction": 0.4545,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.7": {
+            "audio_cluster": {
+              "mean_delta_points": 0.25,
+              "per_seed_delta_points": [
+                0.25
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.25,
+                1.7500000000000002
+              ],
+              "bootstrap_nonpositive_fraction": 0.4379,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 92,
+          "ties": 239,
+          "losses": 69,
+          "catastrophic_drops": 2
+        }
+      }
+    },
+    "current_minus_historical_sft_seed0": {
+      "relation": {
+        "paired_models": [
+          [
+            "sft_seed0",
+            "sft_current_seed0"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": -0.7619603409761218,
+              "per_seed_delta_points": [
+                -0.7619603409761218
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -2.1308960470207308,
+                0.48253897324454414
+              ],
+              "bootstrap_nonpositive_fraction": 0.8789,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -0.7619603409761218,
+              "per_seed_delta_points": [
+                -0.7619603409761218
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -2.603218913708416,
+                0.33756843564231914
+              ],
+              "bootstrap_nonpositive_fraction": 0.8863,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": -2.5,
+              "per_seed_delta_points": [
+                -2.5
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -5.625,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 0.97745,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -2.5,
+              "per_seed_delta_points": [
+                -2.5
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -6.779661016949152,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 0.9796,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": 1.875,
+              "per_seed_delta_points": [
+                1.875
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -1.25,
+                5.0
+              ],
+              "bootstrap_nonpositive_fraction": 0.16935,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 1.875,
+              "per_seed_delta_points": [
+                1.875
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -1.0419407894736838,
+                6.25
+              ],
+              "bootstrap_nonpositive_fraction": 0.16855,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": -2.5,
+              "per_seed_delta_points": [
+                -2.5
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -5.625,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 0.97745,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -2.5,
+              "per_seed_delta_points": [
+                -2.5
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -6.779661016949152,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 0.9796,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 7,
+          "ties": 304,
+          "losses": 9,
+          "catastrophic_drops": 4
+        }
+      },
+      "public": {
+        "paired_models": [
+          [
+            "sft_seed0",
+            "sft_current_seed0"
+          ]
+        ],
+        "metrics": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": -0.3401605191946481,
+              "per_seed_delta_points": [
+                -0.3401605191946481
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -0.6045811844654547,
+                -0.10534457069350074
+              ],
+              "bootstrap_nonpositive_fraction": 0.9984,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.3": {
+            "audio_cluster": {
+              "mean_delta_points": -0.75,
+              "per_seed_delta_points": [
+                -0.75
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.7412935323383085,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": -0.5,
+              "per_seed_delta_points": [
+                -0.5
+              ],
+              "groups": 387,
+              "ci95_points": [
+                -1.2594458438287155,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "R1@0.7": {
+            "audio_cluster": {
+              "mean_delta_points": 0.0,
+              "per_seed_delta_points": [
+                0.0
+              ],
+              "groups": 387,
+              "ci95_points": [
+                0.0,
+                0.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "first_pair_query_outcomes": {
+          "wins": 21,
+          "ties": 348,
+          "losses": 31,
+          "catastrophic_drops": 0
+        }
+      }
+    }
+  },
+  "collapse_recovery": {
+    "sft_seed0": {
+      "selected_pairs": 35,
+      "audio_groups": 20,
+      "models": {
+        "continue_rbee_seed0": {
+          "collapsed_pairs_recovered": 26,
+          "joint_recovered_all": 49,
+          "joint_lost_all": 2
+        },
+        "continue_rbee_seed1": {
+          "collapsed_pairs_recovered": 28,
+          "joint_recovered_all": 52,
+          "joint_lost_all": 2
+        },
+        "continue_rbee_seed2": {
+          "collapsed_pairs_recovered": 27,
+          "joint_recovered_all": 50,
+          "joint_lost_all": 3
+        },
+        "no_exchange_seed0": {
+          "collapsed_pairs_recovered": 25,
+          "joint_recovered_all": 48,
+          "joint_lost_all": 2
+        },
+        "no_exchange_seed1": {
+          "collapsed_pairs_recovered": 27,
+          "joint_recovered_all": 45,
+          "joint_lost_all": 6
+        },
+        "no_exchange_seed2": {
+          "collapsed_pairs_recovered": 28,
+          "joint_recovered_all": 45,
+          "joint_lost_all": 6
+        },
+        "official": {
+          "collapsed_pairs_recovered": 0,
+          "joint_recovered_all": 0,
+          "joint_lost_all": 88
+        },
+        "rbee_seed0": {
+          "collapsed_pairs_recovered": 25,
+          "joint_recovered_all": 47,
+          "joint_lost_all": 3
+        },
+        "rbee_seed1": {
+          "collapsed_pairs_recovered": 27,
+          "joint_recovered_all": 47,
+          "joint_lost_all": 5
+        },
+        "rbee_seed2": {
+          "collapsed_pairs_recovered": 27,
+          "joint_recovered_all": 45,
+          "joint_lost_all": 6
+        },
+        "setpo_seed0": {
+          "collapsed_pairs_recovered": 29,
+          "joint_recovered_all": 52,
+          "joint_lost_all": 1
+        },
+        "setpo_seed1": {
+          "collapsed_pairs_recovered": 30,
+          "joint_recovered_all": 53,
+          "joint_lost_all": 4
+        },
+        "setpo_seed2": {
+          "collapsed_pairs_recovered": 30,
+          "joint_recovered_all": 53,
+          "joint_lost_all": 4
+        },
+        "sft_seed0": {
+          "collapsed_pairs_recovered": 0,
+          "joint_recovered_all": 0,
+          "joint_lost_all": 0
+        },
+        "sft_current_seed0": {
+          "collapsed_pairs_recovered": 1,
+          "joint_recovered_all": 1,
+          "joint_lost_all": 5
+        }
+      }
+    },
+    "sft_current_seed0": {
+      "selected_pairs": 37,
+      "audio_groups": 22,
+      "models": {
+        "continue_rbee_seed0": {
+          "collapsed_pairs_recovered": 28,
+          "joint_recovered_all": 52,
+          "joint_lost_all": 1
+        },
+        "continue_rbee_seed1": {
+          "collapsed_pairs_recovered": 30,
+          "joint_recovered_all": 55,
+          "joint_lost_all": 1
+        },
+        "continue_rbee_seed2": {
+          "collapsed_pairs_recovered": 29,
+          "joint_recovered_all": 53,
+          "joint_lost_all": 2
+        },
+        "no_exchange_seed0": {
+          "collapsed_pairs_recovered": 27,
+          "joint_recovered_all": 51,
+          "joint_lost_all": 1
+        },
+        "no_exchange_seed1": {
+          "collapsed_pairs_recovered": 29,
+          "joint_recovered_all": 48,
+          "joint_lost_all": 5
+        },
+        "no_exchange_seed2": {
+          "collapsed_pairs_recovered": 30,
+          "joint_recovered_all": 48,
+          "joint_lost_all": 5
+        },
+        "official": {
+          "collapsed_pairs_recovered": 0,
+          "joint_recovered_all": 0,
+          "joint_lost_all": 84
+        },
+        "rbee_seed0": {
+          "collapsed_pairs_recovered": 27,
+          "joint_recovered_all": 50,
+          "joint_lost_all": 2
+        },
+        "rbee_seed1": {
+          "collapsed_pairs_recovered": 29,
+          "joint_recovered_all": 50,
+          "joint_lost_all": 4
+        },
+        "rbee_seed2": {
+          "collapsed_pairs_recovered": 29,
+          "joint_recovered_all": 48,
+          "joint_lost_all": 5
+        },
+        "setpo_seed0": {
+          "collapsed_pairs_recovered": 31,
+          "joint_recovered_all": 56,
+          "joint_lost_all": 1
+        },
+        "setpo_seed1": {
+          "collapsed_pairs_recovered": 32,
+          "joint_recovered_all": 57,
+          "joint_lost_all": 4
+        },
+        "setpo_seed2": {
+          "collapsed_pairs_recovered": 32,
+          "joint_recovered_all": 56,
+          "joint_lost_all": 3
+        },
+        "sft_seed0": {
+          "collapsed_pairs_recovered": 3,
+          "joint_recovered_all": 5,
+          "joint_lost_all": 1
+        },
+        "sft_current_seed0": {
+          "collapsed_pairs_recovered": 0,
+          "joint_recovered_all": 0,
+          "joint_lost_all": 0
+        }
+      }
+    }
+  },
+  "reevaluation_drift": {
+    "sft_seed0": {
+      "old_mIoU": 58.313494122239426,
+      "reevaluated_mIoU": 58.756570253219124,
+      "changed_predictions": 49,
+      "changed_input_token_counts": 0,
+      "scope": "Same adapter label/path, not a proof of historical byte identity; no new training in this contrast."
+    },
+    "rbee_seed0": {
+      "old_mIoU": 59.18389426633595,
+      "reevaluated_mIoU": 59.48220985389601,
+      "changed_predictions": 58,
+      "changed_input_token_counts": 0,
+      "scope": "Same adapter label/path, not a proof of historical byte identity; no new training in this contrast."
+    },
+    "setpo_seed0": {
+      "old_mIoU": 59.113610075015885,
+      "reevaluated_mIoU": 59.158605231319925,
+      "changed_predictions": 58,
+      "changed_input_token_counts": 0,
+      "scope": "Same adapter label/path, not a proof of historical byte identity; no new training in this contrast."
+    },
+    "official": {
+      "old_mIoU": 58.31722535959376,
+      "reevaluated_mIoU": 58.41535280888225,
+      "changed_predictions": 167,
+      "changed_input_token_counts": 0,
+      "scope": "Same adapter label/path, not a proof of historical byte identity; no new training in this contrast."
+    }
+  },
+  "audio_groups": {
+    "relation": 80,
+    "public": 387
+  },
+  "source_component_sizes": [
+    18,
+    6,
+    5,
+    4,
+    4,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "train_dev_class_overlap": [],
+  "train_dev_source_overlap": [],
+  "input_hashes": {
+    "results\\reltwin_paper_polish_20260913\\bridge_complete\\freeze.json": "a214ada8e93e167f430256114306d32a0f8265627270699fa48e98b3745000d7",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed0\\relation_predictions.jsonl": "b2c92022dc43fc12ceaf7501299a83e12a072dcc6caab32591fbf1aacd335b7f",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed0\\public_predictions.jsonl": "0ab3b0c8a346d3b7673c50d9116eaa1ea3e9d74505dd3c78dc4010f8a77c848c",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed1\\relation_predictions.jsonl": "19d705e90ca33591f575f0ae76623b42fdc6a0e6be0631d4c5f3f95054d70c37",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed1\\public_predictions.jsonl": "e96a33edf6d07bc46f615d0f12e6c577662471364c10b7fee261b3b117b3fdbf",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed2\\relation_predictions.jsonl": "ce92787150e90f3f9fbc0ac2f91e9cf6d52f48d6d716c91ac0f795a3fd6af87d",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed2\\public_predictions.jsonl": "8a2792bb710db9544701ab95973b9c3d27cc72712b3cbf0782678486aa634011",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed0\\relation_predictions.jsonl": "95e003f27a84441bad938196842553d22ead3ec368987119d3489c7bdc8bab24",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed0\\public_predictions.jsonl": "c4c9a5a25d68afb6b15323d37a2593501236c495d83d73a0c1e5ba86bb996d7c",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed1\\relation_predictions.jsonl": "1ec3906c412482e6563f82f1e6aa70c8eefc927c4ff5259e14a0c970bd90fcd5",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed1\\public_predictions.jsonl": "088173f8fa730ae77559e53d3bcd73b588b1372918d417d9981b087c8e0fdde4",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed2\\relation_predictions.jsonl": "4a3bb9f4aef37eb2189b8635ec8ee36eaf90407ace06e082956c6c15640bdc9f",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed2\\public_predictions.jsonl": "885b44285f03f8eb8737c6bb5a891f5f572f4d900a913bcb9e79476604d04fb1",
+    "results\\reltwin_review_controls_20260912\\final_complete\\official\\relation_predictions.jsonl": "0a8f23acdfe905f0f4deed6aa8efa56627b0b253ca517a4c628fd0df2cc45623",
+    "results\\reltwin_review_controls_20260912\\final_complete\\official\\public_predictions.jsonl": "1ca047f39ec025cb284212c5288675807b869efdb59a714a83319e2f77386f7d",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed0\\relation_predictions.jsonl": "218d629c9d59b9953cfeaa06545502fcf69eaefd8737db9134a6d04f5cc6eaae",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed0\\public_predictions.jsonl": "3bddc43e84298c618ef3b753ec4523d34738d5bfea722e2e1ead1e3078158a4c",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed1\\relation_predictions.jsonl": "7d41e20e9b8ee0bd81323b134ea570a91778ab593e1b2ee68119e2706b27ddac",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed1\\public_predictions.jsonl": "9f86237228a719e2c14e81a8d744436f5ac959c563150789faa82e3a96d6def5",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed2\\relation_predictions.jsonl": "fde2e02346a5125ff843e89b822b63124bedcb5d339705897b82f1be1adc09e5",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed2\\public_predictions.jsonl": "24ae4ba833f227c595cef74415e3602e0461cb1000553186af0fb85e037cf6f7",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed0\\relation_predictions.jsonl": "e8928d3592d46e20c32c507bdd27f24eeb17e191a0c6ce95c99240736b2e540f",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed0\\public_predictions.jsonl": "a6e367eaa4742efc5e075f6e3a96a6cf39be2669a07e03544f3c106dcd490d15",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed1\\relation_predictions.jsonl": "c58bd3e592ae8f1c03812eadefa70c1e662fafb203ed62e38671a7d1e141b45d",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed1\\public_predictions.jsonl": "bdc282e09f2c62f9ba1555222b1ce094a41938cc1461ae648100c9b375bdb2fb",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed2\\relation_predictions.jsonl": "2feed8d9139a538afd739258221bca1a4a0a44e2e58a6bf2211ab5445f784d08",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed2\\public_predictions.jsonl": "fdfb17c07ca8157f7a82680def3764ccc667c132f97850e33c49863af443b8f8",
+    "results\\reltwin_review_controls_20260912\\final_complete\\sft_seed0\\relation_predictions.jsonl": "9c168479036b6d9b06cd9efaa6a31093a0976f0db9fea8b7d0761d6e1ebcd90b",
+    "results\\reltwin_review_controls_20260912\\final_complete\\sft_seed0\\public_predictions.jsonl": "f1700efaa7a36a36ae1e99f741c72ebcad635f65a7b1df2680d2be373ec4be1a",
+    "results\\reltwin_paper_polish_20260913\\bridge_complete\\sft_current_seed0\\relation_predictions.jsonl": "4579893810298d923e1e19ebabf13a68354d3c9f6d07170899a46842ee611eed",
+    "results\\reltwin_paper_polish_20260913\\bridge_complete\\sft_current_seed0\\public_predictions.jsonl": "f359b20d146a7db0294a2d49a77227e0ac415b011172543f1a2c8c870ae2763c",
+    "results\\controlled\\sft_seed0\\public_predictions.jsonl": "bbfe6aa6945c98d67444748ab7bd7a11c50e636f657f754da4fa4b60eea7a61f",
+    "results\\rbee_seed_0\\public_predictions.jsonl": "27031861d141114809c943a6d57bd87dcc8a288271a529b10f8fe15d01fdc886",
+    "results\\e001\\seed_0\\public_predictions.jsonl": "4a9e3f682880bbd03a85e7e46a616cbdc67427be3fa542e3c169409b171631a9",
+    "results\\official_spotsound_a\\public_predictions.jsonl": "7835b9c25c34ec0a423b242adda99ba2acdef441cc85c21fa103cbd4dbf07430"
+  }
+}
