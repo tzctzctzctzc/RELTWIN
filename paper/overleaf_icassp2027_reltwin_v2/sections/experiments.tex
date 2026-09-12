@@ -1,0 +1,12 @@
+\section{Experimental Setup}
+\subsection{Adaptation and relation diagnostics}
+RelTwin uses 40 ESC-50 categories for 256 training recordings: 1,024 relation queries, 512 query pairs across two templates, and 512 category-only rehearsal queries. The remaining ten categories form the development split: 40 category pairs, two layouts each, 80 recordings, 320 queries, and 160 query pairs. Category separation concerns adaptation data, not foundation-model pretraining. This constructed split served method selection, not external testing.
+
+All runs start from the official SpotSound-A adapter on Audio Flamingo~3, updating 20,185,088 adapter parameters. RBEE uses 256 steps, learning rate $5\!\times\!10^{-6}$, $\lambda=1$, $\beta=0.5$, and $\tau=1$. SetPO continues each matched parent for 64 steps at $2\!\times\!10^{-6}$ with $\lambda=0.5$, exchange weight 1, $\tau_y=0.15$, and $\beta=0.5$; setwise rehearsal occurs every fourth step. Seeds are 0, 1, and 2, with final checkpoints at fixed step counts. The existing SFT control uses seed~0 and the same recorded paired-data specification, rehearsal, learning rate, and 256 steps, but omits candidate and exchange losses. It is not relation-free training.
+
+\subsection{Public protocols and metrics}
+SpotSound-Bench comprises 400 queries on 387 audio files; Clotho-Moment has 6,649 queries. We report mIoU and query success at set-IoU thresholds 0.3 and 0.5 (R1@.3/.5), all as percentages. Relation diagnostics additionally report PairAcc@.5: both inverse queries in a pair must reach IoU $\geq0.5$ against their respective targets. Swap error counts a pair if either answer does not overlap its correct window strictly more than the opposite window; ties count as errors.
+
+UnAV uses the AMR authors' public 100-query release on 77 audio files. SpotSound's Table~2 associates 997 queries with UnAV and 100 with AudioGrounding, whereas the public AMR data associate those sizes in the opposite way. We have not resolved this discrepancy with a paper-specific manifest. Thus UnAV is a qualified reference, not a confirmed sample-matched ranking. Its reported score clips annotations and predictions to decoded duration; without clipping, mIoU is 73.387462\%.
+
+Our adaptation is an open-extra-data comparison to the original model. Prior public aggregates informed project iterations, so the campaign is not described as a never-inspected confirmatory test. We preserve the existing uncertainty analyses and state their resampling units rather than relabeling them as audio-group confidence intervals.

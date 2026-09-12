@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Existing SpotSound training-stage results (\%). RBEE and SetPO use three seeds; mIoU shows mean $\pm$ sample SD, not a confidence interval. The paired-data SFT control uses seed~0 only.}
+\label{tab:stages}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Stage & mIoU & R1@.3 & R1@.5\\
+\midrule
+Official, our harness & 58.317 & 77.000 & 60.750\\
+RelTwin SFT & 58.313 & 76.500 & 61.750\\
+RBEE & $59.166\pm0.020$ & 76.917 & 62.417\\
+RBEE $\to$ SetPO & $59.193\pm0.068$ & 76.583 & 62.417\\
+\bottomrule
+\end{tabular}
+\end{table}

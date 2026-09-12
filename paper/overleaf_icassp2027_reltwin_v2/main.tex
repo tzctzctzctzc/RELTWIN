@@ -1,0 +1,33 @@
+% ICASSP 2027: four technical pages plus references; pdfLaTeX + BibTeX.
+\documentclass[10pt,letterpaper]{article}
+\usepackage{spconf,amsmath,amssymb,graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,balance,tikz}
+\usepackage[hidelinks]{hyperref}
+\title{\fontsize{14}{16}\selectfont RelTwin: Relation--Boundary Exchange Consistency\\for Audio Temporal Grounding}
+\input{authors}
+\newcommand{\setiou}{\operatorname{IoU}_{\mathrm{set}}}
+\newcommand{\JS}{\operatorname{JS}}
+\newcommand{\NOVA}{\textsc{NOVA}}
+\begin{document}
+\maketitle
+\input{sections/abstract}
+\begin{keywords}
+Audio grounding, relation consistency, structured preference learning, audio-language models
+\end{keywords}
+\input{sections/introduction}
+\input{figures/relation_pair}
+\input{sections/method}
+\input{tables/main_results}
+\input{sections/experiments}
+\input{tables/training_results}
+\input{tables/relation_results}
+\input{sections/discussion}
+\input{sections/conclusion}
+\section{Acknowledgments}
+OpenAI Codex assisted with drafting, translation, and LaTeX preparation of the abstract, introduction, methods, results discussion, and conclusion from project records and code. No new experiments were run during manuscript preparation.
+\clearpage
+\balance
+\bibliographystyle{IEEEbib}
+\bibliography{references}
+\end{document}

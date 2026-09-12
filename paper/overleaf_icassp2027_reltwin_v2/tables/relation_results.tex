@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{RelTwin development diagnostics (\%, three-seed means): SetPO versus matched RBEE parents. This is constructed class-disjoint development data, not a public benchmark.}
+\label{tab:relations}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Stage & mIoU $\uparrow$ & PairAcc@.5 $\uparrow$ & Swap error $\downarrow$\\
+\midrule
+RBEE & 86.55 & 81.46 & 8.54\\
+RBEE $\to$ SetPO & 89.90 & 86.67 & 5.83\\
+$\Delta$ & +3.36 & +5.21 & $-2.71$\\
+\bottomrule
+\end{tabular}
+\end{table}

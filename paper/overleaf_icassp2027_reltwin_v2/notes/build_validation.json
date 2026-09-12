@@ -1,0 +1,165 @@
+{
+  "abstract_words": 128,
+  "page_count": 5,
+  "technical_pages": 4,
+  "main_table_rows_verified": [
+    "WTATG",
+    "AM-DETR",
+    "Gemini-2.5-Flash",
+    "Gemini-2.5-Pro",
+    "Kimi-Audio",
+    "Qwen2-Audio",
+    "Audio Flamingo 3",
+    "TimeAudio",
+    "SpotSound-Q",
+    "SpotSound-A",
+    "已评测完整系统",
+    "相较此前逐项最佳（百分点）"
+  ],
+  "training_and_relation_tables_verified": true,
+  "style_hashes": {
+    "spconf.sty": "dc5d632639040cb183f2ab62780f314845aa021be73048c8a9ec9c2072d64a86",
+    "IEEEbib.bst": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
+  },
+  "fonts": {
+    "CXBDDB+NimbusRomNo9L-Medi": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "DULKRI+NimbusRomNo9L-ReguItal": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "WVQLXW+NimbusRomNo9L-Regu": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "JUOZBQ+NimbusMonL-Regu": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "SJISBO+NimbusRomNo9L-MediItal": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "RQGULJ+CMSY9": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "BNCOLS+CMMI9": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "IRWAJI+CMR6": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "LWFXWF+CMSY6": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "VCZTJM+CMR9": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "DZQMNR+CMR10": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "QRDWEE+CMMI10": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "ZGYACW+CMR7": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "CNJDCG+CMSY10": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "SBHQCU+CMSY7": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "VYLEVZ+CMMI7": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "IXNPPI+CMEX10": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "UZQLUM+CMR5": {
+      "type": "Type1",
+      "embedded": true
+    },
+    "HMPEFZ+CMSY5": {
+      "type": "Type1",
+      "embedded": true
+    }
+  },
+  "pages": [
+    {
+      "page": 1,
+      "text_bbox": [
+        54.42500305175781,
+        97.16089630126953,
+        558.988037109375,
+        723.5409545898438
+      ],
+      "words": 567,
+      "text_start": "RELTWIN: RELATION–BOUNDARY EXCHANGE CONSISTENCY\nFOR AUDIO TEMPORAL GROUNDING\nZhicheng Tang\nYuehan Zhang\nHuazhong Univers",
+      "text_end": "ed full system. Veri-\nfication and boundary refinement remain supporting inference\nsteps, not the central contribution.\n"
+    },
+    {
+      "page": 2,
+      "text_bbox": [
+        54.424983978271484,
+        74.31652069091797,
+        559.0014038085938,
+        723.5410766601562
+      ],
+      "words": 701,
+      "text_start": "2. RELATION-CONSISTENT STRUCTURED\nTRAINING\n2.1. RelTwin construction\nFor audio x, query q, and ground-truth interval set",
+      "text_end": "ting.\nAll runs start from the official SpotSound-A adapter on\nAudio Flamingo 3, updating 20,185,088 adapter parameters.\n"
+    },
+    {
+      "page": 3,
+      "text_bbox": [
+        54.42499923706055,
+        81.18053436279297,
+        558.9978637695312,
+        723.541015625
+      ],
+      "words": 639,
+      "text_start": "Table 1. System-level grounding results (%). Baselines are cited from SpotSound Table 3 [3], not its ablations. Our Spot",
+      "text_end": "ples\nwith sequence supervision alone therefore does not repro-\nduce the observed RBEE score. This supports the combined\n"
+    },
+    {
+      "page": 4,
+      "text_bbox": [
+        54.42499923706055,
+        74.40730285644531,
+        558.988037109375,
+        723.5408935546875
+      ],
+      "words": 675,
+      "text_start": "Table 3. RelTwin development diagnostics (%, three-seed\nmeans): SetPO versus matched RBEE parents. This is con-\nstructed",
+      "text_end": " dis-\ncussion, and conclusion from project records and code. No\nnew experiments were run during manuscript preparation.\n"
+    },
+    {
+      "page": 5,
+      "text_bbox": [
+        54.42499542236328,
+        74.31652069091797,
+        558.9972534179688,
+        311.5182800292969
+      ],
+      "words": 227,
+      "text_start": "7. REFERENCES\n[1] Xuenan Xu, Heinrich Dinkel, Mengyue Wu, and Kai\nYu, “Text-to-audio grounding: Building correspondence\n",
+      "text_end": "o-AEG: Scalable data construction for open-\nvocabulary audio event grounding,”\narXiv preprint\narXiv:2607.04383v4, 2026.\n"
+    }
+  ],
+  "pdf_sha256": "2d4e42855097814a020deee9f4f68417f6c8eadd4c39a2c4f8604c7af371ae6d"
+}

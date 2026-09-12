@@ -1,0 +1,22 @@
+\section{Results and Discussion}
+\subsection{Where does the public-set gain occur?}
+Table~\ref{tab:stages} locates the largest observed training-stage gain at RBEE: 59.166\% mean mIoU versus 58.317\% for the same-harness official model, a 0.849-point increase. All three RBEE seeds exceed this baseline. At seed~0, RBEE scores 59.183894\%, versus 58.313494\% for the matched-configuration SFT control. Providing the paired examples with sequence supervision alone therefore does not reproduce the observed RBEE score. This supports the combined candidate/exchange objective, but does not isolate exchange regularization from candidate discrimination.
+
+The existing hierarchical seed--record bootstrap interval for RBEE minus official is $[-0.221,+1.965]$ points. Hence the public gain is a directionally consistent three-seed point estimate, not an established significant improvement. SetPO adds only 0.027 points over RBEE, with interval $[-0.313,+0.412]$. Its public-set increment is not the primary evidence for structured preference training.
+
+\subsection{Do inverse queries select the right windows?}
+Table~\ref{tab:relations} tests SetPO on class-disjoint RelTwin development data against each matched RBEE parent. Query mIoU increases from 86.55\% to 89.90\%, while PairAcc@.5 rises from 81.46\% to 86.67\%. Swap error falls from 8.54\% to 5.83\%. Thus the improvement is not confined to average overlap: more inverse-query pairs correctly localize both relation-specific targets.
+
+The historical bootstrap intervals are $[+2.469,+4.275]$ points for mIoU and $[+2.917,+7.708]$ for PairAcc. These resample query rows or relation pairs independently within each fixed seed and average across seeds; they do not fully preserve shared-audio/template dependence. We report the original uncertainty scope rather than treating these intervals as audio-cluster significance tests. The split also served development selection. The supported conclusion is improved controlled relation localization, not confirmed generalization to arbitrary natural relations.
+
+\subsection{System performance versus training attribution}
+Table~\ref{tab:main} compares the full pipeline against published main-table results, not our earlier checkpoints. On SpotSound, mIoU, R1@.3, and R1@.5 exceed the cited best values by 1.49, 2.75, and 3.00 points. The final 59.385511\% mIoU includes both routing and boundary refinement; the latter adds 0.056963 points over the locked E004 incumbent. These system numbers are distinct from the training-stage comparison.
+
+Clotho reaches 86.855592\% mIoU, above the cited 85.6\% reference; the official incumbent already scores 86.854263\%. This small refinement increment cannot validate RBEE, which was not used as the incumbent. Clotho's R1@.3/.5 remain below the cited best values. UnAV also uses the official incumbent and carries the protocol qualification above. Neither column tests transfer of relation training.
+
+The largest public training gain and the improved relation diagnostics are complementary observations. They do not establish that improved relational reasoning causes all SpotSound gains: the public benchmark is not a dedicated inverse-query test, and SetPO is the stage isolated in the relation comparison. Natural-recording relation evaluation and separation of candidate discrimination from exchange regularization remain necessary to connect that causal argument.
+
+\subsection{Scope and remaining failures}
+RelTwin uses two-event orders, fixed templates, repeated excerpts, and silence-separated windows. It does not cover arbitrary compositional queries, overlap, or nested relations. The class-disjoint split tests adaptation beyond its training categories, not an unseen foundation-model vocabulary. Exchange consistency is a regularizer, not a guarantee of correct outputs.
+
+Additional system evaluations expose limits rather than establish RBEE transfer. AudioGrounding-v2 (70.47\%) and AEGBench public v3 (41.24\%) informed radius selection and are development evidence. The 9,924-query AEGBench release differs from the 9,790-query paper evaluation~\cite{zhang2026autoaeg}. DESED/TUT score 57.00/24.76\%, below the 61.1/33.2\% literature references, with assembly qualifications; LAT English TAG scores 15.14\%. Boundary editing cannot recover missing events. Its adaptive radius equals the fixed 0.25-second cap on both SpotSound and Clotho.
