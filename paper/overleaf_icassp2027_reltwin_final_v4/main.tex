@@ -1,0 +1,32 @@
+% Four technical pages plus references; pdfLaTeX + BibTeX.
+\documentclass[10pt,letterpaper]{article}
+\usepackage{spconf,amsmath,amssymb,graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,balance,tikz}
+\usepackage[hidelinks]{hyperref}
+\title{\fontsize{14}{16}\selectfont RelTwin: Learning Query-Specific Windows\\from Co-Occurring Inverse Relations}
+\input{authors}
+\newcommand{\setiou}{\operatorname{IoU}_{\mathrm{set}}}
+\newcommand{\JS}{\operatorname{JS}}
+\begin{document}
+\maketitle
+\input{sections/abstract}
+\begin{keywords}
+Audio temporal grounding, compositional reasoning, hard answer negatives, paired supervision
+\end{keywords}
+\input{sections/introduction}
+\input{figures/relation_pair}
+\input{sections/method}
+\input{tables/main_results}
+\input{sections/experiments}
+\input{tables/training_results}
+\input{sections/results}
+\input{tables/controls}
+\input{sections/conclusion}
+\section{Acknowledgments}
+OpenAI Codex assisted with initial drafting and translation of all sections, the schematic, LaTeX preparation, and analysis code. The authors must verify the final text and evidence before submission.
+\clearpage
+\balance
+\bibliographystyle{IEEEbib}
+\bibliography{references}
+\end{document}
