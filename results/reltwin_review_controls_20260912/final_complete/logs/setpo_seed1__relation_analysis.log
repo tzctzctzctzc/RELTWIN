@@ -1,0 +1,12 @@
+{
+  "query_count": 320,
+  "relation_pair_count": 160,
+  "query_R1@0.3": 0.975,
+  "query_R1@0.5": 0.925,
+  "query_mIoU": 0.8940122545911612,
+  "wrong_window_preference_rate": 0.021875,
+  "pair_acc_0.3": 0.95,
+  "pair_acc_0.5": 0.8625,
+  "swap_error_rate": 0.05625,
+  "mean_prediction_set_iou_under_query_swap": 0.04785293075135301
+}

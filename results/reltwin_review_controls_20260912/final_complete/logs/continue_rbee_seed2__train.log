@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/830 [00:00<?, ?it/s]Loading weights:  55%|█████▍    | 454/830 [00:00<00:00, 4505.61it/s]Loading weights: 100%|██████████| 830/830 [00:00<00:00, 3884.81it/s]
+{"step": 1, "loss": 0.759543638676405, "grad_norm": 4.267491817474365, "sft": 0.25484222173690796, "candidate_ce": 0.457738995552063, "exchange_js": 0.010569475591182709, "p_ab_correct": 0.5667785406112671, "p_ba_correct": 0.7063168287277222, "rehearsal": 0.07278581708669662}
+{"step": 4, "loss": 0.761738508939743, "grad_norm": 4.793031692504883, "sft": 0.10328691452741623, "candidate_ce": 0.5137858986854553, "exchange_js": 0.0011160820722579956, "p_ab_correct": 0.6218279004096985, "p_ba_correct": 0.5755208134651184, "rehearsal": 0.2870991826057434}
+{"step": 8, "loss": 0.7699622772634029, "grad_norm": 3.955137014389038, "sft": 0.23446185886859894, "candidate_ce": 0.4797596335411072, "exchange_js": 0.014086157083511353, "p_ab_correct": 0.5431669354438782, "p_ba_correct": 0.7052657008171082, "rehearsal": 0.08330922573804855}
+{"step": 12, "loss": 0.9653609618544579, "grad_norm": 3.4425830841064453, "sft": 0.4657565951347351, "candidate_ce": 0.4513113498687744, "exchange_js": 0.0016966909170150757, "p_ab_correct": 0.665402352809906, "p_ba_correct": 0.6094129085540771, "rehearsal": 0.09319262206554413}
+{"step": 16, "loss": 1.4285354986786842, "grad_norm": 5.576614856719971, "sft": 0.6533436179161072, "candidate_ce": 0.6382722854614258, "exchange_js": 0.05211305618286133, "p_ab_correct": 0.7107220888137817, "p_ba_correct": 0.39255809783935547, "rehearsal": 0.16961295902729034}
+{"step": 20, "loss": 1.0604032278060913, "grad_norm": 4.270883083343506, "sft": 0.48794761300086975, "candidate_ce": 0.4773222804069519, "exchange_js": 0.004305735230445862, "p_ab_correct": 0.6670234799385071, "p_ba_correct": 0.5771145224571228, "rehearsal": 0.1816551685333252}
+{"step": 24, "loss": 0.6511000171303749, "grad_norm": 2.260540246963501, "sft": 0.10962897539138794, "candidate_ce": 0.46699005365371704, "exchange_js": 0.005369171500205994, "p_ab_correct": 0.6788821220397949, "p_ba_correct": 0.5788729190826416, "rehearsal": 0.13822360336780548}
+{"step": 28, "loss": 0.8474331796169281, "grad_norm": 4.660706520080566, "sft": 0.1774095594882965, "candidate_ce": 0.49698013067245483, "exchange_js": 0.007671788334846497, "p_ab_correct": 0.5510588884353638, "p_ba_correct": 0.6716306805610657, "rehearsal": 0.3307434916496277}
+{"step": 32, "loss": 0.6057525277137756, "grad_norm": 1.9670336246490479, "sft": 0.056259676814079285, "candidate_ce": 0.3526621460914612, "exchange_js": 0.00013483315706253052, "p_ab_correct": 0.6953509449958801, "p_ba_correct": 0.7103583812713623, "rehearsal": 0.3933917284011841}
+{"step": 36, "loss": 0.6454536579549313, "grad_norm": 2.5084547996520996, "sft": 0.08812445402145386, "candidate_ce": 0.5005701780319214, "exchange_js": 5.632638931274414e-06, "p_ab_correct": 0.6078205704689026, "p_ba_correct": 0.6045536994934082, "rehearsal": 0.11350684612989426}
+{"step": 40, "loss": 0.9133289530873299, "grad_norm": 3.2149434089660645, "sft": 0.3754507303237915, "candidate_ce": 0.4598466157913208, "exchange_js": 0.0010766535997390747, "p_ab_correct": 0.654152512550354, "p_ba_correct": 0.6094011664390564, "rehearsal": 0.15390993654727936}
+{"step": 44, "loss": 1.2542404606938362, "grad_norm": 8.11120319366455, "sft": 0.6329881548881531, "candidate_ce": 0.5302404165267944, "exchange_js": 0.011872604489326477, "p_ab_correct": 0.6688121557235718, "p_ba_correct": 0.517767608165741, "rehearsal": 0.15827859938144684}
+{"step": 48, "loss": 0.487323097884655, "grad_norm": 2.3082611560821533, "sft": 0.04532407969236374, "candidate_ce": 0.3945014476776123, "exchange_js": 0.0011813342571258545, "p_ab_correct": 0.6971705555915833, "p_ba_correct": 0.6516304612159729, "rehearsal": 0.09263245761394501}
+{"step": 52, "loss": 0.622764091938734, "grad_norm": 3.2406764030456543, "sft": 0.07427513599395752, "candidate_ce": 0.49481457471847534, "exchange_js": 0.0021168887615203857, "p_ab_correct": 0.5787925124168396, "p_ba_correct": 0.642224133014679, "rehearsal": 0.10311504453420639}
+{"step": 56, "loss": 0.8506346940994263, "grad_norm": 3.767261028289795, "sft": 0.12928691506385803, "candidate_ce": 0.45735785365104675, "exchange_js": 0.0001109093427658081, "p_ab_correct": 0.6258151531219482, "p_ba_correct": 0.6401738524436951, "rehearsal": 0.5277581214904785}
+{"step": 60, "loss": 0.6525121554732323, "grad_norm": 4.957327365875244, "sft": 0.20769350230693817, "candidate_ce": 0.40218037366867065, "exchange_js": 0.007717393338680267, "p_ab_correct": 0.7296301126480103, "p_ba_correct": 0.613151490688324, "rehearsal": 0.06984178721904755}
+{"step": 64, "loss": 0.7589975371956825, "grad_norm": 3.6892364025115967, "sft": 0.1157044768333435, "candidate_ce": 0.5200808644294739, "exchange_js": 0.002980738878250122, "p_ab_correct": 0.5578073263168335, "p_ba_correct": 0.6335476636886597, "rehearsal": 0.24046285450458527}
+/root/autodl-tmp/SpotSound-ICASSP/env-conda/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in audio-flamingo-3-hf - will assume that the vocabulary was not modified.
+  warnings.warn(
+{
+  "mode": "rbee",
+  "steps": 64,
+  "learning_rate": 2e-06,
+  "temperature": 1.0,
+  "method_weight": 1.0,
+  "exchange_weight": 1.0,
+  "rehearsal_weight": 0.5,
+  "margin": 0.2,
+  "seed": 2,
+  "relation_pairs": 512,
+  "rehearsal_examples": 512,
+  "trainable_parameters": 20185088,
+  "elapsed_seconds": 432.0933850761503,
+  "peak_gpu_memory_mib": 18645.02099609375,
+  "final_event": {
+    "step": 64,
+    "loss": 0.7589975371956825,
+    "grad_norm": 3.6892364025115967,
+    "sft": 0.1157044768333435,
+    "candidate_ce": 0.5200808644294739,
+    "exchange_js": 0.002980738878250122,
+    "p_ab_correct": 0.5578073263168335,
+    "p_ba_correct": 0.6335476636886597,
+    "rehearsal": 0.24046285450458527
+  },
+  "output_adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/continue_rbee_seed2/adapter"
+}

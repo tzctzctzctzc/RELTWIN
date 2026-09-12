@@ -1,0 +1,7234 @@
+{
+  "query_count": 320,
+  "relation_pair_count": 160,
+  "query_R1@0.3": 0.978125,
+  "query_R1@0.5": 0.93125,
+  "query_mIoU": 0.9024676529665798,
+  "wrong_window_preference_rate": 0.01875,
+  "pair_acc_0.3": 0.95625,
+  "pair_acc_0.5": 0.875,
+  "swap_error_rate": 0.0625,
+  "mean_prediction_set_iou_under_query_swap": 0.04870248707153643,
+  "pair_rows": [
+    {
+      "pair_id": 10000,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10000,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.18344519015659952,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10000,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10000,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.18641787027899875,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10001,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10001,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10001,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10001,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10002,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10002,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10002,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10002,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10003,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10003,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10003,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10003,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10004,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10004,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10004,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10004,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10005,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10005,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10005,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10005,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10006,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10006,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.1350844277673546,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10006,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10006,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.1350844277673546,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10007,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.11695906432748537,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10007,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10007,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10007,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10008,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10008,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10008,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10008,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10009,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10009,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10009,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10009,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10010,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10010,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10010,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10010,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10011,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10011,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10011,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10011,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10012,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10012,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.2070393374741201,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10012,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10012,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.2070393374741201,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10013,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10013,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10013,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10013,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10014,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10014,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10014,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10014,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10015,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10015,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10015,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10015,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10016,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10016,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10016,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10016,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10017,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.4878048780487805,
+      "ab_choice": "wrong",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10017,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10017,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.4878048780487805,
+      "ab_choice": "wrong",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10017,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10018,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10018,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10018,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10018,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10019,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.5125,
+      "ab_choice": "wrong",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10019,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.997695852534562,
+      "ab_choice": "correct",
+      "ba_choice": "tie"
+    },
+    {
+      "pair_id": 10019,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10019,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.7980369385232083,
+      "ab_choice": "correct",
+      "ba_choice": "tie"
+    },
+    {
+      "pair_id": 10020,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.24813895781637718,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10020,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10020,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.24813895781637718,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10020,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10021,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10021,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10021,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10021,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10022,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10022,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10022,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10022,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10023,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10023,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10023,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10023,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10024,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "tie",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10024,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10024,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "tie",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10024,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10025,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10025,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10025,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10025,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10026,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10026,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10026,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10026,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.4709737827715356,
+      "ab_choice": "wrong",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10027,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10027,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.1824849194983292,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10027,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10027,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.1824849194983292,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10028,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10028,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10028,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10028,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10029,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10029,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10029,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10029,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10030,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10030,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10030,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10030,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10031,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10031,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10031,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10031,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.1876172607879925,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10032,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10032,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.3909574468085107,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10032,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10032,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10033,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10033,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10033,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10033,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10034,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10034,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10034,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10034,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10035,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10035,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10035,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10035,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10036,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10036,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10036,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10036,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10037,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10037,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10037,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10037,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": false,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.19960079840319364,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10038,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.5405405405405406,
+      "ab_choice": "wrong",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10038,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10038,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": false,
+      "pair_acc_0.5": false,
+      "swap_error": true,
+      "prediction_set_iou_under_query_swap": 0.5405405405405406,
+      "ab_choice": "wrong",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10038,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10039,
+      "template": "and_then",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10039,
+      "template": "and_then",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.07300380228136888,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10039,
+      "template": "followed_by",
+      "variant": 0,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.0,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    },
+    {
+      "pair_id": 10039,
+      "template": "followed_by",
+      "variant": 1,
+      "pair_acc_0.3": true,
+      "pair_acc_0.5": true,
+      "swap_error": false,
+      "prediction_set_iou_under_query_swap": 0.07300380228136888,
+      "ab_choice": "correct",
+      "ba_choice": "correct"
+    }
+  ],
+  "query_rows": [
+    {
+      "index": 0,
+      "pair_id": 10000,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by dog",
+      "prediction": [
+        [
+          1.5,
+          8.5
+        ]
+      ],
+      "raw_answer": "from 1.500s to 8.500s",
+      "iou_correct": 0.6829268292682927,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 1,
+      "pair_id": 10000,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "dog followed by crying baby",
+      "prediction": [
+        [
+          15.5,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 15.500s to 25.000s",
+      "iou_correct": 0.926829268292683,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 2,
+      "pair_id": 10000,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then dog",
+      "prediction": [
+        [
+          1.5,
+          8.5
+        ]
+      ],
+      "raw_answer": "from 1.500s to 8.500s",
+      "iou_correct": 0.6829268292682927,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 3,
+      "pair_id": 10000,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "dog, and then crying baby",
+      "prediction": [
+        [
+          15.5,
+          25.5
+        ]
+      ],
+      "raw_answer": "from 15.500s to 25.500s",
+      "iou_correct": 0.8837209302325582,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 4,
+      "pair_id": 10000,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by dog",
+      "prediction": [
+        [
+          7.9,
+          24.35
+        ]
+      ],
+      "raw_answer": "from 7.900s to 24.350s",
+      "iou_correct": 0.3284313725490197,
+      "iou_wrong": 0.21252796420581654,
+      "chosen": "correct"
+    },
+    {
+      "index": 5,
+      "pair_id": 10000,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "dog followed by crying baby",
+      "prediction": [
+        [
+          2.056,
+          12.056
+        ]
+      ],
+      "raw_answer": "from 2.056s to 12.056s",
+      "iou_correct": 0.9389671361502345,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 6,
+      "pair_id": 10000,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then dog",
+      "prediction": [
+        [
+          7.9,
+          24.35
+        ]
+      ],
+      "raw_answer": "from 7.900s to 24.350s",
+      "iou_correct": 0.3284313725490197,
+      "iou_wrong": 0.21252796420581654,
+      "chosen": "correct"
+    },
+    {
+      "index": 7,
+      "pair_id": 10000,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "dog, and then crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.000s",
+      "iou_correct": 0.9389671361502347,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 8,
+      "pair_id": 10001,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by keyboard typing",
+      "prediction": [
+        [
+          1.75,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.750s to 11.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 9,
+      "pair_id": 10001,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 10,
+      "pair_id": 10001,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then keyboard typing",
+      "prediction": [
+        [
+          1.75,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.750s to 11.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 11,
+      "pair_id": 10001,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 12,
+      "pair_id": 10001,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by keyboard typing",
+      "prediction": [
+        [
+          17.7,
+          28.5
+        ]
+      ],
+      "raw_answer": "from 17.700s to 28.500s",
+      "iou_correct": 0.9769585253456221,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 13,
+      "pair_id": 10001,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 14,
+      "pair_id": 10001,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then keyboard typing",
+      "prediction": [
+        [
+          17.7,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.700s to 28.300s",
+      "iou_correct": 0.9953051643192488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 15,
+      "pair_id": 10001,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 16,
+      "pair_id": 10002,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "rooster followed by sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 17,
+      "pair_id": 10002,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by rooster",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 18,
+      "pair_id": 10002,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "rooster, and then sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 19,
+      "pair_id": 10002,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then rooster",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 20,
+      "pair_id": 10002,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "rooster followed by sea waves",
+      "prediction": [
+        [
+          17.75,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.750s to 28.300s",
+      "iou_correct": 0.9906103286384975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 21,
+      "pair_id": 10002,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by rooster",
+      "prediction": [
+        [
+          1.97,
+          9.701
+        ]
+      ],
+      "raw_answer": "from 1.970s to 9.701s",
+      "iou_correct": 0.7210674157303372,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 22,
+      "pair_id": 10002,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "rooster, and then sea waves",
+      "prediction": [
+        [
+          17.75,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.750s to 28.300s",
+      "iou_correct": 0.9906103286384975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 23,
+      "pair_id": 10002,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then rooster",
+      "prediction": [
+        [
+          1.97,
+          9.701
+        ]
+      ],
+      "raw_answer": "from 1.970s to 9.701s",
+      "iou_correct": 0.7210674157303372,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 24,
+      "pair_id": 10003,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 25,
+      "pair_id": 10003,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 26,
+      "pair_id": 10003,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 27,
+      "pair_id": 10003,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 28,
+      "pair_id": 10003,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 29,
+      "pair_id": 10003,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 30,
+      "pair_id": 10003,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 31,
+      "pair_id": 10003,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 32,
+      "pair_id": 10004,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by keyboard typing",
+      "prediction": [
+        [
+          1.5,
+          9.2
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.200s",
+      "iou_correct": 0.7512195121951218,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 33,
+      "pair_id": 10004,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by clapping",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 34,
+      "pair_id": 10004,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then keyboard typing",
+      "prediction": [
+        [
+          1.5,
+          9.2
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.200s",
+      "iou_correct": 0.7512195121951218,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 35,
+      "pair_id": 10004,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then clapping",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 36,
+      "pair_id": 10004,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by keyboard typing",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 37,
+      "pair_id": 10004,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by clapping",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 38,
+      "pair_id": 10004,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then keyboard typing",
+      "prediction": [
+        [
+          17.65,
+          28.35
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.350s",
+      "iou_correct": 0.9953271028037383,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 39,
+      "pair_id": 10004,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then clapping",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 40,
+      "pair_id": 10005,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by fireworks",
+      "prediction": [
+        [
+          2.1,
+          12.75
+        ]
+      ],
+      "raw_answer": "from 2.100s to 12.750s",
+      "iou_correct": 0.8577777777777779,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 41,
+      "pair_id": 10005,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by dog",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 42,
+      "pair_id": 10005,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then fireworks",
+      "prediction": [
+        [
+          2.1,
+          12.75
+        ]
+      ],
+      "raw_answer": "from 2.100s to 12.750s",
+      "iou_correct": 0.8577777777777779,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 43,
+      "pair_id": 10005,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then dog",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 44,
+      "pair_id": 10005,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 45,
+      "pair_id": 10005,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by dog",
+      "prediction": [
+        [
+          2.0,
+          8.75
+        ]
+      ],
+      "raw_answer": "from 2.000s to 8.750s",
+      "iou_correct": 0.6338028169014084,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 46,
+      "pair_id": 10005,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 47,
+      "pair_id": 10005,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then dog",
+      "prediction": [
+        [
+          2.0,
+          8.7
+        ]
+      ],
+      "raw_answer": "from 2.000s to 8.700s",
+      "iou_correct": 0.6291079812206571,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 48,
+      "pair_id": 10006,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 49,
+      "pair_id": 10006,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by clapping",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 50,
+      "pair_id": 10006,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 51,
+      "pair_id": 10006,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then clapping",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 52,
+      "pair_id": 10006,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by sea waves",
+      "prediction": [
+        [
+          7.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 7.650s to 28.650s",
+      "iou_correct": 0.5071428571428573,
+      "iou_wrong": 0.1876172607879925,
+      "chosen": "correct"
+    },
+    {
+      "index": 53,
+      "pair_id": 10006,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by clapping",
+      "prediction": [
+        [
+          2.0,
+          11.25
+        ]
+      ],
+      "raw_answer": "from 2.000s to 11.250s",
+      "iou_correct": 0.8685446009389671,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 54,
+      "pair_id": 10006,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then sea waves",
+      "prediction": [
+        [
+          7.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 7.650s to 28.650s",
+      "iou_correct": 0.5071428571428573,
+      "iou_wrong": 0.1876172607879925,
+      "chosen": "correct"
+    },
+    {
+      "index": 55,
+      "pair_id": 10006,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then clapping",
+      "prediction": [
+        [
+          2.0,
+          11.25
+        ]
+      ],
+      "raw_answer": "from 2.000s to 11.250s",
+      "iou_correct": 0.8685446009389671,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 56,
+      "pair_id": 10007,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by rooster",
+      "prediction": [
+        [
+          1.6,
+          8.7
+        ]
+      ],
+      "raw_answer": "from 1.600s to 8.700s",
+      "iou_correct": 0.6926829268292682,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 57,
+      "pair_id": 10007,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by dog",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 58,
+      "pair_id": 10007,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then rooster",
+      "prediction": [
+        [
+          1.6,
+          8.7
+        ],
+        [
+          14.75,
+          16.75
+        ]
+      ],
+      "raw_answer": "from 1.600s to 8.700s, from 14.750s to 16.750s",
+      "iou_correct": 0.5795918367346938,
+      "iou_wrong": 0.11527377521613832,
+      "chosen": "correct"
+    },
+    {
+      "index": 59,
+      "pair_id": 10007,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then dog",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 60,
+      "pair_id": 10007,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by rooster",
+      "prediction": [
+        [
+          17.65,
+          25.2
+        ]
+      ],
+      "raw_answer": "from 17.650s to 25.200s",
+      "iou_correct": 0.7089201877934271,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 61,
+      "pair_id": 10007,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by dog",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 62,
+      "pair_id": 10007,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then rooster",
+      "prediction": [
+        [
+          17.65,
+          25.2
+        ]
+      ],
+      "raw_answer": "from 17.650s to 25.200s",
+      "iou_correct": 0.7089201877934271,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 63,
+      "pair_id": 10007,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then dog",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 64,
+      "pair_id": 10008,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.7,
+          10.1
+        ]
+      ],
+      "raw_answer": "from 1.700s to 10.100s",
+      "iou_correct": 0.8195121951219513,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 65,
+      "pair_id": 10008,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 66,
+      "pair_id": 10008,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.7,
+          10.1
+        ]
+      ],
+      "raw_answer": "from 1.700s to 10.100s",
+      "iou_correct": 0.8195121951219513,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 67,
+      "pair_id": 10008,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 68,
+      "pair_id": 10008,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.7,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.700s to 28.300s",
+      "iou_correct": 0.9953051643192488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 69,
+      "pair_id": 10008,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by crying baby",
+      "prediction": [
+        [
+          1.97,
+          12.97
+        ]
+      ],
+      "raw_answer": "from 1.970s to 12.970s",
+      "iou_correct": 0.9681818181818183,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 70,
+      "pair_id": 10008,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.7,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.700s to 28.300s",
+      "iou_correct": 0.9953051643192488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 71,
+      "pair_id": 10008,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then crying baby",
+      "prediction": [
+        [
+          1.97,
+          12.97
+        ]
+      ],
+      "raw_answer": "from 1.970s to 12.970s",
+      "iou_correct": 0.9681818181818183,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 72,
+      "pair_id": 10009,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by fireworks",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 73,
+      "pair_id": 10009,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by clapping",
+      "prediction": [
+        [
+          16.0,
+          25.58
+        ]
+      ],
+      "raw_answer": "from 16.000s to 25.580s",
+      "iou_correct": 0.8310249307479226,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 74,
+      "pair_id": 10009,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then fireworks",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 75,
+      "pair_id": 10009,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then clapping",
+      "prediction": [
+        [
+          16.5,
+          25.58
+        ]
+      ],
+      "raw_answer": "from 16.500s to 25.580s",
+      "iou_correct": 0.7848568790397047,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 76,
+      "pair_id": 10009,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 77,
+      "pair_id": 10009,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by clapping",
+      "prediction": [
+        [
+          2.0,
+          12.5
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.500s",
+      "iou_correct": 0.9859154929577465,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 78,
+      "pair_id": 10009,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 79,
+      "pair_id": 10009,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then clapping",
+      "prediction": [
+        [
+          2.0,
+          12.5
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.500s",
+      "iou_correct": 0.9859154929577465,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 80,
+      "pair_id": 10010,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 81,
+      "pair_id": 10010,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by fireworks",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 82,
+      "pair_id": 10010,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 83,
+      "pair_id": 10010,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then fireworks",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 84,
+      "pair_id": 10010,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 85,
+      "pair_id": 10010,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by fireworks",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 86,
+      "pair_id": 10010,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 87,
+      "pair_id": 10010,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then fireworks",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 88,
+      "pair_id": 10011,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 89,
+      "pair_id": 10011,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by clapping",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 90,
+      "pair_id": 10011,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 91,
+      "pair_id": 10011,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then clapping",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 92,
+      "pair_id": 10011,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 93,
+      "pair_id": 10011,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by clapping",
+      "prediction": [
+        [
+          1.957,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 1.957s to 12.650s",
+      "iou_correct": 0.9959786776395774,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 94,
+      "pair_id": 10011,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 95,
+      "pair_id": 10011,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then clapping",
+      "prediction": [
+        [
+          1.957,
+          12.659
+        ]
+      ],
+      "raw_answer": "from 1.957s to 12.659s",
+      "iou_correct": 0.9951410951224071,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 96,
+      "pair_id": 10012,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by rooster",
+      "prediction": [
+        [
+          1.5,
+          9.15
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.150s",
+      "iou_correct": 0.7463414634146341,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 97,
+      "pair_id": 10012,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by fireworks",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 98,
+      "pair_id": 10012,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then rooster",
+      "prediction": [
+        [
+          1.5,
+          9.15
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.150s",
+      "iou_correct": 0.7463414634146341,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 99,
+      "pair_id": 10012,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then fireworks",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 100,
+      "pair_id": 10012,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by rooster",
+      "prediction": [
+        [
+          7.65,
+          26.15
+        ]
+      ],
+      "raw_answer": "from 7.650s to 26.150s",
+      "iou_correct": 0.41162227602905566,
+      "iou_wrong": 0.2070393374741201,
+      "chosen": "correct"
+    },
+    {
+      "index": 101,
+      "pair_id": 10012,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by fireworks",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 102,
+      "pair_id": 10012,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then rooster",
+      "prediction": [
+        [
+          7.65,
+          26.15
+        ]
+      ],
+      "raw_answer": "from 7.650s to 26.150s",
+      "iou_correct": 0.41162227602905566,
+      "iou_wrong": 0.2070393374741201,
+      "chosen": "correct"
+    },
+    {
+      "index": 103,
+      "pair_id": 10012,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then fireworks",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 104,
+      "pair_id": 10013,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by clapping",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 105,
+      "pair_id": 10013,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "clapping followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 106,
+      "pair_id": 10013,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then clapping",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 107,
+      "pair_id": 10013,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "clapping, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 108,
+      "pair_id": 10013,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by clapping",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 109,
+      "pair_id": 10013,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "clapping followed by chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 110,
+      "pair_id": 10013,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then clapping",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 111,
+      "pair_id": 10013,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "clapping, and then chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 112,
+      "pair_id": 10014,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "keyboard typing followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 113,
+      "pair_id": 10014,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by keyboard typing",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 114,
+      "pair_id": 10014,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "keyboard typing, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 115,
+      "pair_id": 10014,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then keyboard typing",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 116,
+      "pair_id": 10014,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "keyboard typing followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 117,
+      "pair_id": 10014,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by keyboard typing",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 118,
+      "pair_id": 10014,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "keyboard typing, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 119,
+      "pair_id": 10014,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then keyboard typing",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 120,
+      "pair_id": 10015,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by keyboard typing",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 121,
+      "pair_id": 10015,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 122,
+      "pair_id": 10015,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then keyboard typing",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 123,
+      "pair_id": 10015,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 124,
+      "pair_id": 10015,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by keyboard typing",
+      "prediction": [
+        [
+          17.957,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.957s to 28.300s",
+      "iou_correct": 0.9711737089201876,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 125,
+      "pair_id": 10015,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by chainsaw",
+      "prediction": [
+        [
+          2.088,
+          11.659
+        ]
+      ],
+      "raw_answer": "from 2.088s to 11.659s",
+      "iou_correct": 0.8986854460093896,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 126,
+      "pair_id": 10015,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then keyboard typing",
+      "prediction": [
+        [
+          17.95,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.950s to 28.300s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 127,
+      "pair_id": 10015,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then chainsaw",
+      "prediction": [
+        [
+          2.0,
+          11.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 11.650s",
+      "iou_correct": 0.9061032863849765,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 128,
+      "pair_id": 10016,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by dog",
+      "prediction": [
+        [
+          1.65,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.650s to 11.750s",
+      "iou_correct": 0.9853658536585366,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 129,
+      "pair_id": 10016,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "dog followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 130,
+      "pair_id": 10016,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then dog",
+      "prediction": [
+        [
+          1.7,
+          11.74
+        ]
+      ],
+      "raw_answer": "from 1.700s to 11.740s",
+      "iou_correct": 0.9795121951219513,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 131,
+      "pair_id": 10016,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "dog, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 132,
+      "pair_id": 10016,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by dog",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 133,
+      "pair_id": 10016,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "dog followed by chainsaw",
+      "prediction": [
+        [
+          2.25,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.250s to 12.650s",
+      "iou_correct": 0.9765258215962441,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 134,
+      "pair_id": 10016,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then dog",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 135,
+      "pair_id": 10016,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "dog, and then chainsaw",
+      "prediction": [
+        [
+          2.25,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.250s to 12.650s",
+      "iou_correct": 0.9765258215962441,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 136,
+      "pair_id": 10017,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by dog",
+      "prediction": [
+        [
+          20.0,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 20.000s to 25.000s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.4878048780487805,
+      "chosen": "wrong"
+    },
+    {
+      "index": 137,
+      "pair_id": 10017,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "dog followed by clapping",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 138,
+      "pair_id": 10017,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then dog",
+      "prediction": [
+        [
+          20.0,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 20.000s to 25.000s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.4878048780487805,
+      "chosen": "wrong"
+    },
+    {
+      "index": 139,
+      "pair_id": 10017,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "dog, and then clapping",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 140,
+      "pair_id": 10017,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by dog",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 141,
+      "pair_id": 10017,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "dog followed by clapping",
+      "prediction": [
+        [
+          2.65,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.650s to 12.650s",
+      "iou_correct": 0.9389671361502347,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 142,
+      "pair_id": 10017,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then dog",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 143,
+      "pair_id": 10017,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "dog, and then clapping",
+      "prediction": [
+        [
+          2.65,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.650s to 12.650s",
+      "iou_correct": 0.9389671361502347,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 144,
+      "pair_id": 10018,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "sea waves followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 145,
+      "pair_id": 10018,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by sea waves",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 146,
+      "pair_id": 10018,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "sea waves, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 147,
+      "pair_id": 10018,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then sea waves",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 148,
+      "pair_id": 10018,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "sea waves followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 149,
+      "pair_id": 10018,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by sea waves",
+      "prediction": [
+        [
+          1.957,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 1.957s to 12.650s",
+      "iou_correct": 0.9959786776395774,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 150,
+      "pair_id": 10018,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "sea waves, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 151,
+      "pair_id": 10018,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then sea waves",
+      "prediction": [
+        [
+          1.957,
+          12.657
+        ]
+      ],
+      "raw_answer": "from 1.957s to 12.657s",
+      "iou_correct": 0.9953271028037384,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 152,
+      "pair_id": 10019,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by vacuum cleaner",
+      "prediction": [
+        [
+          2.0,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 2.000s to 11.750s",
+      "iou_correct": 0.9512195121951219,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 153,
+      "pair_id": 10019,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 154,
+      "pair_id": 10019,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then vacuum cleaner",
+      "prediction": [
+        [
+          2.0,
+          11.75
+        ],
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 11.750s, from 14.750s to 25.000s",
+      "iou_correct": 0.47560975609756095,
+      "iou_wrong": 0.5125,
+      "chosen": "wrong"
+    },
+    {
+      "index": 155,
+      "pair_id": 10019,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 156,
+      "pair_id": 10019,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.957,
+          28.302
+        ]
+      ],
+      "raw_answer": "from 1.957s to 28.302s",
+      "iou_correct": 0.4042512810780035,
+      "iou_wrong": 0.40425128107800345,
+      "chosen": "correct"
+    },
+    {
+      "index": 157,
+      "pair_id": 10019,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ],
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s, from 17.650s to 28.650s",
+      "iou_correct": 0.4919168591224019,
+      "iou_wrong": 0.4919168591224019,
+      "chosen": "tie"
+    },
+    {
+      "index": 158,
+      "pair_id": 10019,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.95,
+          12.65
+        ],
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 1.950s to 12.650s, from 17.650s to 28.650s",
+      "iou_correct": 0.49078341013824894,
+      "iou_wrong": 0.4907834101382488,
+      "chosen": "correct"
+    },
+    {
+      "index": 159,
+      "pair_id": 10019,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ],
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s, from 17.650s to 28.650s",
+      "iou_correct": 0.4919168591224019,
+      "iou_wrong": 0.4919168591224019,
+      "chosen": "tie"
+    },
+    {
+      "index": 160,
+      "pair_id": 10020,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by sea waves",
+      "prediction": [
+        [
+          1.8,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.800s to 11.750s",
+      "iou_correct": 0.9707317073170731,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 161,
+      "pair_id": 10020,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by dog",
+      "prediction": [
+        [
+          6.75,
+          21.95
+        ]
+      ],
+      "raw_answer": "from 6.750s to 21.950s",
+      "iou_correct": 0.3945205479452054,
+      "iou_wrong": 0.24449877750611249,
+      "chosen": "correct"
+    },
+    {
+      "index": 162,
+      "pair_id": 10020,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then sea waves",
+      "prediction": [
+        [
+          1.8,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.800s to 11.750s",
+      "iou_correct": 0.9707317073170731,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 163,
+      "pair_id": 10020,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then dog",
+      "prediction": [
+        [
+          6.75,
+          21.95
+        ]
+      ],
+      "raw_answer": "from 6.750s to 21.950s",
+      "iou_correct": 0.3945205479452054,
+      "iou_wrong": 0.24449877750611249,
+      "chosen": "correct"
+    },
+    {
+      "index": 164,
+      "pair_id": 10020,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by sea waves",
+      "prediction": [
+        [
+          17.957,
+          28.346
+        ]
+      ],
+      "raw_answer": "from 17.957s to 28.346s",
+      "iou_correct": 0.9669970082273746,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 165,
+      "pair_id": 10020,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by dog",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 166,
+      "pair_id": 10020,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then sea waves",
+      "prediction": [
+        [
+          17.957,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.957s to 28.300s",
+      "iou_correct": 0.9711737089201876,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 167,
+      "pair_id": 10020,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then dog",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 168,
+      "pair_id": 10021,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 169,
+      "pair_id": 10021,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 170,
+      "pair_id": 10021,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 171,
+      "pair_id": 10021,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 172,
+      "pair_id": 10021,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by thunderstorm",
+      "prediction": [
+        [
+          17.67,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.670s to 28.300s",
+      "iou_correct": 0.9981220657276992,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 173,
+      "pair_id": 10021,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 174,
+      "pair_id": 10021,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then thunderstorm",
+      "prediction": [
+        [
+          17.67,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.670s to 28.300s",
+      "iou_correct": 0.9981220657276992,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 175,
+      "pair_id": 10021,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 176,
+      "pair_id": 10022,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 177,
+      "pair_id": 10022,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by fireworks",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 178,
+      "pair_id": 10022,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 179,
+      "pair_id": 10022,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then fireworks",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 180,
+      "pair_id": 10022,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 181,
+      "pair_id": 10022,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by fireworks",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 182,
+      "pair_id": 10022,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 183,
+      "pair_id": 10022,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then fireworks",
+      "prediction": [
+        [
+          1.957,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 1.957s to 12.650s",
+      "iou_correct": 0.9959786776395774,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 184,
+      "pair_id": 10023,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.9
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.900s",
+      "iou_correct": 0.985576923076923,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 185,
+      "pair_id": 10023,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by clapping",
+      "prediction": [
+        [
+          14.9,
+          24.9
+        ]
+      ],
+      "raw_answer": "from 14.900s to 24.900s",
+      "iou_correct": 0.9756097560975608,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 186,
+      "pair_id": 10023,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.9
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.900s",
+      "iou_correct": 0.985576923076923,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 187,
+      "pair_id": 10023,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then clapping",
+      "prediction": [
+        [
+          14.9,
+          24.9
+        ]
+      ],
+      "raw_answer": "from 14.900s to 24.900s",
+      "iou_correct": 0.9756097560975608,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 188,
+      "pair_id": 10023,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.2
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.200s",
+      "iou_correct": 0.9906103286384975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 189,
+      "pair_id": 10023,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by clapping",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 190,
+      "pair_id": 10023,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.2
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.200s",
+      "iou_correct": 0.9906103286384975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 191,
+      "pair_id": 10023,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then clapping",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 192,
+      "pair_id": 10024,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by crying baby",
+      "prediction": [],
+      "raw_answer": "from 20.000s to 20.000s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.0,
+      "chosen": "tie"
+    },
+    {
+      "index": 193,
+      "pair_id": 10024,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "crying baby followed by clapping",
+      "prediction": [
+        [
+          14.8,
+          24.8
+        ]
+      ],
+      "raw_answer": "from 14.800s to 24.800s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 194,
+      "pair_id": 10024,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then crying baby",
+      "prediction": [],
+      "raw_answer": "from 20.000s to 20.000s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.0,
+      "chosen": "tie"
+    },
+    {
+      "index": 195,
+      "pair_id": 10024,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "crying baby, and then clapping",
+      "prediction": [
+        [
+          14.8,
+          24.8
+        ]
+      ],
+      "raw_answer": "from 14.800s to 24.800s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 196,
+      "pair_id": 10024,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "clapping followed by crying baby",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 197,
+      "pair_id": 10024,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "crying baby followed by clapping",
+      "prediction": [
+        [
+          2.25,
+          12.17
+        ]
+      ],
+      "raw_answer": "from 2.250s to 12.170s",
+      "iou_correct": 0.9314553990610328,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 198,
+      "pair_id": 10024,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "clapping, and then crying baby",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 199,
+      "pair_id": 10024,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "crying baby, and then clapping",
+      "prediction": [
+        [
+          2.25,
+          12.17
+        ]
+      ],
+      "raw_answer": "from 2.250s to 12.170s",
+      "iou_correct": 0.9314553990610328,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 200,
+      "pair_id": 10025,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 201,
+      "pair_id": 10025,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by dog",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 202,
+      "pair_id": 10025,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 203,
+      "pair_id": 10025,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then dog",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 204,
+      "pair_id": 10025,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by thunderstorm",
+      "prediction": [
+        [
+          17.75,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.750s to 28.300s",
+      "iou_correct": 0.9906103286384975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 205,
+      "pair_id": 10025,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by dog",
+      "prediction": [
+        [
+          2.0,
+          13.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 13.000s",
+      "iou_correct": 0.9681818181818183,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 206,
+      "pair_id": 10025,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then thunderstorm",
+      "prediction": [
+        [
+          17.75,
+          28.25
+        ]
+      ],
+      "raw_answer": "from 17.750s to 28.250s",
+      "iou_correct": 0.9859154929577463,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 207,
+      "pair_id": 10025,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then dog",
+      "prediction": [
+        [
+          2.0,
+          13.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 13.000s",
+      "iou_correct": 0.9681818181818183,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 208,
+      "pair_id": 10026,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "sea waves followed by thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 209,
+      "pair_id": 10026,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by sea waves",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 210,
+      "pair_id": 10026,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "sea waves, and then thunderstorm",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 211,
+      "pair_id": 10026,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then sea waves",
+      "prediction": [
+        [
+          14.8,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.800s to 25.000s",
+      "iou_correct": 0.9951219512195121,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 212,
+      "pair_id": 10026,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "sea waves followed by thunderstorm",
+      "prediction": [
+        [
+          1.97,
+          7.0
+        ]
+      ],
+      "raw_answer": "from 1.970s to 7.000s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.46816479400749067,
+      "chosen": "wrong"
+    },
+    {
+      "index": 213,
+      "pair_id": 10026,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by sea waves",
+      "prediction": [
+        [
+          1.97,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 1.970s to 12.650s",
+      "iou_correct": 0.9971910112359551,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 214,
+      "pair_id": 10026,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "sea waves, and then thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 215,
+      "pair_id": 10026,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then sea waves",
+      "prediction": [
+        [
+          1.97,
+          12.67
+        ]
+      ],
+      "raw_answer": "from 1.970s to 12.670s",
+      "iou_correct": 0.9953271028037384,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 216,
+      "pair_id": 10027,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "keyboard typing followed by rooster",
+      "prediction": [
+        [
+          1.5,
+          9.0
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.000s",
+      "iou_correct": 0.7317073170731707,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 217,
+      "pair_id": 10027,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by keyboard typing",
+      "prediction": [
+        [
+          15.0,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 15.000s to 25.000s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 218,
+      "pair_id": 10027,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "keyboard typing, and then rooster",
+      "prediction": [
+        [
+          1.5,
+          10.0
+        ]
+      ],
+      "raw_answer": "from 1.500s to 10.000s",
+      "iou_correct": 0.8292682926829268,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 219,
+      "pair_id": 10027,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then keyboard typing",
+      "prediction": [
+        [
+          15.0,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 15.000s to 25.000s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 220,
+      "pair_id": 10027,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "keyboard typing followed by rooster",
+      "prediction": [
+        [
+          7.65,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 7.650s to 25.000s",
+      "iou_correct": 0.35593220338983056,
+      "iou_wrong": 0.21739130434782608,
+      "chosen": "correct"
+    },
+    {
+      "index": 221,
+      "pair_id": 10027,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by keyboard typing",
+      "prediction": [
+        [
+          1.957,
+          11.855
+        ]
+      ],
+      "raw_answer": "from 1.957s to 11.855s",
+      "iou_correct": 0.9216309735340877,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 222,
+      "pair_id": 10027,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "keyboard typing, and then rooster",
+      "prediction": [
+        [
+          7.65,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 7.650s to 25.000s",
+      "iou_correct": 0.35593220338983056,
+      "iou_wrong": 0.21739130434782608,
+      "chosen": "correct"
+    },
+    {
+      "index": 223,
+      "pair_id": 10027,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then keyboard typing",
+      "prediction": [
+        [
+          1.957,
+          11.855
+        ]
+      ],
+      "raw_answer": "from 1.957s to 11.855s",
+      "iou_correct": 0.9216309735340877,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 224,
+      "pair_id": 10028,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by fireworks",
+      "prediction": [
+        [
+          1.5,
+          9.25
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.250s",
+      "iou_correct": 0.7560975609756098,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 225,
+      "pair_id": 10028,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 226,
+      "pair_id": 10028,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then fireworks",
+      "prediction": [
+        [
+          1.5,
+          9.25
+        ]
+      ],
+      "raw_answer": "from 1.500s to 9.250s",
+      "iou_correct": 0.7560975609756098,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 227,
+      "pair_id": 10028,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 228,
+      "pair_id": 10028,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 229,
+      "pair_id": 10028,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 230,
+      "pair_id": 10028,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 231,
+      "pair_id": 10028,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 232,
+      "pair_id": 10029,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "rooster followed by thunderstorm",
+      "prediction": [
+        [
+          2.2,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 2.200s to 11.750s",
+      "iou_correct": 0.9317073170731708,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 233,
+      "pair_id": 10029,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by rooster",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 234,
+      "pair_id": 10029,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "rooster, and then thunderstorm",
+      "prediction": [
+        [
+          2.2,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 2.200s to 11.750s",
+      "iou_correct": 0.9317073170731708,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 235,
+      "pair_id": 10029,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then rooster",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 236,
+      "pair_id": 10029,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "rooster followed by thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.25
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.250s",
+      "iou_correct": 0.9953051643192488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 237,
+      "pair_id": 10029,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "thunderstorm followed by rooster",
+      "prediction": [
+        [
+          1.97,
+          10.5
+        ]
+      ],
+      "raw_answer": "from 1.970s to 10.500s",
+      "iou_correct": 0.7958801498127341,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 238,
+      "pair_id": 10029,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "rooster, and then thunderstorm",
+      "prediction": [
+        [
+          17.65,
+          28.25
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.250s",
+      "iou_correct": 0.9953051643192488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 239,
+      "pair_id": 10029,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "thunderstorm, and then rooster",
+      "prediction": [
+        [
+          1.97,
+          10.5
+        ]
+      ],
+      "raw_answer": "from 1.970s to 10.500s",
+      "iou_correct": 0.7958801498127341,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 240,
+      "pair_id": 10030,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.9,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.900s to 11.750s",
+      "iou_correct": 0.9609756097560975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 241,
+      "pair_id": 10030,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by dog",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 242,
+      "pair_id": 10030,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.9,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.900s to 11.750s",
+      "iou_correct": 0.9609756097560975,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 243,
+      "pair_id": 10030,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then dog",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 244,
+      "pair_id": 10030,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          29.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 29.000s",
+      "iou_correct": 0.9383259911894274,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 245,
+      "pair_id": 10030,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by dog",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 246,
+      "pair_id": 10030,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          29.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 29.000s",
+      "iou_correct": 0.9383259911894274,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 247,
+      "pair_id": 10030,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then dog",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 248,
+      "pair_id": 10031,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "keyboard typing followed by sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 249,
+      "pair_id": 10031,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by keyboard typing",
+      "prediction": [
+        [
+          19.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 19.750s to 24.750s",
+      "iou_correct": 0.4878048780487805,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 250,
+      "pair_id": 10031,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "keyboard typing, and then sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 251,
+      "pair_id": 10031,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then keyboard typing",
+      "prediction": [
+        [
+          14.75,
+          24.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.750s",
+      "iou_correct": 0.975609756097561,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 252,
+      "pair_id": 10031,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "keyboard typing followed by sea waves",
+      "prediction": [
+        [
+          7.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 7.650s to 28.650s",
+      "iou_correct": 0.5071428571428573,
+      "iou_wrong": 0.1876172607879925,
+      "chosen": "correct"
+    },
+    {
+      "index": 253,
+      "pair_id": 10031,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by keyboard typing",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 254,
+      "pair_id": 10031,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "keyboard typing, and then sea waves",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 255,
+      "pair_id": 10031,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then keyboard typing",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 256,
+      "pair_id": 10032,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by rooster",
+      "prediction": [
+        [
+          1.6,
+          9.6
+        ]
+      ],
+      "raw_answer": "from 1.600s to 9.600s",
+      "iou_correct": 0.7804878048780488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 257,
+      "pair_id": 10032,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 258,
+      "pair_id": 10032,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then rooster",
+      "prediction": [
+        [
+          1.6,
+          9.6
+        ]
+      ],
+      "raw_answer": "from 1.600s to 9.600s",
+      "iou_correct": 0.7804878048780488,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 259,
+      "pair_id": 10032,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 260,
+      "pair_id": 10032,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by rooster",
+      "prediction": [
+        [
+          17.65,
+          26.15
+        ]
+      ],
+      "raw_answer": "from 17.650s to 26.150s",
+      "iou_correct": 0.7981220657276994,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 261,
+      "pair_id": 10032,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "rooster followed by crying baby",
+      "prediction": [
+        [
+          2.35,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.350s to 12.650s",
+      "iou_correct": 0.9671361502347419,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 262,
+      "pair_id": 10032,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then rooster",
+      "prediction": [
+        [
+          17.65,
+          26.15
+        ]
+      ],
+      "raw_answer": "from 17.650s to 26.150s",
+      "iou_correct": 0.7981220657276994,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 263,
+      "pair_id": 10032,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "rooster, and then crying baby",
+      "prediction": [
+        [
+          2.35,
+          12.65
+        ],
+        [
+          17.65,
+          22.65
+        ],
+        [
+          23.65,
+          26.0
+        ]
+      ],
+      "raw_answer": "from 2.350s to 12.650s, from 17.650s to 22.650s, from 23.650s to 26.000s",
+      "iou_correct": 0.5722222222222223,
+      "iou_wrong": 0.35083532219570407,
+      "chosen": "correct"
+    },
+    {
+      "index": 264,
+      "pair_id": 10033,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by fireworks",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 265,
+      "pair_id": 10033,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 266,
+      "pair_id": 10033,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then fireworks",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 267,
+      "pair_id": 10033,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 268,
+      "pair_id": 10033,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 269,
+      "pair_id": 10033,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "fireworks followed by chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 270,
+      "pair_id": 10033,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then fireworks",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 271,
+      "pair_id": 10033,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "fireworks, and then chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 272,
+      "pair_id": 10034,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by crying baby",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 273,
+      "pair_id": 10034,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "crying baby followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 274,
+      "pair_id": 10034,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then crying baby",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 275,
+      "pair_id": 10034,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "crying baby, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 276,
+      "pair_id": 10034,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by crying baby",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 277,
+      "pair_id": 10034,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "crying baby followed by chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 278,
+      "pair_id": 10034,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then crying baby",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 279,
+      "pair_id": 10034,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "crying baby, and then chainsaw",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 280,
+      "pair_id": 10035,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 281,
+      "pair_id": 10035,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 282,
+      "pair_id": 10035,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 283,
+      "pair_id": 10035,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then crying baby",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 284,
+      "pair_id": 10035,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "crying baby followed by sea waves",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 285,
+      "pair_id": 10035,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 286,
+      "pair_id": 10035,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "crying baby, and then sea waves",
+      "prediction": [
+        [
+          17.65,
+          28.5
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.500s",
+      "iou_correct": 0.9815668202764978,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 287,
+      "pair_id": 10035,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then crying baby",
+      "prediction": [
+        [
+          2.0,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 2.000s to 12.650s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 288,
+      "pair_id": 10036,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by keyboard typing",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 289,
+      "pair_id": 10036,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by dog",
+      "prediction": [
+        [
+          14.75,
+          24.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.000s",
+      "iou_correct": 0.9024390243902439,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 290,
+      "pair_id": 10036,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then keyboard typing",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 291,
+      "pair_id": 10036,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then dog",
+      "prediction": [
+        [
+          14.75,
+          24.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.000s",
+      "iou_correct": 0.9024390243902439,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 292,
+      "pair_id": 10036,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "dog followed by keyboard typing",
+      "prediction": [
+        [
+          17.65,
+          28.65
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.650s",
+      "iou_correct": 0.9681818181818184,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 293,
+      "pair_id": 10036,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by dog",
+      "prediction": [
+        [
+          2.0,
+          8.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 8.000s",
+      "iou_correct": 0.5633802816901409,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 294,
+      "pair_id": 10036,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "dog, and then keyboard typing",
+      "prediction": [
+        [
+          17.65,
+          28.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.000s",
+      "iou_correct": 0.9718309859154929,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 295,
+      "pair_id": 10036,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then dog",
+      "prediction": [
+        [
+          2.0,
+          8.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 8.000s",
+      "iou_correct": 0.5633802816901409,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 296,
+      "pair_id": 10037,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 297,
+      "pair_id": 10037,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 298,
+      "pair_id": 10037,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then sea waves",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 299,
+      "pair_id": 10037,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then chainsaw",
+      "prediction": [
+        [
+          14.75,
+          25.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 25.000s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 300,
+      "pair_id": 10037,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "chainsaw followed by sea waves",
+      "prediction": [
+        [
+          7.65,
+          27.0
+        ]
+      ],
+      "raw_answer": "from 7.650s to 27.000s",
+      "iou_correct": 0.45278450363196127,
+      "iou_wrong": 0.2,
+      "chosen": "correct"
+    },
+    {
+      "index": 301,
+      "pair_id": 10037,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "sea waves followed by chainsaw",
+      "prediction": [
+        [
+          1.95,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 1.950s to 12.650s",
+      "iou_correct": 0.9953271028037383,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 302,
+      "pair_id": 10037,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "chainsaw, and then sea waves",
+      "prediction": [
+        [
+          17.65,
+          27.0
+        ]
+      ],
+      "raw_answer": "from 17.650s to 27.000s",
+      "iou_correct": 0.8779342723004694,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 303,
+      "pair_id": 10037,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "sea waves, and then chainsaw",
+      "prediction": [
+        [
+          1.95,
+          12.65
+        ]
+      ],
+      "raw_answer": "from 1.950s to 12.650s",
+      "iou_correct": 0.9953271028037383,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 304,
+      "pair_id": 10038,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by keyboard typing",
+      "prediction": [
+        [
+          14.75,
+          19.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 19.750s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.4878048780487805,
+      "chosen": "wrong"
+    },
+    {
+      "index": 305,
+      "pair_id": 10038,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by fireworks",
+      "prediction": [
+        [
+          14.75,
+          24.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.000s",
+      "iou_correct": 0.9024390243902439,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 306,
+      "pair_id": 10038,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then keyboard typing",
+      "prediction": [
+        [
+          14.75,
+          19.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 19.750s",
+      "iou_correct": 0.0,
+      "iou_wrong": 0.4878048780487805,
+      "chosen": "wrong"
+    },
+    {
+      "index": 307,
+      "pair_id": 10038,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then fireworks",
+      "prediction": [
+        [
+          14.75,
+          24.0
+        ]
+      ],
+      "raw_answer": "from 14.750s to 24.000s",
+      "iou_correct": 0.9024390243902439,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 308,
+      "pair_id": 10038,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "fireworks followed by keyboard typing",
+      "prediction": [
+        [
+          17.75,
+          28.75
+        ]
+      ],
+      "raw_answer": "from 17.750s to 28.750s",
+      "iou_correct": 0.9504504504504504,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 309,
+      "pair_id": 10038,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "keyboard typing followed by fireworks",
+      "prediction": [
+        [
+          2.0,
+          13.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 13.000s",
+      "iou_correct": 0.9681818181818183,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 310,
+      "pair_id": 10038,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "fireworks, and then keyboard typing",
+      "prediction": [
+        [
+          17.75,
+          28.75
+        ]
+      ],
+      "raw_answer": "from 17.750s to 28.750s",
+      "iou_correct": 0.9504504504504504,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 311,
+      "pair_id": 10038,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "keyboard typing, and then fireworks",
+      "prediction": [
+        [
+          2.0,
+          13.0
+        ]
+      ],
+      "raw_answer": "from 2.000s to 13.000s",
+      "iou_correct": 0.9681818181818183,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 312,
+      "pair_id": 10039,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "rooster followed by vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 313,
+      "pair_id": 10039,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by rooster",
+      "prediction": [
+        [
+          14.75,
+          21.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 21.750s",
+      "iou_correct": 0.6829268292682927,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 314,
+      "pair_id": 10039,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "rooster, and then vacuum cleaner",
+      "prediction": [
+        [
+          1.5,
+          11.75
+        ]
+      ],
+      "raw_answer": "from 1.500s to 11.750s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 315,
+      "pair_id": 10039,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then rooster",
+      "prediction": [
+        [
+          14.75,
+          21.75
+        ]
+      ],
+      "raw_answer": "from 14.750s to 21.750s",
+      "iou_correct": 0.6829268292682927,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 316,
+      "pair_id": 10039,
+      "template": "followed_by",
+      "relation": "AB",
+      "query": "rooster followed by vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 317,
+      "pair_id": 10039,
+      "template": "followed_by",
+      "relation": "BA",
+      "query": "vacuum cleaner followed by rooster",
+      "prediction": [
+        [
+          2.0,
+          19.57
+        ]
+      ],
+      "raw_answer": "from 2.000s to 19.570s",
+      "iou_correct": 0.6061468412066022,
+      "iou_wrong": 0.07300380228136888,
+      "chosen": "correct"
+    },
+    {
+      "index": 318,
+      "pair_id": 10039,
+      "template": "and_then",
+      "relation": "AB",
+      "query": "rooster, and then vacuum cleaner",
+      "prediction": [
+        [
+          17.65,
+          28.3
+        ]
+      ],
+      "raw_answer": "from 17.650s to 28.300s",
+      "iou_correct": 1.0,
+      "iou_wrong": 0.0,
+      "chosen": "correct"
+    },
+    {
+      "index": 319,
+      "pair_id": 10039,
+      "template": "and_then",
+      "relation": "BA",
+      "query": "vacuum cleaner, and then rooster",
+      "prediction": [
+        [
+          2.0,
+          19.57
+        ]
+      ],
+      "raw_answer": "from 2.000s to 19.570s",
+      "iou_correct": 0.6061468412066022,
+      "iou_wrong": 0.07300380228136888,
+      "chosen": "correct"
+    }
+  ]
+}

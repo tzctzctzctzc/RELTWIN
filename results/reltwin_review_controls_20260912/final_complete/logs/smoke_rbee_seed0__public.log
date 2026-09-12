@@ -1,0 +1,25 @@
+Loading weights:   0%|          | 0/830 [00:00<?, ?it/s]Loading weights:  69%|██████▉   | 573/830 [00:00<00:00, 5707.77it/s]Loading weights: 100%|██████████| 830/830 [00:00<00:00, 5551.56it/s]
+{"status": "ok", "index": 0, "audio": "_Uro9suV3xU_130_187.wav", "query": "hair dryer drying", "ground_truth": [[8.1, 10.9]], "raw_answer": "from 8.000s to 11.000s", "prediction": [[8.0, 11.0]], "iou": 0.9333333333333336, "duration_seconds": 57.0, "input_tokens": 2042, "inference_seconds": 1.586276764050126, "peak_gpu_memory_mib": 16177.73779296875, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 1, "audio": "_Uro9suV3xU_45_135.wav", "query": "hair dryer drying", "ground_truth": [[81.0, 84.8]], "raw_answer": "from 80.802s to 84.000s", "prediction": [[80.802, 84.0]], "iou": 0.7503751875937987, "duration_seconds": 90.0, "input_tokens": 3197, "inference_seconds": 1.1145879672840238, "peak_gpu_memory_mib": 16404.68505859375, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 2, "audio": "fTcSVQJ2h8g_0_90.wav", "query": "police car siren", "ground_truth": [[59.0, 65.6]], "raw_answer": "from 59.010s to 66.010s", "prediction": [[59.01, 66.01]], "iou": 0.9400855920114111, "duration_seconds": 90.0, "input_tokens": 3198, "inference_seconds": 1.0837789187207818, "peak_gpu_memory_mib": 16404.88427734375, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 3, "audio": "ClTzzGQatXo_30_48.wav", "query": "ambulance siren", "ground_truth": [[0.0, 3.5]], "raw_answer": "from 0.000s to 16.800s", "prediction": [[0.0, 16.8]], "iou": 0.20833333333333331, "duration_seconds": 18.0, "input_tokens": 677, "inference_seconds": 0.61584931332618, "peak_gpu_memory_mib": 15909.70947265625, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 4, "audio": "eXQYEfqCU08_38_68.wav", "query": "train horning", "ground_truth": [[0.0, 4.0]], "raw_answer": "from 0.000s to 3.902s", "prediction": [[0.0, 3.902]], "iou": 0.9755, "duration_seconds": 30.0, "input_tokens": 1097, "inference_seconds": 0.6328267371281981, "peak_gpu_memory_mib": 15991.9404296875, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 5, "audio": "OD54eF2XKJA_0_30.wav", "query": "people cheering", "ground_truth": [[23.8, 30.0]], "raw_answer": "from 23.000s to 25.000s", "prediction": [[23.0, 25.0]], "iou": 0.17142857142857132, "duration_seconds": 30.0, "input_tokens": 1096, "inference_seconds": 0.6800937373191118, "peak_gpu_memory_mib": 15991.75244140625, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 6, "audio": "Knhb_BCn5Bc_55_75.wav", "query": "church bell ringing", "ground_truth": [[11.4, 12.6]], "raw_answer": "from 0.000s to 19.970s", "prediction": [[0.0, 19.97]], "iou": 0.06009013520280417, "duration_seconds": 20.0, "input_tokens": 747, "inference_seconds": 0.6095756031572819, "peak_gpu_memory_mib": 15923.4013671875, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 7, "audio": "TP_CVBCc4-U_100_129.wav", "query": "people shouting", "ground_truth": [[12.0, 12.8]], "raw_answer": "from 0.000s to 3.000s, from 6.874s to 9.000s, from 15.900s to 16.900s, from 27.000s to 28.000s", "prediction": [[0.0, 3.0], [6.874, 9.0], [15.9, 16.9], [27.0, 28.0]], "iou": 0.0, "duration_seconds": 29.0, "input_tokens": 1061, "inference_seconds": 2.0519016766920686, "peak_gpu_memory_mib": 15984.89501953125, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 8, "audio": "TP_CVBCc4-U_50_110.wav", "query": "people shouting", "ground_truth": [[44.7, 46.9], [6.2, 6.9]], "raw_answer": "from 44.874s to 47.000s, from 57.902s to 59.000s", "prediction": [[44.874, 47.0], [57.902, 59.0]], "iou": 0.4943875061005364, "duration_seconds": 60.0, "input_tokens": 2146, "inference_seconds": 1.3796199914067984, "peak_gpu_memory_mib": 16198.119140625, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{"status": "ok", "index": 9, "audio": "CljO1-A89-g_0_60.wav", "query": "people clapping", "ground_truth": [[29.9, 32.2]], "raw_answer": "from 30.000s to 32.000s", "prediction": [[30.0, 32.0]], "iou": 0.8695652173913028, "duration_seconds": 60.0, "input_tokens": 2147, "inference_seconds": 0.8793323002755642, "peak_gpu_memory_mib": 16198.31884765625, "benchmark": null, "benchmark_id": null, "category": null, "hardcase_tags": []}
+{
+  "base": "/root/autodl-tmp/SpotSound-ICASSP/models/audio-flamingo-3-hf",
+  "adapter": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/reltwin_esc50_v1/rbee/adapter",
+  "torch": "2.8.0+cu128",
+  "device": "NVIDIA GeForce RTX 4080",
+  "prompt_mode": "spotsound",
+  "load_seconds": 58.57133010588586,
+  "expected_count": 10,
+  "completed_count": 10,
+  "R1@0.3": 60.0,
+  "R1@0.5": 50.0,
+  "mIoU": 54.030988763950916,
+  "mean_inference_seconds": 1.0633843009360135
+}
