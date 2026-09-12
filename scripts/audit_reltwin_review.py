@@ -221,7 +221,7 @@ def main():
               "iou_implementation": "Historical analyze_reltwin_probe.set_iou retained exactly, including its strict floating-point tie convention.",
               "models": summaries, "comparisons": comparisons, "input_hashes": hashes,
               "manifest_sha256": hashlib.sha256(args.manifest.read_bytes()).hexdigest()}
-    (output / "relation_audit.json").write_text(json.dumps(report, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    (output / "relation_audit.json").write_text(json.dumps(report, indent=2, ensure_ascii=False)+"\n", encoding="utf-8", newline="\n")
     lines = ["# RelTwin 关系诊断补充审计", "", "既有开发集的事后分析；不是新增独立测试。交换项和继续训练对照须与同服务器评测配对。", "",
              f"320 条查询，160 个关系对，{len(set(query_audio))} 个音频组，{len(sizes)} 个原始来源连通组；最大来源组含 {max(sizes)} 条音频。", "",
              "| 模型 | mIoU | PairAcc@.5 | Swap error | JointPairAcc@.5 |", "|---|---:|---:|---:|---:|"]
@@ -236,7 +236,7 @@ def main():
             fmt = lambda v: "不可估计" if v is None else f"[{v[0]:+.3f}, {v[1]:+.3f}]"
             lines.append(f"| {metric} | {a['mean_delta_points']:+.3f} | {fmt(a['ci95_points'])} | {fmt(b['ci95_points'])} |")
     lines += ["", "区间条件于已经观察到的种子；未声称训练种子总体置信保证。按来源连通分组是片段复用依赖的敏感性分析，不消除开发选择偏差。", "", "JointPairAcc 要求一对查询均达到正确窗口 IoU≥0.5，且分别严格偏向各自正确窗口。它是新增的事后诊断指标，不替代原指标。"]
-    (output / "RELATION_AUDIT.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
+    (output / "RELATION_AUDIT.md").write_text("\n".join(lines)+"\n", encoding="utf-8", newline="\n")
     print(json.dumps({"audio_groups": report["audio_groups"], "source_groups": len(sizes), "models": len(summaries), "comparisons": list(comparisons)}))
 
 

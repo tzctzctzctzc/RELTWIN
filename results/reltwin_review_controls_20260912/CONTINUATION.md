@@ -6,7 +6,9 @@
 
 新分支 `codex/reltwin-review-controls-20260912`。训练队列代码冻结提交 `c9d27d7`；缓存诊断审计提交 `71ac768`。初始 19 项训练目标／指标测试通过，GPU 的关系 10 条和 SpotSound 10 条 smoke 均通过。另 19 项分组审计与汇总校验测试通过。后台队列共 50 个步骤，包含 6 次新训练和历史 checkpoint 的统一重评。
 
-P0 文稿：`paper/ICASSP_DRAFT_ZH_v7_REVIEW.md`；英文源：`paper/overleaf_icassp2027_reltwin_review_v3/`。123 词摘要，已编译为四页正文加一页参考文献。补齐同 seed SFT 关系诊断、JointPairAcc 和两种依赖分组 bootstrap。两项训练归因对照未完成前，文稿明确保持 pending，不把联合目标收益归给交换项。
+P0 文稿：`paper/ICASSP_DRAFT_ZH_v7_REVIEW.md`；英文源：`paper/overleaf_icassp2027_reltwin_review_v3/`。123 词摘要，已编译为四页正文加一页参考文献。补齐同 seed SFT 关系诊断、JointPairAcc 和两种依赖分组 bootstrap。两项训练归因对照未完成前，文稿明确保持 pending，不把联合目标收益归给交换项。P0 同步提交 `cfd195b` 后，新服务器完整运行 38 项相关测试，全部通过；汇总命令已在零完整训练结果的状态下验证，正确输出 pending。
+
+当前任务已设置每 30 分钟续办，自动化 ID 为 `reltwin`；交付完整对照新版后暂停它。远端训练无需本地电脑持续在线；本地取回与论文自动续办依赖电脑开机且 Codex 应用运行。若取回已认证 Paramiko 会话仍可用，可复用它；失效则重新连接，不持久化密码。
 
 ## 当前服务器与环境
 

@@ -184,7 +184,7 @@ def main():
               "primary_endpoint_decisions": decisions, "input_hashes": hashes, "source_component_sizes": sizes,
               "scope": "Post-hoc development attribution, fixed observed seeds. No natural-relation generalization claim. Historical adapters re-evaluated here; training-runtime equivalence is not established by sharing an evaluator.",
               "decision_scope": "Evidence labels, not model promotion. Pending seeds cannot establish a contrast; all planned seeds run regardless of sign."}
-    (output / "review_control_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    (output / "review_control_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False)+"\n", encoding="utf-8", newline="\n")
     columns = ("contrast", "split", "source_model", "target_model", "index", "audio", "query", "delta_iou", "source_prediction", "target_prediction", "ground_truth")
     with (output / "failure_cases.csv").open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=columns)
@@ -205,7 +205,7 @@ def main():
                 lines.append(f"| {split} / {metric} | {result['planned_seeds_complete']} | {a['mean_delta_points']:+.3f} | {fmt(a['ci95_points'])} | {fmt(s.get('ci95_points'))} |")
     lines += ["", "## 归因状态", "", *[f"- {k}: {v}" for k, v in decisions.items()], "",
               "全部差值为后者减前者；Swap error 越低越好。区间条件于已观察到的种子，不能消除开发选择偏差。原历史模型与新训练对照共享评估流程，不等于训练硬件／软件完全相同；需要结合默认目标复现实验核查该残余混杂。未做自动提交、默认模型替换或参数选择。"]
-    (output / "REVIEW_CONTROL_REPORT.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
+    (output / "REVIEW_CONTROL_REPORT.md").write_text("\n".join(lines)+"\n", encoding="utf-8", newline="\n")
     print(json.dumps({"complete": complete, "models": len(model_reports), "decisions": decisions}))
 
 

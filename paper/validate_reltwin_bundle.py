@@ -190,7 +190,7 @@ def main():
               "style_hashes": styles, "fonts": fonts, "pages": pages,
               "pdf_sha256": digest(package / "main.pdf")}
     for filename, data in (("evidence_summary.json", evidence), ("build_validation.json", report)):
-        (package / "notes" / filename).write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+        (package / "notes" / filename).write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8", newline="\n")
     print(json.dumps({k: report[k] for k in ("abstract_words", "page_count", "technical_pages", "pdf_sha256")}, indent=2))
 
 
