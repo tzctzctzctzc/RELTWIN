@@ -1,0 +1,14 @@
+{
+  "base": "/root/autodl-tmp/SpotSound-ICASSP/models/audio-flamingo-3-hf",
+  "adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_paper_bridge_20260913/sft_current_seed0/adapter",
+  "torch": "2.8.0+cu128",
+  "device": "NVIDIA GeForce RTX 4080",
+  "prompt_mode": "spotsound",
+  "load_seconds": 54.82088181655854,
+  "expected_count": 160,
+  "completed_count": 160,
+  "R1@0.3": 84.375,
+  "R1@0.5": 82.5,
+  "mIoU": 81.34145709316184,
+  "mean_inference_seconds": 0.6684595853148494
+}

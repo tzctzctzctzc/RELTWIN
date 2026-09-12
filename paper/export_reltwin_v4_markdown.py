@@ -16,7 +16,7 @@ LINKS = {
     "thrush2022winoground": ("Winoground", "https://arxiv.org/abs/2204.03162"),
 }
 REFS = {"fig:pair": "1", "tab:main": "1", "tab:training": "2", "tab:controls": "3",
-        "eq:labels": "1", "eq:candidate": "3", "eq:loss": "4"}
+        "eq:labels": "1", "eq:candidate": "3", "eq:loss": "4", "sec:timing": "4.3"}
 
 
 def prose(text):

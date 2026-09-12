@@ -1,0 +1,5762 @@
+[
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10000_v0.wav",
+    "pair_id": 10000,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-198411-D-20.wav",
+      "4-182395-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 0,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10000_v0.wav",
+    "pair_id": 10000,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-198411-D-20.wav",
+      "4-182395-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "dog followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 1,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10000_v1.wav",
+    "pair_id": 10000,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-59579-A-20.wav",
+      "2-118964-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 4,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10000_v1.wav",
+    "pair_id": 10000,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-59579-A-20.wav",
+      "2-118964-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "dog followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 5,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10001_v0.wav",
+    "pair_id": 10001,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-152007-A-20.wav",
+      "4-181707-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 8,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10001_v0.wav",
+    "pair_id": 10001,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-152007-A-20.wav",
+      "4-181707-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 9,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10001_v1.wav",
+    "pair_id": 10001,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-198411-A-20.wav",
+      "3-155570-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 12,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10001_v1.wav",
+    "pair_id": 10001,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-198411-A-20.wav",
+      "3-155570-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 13,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10002_v0.wav",
+    "pair_id": 10002,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "1-26806-A-1.wav",
+      "3-164630-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "rooster followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 16,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10002_v0.wav",
+    "pair_id": 10002,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "1-26806-A-1.wav",
+      "3-164630-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 17,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10002_v1.wav",
+    "pair_id": 10002,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-164064-B-1.wav",
+      "2-132157-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "rooster followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 20,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10002_v1.wav",
+    "pair_id": 10002,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-164064-B-1.wav",
+      "2-132157-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 21,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10003_v0.wav",
+    "pair_id": 10003,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-169127-A-41.wav",
+      "4-165813-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 24,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10003_v0.wav",
+    "pair_id": 10003,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-169127-A-41.wav",
+      "4-165813-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 25,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10003_v1.wav",
+    "pair_id": 10003,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-68391-B-41.wav",
+      "2-39443-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 28,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10003_v1.wav",
+    "pair_id": 10003,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-68391-B-41.wav",
+      "2-39443-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 29,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10004_v0.wav",
+    "pair_id": 10004,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-221567-A-22.wav",
+      "4-172742-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 32,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10004_v0.wav",
+    "pair_id": 10004,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-221567-A-22.wav",
+      "4-172742-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 33,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10004_v1.wav",
+    "pair_id": 10004,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-104089-A-22.wav",
+      "2-118459-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 36,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10004_v1.wav",
+    "pair_id": 10004,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-104089-A-22.wav",
+      "2-118459-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 37,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10005_v0.wav",
+    "pair_id": 10005,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-183992-A-0.wav",
+      "4-119647-A-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 40,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10005_v0.wav",
+    "pair_id": 10005,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-183992-A-0.wav",
+      "4-119647-A-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 41,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10005_v1.wav",
+    "pair_id": 10005,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-118072-A-0.wav",
+      "5-160614-E-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 44,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10005_v1.wav",
+    "pair_id": 10005,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-118072-A-0.wav",
+      "5-160614-E-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 45,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10006_v0.wav",
+    "pair_id": 10006,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-189830-A-22.wav",
+      "2-133863-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 48,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10006_v0.wav",
+    "pair_id": 10006,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-189830-A-22.wav",
+      "2-133863-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 49,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10006_v1.wav",
+    "pair_id": 10006,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-57733-A-22.wav",
+      "2-155801-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 52,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10006_v1.wav",
+    "pair_id": 10006,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-57733-A-22.wav",
+      "2-155801-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 53,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10007_v0.wav",
+    "pair_id": 10007,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-114280-A-0.wav",
+      "2-96460-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 56,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10007_v0.wav",
+    "pair_id": 10007,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-114280-A-0.wav",
+      "2-96460-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 57,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10007_v1.wav",
+    "pair_id": 10007,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-183992-A-0.wav",
+      "4-208021-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 60,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10007_v1.wav",
+    "pair_id": 10007,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-183992-A-0.wav",
+      "4-208021-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 61,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10008_v0.wav",
+    "pair_id": 10008,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-152007-A-20.wav",
+      "3-152020-C-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 64,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10008_v0.wav",
+    "pair_id": 10008,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-152007-A-20.wav",
+      "3-152020-C-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 65,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10008_v1.wav",
+    "pair_id": 10008,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-60997-B-20.wav",
+      "3-159346-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 68,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10008_v1.wav",
+    "pair_id": 10008,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-60997-B-20.wav",
+      "3-159346-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 69,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10009_v0.wav",
+    "pair_id": 10009,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-221568-A-22.wav",
+      "4-119647-C-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 72,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10009_v0.wav",
+    "pair_id": 10009,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-221568-A-22.wav",
+      "4-119647-C-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 73,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10009_v1.wav",
+    "pair_id": 10009,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-221568-A-22.wav",
+      "3-119120-E-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 76,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10009_v1.wav",
+    "pair_id": 10009,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-221568-A-22.wav",
+      "3-119120-E-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 77,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10010_v0.wav",
+    "pair_id": 10010,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-172881-A-48.wav",
+      "1-19872-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 80,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10010_v0.wav",
+    "pair_id": 10010,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-172881-A-48.wav",
+      "1-19872-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 81,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10010_v1.wav",
+    "pair_id": 10010,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-119648-A-48.wav",
+      "5-212054-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 84,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10010_v1.wav",
+    "pair_id": 10010,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-119648-A-48.wav",
+      "5-212054-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 85,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10011_v0.wav",
+    "pair_id": 10011,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-149465-A-22.wav",
+      "3-159347-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 88,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10011_v0.wav",
+    "pair_id": 10011,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-149465-A-22.wav",
+      "3-159347-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 89,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10011_v1.wav",
+    "pair_id": 10011,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-209989-A-22.wav",
+      "2-141681-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 92,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10011_v1.wav",
+    "pair_id": 10011,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-209989-A-22.wav",
+      "2-141681-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 93,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10012_v0.wav",
+    "pair_id": 10012,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-160614-B-48.wav",
+      "2-95258-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 96,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10012_v0.wav",
+    "pair_id": 10012,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-160614-B-48.wav",
+      "2-95258-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 97,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10012_v1.wav",
+    "pair_id": 10012,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-119648-C-48.wav",
+      "4-183487-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 100,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10012_v1.wav",
+    "pair_id": 10012,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-119648-C-48.wav",
+      "4-183487-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 101,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10013_v0.wav",
+    "pair_id": 10013,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "clapping",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-50667-B-41.wav",
+      "4-189832-B-22.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 104,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10013_v0.wav",
+    "pair_id": 10013,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "clapping",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-50667-B-41.wav",
+      "4-189832-B-22.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "clapping followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 105,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10013_v1.wav",
+    "pair_id": 10013,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "clapping",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-116765-A-41.wav",
+      "4-189838-A-22.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 108,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10013_v1.wav",
+    "pair_id": 10013,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "clapping",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-116765-A-41.wav",
+      "4-189838-A-22.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "clapping followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 109,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10014_v0.wav",
+    "pair_id": 10014,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-172180-A-32.wav",
+      "1-100210-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "keyboard typing followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 112,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10014_v0.wav",
+    "pair_id": 10014,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-172180-A-32.wav",
+      "1-100210-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 113,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10014_v1.wav",
+    "pair_id": 10014,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-125548-A-32.wav",
+      "5-182012-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "keyboard typing followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 116,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10014_v1.wav",
+    "pair_id": 10014,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-125548-A-32.wav",
+      "5-182012-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 117,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10015_v0.wav",
+    "pair_id": 10015,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-185579-A-41.wav",
+      "2-99795-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 120,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10015_v0.wav",
+    "pair_id": 10015,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-185579-A-41.wav",
+      "2-99795-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 121,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10015_v1.wav",
+    "pair_id": 10015,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-171653-A-41.wav",
+      "5-222894-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 124,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10015_v1.wav",
+    "pair_id": 10015,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-171653-A-41.wav",
+      "5-222894-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 125,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10016_v0.wav",
+    "pair_id": 10016,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-118972-A-41.wav",
+      "1-59513-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 128,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10016_v0.wav",
+    "pair_id": 10016,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-118972-A-41.wav",
+      "1-59513-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "dog followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 129,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10016_v1.wav",
+    "pair_id": 10016,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-77945-B-41.wav",
+      "4-184575-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 132,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10016_v1.wav",
+    "pair_id": 10016,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-77945-B-41.wav",
+      "4-184575-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "dog followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 133,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10017_v0.wav",
+    "pair_id": 10017,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-189833-A-22.wav",
+      "5-9032-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 136,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10017_v0.wav",
+    "pair_id": 10017,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-189833-A-22.wav",
+      "5-9032-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "dog followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 137,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10017_v1.wav",
+    "pair_id": 10017,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-189833-A-22.wav",
+      "4-183992-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 140,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10017_v1.wav",
+    "pair_id": 10017,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "dog",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-189833-A-22.wav",
+      "4-183992-A-0.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "dog followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 141,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10018_v0.wav",
+    "pair_id": 10018,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-182613-A-11.wav",
+      "4-181999-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "sea waves followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 144,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10018_v0.wav",
+    "pair_id": 10018,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-182613-A-11.wav",
+      "4-181999-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 145,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10018_v1.wav",
+    "pair_id": 10018,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-200461-B-11.wav",
+      "5-263902-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "sea waves followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 148,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10018_v1.wav",
+    "pair_id": 10018,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-200461-B-11.wav",
+      "5-263902-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 149,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10019_v0.wav",
+    "pair_id": 10019,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-165856-A-41.wav",
+      "2-106073-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 152,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10019_v0.wav",
+    "pair_id": 10019,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-165856-A-41.wav",
+      "2-106073-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 153,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10019_v1.wav",
+    "pair_id": 10019,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-118658-B-41.wav",
+      "5-188365-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 156,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10019_v1.wav",
+    "pair_id": 10019,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-118658-B-41.wav",
+      "5-188365-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 157,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10020_v0.wav",
+    "pair_id": 10020,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-163459-A-0.wav",
+      "5-219379-B-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 160,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10020_v0.wav",
+    "pair_id": 10020,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-163459-A-0.wav",
+      "5-219379-B-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 161,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10020_v1.wav",
+    "pair_id": 10020,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-212454-A-0.wav",
+      "5-200461-B-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 164,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10020_v1.wav",
+    "pair_id": 10020,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-212454-A-0.wav",
+      "5-200461-B-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 165,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10021_v0.wav",
+    "pair_id": 10021,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-66637-B-20.wav",
+      "5-156999-C-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 168,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10021_v0.wav",
+    "pair_id": 10021,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-66637-B-20.wav",
+      "5-156999-C-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 169,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10021_v1.wav",
+    "pair_id": 10021,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-198411-A-20.wav",
+      "3-103051-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 172,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10021_v1.wav",
+    "pair_id": 10021,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-198411-A-20.wav",
+      "3-103051-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 173,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10022_v0.wav",
+    "pair_id": 10022,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-119120-E-48.wav",
+      "4-125071-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 176,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10022_v0.wav",
+    "pair_id": 10022,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-119120-E-48.wav",
+      "4-125071-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 177,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10022_v1.wav",
+    "pair_id": 10022,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-115546-A-48.wav",
+      "1-101296-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 180,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10022_v1.wav",
+    "pair_id": 10022,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-115546-A-48.wav",
+      "1-101296-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 181,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10023_v0.wav",
+    "pair_id": 10023,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-138114-A-22.wav",
+      "4-125070-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 184,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10023_v0.wav",
+    "pair_id": 10023,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-138114-A-22.wav",
+      "4-125070-A-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 185,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10023_v1.wav",
+    "pair_id": 10023,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-60900-A-22.wav",
+      "5-156999-D-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 188,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10023_v1.wav",
+    "pair_id": 10023,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-60900-A-22.wav",
+      "5-156999-D-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 189,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10024_v0.wav",
+    "pair_id": 10024,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-181278-A-22.wav",
+      "1-187207-A-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 192,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10024_v0.wav",
+    "pair_id": 10024,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-181278-A-22.wav",
+      "1-187207-A-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "crying baby followed by clapping",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 193,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10024_v1.wav",
+    "pair_id": 10024,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-221567-A-22.wav",
+      "3-152007-A-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "clapping followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 196,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10024_v1.wav",
+    "pair_id": 10024,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "clapping",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "5-221567-A-22.wav",
+      "3-152007-A-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "crying baby followed by clapping",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 197,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10025_v0.wav",
+    "pair_id": 10025,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "1-97392-A-0.wav",
+      "3-144891-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 200,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10025_v0.wav",
+    "pair_id": 10025,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "1-97392-A-0.wav",
+      "3-144891-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 201,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10025_v1.wav",
+    "pair_id": 10025,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-157695-A-0.wav",
+      "1-101296-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 204,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10025_v1.wav",
+    "pair_id": 10025,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-157695-A-0.wav",
+      "1-101296-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 205,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10026_v0.wav",
+    "pair_id": 10026,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-187710-A-11.wav",
+      "4-125072-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "sea waves followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 208,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10026_v0.wav",
+    "pair_id": 10026,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-187710-A-11.wav",
+      "4-125072-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 209,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10026_v1.wav",
+    "pair_id": 10026,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-195497-B-11.wav",
+      "2-104105-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "sea waves followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 212,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10026_v1.wav",
+    "pair_id": 10026,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "sea waves",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-195497-B-11.wav",
+      "2-104105-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 213,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10027_v0.wav",
+    "pair_id": 10027,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-223099-B-32.wav",
+      "5-194930-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "keyboard typing followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 216,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10027_v0.wav",
+    "pair_id": 10027,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-223099-B-32.wav",
+      "5-194930-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 217,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10027_v1.wav",
+    "pair_id": 10027,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-155568-A-32.wav",
+      "3-107219-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "keyboard typing followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 220,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10027_v1.wav",
+    "pair_id": 10027,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-155568-A-32.wav",
+      "3-107219-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 221,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10028_v0.wav",
+    "pair_id": 10028,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-198411-D-20.wav",
+      "3-119120-B-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 224,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10028_v0.wav",
+    "pair_id": 10028,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-198411-D-20.wav",
+      "3-119120-B-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 225,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10028_v1.wav",
+    "pair_id": 10028,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-66637-A-20.wav",
+      "3-119120-D-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 228,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10028_v1.wav",
+    "pair_id": 10028,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-66637-A-20.wav",
+      "3-119120-D-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 229,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10029_v0.wav",
+    "pair_id": 10029,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-183487-A-1.wav",
+      "3-144891-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "rooster followed by thunderstorm",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 232,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10029_v0.wav",
+    "pair_id": 10029,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "4-183487-A-1.wav",
+      "3-144891-B-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 233,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10029_v1.wav",
+    "pair_id": 10029,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-183487-A-1.wav",
+      "2-39945-C-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "rooster followed by thunderstorm",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 236,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10029_v1.wav",
+    "pair_id": 10029,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "thunderstorm",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-183487-A-1.wav",
+      "2-39945-C-19.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "thunderstorm followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 237,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10030_v0.wav",
+    "pair_id": 10030,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-180256-A-0.wav",
+      "2-141681-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 240,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10030_v0.wav",
+    "pair_id": 10030,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-180256-A-0.wav",
+      "2-141681-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 241,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10030_v1.wav",
+    "pair_id": 10030,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-85362-A-0.wav",
+      "3-152020-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 244,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10030_v1.wav",
+    "pair_id": 10030,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-85362-A-0.wav",
+      "3-152020-B-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 245,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10031_v0.wav",
+    "pair_id": 10031,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-99796-A-32.wav",
+      "5-208810-B-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "keyboard typing followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 248,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10031_v0.wav",
+    "pair_id": 10031,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-99796-A-32.wav",
+      "5-208810-B-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 249,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10031_v1.wav",
+    "pair_id": 10031,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-118459-B-32.wav",
+      "5-219379-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "keyboard typing followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 252,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10031_v1.wav",
+    "pair_id": 10031,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "keyboard typing",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-118459-B-32.wav",
+      "5-219379-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 253,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10032_v0.wav",
+    "pair_id": 10032,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-198411-F-20.wav",
+      "1-43382-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 256,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10032_v0.wav",
+    "pair_id": 10032,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-198411-F-20.wav",
+      "1-43382-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 257,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10032_v1.wav",
+    "pair_id": 10032,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-167077-B-20.wav",
+      "4-164859-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 260,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10032_v1.wav",
+    "pair_id": 10032,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "rooster",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-167077-B-20.wav",
+      "4-164859-A-1.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "rooster followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 261,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10033_v0.wav",
+    "pair_id": 10033,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-185579-B-41.wav",
+      "5-160614-G-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 264,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10033_v0.wav",
+    "pair_id": 10033,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "5-185579-B-41.wav",
+      "5-160614-G-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 265,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10033_v1.wav",
+    "pair_id": 10033,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-50668-B-41.wav",
+      "3-172922-A-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 268,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10033_v1.wav",
+    "pair_id": 10033,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "fireworks",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-50668-B-41.wav",
+      "3-172922-A-48.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "fireworks followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 269,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10034_v0.wav",
+    "pair_id": 10034,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-118657-A-41.wav",
+      "3-152007-C-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 272,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10034_v0.wav",
+    "pair_id": 10034,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-118657-A-41.wav",
+      "3-152007-C-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "crying baby followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 273,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10034_v1.wav",
+    "pair_id": 10034,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-118972-B-41.wav",
+      "4-167077-B-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 276,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10034_v1.wav",
+    "pair_id": 10034,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "crying baby",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-118972-B-41.wav",
+      "4-167077-B-20.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "crying baby followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 277,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10035_v0.wav",
+    "pair_id": 10035,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-66637-B-20.wav",
+      "2-125966-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 280,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10035_v0.wav",
+    "pair_id": 10035,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-66637-B-20.wav",
+      "2-125966-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by crying baby",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 281,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10035_v1.wav",
+    "pair_id": 10035,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-151081-B-20.wav",
+      "5-219379-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "crying baby followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 284,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10035_v1.wav",
+    "pair_id": 10035,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "crying baby",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "3-151081-B-20.wav",
+      "5-219379-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by crying baby",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 285,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10036_v0.wav",
+    "pair_id": 10036,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-180977-A-0.wav",
+      "4-181708-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 288,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10036_v0.wav",
+    "pair_id": 10036,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-180977-A-0.wav",
+      "4-181708-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by dog",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 289,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10036_v1.wav",
+    "pair_id": 10036,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-110389-A-0.wav",
+      "1-62594-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "dog followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 292,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10036_v1.wav",
+    "pair_id": 10036,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "dog",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-110389-A-0.wav",
+      "1-62594-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by dog",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 293,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10037_v0.wav",
+    "pair_id": 10037,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-68391-B-41.wav",
+      "1-28135-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by sea waves",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 296,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10037_v0.wav",
+    "pair_id": 10037,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "2-68391-B-41.wav",
+      "1-28135-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by chainsaw",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 297,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10037_v1.wav",
+    "pair_id": 10037,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-116765-A-41.wav",
+      "3-187710-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "chainsaw followed by sea waves",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 300,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10037_v1.wav",
+    "pair_id": 10037,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "chainsaw",
+    "event_b": "sea waves",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "1-116765-A-41.wav",
+      "3-187710-A-11.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "sea waves followed by chainsaw",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 301,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10038_v0.wav",
+    "pair_id": 10038,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-119120-D-48.wav",
+      "3-144106-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by keyboard typing",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 304,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10038_v0.wav",
+    "pair_id": 10038,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "3-119120-D-48.wav",
+      "3-144106-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by fireworks",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 305,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10038_v1.wav",
+    "pair_id": 10038,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-119647-A-48.wav",
+      "5-205090-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "fireworks followed by keyboard typing",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 308,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10038_v1.wav",
+    "pair_id": 10038,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "fireworks",
+    "event_b": "keyboard typing",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "4-119647-A-48.wav",
+      "5-205090-A-32.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "keyboard typing followed by fireworks",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 309,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10039_v0.wav",
+    "pair_id": 10039,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "1-34119-B-1.wav",
+      "4-181999-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "rooster followed by vacuum cleaner",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 312,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10039_v0.wav",
+    "pair_id": 10039,
+    "variant": 0,
+    "layout": "AB_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "window_ba": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_files": [
+      "1-34119-B-1.wav",
+      "4-181999-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by rooster",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 313,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10039_v1.wav",
+    "pair_id": 10039,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-65750-A-1.wav",
+      "4-172734-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "AB",
+    "caption": "rooster followed by vacuum cleaner",
+    "annotations": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "source_index": 316,
+    "stress_factor": "layout_neutral_timing"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_timing_stress_20260913/audio/esc_test_10039_v1.wav",
+    "pair_id": 10039,
+    "variant": 1,
+    "layout": "BA_first",
+    "template": "followed_by",
+    "event_a": "rooster",
+    "event_b": "vacuum cleaner",
+    "window_ab": [
+      [
+        14.75,
+        25.0
+      ]
+    ],
+    "window_ba": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_files": [
+      "2-65750-A-1.wav",
+      "4-172734-A-36.wav"
+    ],
+    "source_dataset": "ESC-50",
+    "relation": "BA",
+    "caption": "vacuum cleaner followed by rooster",
+    "annotations": [
+      [
+        1.5,
+        11.75
+      ]
+    ],
+    "source_index": 317,
+    "stress_factor": "layout_neutral_timing"
+  }
+]

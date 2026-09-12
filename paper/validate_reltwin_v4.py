@@ -19,6 +19,7 @@ def main():
     p.add_argument("--repository", type=Path, required=True)
     p.add_argument("--package", type=Path, required=True)
     p.add_argument("--evidence", type=Path, required=True)
+    p.add_argument("--stress", type=Path, required=True)
     p.add_argument("--qa-dir", type=Path, required=True)
     p.add_argument("--zip", type=Path)
     args = p.parse_args()
@@ -34,7 +35,19 @@ def main():
     for filename, source in (("source_zh.md", "ICASSP_DRAFT_ZH_v8_BINDING.md"), ("source_en.md", "ICASSP_DRAFT_EN_v8_BINDING.md")):
         assert sha(package / "notes" / filename) == sha(repo / "paper" / source)
     assert sha(package / "notes/evidence.json") == sha(args.evidence)
+    stress = json.loads(args.stress.read_text(encoding="utf-8"))
+    assert stress["complete"]
+    assert sha(package / "notes/timing_stress.json") == sha(args.stress)
+    assert stress["subsets"]["all"]["queries"] == 160
+    assert stress["subsets"]["BA_first"]["pairs"] == 40
+    assert stress["subsets"]["AB_first"]["unchanged_input_prediction_differences"] == {"sft_current_seed0": 0, "no_exchange_seed0": 0}
     manuscript = "\n".join(p.read_text(encoding="utf-8") for p in package.glob("sections/*.tex"))
+    timing_body = (package / "sections/results.tex").read_text(encoding="utf-8")
+    for value in [stress["primary_result"]["mean_delta_points"], *stress["primary_result"]["ci95_points"]]:
+        assert fmt2(value) in timing_body, value
+    for name in ("sft_current_seed0", "no_exchange_seed0"):
+        value = stress["subsets"]["all"]["models"][name + "/uniform"]["mIoU"]
+        assert fmt2(value) in timing_body, value
     assert not re.search(r"pending|TODO|TBD|XX\.XX", manuscript, re.I)
     abstract = (package / "sections/abstract.tex").read_text(encoding="utf-8")
     abstract = re.sub(r"\\(?:begin|end)\{abstract\}", "", abstract)
@@ -94,8 +107,8 @@ def main():
                 if not name.endswith("/"):
                     assert z.read(name) == (package / name).read_bytes(), name
         archive = {"path": str(args.zip), "sha256": sha(args.zip), "files": len(names)}
-    report = {"validated": True, "pages": len(pdf), "abstract_words": word_count, "fonts": sorted(fonts), "pdf_sha256": sha(package / "main.pdf"), "evidence_sha256": sha(args.evidence), "archive": archive,
-              "checks": ["15 complete aligned models", "matched-runtime bridge included", "no pending claims", "published main-table transcription", "controlled numerical table", "input/source separation", "template byte identity", "no overfull or unresolved citations", "US Letter and <=5 pages", "fifth page references only", "font embedding and no Type3"],
+    report = {"validated": True, "pages": len(pdf), "abstract_words": word_count, "fonts": sorted(fonts), "pdf_sha256": sha(package / "main.pdf"), "evidence_sha256": sha(args.evidence), "timing_stress_sha256": sha(args.stress), "archive": archive,
+              "checks": ["15 complete aligned models", "matched-runtime bridge included", "frozen timing stress complete and primary result checked", "unchanged waveforms reproduce predictions", "no pending claims", "published main-table transcription", "controlled numerical table", "input/source separation", "template byte identity", "no overfull or unresolved citations", "US Letter and <=5 pages", "fifth page references only", "font embedding and no Type3"],
               "manual_checks_remaining": ["visual inspection of rendered pages", "author approval and ORCID/contact confirmation", "submission portal inspection"]}
     (qa / "validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report))

@@ -9,9 +9,9 @@ q_-&0&1
 \end{array}.
 \label{eq:labels}
 \end{equation}
-In contrast, a label asking only whether each description occurs somewhere in $x$ would mark both queries true. Such labels do not themselves specify Eq.~\ref{eq:labels}; this is a difference in supervision, not an impossibility claim about globally pretrained models.
+Recording-level presence labels mark both queries true but do not specify Eq.~\ref{eq:labels}. The distinction concerns supervision, not the capabilities of globally pretrained models.
 
-Each recording has two templates, ``followed by'' and ``and then,'' with both directions. Ordinary category queries target all occurrences of $A$ or $B$ for rehearsal. We alternate which relation appears earlier, controlling a simple constant-position preference. Excerpt reuse holds source material and event categories fixed within an inverse pair. The construction still uses repeated excerpts and silence; its layout-specific gap settings do not eliminate every synthetic shortcut.
+Each recording has two templates, ``followed by'' and ``and then,'' in both directions. Category queries target all occurrences of $A$ or $B$ for rehearsal. Alternating the earlier relation controls a constant-position preference; excerpt reuse fixes source material within a pair. Layout-specific silence remains a potential shortcut, tested in Section~\ref{sec:timing}.
 
 \subsection{Contrast timestamp answers during training}
 For the timestamp token sequence $y(S)$ describing interval set $S$, define its mean token log-likelihood
@@ -23,20 +23,20 @@ Candidates are $C=(W_+,W_-)$. Their normalized preferences are $p_q(j)=\operator
 \mathcal L_{\rm cand}=-\tfrac12[\log p_{q_+}(1)+\log p_{q_-}(2)].
 \label{eq:candidate}
 \end{equation}
-For one query, this is the standard logistic loss $\log(1+\exp((s_- -s_+)/\tau))$. It explicitly compares the correct answer with the other \emph{present} window. We combine it with sequence supervision on both correct answers and category-query rehearsal:
+This standard candidate cross-entropy compares the correct answer with the other \emph{present} window. We add correct-answer sequence supervision and category-query rehearsal:
 \begin{equation}
 \mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}
 +\beta\mathcal L_{\rm replay}.
 \label{eq:loss}
 \end{equation}
-SFT uses the same data, correct answers, and rehearsal, but omits $\mathcal L_{\rm cand}$. We refer to Eq.~\ref{eq:loss} as \emph{RelTwin-Cand}. It is the existing no-exchange configuration, not a newly tuned checkpoint. At test time the adapted model generates interval sets without access to $W_+$ or $W_-$.
+SFT uses identical data and rehearsal but omits $\mathcal L_{\rm cand}$. Equation~\ref{eq:loss}, \emph{RelTwin-Cand}, is the existing no-exchange configuration, not a newly tuned checkpoint. Inference generates intervals without access to $W_+$ or $W_-$.
 
 \subsection{Testing whether extra objectives are needed}
-RBEE adds $\lambda\JS(p_{q_+},\Pi p_{q_-})$, where $\Pi$ swaps the two candidate indices. This encourages exchange consistency, not architectural equivariance. Perfectly fitted candidate labels already satisfy the desired exchange, so this term supplies no additional optimal label.
+RBEE adds $\lambda\JS(p_{q_+},\Pi p_{q_-})$, where $\Pi$ swaps candidate indices: exchange consistency, not architectural equivariance. Perfect candidate labels already satisfy this exchange.
 
-SetPO is a subsequent 64-update stage with six answers: the two windows, their expanded versions, their union, and one interval spanning both. Soft targets use the mean of set-IoU and symmetric best-match interval F1; the latter is not one-to-one event F1. Its comparison is RBEE continued for the same 64 updates, not an untrained parent alone. These objectives are evaluated as optional extensions, not assumed sources of improvement.
+SetPO adds 64 updates with six answers: both windows, their expanded versions, their union, and one spanning interval. Soft targets average set-IoU and symmetric best-match interval F1 (not one-to-one event F1). We compare it with RBEE continued for 64 updates to isolate the objective from additional training.
 
 \subsection{Check both localization and relation selection}
 For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$. PairAcc requires both inverse-query predictions to achieve set-IoU $\geq0.5$. We additionally require each to overlap its own target strictly more than the opposite target, yielding JointPairAcc. Swap error means that at least one query violates this strict preference, including ties.
 
-The distinction has a simple counterexample: for two disjoint equal-length windows, returning their union for \emph{both} queries gives IoU $0.5$ each and passes PairAcc, but fails JointPairAcc. This is a task-specific diagnostic, related to paired compositional evaluation~\cite{thrush2022winoground}, not a claim that standard IoU is useless or that paired accuracy is a new general metric.
+Returning the union of two disjoint equal-length targets for \emph{both} queries gives IoU $0.5$ each: PairAcc passes but JointPairAcc fails. This task-specific diagnostic follows paired compositional evaluation~\cite{thrush2022winoground}; it complements standard IoU rather than replacing it.

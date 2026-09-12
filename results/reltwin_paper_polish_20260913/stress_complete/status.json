@@ -1,0 +1,13 @@
+{
+  "state": "COMPLETE",
+  "pid": 5112,
+  "time": 1789233009.896892,
+  "current_task": null,
+  "completed": [
+    "sft_current_seed0",
+    "no_exchange_seed0"
+  ],
+  "total_tasks": 2,
+  "used_seconds": 345.70966354291886,
+  "error": null
+}
