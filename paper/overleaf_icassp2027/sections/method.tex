@@ -1,0 +1,61 @@
+\section{Selective Boundary Refinement}
+\label{sec:method}
+\subsection{Problem and incumbent}
+Given audio $x$ of duration $D$ and query $q$, let the incumbent prediction be $S_0=\{[s_i,e_i]\}_{i=1}^{K}$. Intervals are ordered, valid, and non-overlapping. For a ground-truth interval set $G$, temporal set-IoU is
+\begin{equation}
+\setiou(S,G)=\frac{|S\cap G|}{|S\cup G|},
+\label{eq:iou}
+\end{equation}
+where $|\cdot|$ denotes temporal measure of the interval union. The refinement stage changes boundaries, not event identity or count. An empty incumbent remains empty.
+
+The full system reuses an existing strong predictor rather than generating a new answer from scratch. On SpotSound-Bench, its incumbent is the locked E004 NOVA configuration: relation-aware adaptation and setwise preference optimization (SetPO) provide candidate predictions, and keep/drop audio verification supports conservative candidate selection. On the other reported grounding sets, the incumbent is the official SpotSound-A prediction. This distinction is retained throughout evaluation.
+
+\subsection{Legal edits and relative utility}
+For event $i$, candidate endpoints lie on a fine acoustic grid within
+\begin{equation}
+r_i=\min(r_{\max},\rho(e_i-s_i)).
+\label{eq:radius}
+\end{equation}
+The original endpoints are also included exactly. Each option $a_i$ must remain within $[0,D]$, span at least one grid step, and respect neighboring incumbent intervals. Invalid candidate construction causes abstention. Keeping all intervals unchanged is always an available action.
+
+Frozen SetPO/SpanTool evidence provides occupancy, onset, offset, and fine boundary channels. The edit feature vector $\phi_i(a_i)$ contains changes in acoustic boundary signatures, normalized endpoint displacements, and geometry--context interactions involving duration, coverage, and neighboring gaps. It is constructed so that $\phi_i(\keep)=0$ exactly.
+
+Training labels measure the effect of editing one interval while leaving all others unchanged:
+\begin{equation}
+y_{n,i,a}=
+\setiou(S_n^{i\leftarrow a},G_n)
+-\setiou(S_n,G_n).
+\label{eq:target}
+\end{equation}
+A ridge model predicts this relative utility. With feature-wise root-mean-square scaling $C$ and normalized weights $\omega_j$, it solves
+\begin{equation}
+\hat w=\arg\min_w
+\sum_j\omega_j\big(w^\top C^{-1}\phi_j-y_j\big)^2
++\alpha\|w\|_2^2.
+\label{eq:ridge}
+\end{equation}
+Weights balance data sources, their audio groups, the queries in each group, and the options for each query. No intercept is fitted; the identity utility is exactly zero. The acoustic backbone is frozen during this stage, but utility fitting is supervised: the complete approach is not training-free.
+
+\subsection{Structured selection and abstention}
+Let $\mathcal A_i$ be event $i$'s legal options. We select one option per event to maximize the additive learned surrogate,
+\begin{equation}
+a^\star=\arg\max_{a\in\mathcal F}
+\sum_{i=1}^{K}\hat w^\top C^{-1}\phi_i(a_i),
+\label{eq:select}
+\end{equation}
+where $\mathcal F$ also prohibits overlap between selected intervals. The dynamic-programming state for option $a$ at layer $i$ is
+\begin{equation}
+V_i(a)=u_i(a)+
+\max_{\substack{b\in\mathcal A_{i-1}\\e(b)<s(a)}}V_{i-1}(b).
+\label{eq:dp}
+\end{equation}
+Options are sorted by endpoint and compatible-prefix maxima are reused. This exactly optimizes the \emph{additive utility surrogate}, not the true multi-interval set-IoU, whose changes need not be additive.
+
+To assess stability, $B$ utility models are fitted by resampling audio groups within each source. For the selected candidate, define
+\begin{equation}
+L(a^\star)=Q_{0.05}\!\left(
+\left\{\sum_i u_i^{(b)}(a_i^\star)\right\}_{b=1}^{B}
+\right).
+\label{eq:quantile}
+\end{equation}
+We apply the candidate only if its reference-model utility is positive and $L(a^\star)>m$; otherwise we retain $S_0$. Here $Q_{0.05}$ is an ensemble quantile, not a certified lower bound on realized test improvement. Ground-truth intervals are used for utility training and offline evaluation, never for selecting an edit at inference.

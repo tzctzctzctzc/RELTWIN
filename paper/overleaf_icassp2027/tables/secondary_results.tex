@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{Protocol-qualified transfer references (mIoU, \%). Prior best values are from SpotSound Table~6~\cite{sun2026spotsound}; exact evaluation assembly is not confirmed.}
+\label{tab:transfer}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Dataset (queries) & Prior best & Ours & $\Delta$\\
+\midrule
+DESED (1,112) & 61.1 & 57.00 & $-4.10$\\
+TUT 2017 (104) & 33.2 & 24.76 & $-8.44$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{AudioGrounding-v2 development/reference results (\%). Its labels informed radius selection; these are not independent test gains.}
+\label{tab:development}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+System & mIoU & R1@.3 & R1@.5\\
+\midrule
+SpotSound-A (paper) & 70.3 & 90.1 & 74.8\\
+\NOVA{} (development) & 70.47 & 89.17 & 76.33\\
+Reference difference & +0.17 & $-0.93$ & +1.53\\
+\bottomrule
+\end{tabular}
+\end{table}

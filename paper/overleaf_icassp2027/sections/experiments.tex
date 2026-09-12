@@ -1,0 +1,15 @@
+\section{Experimental Setup}
+\label{sec:experiments}
+\subsection{Data and comparison scope}
+Primary grounding results use 400 SpotSound-Bench queries and 6,649 Clotho-Moment queries. The released AMR UnAV subset contains 100 queries over 77 audio files~\cite{munakata2025amr}. Table~\ref{tab:main} includes all ten baselines from SpotSound's main comparison~\cite{sun2026spotsound}; these are cited results, not new baseline runs. We compare against the best \emph{main-table} entry for each metric, not a dataset-specific ablation configuration.
+
+The UnAV comparison is qualified. SpotSound's dataset-statistics table associates 492 audio/997 queries with UnAV and 70 audio/100 queries with AudioGrounding. The upstream files instead associate the 997-query release with AudioGrounding and the 100-query release with UnAV. A resolving SpotSound-specific manifest was not located. Thus, exact sample equivalence is unconfirmed and UnAV is reported as reference evidence.
+
+AudioGrounding-v2~\cite{xu2021grounding} contributes 997 queries from 483 queried audio groups within 492 source records. AudioGrounding and AEGBench were used for post-hoc selection of $\rho$ and are development data, not independent tests. Our AEGBench public-v3 expansion has 9,924 queries, unlike the 9,790-query paper evaluation~\cite{zhang2026autoaeg}. DESED and TUT provide additional query-based localization evaluations with 1,112 and 104 queries. Their exact assembly is not fully aligned with the SpotSound reference, so transfer differences are qualified.
+
+\subsection{Implementation and metrics}
+The deployed configuration fixes $\alpha=0.1$, $r_{\max}=0.25$\,s, $\rho=0.625$, $B=200$, and $m=0.02$ in IoU units. Acoustic evidence, utility models, and the decision rule are frozen for each reported application. The duration coefficient is shared rather than chosen separately for each benchmark. Boundary refinement reuses cached incumbents; the latest AudioGrounding and UnAV release audit additionally reran generation and evidence extraction.
+
+This is an open-extra-data system comparison: the SpotSound incumbent includes relation-aware adaptation using 256 composed relation audios and 512 ordinary-query rehearsal rows, followed by candidate verification. Other grounding sets retain the official incumbent. Consequently, neither the additional training data nor incumbent choice is matched across all rows of the comparison. Public aggregate results informed earlier project iterations; these evaluations are not presented as a never-inspected confirmatory study.
+
+We report mIoU and the fraction of queries whose set-IoU reaches 0.3 or 0.5, denoted R1@.3 and R1@.5. All are percentages. Differences use unrounded local values and the published one-decimal references. The audited AudioGrounding and UnAV scores clip both annotations and predictions to decoded audio duration; the reference paper's endpoint convention is unconfirmed. Without clipping, their mIoU values are 70.441718 and 73.387462.

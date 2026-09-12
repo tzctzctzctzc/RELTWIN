@@ -1,0 +1,104 @@
+{
+  "abstract_words": 134,
+  "main_table_rows_verified": [
+    "WTATG",
+    "AM-DETR",
+    "Gemini-2.5-Flash",
+    "Gemini-2.5-Pro",
+    "Kimi-Audio",
+    "Qwen2-Audio",
+    "Audio Flamingo 3",
+    "TimeAudio",
+    "SpotSound-Q",
+    "SpotSound-A",
+    "NOVA + 选择性边界修正"
+  ],
+  "page_count": 5,
+  "pages": [
+    {
+      "page": 1,
+      "size_points": [
+        612.0,
+        792.0
+      ],
+      "text_bbox": [
+        54.42500305175781,
+        97.16089630126953,
+        558.9977416992188,
+        725.800537109375
+      ],
+      "min_span_size": 6.973800182342529,
+      "text_start": "NOVA: SELECTIVE BOUNDARY REFINEMENT FOR AUDIO TEMPORAL\nGROUNDING\nZhicheng Tang\nYuehan Zhang\nHuazhong University of Science and Technology, Wuhan, China\nu202414252@hust.edu.cn, yueh",
+      "text_end": "t\nprediction be S0 = {[si, ei]}K\ni=1. Intervals are ordered, valid,\nand non-overlapping. For a ground-truth interval set G, tem-\nporal set-IoU is\nIoUset(S, G) = |S ∩G|\n|S ∪G|,\n(1)\n"
+    },
+    {
+      "page": 2,
+      "size_points": [
+        612.0,
+        792.0
+      ],
+      "text_bbox": [
+        54.42499923706055,
+        74.0477523803711,
+        558.9969482421875,
+        726.6425170898438
+      ],
+      "min_span_size": 4.981299877166748,
+      "text_start": "where | · | denotes temporal measure of the interval union.\nThe refinement stage changes boundaries, not event identity\nor count. An empty incumbent remains empty.\nThe full system ",
+      "text_end": "nal query-based localization evaluations with 1,112\nand 104 queries. Their exact assembly is not fully aligned\nwith the SpotSound reference, so transfer differences are\nqualified.\n"
+    },
+    {
+      "page": 3,
+      "size_points": [
+        612.0,
+        792.0
+      ],
+      "text_bbox": [
+        54.42499923706055,
+        81.18053436279297,
+        558.9908447265625,
+        723.5410766601562
+      ],
+      "min_span_size": 5.97760009765625,
+      "text_start": "Table 1. Audio temporal grounding (%). Baselines are cited from SpotSound Table 3 [3], not rerun here. All metrics are higher-\nis-better. Bold marks the highest primary-column poin",
+      "text_end": " meets each\nlocalization threshold.\nSpotSound-Bench is therefore the\nstrongest system-level performance evidence in this study.\nClotho-Moment shows a different pattern.\nIts 86.86%\n"
+    },
+    {
+      "page": 4,
+      "size_points": [
+        612.0,
+        792.0
+      ],
+      "text_bbox": [
+        54.42499923706055,
+        74.40748596191406,
+        558.9879760742188,
+        519.6870727539062
+      ],
+      "min_span_size": 9.962599754333496,
+      "text_start": "mIoU is 1.26 points above the previous main-table best,\nwhereas R1@.3 and R1@.5 are 0.11 and 0.36 points below\ntheir respective best values. Mean overlap and thresholded\nrecall mea",
+      "text_end": "t, introduction, method\ndescription, experimental discussion, and conclusion from\nproject notes and code. No new experimental results were\ngenerated during manuscript preparation.\n"
+    },
+    {
+      "page": 5,
+      "size_points": [
+        612.0,
+        792.0
+      ],
+      "text_bbox": [
+        54.42499542236328,
+        74.31652069091797,
+        558.9971313476562,
+        256.4571838378906
+      ],
+      "min_span_size": 9.962599754333496,
+      "text_start": "7. REFERENCES\n[1] Xuenan Xu, Heinrich Dinkel, Mengyue Wu, and Kai\nYu, “Text-to-audio grounding: Building correspondence\nbetween captions and sound events,”\narXiv preprint\narXiv:210",
+      "text_end": "Zhang,\nDongjie Fu,\nBoyun Zhang,\nYongbo He,\nand Tao\nJin,\n“Auto-AEG: Scalable data construction for open-\nvocabulary audio event grounding,”\narXiv preprint\narXiv:2607.04383v4, 2026.\n"
+    }
+  ],
+  "style_hashes": {
+    "spconf.sty": "dc5d632639040cb183f2ab62780f314845aa021be73048c8a9ec9c2072d64a86",
+    "IEEEbib.bst": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
+  },
+  "pdf_sha256": "fd4a8284a139d925f25769c6442538b62cf3d8abe91ddc38f64ccbb7fce5989a"
+}

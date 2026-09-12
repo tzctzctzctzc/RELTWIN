@@ -1,0 +1,41 @@
+% ICASSP 2027 manuscript; pdfLaTeX + BibTeX.
+% Original spconf.sty and IEEEbib.bst are supplied unchanged.
+\documentclass[10pt,letterpaper]{article}
+\usepackage{spconf,amsmath,amssymb,graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{balance}
+\usepackage[hidelinks]{hyperref}
+
+\title{\fontsize{14}{16}\selectfont NOVA: Selective Boundary Refinement for Audio Temporal Grounding}
+\input{authors}
+\newcommand{\setiou}{\operatorname{IoU}_{\mathrm{set}}}
+\newcommand{\keep}{\mathrm{keep}}
+\newcommand{\NOVA}{\textsc{NOVA}}
+\newcommand{\Rone}{\mathrm{R1}}
+
+\begin{document}
+\maketitle
+\input{sections/abstract}
+\begin{keywords}
+Audio grounding, boundary refinement, audio-language models, selective prediction
+\end{keywords}
+
+\input{sections/introduction}
+\input{sections/method}
+\input{tables/main_results}
+\input{sections/experiments}
+\input{tables/secondary_results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\section{Acknowledgments}
+OpenAI Codex assisted with English drafting, translation, and LaTeX preparation of the abstract, introduction, method description, experimental discussion, and conclusion from project notes and code. No new experimental results were generated during manuscript preparation.
+
+% Keep all technical content, including the acknowledgment above, on pages 1--4.
+% The optional fifth page is used only for references.
+\clearpage
+\balance
+\bibliographystyle{IEEEbib}
+\bibliography{references}
+\end{document}

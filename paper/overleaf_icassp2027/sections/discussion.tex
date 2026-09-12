@@ -1,0 +1,21 @@
+\section{Results and Discussion}
+\label{sec:discussion}
+\subsection{Primary grounding performance}
+On SpotSound-Bench, the complete system obtains 59.39\% mIoU, 79.25\% R1@.3, and 62.50\% R1@.5 (Table~\ref{tab:main}). The respective gains over the previous main-table best are 1.49, 2.75, and 3.00 points. Improvement in both overlap and thresholded recall indicates a broader advantage than a higher average alone: a larger fraction of queries also meets each localization threshold. SpotSound-Bench is therefore the strongest system-level performance evidence in this study.
+
+Clotho-Moment shows a different pattern. Its 86.86\% mIoU is 1.26 points above the previous main-table best, whereas R1@.3 and R1@.5 are 0.11 and 0.36 points below their respective best values. Mean overlap and thresholded recall measure distinct properties. For example, moving a query from IoU 0.60 to 0.80 increases mIoU without changing either recall measure. This illustrates the metric, not an observed case. The aggregate results alone do not establish whether the gain concentrates on already-good predictions or partial recovery of poor ones. We therefore claim higher mean overlap on Clotho, not improvement in every dimension.
+
+\subsection{Reference and development evidence}
+The released UnAV evaluation yields numerically higher values on all three metrics, but the manifest qualification prevents an unconditional ranking claim. The same caution applies to AudioGrounding, which was also used during radius selection. Its mIoU and R1@.5 exceed the cited reference, while R1@.3 is lower (Table~\ref{tab:development}). These are development observations rather than independent evidence of generalization.
+
+AEGBench public v3 obtains 41.242504 mIoU under its released evaluation code. The same predictions give 45.276991 under a different raw set-IoU calculation; these numbers must not be interchanged. Because both query counts and evaluation conventions affect comparisons, we do not concatenate this expansion with the paper's leaderboard into a claimed rank.
+
+
+% Balance the final technical page without changing margins or font sizes.
+\balance
+\subsection{Scope and interpretation}
+DESED and TUT reach 57.00\% and 24.76\% mIoU, below the literature references in Table~\ref{tab:transfer}. Assembly differences limit exact ranking, but the results expose a substantive scope constraint: boundary movement preserves event count and cannot recover missed instances. Long-audio LAT evaluation is retained in the experiment record as a failure rather than used to support universal transfer.
+
+A higher complete-system score does not isolate the contribution of the boundary stage or its bootstrap criterion. The primary comparisons are point estimates, not established statistically significant gains. In addition, every incumbent interval on SpotSound and Clotho reaches the 0.25\,s cap in Eq.~\eqref{eq:radius}; their adaptive-radius and fixed-radius outputs are identical. Evidence for the short-event constraint comes from development data, not additional gains on those two benchmarks.
+
+Taken together, the results support a focused interpretation: the complete system improves all three reported metrics on SpotSound and mean overlap on Clotho, while other evaluations delineate protocol and task limits. Selective refinement supplies a formulation linking proposals to a retain-or-edit decision; the main table does not by itself prove the causal necessity of each component.
