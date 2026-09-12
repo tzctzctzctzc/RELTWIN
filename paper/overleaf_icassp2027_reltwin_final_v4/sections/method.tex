@@ -32,9 +32,9 @@ This standard candidate cross-entropy compares the correct answer with the other
 SFT uses identical data and rehearsal but omits $\mathcal L_{\rm cand}$. Equation~\ref{eq:loss}, \emph{RelTwin-Cand}, is the existing no-exchange configuration, not a newly tuned checkpoint. Inference generates intervals without access to $W_+$ or $W_-$.
 
 \subsection{Testing whether extra objectives are needed}
-RBEE adds $\lambda\JS(p_{q_+},\Pi p_{q_-})$, where $\Pi$ swaps candidate indices: exchange consistency, not architectural equivariance. Perfect candidate labels already satisfy this exchange.
+Relation-Boundary Exchange Equivariance (RBEE) adds $\lambda\JS(p_{q_+},\Pi p_{q_-})$, where $\Pi$ swaps candidate indices. This enforces exchange consistency, not architectural equivariance. Perfect candidate labels already satisfy this exchange.
 
-SetPO adds 64 updates with six answers: both windows, their expanded versions, their union, and one spanning interval. Soft targets average set-IoU and symmetric best-match interval F1 (not one-to-one event F1). We compare it with RBEE continued for 64 updates to isolate the objective from additional training.
+Setwise Preference Optimization (SetPO) adds 64 updates with six answers: both windows, their expanded versions, their union, and one spanning interval. Soft targets average set-IoU and symmetric best-match interval F1 (not one-to-one event F1). We compare it with RBEE continued for 64 updates to isolate the objective from additional training.
 
 \subsection{Check both localization and relation selection}
 For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$. PairAcc requires both inverse-query predictions to achieve set-IoU $\geq0.5$. We additionally require each to overlap its own target strictly more than the opposite target, yielding JointPairAcc. Swap error means that at least one query violates this strict preference, including ties.

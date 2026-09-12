@@ -1,10 +1,26 @@
 from pathlib import Path
 import ast
+import runpy
 
 import numpy as np
 import pytest
 
 from audit_reltwin_paper_evidence import behavior
+
+
+def test_paper_export_keeps_math_row_delimiters():
+    root = Path(__file__).resolve().parents[1]
+    export = runpy.run_path(str(root / "paper/export_reltwin_v4_markdown.py"))
+    latex = "Y=\\begin{array}{c|cc}\n &W_+&W_-\\\\ \\hline\nq_+&1&0\\\\\nq_-&0&1\n\\end{array}"
+    assert export["prose"](latex) == latex
+    assert export["prose"](r"vs.\ prior") == "vs. prior"
+
+
+def test_paper_rounding_is_consistent_for_exact_halves():
+    root = Path(__file__).resolve().parents[1]
+    formatter = runpy.run_path(str(root / "paper/render_reltwin_v4_tables.py"))["fmt2"]
+    assert formatter(53.125) == "53.13"
+    assert formatter(84.375) == "84.38"
 
 
 def sample():

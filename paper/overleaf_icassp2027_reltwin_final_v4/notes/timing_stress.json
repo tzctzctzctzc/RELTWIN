@@ -1,0 +1,919 @@
+{
+  "complete": true,
+  "scope": "Post-development timing-pattern stress, not natural or independent generalization; original sources and queries reused. No tuning.",
+  "primary_endpoint": "Cand minus matched SFT JointPairAcc on changed BA-first layouts",
+  "subsets": {
+    "all": {
+      "queries": 160,
+      "pairs": 80,
+      "audio_groups": 80,
+      "models": {
+        "sft_current_seed0/original": {
+          "mIoU": 74.63667393636584,
+          "PairAcc@0.5": 53.75,
+          "SwapError": 38.75,
+          "JointPairAcc@0.5": 53.75,
+          "same_answer_pairs": 16
+        },
+        "no_exchange_seed0/original": {
+          "mIoU": 88.32454416489796,
+          "PairAcc@0.5": 86.25,
+          "SwapError": 6.25,
+          "JointPairAcc@0.5": 86.25,
+          "same_answer_pairs": 1
+        },
+        "sft_current_seed0/uniform": {
+          "mIoU": 81.34145709316184,
+          "PairAcc@0.5": 67.5,
+          "SwapError": 31.25,
+          "JointPairAcc@0.5": 66.25,
+          "same_answer_pairs": 13
+        },
+        "no_exchange_seed0/uniform": {
+          "mIoU": 90.6538708532602,
+          "PairAcc@0.5": 87.5,
+          "SwapError": 5.0,
+          "JointPairAcc@0.5": 87.5,
+          "same_answer_pairs": 0
+        }
+      },
+      "comparisons": {
+        "cand_minus_sft/original": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 13.68787022853212,
+              "per_seed_delta_points": [
+                13.68787022853212
+              ],
+              "groups": 80,
+              "ci95_points": [
+                8.7861535760635,
+                18.81160007556743
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 13.68787022853212,
+              "per_seed_delta_points": [
+                13.68787022853212
+              ],
+              "groups": 39,
+              "ci95_points": [
+                8.842739124675846,
+                17.590757438901523
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 32.5,
+              "per_seed_delta_points": [
+                32.5
+              ],
+              "groups": 80,
+              "ci95_points": [
+                22.5,
+                42.5
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 32.5,
+              "per_seed_delta_points": [
+                32.5
+              ],
+              "groups": 39,
+              "ci95_points": [
+                23.076923076923077,
+                41.66666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -32.5,
+              "per_seed_delta_points": [
+                -32.5
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -42.5,
+                -22.5
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -32.5,
+              "per_seed_delta_points": [
+                -32.5
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -42.42424242424242,
+                -22.727272727272727
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 32.5,
+              "per_seed_delta_points": [
+                32.5
+              ],
+              "groups": 80,
+              "ci95_points": [
+                22.5,
+                42.5
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 32.5,
+              "per_seed_delta_points": [
+                32.5
+              ],
+              "groups": 39,
+              "ci95_points": [
+                23.076923076923077,
+                41.66666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "cand_minus_sft/uniform": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 9.312413760098375,
+              "per_seed_delta_points": [
+                9.312413760098375
+              ],
+              "groups": 80,
+              "ci95_points": [
+                4.691397785406407,
+                14.197919300243425
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 9.312413760098375,
+              "per_seed_delta_points": [
+                9.312413760098375
+              ],
+              "groups": 39,
+              "ci95_points": [
+                3.542665261992935,
+                13.700931815673565
+              ],
+              "bootstrap_nonpositive_fraction": 0.00075,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 20.0,
+              "per_seed_delta_points": [
+                20.0
+              ],
+              "groups": 80,
+              "ci95_points": [
+                10.0,
+                30.0
+              ],
+              "bootstrap_nonpositive_fraction": 5e-05,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 20.0,
+              "per_seed_delta_points": [
+                20.0
+              ],
+              "groups": 39,
+              "ci95_points": [
+                8.19672131147541,
+                29.245858260469348
+              ],
+              "bootstrap_nonpositive_fraction": 0.00075,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -26.25,
+              "per_seed_delta_points": [
+                -26.25
+              ],
+              "groups": 80,
+              "ci95_points": [
+                -36.25,
+                -17.5
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -26.25,
+              "per_seed_delta_points": [
+                -26.25
+              ],
+              "groups": 39,
+              "ci95_points": [
+                -37.03703703703704,
+                -15.873015873015872
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 21.25,
+              "per_seed_delta_points": [
+                21.25
+              ],
+              "groups": 80,
+              "ci95_points": [
+                12.5,
+                31.25
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 21.25,
+              "per_seed_delta_points": [
+                21.25
+              ],
+              "groups": 39,
+              "ci95_points": [
+                10.344827586206897,
+                30.208333333333332
+              ],
+              "bootstrap_nonpositive_fraction": 0.0002,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        }
+      },
+      "unchanged_input_prediction_differences": {}
+    },
+    "BA_first": {
+      "queries": 80,
+      "pairs": 40,
+      "audio_groups": 40,
+      "models": {
+        "sft_current_seed0/original": {
+          "mIoU": 70.30285874694204,
+          "PairAcc@0.5": 42.5,
+          "SwapError": 45.0,
+          "JointPairAcc@0.5": 42.5,
+          "same_answer_pairs": 10
+        },
+        "no_exchange_seed0/original": {
+          "mIoU": 87.09914147169575,
+          "PairAcc@0.5": 85.0,
+          "SwapError": 5.0,
+          "JointPairAcc@0.5": 85.0,
+          "same_answer_pairs": 1
+        },
+        "sft_current_seed0/uniform": {
+          "mIoU": 83.71242506053403,
+          "PairAcc@0.5": 70.0,
+          "SwapError": 30.0,
+          "JointPairAcc@0.5": 67.5,
+          "same_answer_pairs": 7
+        },
+        "no_exchange_seed0/uniform": {
+          "mIoU": 91.75779484842025,
+          "PairAcc@0.5": 87.5,
+          "SwapError": 2.5,
+          "JointPairAcc@0.5": 87.5,
+          "same_answer_pairs": 0
+        }
+      },
+      "comparisons": {
+        "cand_minus_sft/original": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 16.796282724753723,
+              "per_seed_delta_points": [
+                16.796282724753723
+              ],
+              "groups": 40,
+              "ci95_points": [
+                10.112570453030916,
+                23.69285467260683
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 16.796282724753723,
+              "per_seed_delta_points": [
+                16.796282724753723
+              ],
+              "groups": 24,
+              "ci95_points": [
+                9.082755812168383,
+                22.718841981264116
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 42.5,
+              "per_seed_delta_points": [
+                42.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                27.500000000000004,
+                57.49999999999999
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 42.5,
+              "per_seed_delta_points": [
+                42.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                25.0,
+                56.25
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -40.0,
+              "per_seed_delta_points": [
+                -40.0
+              ],
+              "groups": 40,
+              "ci95_points": [
+                -55.00000000000001,
+                -25.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -40.0,
+              "per_seed_delta_points": [
+                -40.0
+              ],
+              "groups": 24,
+              "ci95_points": [
+                -52.63157894736842,
+                -22.857142857142858
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 42.5,
+              "per_seed_delta_points": [
+                42.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                27.500000000000004,
+                57.49999999999999
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 42.5,
+              "per_seed_delta_points": [
+                42.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                25.0,
+                56.25
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "cand_minus_sft/uniform": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 8.045369787886237,
+              "per_seed_delta_points": [
+                8.045369787886237
+              ],
+              "groups": 40,
+              "ci95_points": [
+                1.8419177967749538,
+                14.65553602367298
+              ],
+              "bootstrap_nonpositive_fraction": 0.00475,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 8.045369787886237,
+              "per_seed_delta_points": [
+                8.045369787886237
+              ],
+              "groups": 24,
+              "ci95_points": [
+                -0.2854796085177965,
+                14.066084485997882
+              ],
+              "bootstrap_nonpositive_fraction": 0.02985,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 17.5,
+              "per_seed_delta_points": [
+                17.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                2.5,
+                32.5
+              ],
+              "bootstrap_nonpositive_fraction": 0.0168,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 17.5,
+              "per_seed_delta_points": [
+                17.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                -2.943404634581103,
+                31.818181818181817
+              ],
+              "bootstrap_nonpositive_fraction": 0.05915,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -27.500000000000004,
+              "per_seed_delta_points": [
+                -27.500000000000004
+              ],
+              "groups": 40,
+              "ci95_points": [
+                -42.5,
+                -15.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -27.500000000000004,
+              "per_seed_delta_points": [
+                -27.500000000000004
+              ],
+              "groups": 24,
+              "ci95_points": [
+                -39.395933014354064,
+                -11.11111111111111
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 20.0,
+              "per_seed_delta_points": [
+                20.0
+              ],
+              "groups": 40,
+              "ci95_points": [
+                5.0,
+                35.0
+              ],
+              "bootstrap_nonpositive_fraction": 0.0028,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 20.0,
+              "per_seed_delta_points": [
+                20.0
+              ],
+              "groups": 24,
+              "ci95_points": [
+                2.941176470588235,
+                33.33333333333333
+              ],
+              "bootstrap_nonpositive_fraction": 0.02,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        }
+      },
+      "unchanged_input_prediction_differences": {}
+    },
+    "AB_first": {
+      "queries": 80,
+      "pairs": 40,
+      "audio_groups": 40,
+      "models": {
+        "sft_current_seed0/original": {
+          "mIoU": 78.97048912578964,
+          "PairAcc@0.5": 65.0,
+          "SwapError": 32.5,
+          "JointPairAcc@0.5": 65.0,
+          "same_answer_pairs": 6
+        },
+        "no_exchange_seed0/original": {
+          "mIoU": 89.54994685810014,
+          "PairAcc@0.5": 87.5,
+          "SwapError": 7.5,
+          "JointPairAcc@0.5": 87.5,
+          "same_answer_pairs": 0
+        },
+        "sft_current_seed0/uniform": {
+          "mIoU": 78.97048912578964,
+          "PairAcc@0.5": 65.0,
+          "SwapError": 32.5,
+          "JointPairAcc@0.5": 65.0,
+          "same_answer_pairs": 6
+        },
+        "no_exchange_seed0/uniform": {
+          "mIoU": 89.54994685810014,
+          "PairAcc@0.5": 87.5,
+          "SwapError": 7.5,
+          "JointPairAcc@0.5": 87.5,
+          "same_answer_pairs": 0
+        }
+      },
+      "comparisons": {
+        "cand_minus_sft/original": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 10.57945773231051,
+              "per_seed_delta_points": [
+                10.57945773231051
+              ],
+              "groups": 40,
+              "ci95_points": [
+                3.7234370972959647,
+                17.89634694678812
+              ],
+              "bootstrap_nonpositive_fraction": 0.0006,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 10.57945773231051,
+              "per_seed_delta_points": [
+                10.57945773231051
+              ],
+              "groups": 24,
+              "ci95_points": [
+                3.98955825276461,
+                19.147830286986647
+              ],
+              "bootstrap_nonpositive_fraction": 0.00105,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                10.0,
+                35.0
+              ],
+              "bootstrap_nonpositive_fraction": 5e-05,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                10.0,
+                41.66666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -25.0,
+              "per_seed_delta_points": [
+                -25.0
+              ],
+              "groups": 40,
+              "ci95_points": [
+                -37.5,
+                -12.5
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -25.0,
+              "per_seed_delta_points": [
+                -25.0
+              ],
+              "groups": 24,
+              "ci95_points": [
+                -45.83333333333333,
+                -12.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                10.0,
+                35.0
+              ],
+              "bootstrap_nonpositive_fraction": 5e-05,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                10.0,
+                41.66666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        },
+        "cand_minus_sft/uniform": {
+          "mIoU": {
+            "audio_cluster": {
+              "mean_delta_points": 10.57945773231051,
+              "per_seed_delta_points": [
+                10.57945773231051
+              ],
+              "groups": 40,
+              "ci95_points": [
+                3.7234370972959647,
+                17.89634694678812
+              ],
+              "bootstrap_nonpositive_fraction": 0.0006,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 10.57945773231051,
+              "per_seed_delta_points": [
+                10.57945773231051
+              ],
+              "groups": 24,
+              "ci95_points": [
+                3.98955825276461,
+                19.147830286986647
+              ],
+              "bootstrap_nonpositive_fraction": 0.00105,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "PairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                10.0,
+                35.0
+              ],
+              "bootstrap_nonpositive_fraction": 5e-05,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                10.0,
+                41.66666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "SwapError": {
+            "audio_cluster": {
+              "mean_delta_points": -25.0,
+              "per_seed_delta_points": [
+                -25.0
+              ],
+              "groups": 40,
+              "ci95_points": [
+                -37.5,
+                -12.5
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": -25.0,
+              "per_seed_delta_points": [
+                -25.0
+              ],
+              "groups": 24,
+              "ci95_points": [
+                -45.83333333333333,
+                -12.0
+              ],
+              "bootstrap_nonpositive_fraction": 1.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          },
+          "JointPairAcc@0.5": {
+            "audio_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 40,
+              "ci95_points": [
+                10.0,
+                35.0
+              ],
+              "bootstrap_nonpositive_fraction": 5e-05,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            },
+            "source_cluster": {
+              "mean_delta_points": 22.5,
+              "per_seed_delta_points": [
+                22.5
+              ],
+              "groups": 24,
+              "ci95_points": [
+                10.0,
+                41.66666666666667
+              ],
+              "bootstrap_nonpositive_fraction": 0.0,
+              "repetitions": 20000,
+              "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+            }
+          }
+        }
+      },
+      "unchanged_input_prediction_differences": {
+        "sft_current_seed0": 0,
+        "no_exchange_seed0": 0
+      }
+    }
+  },
+  "input_hashes": {
+    "results\\reltwin_paper_polish_20260913\\bridge_complete\\sft_current_seed0\\relation_predictions.jsonl": "4579893810298d923e1e19ebabf13a68354d3c9f6d07170899a46842ee611eed",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\reltwin_paper_polish_20260913\\stress_complete\\sft_current_seed0\\predictions.jsonl": "b0063b63b84a0713300c842c0818939ebd974dc4926d2b4edc866f678f4edd02",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed0\\relation_predictions.jsonl": "95e003f27a84441bad938196842553d22ead3ec368987119d3489c7bdc8bab24",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\reltwin_paper_polish_20260913\\stress_complete\\no_exchange_seed0\\predictions.jsonl": "4c218fd12dc15be034e50ff2bd153df77dfe36c6f61466b52baffb8fb3ec0876"
+  },
+  "freeze_sha256": "2bfa0d71afc43c48595f5f9708f72735fd730c8362f3fc47f87e78ddb8d0d27a",
+  "source_component_sizes": [
+    18,
+    6,
+    5,
+    4,
+    4,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "primary_result": {
+    "mean_delta_points": 20.0,
+    "per_seed_delta_points": [
+      20.0
+    ],
+    "groups": 24,
+    "ci95_points": [
+      2.941176470588235,
+      33.33333333333333
+    ],
+    "bootstrap_nonpositive_fraction": 0.02,
+    "repetitions": 20000,
+    "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+  },
+  "interpretation_label": "ADVANTAGE_SURVIVES_THIS_STRESS"
+}

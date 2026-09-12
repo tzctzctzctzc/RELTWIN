@@ -32,7 +32,9 @@ def prose(text):
     for env in ("equation", "align"):
         text = text.replace(r"\begin{" + env + "}", "\n$$\n").replace(r"\end{" + env + "}", "\n$$\n")
     text = text.replace(r"\begin{abstract}", "").replace(r"\end{abstract}", "")
-    text = text.replace(r"\%", "%").replace(r"\ ", " ").replace(r"\,", " ")
+    text = text.replace(r"\%", "%").replace(r"\,", " ")
+    # Do not eat the second backslash of a matrix row ending before \hline.
+    text = re.sub(r"(?<!\\)\\ ", " ", text)
     text = text.replace("~", " ").replace("``", '“').replace("''", '”')
     text = text.replace("SFT--Cand", "SFT–Cand").replace("query--window", "query–window").replace("audio--caption", "audio–caption")
     return re.sub(r"\n{3,}", "\n\n", text).strip()
