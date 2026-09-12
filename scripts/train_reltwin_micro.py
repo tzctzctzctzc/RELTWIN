@@ -35,6 +35,8 @@ def parse_args():
     p.add_argument("--learning-rate", type=float, default=2e-5)
     p.add_argument("--temperature", type=float, default=1.0)
     p.add_argument("--method-weight", type=float, default=1.0)
+    p.add_argument("--exchange-weight", type=float, default=1.0,
+                   help="RBEE JS weight only; 0 retains the identical candidate CE control.")
     p.add_argument("--rehearsal-weight", type=float, default=0.0)
     p.add_argument("--cache-groups", type=int, default=32)
     p.add_argument("--margin", type=float, default=0.2)
@@ -85,7 +87,7 @@ def sequence_score(model, example):
     return -output.loss
 
 
-def outer_objective(mode, scores, temperature, weight, margin):
+def outer_objective(mode, scores, temperature, weight, margin, exchange_weight=1.0):
     # score order: qAB/yAB, qAB/yBA, qBA/yAB, qBA/yBA
     sft = -(scores[0] + scores[3]) / 2
     if mode == "sft":
@@ -110,7 +112,7 @@ def outer_objective(mode, scores, temperature, weight, margin):
         F.kl_div(midpoint.log(), p_ab, reduction="sum")
         + F.kl_div(midpoint.log(), p_ba_exchanged, reduction="sum")
     ) / 2
-    total = sft + weight * (candidate + js)
+    total = sft + weight * (candidate + exchange_weight * js)
     return total, {
         "sft": float(sft.detach()),
         "candidate_ce": float(candidate.detach()),
@@ -122,6 +124,10 @@ def outer_objective(mode, scores, temperature, weight, margin):
 
 def main():
     args = parse_args()
+    if not math.isfinite(args.exchange_weight) or args.exchange_weight < 0:
+        raise ValueError("--exchange-weight must be finite and nonnegative")
+    if args.output_adapter.exists() or args.summary.exists():
+        raise FileExistsError("Refusing to overwrite an existing adapter or training summary")
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
@@ -223,6 +229,7 @@ def main():
                 args.temperature,
                 args.method_weight,
                 args.margin,
+                args.exchange_weight,
             )
             coefficients = torch.autograd.grad(outer, score_variables)[0].detach()
             total_value = float(outer.detach())
@@ -256,6 +263,7 @@ def main():
         "learning_rate": args.learning_rate,
         "temperature": args.temperature,
         "method_weight": args.method_weight,
+        "exchange_weight": args.exchange_weight,
         "rehearsal_weight": args.rehearsal_weight,
         "margin": args.margin,
         "seed": args.seed,
