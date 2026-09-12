@@ -1,0 +1,9124 @@
+{
+  "scope": "Post-hoc descriptive reanalysis of existing synthetic development predictions. No training or inference. No claim of independent generalization or causal attribution.",
+  "definitions": {
+    "exact_same_output": "Two inverse queries have identical serialized interval lists; both-empty is also counted and separately reported.",
+    "nonempty_equivalent": "Both nonempty and set-IoU between the two predictions >= 0.995.",
+    "recovery": "JointPairAcc@0.5 success on the subset selected by SFT seed 0 exact_same_output. Output change alone does not count as recovery.",
+    "comparison_scope": "Only SFT seed 0 exists; other seeds use that same descriptive reference, not matched-SFT causal effects."
+  },
+  "queries": 320,
+  "pairs": 160,
+  "audio_groups": 80,
+  "reference_failure_pairs": 35,
+  "reference_failure_audio_groups": 20,
+  "models": {
+    "continue_rbee_seed0": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 136,
+      "reference_failure_pairs_joint_recovered": 26
+    },
+    "continue_rbee_seed1": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 139,
+      "reference_failure_pairs_joint_recovered": 28
+    },
+    "continue_rbee_seed2": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 136,
+      "reference_failure_pairs_joint_recovered": 27
+    },
+    "no_exchange_seed0": {
+      "exact_same_output_pairs": 1,
+      "exact_same_output_percent": 0.625,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 1,
+      "joint_correct_pairs": 135,
+      "reference_failure_pairs_joint_recovered": 25
+    },
+    "no_exchange_seed1": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 128,
+      "reference_failure_pairs_joint_recovered": 27
+    },
+    "no_exchange_seed2": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 128,
+      "reference_failure_pairs_joint_recovered": 28
+    },
+    "official": {
+      "exact_same_output_pairs": 15,
+      "exact_same_output_percent": 9.375,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 21,
+      "joint_correct_pairs": 1,
+      "reference_failure_pairs_joint_recovered": 0
+    },
+    "rbee_seed0": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 133,
+      "reference_failure_pairs_joint_recovered": 25
+    },
+    "rbee_seed1": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 131,
+      "reference_failure_pairs_joint_recovered": 27
+    },
+    "rbee_seed2": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 128,
+      "reference_failure_pairs_joint_recovered": 27
+    },
+    "setpo_seed0": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 1,
+      "joint_correct_pairs": 140,
+      "reference_failure_pairs_joint_recovered": 29
+    },
+    "setpo_seed1": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 0,
+      "joint_correct_pairs": 138,
+      "reference_failure_pairs_joint_recovered": 30
+    },
+    "setpo_seed2": {
+      "exact_same_output_pairs": 0,
+      "exact_same_output_percent": 0.0,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 1,
+      "joint_correct_pairs": 138,
+      "reference_failure_pairs_joint_recovered": 30
+    },
+    "sft_seed0": {
+      "exact_same_output_pairs": 35,
+      "exact_same_output_percent": 21.875,
+      "both_empty_pairs": 0,
+      "nonempty_equivalent_pairs": 35,
+      "joint_correct_pairs": 89,
+      "reference_failure_pairs_joint_recovered": 0
+    }
+  },
+  "reference_failure_cases": [
+    {
+      "query_indices": [
+        30,
+        31
+      ],
+      "audio_group": "esc_test_10003_v1.wav",
+      "queries": [
+        "chainsaw, and then thunderstorm",
+        "thunderstorm, and then chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              7.647,
+              12.647
+            ],
+            [
+              24.51,
+              29.51
+            ]
+          ],
+          [
+            [
+              2.004,
+              7.004
+            ],
+            [
+              17.641,
+              22.004
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        54,
+        55
+      ],
+      "audio_group": "esc_test_10006_v1.wav",
+      "queries": [
+        "clapping, and then sea waves",
+        "sea waves, and then clapping"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.0,
+              6.97
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ],
+          [
+            [
+              2.0,
+              6.97
+            ],
+            [
+              23.278,
+              29.932
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              7.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ],
+          [
+            [
+              2.0,
+              11.25
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        58,
+        59
+      ],
+      "audio_group": "esc_test_10007_v0.wav",
+      "queries": [
+        "dog, and then rooster",
+        "rooster, and then dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.6,
+              9.0
+            ],
+            [
+              14.75,
+              16.75
+            ],
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ],
+            [
+              14.75,
+              16.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.6,
+              9.0
+            ],
+            [
+              14.75,
+              16.75
+            ],
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.6,
+              9.0
+            ],
+            [
+              14.75,
+              16.75
+            ],
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.6,
+              8.7
+            ],
+            [
+              14.75,
+              16.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.513,
+              6.235
+            ],
+            [
+              20.013,
+              24.846
+            ]
+          ],
+          [
+            [
+              6.735,
+              8.735
+            ],
+            [
+              14.735,
+              16.735
+            ],
+            [
+              20.068,
+              24.735
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.6,
+              9.0
+            ],
+            [
+              14.75,
+              17.0
+            ],
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ],
+            [
+              14.75,
+              16.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.6,
+              9.0
+            ],
+            [
+              14.75,
+              17.0
+            ],
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.6,
+              8.7
+            ],
+            [
+              14.75,
+              16.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.6,
+              8.7
+            ],
+            [
+              14.75,
+              16.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": true,
+        "rbee_seed2": false,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        56,
+        57
+      ],
+      "audio_group": "esc_test_10007_v0.wav",
+      "queries": [
+        "dog followed by rooster",
+        "rooster followed by dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.513,
+              6.235
+            ],
+            [
+              20.013,
+              24.846
+            ]
+          ],
+          [
+            [
+              6.735,
+              8.735
+            ],
+            [
+              14.735,
+              16.735
+            ],
+            [
+              20.068,
+              24.735
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.6,
+              8.7
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        78,
+        79
+      ],
+      "audio_group": "esc_test_10009_v1.wav",
+      "queries": [
+        "clapping, and then fireworks",
+        "fireworks, and then clapping"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.5,
+              12.58
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              7.624,
+              28.624
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.004,
+              6.004
+            ],
+            [
+              23.241,
+              28.004
+            ]
+          ],
+          [
+            [
+              1.97,
+              6.97
+            ],
+            [
+              23.278,
+              28.278
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              7.624,
+              28.624
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        76,
+        77
+      ],
+      "audio_group": "esc_test_10009_v1.wav",
+      "queries": [
+        "clapping followed by fireworks",
+        "fireworks followed by clapping"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.004,
+              6.977
+            ],
+            [
+              23.278,
+              28.278
+            ]
+          ],
+          [
+            [
+              2.004,
+              6.977
+            ],
+            [
+              23.278,
+              28.278
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.5
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        82,
+        83
+      ],
+      "audio_group": "esc_test_10010_v0.wav",
+      "queries": [
+        "fireworks, and then vacuum cleaner",
+        "vacuum cleaner, and then fireworks"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.7,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.509,
+              6.235
+            ],
+            [
+              20.009,
+              24.902
+            ]
+          ],
+          [
+            [
+              6.624,
+              11.957
+            ],
+            [
+              14.791,
+              19.846
+            ],
+            [
+              20.01,
+              24.957
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.7,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        86,
+        87
+      ],
+      "audio_group": "esc_test_10010_v1.wav",
+      "queries": [
+        "fireworks, and then vacuum cleaner",
+        "vacuum cleaner, and then fireworks"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.047,
+              6.97
+            ],
+            [
+              7.647,
+              12.547
+            ],
+            [
+              17.647,
+              22.701
+            ],
+            [
+              23.329,
+              28.97
+            ]
+          ],
+          [
+            [
+              2.047,
+              6.846
+            ],
+            [
+              23.346,
+              29.047
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        80,
+        81
+      ],
+      "audio_group": "esc_test_10010_v0.wav",
+      "queries": [
+        "fireworks followed by vacuum cleaner",
+        "vacuum cleaner followed by fireworks"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.7,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.51,
+              6.238
+            ],
+            [
+              20.01,
+              24.92
+            ]
+          ],
+          [
+            [
+              6.624,
+              11.957
+            ],
+            [
+              14.791,
+              19.846
+            ],
+            [
+              20.01,
+              24.957
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.7,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        84,
+        85
+      ],
+      "audio_group": "esc_test_10010_v1.wav",
+      "queries": [
+        "fireworks followed by vacuum cleaner",
+        "vacuum cleaner followed by fireworks"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.047,
+              6.97
+            ],
+            [
+              17.647,
+              22.701
+            ],
+            [
+              23.393,
+              28.97
+            ]
+          ],
+          [
+            [
+              2.047,
+              6.97
+            ],
+            [
+              23.393,
+              28.932
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        90,
+        91
+      ],
+      "audio_group": "esc_test_10011_v0.wav",
+      "queries": [
+        "clapping, and then vacuum cleaner",
+        "vacuum cleaner, and then clapping"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.5,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.5,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.457,
+              6.01
+            ],
+            [
+              20.01,
+              24.738
+            ]
+          ],
+          [
+            [
+              6.735,
+              11.735
+            ],
+            [
+              14.735,
+              19.735
+            ],
+            [
+              20.01,
+              24.735
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        88,
+        89
+      ],
+      "audio_group": "esc_test_10011_v0.wav",
+      "queries": [
+        "clapping followed by vacuum cleaner",
+        "vacuum cleaner followed by clapping"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.5,
+              20.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.5,
+              20.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.504,
+              6.004
+            ],
+            [
+              20.004,
+              24.704
+            ]
+          ],
+          [
+            [
+              6.735,
+              11.735
+            ],
+            [
+              14.735,
+              19.735
+            ],
+            [
+              20.01,
+              24.735
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.5,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.5,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.5,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              24.75
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": false,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": false,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        136,
+        137
+      ],
+      "audio_group": "esc_test_10017_v0.wav",
+      "queries": [
+        "clapping followed by dog",
+        "dog followed by clapping"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              20.004,
+              24.374
+            ]
+          ],
+          [
+            [
+              19.97,
+              24.238
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              20.0,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              19.6,
+              25.0
+            ]
+          ],
+          [
+            [
+              19.6,
+              25.0
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": false,
+        "setpo_seed1": false,
+        "setpo_seed2": false,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        154,
+        155
+      ],
+      "audio_group": "esc_test_10019_v0.wav",
+      "queries": [
+        "chainsaw, and then vacuum cleaner",
+        "vacuum cleaner, and then chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.004,
+              6.477
+            ],
+            [
+              14.741,
+              24.171
+            ]
+          ],
+          [
+            [
+              2.004,
+              6.477
+            ],
+            [
+              14.741,
+              24.977
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              2.0,
+              11.75
+            ],
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              2.0,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              2.0,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.2,
+              11.75
+            ]
+          ],
+          [
+            [
+              2.2,
+              11.75
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": false,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        158,
+        159
+      ],
+      "audio_group": "esc_test_10019_v1.wav",
+      "queries": [
+        "chainsaw, and then vacuum cleaner",
+        "vacuum cleaner, and then chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.95,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              7.647,
+              12.47
+            ],
+            [
+              17.647,
+              29.97
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.624
+            ],
+            [
+              17.624,
+              29.97
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.95,
+              12.65
+            ],
+            [
+              17.65,
+              28.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.95,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": false,
+        "setpo_seed1": false,
+        "setpo_seed2": false,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        156,
+        157
+      ],
+      "audio_group": "esc_test_10019_v1.wav",
+      "queries": [
+        "chainsaw followed by vacuum cleaner",
+        "vacuum cleaner followed by chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              12.624
+            ],
+            [
+              17.624,
+              29.932
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.624
+            ],
+            [
+              17.624,
+              29.932
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.3
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ],
+            [
+              17.65,
+              28.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.97,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              28.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": false,
+        "setpo_seed1": false,
+        "setpo_seed2": false,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        166,
+        167
+      ],
+      "audio_group": "esc_test_10020_v1.wav",
+      "queries": [
+        "dog, and then sea waves",
+        "sea waves, and then dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              7.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.074
+            ],
+            [
+              23.274,
+              29.741
+            ]
+          ],
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              7.957,
+              28.302
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        164,
+        165
+      ],
+      "audio_group": "esc_test_10020_v1.wav",
+      "queries": [
+        "dog followed by sea waves",
+        "sea waves followed by dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              7.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ],
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              7.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.957,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.957,
+              28.346
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        174,
+        175
+      ],
+      "audio_group": "esc_test_10021_v1.wav",
+      "queries": [
+        "crying baby, and then thunderstorm",
+        "thunderstorm, and then crying baby"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              7.659,
+              29.159
+            ]
+          ],
+          [
+            [
+              3.317,
+              6.945
+            ],
+            [
+              24.547,
+              29.945
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        172,
+        173
+      ],
+      "audio_group": "esc_test_10021_v1.wav",
+      "queries": [
+        "crying baby followed by thunderstorm",
+        "thunderstorm followed by crying baby"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              7.647,
+              29.874
+            ]
+          ],
+          [
+            [
+              3.004,
+              6.941
+            ],
+            [
+              24.541,
+              29.041
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.67,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        182,
+        183
+      ],
+      "audio_group": "esc_test_10022_v1.wav",
+      "queries": [
+        "fireworks, and then thunderstorm",
+        "thunderstorm, and then fireworks"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              12.97
+            ],
+            [
+              17.647,
+              22.647
+            ],
+            [
+              23.283,
+              29.009
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.97
+            ],
+            [
+              17.647,
+              22.647
+            ],
+            [
+              23.283,
+              29.009
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        180,
+        181
+      ],
+      "audio_group": "esc_test_10022_v1.wav",
+      "queries": [
+        "fireworks followed by thunderstorm",
+        "thunderstorm followed by fireworks"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              12.624
+            ],
+            [
+              17.624,
+              22.624
+            ],
+            [
+              23.291,
+              29.047
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.97
+            ],
+            [
+              17.647,
+              20.97
+            ],
+            [
+              23.283,
+              28.97
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        214,
+        215
+      ],
+      "audio_group": "esc_test_10026_v1.wav",
+      "queries": [
+        "sea waves, and then thunderstorm",
+        "thunderstorm, and then sea waves"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.004
+            ],
+            [
+              7.641,
+              12.641
+            ],
+            [
+              17.641,
+              20.504
+            ],
+            [
+              23.204,
+              28.004
+            ]
+          ],
+          [
+            [
+              1.97,
+              7.004
+            ],
+            [
+              7.641,
+              12.741
+            ],
+            [
+              17.641,
+              20.874
+            ],
+            [
+              23.241,
+              28.004
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        212,
+        213
+      ],
+      "audio_group": "esc_test_10026_v1.wav",
+      "queries": [
+        "sea waves followed by thunderstorm",
+        "thunderstorm followed by sea waves"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.97,
+              7.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.97,
+              7.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              7.659,
+              12.659
+            ],
+            [
+              17.659,
+              20.778
+            ],
+            [
+              23.278,
+              28.278
+            ]
+          ],
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              7.659,
+              12.659
+            ],
+            [
+              17.659,
+              20.778
+            ],
+            [
+              23.278,
+              28.278
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.97,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.97,
+              7.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.97,
+              7.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.97,
+              7.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": false,
+        "setpo_seed1": true,
+        "setpo_seed2": false,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        230,
+        231
+      ],
+      "audio_group": "esc_test_10028_v1.wav",
+      "queries": [
+        "crying baby, and then fireworks",
+        "fireworks, and then crying baby"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.004,
+              6.504
+            ],
+            [
+              8.304,
+              12.504
+            ],
+            [
+              18.304,
+              22.504
+            ],
+            [
+              26.404,
+              27.404
+            ]
+          ],
+          [
+            [
+              2.004,
+              6.874
+            ],
+            [
+              26.474,
+              27.474
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        228,
+        229
+      ],
+      "audio_group": "esc_test_10028_v1.wav",
+      "queries": [
+        "crying baby followed by fireworks",
+        "fireworks followed by crying baby"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              2.004,
+              6.741
+            ],
+            [
+              26.441,
+              27.441
+            ]
+          ],
+          [
+            [
+              2.004,
+              6.874
+            ],
+            [
+              26.474,
+              27.474
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        246,
+        247
+      ],
+      "audio_group": "esc_test_10030_v1.wav",
+      "queries": [
+        "dog, and then vacuum cleaner",
+        "vacuum cleaner, and then dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.624
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ],
+          [
+            [
+              2.0,
+              7.0
+            ],
+            [
+              23.283,
+              29.92
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        240,
+        241
+      ],
+      "audio_group": "esc_test_10030_v0.wav",
+      "queries": [
+        "dog followed by vacuum cleaner",
+        "vacuum cleaner followed by dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              6.735,
+              11.735
+            ],
+            [
+              14.735,
+              19.735
+            ]
+          ],
+          [
+            [
+              6.735,
+              11.735
+            ],
+            [
+              14.735,
+              20.124
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.9,
+              11.75
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        244,
+        245
+      ],
+      "audio_group": "esc_test_10030_v1.wav",
+      "queries": [
+        "dog followed by vacuum cleaner",
+        "vacuum cleaner followed by dog"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ],
+          [
+            [
+              1.97,
+              7.036
+            ],
+            [
+              23.278,
+              29.97
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              29.0
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        258,
+        259
+      ],
+      "audio_group": "esc_test_10032_v0.wav",
+      "queries": [
+        "crying baby, and then rooster",
+        "rooster, and then crying baby"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ],
+            [
+              14.75,
+              17.6
+            ],
+            [
+              20.15,
+              24.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ],
+            [
+              14.75,
+              17.6
+            ],
+            [
+              20.15,
+              24.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.601,
+              6.238
+            ],
+            [
+              14.738,
+              17.846
+            ],
+            [
+              20.101,
+              24.509
+            ]
+          ],
+          [
+            [
+              1.601,
+              6.238
+            ],
+            [
+              14.738,
+              17.874
+            ],
+            [
+              20.101,
+              24.513
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ],
+            [
+              14.75,
+              17.6
+            ],
+            [
+              20.15,
+              24.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        256,
+        257
+      ],
+      "audio_group": "esc_test_10032_v0.wav",
+      "queries": [
+        "crying baby followed by rooster",
+        "rooster followed by crying baby"
+      ],
+      "ground_truth": [
+        [
+          [
+            1.5,
+            11.75
+          ]
+        ],
+        [
+          [
+            14.75,
+            25.0
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.601,
+              6.238
+            ],
+            [
+              14.738,
+              17.846
+            ],
+            [
+              20.101,
+              24.513
+            ]
+          ],
+          [
+            [
+              1.504,
+              6.241
+            ],
+            [
+              14.741,
+              17.874
+            ],
+            [
+              20.141,
+              24.504
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              14.75,
+              25.0
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ],
+          [
+            [
+              1.6,
+              9.6
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        278,
+        279
+      ],
+      "audio_group": "esc_test_10034_v1.wav",
+      "queries": [
+        "chainsaw, and then crying baby",
+        "crying baby, and then chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              7.647,
+              12.601
+            ],
+            [
+              17.647,
+              28.283
+            ]
+          ],
+          [
+            [
+              2.023,
+              7.023
+            ],
+            [
+              23.208,
+              28.242
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        276,
+        277
+      ],
+      "audio_group": "esc_test_10034_v1.wav",
+      "queries": [
+        "chainsaw followed by crying baby",
+        "crying baby followed by chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              7.647,
+              12.601
+            ],
+            [
+              17.647,
+              28.283
+            ]
+          ],
+          [
+            [
+              2.023,
+              7.023
+            ],
+            [
+              23.208,
+              28.242
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              28.3
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ],
+          [
+            [
+              2.0,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": true,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": true,
+        "no_exchange_seed0": true,
+        "no_exchange_seed1": true,
+        "no_exchange_seed2": true,
+        "official": false,
+        "rbee_seed0": true,
+        "rbee_seed1": true,
+        "rbee_seed2": true,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        302,
+        303
+      ],
+      "audio_group": "esc_test_10037_v1.wav",
+      "queries": [
+        "chainsaw, and then sea waves",
+        "sea waves, and then chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              17.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              5.574
+            ],
+            [
+              7.647,
+              12.874
+            ],
+            [
+              17.647,
+              22.874
+            ],
+            [
+              23.283,
+              25.513
+            ]
+          ],
+          [
+            [
+              1.97,
+              5.574
+            ],
+            [
+              7.647,
+              12.97
+            ],
+            [
+              17.647,
+              25.547
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              17.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              17.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              17.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": true,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": true,
+        "setpo_seed1": true,
+        "setpo_seed2": true,
+        "sft_seed0": false
+      }
+    },
+    {
+      "query_indices": [
+        300,
+        301
+      ],
+      "audio_group": "esc_test_10037_v1.wav",
+      "queries": [
+        "chainsaw followed by sea waves",
+        "sea waves followed by chainsaw"
+      ],
+      "ground_truth": [
+        [
+          [
+            17.65,
+            28.3
+          ]
+        ],
+        [
+          [
+            2.0,
+            12.65
+          ]
+        ]
+      ],
+      "predictions": {
+        "continue_rbee_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed1": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "continue_rbee_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed1": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "no_exchange_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "official": [
+          [
+            [
+              1.97,
+              5.432
+            ],
+            [
+              7.647,
+              12.778
+            ],
+            [
+              17.647,
+              25.432
+            ]
+          ],
+          [
+            [
+              1.97,
+              5.547
+            ],
+            [
+              7.647,
+              12.874
+            ],
+            [
+              17.647,
+              25.47
+            ]
+          ]
+        ],
+        "rbee_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.957,
+              12.65
+            ]
+          ]
+        ],
+        "rbee_seed1": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.97,
+              12.67
+            ]
+          ]
+        ],
+        "rbee_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed0": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed1": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "setpo_seed2": [
+          [
+            [
+              7.65,
+              27.0
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ],
+        "sft_seed0": [
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ],
+          [
+            [
+              1.95,
+              12.65
+            ]
+          ]
+        ]
+      },
+      "joint_correct": {
+        "continue_rbee_seed0": false,
+        "continue_rbee_seed1": false,
+        "continue_rbee_seed2": false,
+        "no_exchange_seed0": false,
+        "no_exchange_seed1": false,
+        "no_exchange_seed2": false,
+        "official": false,
+        "rbee_seed0": false,
+        "rbee_seed1": false,
+        "rbee_seed2": false,
+        "setpo_seed0": false,
+        "setpo_seed1": false,
+        "setpo_seed2": false,
+        "sft_seed0": false
+      }
+    }
+  ],
+  "input_hashes": {
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed0\\relation_predictions.jsonl": "b2c92022dc43fc12ceaf7501299a83e12a072dcc6caab32591fbf1aacd335b7f",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed1\\relation_predictions.jsonl": "19d705e90ca33591f575f0ae76623b42fdc6a0e6be0631d4c5f3f95054d70c37",
+    "results\\reltwin_review_controls_20260912\\final_complete\\continue_rbee_seed2\\relation_predictions.jsonl": "ce92787150e90f3f9fbc0ac2f91e9cf6d52f48d6d716c91ac0f795a3fd6af87d",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed0\\relation_predictions.jsonl": "95e003f27a84441bad938196842553d22ead3ec368987119d3489c7bdc8bab24",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed1\\relation_predictions.jsonl": "1ec3906c412482e6563f82f1e6aa70c8eefc927c4ff5259e14a0c970bd90fcd5",
+    "results\\reltwin_review_controls_20260912\\final_complete\\no_exchange_seed2\\relation_predictions.jsonl": "4a3bb9f4aef37eb2189b8635ec8ee36eaf90407ace06e082956c6c15640bdc9f",
+    "results\\reltwin_review_controls_20260912\\final_complete\\official\\relation_predictions.jsonl": "0a8f23acdfe905f0f4deed6aa8efa56627b0b253ca517a4c628fd0df2cc45623",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed0\\relation_predictions.jsonl": "218d629c9d59b9953cfeaa06545502fcf69eaefd8737db9134a6d04f5cc6eaae",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed1\\relation_predictions.jsonl": "7d41e20e9b8ee0bd81323b134ea570a91778ab593e1b2ee68119e2706b27ddac",
+    "results\\reltwin_review_controls_20260912\\final_complete\\rbee_seed2\\relation_predictions.jsonl": "fde2e02346a5125ff843e89b822b63124bedcb5d339705897b82f1be1adc09e5",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed0\\relation_predictions.jsonl": "e8928d3592d46e20c32c507bdd27f24eeb17e191a0c6ce95c99240736b2e540f",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed1\\relation_predictions.jsonl": "c58bd3e592ae8f1c03812eadefa70c1e662fafb203ed62e38671a7d1e141b45d",
+    "results\\reltwin_review_controls_20260912\\final_complete\\setpo_seed2\\relation_predictions.jsonl": "2feed8d9139a538afd739258221bca1a4a0a44e2e58a6bf2211ab5445f784d08",
+    "results\\reltwin_review_controls_20260912\\final_complete\\sft_seed0\\relation_predictions.jsonl": "9c168479036b6d9b06cd9efaa6a31093a0976f0db9fea8b7d0761d6e1ebcd90b",
+    "results\\reltwin_review_controls_20260912\\reltwin_test_manifest.json": "6e132d71851b3ed3e4d02eeeada61d65537b3de7b60020e49684e95d17579645"
+  }
+}
