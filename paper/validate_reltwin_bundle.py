@@ -9,6 +9,7 @@ import hashlib
 import json
 import re
 import statistics
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 import pymupdf
@@ -33,11 +34,13 @@ def main():
     parser.add_argument("package", type=Path)
     parser.add_argument("--repository", type=Path, required=True)
     parser.add_argument("--qa-dir", type=Path, required=True)
+    parser.add_argument("--source", type=Path, default=Path("paper/ICASSP_DRAFT_ZH_v6_RELTWIN.md"))
+    parser.add_argument("--relation-audit", type=Path)
     args = parser.parse_args()
     package, repo, qa = args.package.resolve(), args.repository.resolve(), args.qa_dir.resolve()
     qa.mkdir(parents=True, exist_ok=True)
     source = (package / "notes/source_zh.md").read_text(encoding="utf-8")
-    assert digest(package / "notes/source_zh.md") == digest(repo / "paper/ICASSP_DRAFT_ZH_v6_RELTWIN.md")
+    assert digest(package / "notes/source_zh.md") == digest(repo / args.source)
     abstract = (package / "sections/abstract.tex").read_text(encoding="utf-8")
     abstract = re.sub(r"\\(?:begin|end)\{abstract\}", "", abstract)
     word_count = len(abstract.split())
@@ -94,11 +97,47 @@ def main():
             assert f'{decision[key][metric]:.3f}' in stages_tex
     relation_tex = (package / "tables/relation_results.tex").read_text(encoding="utf-8")
     relation_values = {}
-    for key in ("query_mIoU", "pair_acc_0.5", "swap_error_rate"):
-        values = relation["aggregate"][key]
-        relation_values[key] = {k: values[k]*100 for k in ("source_mean", "target_mean", "mean_delta")}
-        for field, value in relation_values[key].items():
-            assert f"{value:.2f}" in relation_tex, (key, field, value)
+    relation_ci_scope = "Historical fixed-seed stratified query-row/pair bootstrap, NOT audio-cluster bootstrap."
+    if args.relation_audit:
+        audit_path = repo / args.relation_audit
+        audit = read_json(audit_path)
+        assert digest(audit_path) == digest(package / "notes/relation_audit.json")
+        files.append(str(args.relation_audit))
+        assert audit["audio_groups"] == 80 and audit["source_connected_groups"] == 39
+        assert not audit["train_development_source_recording_overlap"]
+        keys = ("mIoU", "PairAcc@0.5", "SwapError", "JointPairAcc@0.5")
+        def vector(name):
+            return [audit["models"][name]["metrics_percent"][k] for k in keys]
+        def mean_stage(stage):
+            return [statistics.mean(values) for values in zip(*(vector(f"cached_{stage}_seed{s}") for s in range(3)))]
+        sft0, rbee0 = vector("cached_sft_seed0"), vector("cached_rbee_seed0")
+        rmean, smean = mean_stage("rbee"), mean_stage("setpo")
+        expected = {"SFT, seed 0": sft0, "RBEE, seed 0": rbee0,
+                    r"$\Delta_0$": [b-a for a, b in zip(sft0, rbee0)],
+                    "RBEE, 3 seeds": rmean, r"RBEE $\to$ SetPO": smean,
+                    r"$\Delta$": [b-a for a, b in zip(rmean, smean)]}
+        verified = set()
+        for line in relation_tex.splitlines():
+            label = line.split("&")[0].strip()
+            if label in expected:
+                # Decimal half-up is the displayed convention at exact .005 ties.
+                rounded = [float(Decimal(str(v)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)) for v in expected[label]]
+                assert tex_numbers(line) == rounded, (label, tex_numbers(line), rounded)
+                verified.add(label)
+        assert verified == set(expected)
+        relation_values = expected
+        relation_ci_scope = audit["seed_resampling"] + " Audio/source-component paired bootstrap; post-hoc development data."
+        discussion = (package / "sections/discussion.tex").read_text(encoding="utf-8")
+        for name in ("cached_RBEE_minus_SFT_seed0", "cached_SetPO_minus_RBEE"):
+            for grouping in ("audio_cluster", "source_connected_cluster"):
+                ci = audit["comparisons"][name]["metrics"]["mIoU"][grouping]["ci95_points"]
+                assert f"[{ci[0]:.2f},{ci[1]:.2f}]" in discussion, (name, grouping, ci)
+    else:
+        for key in ("query_mIoU", "pair_acc_0.5", "swap_error_rate"):
+            values = relation["aggregate"][key]
+            relation_values[key] = {k: values[k]*100 for k in ("source_mean", "target_mean", "mean_delta")}
+            for field, value in relation_values[key].items():
+                assert f"{value:.2f}" in relation_tex, (key, field, value)
     for key, filename in (("spotsound", files[7]), ("clotho", files[8])):
         full = read_json(repo / filename)
         assert f'{full["nova_mbr_mIoU_percent"]:.2f}' in table, key
@@ -112,8 +151,10 @@ def main():
         "rbee_minus_official_points": metrics["mean_delta"] * 100,
         "sft_seed0_miou_percent": sft["mIoU"], "matched_seed0_delta_points": rbee_seeds[0]-sft["mIoU"],
         "relation_values_percent": relation_values,
-        "relation_ci_scope": "Historical fixed-seed stratified query-row/pair bootstrap, NOT audio-cluster bootstrap.",
-        "new_experiments": False,
+        "relation_ci_scope": relation_ci_scope,
+        "new_experiments_in_reported_results": False,
+        "post_hoc_cached_relation_reanalysis": bool(args.relation_audit),
+        "training_controls_status": "pending; excluded from manuscript results" if args.relation_audit else "not launched in this revision",
     }
 
     doc = pymupdf.open(package / "main.pdf")

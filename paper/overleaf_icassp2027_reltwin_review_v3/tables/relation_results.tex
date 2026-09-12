@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{RelTwin development diagnostics (\%). Top: matched seed~0; bottom: three-seed means. Joint is JointPairAcc@.5. All values are re-audited cached predictions, not independent test results.}
+\label{tab:relations}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Stage & mIoU $\uparrow$ & PairAcc $\uparrow$ & Swap $\downarrow$ & Joint $\uparrow$\\
+\midrule
+SFT, seed 0 & 74.28 & 53.13 & 40.00 & 53.13\\
+RBEE, seed 0 & 87.72 & 83.13 & 9.38 & 82.50\\
+$\Delta_0$ & +13.44 & +30.00 & $-30.63$ & +29.38\\
+\midrule
+RBEE, 3 seeds & 86.55 & 81.46 & 8.54 & 81.25\\
+RBEE $\to$ SetPO & 89.90 & 86.67 & 5.83 & 86.67\\
+$\Delta$ & +3.36 & +5.21 & $-2.71$ & +5.42\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,78 @@
+{
+  "source_hashes": {
+    "results/e002/rbee_vs_official.json": "50de3d35b71661c43cd53aa89c22c4083bb582a40a0611a2afdf48de66bf0e1e",
+    "results/e002/setpo_vs_rbee.json": "dce109eb831834ac1fb744f702d4d2518a7eddcd67e85c86f933ed5128f94f80",
+    "results/e002/reltwin_setpo_vs_rbee.json": "ce674065c16c1c1676fcb5b50b405a35a01d26107576a1b0c0ffebf44a745c28",
+    "results/e002/sota_decision.json": "62a8e5a680972102fd6fa86eabd6ac993258f0b3c798aa6e1c9afa7f00a5e272",
+    "results/controlled/sft_seed0/public_summary.json": "984cafbc47838e0aa9a8f6d611eaa42bec5f96220c434604edcd7c269b040015",
+    "results/controlled/sft_seed0/train_summary.json": "900f202b0665403a58ebff34784a256b6120997c091d5d74b210983dccfeb999",
+    "results/rbee_seed_0/train_summary.json": "650d3924c9f77130938bdb66d52e46ac80025360d9acf902d422b702a3128e81",
+    "results/nova_boundary_utility_v1/spotsound_full400_report.json": "6ef28164b8c79e02f2fcb5dd4b9dffb2aa56317e264f0d56a9433c21b9e58c76",
+    "results/nova_boundary_utility_v1/clotho_full6649_report.json": "22acfdc2ce46ea36ec6baadde5a77c5b80c4b12c39dc46b49966a3784aa14fd9",
+    "results/official_protocol_rerun_20260907/summary.json": "6e942b7e9582d3fd135ab4cd086f6745be64647aa6f43884c41c2355948555f3",
+    "results\\reltwin_review_controls_20260912\\cached_audit\\relation_audit.json": "7892e80722f0c47f22ba9aa38befc3b471017f12e469f4e89a9967843c5cba87"
+  },
+  "methods_hashes": {
+    "scripts\\train_reltwin_micro.py": "ec84bf3e7ad6585bf810ab44144512be9c05e55e7e00431519c2aa09ecf4309d",
+    "scripts\\train_reltwin_setpo.py": "1176eeb6dcd47c83d9de392f57f02a1b6474d8fae285b30425a4744290e86de0",
+    "scripts\\setpo_objective.py": "8d4435a0b6abd5dcc82cc59462655285ba4ebcd0b25c3156325ed657c7b2287d",
+    "scripts\\setpo_candidates.py": "501cd9bc53251728f58dd128b6b92e9c1cf79000318725c187a0219a9590a153",
+    "scripts\\build_esc50_reltwin.py": "bf26b7fd6345d1dd781410ff97d6a0353c756b0312ad58664a93522d42daf9ec",
+    "scripts\\interval_metrics.py": "a8eb693a750697c3a043340b2e71c0ee743deaf80dbeac2033251e1993259df2"
+  },
+  "rbee_miou_seeds_percent": [
+    59.18389426633595,
+    59.16987685642873,
+    59.14426035032282
+  ],
+  "setpo_miou_seeds_percent": [
+    59.113610075015885,
+    59.23380530882033,
+    59.230562251392655
+  ],
+  "rbee_minus_official_points": 0.8487851314354034,
+  "sft_seed0_miou_percent": 58.313494122239426,
+  "matched_seed0_delta_points": 0.8704001440965214,
+  "relation_values_percent": {
+    "SFT, seed 0": [
+      74.27870006742732,
+      53.125,
+      40.0,
+      53.125
+    ],
+    "RBEE, seed 0": [
+      87.72317642603353,
+      83.125,
+      9.375,
+      82.5
+    ],
+    "$\\Delta_0$": [
+      13.44447635860621,
+      30.0,
+      -30.625,
+      29.375
+    ],
+    "RBEE, 3 seeds": [
+      86.54612257685348,
+      81.45833333333333,
+      8.541666666666666,
+      81.25
+    ],
+    "RBEE $\\to$ SetPO": [
+      89.90381128300945,
+      86.66666666666667,
+      5.833333333333333,
+      86.66666666666667
+    ],
+    "$\\Delta$": [
+      3.357688706155969,
+      5.208333333333343,
+      -2.708333333333333,
+      5.416666666666671
+    ]
+  },
+  "relation_ci_scope": "Not resampled. Same sampled clusters shared by models and all fixed seeds. Audio/source-component paired bootstrap; post-hoc development data.",
+  "new_experiments_in_reported_results": false,
+  "post_hoc_cached_relation_reanalysis": true,
+  "training_controls_status": "pending; excluded from manuscript results"
+}

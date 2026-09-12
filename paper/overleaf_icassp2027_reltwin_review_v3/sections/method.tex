@@ -1,0 +1,44 @@
+\section{Relation-Consistent Structured Training}
+\subsection{RelTwin construction}
+For audio $x$, query $q$, and ground-truth interval set $G$, a model predicts $S$. Temporal set-IoU is $\setiou(S,G)=|S\cap G|/|S\cup G|$, with temporal measure applied to interval unions.
+
+RelTwin reuses two ESC-50 sound excerpts~\cite{piczak2015esc} to form opposite-order windows $W_+$ and $W_-$ within one recording, separated by silence (Fig.~\ref{fig:pair}). We alternate which order appears first. Each recording provides two wording templates, ``followed by'' and ``and then'', each with both query directions. The target spans the \emph{whole ordered sequence}, not one constituent sound. Additional category-only queries target all occurrences of each sound for rehearsal. This construction holds event identities fixed while changing the relation needed to choose a window.
+
+\subsection{Relation--boundary exchange consistency}
+Let $s_\theta(q,S)$ be the model's mean token log-likelihood of the timestamp answer for $S$, conditioned on $x$ and $q$. For candidates $C=(W_+,W_-)$, define
+\begin{equation}
+p_\theta(j\mid x,q)=
+\frac{\exp(s_\theta(q,C_j)/\tau)}{\sum_k\exp(s_\theta(q,C_k)/\tau)}.
+\label{eq:preference}
+\end{equation}
+These are normalized candidate preferences, not calibrated event probabilities. Write $p_+$ and $p_-$ for the two query distributions. Their correct indices are 1 and 2. With $\Pi_2$ swapping those indices,
+\begin{align}
+\mathcal L_{\mathrm{cand}}&=-\tfrac12(\log p_+(1)+\log p_-(2)),\\
+\mathcal L_{\mathrm{ex}}&=\JS(p_+,\Pi_2p_-).
+\label{eq:exchange}
+\end{align}
+Here $\JS$ is Jensen--Shannon divergence. The sequence loss averages negative scores of the two correct answers, $\mathcal L_{\mathrm{seq}}=-[s_\theta(q_+,W_+)+s_\theta(q_-,W_-)]/2$. RBEE minimizes
+\begin{equation}
+\mathcal L_{\mathrm{RBEE}}=\mathcal L_{\mathrm{seq}}+
+\lambda(\mathcal L_{\mathrm{cand}}+\mathcal L_{\mathrm{ex}})
++\beta\mathcal L_{\mathrm{replay}}.
+\label{eq:rbee}
+\end{equation}
+Candidate labels identify the correct answer; the exchange term couples the two queries' relative preferences. The exchange term alone permits uninformative equal distributions. Under perfect hard-label fitting it adds no new optimal label; its role is finite-data regularization, not a proof that relation understanding must emerge.
+
+\subsection{Setwise preference optimization}
+Binary discrimination does not express the quality of displaced or over-inclusive answers. SetPO uses six candidates: $W_+$, $W_-$, outward-expanded versions of each, one span enclosing both windows, and the set containing both windows. Expansion per endpoint is $\max(0.05\,\mathrm{s},0.15|W|)$, clipped to the recording. The exchange permutation is $\Pi_6=(2,1,4,3,5,6)$ in one-based indexing.
+
+For predicted intervals $S$ and targets $G$, let $P_s$ average each prediction's best interval-IoU with $G$; $R_s$ reverses the roles. Their harmonic mean $F_s$ is a soft coverage score, not one-to-one event F1. Define
+\begin{align}
+Q(S,G)&=\tfrac12\setiou(S,G)+\tfrac12 F_s(S,G),\\
+t_q(j)&=\operatorname{softmax}_j(Q(C_j,G_q)/\tau_y),\\
+\mathcal L_{\mathrm{list}}&=-\tfrac12\sum_{q\in\{q_+,q_-\}}\sum_j t_q(j)\log p_q(j).
+\label{eq:listwise}
+\end{align}
+SetPO replaces $\mathcal L_{\mathrm{cand}}$ in Eq.~\ref{eq:rbee} with $\mathcal L_{\mathrm{list}}$ and uses $\Pi_6$ for exchange. Ordinary rehearsal alternates sequence supervision with setwise supervision covering omitted, expanded, merged, and spurious intervals. Ground truth constructs training targets only; inference generates timestamps without access to reference intervals.
+
+\subsection{Supporting inference pipeline}
+The full SpotSound pipeline additionally uses E004 NOVA (Necessity-Oriented Verification over Audio). Official, SFT, and SetPO predictions are candidates. A frozen detector evaluates query existence after keeping or removing their intervals, providing sufficiency and necessity evidence. Routing is fitted on LongNeedle-ESC50 with SetPO seed~1 as the default. This is intervention-based candidate verification, not a causal guarantee.
+
+A final Boundary Utility stage predicts incumbent-relative edit gains from frozen acoustic features, combines compatible edits by dynamic programming, and abstains unless a bootstrap-ensemble lower quantile clears a fixed margin. It preserves event count and uses $r_i=\min(0.25,0.625(e_i-s_i))$ seconds. Boundary refinement is supporting machinery; its general motivation is shared with prior temporal refinement work~\cite{wang2024timerefine}. Existing Clotho and UnAV runs start from the official model, not RelTwin adaptation. Their results must therefore remain separate from claims about this training method.
