@@ -53,4 +53,4 @@ JS 及 SetPO 对等训练控制的增量区间跨零，降为增强项检验，�
 - 桥接协议 `experiments/protocols/RELTWIN_PAPER_POLISH_20260913.md`；压力协议 `experiments/protocols/RELTWIN_TIMING_STRESS_20260913.md`。
 - 运行权重与音频留在服务器，Git 仅保存代码、协议、日志、缓存预测与汇总；不保存账号密码。
 
-最终论文交付与编译/视觉检查记录见本目录 `DELIVERY.md`（在排版验收后生成）。
+论文导入说明见 Overleaf 包内 `README.md`；最终交付与编译/视觉验收另记录于仓库 `results/reltwin_paper_polish_20260913/DELIVERY.md`。
