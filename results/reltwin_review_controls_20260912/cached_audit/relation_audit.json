@@ -1,0 +1,437 @@
+{
+  "data_role": "Previously used development data; post-hoc audit, not an independent test.",
+  "queries": 320,
+  "pairs": 160,
+  "audio_groups": 80,
+  "source_connected_groups": 39,
+  "source_component_audio_sizes": [
+    18,
+    6,
+    5,
+    4,
+    4,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "train_classes": 40,
+  "development_classes": 10,
+  "train_development_class_overlap": [],
+  "train_development_source_recording_overlap": [],
+  "seed_resampling": "Not resampled. Same sampled clusters shared by models and all fixed seeds.",
+  "iou_implementation": "Historical analyze_reltwin_probe.set_iou retained exactly, including its strict floating-point tie convention.",
+  "models": {
+    "cached_sft_seed0": {
+      "metrics_percent": {
+        "mIoU": 74.27870006742732,
+        "PairAcc@0.5": 53.125,
+        "SwapError": 40.0,
+        "JointPairAcc@0.5": 53.125
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_rbee_seed0": {
+      "metrics_percent": {
+        "mIoU": 87.72317642603353,
+        "PairAcc@0.5": 83.125,
+        "SwapError": 9.375,
+        "JointPairAcc@0.5": 82.5
+      },
+      "threshold_pass_but_swap_error_pairs": 1,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_setpo_seed0": {
+      "metrics_percent": {
+        "mIoU": 90.23511807903513,
+        "PairAcc@0.5": 87.5,
+        "SwapError": 6.25,
+        "JointPairAcc@0.5": 87.5
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_rbee_seed1": {
+      "metrics_percent": {
+        "mIoU": 86.17564115609039,
+        "PairAcc@0.5": 80.625,
+        "SwapError": 7.5,
+        "JointPairAcc@0.5": 80.625
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_setpo_seed1": {
+      "metrics_percent": {
+        "mIoU": 89.3987611444276,
+        "PairAcc@0.5": 86.25,
+        "SwapError": 5.625,
+        "JointPairAcc@0.5": 86.25
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_rbee_seed2": {
+      "metrics_percent": {
+        "mIoU": 85.73955014843652,
+        "PairAcc@0.5": 80.625,
+        "SwapError": 8.75,
+        "JointPairAcc@0.5": 80.625
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_setpo_seed2": {
+      "metrics_percent": {
+        "mIoU": 90.0775546255656,
+        "PairAcc@0.5": 86.25,
+        "SwapError": 5.625,
+        "JointPairAcc@0.5": 86.25
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "historical analysis, aligned and recomputed"
+    },
+    "cached_official": {
+      "metrics_percent": {
+        "mIoU": 37.61399786082019,
+        "PairAcc@0.5": 1.25,
+        "SwapError": 67.5,
+        "JointPairAcc@0.5": 1.25
+      },
+      "threshold_pass_but_swap_error_pairs": 0,
+      "origin": "E003 candidate cache labelled official; checkpoint provenance not independently re-established here"
+    }
+  },
+  "comparisons": {
+    "cached_RBEE_minus_SFT_seed0": {
+      "paired_models": [
+        [
+          "cached_sft_seed0",
+          "cached_rbee_seed0"
+        ]
+      ],
+      "planned_seeds_complete": true,
+      "metrics": {
+        "mIoU": {
+          "audio_cluster": {
+            "mean_delta_points": 13.444476358606202,
+            "per_seed_delta_points": [
+              13.444476358606202
+            ],
+            "groups": 80,
+            "ci95_points": [
+              8.844298697853215,
+              18.204748020562867
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": 13.444476358606202,
+            "per_seed_delta_points": [
+              13.444476358606202
+            ],
+            "groups": 39,
+            "ci95_points": [
+              8.645609703197334,
+              17.1375737797356
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        },
+        "PairAcc@0.5": {
+          "audio_cluster": {
+            "mean_delta_points": 30.0,
+            "per_seed_delta_points": [
+              30.0
+            ],
+            "groups": 80,
+            "ci95_points": [
+              20.625,
+              40.0
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": 30.0,
+            "per_seed_delta_points": [
+              30.0
+            ],
+            "groups": 39,
+            "ci95_points": [
+              19.642857142857142,
+              39.1566265060241
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        },
+        "SwapError": {
+          "audio_cluster": {
+            "mean_delta_points": -30.625000000000004,
+            "per_seed_delta_points": [
+              -30.625000000000004
+            ],
+            "groups": 80,
+            "ci95_points": [
+              -40.625,
+              -20.625
+            ],
+            "bootstrap_nonpositive_fraction": 1.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": -30.625000000000004,
+            "per_seed_delta_points": [
+              -30.625000000000004
+            ],
+            "groups": 39,
+            "ci95_points": [
+              -39.1025641025641,
+              -20.689655172413794
+            ],
+            "bootstrap_nonpositive_fraction": 1.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        },
+        "JointPairAcc@0.5": {
+          "audio_cluster": {
+            "mean_delta_points": 29.375,
+            "per_seed_delta_points": [
+              29.375
+            ],
+            "groups": 80,
+            "ci95_points": [
+              19.375,
+              39.375
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": 29.375,
+            "per_seed_delta_points": [
+              29.375
+            ],
+            "groups": 39,
+            "ci95_points": [
+              18.91891891891892,
+              38.67924528301887
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        }
+      },
+      "delta_direction": "target minus source; lower SwapError is better"
+    },
+    "cached_SetPO_minus_RBEE": {
+      "paired_models": [
+        [
+          "cached_rbee_seed0",
+          "cached_setpo_seed0"
+        ],
+        [
+          "cached_rbee_seed1",
+          "cached_setpo_seed1"
+        ],
+        [
+          "cached_rbee_seed2",
+          "cached_setpo_seed2"
+        ]
+      ],
+      "planned_seeds_complete": true,
+      "metrics": {
+        "mIoU": {
+          "audio_cluster": {
+            "mean_delta_points": 3.3576887061559577,
+            "per_seed_delta_points": [
+              2.5119416530015948,
+              3.2231199883371953,
+              4.3380044771290835
+            ],
+            "groups": 80,
+            "ci95_points": [
+              2.039250704393535,
+              4.881892132853373
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": 3.3576887061559577,
+            "per_seed_delta_points": [
+              2.5119416530015948,
+              3.2231199883371953,
+              4.3380044771290835
+            ],
+            "groups": 39,
+            "ci95_points": [
+              2.1159754307565724,
+              5.078090138454986
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        },
+        "PairAcc@0.5": {
+          "audio_cluster": {
+            "mean_delta_points": 5.208333333333333,
+            "per_seed_delta_points": [
+              4.375,
+              5.625,
+              5.625
+            ],
+            "groups": 80,
+            "ci95_points": [
+              1.6666666666666667,
+              9.374999999999998
+            ],
+            "bootstrap_nonpositive_fraction": 0.00115,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": 5.208333333333333,
+            "per_seed_delta_points": [
+              4.375,
+              5.625,
+              5.625
+            ],
+            "groups": 39,
+            "ci95_points": [
+              2.3076241134751774,
+              9.770114942528735
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        },
+        "SwapError": {
+          "audio_cluster": {
+            "mean_delta_points": -2.708333333333333,
+            "per_seed_delta_points": [
+              -3.125,
+              -1.875,
+              -3.125
+            ],
+            "groups": 80,
+            "ci95_points": [
+              -5.833333333333333,
+              -0.20833333333333334
+            ],
+            "bootstrap_nonpositive_fraction": 0.98805,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": -2.708333333333333,
+            "per_seed_delta_points": [
+              -3.125,
+              -1.875,
+              -3.125
+            ],
+            "groups": 39,
+            "ci95_points": [
+              -5.737704918032787,
+              -0.5291005291005291
+            ],
+            "bootstrap_nonpositive_fraction": 0.9961,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        },
+        "JointPairAcc@0.5": {
+          "audio_cluster": {
+            "mean_delta_points": 5.416666666666666,
+            "per_seed_delta_points": [
+              5.0,
+              5.625,
+              5.625
+            ],
+            "groups": 80,
+            "ci95_points": [
+              1.875,
+              9.583333333333332
+            ],
+            "bootstrap_nonpositive_fraction": 0.0008,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          },
+          "source_connected_cluster": {
+            "mean_delta_points": 5.416666666666666,
+            "per_seed_delta_points": [
+              5.0,
+              5.625,
+              5.625
+            ],
+            "groups": 39,
+            "ci95_points": [
+              2.5193798449612403,
+              10.0
+            ],
+            "bootstrap_nonpositive_fraction": 0.0,
+            "repetitions": 20000,
+            "scope": "Conditional on observed seeds; resampling uncertainty is across clusters, not a seed-population guarantee."
+          }
+        }
+      },
+      "delta_direction": "target minus source; lower SwapError is better"
+    }
+  },
+  "input_hashes": {
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\controlled\\sft_seed0\\analysis.json": "ba5e5363d8e60e63e15181113472572359ed6e745602f4acc710c9e5d633106b",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\rbee_seed_0\\analysis.json": "246d423c7293a6a5060aa4d63d2d0d68a96f83c2ffc03e9a72d92b3cdd06644b",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\e001\\seed_0\\analysis.json": "65721d7c1c8ca7a5ea6ea59cf04f9a588d21d3a39ff930747e28c5bd0d37fa04",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\e002\\seed_1\\rbee\\reltwin_analysis.json": "716704ea6317a7c40bbdfc645c86665fab3349a802a06517587f3f7cf39a6429",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\e002\\seed_1\\setpo\\reltwin_analysis.json": "c10d437d36b3fd6fd3a5eee14fb019e8b787857110e5182817e60e7296c3198e",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\e002\\seed_2\\rbee\\reltwin_analysis.json": "8204e6b76f0acdbdd6a3fb21b8dbec81fc5c6bd106a0a91c499a637454b141aa",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\e002\\seed_2\\setpo\\reltwin_analysis.json": "c1448fc628e07c06decbe1284d177aef59326f260c0cb9483b3562ae5cdcf8e7",
+    "I:\\AI科研\\SpotSound\\SpotSound_benchmark_completion\\results\\e003_probe\\reltwin_three_candidates_features.jsonl": "ab70c3fd7db72621b398edb81fdd33afd159b70c0138b101a449400b4e1d2067"
+  },
+  "manifest_sha256": "6e132d71851b3ed3e4d02eeeada61d65537b3de7b60020e49684e95d17579645"
+}
