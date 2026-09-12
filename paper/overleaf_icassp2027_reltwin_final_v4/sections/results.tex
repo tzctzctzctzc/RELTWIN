@@ -1,0 +1,19 @@
+\section{Results and Analysis}
+\input{sections/bridge_results}
+
+\subsection{Are exchange and setwise extensions necessary?}
+Table~\ref{tab:controls} prevents attributing every stage difference to a novel loss. Across three seeds, Cand and RBEE reach 87.05 and 86.78 relation mIoU, and 81.46 and 81.67 JointPairAcc. The JS increment is $-0.27$ mIoU and $+0.21$ JointPairAcc points; both source-group intervals cross zero. This does not prove equivalence, but it gives no basis for making exchange regularization the core empirical claim. The simpler candidate-supervised design is sufficient to retain the observed development performance.
+
+SetPO improves over its RBEE parents by 3.04 mIoU points. However, continuing RBEE alone recovers 2.27 of those points. Against that equal-update control, SetPO's advantage is only 0.77 mIoU and 1.04 JointPairAcc points, again with intervals crossing zero. On SpotSound its equal-update difference is 0.019 points. Consequently, we do not describe SetPO as the main source of public improvement or its parent comparison as an isolated objective-function gain. The historical-training caveat further limits both extension contrasts; it does not convert their uncertain increments into positive evidence.
+
+\subsection{Public scores answer a different question}
+Table~\ref{tab:main} situates the work against the prior published \emph{main-table} results. Cand and RBEE average 59.16 and 59.29 SpotSound mIoU, above the cited 57.9. Our own official re-evaluation is already 58.42, so the entire literature gap cannot be attributed to adaptation. The matched within-harness comparison, rather than this cross-paper difference, supplies the training-effect evidence. For Cand versus official across three observed seeds, the paired audio-group interval is reported with the evidence package; a point-estimate gain is not automatically significant.
+
+The archived full SpotSound system scores 59.39/79.25/62.50 in mIoU/R1@.3/R1@.5, exceeding the cited previous best by 1.49/2.75/3.00 points. It additionally routes official, SFT, and SetPO answers using keep/drop verification fitted on LongNeedle-ESC50, followed by a conservative local Boundary Utility stage. The latter changes 59.328548 to 59.385511 mIoU and cannot explain the full literature gap. These archived predictions are not mixed with current single-checkpoint predictions to estimate component effects.
+
+Clotho's 86.86 mIoU uses the official incumbent plus the same type of boundary refinement, without RelTwin adaptation; its unrefined incumbent is already 86.854263. Its two recall measures are slightly below the cited best. We retain it as clearly labeled system context, not evidence of cross-benchmark relation transfer. UnAV is omitted from fair ranking because its public 100-query manifest has not been reconciled with the source paper's reported protocol.
+
+\subsection{Evidence boundaries}
+The controlled relation split measures binding between simple sequential descriptions and constructed windows. It does not establish robustness to natural, overlapping, nested, or long-range relations. Repeated excerpts, fixed wording, silence, and layout-dependent gaps can supply shortcuts. Class/source separation and source-group bootstrap address two specific concerns, but do not remove these construction biases or prior development selection.
+
+Our re-evaluation also changes some historical predictions: SFT seed~0 differs on 49 of 400 SpotSound queries despite matching input token counts. We therefore replace stale stage comparisons with one aligned current cohort and add the matched-runtime bridge, rather than treating execution drift as an algorithmic gain. The primary SFT--Cand comparison remains one seed. Larger independent natural-relation validation, not additional system modules, is the principal unresolved generalization requirement.
