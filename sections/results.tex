@@ -1,0 +1,14 @@
+\section{Results and Analysis}
+\input{sections/bridge_results}
+
+\subsection{Binding gains persist after timing intervention}
+\label{sec:timing}
+The timing intervention tests whether layout-specific silence explains the binding advantage. We recompose all 80 development audios with 1.5\,s lead-in, 0.25\,s within-window gap, 3\,s between windows, and 2\,s tail, preserving event waveforms, order, and queries. Frozen SFT/RelTwin seed~0 models evaluate one template (160 queries). Forty AB-first audios remain waveform-identical and reproduce every prediction; the 40 BA-first audios receive the changed timing layout.
+
+On the changed audios, RelTwin achieves 87.50 JointPairAcc versus 67.50 for SFT: $+20.00$ points, source-group CI $[2.94,33.33]$. Under the original layout, the corresponding scores are 85.00 and 42.50. Uniform timing raises SFT's score and reduces the gap from 42.50 to 20.00 points, while the positive interval shows a retained binding advantage. Across all 160 queries, uniform-timing mIoU is 81.34 for SFT and 90.65 for RelTwin. This targeted, post-development test shows that the original silence pattern does not fully explain the answer-discrimination advantage.
+
+\subsection{Public grounding performance}
+RelTwin averages 59.16 SpotSound mIoU across three seeds, exceeding the cited prior main-table best of 57.9 by 1.26 points (Table~\ref{tab:main}). R1@.3 and R1@.5 rise by 0.67 and 2.58 points, linking answer discrimination to overlap and recall gains on public queries. Literature scores provide performance references; Table~\ref{tab:training} supplies the SFT contrast. Against the current official re-evaluation at 58.42 mIoU, RelTwin gains 0.75 points, with audio-group CI $[-0.24,1.74]$ spanning zero.
+
+\subsection{Scope}
+Repeated excerpts and fixed templates enable controlled binding tests. Alternative hard-negative constructions, matched multi-seed replication, and natural overlapping or long-range relations remain open evaluations. Adaptation-stage source separation does not audit backbone pretraining overlap.

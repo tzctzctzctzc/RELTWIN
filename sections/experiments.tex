@@ -1,0 +1,11 @@
+\section{Experimental Setup}
+\textbf{Data and split roles.}
+Adaptation uses 40 ESC-50 classes and 256 constructed recordings: 1,024 relation queries (512 pairs) and 512 rehearsal queries. The remaining 10 classes provide 80 recordings, 320 queries, and 160 inverse pairs. Adaptation/development classes and original Freesound IDs are disjoint; this separation is defined at the adaptation stage. Public evaluation covers all 400 SpotSound queries over 387 audios. The relation split and public scores have informed project development. We use the constructed split to diagnose query--window binding and SpotSound to measure performance on public grounding queries.
+
+\textbf{Adaptation and the primary control.}
+Both methods retain SpotSound-A's LoRA adaptation~\cite{hu2022lora} on Audio Flamingo~3, updating 20,185,088 adapter parameters. SFT and RelTwin use 256 AdamW~\cite{loshchilov2019adamw} updates, zero weight decay, learning rate $5\times10^{-6}$, gradient clipping 1.0, $\tau=1$, and $\beta=0.5$; RelTwin uses $\lambda=1$. The primary SFT--RelTwin comparison uses seed~0 with the same software environment, code, initial weights, and data order. Updates are matched; FLOPs and wall time are not. RelTwin scores four query--answer combinations without gradients then recomputes weighted gradients, whereas SFT backpropagates two positive answers. Both add rehearsal.
+
+We also report RelTwin seeds 0/1/2, using final checkpoints and including every seed. SpotSound-A is re-evaluated with the same inference code as the adapted models to provide a backbone reference. The three-seed RelTwin summary is separate from the matched seed-0 SFT comparison.
+
+\textbf{Uncertainty and reproducibility.}
+We verify row alignment, audio identity, duration, and recomputed IoU. Bootstrap uses 20,000 audio-group draws, keeping queries together. Relation CIs additionally resample 39 original-source connected groups (largest: 18 audios) to address excerpt reuse. The intervals quantify sample uncertainty conditional on observed seeds and do not adjust for development selection. Code, inputs, weights, and environment are hashed before inference.

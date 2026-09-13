@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{Core training comparison (\%). The seed-0 SFT/RelTwin pair shares training environment and updates. The backbone re-evaluation and three-seed summary provide separate references ($\pm$: sample SD). Joint: JointPairAcc.}
+\label{tab:training}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+ & SpotSound & \multicolumn{2}{c}{Relation development}\\
+Method & mIoU & mIoU & Joint\\
+\midrule
+Current SFT, s0 & 58.42 & 74.58 & 53.13\\
+RelTwin, s0 & 59.43 & 88.55 & 84.38\\
+RelTwin $-$ SFT, s0 & +1.02 & +13.97 & +31.25\\
+\midrule
+SpotSound-A (re-eval.) & 58.42 & 37.64 & 0.63\\
+\midrule
+RelTwin, 3 seeds & $59.16\pm0.26$ & $87.05\pm1.43$ & 81.46\\
+\bottomrule
+\end{tabular}
+\end{table}

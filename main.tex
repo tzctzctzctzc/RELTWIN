@@ -1,0 +1,28 @@
+% Core-method manuscript; pdfLaTeX + BibTeX.
+\documentclass[10pt,letterpaper]{article}
+\usepackage{spconf,amsmath,amssymb,graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,balance,tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[hidelinks]{hyperref}
+\title{\fontsize{14}{16}\selectfont RelTwin: Learning Query-Specific Windows\\from Co-Occurring Inverse Relations}
+\input{authors}
+\newcommand{\setiou}{\operatorname{IoU}_{\mathrm{set}}}
+\begin{document}
+\maketitle
+\input{sections/abstract}
+\begin{keywords}
+Audio temporal grounding, compositional reasoning, hard answer negatives, paired supervision
+\end{keywords}
+\input{sections/introduction}
+\input{figures/reltwin_overview}
+\input{sections/method}
+\input{tables/training_results}
+\input{tables/main_results}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/conclusion}
+\input{sections/declarations}
+\bibliographystyle{IEEEbib}
+\bibliography{references}
+\end{document}

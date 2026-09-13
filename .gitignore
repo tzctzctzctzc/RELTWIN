@@ -1,0 +1,24 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+
+# Temporary build outputs; paper.pdf is intentionally versioned.
+/main.pdf
+/overview_figure.pdf
+/build/
+
+# Editor / OS metadata
+*~
+.DS_Store
+Thumbs.db
