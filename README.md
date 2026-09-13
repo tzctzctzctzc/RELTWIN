@@ -4,7 +4,7 @@
 
 本论文工作分支同时保存可编辑源码和当前编译稿。当前为 v11 主图精简与配色更新稿：撤去结果流向图，Figure 1 删去底部 inference pipeline 和 160 对整体统计；Figure 1(c) 改为 SFT／RelTwin 两列、逆查询两行的紧凑对照，每格叠加目标轮廓和预测填充。图注和 PDF 已同步。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
-本轮从 [BLIP-2（ICML 2023），Fig. 2](https://proceedings.mlr.press/v202/li23q/li23q.pdf) 的矢量 PDF 提取浅蓝 `#B3C7E7`、浅珊瑚 `#FCB19C`、紫色 `#B178C2`；[InstructBLIP（NeurIPS 2023），Fig. 3](https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf) 使用相同蓝色、珊瑚色和近似紫色。查询与预测窗口使用对应色，候选监督使用淡紫，文字／边框采用压暗后的同色系。原始时间戳、IoU 数据宏未改；原生 TikZ、独立 PDF/SVG/PNG 与五页论文已同步。撤下的结果图可以从 `da246f5` 恢复。
+本轮从 [BLIP-2（ICML 2023），Fig. 2](https://proceedings.mlr.press/v202/li23q/li23q.pdf) 的矢量 PDF 提取鼠尾草绿 `#A8D18E`、暖金 `#FED965`、紫色 `#B178C2`，并参考 [InstructBLIP（NeurIPS 2023），Fig. 3](https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf) 的绿／紫模块与浅色填充。三幅子图统一用绿／金对应两类查询及窗口；(a) 音频片段和 (b) 模型框改为浅紫，监督矩阵用较强紫色强调，(c) 删除四格灰底和边框，保留白底对照。文字／边框使用压暗后的同色系。原始时间戳、IoU 数据宏未改；原生 TikZ、独立 PDF/SVG/PNG 与五页论文已同步。撤下的结果图可以从 `da246f5` 恢复。
 
 ## 修改哪里
 
