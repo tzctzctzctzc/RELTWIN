@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本论文工作分支同时保存可编辑源码和当前编译稿。当前为 v11 Figure 1 更新稿，基于 `paper` 分支的 `d33969b` 完成主图重绘、图注与对应案例说明更新。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+本论文工作分支同时保存可编辑源码和当前编译稿。当前为 v11 Figure 1 ICASSP 风格更新稿，在首轮改图提交 `29506ae` 上继续压紧布局、明确输入连线与训练边界，并同步图注和 PDF。实验数据和方法未改。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
 ## 修改哪里
 
@@ -26,7 +26,7 @@
 
 ## Overleaf
 
-在 GitHub 切换到 `paper` 分支，使用 **Code → Download ZIP**，再在 Overleaf 中选择 **New Project → Upload Project**。也可以将已解压的本分支文件直接上传。
+本轮图稿在 `codex/reltwin-figure1-redesign`，尚未合入 `paper`。在 GitHub 切换到该修改分支，使用 **Code → Download ZIP**，再在 Overleaf 中选择 **New Project → Upload Project**；合并后可改用 `paper`。也可以将已解压的本分支文件直接上传。
 
 将 **Main document** 设为 `main.tex`，编译器选 **pdfLaTeX**。参考文献使用 **BibTeX**，Overleaf 的自动编译会处理。不要将 `overview_figure.tex` 误设为整篇论文入口。
 
@@ -66,3 +66,5 @@ Linux/macOS 可使用 `cp main.pdf paper.pdf`。中间文件和临时编译 PDF 
 初始源文件来自冻结提交 `3841a85d00ed4487be2cca7e1022b2279d079d79` 的 `paper/overleaf_icassp2027_reltwin_final_v11`。初次补入的 19 个 LaTeX/图表/文献/样式文件保留原始内容；后续改动以本分支提交历史追踪。`paper.pdf` 的版本及 SHA-256 见 `ISSUES.md`。
 
 2026-09-14 初次导入时从独立目录重新编译：19 个源文件与冻结提交一致；生成的五页 PDF 与当时的 `paper.pdf` 逐页文字及渲染像素一致。Figure 1 更新后再次编译整稿及独立主图，完成三轮图像检查及双栏实际尺寸检查；无 overfull box、未解析引用或字体替换警告。时间戳、IoU 与配对统计仍取自未改动的 `figures/overview_data.tex`。本轮仅关闭 `ISSUES.md` 中已验证的图示事项。
+
+第二轮风格调整参考了 [Sound-VECaps（ICASSP 2025），Fig. 1](https://personalpages.surrey.ac.uk/w.wang/papers/Yuan%20et%20al_b_ICASSP_2025.pdf)、[Counterfactual Audio（ICASSP 2024），Fig. 2](https://arxiv.org/pdf/2401.04935) 和 [Text-to-Audio Grounding（ICASSP 2021），Fig. 2](https://arxiv.org/pdf/2102.11474) 的流程组织，不复用其图形资产或科学组件。按画图 skill 的层级、连线与论文尺寸检查原则，去掉装饰性大卡片，采用白底、浅色模块、语义化训练虚线框及底部子图标签；9 pt 正文字号不变，画布高度从 7.12 cm 减至 6.22 cm。三轮渲染分别修正标题裁切、输入汇入与行标签间距、损失公式间距，并检查最终整稿和灰度预览。纯矢量 PDF/SVG、PNG 与原生 TikZ 同步导出；数据宏文件哈希与首轮改图一致。整稿分页仍按 `ISSUES.md` 的 F01/F05 待后续统一整理。
