@@ -2,7 +2,9 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本论文工作分支同时保存可编辑源码和当前编译稿。当前为 v11 Figure 1 ICASSP 风格更新稿，在首轮改图提交 `29506ae` 上继续压紧布局、明确输入连线与训练边界，并同步图注和 PDF。实验数据和方法未改。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+本论文工作分支同时保存可编辑源码和当前编译稿。当前为 v11 主图精简与配色更新稿：撤去结果流向图，Figure 1 删去底部 inference pipeline 和 160 对整体统计，保留三栏方法与定位案例。图注和 PDF 已同步。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+
+本轮从 [BLIP-2（ICML 2023），Fig. 2](https://proceedings.mlr.press/v202/li23q/li23q.pdf) 的矢量 PDF 提取浅蓝 `#B3C7E7`、浅珊瑚 `#FCB19C`、紫色 `#B178C2`；[InstructBLIP（NeurIPS 2023），Fig. 3](https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf) 使用相同蓝色、珊瑚色和近似紫色。查询与预测窗口使用对应色，候选监督使用淡紫，文字／边框采用压暗后的同色系。原始时间戳、IoU 数据宏未改；原生 TikZ、独立 PDF/SVG/PNG 与五页论文已同步。撤下的结果图可以从 `da246f5` 恢复。
 
 ## 修改哪里
 

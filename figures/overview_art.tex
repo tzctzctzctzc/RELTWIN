@@ -8,14 +8,24 @@
 %   consistent query/interval color correspondence. arXiv:2102.11474
 % Synthesized contract: 9 pt Times body, 10 pt panel labels, 0.65 pt lines,
 % sharp rectangles, 0.3--0.5 cm functional gaps, no gradients/shadows/icons.
-% Retain existing blue/orange identities; teal denotes proposed supervision.
+% Palette extracted from PDF vector fills, not estimated from screenshots:
+% - BLIP-2, ICML 2023, Fig. 2 (PDF p. 3): B3C7E7, FCB19C, B178C2.
+%   https://proceedings.mlr.press/v202/li23q/li23q.pdf
+% - InstructBLIP, NeurIPS 2023, Fig. 3 (PDF p. 5) repeats B3C7E7,
+%   FCB19C and nearly the same purple (B278C1).
+%   https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf
+% Blue/coral link inverse queries to their windows; purple denotes supervision.
+% Fills retain sampled hues; darker companions improve small-text contrast.
 % Four excerpt blocks = A,B,B,A; four cells = query/answer likelihoods;
 % solid arrows = data flow; dashed enclosure = training-only computation.
 % Panel (a) is schematic; panel (c) uses unchanged measured interval macros.
 \input{figures/overview_data}
-\definecolor{rtBlue}{HTML}{2166AC}
-\definecolor{rtOrange}{HTML}{B66518}
-\definecolor{rtAccent}{HTML}{266F68}
+\definecolor{rtBlueFill}{HTML}{B3C7E7}
+\definecolor{rtCoralFill}{HTML}{FCB19C}
+\definecolor{rtAccentFill}{HTML}{B178C2}
+\definecolor{rtBlue}{HTML}{50688C}
+\definecolor{rtCoral}{HTML}{955C4D}
+\definecolor{rtAccent}{HTML}{785286}
 \definecolor{rtInk}{HTML}{242424}
 \definecolor{rtMuted}{HTML}{626262}
 \definecolor{rtLine}{HTML}{DADADA}
@@ -26,10 +36,10 @@
  title/.style={font=\fontsize{10}{11.4}\selectfont\bfseries},
  note/.style={font=\fontsize{9}{10.4}\selectfont,text=rtMuted},
  module/.style={draw=rtMuted,fill=rtPaper,line width=.65pt}]
-\path[use as bounding box] (0,0) rectangle (17.4,6.22);
+\path[use as bounding box] (0,.93) rectangle (17.4,6.22);
 
 % (a) One recording contains both local ordered pairs. Gray identifies excerpts;
-% blue/orange identifies each inverse relation query and its answer window.
+% blue/coral identifies each inverse relation query and its answer window.
 \node[anchor=west] at (.06,6.00) {One recording $x$};
 \node[note,anchor=west] at (.06,5.65) {$A$ = dog, $B$ = rooster};
 \draw[rtLine,line width=.6pt] (.13,5.16)--(4.63,5.16);
@@ -40,22 +50,22 @@
 \draw[flow,draw=rtMuted] (.13,4.74)--(4.63,4.74);
 \node[note,fill=white] at (2.35,4.75) {$t$};
 \draw[rtBlue,line width=.9pt] (.2,4.54)--(.2,4.40)--(1.93,4.40)--(1.93,4.54);
-\draw[rtOrange,line width=.9pt] (2.78,4.54)--(2.78,4.40)--(4.51,4.40)--(4.51,4.54);
+\draw[rtCoral,line width=.9pt] (2.78,4.54)--(2.78,4.40)--(4.51,4.40)--(4.51,4.54);
 \node[text=rtBlue] at (1.065,4.15) {$W_+: A\rightarrow B$};
-\node[text=rtOrange] at (3.645,4.15) {$W_-: B\rightarrow A$};
+\node[text=rtCoral] at (3.645,4.15) {$W_-: B\rightarrow A$};
 
 % Query strips are data, not model blocks. Colored rules identify the pair.
-\path[fill=rtBlue!7] (.10,3.31) rectangle (4.62,3.81);
+\path[fill=rtBlueFill!35] (.10,3.31) rectangle (4.62,3.81);
 \draw[rtBlue,line width=1.3pt] (.10,3.31)--(.10,3.81);
 \node[anchor=west] at (.24,3.56) {\textcolor{rtBlue}{$q_+$:} dog followed by rooster};
-\path[fill=rtOrange!8] (.10,2.63) rectangle (4.62,3.13);
-\draw[rtOrange,line width=1.3pt] (.10,2.63)--(.10,3.13);
-\node[anchor=west] at (.24,2.88) {\textcolor{rtOrange}{$q_-$:} rooster followed by dog};
+\path[fill=rtCoralFill!30] (.10,2.63) rectangle (4.62,3.13);
+\draw[rtCoral,line width=1.3pt] (.10,2.63)--(.10,3.13);
+\node[anchor=west] at (.24,2.88) {\textcolor{rtCoral}{$q_-$:} rooster followed by dog};
 \node[align=center] at (2.36,2.12) {Both relations hold in $x$;\\each query has a different target.};
 
 % (b) Shared model, conditioned on the full recording and each inverse query.
 % Each of the four cells is one timestamp-answer mean log-likelihood.
-\draw[draw=rtAccent,dash pattern=on 3pt off 2pt,line width=.75pt]
+\draw[draw=rtAccent!65,dash pattern=on 3pt off 2pt,line width=.75pt]
  (5.34,1.50) rectangle (11.05,6.10);
 \node[fill=white,text=rtAccent] at (8.195,6.10) {Training only};
 \draw[module] (5.71,5.02) rectangle (10.68,5.75);
@@ -71,11 +81,11 @@
 \draw[flow] (8.195,5.01)--(8.195,4.76);
 \node[font=\fontsize{9}{10.4}\selectfont\bfseries,text=rtAccent] at (8.195,4.56) {RelTwin candidate supervision};
 \node[text=rtBlue] at (7.74,4.18) {$y(W_+)$};
-\node[text=rtOrange] at (9.32,4.18) {$y(W_-)$};
+\node[text=rtCoral] at (9.32,4.18) {$y(W_-)$};
 \node[text=rtBlue] at (6.48,3.78) {$q_+$};
-\node[text=rtOrange] at (6.48,3.23) {$q_-$};
-\path[fill=rtAccent!15] (6.95,3.505) rectangle (8.53,4.055);
-\path[fill=rtAccent!15] (8.53,2.955) rectangle (10.11,3.505);
+\node[text=rtCoral] at (6.48,3.23) {$q_-$};
+\path[fill=rtAccentFill!22] (6.95,3.505) rectangle (8.53,4.055);
+\path[fill=rtAccentFill!22] (8.53,2.955) rectangle (10.11,3.505);
 \draw[rtMuted,line width=.65pt] (6.95,2.955) rectangle (10.11,4.055);
 \draw[rtMuted,line width=.5pt] (8.53,2.955)--(8.53,4.055);
 \draw[rtMuted,line width=.5pt] (6.95,3.505)--(10.11,3.505);
@@ -99,51 +109,35 @@
  \draw[rtMuted,line width=.55pt] (\xx,5.37)--(\xx,5.45);
  \node[note,anchor=south] at (\xx,5.45) {\sec};
 }
-\foreach \yy/\label in {5.08/{Target $q_+$},4.72/{Target $q_-$},4.18/{SFT $q_+$},3.82/{SFT $q_-$},3.28/{RelTwin $q_+$},2.92/{RelTwin $q_-$}}{
+\foreach \yy/\label in {5.08/{Target $q_+$},4.64/{Target $q_-$},3.88/{SFT $q_+$},3.44/{SFT $q_-$},2.68/{RelTwin $q_+$},2.24/{RelTwin $q_-$}}{
  \node[anchor=west] at (11.55,\yy) {\label};
  \draw[rtLine,line width=.45pt] (13.27,\yy)--(16.46,\yy);
 }
 \foreach \start/\stop/\yy/\color in {
  \FigGTPlusStart/\FigGTPlusEnd/5.08/rtBlue,
- \FigGTMinusStart/\FigGTMinusEnd/4.72/rtOrange}{
+ \FigGTMinusStart/\FigGTMinusEnd/4.64/rtCoral}{
  \pgfmathsetmacro{\xstart}{13.27+3.19*\start/27}
  \pgfmathsetmacro{\xstop}{13.27+3.19*\stop/27}
  \draw[draw=\color,fill=white,line width=.9pt] (\xstart,\yy-.105) rectangle (\xstop,\yy+.105);
 }
-\foreach \start/\stop/\yy/\color in {
- \FigSFTPlusStart/\FigSFTPlusEnd/4.18/rtBlue,
- \FigSFTMinusStart/\FigSFTMinusEnd/3.82/rtOrange,
- \FigCandPlusStart/\FigCandPlusEnd/3.28/rtBlue,
- \FigCandMinusStart/\FigCandMinusEnd/2.92/rtOrange}{
+\foreach \start/\stop/\yy/\color/\shade in {
+ \FigSFTPlusStart/\FigSFTPlusEnd/3.88/rtBlue/rtBlueFill,
+ \FigSFTMinusStart/\FigSFTMinusEnd/3.44/rtCoral/rtCoralFill,
+ \FigCandPlusStart/\FigCandPlusEnd/2.68/rtBlue/rtBlueFill,
+ \FigCandMinusStart/\FigCandMinusEnd/2.24/rtCoral/rtCoralFill}{
  \pgfmathsetmacro{\xstart}{13.27+3.19*\start/27}
  \pgfmathsetmacro{\xstop}{13.27+3.19*\stop/27}
- \draw[draw=\color,fill=\color!65,line width=.65pt] (\xstart,\yy-.105) rectangle (\xstop,\yy+.105);
+ \draw[draw=\color,fill=\shade,line width=.65pt] (\xstart,\yy-.105) rectangle (\xstop,\yy+.105);
 }
-\foreach \yy in {5.08,4.72}{\node[anchor=east,note] at (17.34,\yy) {--};}
-\node[anchor=east] at (17.34,4.18) {\FigSftPlusIoU};
-\node[anchor=east] at (17.34,3.82) {\FigSftMinusIoU};
-\node[anchor=east,font=\fontsize{9}{10.4}\selectfont\bfseries] at (17.34,3.28) {\FigCandPlusIoU};
-\node[anchor=east] at (17.34,2.92) {\FigCandMinusIoU};
-\draw[rtLine,line width=.55pt] (11.6,2.59)--(17.34,2.59);
-\node[note] at (14.47,2.34) {160 dev pairs: SFT $\rightarrow$ RelTwin};
-\node[anchor=west] at (11.6,2.01) {Same-answer pairs};
-\node[anchor=east] at (17.34,2.01) {\FigSameBefore{} $\rightarrow$ \FigSameAfter{}};
-\node[anchor=west] at (11.6,1.70) {JointPairAcc};
-\node[anchor=east,font=\fontsize{9}{10.4}\selectfont\bfseries] at (17.34,1.70) {\FigJointBefore\% $\rightarrow$ \FigJointAfter\%};
+\foreach \yy in {5.08,4.64}{\node[anchor=east,note] at (17.34,\yy) {--};}
+\node[anchor=east] at (17.34,3.88) {\FigSftPlusIoU};
+\node[anchor=east] at (17.34,3.44) {\FigSftMinusIoU};
+\node[anchor=east,font=\fontsize{9}{10.4}\selectfont\bfseries] at (17.34,2.68) {\FigCandPlusIoU};
+\node[anchor=east] at (17.34,2.24) {\FigCandMinusIoU};
 
 % Labels outside content, following the reference figures.
 \node[title] at (2.36,1.14) {(a) Inverse-relation pairs};
 \node[title] at (8.195,1.14) {(b) Paired answer supervision};
 \node[title] at (14.47,1.14) {(c) Query-specific localization};
 
-% Deployed graph: only audio/query -> adapted generator -> timestamp answers.
-% No candidate scorer at inference, no ornamental full-width enclosing card.
-\draw[rtLine,line width=.55pt] (.04,.78)--(17.36,.78);
-\node[anchor=west,font=\fontsize{9}{10.4}\selectfont\bfseries] at (.04,.34) {Inference};
-\node (audioquery) at (3.48,.34) {Audio + query};
-\node[module,minimum width=3.75cm,minimum height=.52cm] (generator) at (7.95,.34) {Adapted timestamp generator};
-\node (timestamps) at (12.20,.34) {Predicted intervals};
-\draw[flow] (audioquery.east)--(generator.west);
-\draw[flow] (generator.east)--(timestamps.west);
-\node[note] at (15.75,.34) {Candidate-free inference};
 \end{tikzpicture}
