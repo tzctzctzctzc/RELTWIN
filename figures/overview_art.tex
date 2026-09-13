@@ -1,108 +1,148 @@
-% Native vector artwork. All ordinary labels are 9 pt at final paper size.
+% Native TikZ, authored at the final 17.4 cm two-column width.
+% Style references (layout only, no borrowed scientific artwork):
+% - Sound-VECaps, ICASSP 2025, Fig. 1: white background, short connectors,
+%   pale functional blocks, no panel cards. DOI: 10.1109/ICASSP49660.2025.10889473
+% - Counterfactual Audio, ICASSP 2024, Fig. 2: compact training flow,
+%   meaningful dashed groups, labels below the subfigures. arXiv:2401.04935
+% - Text-to-Audio Grounding, ICASSP 2021, Fig. 2: aligned inputs/model/output,
+%   consistent query/interval color correspondence. arXiv:2102.11474
+% Synthesized contract: 9 pt Times body, 10 pt panel labels, 0.65 pt lines,
+% sharp rectangles, 0.3--0.5 cm functional gaps, no gradients/shadows/icons.
+% Palette extracted from PDF vector fills, not estimated from screenshots:
+% - BLIP-2, ICML 2023, Fig. 2 (PDF p. 3): A8D18E, FED965, B178C2.
+%   https://proceedings.mlr.press/v202/li23q/li23q.pdf
+% - InstructBLIP, NeurIPS 2023, Fig. 3 (PDF p. 5): green/purple
+%   functional blocks and warm pale fills; purple is nearly identical (B278C1).
+%   https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf
+% Sage/gold link inverse queries to their windows across ALL three panels.
+% Lavender identifies shared excerpts/model computation; stronger purple
+% emphasizes supervision. White comparison cells replace gray panel cards.
+% Fills retain sampled hues; darker companions improve small-text contrast.
+% Four excerpt blocks = A,B,B,A; four cells = query/answer likelihoods;
+% solid arrows = data flow; dashed enclosure = training-only computation.
+% Panel (a) is schematic; panel (c) uses unchanged measured interval macros.
 \input{figures/overview_data}
-\definecolor{rtBlue}{HTML}{2166AC}
-\definecolor{rtOrange}{HTML}{C66A16}
-\definecolor{rtGreen}{HTML}{28745F}
-\definecolor{rtRed}{HTML}{A84145}
-\definecolor{rtInk}{HTML}{273749}
-\definecolor{rtGray}{HTML}{E3E8EE}
+\definecolor{rtPlusFill}{HTML}{A8D18E}
+\definecolor{rtMinusFill}{HTML}{FED965}
+\definecolor{rtAccentFill}{HTML}{B178C2}
+\definecolor{rtPlus}{HTML}{507B3E}
+\definecolor{rtMinus}{HTML}{967223}
+\definecolor{rtAccent}{HTML}{785286}
+\definecolor{rtInk}{HTML}{242424}
+\definecolor{rtMuted}{HTML}{55505B}
+\definecolor{rtLine}{HTML}{E3DAE8}
 \begin{tikzpicture}[x=1cm,y=1cm,
- every node/.style={font=\fontsize{9}{10.4}\selectfont, text=rtInk, inner sep=2pt},
+ every node/.style={font=\fontsize{9}{10.4}\selectfont,text=rtInk,inner sep=1.5pt},
  flow/.style={-{Latex[length=1.5mm]},line width=.65pt,draw=rtInk},
- box/.style={rounded corners=2pt,draw=rtGray,fill=white,line width=.6pt},
- correct/.style={draw=rtGreen!65,fill=rtGreen!9,rounded corners=1pt},
- wrong/.style={draw=rtRed!40,fill=rtRed!5,rounded corners=1pt}]
-\path[use as bounding box] (0,0) rectangle (17.4,7.12);
-% Three panels: construction, actual training objective, and cached evidence.
-\foreach \left/\right in {0/5.2,5.42/11.04,11.26/17.4}{
- \draw[box] (\left,1.12) rectangle (\right,7.08);
- \fill[rtGray!65] (\left+.015,6.51) rectangle (\right-.015,7.065);
+ title/.style={font=\fontsize{10}{11.4}\selectfont\bfseries},
+ note/.style={font=\fontsize{9}{10.4}\selectfont,text=rtMuted},
+ module/.style={draw=rtAccent!75,fill=rtAccentFill!10,line width=.65pt}]
+\path[use as bounding box] (0,.93) rectangle (17.4,6.22);
+
+% (a) One recording contains both local ordered pairs. Lavender tints identify
+% reused excerpts; sage/gold identifies each query and its answer window.
+\node[anchor=west] at (.06,6.00) {One recording $x$};
+\node[note,anchor=west] at (.06,5.65) {$A$ = dog, $B$ = rooster};
+\draw[rtLine,line width=.6pt] (.13,5.16)--(4.63,5.16);
+\foreach \xa/\xb/\event/\eventtint in {.2/1.0/A/14,1.13/1.93/B/38,2.78/3.58/B/38,3.71/4.51/A/14}{
+ \draw[draw=rtAccent!75,fill=rtAccentFill!\eventtint,line width=.65pt] (\xa,4.98) rectangle (\xb,5.36);
+ \node at ({(\xa+\xb)/2},5.17) {$\event$};
 }
-\node[anchor=west,font=\fontsize{9}{10.4}\selectfont\bfseries] at (.16,6.79) {(a) Co-occurring inverse relations};
-\node[anchor=west,font=\fontsize{9}{10.4}\selectfont\bfseries] at (5.57,6.79) {(b) Paired answer supervision};
-\node[anchor=west,font=\fontsize{9}{10.4}\selectfont\bfseries] at (11.42,6.79) {(c) Observed query-specific answers};
-% (a) Schematic event layout: explicitly not an acoustic waveform.
-\node at (2.6,6.24) {A: dog\qquad B: rooster};
-\draw[fill=rtBlue!10,draw=rtBlue,rounded corners=2pt] (.34,5.2) rectangle (2.38,5.97);
-\draw[fill=rtOrange!12,draw=rtOrange,rounded corners=2pt] (2.82,5.2) rectangle (4.86,5.97);
-\node at (1.36,5.72) {A $\rightarrow$ B};
-\node[text=rtBlue] at (1.36,5.39) {$W_+$};
-\node at (3.84,5.72) {B $\rightarrow$ A};
-\node[text=rtOrange] at (3.84,5.39) {$W_-$};
-\draw[flow,draw=rtInk!40] (.22,5.02)--(4.97,5.02);
-\node[anchor=north] at (2.6,4.99) {One full recording $x$ (schematic)};
-\draw[fill=rtBlue!5,draw=rtBlue!45,rounded corners=2pt] (.27,4.02) rectangle (4.93,4.48);
-\node[anchor=west,text=rtBlue] at (.36,4.25) {$q_+$: dog followed by rooster};
-\draw[fill=rtOrange!6,draw=rtOrange!45,rounded corners=2pt] (.27,3.42) rectangle (4.93,3.88);
-\node[anchor=west,text=rtOrange] at (.36,3.65) {$q_-$: rooster followed by dog};
-\node[align=center] at (2.6,2.96) {Both queries are true somewhere in $x$.};
-\draw[fill=rtInk!3,draw=rtGray,rounded corners=2pt] (.27,1.4) rectangle (4.93,2.56);
-\node[align=center] at (2.6,2.0) {\textbf{Same event categories.}\\Different correct windows.\\Other window: answer negative.};
-% (b) Full audio is scored with timestamp answer strings, not cropped by GT.
-\node at (8.23,6.25) {Full audio $x$ + query $q$};
-\draw[flow] (8.23,6.04)--(8.23,5.83);
-\draw[box,draw=rtInk!55,fill=rtInk!3] (5.7,5.1) rectangle (10.76,5.82);
-\node[align=center] at (8.23,5.47) {\textbf{Shared audio-language model}\\Train adapter; frozen backbone};
-\draw[flow] (8.23,5.08)--(8.23,4.86);
-\node at (8.23,4.67) {Score both timestamp answer sequences};
-\node[text=rtBlue] at (7.62,4.33) {$y(W_+)$};
-\node[text=rtOrange] at (9.57,4.33) {$y(W_-)$};
-\node[text=rtBlue] at (6.13,3.9) {$q_+$};
-\node[text=rtOrange] at (6.13,3.24) {$q_-$};
-\draw[correct] (6.71,3.64) rectangle (8.53,4.16);
-\draw[wrong] (8.66,3.64) rectangle (10.48,4.16);
-\draw[wrong] (6.71,2.98) rectangle (8.53,3.5);
-\draw[correct] (8.66,2.98) rectangle (10.48,3.5);
-\node[text=rtGreen] at (7.62,3.9) {$\uparrow\ s_{++}$};
-\node[text=rtRed] at (9.57,3.9) {$\downarrow\ s_{+-}$};
-\node[text=rtRed] at (7.62,3.24) {$\downarrow\ s_{-+}$};
-\node[text=rtGreen] at (9.57,3.24) {$\uparrow\ s_{--}$};
-\node at (8.23,2.7) {Mean token log-likelihood $s_{qj}$};
-\draw[flow] (8.23,2.52)--(8.23,2.39);
-\draw[box,draw=rtGreen!50,fill=rtGreen!5] (5.7,1.25) rectangle (10.76,2.39);
-\node[align=center] at (8.23,1.82) {Row-wise candidate cross-entropy\\$\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$\\SFT + answer contrast + rehearsal};
-% (c) Exact intervals from a frozen cache; no perfected or invented boundaries.
-\node at (14.33,6.29) {Dev example 10007-v0; matched seed 0};
-\node[anchor=west] at (11.4,5.9) {Time (s)};
-\node[anchor=east] at (17.21,5.84) {IoU};
-\draw[draw=rtInk!40] (12.8,5.7)--(16.36,5.7);
-\foreach \sec in {0,10,20,27}{
- \pgfmathsetmacro{\xx}{12.8+3.56*\sec/27}
- \draw[draw=rtInk!40] (\xx,5.68)--(\xx,5.74);
- \node[anchor=south] at (\xx,5.74) {\sec};
+\draw[flow,draw=rtMuted] (.13,4.74)--(4.63,4.74);
+\node[note,fill=white] at (2.35,4.75) {$t$};
+\draw[rtPlus,line width=.9pt] (.2,4.54)--(.2,4.40)--(1.93,4.40)--(1.93,4.54);
+\draw[rtMinus,line width=.9pt] (2.78,4.54)--(2.78,4.40)--(4.51,4.40)--(4.51,4.54);
+\node[text=rtPlus] at (1.065,4.15) {$W_+: A\rightarrow B$};
+\node[text=rtMinus] at (3.645,4.15) {$W_-: B\rightarrow A$};
+
+% Query strips are data, not model blocks. Colored rules identify the pair.
+\path[fill=rtPlusFill!38] (.10,3.31) rectangle (4.62,3.81);
+\draw[rtPlus,line width=1.3pt] (.10,3.31)--(.10,3.81);
+\node[anchor=west] at (.24,3.56) {\textcolor{rtPlus}{$q_+$:} dog followed by rooster};
+\path[fill=rtMinusFill!32] (.10,2.63) rectangle (4.62,3.13);
+\draw[rtMinus,line width=1.3pt] (.10,2.63)--(.10,3.13);
+\node[anchor=west] at (.24,2.88) {\textcolor{rtMinus}{$q_-$:} rooster followed by dog};
+\node[align=center] at (2.36,2.12) {Both relations hold in $x$;\\each query has a different target.};
+
+% (b) Shared model, conditioned on the full recording and each inverse query.
+% Each of the four cells is one timestamp-answer mean log-likelihood.
+\draw[draw=rtAccent!65,dash pattern=on 3pt off 2pt,line width=.75pt]
+ (5.34,1.50) rectangle (11.05,6.10);
+\node[fill=white,text=rtAccent] at (8.195,6.10) {Training only};
+\draw[module] (5.71,5.02) rectangle (10.68,5.75);
+\node[align=center] at (8.195,5.385) {Audio-language model\\\textcolor{rtMuted}{Frozen backbone + }\textcolor{rtAccent}{trainable LoRA}};
+% Explicit fan-in: recording and both query strips enter the same model.
+\draw[rtInk,line width=.65pt] (4.63,5.16)--(4.95,5.16);
+\draw[rtInk,line width=.65pt] (4.62,3.56)--(4.95,3.56);
+\draw[rtInk,line width=.65pt] (4.62,2.88)--(4.95,2.88)--(4.95,5.38);
+\fill[rtInk] (4.95,3.56) circle (.8pt);
+\fill[rtInk] (4.95,5.16) circle (.8pt);
+\draw[flow] (4.95,5.38)--(5.71,5.38);
+\node[fill=white] at (5.17,5.68) {$x,q_{\pm}$};
+\draw[flow] (8.195,5.01)--(8.195,4.76);
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries,text=rtAccent] at (8.195,4.56) {RelTwin candidate supervision};
+\node[text=rtPlus] at (7.74,4.18) {$y(W_+)$};
+\node[text=rtMinus] at (9.32,4.18) {$y(W_-)$};
+\node[text=rtPlus] at (6.48,3.78) {$q_+$};
+\node[text=rtMinus] at (6.48,3.23) {$q_-$};
+\path[fill=rtAccentFill!28] (6.95,3.505) rectangle (8.53,4.055);
+\path[fill=rtAccentFill!28] (8.53,2.955) rectangle (10.11,3.505);
+\draw[rtAccent!70,line width=.65pt] (6.95,2.955) rectangle (10.11,4.055);
+\draw[rtAccent!60,line width=.5pt] (8.53,2.955)--(8.53,4.055);
+\draw[rtAccent!60,line width=.5pt] (6.95,3.505)--(10.11,3.505);
+\node[text=rtAccent] at (7.74,3.78) {$s_{++}\ \uparrow$};
+\node at (9.32,3.78) {$s_{+-}\ \downarrow$};
+\node at (7.74,3.23) {$s_{-+}\ \downarrow$};
+\node[text=rtAccent] at (9.32,3.23) {$s_{--}\ \uparrow$};
+\node[note] at (8.195,2.71) {$s$: mean token log-likelihood};
+\draw[flow] (8.195,2.52)--(8.195,2.32);
+\node[text=rtAccent] at (8.195,2.14) {Row-wise cross-entropy: $\mathcal L_{\rm cand}$};
+\node at (8.195,1.74) {$\mathcal L=\mathcal L_{\rm seq}+\textcolor{rtAccent}{\lambda\mathcal L_{\rm cand}}+\beta\mathcal L_{\rm replay}$};
+
+% (c) The same cached example as a compact comparison matrix.
+% Columns are models, rows are inverse queries. Each cell overlays the target
+% outline and prediction fill on an identical 0--27 s axis.
+\node[note] at (14.50,6.00) {Dev example 10007-v0; seed 0};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (13.42,5.59) {SFT};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries,text=rtAccent] at (16.13,5.59) {RelTwin};
+\foreach \xbase in {12.32,15.03}{
+ \draw[rtMuted,line width=.55pt] (\xbase,5.08)--({\xbase+2.20},5.08);
+ \foreach \sec/\lab in {0/0,10/10,20/20,27/{27 s}}{
+  \pgfmathsetmacro{\xx}{\xbase+2.20*\sec/27}
+  \draw[rtMuted,line width=.55pt] (\xx,5.04)--(\xx,5.12);
+  \node[note,anchor=south] at (\xx,5.12) {\lab};
+ }
 }
-\foreach \yy/\label in {5.41/{GT $q_+$},5.03/{GT $q_-$},4.47/{SFT $q_+$},4.09/{SFT $q_-$},3.53/{RelTwin $q_+$},3.15/{RelTwin $q_-$}}{
- \node[anchor=west] at (11.3,\yy) {\label};
- \draw[draw=rtGray,densely dashed] (12.8,\yy)--(16.36,\yy);
+\node[text=rtPlus,anchor=east] at (12.08,4.28) {$q_+$};
+\node[text=rtMinus,anchor=east] at (12.08,2.92) {$q_-$};
+% Open white cells: column/row alignment carries the comparison structure.
+\foreach \xbase/\ystart/\ystop/\pstart/\pstop/\yy/\barstroke/\barfill in {
+ 12.32/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/4.28/rtPlus/rtPlusFill,
+ 15.03/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/4.28/rtPlus/rtPlusFill,
+ 12.32/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/2.92/rtMinus/rtMinusFill,
+ 15.03/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/2.92/rtMinus/rtMinusFill}{
+ \draw[\barstroke!25,line width=.45pt] (\xbase,\yy)--({\xbase+2.20},\yy);
+ \pgfmathsetmacro{\predstart}{\xbase+2.20*\pstart/27}
+ \pgfmathsetmacro{\predstop}{\xbase+2.20*\pstop/27}
+ \draw[draw=\barstroke,fill=\barfill,line width=.55pt]
+  (\predstart,\yy-.09) rectangle (\predstop,\yy+.09);
+ \pgfmathsetmacro{\targetstart}{\xbase+2.20*\ystart/27}
+ \pgfmathsetmacro{\targetstop}{\xbase+2.20*\ystop/27}
+ \draw[draw=\barstroke,fill=none,line width=.9pt]
+  (\targetstart,\yy-.145) rectangle (\targetstop,\yy+.145);
 }
-\foreach \start/\stop/\yy/\color/\style in {
- \FigGTPlusStart/\FigGTPlusEnd/5.41/rtBlue/12,
- \FigGTMinusStart/\FigGTMinusEnd/5.03/rtOrange/12,
- \FigSFTPlusStart/\FigSFTPlusEnd/4.47/rtBlue/65,
- \FigSFTMinusStart/\FigSFTMinusEnd/4.09/rtOrange/65,
- \FigCandPlusStart/\FigCandPlusEnd/3.53/rtBlue/65,
- \FigCandMinusStart/\FigCandMinusEnd/3.15/rtOrange/65}{
- \pgfmathsetmacro{\xstart}{12.8+3.56*\start/27}
- \pgfmathsetmacro{\xstop}{12.8+3.56*\stop/27}
- \draw[draw=\color,fill=\color!\style,line width=.7pt] (\xstart,\yy-.105) rectangle (\xstop,\yy+.105);
-}
-\node[anchor=east,text=rtInk!45] at (17.21,5.41) {--};
-\node[anchor=east,text=rtInk!45] at (17.21,5.03) {--};
-\node[anchor=east,text=rtRed] at (17.21,4.47) {\FigSftPlusIoU};
-\node[anchor=east] at (17.21,4.09) {\FigSftMinusIoU};
-\node[anchor=east,text=rtGreen] at (17.21,3.53) {\FigCandPlusIoU};
-\node[anchor=east] at (17.21,3.15) {\FigCandMinusIoU};
-\node[align=center] at (14.33,2.62) {Relation selection recovers;\\$q_+$ still under-covers its target.};
-\draw[draw=rtGray] (11.5,2.21)--(17.16,2.21);
-\node at (14.33,2.02) {160 development pairs (SFT $\rightarrow$ RelTwin)};
-\node[align=center] at (14.33,1.48) {Same-answer pairs: \textbf{\FigSameBefore{} $\rightarrow$ \FigSameAfter{}}\\JointPairAcc: \textbf{\FigJointBefore\% $\rightarrow$ \FigJointAfter\%}};
-% Separate inference strip: no candidate windows are supplied at test time.
-\draw[box,fill=rtInk!3,draw=rtInk!20] (0,0) rectangle (17.4,.84);
-\node[anchor=west,font=\fontsize{9}{10.4}\selectfont\bfseries] at (.22,.42) {Inference};
-\node[box,minimum width=2.9cm,minimum height=.49cm] (input) at (3.28,.42) {Audio + a new query};
-\node[box,minimum width=3.52cm,minimum height=.49cm] (model) at (7.22,.42) {Adapted timestamp generator};
-\node[box,minimum width=2.35cm,minimum height=.49cm] (output) at (11.05,.42) {Predicted intervals};
-\draw[flow] (input.east)--(model.west);
-\draw[flow] (model.east)--(output.west);
-\node[align=center] at (14.85,.42) {No candidate windows\\or extra inference scorer};
+\node[note,anchor=east] at (14.50,4.68) {IoU \FigSftPlusIoU};
+\node[anchor=east,font=\fontsize{9}{10.4}\selectfont\bfseries,text=rtPlus] at (17.21,4.68) {IoU \FigCandPlusIoU};
+\node[note,anchor=east] at (14.50,3.32) {IoU \FigSftMinusIoU};
+\node[note,anchor=east] at (17.21,3.32) {IoU \FigCandMinusIoU};
+\draw[draw=rtAccent,fill=white,line width=.8pt] (12.86,1.80) rectangle (13.21,1.98);
+\node[note,anchor=west] at (13.31,1.89) {target};
+\draw[draw=rtAccent,fill=rtAccentFill!60,line width=.55pt] (14.69,1.80) rectangle (15.04,1.98);
+\node[note,anchor=west] at (15.14,1.89) {prediction};
+
+% Labels outside content, following the reference figures.
+\node[title] at (2.36,1.14) {(a) Inverse-relation pairs};
+\node[title] at (8.195,1.14) {(b) Paired answer supervision};
+\node[title] at (14.47,1.14) {(c) Query-specific localization};
+
 \end{tikzpicture}

@@ -2,7 +2,9 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-`paper` 分支同时保存可编辑源码和当前编译稿。当前为 v12（C01 配置补充）审阅稿：补齐已有实验的 LoRA、每步样本/梯度累积及解码设置，没有训练、重新推理或改动实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+`paper` 分支同时保存可编辑源码和当前编译稿。当前 v12 审阅稿已补齐已有实验的 LoRA、每步样本/梯度累积及解码设置，并同步更新 Figure 1：删除底部 inference pipeline 与整体统计，右栏改为 SFT／RelTwin 的查询—窗口对照；三幅子图统一减少灰底。没有训练、重新推理或改动实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+
+Figure 1 的鼠尾草绿 `#A8D18E`、暖金 `#FED965` 与紫色 `#B178C2` 来自 [BLIP-2（ICML 2023），Fig. 2](https://proceedings.mlr.press/v202/li23q/li23q.pdf) 的矢量 PDF，并参考 [InstructBLIP（NeurIPS 2023），Fig. 3](https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf) 的绿／紫模块层次。绿／金对应两类查询及窗口，紫色强调共享模块与候选监督；(c) 保持白底。原始时间戳与四个 IoU 未改。
 
 ## 修改哪里
 
@@ -64,4 +66,4 @@ Linux/macOS 可使用 `cp main.pdf paper.pdf`。中间文件和临时编译 PDF 
 
 当前源文件来自冻结提交 `3841a85d00ed4487be2cca7e1022b2279d079d79` 的 `paper/overleaf_icassp2027_reltwin_final_v11`。初次补入的 19 个 LaTeX/图表/文献/样式文件保持原始内容；后续以本分支提交历史追踪修改。`paper.pdf` 的版本及 SHA-256 见 `ISSUES.md`。
 
-2026-09-14 初次补入 v11 源码时，19 个源文件与冻结提交一致；独立编译的五页 PDF 与当时的 `paper.pdf` 文字及像素一致，独立主图也编译通过。随后 v12 仅修改 `sections/experiments.tex` 的配置说明并重新编译，仍为五页，无 overfull box 或未解析引用。C01 已关闭；其余问题不因编译通过而自动关闭，具体状态与当前 PDF 哈希见 `ISSUES.md`。
+2026-09-14 初次补入 v11 源码时，19 个源文件与冻结提交一致；独立编译的五页 PDF 与当时的 `paper.pdf` 文字及像素一致，独立主图也编译通过。随后 v12 补充 `sections/experiments.tex` 的配置说明并合入 Figure 1 更新，重新编译后仍为五页，无 overfull box 或未解析引用。C01 已关闭；其余问题不因编译通过而自动关闭，具体状态与当前 PDF 哈希见 `ISSUES.md`。
