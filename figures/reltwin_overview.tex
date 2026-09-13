@@ -1,6 +1,6 @@
 \begin{figure*}[t]
 \centering
 \input{figures/overview_art}
-\caption{RelTwin overview. (a) Co-occurring inverse relations supply locally confusable answers. (b) The shared model contrasts timestamp sequences during training; arrows denote target preferences. (c) A cached seed-0 example (queries 56--57) shows relation recovery and boundary under-coverage. Aggregate statistics cover all 160 development pairs. The bottom path shows candidate-free timestamp generation at inference.}
+\caption{RelTwin binds inverse queries to different windows in one recording. (a) Reused excerpts form two local targets. (b) Solid and dashed cells mark correct and alternative timestamp answers; arrows denote training preferences. (c) Queries 56--57 (seed 0) illustrate SFT's same-answer collapse and RelTwin's query-specific localization. Outlines mark targets; filled bars show predictions, evaluated by set-IoU. Statistics cover all 160 development pairs; inference is unchanged.}
 \label{fig:pair}
 \end{figure*}

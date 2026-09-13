@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-`paper` 分支同时保存可编辑源码和当前编译稿。当前为 v11 审阅稿；本次补入生成该版本的源码，没有修改论文内容或实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+本论文工作分支同时保存可编辑源码和当前编译稿。当前为 v11 Figure 1 更新稿，基于 `paper` 分支的 `d33969b` 完成主图重绘、图注与对应案例说明更新。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
 ## 修改哪里
 
@@ -15,6 +15,7 @@
 | `figures/overview_art.tex` | 可编辑的 TikZ 主图 |
 | `figures/overview_data.tex` | 主图使用的时间戳与统计值 |
 | `figures/reltwin_overview.tex` | 主图排版和图注 |
+| `figures/reltwin_overview.pdf`、`.svg`、`.png` | 从 TikZ 导出的独立矢量图与预览；可编辑源仍为 `overview_art.tex` |
 | `overview_figure.tex` | 单独编译主图的入口，可选 |
 | `references.bib` | 参考文献数据库 |
 | `spconf.sty`、`IEEEbib.bst` | 会议排版与参考文献样式 |
@@ -62,6 +63,6 @@ Linux/macOS 可使用 `cp main.pdf paper.pdf`。中间文件和临时编译 PDF 
 
 不新增多个 `final`/版本号 PDF，也不将 `.aux`、`.log` 等编译缓存提交。问题关闭前应核验对应 PDF；数值、图中时间戳或实验结论的变化须有对应实验依据。
 
-当前源文件来自冻结提交 `3841a85d00ed4487be2cca7e1022b2279d079d79` 的 `paper/overleaf_icassp2027_reltwin_final_v11`。初次补入的 19 个 LaTeX/图表/文献/样式文件保持原始内容；后续以本分支提交历史追踪修改。`paper.pdf` 的版本及 SHA-256 见 `ISSUES.md`。
+初始源文件来自冻结提交 `3841a85d00ed4487be2cca7e1022b2279d079d79` 的 `paper/overleaf_icassp2027_reltwin_final_v11`。初次补入的 19 个 LaTeX/图表/文献/样式文件保留原始内容；后续改动以本分支提交历史追踪。`paper.pdf` 的版本及 SHA-256 见 `ISSUES.md`。
 
-2026-09-14 已从独立目录重新编译：19 个源文件与冻结提交一致；生成的五页 PDF 与当前 `paper.pdf` 逐页文字及渲染像素一致，无 overfull box 或未解析引用；独立主图入口也编译通过。PDF 内容与已登记哈希没有改变。这项核验确认源码能复现当前稿，不代表 `ISSUES.md` 中的待办已经解决。
+2026-09-14 初次导入时从独立目录重新编译：19 个源文件与冻结提交一致；生成的五页 PDF 与当时的 `paper.pdf` 逐页文字及渲染像素一致。Figure 1 更新后再次编译整稿及独立主图，完成三轮图像检查及双栏实际尺寸检查；无 overfull box、未解析引用或字体替换警告。时间戳、IoU 与配对统计仍取自未改动的 `figures/overview_data.tex`。本轮仅关闭 `ISSUES.md` 中已验证的图示事项。
