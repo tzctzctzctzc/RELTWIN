@@ -98,42 +98,51 @@
 \node[text=rtAccent] at (8.195,2.14) {Row-wise cross-entropy: $\mathcal L_{\rm cand}$};
 \node at (8.195,1.74) {$\mathcal L=\mathcal L_{\rm seq}+\textcolor{rtAccent}{\lambda\mathcal L_{\rm cand}}+\beta\mathcal L_{\rm replay}$};
 
-% (c) Separate measured example, not an output arrow from the schematic.
-% All six intervals use a linear 0--27 s axis; outline = target, fill = model.
-\node[note] at (14.36,6.00) {Dev example 10007-v0; seed 0};
-\node[note,anchor=west] at (11.58,5.64) {Time (s)};
-\node[note,anchor=east] at (17.34,5.64) {IoU};
-\draw[rtMuted,line width=.55pt] (13.27,5.41)--(16.46,5.41);
-\foreach \sec in {0,10,20,27}{
- \pgfmathsetmacro{\xx}{13.27+3.19*\sec/27}
- \draw[rtMuted,line width=.55pt] (\xx,5.37)--(\xx,5.45);
- \node[note,anchor=south] at (\xx,5.45) {\sec};
+% (c) The same cached example as a compact comparison matrix.
+% Columns are models, rows are inverse queries. Each cell overlays the target
+% outline and prediction fill on an identical 0--27 s axis.
+\node[note] at (14.50,6.00) {Dev example 10007-v0; seed 0};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (13.42,5.59) {SFT};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries,text=rtAccent] at (16.13,5.59) {RelTwin};
+\foreach \xbase in {12.32,15.03}{
+ \draw[rtMuted,line width=.55pt] (\xbase,5.08)--({\xbase+2.20},5.08);
+ \foreach \sec/\lab in {0/0,10/10,20/20,27/{27 s}}{
+  \pgfmathsetmacro{\xx}{\xbase+2.20*\sec/27}
+  \draw[rtMuted,line width=.55pt] (\xx,5.04)--(\xx,5.12);
+  \node[note,anchor=south] at (\xx,5.12) {\lab};
+ }
 }
-\foreach \yy/\label in {5.08/{Target $q_+$},4.64/{Target $q_-$},3.88/{SFT $q_+$},3.44/{SFT $q_-$},2.68/{RelTwin $q_+$},2.24/{RelTwin $q_-$}}{
- \node[anchor=west] at (11.55,\yy) {\label};
- \draw[rtLine,line width=.45pt] (13.27,\yy)--(16.46,\yy);
+\node[text=rtBlue,anchor=east] at (12.08,4.39) {$q_+$};
+\node[text=rtCoral,anchor=east] at (12.08,3.03) {$q_-$};
+\foreach \xlo/\xhi/\ylo/\yhi in {
+ 12.20/14.64/3.86/4.89,14.91/17.35/3.86/4.89,
+ 12.20/14.64/2.50/3.53,14.91/17.35/2.50/3.53}{
+ \draw[draw=rtLine,fill=rtPaper!72,line width=.5pt]
+  (\xlo,\ylo) rectangle (\xhi,\yhi);
 }
-\foreach \start/\stop/\yy/\color in {
- \FigGTPlusStart/\FigGTPlusEnd/5.08/rtBlue,
- \FigGTMinusStart/\FigGTMinusEnd/4.64/rtCoral}{
- \pgfmathsetmacro{\xstart}{13.27+3.19*\start/27}
- \pgfmathsetmacro{\xstop}{13.27+3.19*\stop/27}
- \draw[draw=\color,fill=white,line width=.9pt] (\xstart,\yy-.105) rectangle (\xstop,\yy+.105);
+\foreach \xbase/\ystart/\ystop/\pstart/\pstop/\yy/\barstroke/\barfill in {
+ 12.32/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/4.28/rtBlue/rtBlueFill,
+ 15.03/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/4.28/rtBlue/rtBlueFill,
+ 12.32/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/2.92/rtCoral/rtCoralFill,
+ 15.03/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/2.92/rtCoral/rtCoralFill}{
+ \draw[rtLine,line width=.45pt] (\xbase,\yy)--({\xbase+2.20},\yy);
+ \pgfmathsetmacro{\predstart}{\xbase+2.20*\pstart/27}
+ \pgfmathsetmacro{\predstop}{\xbase+2.20*\pstop/27}
+ \draw[draw=\barstroke,fill=\barfill,line width=.55pt]
+  (\predstart,\yy-.09) rectangle (\predstop,\yy+.09);
+ \pgfmathsetmacro{\targetstart}{\xbase+2.20*\ystart/27}
+ \pgfmathsetmacro{\targetstop}{\xbase+2.20*\ystop/27}
+ \draw[draw=\barstroke,fill=none,line width=.9pt]
+  (\targetstart,\yy-.145) rectangle (\targetstop,\yy+.145);
 }
-\foreach \start/\stop/\yy/\color/\shade in {
- \FigSFTPlusStart/\FigSFTPlusEnd/3.88/rtBlue/rtBlueFill,
- \FigSFTMinusStart/\FigSFTMinusEnd/3.44/rtCoral/rtCoralFill,
- \FigCandPlusStart/\FigCandPlusEnd/2.68/rtBlue/rtBlueFill,
- \FigCandMinusStart/\FigCandMinusEnd/2.24/rtCoral/rtCoralFill}{
- \pgfmathsetmacro{\xstart}{13.27+3.19*\start/27}
- \pgfmathsetmacro{\xstop}{13.27+3.19*\stop/27}
- \draw[draw=\color,fill=\shade,line width=.65pt] (\xstart,\yy-.105) rectangle (\xstop,\yy+.105);
-}
-\foreach \yy in {5.08,4.64}{\node[anchor=east,note] at (17.34,\yy) {--};}
-\node[anchor=east] at (17.34,3.88) {\FigSftPlusIoU};
-\node[anchor=east] at (17.34,3.44) {\FigSftMinusIoU};
-\node[anchor=east,font=\fontsize{9}{10.4}\selectfont\bfseries] at (17.34,2.68) {\FigCandPlusIoU};
-\node[anchor=east] at (17.34,2.24) {\FigCandMinusIoU};
+\node[note,anchor=east] at (14.50,4.68) {IoU \FigSftPlusIoU};
+\node[anchor=east,font=\fontsize{8}{9.2}\selectfont\bfseries] at (17.21,4.68) {IoU \FigCandPlusIoU};
+\node[note,anchor=east] at (14.50,3.32) {IoU \FigSftMinusIoU};
+\node[note,anchor=east] at (17.21,3.32) {IoU \FigCandMinusIoU};
+\draw[draw=rtMuted,fill=white,line width=.8pt] (12.86,1.80) rectangle (13.21,1.98);
+\node[note,anchor=west] at (13.31,1.89) {target};
+\draw[draw=rtMuted,fill=rtMuted!28,line width=.55pt] (14.69,1.80) rectangle (15.04,1.98);
+\node[note,anchor=west] at (15.14,1.89) {prediction};
 
 % Labels outside content, following the reference figures.
 \node[title] at (2.36,1.14) {(a) Inverse-relation pairs};
