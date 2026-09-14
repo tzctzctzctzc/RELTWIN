@@ -1,28 +1,30 @@
 \section{Query-Specific Window Learning}
 \subsection{Two true relations, two different answers}
-RelTwin reuses two ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, to form windows $W_+=(A\!\rightarrow\!B)$ and $W_-=(B\!\rightarrow\!A)$ in one recording $x$. Each spans the \emph{entire ordered sequence}. For inverse queries $(q_+,q_-)$ and candidates $(W_+,W_-)$, the answer-label matrix is $Y=I_2$ (Fig.~\ref{fig:pair}). Both queries are present at recording level; the paired labels specify their local correspondence.
+In one recording $x$, RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$. Their local targets $W_+$ and $W_-$ run from the first excerpt's onset to the second's offset, including the gap. Queries $q_+$ and $q_-$ request the respective orders. Both windows have acoustic support, but $W_-$ is positive for $q_-$ and negative for $q_+$; reversing the query exchanges their labels.
 
-Each recording has two templates, ``followed by'' and ``and then,'' in both directions. Category queries target all occurrences of $A$ or $B$ for rehearsal. Alternating the earlier relation controls a constant-position preference; excerpt reuse fixes source material within a pair. Section~\ref{sec:timing} tests the contribution of layout-specific silence through a timing intervention.
+The templates ``followed by'' and ``and then'' yield two inverse-query pairs per recording. Earlier-order layouts alternate (Section~\ref{sec:timing}). Category rehearsal targets the union of both occurrences of $A$ or $B$, retaining category-grounding supervision.
 
 \subsection{Contrast timestamp answers during training}
-For the timestamp token sequence $y(S)$ describing interval set $S$, define its mean token log-likelihood
+We serialize an interval set $S$ as comma-separated spans, each formatted like \texttt{from 1.500s to 11.750s} (three-decimal precision). Its supervised assistant-completion tokens $y(S)$ exclude the prompt and are scored by
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
+\label{eq:score}
 \end{equation}
-Candidates are $C=(W_+,W_-)$. Their relative answer preferences are $p_q(j)=\operatorname{softmax}_j(s_\theta(x,q,C_j)/\tau)$. The paired candidate loss is
+The $2\times2$ matrix $M$, with entries $M_{ij}=s_\theta(x,q_i,W_j)$ for $i,j\in\{+,-\}$, indexes queries by rows and answers by columns. Its diagonal labels $Y=I_2$ identify the correct query--answer pairs (Fig.~\ref{fig:pair}b).
+Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$, rewarding the two correct responses individually. It does not explicitly compare them with the other locally valid window. RelTwin trains the relative preferences $M_{++}>M_{+-}$ and $M_{--}>M_{-+}$ through row-wise probabilities $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$, where $\tau>0$. The candidate loss is
 \begin{equation}
-\mathcal L_{\rm cand}=-\tfrac12[\log p_{q_+}(1)+\log p_{q_-}(2)].
+\mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
 \end{equation}
-Reversing the query exchanges the positive timestamp sequence. Candidate cross-entropy makes this local discrimination explicit alongside correct-answer sequence supervision and category-query rehearsal:
+For a separately sampled category example $(x_r,q_r,S_r)$, the rehearsal loss is $\mathcal L_{\rm replay}=-s_\theta(x_r,q_r,S_r)$. Together,
 \begin{equation}
 \mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}
 +\beta\mathcal L_{\rm replay}.
 \label{eq:loss}
 \end{equation}
-Equation~\ref{eq:loss} defines \emph{RelTwin}. SFT uses identical data and rehearsal with $\lambda=0$. At inference, the model generates timestamps from audio and a query, without candidates or an additional scorer.
+Paired SFT sets $\lambda=0$; RelTwin uses $\lambda>0$ with identical relation and rehearsal data. Both directly generate timestamps at inference, without candidates or an additional scorer.
 
 \subsection{Joint localization and relation selection}
-For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$. PairAcc requires both inverse-query predictions to achieve set-IoU $\geq0.5$. We additionally require each to overlap its own target strictly more than the opposite target, yielding JointPairAcc. Swap error means that at least one query violates this strict preference, including ties.
+For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$ (zero for an empty union). Given predictions $\widehat W_i$, define $u_{ij}=\setiou(\widehat W_i,W_j)$. PairAcc requires $\min(u_{++},u_{--})\geq0.5$. Swap error occurs if $u_{++}\leq u_{+-}$ or $u_{--}\leq u_{-+}$, including ties. JointPairAcc requires PairAcc success without Swap error. We report pair-level percentages; same-answer counts use exact equality of parsed interval lists.
 
-Returning the union of two disjoint equal-length targets for \emph{both} queries gives IoU $0.5$ each: PairAcc passes but JointPairAcc fails. Requiring a preference for the query's own target distinguishes relational selection from broad temporal coverage. Inspired by paired compositional evaluation~\cite{thrush2022winoground}, we report JointPairAcc alongside standard IoU to capture this behavior.
+Predicting the union of two disjoint, equal-length targets for both queries passes PairAcc (IoU $0.5$) but fails JointPairAcc. Inspired by paired compositional evaluation~\cite{thrush2022winoground}, JointPairAcc distinguishes query-specific selection from coverage.

@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本分支保存可编辑源码和当前编译稿。当前为 v16（表格与分析审阅稿），基于 `paper` 分支 v15，在 `docs/reltwin-table-analysis-20260914` 上修改，供作者确认后再合入 `paper`。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。Table 1 恢复公开方法分组，Table 2 跨栏呈现基础模型、匹配训练对照及三种子汇总，并加入已有的 Swap error 和同答案对数。结果文字按绑定恢复、时间干预、公开性能展开；比较口径集中说明。没有训练、重新推理或改动预测。正文至第 4 页结束，第 5 页为声明和参考文献。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+本分支保存可编辑源码和当前编译稿。当前为 v17（P0-03/P0-04 方法定义审阅稿），基于 v16 的 `0452f37`，在 `docs/p0-03-04-method-20260914` 上修改，供作者确认后再合入 `paper`。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。本轮仅补强方法节：明确同录音候选的查询条件偏好，定义时间戳答案、2×2 得分矩阵、三个损失及成对指标。v16 的分组主表、跨栏机制表和分析文字保留；为维持分页只提前了机制表的声明位置。没有训练、重新推理或改动预测。正文至第 4 页结束，第 5 页为声明和参考文献。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
@@ -14,6 +14,7 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 | `authors.tex` | 作者、单位与通讯作者信息 |
 | `sections/` | 摘要、引言、相关工作、方法、实验、讨论、结论与声明 |
 | `sections/related_work.tex` | 独立 Related Work 章节及与最近邻方法的结构比较 |
+| `sections/method.tex` | 局部目标构造、查询—答案得分矩阵、训练目标与成对指标定义 |
 | `tables/main_results.tex` | Table 1：分组的 SpotSound-Bench 公开方法比较 |
 | `tables/training_results.tex` | Table 2：跨栏的匹配训练、关系绑定诊断与三种子汇总 |
 | `figures/overview_art.tex` | 可编辑的 TikZ 主图 |
@@ -29,7 +30,7 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 
 ## Overleaf
 
-在 GitHub 切换到本次审阅分支 `docs/reltwin-table-analysis-20260914`（已接受的协作稿仍位于 `paper`），使用 **Code → Download ZIP**，再在 Overleaf 中选择 **New Project → Upload Project**。也可以将已解压的本分支文件直接上传。
+在 GitHub 切换到本次审阅分支 `docs/p0-03-04-method-20260914`（已接受的协作稿仍位于 `paper`），使用 **Code → Download ZIP**，再在 Overleaf 中选择 **New Project → Upload Project**。也可以将已解压的本分支文件直接上传。
 
 将 **Main document** 设为 `main.tex`，编译器选 **pdfLaTeX**。参考文献使用 **BibTeX**，Overleaf 的自动编译会处理。不要将 `overview_figure.tex` 误设为整篇论文入口。
 
@@ -77,3 +78,5 @@ v14 继续精炼 P0-01：摘要为 122 词，保留关系绑定提升和 SpotSou
 v15 关闭 P0-02：新增约 280 词的独立 Related Work，原引言仅保留问题、方法概述与贡献。正文按监督对象区分表示对齐、局部显著性排序和完整时间戳答案比较；原文核对记录见 `ISSUES.md` 第 7 节。Figure 1 保留在第 2 页，引用与章节交叉引用自动更新；仍为五页、17 条参考文献，无 overfull box 或未解析引用。正文充实与参考文献独占第五页的最终排版仍由 P1-08 跟进，本轮没有将其标为完成。
 
 v16 重整两张表并补充分析：公开主表保留十个基线和全部原始分数，恢复四组方法类别、最优/次优标记及指标方向；跨栏机制表补入同一批既有预测的错误指标和三种子统计。P1-02、P1-05 已完成，其他相关条目记录进展，不因本轮排版通过而一并关闭。逐行核对原始 evidence/figure evidence 后编译为五页，Table 1 在第 3 页，Table 2 在第 4 页，第 5 页仅声明与 17 条参考文献；无 overfull box、未解析引用或 Type 3 字体。作者、摘要、引言、Related Work、方法、主图、结论、声明及参考文献源码均未改。
+
+v17 仅完成 P0-03 和 P0-04：方法节将正答案序列监督与同录音答案间的显式相对偏好分开，补齐局部区间、三位小数序列化、监督 token 范围、2×2 得分矩阵、独立抽取的类别 rehearsal 及各项损失。成对指标直接使用 own-target/cross-target IoU 条件，保留平分计错和完全相同区间列表的规则。核对冻结训练代码哈希，复算 1,024 条既有训练日志损失及五个模型的 1,600 条缓存预测，并通过 150 个小矩阵数学检查；没有执行模型训练或推理。仅移动 `sections/bridge_results.tex` 中的一行表格接入指令以维持 Table 2 在第 4 页，结果文字和表格数值逐字保留。编译仍为五页，正文四页，第五页声明与文献；无 overfull box 或未解析引用，其他问题状态不变。
