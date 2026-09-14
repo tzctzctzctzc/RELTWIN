@@ -1,5 +1,1125 @@
 # RelTwin 论文问题清单
 
+## 当前最高优先级：包装与表达专项修改（不补新 benchmark）
+
+### 本轮范围
+
+本文档只讨论当前 `paper.pdf` 在**不增加新 benchmark、不重新训练、不改变任何实验数值**的前提下，如何提升论文的逻辑、创新性呈现、故事性、方法解释和写作成熟度。
+
+当前稿的主要问题不是“没有故事”，而是：
+
+1. 最有价值的创新点没有被准确命名；
+2. 方法的必要性没有讲透，容易被概括成“在合成数据上增加候选交叉熵”；
+3. 大量实验过程、内部状态和防御性限定冲淡了核心贡献；
+4. 已有结果没有被组织成一条逐层递进的证据链。
+
+本轮修改目标不是把证据写得比实际更强，而是让读者优先看到本文真正解决的问题、方法为什么针对这个问题，以及现有实验已经支持了什么。
+
+---
+
+## 1. 全文应统一采用的核心故事
+
+### 1.1 当前最强的科学命题
+
+全文应该围绕下面一句话展开：
+
+> When inverse relations co-occur in the same recording, temporal grounding requires more than detecting the constituent events: each query must be bound to its own locally correct window.
+
+对应的中文逻辑是：
+
+> 当两个逆序关系同时出现在一段录音中，困难不再是检测声音是否存在，而是把每个查询绑定到它所描述的局部窗口。
+
+### 1.2 RelTwin 最值得强调的独特性
+
+RelTwin 的负答案不是：
+
+- 不存在于音频中的事件；
+- 从其他录音随机抽取的窗口；
+- 语言上伪造的错误描述；
+- 只包含错误类别的简单负例。
+
+RelTwin 的负答案是：
+
+> 同一录音中真实存在、声学上完全有效、甚至是另一查询的正确答案，但对当前查询而言对应了错误关系的局部窗口。
+
+这可以概括为：
+
+> **globally valid but query-conditionally wrong timestamp answers**
+
+或者更自然地写成：
+
+> **locally valid timestamp contrasts**
+
+全文应固定使用其中一个表达，不要在 `hard answer negatives`、`locally confusable negatives`、`competing windows`、`opposite answers` 等多个名称之间来回切换。
+
+### 1.3 最合适的三层贡献
+
+全文的贡献应按以下顺序展开：
+
+1. **问题层**：发现并定义 query–window binding error，即模型知道相关事件存在，却把不同关系查询绑定到同一时间窗口。
+2. **方法层**：构造同一录音内的逆关系最小对照，并在生成答案空间中比较完整时间戳序列的条件似然。
+3. **证据层**：paired diagnostic 证明模型从 same-answer collapse 转向 query-specific selection；timing intervention 表明主要增益不能完全由固定静音布局解释；SpotSound-Bench 获得新的公开主表最佳点估计。
+
+这三层组合起来，RelTwin 就不是“一个 loss”，而是“一个新失败模式、一种针对性训练原则和一套直接验证该能力的证据”。
+
+---
+
+## 2. 标题
+
+### 2.1 具体位置
+
+- 文件：`main.tex`
+- 位置：第 8 行
+- 当前标题：`RelTwin: Learning Query-Specific Windows from Co-Occurring Inverse Relations`
+
+### 2.2 为什么当前标题不理想
+
+`Learning Query-Specific Windows from Relations` 的动宾关系不自然，容易被理解为“从关系中生成时间窗口”。但方法并不生成候选窗口，而是在训练中学习查询与已有局部窗口之间的对应关系。
+
+标题也没有体现本文最独特的部分：两个候选时间戳都来自同一录音、都具有真实声学依据，但只有一个与当前查询匹配。
+
+### 2.3 建议修改方向
+
+优先使用 `contrasting`、`binding`、`locally valid timestamps`，减少抽象的 `learning windows`。
+
+首选方向：
+
+> **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**
+
+更稳妥的方向：
+
+> **RelTwin: Learning Query–Window Binding from Co-Occurring Inverse Relations**
+
+如果希望保留 inverse relations，同时突出方法机制：
+
+> **RelTwin: Query–Window Binding through Paired Inverse-Relation Contrasts**
+
+标题不建议出现 `hard negative`。这一表达过于宽泛，会把论文主动放进已经非常拥挤的 hard-negative 方法类别中。
+
+---
+
+## 3. 摘要
+
+### 3.1 具体位置
+
+- 文件：`sections/abstract.tex`
+- 位置：第 2 行，整个摘要
+
+### 3.2 当前摘要的主要问题
+
+#### 问题一：开头描述了任务，但没有点出 SFT 的根本缺口
+
+当前：
+
+> Audio temporal grounding must distinguish occurrences that contain the same sounds in different orders.
+
+这句话本身正确，但还没有告诉读者为什么现有训练会失败。真正的逻辑应该是：普通事件存在性或独立正答案监督可以识别相关声音，却不强制同一查询在两个真实窗口之间进行选择。
+
+#### 问题二：`places inverse relations` 不自然
+
+当前：
+
+> RelTwin, which places inverse relations in one recording
+
+关系本身不是被“放置”的物体。真正被构造的是包含两个逆序事件窗口的录音。
+
+大致可改成：
+
+> RelTwin constructs recordings in which both inverse relations occur in distinct local windows.
+
+#### 问题三：`locally confusable answer negative` 是机器式名词堆叠
+
+当前：
+
+> providing a locally confusable answer negative
+
+`answer negative` 不是自然搭配，也没有直接解释为什么这个负例特殊。建议直接描述事实：
+
+> The competing timestamp is acoustically valid in the same recording but corresponds to the inverse query.
+
+或者：
+
+> This yields a locally valid timestamp contrast whose correctness depends on the query.
+
+#### 问题四：摘要过度呈现实验审计条件
+
+当前集中出现：
+
+- `same-environment`
+- `equal-update`
+- `seed-0`
+- `synthetic relation-development`
+- 三个增益数字
+- timing intervention 数字
+- 三种子 SpotSound 数字
+
+这些信息都是真实的，但同时放在摘要中会让核心结果看起来像一次受限的内部对照，而不是对新能力的验证。
+
+摘要只需要保留两个最有决定性的结果：
+
+1. JointPairAcc 提升 31.25 点，证明 query–window binding 被改善；
+2. SpotSound-Bench 三种子均值为 59.16，高于公开主表 57.9。
+
+`same initialization/data/order/updates` 等公平性信息应放在 Experimental Setup。timing intervention 可以用一句不带过多配置的概括。
+
+#### 问题五：结尾太泛
+
+当前：
+
+> These results demonstrate the value of query-specific answer discrimination for generative audio grounding.
+
+`demonstrate the value of` 是常见的泛化结尾，没有回到最独特的 scientific insight。
+
+结尾应回到：即使多个候选窗口都包含正确声音，生成式 grounding 仍需要显式学习 query-conditioned timestamp preference。
+
+### 3.3 建议的摘要结构
+
+建议严格按五步组织：
+
+1. **任务失败**：相同事件以相反顺序多次出现时，模型容易返回相同窗口。
+2. **原因**：独立正答案监督不要求查询在多个真实窗口中进行相对选择。
+3. **方法**：RelTwin 构造同录音逆关系对，并对完整时间戳答案进行候选似然竞争。
+4. **证据**：JointPairAcc +31.25，timing 改变后优势保留，SpotSound 59.16。
+5. **意义**：局部有效答案之间的查询条件竞争可以改善生成式音频 grounding。
+
+---
+
+## 4. Introduction 第一段：问题定义
+
+### 4.1 具体位置
+
+- 文件：`sections/introduction.tex`
+- 位置：第 2 行
+
+### 4.2 当前优点
+
+`dog then rooster` 与 `rooster then dog` 是全文最清楚的例子。`query–window binding error` 也是一个值得保留的术语。这一段已经基本具备成熟论文的开头逻辑。
+
+### 4.3 仍需加强的地方
+
+当前最后一句：
+
+> We target this distinction between event detection and query-specific localization.
+
+它只说本文“关注”这个区别，没有把根因说出来。
+
+建议在这一段结尾明确：如果训练只监督每个查询的正确答案，而不把同一录音中的另一个真实窗口作为竞争对象，模型仍可能主要依赖事件类别共现，而忽略关系词决定的局部对应。
+
+大致方向：
+
+> The failure arises because recognizing both events is sufficient for recording-level relevance, but not for deciding which local occurrence satisfies the queried relation.
+
+这句话可以自然引出后面的 RelTwin，而不需要先提 loss 名称。
+
+---
+
+## 5. Introduction 相关工作与研究缺口
+
+### 5.1 具体位置
+
+- 文件：`sections/introduction.tex`
+- 位置：第 4–6 行
+
+### 5.2 为什么当前写法不理想
+
+当前两段连续列出：Pengi、Qwen2-Audio、Audio Flamingo 3、TimeAudio、SpotSound、CLAP、T-CLAP、CompA、CoSTALA、SHINE。
+
+主要问题不是引用数量，而是缺少分类轴。读者看完知道领域里有很多工作，却仍不清楚：
+
+- 哪些方法主要解决时间表示；
+- 哪些方法主要解决事件不存在时的幻觉；
+- 哪些方法已经使用关系反转或 hard negatives；
+- RelTwin 究竟填补了哪个尚未处理的空白。
+
+### 5.3 建议的组织方式
+
+#### 第一类：时间表示与时序定位
+
+包括 TimeAudio、SpotSound、LAT-Audio 等。这类方法改善时间 token、长音频表示或 absent-event grounding，但没有显式解决同一录音中多个真实候选窗口之间的关系选择。
+
+#### 第二类：组合推理和关系顺序
+
+包括 T-CLAP、CompA。这类方法已经研究反转事件顺序、相同事件不同组合以及 composition-aware hard negatives。
+
+必须准确承认这些相邻工作，否则 reviewer 很容易认为论文在忽略直接先例。
+
+RelTwin 的差异应写成：
+
+- CompA 在不同音频和描述之间做配对匹配；
+- T-CLAP 在表示空间进行音频文本对比；
+- RelTwin 在同一录音内部，对生成的完整时间戳答案进行查询条件竞争。
+
+#### 第三类：反事实或 hard-negative 对齐
+
+包括 SHINE 和 AHA。AHA 尤其重要，因为它已经把 temporal relation error 与 counterfactual hard negative 联系起来。
+
+RelTwin 的差异不应写成“我们的负例更难”这种缺乏直接证据的判断，而应写成客观结构差异：
+
+> AHA contrasts a grounded response with a counterfactual response that contradicts the audio. RelTwin contrasts two timestamp answers that are both grounded in the same recording, making correctness conditional on the query–window correspondence.
+
+### 5.4 相关工作段最后应形成的缺口
+
+建议以类似下面的逻辑收束：
+
+> Existing approaches improve temporal representations, suppress absent-event predictions, or construct compositional negative queries. They do not directly train a generative grounding model to choose between two acoustically valid local answers when both queried relations hold in the same recording.
+
+这是全文 novelty 最重要的一句话之一。
+
+---
+
+## 6. Introduction 方法概述
+
+### 6.1 具体位置
+
+- 文件：`sections/introduction.tex`
+- 位置：第 8 行
+
+### 6.2 当前问题
+
+当前：
+
+> Candidate cross-entropy supplements sequence supervision, rewarding the requested query–window correspondence.
+
+这句话从方法名称直接跳到效果，没有解释为什么 sequence supervision 缺少这个能力。Reviewer 很容易把它读成“额外加了一个普通分类损失”。
+
+### 6.3 建议修改方向
+
+先说明 SFT 的缺口，再引出 candidate loss：
+
+1. Sequence supervision independently raises the likelihood of each positive timestamp answer.
+2. It does not require the positive answer to outrank another valid window in the same recording.
+3. RelTwin converts the two inverse windows into a local contrast set and applies row-wise answer competition.
+
+`Training compares candidates; inference retains timestamp generation.` 是好句子，可以保留，但应当放在方法概述末尾作为实际优势，而不是代替机制说明。
+
+---
+
+## 7. Introduction 贡献段
+
+### 7.1 具体位置
+
+- 文件：`sections/introduction.tex`
+- 位置：第 10 行
+
+### 7.2 当前问题
+
+当前：
+
+> Our contributions connect locally confusable answer construction, candidate-supervised adaptation, and a paired diagnostic...
+
+`connect` 的语气太弱，像在拼接已有模块。它也没有告诉读者哪些是新发现、哪些是方法、哪些是评测。
+
+后两句继续重复三个增益数字，却没有把每个实验对应到哪项贡献。
+
+### 7.3 建议修改方向
+
+建议明确写成三项贡献，但不需要夸张使用 `first` 或 `novel`：
+
+1. We identify query–window binding as a failure mode distinct from event presence and boundary estimation.
+2. We introduce paired, locally valid timestamp contrasts and optimize their query-conditioned likelihoods without changing inference.
+3. We evaluate relation selection with a paired diagnostic and a timing intervention, and obtain a new best point estimate on SpotSound-Bench.
+
+每项贡献都应对应后文一个明确部分：问题定义、方法、实验。
+
+---
+
+## 8. Method 2.1：录音与窗口构造
+
+### 8.1 具体位置
+
+- 文件：`sections/method.tex`
+- 位置：第 3–5 行
+
+### 8.2 `Each spans the entire ordered sequence` 有歧义
+
+当前：
+
+> Each spans the entire ordered sequence.
+
+因为前一句同时出现 recording (x) 和 windows (W_+,W_-)，这里的 `entire ordered sequence` 可能被理解为完整录音，而不是某个局部的两事件窗口。
+
+应该明确写出：
+
+- (x) 包含两个互不重叠的局部窗口；
+- (W_+) 从局部事件 A 的开始延伸到随后事件 B 的结束；
+- (W_-) 从局部事件 B 的开始延伸到随后事件 A 的结束；
+- 两者不是整条录音。
+
+### 8.3 `Both queries are present at recording level` 主体错误
+
+查询不会“存在于录音中”，存在的是查询所描述的两种关系。
+
+大致可改为：
+
+> Both inverse relations are true at the recording level, but their correct timestamp intervals are different.
+
+这句话同时把本文最关键的条件讲清楚。
+
+### 8.4 两个控制变量句子过于生硬
+
+当前：
+
+> Alternating the earlier relation controls a constant-position preference; excerpt reuse fixes source material within a pair.
+
+问题：
+
+- `controls a preference` 搭配不直观；
+- `fixes source material` 容易被理解成修复素材；
+- 一个分号承载了两个不同设计理由。
+
+建议拆开说明：
+
+> We balance which relation appears first to prevent a fixed-position shortcut. The two windows reuse the same source excerpts, so their distinction depends on order rather than event identity.
+
+第二句比“控制声学材料”更直接地说明了为什么 reuse 有科学意义。
+
+### 8.5 Rehearsal 的作用没有说清
+
+当前只说 category queries target all occurrences for rehearsal，没有说明目的。
+
+建议增加一句：rehearsal 保留基础的类别级定位能力，并在 SFT 与 RelTwin 中完全相同，因此不是两者差异来源。
+
+不应声称 rehearsal 独立提升指标，因为当前没有对应消融。
+
+---
+
+## 9. Method 2.2：候选答案监督
+
+### 9.1 具体位置
+
+- 文件：`sections/method.tex`
+- 位置：第 7–23 行
+
+### 9.2 当前最大问题：只有公式，没有解释约束关系
+
+Equation 1–3 数学上不复杂，但论文没有把它们与 SFT 的失败联系起来。
+
+当前读者看到的是：
+
+1. 定义平均 token likelihood；
+2. 做一个 softmax；
+3. 做 cross-entropy；
+4. 加到原损失。
+
+这会自然产生“方法只是普通候选 CE”的判断。
+
+### 9.3 建议增加的关键解释
+
+应明确给出 SFT 与 RelTwin 的差异：
+
+普通 paired SFT 优化：
+
+\[
+\mathcal L_{\mathrm{seq}}
+=-\tfrac12\left[s_\theta(x,q_+,W_+)+s_\theta(x,q_-,W_-)\right].
+\]
+
+它提高两个正确答案的绝对似然，但不要求：
+
+\[
+s_\theta(x,q_+,W_+) > s_\theta(x,q_+,W_-),
+\]
+
+也不要求：
+
+\[
+s_\theta(x,q_-,W_-) > s_\theta(x,q_-,W_+).
+\]
+
+RelTwin 的候选交叉熵正好施加这两个相对偏好。这个解释应在公式附近直接出现。
+
+### 9.4 建议改成 (2\times2) score matrix 叙述
+
+先定义：
+
+\[
+S_{ij}=s_\theta(x,q_i,W_j),\qquad i,j\in\{+,-\}.
+\]
+
+然后说明：对角项是 query-consistent timestamp answers，非对角项是同一录音中的 locally valid contrasts。候选损失对每一行做交叉熵，要求查询选择对应的对角窗口。
+
+这样 Figure 1(b)、(Y=I_2) 和损失公式会形成统一解释，而不是三个分散元素。
+
+### 9.5 (y(S)) 的输出形式需要具体化
+
+当前只称为 `timestamp token sequence`，但没有说明实际文本形式。
+
+建议给一个简短例子，例如：
+
+> `from 3.250s to 6.800s`
+
+同时说明 score 使用教师强制下的平均 token log-likelihood。平均化的目的是避免候选答案长度差异直接决定分数；如果两个候选始终等长，也可以只陈述这是与训练 sequence loss 一致的标准化得分，不要额外做无证据解释。
+
+### 9.6 (\mathcal L_{seq}) 与 (\mathcal L_{replay}) 需要定义
+
+当前 Equation 3 直接出现两个此前没有数学定义的项。建议至少用一句说明：
+
+- (\mathcal L_{seq})：两个 query-consistent timestamp answers 的平均教师强制 NLL；
+- (\mathcal L_{replay})：类别查询及其所有事件区间的教师强制 NLL。
+
+### 9.7 删除或重写 no-grad/recompute 实现描述
+
+当前 Experimental Setup 中写：
+
+> RelTwin scores four query–answer combinations without gradients then recomputes weighted gradients...
+
+这句话会让读者怀疑候选分数是否被 stop-gradient、目标是否与公式一致。
+
+如果该实现只是显存优化，应大致改成：
+
+> We compute the exact gradient of the four candidate scores by memory-efficient recomputation.
+
+如果版面有限，这一实现细节可以完全留在代码中。方法正文只需要保证公式与实际训练一致。
+
+---
+
+## 10. Method 2.3：PairAcc、JointPairAcc 与 Swap Error
+
+### 10.1 具体位置
+
+- 文件：`sections/method.tex`
+- 位置：第 25–28 行
+
+### 10.2 当前优点
+
+“两个查询都返回两个窗口的并集时，各自 IoU 可达到 0.5，但关系选择仍然错误”的例子非常好。它直接说明普通 IoU 为什么不足，应保留。
+
+### 10.3 当前问题
+
+`Swap error means that at least one query violates this strict preference` 需要读者回看前一句才能知道 strict preference 的数学条件。
+
+建议直接定义：如果任一查询对自身目标的 IoU 不大于对逆关系目标的 IoU，则记为 swap error，包括平分。
+
+此外，`Joint localization and relation selection` 可以进一步对齐全文术语，改成 `Paired query–window binding evaluation` 或类似标题。这样该指标更明显地服务于核心问题，而不是看起来像额外发明一个指标。
+
+---
+
+## 11. Figure 1
+
+### 11.1 具体位置
+
+- 文件：`figures/reltwin_overview.tex`
+- 图内文字：`figures/overview_art.tex`
+- PDF：第 2 页上方
+
+### 11.2 Panel (a)
+
+Panel (a) 应重点表达：
+
+- 同一录音包含两种关系；
+- 两个关系都真实；
+- 正确答案是不同的局部窗口。
+
+当前基本做到了，但 `Both relations hold in x; each query has a different target` 可以与正文统一成 `Both relations are true in x, but each query maps to a different local window.`
+
+### 11.3 Panel (b)
+
+当前图中有 (2\times2) 矩阵，但正文没有充分利用。修改正文后，panel (b) 应明确对应 score matrix (S_{ij})，对角格表示 query-consistent answers，非对角格表示 locally valid contrasts。
+
+图中 `RelTwin candidate supervision` 可以改成更有方法辨识度的：
+
+> Query-conditioned timestamp contrast
+
+但最终名称必须与标题和正文保持一致。
+
+### 11.4 Panel (c)
+
+当前图内：
+
+> Dev example 10007-v0; seed 0
+
+caption 中：
+
+> Queries 56–57 (seed 0)
+
+这些都是内部实验索引，不提供科学信息，还会让图看起来像从调试日志直接导出。
+
+建议统一改为：
+
+> Representative inverse-relation pair
+
+或者：
+
+> Same-answer collapse and query-specific recovery
+
+保留真实 target、prediction 和 IoU，不需要保留内部 ID 和 seed。
+
+### 11.5 Caption
+
+当前 caption 同时解释虚线、阴影、箭头、编号、seed、outline、filled bar 和 set-IoU，信息过载。
+
+建议 caption 只完成三个任务：
+
+1. 一句话说明整图结论；
+2. 分别解释 a/b/c；
+3. 保留必要视觉图例。
+
+caption 不需要再说明 sample ID、开发缓存或工程来源。
+
+---
+
+## 12. Table 1：核心训练对照
+
+### 12.1 具体位置
+
+- 文件：`tables/training_results.tex`
+- PDF：第 2 页右栏
+
+### 12.2 当前行名的问题
+
+当前：
+
+- `Current SFT, s0`
+- `RelTwin, s0`
+- `SpotSound-A (re-eval.)`
+- `RelTwin, 3 seeds`
+
+`Current`、`re-eval.`、`s0` 都是实验管理语言。审稿人更关心方法关系，不关心它们在项目目录中的状态。
+
+建议改成：
+
+- `SpotSound-A backbone`
+- `Paired SFT`
+- `RelTwin`
+- `RelTwin (3-seed mean)`
+
+seed-0 条件可以放 caption 或表下注释一次，不必写进每一行方法名称。
+
+### 12.3 当前 caption 的问题
+
+当前 caption 使用：
+
+> core training comparison
+
+> separate references
+
+这些词没有直接说明表格要证明什么。
+
+caption 应突出能力递进：backbone、paired sequence supervision 和 query-conditioned candidate supervision 在相同 relation diagnostic 与 SpotSound 上的表现。
+
+### 12.4 当前结果没有被充分解释
+
+这张表最有价值的故事是：
+
+1. SpotSound-A → Paired SFT：关系 mIoU 37.64→74.58，Joint 0.63→53.13；
+2. Paired SFT → RelTwin：关系 mIoU 74.58→88.55，Joint 53.13→84.38；
+3. SpotSound 上 Paired SFT 保持 58.42，而 RelTwin 提升到 59.43。
+
+它说明：
+
+- paired data 教会模型基本的关系定位；
+- candidate competition 进一步解决同一答案塌缩；
+- 这种关系训练没有牺牲公开 grounding，反而带来小幅提升。
+
+正文应把这条阶梯明确写出来。
+
+---
+
+## 13. Experimental Setup：数据协议
+
+### 13.1 具体位置
+
+- 文件：`sections/experiments.tex`
+- 位置：第 2–3 行
+
+### 13.2 小标题像内部文档
+
+当前：
+
+> Data and split roles.
+
+建议改成更常规的：
+
+> Datasets and evaluation protocol.
+
+### 13.3 `informed project development` 过于突出过程
+
+当前：
+
+> The relation split and public scores have informed project development.
+
+这一事实关系到结果独立性，不能直接隐瞒，但 `project development` 很像内部交接记录。
+
+大致可以更自然地集中说明：
+
+> We use the constructed split for method development and report SpotSound-Bench as the public grounding evaluation.
+
+如果 SpotSound 分数确实反复参与模型选择，则仍需保留准确边界，但不要在摘要、表注、结果和 Scope 中重复四次。
+
+### 13.4 数据数字较密
+
+当前一个段落连续出现 40 类、256 段、1,024 查询、512 对、512 rehearsal、10 类、80 段、320 查询、160 对、400 查询、387 音频。
+
+这些数字有复现价值，但阅读负担大。可以把训练集和开发集压缩成紧凑括号，正文重点说明：
+
+- 类别和 Freesound source disjoint；
+- relation split 用于开发和绑定诊断；
+- SpotSound 用于公开 grounding 评测。
+
+---
+
+## 14. Experimental Setup：训练对照
+
+### 14.1 具体位置
+
+- 文件：`sections/experiments.tex`
+- 位置：第 5–8 行
+
+### 14.2 小标题仍有审计语气
+
+当前：
+
+> Adaptation and the primary control.
+
+`primary control` 像审稿回复。建议直接写：
+
+> Training configuration.
+
+或者：
+
+> Paired SFT and RelTwin adaptation.
+
+### 14.3 公平性信息重复过多
+
+当前详细写了：
+
+- same software environment；
+- same code；
+- same initial weights；
+- same data order；
+- equal updates；
+- not equal FLOPs/wall time；
+- 三种子统计与 matched seed-0 分离。
+
+这些边界是必要的，但只需要一处紧凑说明。建议保留：
+
+> The paired SFT and RelTwin runs share initialization, data order, and 256 optimizer updates.
+
+然后用一句说明 RelTwin 增加候选打分，因此训练计算量更高。不要把相同事实重复放在摘要、caption、设置、结果和 Scope 中。
+
+### 14.4 精确参数数量像日志
+
+当前：
+
+> 20,185,088 trainable adapter parameters
+
+可以改为：
+
+> 20.19M trainable parameters
+
+精确数不是错误，但在四页论文中没有必要精确到个位。
+
+### 14.5 `final checkpoints and including every seed` 是过程说明
+
+当前：
+
+> using final checkpoints and including every seed
+
+这句话在内部审计中有意义，但对论文读者价值有限。直接写报告三种独立训练种子的均值和标准差即可。
+
+---
+
+## 15. Experimental Setup：不确定性与复现
+
+### 15.1 具体位置
+
+- 文件：`sections/experiments.tex`
+- 位置：第 10–11 行
+
+### 15.2 应删除的内部核验清单
+
+当前：
+
+> We verify row alignment, audio identity, duration, and recomputed IoU.
+
+这是良好的内部实验实践，但不属于四页方法论文的主要科学内容。删除不会降低可复现性。
+
+### 15.3 应删除的 hash 过程
+
+当前：
+
+> Code, inputs, weights, and environment are hashed before inference.
+
+哈希不是本文研究对象，也不是 ICASSP 强制要求。它会强化“实验审计报告”的观感。论文更需要的是公开代码链接、数据构造说明和评测协议，而不是说明内部保存了 hash。
+
+### 15.4 应保留的统计信息
+
+以下内容有真实科学作用，应保留：
+
+- public queries 按 audio group bootstrap；
+- relation queries 按 source-connected group bootstrap；
+- 查询保持成组抽样；
+- 置信区间基于观测模型，而不是训练种子分布。
+
+但最后一点无需用否定句反复强调。可以直接称其为 grouped sample uncertainty。
+
+---
+
+## 16. Results 4.1：核心机制结果
+
+### 16.1 具体位置
+
+- 文件：`sections/bridge_results.tex`
+- 位置：第 1–4 行
+
+### 16.2 当前第一段数字过载
+
+当前同一段包含：
+
+- relation mIoU 74.58→88.55；
+- +13.97 和 CI；
+- Joint 53.13→84.38；
+- +31.25 和 CI；
+- swap 40.00→7.50；
+- SpotSound 58.42→59.43；
+- +1.02 和 CI；
+- 92/239/69；
+- 两个下降至少 0.5 的样本。
+
+数字已经替代了论证。读者难以判断最重要的发现是哪一个。
+
+### 16.3 建议的结果叙事顺序
+
+#### 第一层：先讲失败模式是否被修复
+
+最有解释力的数字是：
+
+> SFT returns identical answers for 37/160 inverse-query pairs, whereas RelTwin does so for only 1/160.
+
+它直接对应 Introduction 定义的 query–window binding error。
+
+#### 第二层：再讲是否绑定到正确窗口
+
+使用 JointPairAcc 53.13→84.38，说明变化不是随机地产生不同答案，而是多数转向了正确关系窗口。
+
+#### 第三层：最后讲边界质量与公开迁移
+
+relation mIoU +13.97，SpotSound +1.02。这样从行为变化、关系正确性到普通 grounding 性能形成递进。
+
+### 16.4 建议删除的统计
+
+以下内容目前没有产生额外科学解释，可以删除：
+
+- `92/239/69` win/tie/loss；
+- `including two IoU decreases of at least 0.5`；
+- `51 pairs change from incorrect to correct, one in the opposite direction, and 24 remain incorrect`。
+
+如果不准备分析那两个大幅退化样本的错误类型，就不应该主动把它们放进主文。
+
+### 16.5 因果表述需要更准确但不必防御
+
+当前：
+
+> Shared positive examples and update counts connect these gains to adding explicit competition...
+
+`connect these gains to` 稍显绕。可以直接写：
+
+> Because the two runs use the same paired examples and initialization, their difference isolates the effect of query-conditioned candidate supervision under the matched seed-0 setting.
+
+该限定说一次即可。
+
+---
+
+## 17. Results 4.2：Timing intervention
+
+### 17.1 具体位置
+
+- 文件：`sections/results.tex`
+- 位置：第 4–8 行
+
+### 17.2 当前实验价值
+
+这是当前稿最强的机制验证之一。它不是普通鲁棒性测试，而是针对一个具体替代解释：模型是否只是记住了固定静音和窗口位置。
+
+### 17.3 当前写法的问题
+
+第一段花费较多篇幅列出：1.5 秒 lead-in、0.25 秒 gap、3 秒 windows gap、2 秒 tail、40 条不变、40 条改变，以及不变样本逐条重现预测。
+
+其中具体时间参数可以保留以保证复现，但 `reproduce every prediction` 是实现核验细节，不应成为结果段重心。
+
+### 17.4 建议的故事
+
+更好的逻辑是：
+
+1. 统一重新合成时间布局，移除 relation 与固定位置之间的关联；
+2. 冻结两个模型，不再训练；
+3. SFT 因新布局明显改善，说明原布局确实提供了部分捷径；
+4. RelTwin 仍领先 20 点，说明局部答案竞争带来的绑定能力不能完全由该捷径解释。
+
+这一结果不需要写成“我们成功排除了所有 shortcut”。准确结论就是 `does not fully explain`，已经足够有力。
+
+段落应以保留的 20 点关系选择优势结束，而不是以 `targeted, post-development test` 等审计身份结束。
+
+---
+
+## 18. Results 4.3：公开 SpotSound 结果
+
+### 18.1 具体位置
+
+- 文件：`sections/results.tex`
+- 位置：第 10–11 行
+- 对应表格：`tables/main_results.tex`
+
+### 18.2 当前最重要的 headline
+
+可以准确声称：
+
+> RelTwin obtains 59.16 mIoU on SpotSound-Bench, exceeding the previously published main-table best of 57.9.
+
+这应当是本节第一句和 Table 2 的主要信息。
+
+### 18.3 不要让两种比较口径相互打架
+
+当前同时存在：
+
+- 与已发表主表 57.9 比：+1.26；
+- 与本地相同评测器重新评估的 58.42 比：+0.75，CI 跨零；
+- matched seed-0 SFT 58.42→59.43：+1.02，CI 为正。
+
+三个数字都正确，但连续解释会让读者怀疑作者在选择有利参照。
+
+建议给三者明确角色：
+
+1. **Published comparison**：用于 SOTA point estimate；
+2. **Matched SFT comparison**：用于候选监督的因果对照；
+3. **Official re-evaluation**：作为评测器一致性参考，简短放一次。
+
+不要把 +1.26 写成 candidate loss 的独立增益，也不要声称显著优于 official re-evaluation。
+
+### 18.4 本节结尾不应是跨零 CI
+
+当前段落最后一句是 official re-evaluation 的 CI 跨零。这会形成明显的负面终因效应。
+
+可以先交代该统计边界，然后以更高 R1@.5 和 matched SFT 的一致方向收束。或者把 official reference 放进 table note，让正文结束在公开 benchmark 上保持 query-specific training 收益的结论。
+
+### 18.5 Table 2 caption 需要缩短
+
+当前 caption 同时解释 published baselines、Table 3、三种子、delta、prior best 和 bold 规则。
+
+`Bold marks the highest listed point estimate` 没有必要。读者能理解粗体含义。
+
+caption 只需说明：SpotSound-Bench、400 queries、published results from SpotSound、RelTwin three-seed mean。
+
+---
+
+## 19. Scope 小节
+
+### 19.1 具体位置
+
+- 文件：`sections/results.tex`
+- 位置：第 13–14 行
+
+### 19.2 当前问题
+
+当前连续列出：
+
+- repeated excerpts；
+- fixed templates；
+- alternative hard negatives 未评估；
+- matched multi-seed replication 未完成；
+- natural overlapping relations 未评估；
+- long-range relations 未评估；
+- backbone pretraining overlap 未审计。
+
+这些限制大多真实，但集中放在主结果之后，等于替 reviewer 写了一份拒稿理由列表。
+
+### 19.3 建议修改方向
+
+只保留与当前结论直接相关的一条边界：
+
+> The controlled construction isolates query–window binding under paired inverse relations; broader natural relation structures remain outside the present evaluation.
+
+其他内部审计边界不需要全部进入四页正文。尤其 `does not audit backbone pretraining overlap` 会突然引入全文未讨论的数据污染问题，不建议主动扩展攻击面。
+
+如果必须保留 SpotSound 参与开发这一事实，应放 Experimental Setup 一次，不要在 Scope 重复。
+
+---
+
+## 20. Conclusion
+
+### 20.1 具体位置
+
+- 文件：`sections/conclusion.tex`
+- 位置：第 2 行
+
+### 20.2 当前问题
+
+当前结论相对简洁，但：
+
+- `retaining an advantage` 没说明保留的是关系选择还是普通 IoU；
+- `practical training strategy` 缺少训练效率数据支撑；
+- 没有回到“两个候选都真实但只有一个与查询匹配”的核心洞见。
+
+### 20.3 建议修改方向
+
+结论应完成三件事：
+
+1. 重申问题：事件存在不等于 query–window binding；
+2. 重申机制：在生成答案空间对 locally valid timestamps 进行条件竞争；
+3. 重申证据：减少 same-answer collapse、改善联合关系定位，并提高 SpotSound grounding，且不改变推理流程。
+
+不需要再重复所有数值，也不要以未完成的自然场景泛化作为最后一句。
+
+---
+
+## 21. Acknowledgments 与伦理声明
+
+### 21.1 具体位置
+
+- 文件：`sections/declarations.tex`
+- PDF：第 4 页
+
+### 21.2 个人支付 GPU 费用表述异常
+
+当前：
+
+> GPU computing expenses were personally funded by Wei Xu.
+
+这不是常见的论文致谢表达，也不会增强贡献或复现性，反而像项目财务备注。
+
+作者应按真实情况和会议要求选择：
+
+- 若确实没有外部资助，简洁写 `This work received no external funding.`；
+- 若有学校、实验室或项目支持，则准确列出；
+- 不要猜测或虚构资助来源。
+
+### 21.3 利益冲突和伦理说明
+
+`No relevant conflicts of interest` 与无人体实验说明可以保留，但应遵循官方要求，语言简洁即可。
+
+这些声明可以与参考文献集中到第五页，释放第四页技术空间。
+
+---
+
+## 22. 全文需要清除的内部审计式表达
+
+| 当前表达 | 为什么不合适 | 建议方向 |
+|---|---|---|
+| `Current SFT` | 内部版本状态 | `Paired SFT` |
+| `SpotSound-A (re-eval.)` | 像实验记录 | `SpotSound-A backbone`，评测器信息放 caption |
+| `Dev example 10007-v0; seed 0` | 内部样本索引 | `Representative inverse-relation pair` |
+| `Queries 56–57 (seed 0)` | 调试标识 | 删除，只说明案例性质 |
+| `Data and split roles` | 内部文档标题 | `Datasets and evaluation protocol` |
+| `primary control` | 审稿回复语气 | `Paired SFT and RelTwin adaptation` |
+| `using final checkpoints and including every seed` | 实验审计过程 | 直接写 three independent seeds |
+| `row alignment, audio identity, duration` | QA 检查清单 | 从正文删除 |
+| `hashed before inference` | 内部可追溯流程 | 删除，改为公开代码/协议说明 |
+| `informed project development` | 项目管理语言 | 用科学的 development/evaluation protocol 表述一次 |
+| `separate references` | 表格谱系说明 | 直接给每行科学名称 |
+| `locally confusable answer negative` | 名词堆叠 | `locally valid timestamp contrast` |
+| `fixes source material` | 搭配歧义 | `reuses the same source excerpts to control event identity` |
+| `controls a constant-position preference` | 不自然 | `balances which relation appears first to prevent a position shortcut` |
+| `retaining an advantage` | 指代模糊 | 明确 `retaining a 20-point joint binding advantage` |
+| `demonstrate the value of` | 泛化模板句 | 直接写所观察到的机制结论 |
+
+---
+
+## 23. 哪些事实必须保留，不能为了包装而隐藏
+
+包装不是删除所有不利信息。以下事实影响结论含义，必须保留，但每项只需在最相关的位置出现一次：
+
+1. matched SFT–RelTwin 的核心因果对照是 seed 0；
+2. RelTwin 三种子均值与 published SpotSound 主表比较，用于 point-estimate SOTA；
+3. 与 58.42 official re-evaluation 的 +0.75 CI 跨零，不能写成统计显著优于；
+4. relation split 是构造的 development diagnostic，不是第二个自然外部 benchmark；
+5. RelTwin 训练增加了候选答案计算量，equal updates 不等于 equal FLOPs；
+6. timing intervention 只排除了一个具体的位置/静音解释，不能写成排除所有 shortcut。
+
+正确做法是集中、准确地表述这些边界，而不是在摘要、设置、表注、结果、Scope 和结论中反复自我辩护。
+
+---
+
+## 24. 推荐的全文逻辑顺序
+
+### Abstract
+
+问题 → SFT 根因 → locally valid timestamp contrast → candidate likelihood competition → binding 结果 → SpotSound 结果 → 核心意义。
+
+### Introduction
+
+1. 具体例子定义 query–window binding error；
+2. 区分 temporal representation、absent-event negative 和 compositional hard negative；
+3. 指出同录音两个全真局部答案仍未被解决；
+4. 概述 RelTwin；
+5. 列出 failure / method / evidence 三项贡献。
+
+### Method
+
+1. 构造包含两个逆关系窗口的同一录音；
+2. 定义 (2\times2) query–answer score matrix；
+3. 先说明 SFT 不提供相对约束，再定义 candidate CE；
+4. 说明 inference unchanged；
+5. 定义 paired binding metrics。
+
+### Experiments
+
+1. 数据和评测协议；
+2. Paired SFT 与 RelTwin 的匹配设置；
+3. grouped bootstrap，其他内部 QA 流程删除。
+
+### Results
+
+1. Backbone → Paired SFT → RelTwin 的能力阶梯；
+2. same-answer collapse 37→1，Joint +31.25；
+3. timing intervention 后保留 +20；
+4. SpotSound 59.16 vs published 57.9；
+5. 一句紧凑 scope。
+
+### Conclusion
+
+事件存在不等于关系绑定 → RelTwin 训练局部有效答案之间的查询条件偏好 → 现有诊断和公开结果支持这一结论。
+
+---
+
+## 25. 修改优先级
+
+### P0：直接影响创新性和审稿判断
+
+1. 改标题；
+2. 重写摘要；
+3. 重构 Introduction 相关工作和 novelty gap；
+4. 重写贡献段；
+5. 在 Method 中解释 SFT 缺失的相对偏好约束；
+6. 补全窗口、(L_{seq})、(L_{replay}) 与 score matrix 定义；
+7. 按 Backbone → Paired SFT → RelTwin 重写核心结果。
+
+### P1：直接影响论文成熟度
+
+1. 删除内部样本 ID、seed 标签和 `current/re-eval`；
+2. 删除 row alignment、hash、final checkpoint 等过程语言；
+3. 精简 Table 1、Table 2 和 Figure 1 caption；
+4. 重写 timing intervention，使其表现为机制验证；
+5. 压缩 Scope，避免拒稿理由列表；
+6. 重写结论，使其回到核心 insight。
+
+### P2：投稿前完成
+
+1. 替换通讯作者邮箱占位符；
+2. 核对资助、利益冲突和伦理声明；
+3. 把声明和参考文献尽量集中到第五页；
+4. 最后检查术语统一、引用、浮动体顺序和分页。
+
+---
+
+## 26. 修改完成后的验收标准
+
+修改后的论文应达到以下效果：
+
+1. Reviewer 能用一句话复述：RelTwin contrasts two locally valid timestamp answers whose correctness depends on the query。
+2. Reviewer 不会把方法简单概括成“多加了一个 CE”，因为正文已经解释 SFT 缺失的相对约束。
+3. Introduction 能主动、准确地区分 CompA、T-CLAP、AHA、SpotSound 与 RelTwin。
+4. Table 1 一眼呈现 Backbone → Paired SFT → RelTwin 的能力递进。
+5. 核心结果段先讲 same-answer collapse 和正确关系绑定，而不是先堆十几个数字。
+6. 全文不再出现 `Current`、内部样本 ID、hash、项目状态和 QA 检查清单。
+7. 必要实验边界只出现一次，不在每个正面结论后附加一段自我否定。
+8. 结论最后落在“局部全真答案仍需查询条件绑定”这一科学洞见上。
+9. 所有数值、置信区间和比较对象保持真实，不把 point-estimate SOTA 写成统计显著优势。
+
+---
+
+## 原有分级清单、合规事项与版本记录
+
+
 当前论文：[paper.pdf](paper.pdf) · 目标会议：ICASSP 2027 · 更新日期：2026-09-14
 
 **当前是 v12（C01 配置补充及 Figure 1 更新）审阅稿，不是已完成投稿检查的终稿。** 本分支以 `paper.pdf` 和 `ISSUES.md` 为固定阅读入口，同时保存可编辑的 LaTeX、图表、文献与模板。本次补齐已有实验的配置说明，并更新 Figure 1 的结构与配色；没有训练、重新推理或改动实验分数。旧版本由 Git 历史保存。编辑与编译方法见 [README.md](README.md)。
