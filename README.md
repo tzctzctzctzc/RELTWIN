@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-`paper` 分支同时保存可编辑源码和当前编译稿。当前 v12 审阅稿已补齐已有实验的 LoRA、每步样本/梯度累积及解码设置，并同步更新 Figure 1：删除底部 inference pipeline 与整体统计，右栏改为 SFT／RelTwin 的查询—窗口对照；三幅子图统一减少灰底。没有训练、重新推理或改动实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+`paper` 分支同时保存可编辑源码和当前编译稿。当前为 v13（P0-01 标题与主线统一稿），标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。本轮仅统一标题、摘要、引言方法概述/贡献、关键词与结论；此前的 C01 配置补充和 Figure 1 改进全部保留。没有训练、重新推理或改动实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
@@ -67,3 +67,5 @@ Linux/macOS 可使用 `cp main.pdf paper.pdf`。中间文件和临时编译 PDF 
 当前源文件来自冻结提交 `3841a85d00ed4487be2cca7e1022b2279d079d79` 的 `paper/overleaf_icassp2027_reltwin_final_v11`。初次补入的 19 个 LaTeX/图表/文献/样式文件保持原始内容；后续以本分支提交历史追踪修改。`paper.pdf` 的版本及 SHA-256 见 `ISSUES.md`。
 
 2026-09-14 初次补入 v11 源码时，19 个源文件与冻结提交一致；独立编译的五页 PDF 与当时的 `paper.pdf` 文字及像素一致，独立主图也编译通过。随后 v12 补充 `sections/experiments.tex` 的配置说明并合入 Figure 1 更新，重新编译后仍为五页，无 overfull box 或未解析引用。C01 已关闭；其余问题不因编译通过而自动关闭，具体状态与当前 PDF 哈希见 `ISSUES.md`。
+
+v13 仅关闭 P0-01：摘要为 130 词，新标题按原模板排为两行；重新编译仍为五页，无 overfull box 或未解析引用。相关工作、方法、训练配置、结果段、图表与文献未改。关于声学有效性、SFT 对比含义和结果口径的修改后审查已记录在 `ISSUES.md` 第 7 节。

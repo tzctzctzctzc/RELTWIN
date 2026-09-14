@@ -4,7 +4,7 @@
 
 目标会议：ICASSP 2027
 
-当前稿：v12（Figure 1 功能配色稿）
+当前稿：v13（P0-01 标题与主线统一稿）
 
 清单审计日期：2026-09-14
 
@@ -52,7 +52,7 @@
 
 | 优先级 | 活动问题 | 当前判断 |
 |---|---:|---|
-| P0 | 9 | 其中 7 项为论文内容，2 项涉及作者信息与提交合规 |
+| P0 | 8 | 其中 6 项为论文内容，2 项涉及作者信息与提交合规；P0-01 已完成 |
 | P1 | 8 | 主要是结果解释、图表叙事、Scope、结论和版面 |
 | P2 | 3 | 最后一轮语言与 PDF QA |
 | P3 | 4 | 全部需要新实验，当前延后 |
@@ -103,26 +103,7 @@ RelTwin 的负答案不是其他录音中的随机窗口，也不是音频中不
 
 ## 2. P0：提交前必须解决
 
-### P0-01 · 核心创新没有在标题、摘要和贡献段形成同一条主线
-
-- **状态**：待改
-- **位置**：`main.tex` 标题；`sections/abstract.tex`；`sections/introduction.tex` 方法概述与贡献段；关键词
-- **当前问题**：
-  - 标题 `Learning Query-Specific Windows from Co-Occurring Inverse Relations` 中 `learning windows from relations` 搭配生硬，像在“生成窗口”，没有突出 query–window binding。
-  - 摘要先列任务和大量实验条件，没有立即指出独立正答案 SFT 的缺口。
-  - `places inverse relations` 与 `locally confusable answer negative` 不自然，且弱化了“两个答案都在同一录音中真实成立”的独特性。
-  - 贡献段用 `connect` 描述数据构造、loss 和诊断，容易给人“拼接模块”的印象。
-- **为什么重要**：审稿人若在标题、摘要和 Introduction 前半页仍不能复述论文的新问题，就会把方法归纳成“在合成数据上加一个候选 CE”。
-- **处理方向**：
-  1. 标题中心改为 `query–window binding` 或 `locally valid timestamp contrasts`；
-  2. 摘要按“失败模式 → SFT 缺口 → RelTwin → 机制证据 → 公共结果”组织；
-  3. 贡献段明确分为问题发现、训练原则和实验证据三项；
-  4. 关键词减少宽泛的 `hard answer negatives`，与统一术语一致。
-- **标题候选**：
-  - `RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding`
-  - `RelTwin: Learning Query–Window Binding from Co-Occurring Inverse Relations`
-- **验收标准**：标题、摘要、Introduction 和 Conclusion 能用同一组术语描述同一贡献；摘要不再以审计条件和数字堆叠代替问题—方法逻辑。
-- **来源映射**：原审阅 #1–#12、#17–#20、W01、W02，以及新增包装审计第 2、3、6、7 节。
+P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不因本轮叙事调整而自动关闭。
 
 ### P0-02 · Related Work 没有沿“RelTwin 与最近邻方法的结构差异”组织
 
@@ -458,6 +439,7 @@ RelTwin 的负答案不是其他录音中的随机窗口，也不是音频中不
 | D03 | 已完成 | Figure 1 删除底部 inference pipeline 和整体 160 统计，panel (c) 改为 SFT/RelTwin 查询—窗口对照 | `figures/reltwin_overview.tex` 与当前 PDF |
 | D04 | 已完成 | Figure 1 改为浅暖底与局部功能色，英文、公式、符号统一深色，减少大面积灰底 | 当前 Figure 1 与 PDF |
 | D05 | 已完成 | 当前 PDF 可独立编译为 5 页 US Letter，无未解析引用和 overfull box | v12 构建记录；终稿后仍需重跑 P2-03 |
+| P0-01 | 已完成 | 采用作者指定新标题，统一摘要、引言方法概述/贡献、关键词及结论主线 | v13 LaTeX、`paper.pdf` 与下方合理性审查记录 |
 
 D01 的配置事实：
 
@@ -466,6 +448,31 @@ D01 的配置事实：
 - SFT 与 RelTwin 使用相同数据、顺序和 256 次 optimizer updates；
 - 16 kHz mono、bfloat16、greedy decoding、one beam、no sampling、最多 128 new tokens；
 - 这些设置已写入当前稿，不需要重新训练。
+
+### P0-01 · 标题、摘要与贡献主线统一（2026-09-14）
+
+- **状态**：已完成。
+- **采用标题**：`RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding`。
+- **本轮范围**：只修改 `main.tex` 的标题与关键词、`sections/abstract.tex`、`sections/introduction.tex` 的方法概述和贡献段，以及为满足同一主线验收而同步的 `sections/conclusion.tex`。同时更新 PDF、README 与本清单。引言前三段（包括相关工作）原样保留；方法定义、训练配置、结果段、两张表、主图、参考文献、作者与声明均未修改。
+- **已形成的主线**：同一录音内两种逆关系都成立 → 声音存在不足以决定当前查询对应哪个窗口 → 在完整时间戳答案间增加显式的查询条件比较 → 用关系绑定恢复、时间布局干预和 SpotSound 结果检验该做法。
+- **摘要**：130 词，按失败模式、监督缺口、方法、机制证据与公共结果组织；关键词统一为 audio temporal grounding、timestamp answer contrasts、query–window binding、paired supervision。
+- **贡献段**：分别陈述关系绑定失败的刻画、局部有效时间戳对比监督、以及 paired diagnosis/timing intervention/公共数据上的证据；不把普通交叉熵宣称为新损失范式。
+
+**修改后的合理性审查：**
+
+| 审查问题 | 结论与依据 |
+|---|---|
+| `locally valid` 是否会被误读为两个答案对当前查询都正确？ | 摘要和引言均说明：窗口有真实声学依据，但只有一个符合当前查询的顺序。与现有两个局部窗口及对角正标签一致。 |
+| 是否把 SFT 说成不能学习关系？ | 没有。新文只指出 sequence supervision 没有显式比较两个完整候选答案，不否认 token-level 归一化中的竞争或 SFT 学到关系的能力。 |
+| 是否混淆三个比较口径？ | 没有。31.25 与 1.02 明确对应 matched seed-0 paired SFT；20.00 对应实际改动时间布局的录音；59.16 和 +1.26 对应三种子均值与既有主表最佳。正文中 official 对照及跨零 CI 原样保留。 |
+| 是否把合成开发集或时间干预包装为独立自然关系测试？ | 没有。摘要明确使用 synthetic relation-development data 和 timing-modified recordings；公共结果只点名 SpotSound-Bench。 |
+| 是否夸大创新性、新增模块或推理能力？ | 没有声称首次提出对比学习、全面胜过其他 hard negatives，或引入新推理模块。直接生成时间戳与当前实现一致。 |
+| 是否越界处理其他问题？ | 未重写相关工作、方法节、结果表或图。P0-02–P0-09 与全部 P1/P2/P3 状态保持不动；重叠措辞的后续审查以当前稿为准。 |
+| 排版是否正常？ | 独立编译为 5 页，技术内容止于第 4 页；无 overfull box、未解析引用或交叉引用。新标题保持两行、原字号和模板不变。发现并修正关键词换行超栏；未处理 P1-08 的整体分页任务。 |
+
+审查结论：**P0-01 可关闭；叙事与当前实现及已有证据一致。** 此结论不代替 P0-02 的相关工作核验，也不关闭 P0-03/P0-04 的方法动机和定义补全任务。没有训练、重新推理或新增实验。
+
+来源映射：原审阅 #1–#12、#17–#20、W01、W02，以及新增包装审计第 2、3、6、7 节。
 
 ---
 
@@ -493,7 +500,7 @@ D01 的配置事实：
 
 按依赖顺序执行，避免先润色后重写造成返工：
 
-1. **P0-01 + P0-02**：冻结标题、摘要、novelty gap 和贡献；
+1. **P0-02**：处理相关工作与 novelty gap；P0-01 的标题、摘要和贡献主线已完成，本轮未扩展到相关工作；
 2. **P0-03 + P0-04**：补齐方法动机、对象、损失和指标定义；
 3. **P0-05 + P0-07**：重排结果证据链和三种比较口径；
 4. **P0-06 + P1-01 + P1-02**：清理内部审计语言并重整设置/Table 1；
@@ -532,8 +539,9 @@ P0-08 不依赖正文改写，作者应立即并行提供邮箱和 ORCID。
 | 2026-09-14 | v12 | 补齐关键训练/解码配置，C01 关闭 |
 | 2026-09-14 | v12 | 重绘 Figure 1，删除 inference pipeline/整体统计并完成三轮配色调整 |
 | 2026-09-14 | v12，PDF 未变 | 将置顶长篇审计与旧 P0/P1/P2 清单真正归并为单一长期台账；重定 P0/P1/P2/P3，建立稳定 ID、状态、验收标准和历史映射 |
+| 2026-09-14 | v13 | 仅处理 P0-01：采用指定标题，统一摘要、引言概述/贡献、关键词与结论，并完成合理性和编译审查；其他问题状态不变，无新实验 |
 
-- 当前 PDF SHA-256：`360c5d0a313e7059b8af988931a5abcc4035f387e720d087612b4e8f16e7a172`
+- 当前 PDF SHA-256：`36241fa2b942d376e08e8b77e18fdc20c926cc8d6b62879e61d1ce31aa428bb5`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`
 - 原交付审计提交：`a190b11`
 - 原开发分支：`codex/reltwin-core-only-20260913`
