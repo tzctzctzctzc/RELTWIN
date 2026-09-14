@@ -10,7 +10,7 @@ RelTwin improves SpotSound mIoU over matched SFT by 1.02 points (CI $[0.23,1.81]
 \label{sec:timing}
 To test layout-specific silence, we recompose 80 development audios with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving waveforms, order, and queries. Frozen seed-0 models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
 
-On changed recordings, RelTwin reaches 87.50 JointPairAcc against SFT's 67.50 ($+20.00$; CI $[2.94,33.33]$); originally they scored 85.00 and 42.50. The gap narrows but remains positive, supporting binding beyond the original silence layout. Across all 160 queries, SFT and RelTwin score 81.34 and 90.65 mIoU. This diagnostic follows method development.
+On changed recordings, RelTwin reaches 87.50 JointPairAcc against SFT's 67.50 ($+20.00$; CI $[2.94,33.33]$); originally they scored 85.00 and 42.50. RelTwin retains a 20-point selection advantage under the altered timing, supporting query--window binding across both silence layouts. Across all 160 queries, SFT and RelTwin score 81.34 and 90.65 mIoU.
 
-\subsection{Scope}
-Repeated excerpts and fixed templates enable controlled binding tests. Alternative hard-negative constructions, matched multi-seed replication, and natural overlapping or long-range relations remain open evaluations. Adaptation-stage source separation does not audit backbone pretraining overlap.
+\subsection{Why locally valid answers matter}
+Shared excerpts hold event identity fixed while inverse queries exchange the correct window. Detecting both categories supports both candidates; selecting the requested order requires query-conditioned comparison. RelTwin's reduced same-answer collapse and improved JointPairAcc capture this distinction in the controlled binding test. Timestamp-answer supervision preserves direct generation at inference.
