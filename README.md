@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本分支保存可编辑源码和当前编译稿。当前为 v19 审阅稿，分支 `docs/nova-system-reltwin-focus-20260914`，从已同步的 `paper@6d7225d` 建立。按作者提供的表格恢复 SpotSound、Clotho-Moment 和 UnAV 三套系统结果：主表方法为 **NOVA + selective refinement**，不是 RelTwin 单独模型；第二张表保留 RelTwin 的匹配训练与三种子机制证据。标题及核心方法仍为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。实验设置说明旧 SetPO/路由与当前候选损失的版本关系，以及 Clotho/UnAV 从官方预测出发的配置，不把系统成绩直接归因给 RelTwin。没有训练、重新推理或改动预测。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。本稿尚未合入 `paper`。
+本分支保存可编辑源码和当前编译稿。当前为 v20 审阅稿，分支 `docs/nova-direct-narrative-20260914`，基于 v19 的 `25e5c45`。论文按“主表提升 → NOVA 方法 → RelTwin 候选训练及机制分析”组织。主表保留 SpotSound、Clotho-Moment、UnAV 三套结果，正文着重说明同录音内局部有效时间戳答案的查询条件竞争；具体部署及对照配置集中列于实验设置。标题仍为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。没有训练、重新推理或改动预测。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。本稿尚未合入 `paper`。
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
@@ -86,3 +86,5 @@ v18 仅关闭 P0-06：删除正文中的逐行核验、哈希说明和重复的�
 2026-09-14 经作者确认，将 v16–v18 的三个提交 `0452f37`、`14aa630`、`094566e` 快进合入 `paper`，无冲突、不覆盖既有历史。本次合并只另行更新协作入口和台账状态；LaTeX 与 `paper.pdf` 保持 v18 原样，不新增论文版本号，也不改变问题处理状态。
 
 v19 恢复截图的三 benchmark、十个基线、九列指标、此前逐项最佳和差值行。NOVA 系统结果与 RelTwin 独立对照分别呈现；摘要、引言、设置和结果同步调整。精炼重复解释以容纳系统配置和跨栏主表，保留核心方法公式、全部机制表数值、转移数量、CI 和 timing 数值。作者、主图、核心方法、机制表及会议样式未改。公开数据声明补齐恢复的数据集，启用已有 Auto-AEG 参考条目，伦理声明保留为具名段落。正文四页，第五页为声明与全部文献；未执行新模型实验。输入依据及未解决问题见 `ISSUES.md`。
+
+v20 改为直接的成果与方法叙事：Results 先呈现主表提升，再解释 RelTwin 的窗口选择恢复和时间干预；摘要、引言、结论同步。删除结果段反复解释比较用途的句子，将初始预测分数集中到实验设置。主表仅改图注，全部数值、核心方法、机制表、图、统计区间及训练配置保持原值。没有新增实验或改变任何活动问题的完成状态。
