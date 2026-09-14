@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本分支保存可编辑源码和当前编译稿。当前为 v18（`paper` 协作稿），经作者确认合入表格增强、P0-03/P0-04 方法定义和 P0-06 科学协议表述三轮修改，论文内容对应 `094566e`。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。最近一轮仅清理工程日志式表述：设置改为科学协议说明，结果不再重复列举公平性条件，主图移出内部样本编号。复现追溯信息集中保存在 `ISSUES.md`；开发用途、种子、计算量差异、统计条件和所有结果均保留。没有训练、重新推理或改动预测。正文至第 4 页结束，第 5 页为声明和参考文献。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+本分支保存可编辑源码和当前编译稿。当前为 v19 审阅稿，分支 `docs/nova-system-reltwin-focus-20260914`，从已同步的 `paper@6d7225d` 建立。按作者提供的表格恢复 SpotSound、Clotho-Moment 和 UnAV 三套系统结果：主表方法为 **NOVA + selective refinement**，不是 RelTwin 单独模型；第二张表保留 RelTwin 的匹配训练与三种子机制证据。标题及核心方法仍为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。实验设置说明旧 SetPO/路由与当前候选损失的版本关系，以及 Clotho/UnAV 从官方预测出发的配置，不把系统成绩直接归因给 RelTwin。没有训练、重新推理或改动预测。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。本稿尚未合入 `paper`。
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
@@ -15,7 +15,7 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 | `sections/` | 摘要、引言、相关工作、方法、实验、讨论、结论与声明 |
 | `sections/related_work.tex` | 独立 Related Work 章节及与最近邻方法的结构比较 |
 | `sections/method.tex` | 局部目标构造、查询—答案得分矩阵、训练目标与成对指标定义 |
-| `tables/main_results.tex` | Table 1：分组的 SpotSound-Bench 公开方法比较 |
+| `tables/main_results.tex` | Table 1：跨栏的 SpotSound／Clotho／UnAV 系统比较，以此前主表逐项最佳为参照 |
 | `tables/training_results.tex` | Table 2：跨栏的匹配训练、关系绑定诊断与三种子汇总 |
 | `figures/overview_art.tex` | 可编辑的 TikZ 主图 |
 | `figures/overview_data.tex` | 主图使用的时间戳与统计值 |
@@ -84,3 +84,5 @@ v17 仅完成 P0-03 和 P0-04：方法节将正答案序列监督与同录音答
 v18 仅关闭 P0-06：删除正文中的逐行核验、哈希说明和重复的公平性清单；完整训练匹配条件留在设置，训练终点评估明确为 256 次更新后。图注改为描述输入、监督与恢复现象，内部样本身份保留在 `ISSUES.md` 第 7 节。核对四次训练摘要及主图四个输入文件哈希，确认配置和图例数据未变。方法、两张表、结果数值及 CI、timing、Scope、Conclusion、作者、声明和文献不变。结论后增加标准分页，让声明与全部文献从第 5 页开始；五页均已渲染检查，所有字体嵌入，无 overfull box 或未解析引用。P1-01/P1-03 记录关联进展并转为待终检，其余未完成项继续保留。
 
 2026-09-14 经作者确认，将 v16–v18 的三个提交 `0452f37`、`14aa630`、`094566e` 快进合入 `paper`，无冲突、不覆盖既有历史。本次合并只另行更新协作入口和台账状态；LaTeX 与 `paper.pdf` 保持 v18 原样，不新增论文版本号，也不改变问题处理状态。
+
+v19 恢复截图的三 benchmark、十个基线、九列指标、此前逐项最佳和差值行。NOVA 系统结果与 RelTwin 独立对照分别呈现；摘要、引言、设置和结果同步调整。精炼重复解释以容纳系统配置和跨栏主表，保留核心方法公式、全部机制表数值、转移数量、CI 和 timing 数值。作者、主图、核心方法、机制表及会议样式未改。公开数据声明补齐恢复的数据集，启用已有 Auto-AEG 参考条目，伦理声明保留为具名段落。正文四页，第五页为声明与全部文献；未执行新模型实验。输入依据及未解决问题见 `ISSUES.md`。
