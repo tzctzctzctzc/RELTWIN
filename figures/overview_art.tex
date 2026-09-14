@@ -9,13 +9,15 @@
 % Synthesized contract: 9 pt Times body, 10 pt panel labels, 0.65 pt lines,
 % sharp rectangles, 0.3--0.5 cm functional gaps, no gradients/shadows/icons.
 % Current palette: annotated swatches in the user-supplied SplineGS reference
-% image (2026-09-14): D9E4C2 sage, CAC2D7 lavender, DDD6E5 pale lavender,
-% F5D8BF apricot, F9ECE0 pale apricot. Style reference only.
-% Sage/lavender identify the two queries and their windows; apricot marks
-% excerpts and model/supervision blocks. All text and math use rtInk.
-% Pale apricot/lavender/sage backgrounds group input/training/comparison.
-% Both models in (c) share one background; outline vs fill encodes target vs
-% prediction independently of color. Deeper companion hues are for strokes.
+% image (2026-09-14): BFDCE7/DFEDF2 cyan, CAC2D7/DDD6E5 lavender,
+% D9E4C2 sage, F5D8BF/F9ECE0 apricot. Style reference only.
+% Warm near-neutral canvas supports local functional regions instead of three
+% full-height color slabs. Cyan identifies audio/model context, lavender groups
+% candidate supervision, and apricot highlights the correct candidate cells.
+% Sage/lavender link query strips to windows; deeper companion window fills
+% remain distinct from the canvas. All text and math use rtInk.
+% Both models in (c) share the same header style and canvas; outline vs fill
+% encodes target vs prediction independently of color.
 % Four excerpt blocks = A,B,B,A; four cells = query/answer likelihoods;
 % solid arrows = data flow; dashed enclosure = training-only computation.
 % Panel (a) is schematic; panel (c) uses unchanged measured interval macros.
@@ -23,47 +25,58 @@
 \definecolor{rtPlusFill}{HTML}{D9E4C2}
 \definecolor{rtMinusFill}{HTML}{CAC2D7}
 \definecolor{rtAccentFill}{HTML}{F5D8BF}
-\definecolor{rtPlus}{HTML}{617345}
-\definecolor{rtMinus}{HTML}{766783}
+\definecolor{rtPlus}{HTML}{5D7947}
+\definecolor{rtMinus}{HTML}{726082}
 \definecolor{rtAccent}{HTML}{A67F5D}
+\definecolor{rtCyanFill}{HTML}{BFDCE7}
+\definecolor{rtCyanBg}{HTML}{DFEDF2}
+\definecolor{rtCyan}{HTML}{658C99}
+\definecolor{rtPlusBar}{HTML}{A8BF8C}
+\definecolor{rtMinusBar}{HTML}{B5A3C9}
 \definecolor{rtInk}{HTML}{242424}
-\definecolor{rtInputBg}{HTML}{F9ECE0}
 \definecolor{rtLavenderBg}{HTML}{DDD6E5}
-\colorlet{rtTrainBg}{rtLavenderBg!65}
-\colorlet{rtCompareBg}{rtPlusFill!55}
+\definecolor{rtCanvasBg}{HTML}{FBF8F3}
+\colorlet{rtSupervisionBg}{rtLavenderBg!55}
 \begin{tikzpicture}[x=1cm,y=1cm,
  every node/.style={font=\fontsize{9}{10.4}\selectfont,text=rtInk,inner sep=1.5pt},
  flow/.style={-{Latex[length=1.5mm]},line width=.65pt,draw=rtInk},
  title/.style={font=\fontsize{10}{11.4}\selectfont\bfseries},
  note/.style={font=\fontsize{9}{10.4}\selectfont,text=rtInk},
- module/.style={draw=rtAccent,fill=rtAccentFill!55,line width=.65pt}]
+ module/.style={draw=rtCyan,fill=rtCyanFill,line width=.65pt}]
 \path[use as bounding box] (0,.93) rectangle (17.4,6.22);
-% Shared-height, borderless stage backgrounds; labels remain below the panels.
-\path[fill=rtInputBg] (0,1.50) rectangle (4.71,6.22);
-\path[fill=rtTrainBg] (5.34,1.50) rectangle (11.05,6.22);
-\path[fill=rtCompareBg] (11.55,1.50) rectangle (17.4,6.22);
+% Color areas follow data/model/competition roles, rather than filling A/B/C.
+\path[fill=rtCanvasBg] (0,1.50) rectangle (17.4,6.22);
+\path[fill=rtCyanBg!72] (.04,4.90) rectangle (4.65,6.16);
+\path[fill=rtSupervisionBg] (5.59,2.55) rectangle (10.80,4.77);
+\path[fill=rtMinusFill] (5.59,4.37) rectangle (10.80,4.77);
+% Matched model headers organize (c) without tinting its entire plotting area.
+\foreach \xlo/\xhi in {12.20/14.64,14.91/17.35}{
+ \path[fill=rtCyanBg] (\xlo,5.39) rectangle (\xhi,5.82);
+}
 
-% (a) One recording contains both local ordered pairs. Apricot tints identify
-% reused excerpts; sage/lavender identifies each query and its answer window.
+% (a) Repeated A/B excerpts use consistent cyan/apricot fills. Sage/lavender
+% identifies each inverse query and its answer window.
 \node[anchor=west] at (.06,6.00) {One recording $x$};
 \node[note,anchor=west] at (.06,5.65) {$A$ = dog, $B$ = rooster};
-\draw[rtAccent!40,line width=.6pt] (.13,5.16)--(4.63,5.16);
-\foreach \xa/\xb/\event/\eventtint in {.2/1.0/A/55,1.13/1.93/B/100,2.78/3.58/B/100,3.71/4.51/A/55}{
- \draw[draw=rtAccent,fill=rtAccentFill!\eventtint,line width=.65pt] (\xa,4.98) rectangle (\xb,5.36);
+\draw[rtCyan!45,line width=.6pt] (.13,5.16)--(4.63,5.16);
+\foreach \xa/\xb/\event/\eventfill/\eventstroke in {
+ .2/1.0/A/rtCyanFill/rtCyan,1.13/1.93/B/rtAccentFill/rtAccent,
+ 2.78/3.58/B/rtAccentFill/rtAccent,3.71/4.51/A/rtCyanFill/rtCyan}{
+ \draw[draw=\eventstroke,fill=\eventfill,line width=.65pt] (\xa,4.98) rectangle (\xb,5.36);
  \node at ({(\xa+\xb)/2},5.17) {$\event$};
 }
 \draw[flow] (.13,4.74)--(4.63,4.74);
-\node[note,fill=rtInputBg] at (2.35,4.75) {$t$};
+\node[note,fill=rtCanvasBg] at (2.35,4.75) {$t$};
 \draw[rtPlus,line width=.9pt] (.2,4.54)--(.2,4.40)--(1.93,4.40)--(1.93,4.54);
 \draw[rtMinus,line width=.9pt] (2.78,4.54)--(2.78,4.40)--(4.51,4.40)--(4.51,4.54);
 \node at (1.065,4.15) {$W_+: A\rightarrow B$};
 \node at (3.645,4.15) {$W_-: B\rightarrow A$};
 
 % Query strips are data, not model blocks. Colored rules identify the pair.
-\path[fill=rtPlusFill!85] (.10,3.31) rectangle (4.62,3.81);
+\path[fill=rtPlusFill] (.10,3.31) rectangle (4.62,3.81);
 \draw[rtPlus,line width=1.3pt] (.10,3.31)--(.10,3.81);
 \node[anchor=west] at (.24,3.56) {$q_+$: dog followed by rooster};
-\path[fill=rtMinusFill!72] (.10,2.63) rectangle (4.62,3.13);
+\path[fill=rtMinusFill] (.10,2.63) rectangle (4.62,3.13);
 \draw[rtMinus,line width=1.3pt] (.10,2.63)--(.10,3.13);
 \node[anchor=west] at (.24,2.88) {$q_-$: rooster followed by dog};
 \node[align=center] at (2.36,2.12) {Both relations hold in $x$;\\each query has a different target.};
@@ -72,7 +85,7 @@
 % Each of the four cells is one timestamp-answer mean log-likelihood.
 \draw[draw=rtMinus!70,dash pattern=on 3pt off 2pt,line width=.75pt]
  (5.34,1.50) rectangle (11.05,6.00);
-\node[fill=rtTrainBg] at (8.195,6.00) {Training only};
+\node[fill=rtCanvasBg] at (8.195,6.00) {Training only};
 \draw[module] (5.71,5.02) rectangle (10.68,5.75);
 \node[align=center] at (8.195,5.385) {Audio-language model\\Frozen backbone + trainable LoRA};
 % Explicit fan-in: recording and both query strips enter the same model.
@@ -91,9 +104,9 @@
 \node at (6.48,3.23) {$q_-$};
 \path[fill=rtAccentFill] (6.95,3.505) rectangle (8.53,4.055);
 \path[fill=rtAccentFill] (8.53,2.955) rectangle (10.11,3.505);
-\draw[rtAccent!70,line width=.65pt] (6.95,2.955) rectangle (10.11,4.055);
-\draw[rtAccent!60,line width=.5pt] (8.53,2.955)--(8.53,4.055);
-\draw[rtAccent!60,line width=.5pt] (6.95,3.505)--(10.11,3.505);
+\draw[rtMinus!75,line width=.65pt] (6.95,2.955) rectangle (10.11,4.055);
+\draw[rtMinus!65,line width=.5pt] (8.53,2.955)--(8.53,4.055);
+\draw[rtMinus!65,line width=.5pt] (6.95,3.505)--(10.11,3.505);
 \node at (7.74,3.78) {$s_{++}\ \uparrow$};
 \node at (9.32,3.78) {$s_{+-}\ \downarrow$};
 \node at (7.74,3.23) {$s_{-+}\ \downarrow$};
@@ -119,12 +132,12 @@
 }
 \node[anchor=east] at (12.08,4.28) {$q_+$};
 \node[anchor=east] at (12.08,2.92) {$q_-$};
-% Column/row alignment carries the comparison on one shared pale-green field.
+% Darker bars separate the predictions from the shared warm canvas.
 \foreach \xbase/\ystart/\ystop/\pstart/\pstop/\yy/\barstroke/\barfill in {
- 12.32/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/4.28/rtPlus/rtPlusFill,
- 15.03/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/4.28/rtPlus/rtPlusFill,
- 12.32/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/2.92/rtMinus/rtMinusFill,
- 15.03/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/2.92/rtMinus/rtMinusFill}{
+ 12.32/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/4.28/rtPlus/rtPlusBar,
+ 15.03/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/4.28/rtPlus/rtPlusBar,
+ 12.32/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/2.92/rtMinus/rtMinusBar,
+ 15.03/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/2.92/rtMinus/rtMinusBar}{
  \draw[\barstroke!25,line width=.45pt] (\xbase,\yy)--({\xbase+2.20},\yy);
  \pgfmathsetmacro{\predstart}{\xbase+2.20*\pstart/27}
  \pgfmathsetmacro{\predstop}{\xbase+2.20*\pstop/27}
@@ -141,7 +154,7 @@
 \node[note,anchor=east] at (17.21,3.32) {IoU \FigCandMinusIoU};
 \draw[draw=rtInk,fill=none,line width=.8pt] (12.86,1.80) rectangle (13.21,1.98);
 \node[note,anchor=west] at (13.31,1.89) {target};
-\draw[draw=rtInk,fill=rtMinusFill,line width=.55pt] (14.69,1.80) rectangle (15.04,1.98);
+\draw[draw=rtInk,fill=rtMinusBar,line width=.55pt] (14.69,1.80) rectangle (15.04,1.98);
 \node[note,anchor=west] at (15.14,1.89) {prediction};
 
 % Labels outside content, following the reference figures.
