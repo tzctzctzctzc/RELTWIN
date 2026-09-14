@@ -7,5 +7,8 @@ Both methods retain SpotSound-A's LoRA adaptation~\cite{hu2022lora} on Audio Fla
 
 We also report RelTwin seeds 0/1/2, using final checkpoints and including every seed. SpotSound-A is re-evaluated with the same inference code as the adapted models to provide a backbone reference. All evaluations use 16\,kHz mono audio, bfloat16 inference, and greedy decoding (one beam, no sampling) with at most 128 new tokens per query. The three-seed RelTwin summary is separate from the matched seed-0 SFT comparison.
 
+\textbf{Comparison roles.}
+Table~\ref{tab:main} compares RelTwin with published SpotSound-Bench results; Table~\ref{tab:training} separates the backbone reference, matched training comparison, and three-seed replication. The backbone scores 58.42 mIoU under our inference protocol, distinct from its published 57.9. RelTwin's three-seed difference against this backbone reference is $+0.75$ points, with audio-group CI $[-0.24,1.74]$ spanning zero. The $+1.26$ improvement in Table~\ref{tab:main} is measured against the published main-table best.
+
 \textbf{Uncertainty and reproducibility.}
 We verify row alignment, audio identity, duration, and recomputed IoU. Bootstrap uses 20,000 audio-group draws, keeping queries together. Relation CIs additionally resample 39 original-source connected groups (largest: 18 audios) to address excerpt reuse. The intervals quantify sample uncertainty conditional on observed seeds and do not adjust for development selection. Code, inputs, weights, and environment are hashed before inference.

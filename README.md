@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-`paper` 分支同时保存可编辑源码和当前编译稿。当前为 v15（独立 Related Work 章节稿），标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。本轮将引言中的两段相关工作移出并扩写为第 2 节，按时序定位、组合关系学习和困难负样本监督组织比较；原方法、实验设置、结果分析顺延为第 3、4、5 节。摘要、引言中的问题/方法概述/贡献、实验与图表内容均保留。没有训练、重新推理或改动实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
+本分支保存可编辑源码和当前编译稿。当前为 v16（表格与分析审阅稿），基于 `paper` 分支 v15，在 `docs/reltwin-table-analysis-20260914` 上修改，供作者确认后再合入 `paper`。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。Table 1 恢复公开方法分组，Table 2 跨栏呈现基础模型、匹配训练对照及三种子汇总，并加入已有的 Swap error 和同答案对数。结果文字按绑定恢复、时间干预、公开性能展开；比较口径集中说明。没有训练、重新推理或改动预测。正文至第 4 页结束，第 5 页为声明和参考文献。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
@@ -14,7 +14,8 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 | `authors.tex` | 作者、单位与通讯作者信息 |
 | `sections/` | 摘要、引言、相关工作、方法、实验、讨论、结论与声明 |
 | `sections/related_work.tex` | 独立 Related Work 章节及与最近邻方法的结构比较 |
-| `tables/` | 主表和训练对照表 |
+| `tables/main_results.tex` | Table 1：分组的 SpotSound-Bench 公开方法比较 |
+| `tables/training_results.tex` | Table 2：跨栏的匹配训练、关系绑定诊断与三种子汇总 |
 | `figures/overview_art.tex` | 可编辑的 TikZ 主图 |
 | `figures/overview_data.tex` | 主图使用的时间戳与统计值 |
 | `figures/reltwin_overview.tex` | 主图排版和图注 |
@@ -28,7 +29,7 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 
 ## Overleaf
 
-在 GitHub 切换到 `paper` 分支，使用 **Code → Download ZIP**，再在 Overleaf 中选择 **New Project → Upload Project**。也可以将已解压的本分支文件直接上传。
+在 GitHub 切换到本次审阅分支 `docs/reltwin-table-analysis-20260914`（已接受的协作稿仍位于 `paper`），使用 **Code → Download ZIP**，再在 Overleaf 中选择 **New Project → Upload Project**。也可以将已解压的本分支文件直接上传。
 
 将 **Main document** 设为 `main.tex`，编译器选 **pdfLaTeX**。参考文献使用 **BibTeX**，Overleaf 的自动编译会处理。不要将 `overview_figure.tex` 误设为整篇论文入口。
 
@@ -74,3 +75,5 @@ v13 仅关闭 P0-01：摘要为 130 词，新标题按原模板排为两行；�
 v14 继续精炼 P0-01：摘要为 122 词，保留关系绑定提升和 SpotSound 公共结果两项核心证据；贡献段不再重复实验数字。种子和配对设置、时间干预数值及完整结果仍可在实验部分核对。标题、引言前四段、结论、方法、实验、图表和参考文献均未修改。重新编译仍为五页，无 overfull box 或未解析引用；其他问题状态保持不变。
 
 v15 关闭 P0-02：新增约 280 词的独立 Related Work，原引言仅保留问题、方法概述与贡献。正文按监督对象区分表示对齐、局部显著性排序和完整时间戳答案比较；原文核对记录见 `ISSUES.md` 第 7 节。Figure 1 保留在第 2 页，引用与章节交叉引用自动更新；仍为五页、17 条参考文献，无 overfull box 或未解析引用。正文充实与参考文献独占第五页的最终排版仍由 P1-08 跟进，本轮没有将其标为完成。
+
+v16 重整两张表并补充分析：公开主表保留十个基线和全部原始分数，恢复四组方法类别、最优/次优标记及指标方向；跨栏机制表补入同一批既有预测的错误指标和三种子统计。P1-02、P1-05 已完成，其他相关条目记录进展，不因本轮排版通过而一并关闭。逐行核对原始 evidence/figure evidence 后编译为五页，Table 1 在第 3 页，Table 2 在第 4 页，第 5 页仅声明与 17 条参考文献；无 overfull box、未解析引用或 Type 3 字体。作者、摘要、引言、Related Work、方法、主图、结论、声明及参考文献源码均未改。
