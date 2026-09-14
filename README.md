@@ -4,7 +4,7 @@
 
 `paper` 分支同时保存可编辑源码和当前编译稿。当前 v12 审阅稿已补齐已有实验的 LoRA、每步样本/梯度累积及解码设置，并同步更新 Figure 1：删除底部 inference pipeline 与整体统计，右栏改为 SFT／RelTwin 的查询—窗口对照；三幅子图统一减少灰底。没有训练、重新推理或改动实验结果。待处理问题、作者信息占位及提交前检查统一记录在 `ISSUES.md`。
 
-Figure 1 的鼠尾草绿 `#A8D18E`、暖金 `#FED965` 与紫色 `#B178C2` 来自 [BLIP-2（ICML 2023），Fig. 2](https://proceedings.mlr.press/v202/li23q/li23q.pdf) 的矢量 PDF，并参考 [InstructBLIP（NeurIPS 2023），Fig. 3](https://proceedings.neurips.cc/paper_files/paper/2023/file/9a6a435e75419a836fe47ab6793623e6-Paper-Conference.pdf) 的绿／紫模块层次。绿／金对应两类查询及窗口，紫色强调共享模块与候选监督；(c) 保持白底。原始时间戳与四个 IoU 未改。
+Figure 1 当前配色采用作者提供的 SplineGS 参考图中标注的浅绿 `#D9E4C2`、淡紫 `#CAC2D7`、浅杏 `#F5D8BF`，并用 `#DDD6E5`、`#F9ECE0` 及同色浅调构成三块背景。浅绿／淡紫对应两类查询和窗口，浅杏填充音频片段、模型与正确候选；(a)/(b)/(c) 分别使用浅杏、淡紫、浅绿底，(c) 两个模型共享底色。全部英文、数学符号和数值统一为深黑 `#242424`，重点通过加粗、填充和轮廓表达。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
 ## 修改哪里
 
