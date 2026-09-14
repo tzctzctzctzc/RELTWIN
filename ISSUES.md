@@ -4,7 +4,7 @@
 
 目标会议：ICASSP 2027
 
-当前稿：v14（P0-01 摘要与贡献段精炼稿）
+当前稿：v15（独立 Related Work 章节稿）
 
 清单审计日期：2026-09-14
 
@@ -52,7 +52,7 @@
 
 | 优先级 | 活动问题 | 当前判断 |
 |---|---:|---|
-| P0 | 8 | 其中 6 项为论文内容，2 项涉及作者信息与提交合规；P0-01 已完成 |
+| P0 | 7 | 其中 5 项为论文内容，2 项涉及作者信息与提交合规；P0-01、P0-02 已完成 |
 | P1 | 8 | 主要是结果解释、图表叙事、Scope、结论和版面 |
 | P2 | 3 | 最后一轮语言与 PDF QA |
 | P3 | 4 | 全部需要新实验，当前延后 |
@@ -103,30 +103,12 @@ RelTwin 的负答案不是其他录音中的随机窗口，也不是音频中不
 
 ## 2. P0：提交前必须解决
 
-P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不因本轮叙事调整而自动关闭。
-
-### P0-02 · Related Work 没有沿“RelTwin 与最近邻方法的结构差异”组织
-
-- **状态**：待改
-- **位置**：`sections/introduction.tex` 第 2–3 个相关工作段
-- **当前问题**：Pengi、Qwen2-Audio、Audio Flamingo 3、TimeAudio、SpotSound、CLAP、T-CLAP、CompA、CoSTALA 和 SHINE 连续出现，但缺少分类轴；读者知道工作很多，却不知道 RelTwin 填了什么空白。
-- **为什么重要**：当前创新最容易受到的质疑不是模型性能，而是“hard negative、顺序反转和组合对比早已存在”。如果不主动区分监督对象与对比位置，novelty 会被压扁。
-- **处理方向**：按三类组织：
-  1. 时间表示和音频时序定位；
-  2. 组合推理与顺序反转；
-  3. 反事实或 hard-negative 对齐。
-- **必须明确的结构差异**：
-  - T-CLAP/CompA 等主要在表示或音频—文本匹配层面对比组合关系；
-  - SHINE/AHA 类方法使用负查询或反事实回答抑制不一致；
-  - RelTwin 在同一录音内部，让生成模型在两个都具有真实声学依据的完整时间戳答案之间进行查询条件竞争。
-- **候选补充工作**：AHA、Auto-AEG、TAG-Bench、LAT-Audio 只作为定位候选；正式加入前应逐篇核对任务、监督形式和可支持的差异，不能只为显得“新”而罗列。
-- **验收标准**：相关工作段最后能自然得到以下缺口，而不是突然宣布方法：现有方法尚未直接训练生成式 grounding 模型在同一录音的两个真实局部答案之间依据关系查询作选择。
-- **来源映射**：新增包装审计第 5 节；原审阅 #13–#20。
+P0-01、P0-02 已完成，具体修改与合理性审查见第 7 节。其他条目不因章节调整而自动关闭。
 
 ### P0-03 · 方法动机没有说明为什么普通 SFT 不足
 
 - **状态**：待改
-- **位置**：`sections/introduction.tex` 方法概述；`sections/method.tex` Section 2.2
+- **位置**：`sections/introduction.tex` 方法概述；`sections/method.tex` Section 3.2
 - **当前问题**：正文直接从 `Candidate cross-entropy` 跳到“rewarding correspondence”，没有先定义 SFT 缺少的相对偏好约束。
 - **为什么重要**：没有这一层，RelTwin 看起来只是给已有生成训练附加一个普通二分类 loss，而不是针对 query–window binding failure 的训练原则。
 - **处理方向**：明确三步逻辑：
@@ -142,7 +124,7 @@ P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不�
 ### P0-04 · 关键对象和损失定义仍有歧义
 
 - **状态**：待改
-- **位置**：`sections/method.tex` 全节，重点是 Section 2.1–2.3
+- **位置**：`sections/method.tex` 全节，重点是 Section 3.1–3.3
 - **当前问题**：
   - `Each spans the entire ordered sequence` 容易被误解为两个目标覆盖整段录音；
   - `Both queries are present at recording level` 把 query 与 query 描述的关系混为一谈；
@@ -203,7 +185,7 @@ P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不�
 ### P0-07 · 三种比较口径必须清楚分工，避免 SOTA 主张被反驳
 
 - **状态**：待改
-- **位置**：摘要；`tables/training_results.tex`；`tables/main_results.tex`；Results 4.1/4.3
+- **位置**：摘要；`tables/training_results.tex`；`tables/main_results.tex`；Results 5.1/5.3
 - **当前正确口径**：
 
 | 用途 | 结果 | 可以支持的结论 |
@@ -282,7 +264,7 @@ P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不�
 ### P1-03 · Figure 1 应强调机制和能力恢复，而不是工程缓存与残余失败
 
 - **状态**：待改文字；视觉结构已完成
-- **位置**：`figures/reltwin_overview.tex`、`figures/overview_art.tex`、Figure 1 caption、Results 4.1
+- **位置**：`figures/reltwin_overview.tex`、`figures/overview_art.tex`、Figure 1 caption、Results 5.1
 - **当前问题**：主图结构和配色已经改善，但图注仍直接暴露 `Queries 56--57 (seed 0)` 这类内部运行身份；panel (c) 的主要信息应是 SFT 对两个查询返回同一窗口，而 RelTwin 恢复 query-specific selection。源码注释中的 `cached` 属于复现信息，不是论文可见缺陷。
 - **处理方向**：
   1. panel (a) 说明同录音中两种逆关系与不同正确窗口；
@@ -295,7 +277,7 @@ P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不�
 ### P1-04 · Timing intervention 的结论对象仍需更集中
 
 - **状态**：待改
-- **位置**：`sections/results.tex` Section 4.2
+- **位置**：`sections/results.tex` Section 5.2
 - **当前证据**：80 段中 40 段波形未变，40 段改变时间布局；20.00 点的 JointPairAcc 优势来自真正改变的 40 段。原布局对应差距为 42.50 点。
 - **当前问题**：逐条预测复现等实现核验抢占篇幅；段落容易被读成“已排除全部时间捷径”或“证明自然场景泛化”。
 - **处理方向**：明确该实验只检验固定静音布局是否能完全解释增益。先写干预对象，再写 SFT 明显获益但 RelTwin 仍保持 20 点 binding 优势，最后给出有限且正面的机制结论。
@@ -305,7 +287,7 @@ P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不�
 ### P1-05 · 公开结果段和 Table 2 的 headline 不够突出
 
 - **状态**：待改
-- **位置**：`sections/results.tex` Section 4.3；`tables/main_results.tex`
+- **位置**：`sections/results.tex` Section 5.3；`tables/main_results.tex`
 - **当前问题**：最重要的 59.16 与 +1.26 后紧跟多种比较解释，段落最后落在跨零 CI；Table 2 caption 同时解释 published source、Table 3、三种子、delta、prior best 和 bold 规则。
 - **处理方向**：本节第一句和表格视觉中心统一为“RelTwin 在引用主表三项指标上取得最高列出的点估计”；caption 只交代不可从表体读出的来源/统计；official re-evaluation 作为补充口径，不以其跨零 CI 结束段落。
 - **验收标准**：headline 清楚，但没有把点估计扩大成显著胜出；表注长度明显缩短。
@@ -440,6 +422,7 @@ P0-01 已完成，具体修改与合理性审查见第 7 节。其他条目不�
 | D04 | 已完成 | Figure 1 改为浅暖底与局部功能色，英文、公式、符号统一深色，减少大面积灰底 | 当前 Figure 1 与 PDF |
 | D05 | 已完成 | 当前 PDF 可独立编译为 5 页 US Letter，无未解析引用和 overfull box | v12 构建记录；终稿后仍需重跑 P2-03 |
 | P0-01 | 已完成 | 采用作者指定新标题，统一主线；v14 进一步精炼摘要与贡献段 | v13/v14 修改记录、当前 LaTeX 与 `paper.pdf` |
+| P0-02 | 已完成 | 新增独立 Related Work，按监督对象组织最近邻比较；引言不再重复相关工作 | v15 `sections/related_work.tex`、原文核对记录及当前 PDF |
 
 D01 的配置事实：
 
@@ -484,6 +467,30 @@ D01 的配置事实：
 - **措辞核验**：保留合成关系开发集的真实属性；明确声学依据与查询正确性的区别；未将两种对照混用，未新增方法能力、实验或普适性主张。
 - **范围与编译复核**：其余 23 个活动问题条目逐项保持原样，不额外关闭任何问题。PDF 仍为 5 页 US Letter，技术内容止于第 4 页，无 overfull box 或未解析引用；未调整模板或执行 P1-08 的分页重排。
 
+### P0-02 · 独立 Related Work 与最近邻结构比较（2026-09-14）
+
+- **状态**：已完成。
+- **位置**：新增 `sections/related_work.tex`，通过 `main.tex` 接入，作为第 2 节；原方法、实验设置、结果分析顺延为第 3、4、5 节。
+- **修改范围**：移出原引言第 2–3 段，扩写为约 280 词的三段相关工作；引言的问题、方法概述、贡献三段原样保留。主图仍在引言之后声明，以保留第 2 页的展示位置。摘要、方法源码、训练/推理设置、实验结果、两张表、图内容、作者、声明及 `references.bib` 均未修改。
+- **组织方式**：音频时序定位交代时间表示和事件存在监督；组合学习比较音频—文本表示及局部对齐；困难负样本段对照显著性排序与完整时间戳答案的条件似然比较。
+
+**原文核对与使用范围：**
+
+| 原文 | 核实后写入的结构事实 |
+|---|---|
+| [弱监督 TAG](https://arxiv.org/abs/2401.02584) | 以 clip-level caption 训练时序对应，不要求帧级标注 |
+| [TimeAudio](https://ojs.aaai.org/index.php/AAAI/article/view/39827) | temporal markers 与 absolute time-aware encoding |
+| [SpotSound](https://arxiv.org/html/2604.13023v2) | 时间戳与音频 token 交错，结合 absent-event 查询监督；不将其描述为只有事件存在判断 |
+| [T-CLAP](https://arxiv.org/html/2404.17806) | 顺序反转描述与基于音频—文本表示相似度的 temporal-focused contrast |
+| [CompA](https://proceedings.iclr.cc/paper_files/paper/2024/file/43c18853329c7504996b255252b6cb1f-Paper-Conference.pdf) | 区分 CompA 诊断数据与 CompA-CLAP 训练方法；后者使用组合 hard negatives 和 modular contrast |
+| [CoSTALA](https://arxiv.org/html/2608.24374) | 同时具有时空对比、局部事件—描述对齐与特征一致性；没有将其概括成纯全局匹配 |
+| [SHINE](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02948.pdf) | 同时包含负查询生成、within-video 与 cross-query 显著性排序；没有将其概括成只改查询、不比较局部片段 |
+
+- **合理性审查**：区别落在同录音、固定查询下两个真实局部时间戳答案的条件竞争，以及逆查询交换标签；与现有候选损失和直接生成推理一致。采用具体结构比较，不沿用旧待办中覆盖所有前人的“现有方法尚未……”绝对断言。没有宣称优于未做实验对照的邻近方法，也没有新增自我否定式限制段。
+- **引用与复现**：继续使用原有 17 条已引用文献，不为凑数量追加候选论文；正文新增说明使用现有 BibTeX 条目，参考编号由 BibTeX 更新。引言初始任务定义引用保持不变。
+- **编译与范围核验**：5 页 US Letter；Related Work 为第 2 节、方法为第 3 节、timing 为第 5.2 节；Figure 1 在第 2 页，无 overfull box 或未解析引用。其余 22 个活动问题的状态、问题说明和处理方向保留，仅同步受影响的位置编号。P1-08 仍待整体内容充实和分页，当前参考文献仍从第 4 页开始。
+- **来源映射**：新增包装审计第 5 节；原审阅 #13–#20；作者要求单列 Related Work 章节。
+
 ---
 
 ## 8. 原 96 条审阅意见到当前问题的追溯
@@ -510,7 +517,7 @@ D01 的配置事实：
 
 按依赖顺序执行，避免先润色后重写造成返工：
 
-1. **P0-02**：处理相关工作与 novelty gap；P0-01 的标题、摘要和贡献主线已完成，本轮未扩展到相关工作；
+1. **P0-01 + P0-02 已完成**：标题、摘要与贡献主线已统一，相关工作已独立成章并完成最近邻结构核对；后续保持术语一致；
 2. **P0-03 + P0-04**：补齐方法动机、对象、损失和指标定义；
 3. **P0-05 + P0-07**：重排结果证据链和三种比较口径；
 4. **P0-06 + P1-01 + P1-02**：清理内部审计语言并重整设置/Table 1；
@@ -528,7 +535,7 @@ P0-08 不依赖正文改写，作者应立即并行提供邮箱和 ORCID。
 
 1. Reviewer 能用一句话复述：RelTwin contrasts two locally valid timestamp answers whose correctness depends on the query。
 2. Reviewer 不会把方法简化成“多加一个 CE”，因为正文明确解释 SFT 缺失的相对偏好约束。
-3. Introduction 准确区分时间表示、组合/顺序对比、反事实 hard negatives 与 RelTwin 的同录音答案竞争。
+3. Related Work 准确区分时间表示、组合/顺序对比、hard-negative 监督与 RelTwin 的同录音答案竞争。
 4. 方法节独立定义录音、窗口、答案序列、三个损失、2×2 标签和三个 paired metrics。
 5. 核心结果先讲 same-answer collapse 与 query-specific selection，再讲边界质量和公共 benchmark。
 6. Table 1 一眼区分 backbone reference、matched SFT/RelTwin 和三种子摘要。
@@ -551,8 +558,9 @@ P0-08 不依赖正文改写，作者应立即并行提供邮箱和 ORCID。
 | 2026-09-14 | v12，PDF 未变 | 将置顶长篇审计与旧 P0/P1/P2 清单真正归并为单一长期台账；重定 P0/P1/P2/P3，建立稳定 ID、状态、验收标准和历史映射 |
 | 2026-09-14 | v13 | 仅处理 P0-01：采用指定标题，统一摘要、引言概述/贡献、关键词与结论，并完成合理性和编译审查；其他问题状态不变，无新实验 |
 | 2026-09-14 | v14 | 仅精炼 P0-01 的摘要与贡献段，减少重复数字和前置实验细节；保留事实与对照口径，实验和其他问题条目未改 |
+| 2026-09-14 | v15 | 新增独立 Related Work 并完成 P0-02；移出引言中的相关工作，核对邻近方法的监督对象；实验未变，其他待办仅同步位置编号 |
 
-- 当前 PDF SHA-256：`cfd92aea03e36fee0618a4579a99e965514793c2845c2f7330a8bf60f48f15d3`
+- 当前 PDF SHA-256：`0bcd4de07c26cb20c67b083a3c5a7564089dcb0876e4039f915ad68dc03751b0`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`
 - 原交付审计提交：`a190b11`
 - 原开发分支：`codex/reltwin-core-only-20260913`
