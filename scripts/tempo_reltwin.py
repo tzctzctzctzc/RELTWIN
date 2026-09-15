@@ -8,6 +8,9 @@ from pathlib import Path
 
 import torch
 from transformers import AudioFlamingo3ForConditionalGeneration
+from transformers.models.audioflamingo3.modeling_audioflamingo3 import (
+    AudioFlamingo3MultiModalProjector,
+)
 
 
 TIMESTAMP_DIM = 64
@@ -21,53 +24,47 @@ _ATOMIC_INTERVAL = re.compile(
 )
 
 
-class TempoAudioFlamingo3ForConditionalGeneration(
-    AudioFlamingo3ForConditionalGeneration
-):
-    """Audio Flamingo 3 with TEMPO's sinusoidal wall-clock projector input."""
+class TempoAudioFlamingo3MultiModalProjector(AudioFlamingo3MultiModalProjector):
+    """AF3 projector with TEMPO's learned wall-clock injection."""
 
     def __init__(self, config):
         super().__init__(config)
         self.time_proj = torch.nn.Linear(
             TIMESTAMP_DIM, config.audio_config.hidden_size, bias=False
         )
-
-    def _time_encoding(self, length: int, device, dtype):
-        half = TIMESTAMP_DIM // 2
-        periods = torch.logspace(
-            math.log10(MIN_PERIOD_SECONDS),
-            math.log10(MAX_PERIOD_SECONDS),
-            half,
-            device=device,
+        frequencies = torch.logspace(
+            math.log10(1.0 / MAX_PERIOD_SECONDS),
+            math.log10(1.0 / MIN_PERIOD_SECONDS),
+            TIMESTAMP_DIM // 2,
             dtype=torch.float32,
         )
-        times = torch.arange(length, device=device, dtype=torch.float32) * FRAME_SECONDS
-        phases = 2.0 * math.pi * times[:, None] / periods[None, :]
-        encoding = torch.cat((phases.sin(), phases.cos()), dim=-1)
-        return encoding.to(dtype)
+        self.register_buffer("freqs", frequencies, persistent=True)
 
-    def get_audio_features(self, input_features, input_features_mask, **kwargs):
-        kwargs.pop("return_dict", None)
-        audio_output = self.audio_tower(
-            input_features,
-            input_features_mask=input_features_mask,
-            return_dict=True,
-            **kwargs,
+    def forward(self, audio_features):
+        times = (
+            torch.arange(
+                audio_features.shape[1],
+                device=audio_features.device,
+                dtype=torch.float32,
+            )
+            * FRAME_SECONDS
         )
-        features = audio_output.last_hidden_state
-        time_features = self.time_proj(
-            self._time_encoding(features.shape[1], features.device, features.dtype)
+        phases = 2.0 * math.pi * times[:, None] * self.freqs.float()[None, :]
+        encoding = torch.cat((phases.sin(), phases.cos()), dim=-1).to(
+            audio_features.dtype
         )
-        audio_embeds = self.multi_modal_projector(features + time_features.unsqueeze(0))
+        hidden_states = audio_features + self.time_proj(encoding).unsqueeze(0)
+        return super().forward(hidden_states)
 
-        input_lengths = input_features_mask.sum(-1).to(torch.long)
-        _, post_lengths = self.audio_tower._get_feat_extract_output_lengths(input_lengths)
-        valid_mask = (
-            torch.arange(audio_embeds.shape[1], device=post_lengths.device)[None, :]
-            < post_lengths[:, None]
-        )
-        audio_output.pooler_output = audio_embeds[valid_mask.to(audio_embeds.device)]
-        return audio_output
+
+class TempoAudioFlamingo3ForConditionalGeneration(
+    AudioFlamingo3ForConditionalGeneration
+):
+    """Audio Flamingo 3 with TEMPO's time-aware multi-modal projector."""
+
+    def __init__(self, config):
+        super().__init__(config)
+        self.multi_modal_projector = TempoAudioFlamingo3MultiModalProjector(config)
 
 
 def load_time_projector(model, checkpoint: Path) -> None:
@@ -79,7 +76,7 @@ def load_time_projector(model, checkpoint: Path) -> None:
         key = key.removeprefix("module.").removeprefix("time_proj.")
         normalized[key] = value
     state = normalized
-    model.time_proj.load_state_dict(state, strict=True)
+    model.multi_modal_projector.time_proj.load_state_dict(state, strict=True)
 
 
 def grounding_question(query: str) -> str:
