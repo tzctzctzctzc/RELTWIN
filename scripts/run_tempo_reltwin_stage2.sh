@@ -19,7 +19,9 @@ done
 test -s "$base/model-00004-of-00004.safetensors"
 test -s "$base/time_proj.pt"
 test -s "$data_root/data/audio_grounding/val/part-00000.parquet"
-test -s "$data_root/data/audio_grounding/sft_stage2/part-00004.parquet"
+for part in 0 1 2 3 4; do
+  test -s "$data_root/data/audio_grounding/sft_stage2/part-0000${part}.parquet"
+done
 
 mkdir -p "$data_root/materialized/val" "$data_root/materialized/train" "$out"
 
