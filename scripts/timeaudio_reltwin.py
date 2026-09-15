@@ -21,18 +21,6 @@ TIMEAUDIO_TAG_PROMPT = (
     "<Speech><SpeechHere></Speech> What are the start and end times of audio "
     "matching '{query}'?"
 )
-_CHECKPOINT_ARCHITECTURE_KEYS = (
-    "use_speech_Qformer",
-    "window_level_Qformer",
-    "num_speech_query_token",
-    "second_per_window",
-    "second_stride",
-    "lora",
-    "lora_rank",
-    "lora_alpha",
-    "added_time_token",
-    "use_token_merge",
-)
 _RAW_PAIR = re.compile(
     r"(-?\d+(?:\.\d+)?)\s*(?:s|seconds)?\s*(?:-|–|—|to)\s*"
     r"(-?\d+(?:\.\d+)?)\s*(?:s|seconds)?",
@@ -83,17 +71,6 @@ def parse_timeaudio_intervals(text: str, duration: float | None = None):
     if pairs:
         return normalize_intervals(pairs, duration)
     return parse_canonical_intervals(text, duration)
-
-
-def checkpoint_architecture(payload: dict) -> dict:
-    """Recover architecture-critical values saved with the public checkpoint."""
-    model_config = payload.get("config", {}).get("model", {})
-    if not isinstance(model_config, dict):
-        raise ValueError("TimeAudio checkpoint does not contain a model config")
-    missing = [key for key in _CHECKPOINT_ARCHITECTURE_KEYS if key not in model_config]
-    if missing:
-        raise ValueError(f"TimeAudio checkpoint is missing architecture keys: {missing}")
-    return {key: model_config[key] for key in _CHECKPOINT_ARCHITECTURE_KEYS}
 
 
 def resolve_audio_path(audio_dir: Path | None, row: dict) -> Path:
@@ -235,11 +212,7 @@ def load_timeaudio_model(
             bert_target.parent.mkdir(parents=True, exist_ok=True)
             bert_target.symlink_to(bert_path.resolve(), target_is_directory=True)
 
-    official_payload = torch.load(checkpoint, map_location="cpu", weights_only=True)
-    architecture = checkpoint_architecture(official_payload)
     cfg = OmegaConf.load(config_path.resolve())
-    for key, value in architecture.items():
-        cfg.model[key] = value
     cfg.model.llama_path = str(llama_path.resolve())
     cfg.model.whisper_path = str(whisper_path.resolve())
     cfg.model.beats_path = str(beats_path.resolve())
@@ -253,9 +226,7 @@ def load_timeaudio_model(
     for label, path in (("official", checkpoint), ("delta", delta)):
         if path is None:
             continue
-        payload = official_payload if label == "official" else torch.load(
-            path, map_location="cpu", weights_only=True
-        )
+        payload = torch.load(path, map_location="cpu", weights_only=True)
         state = payload["model"] if isinstance(payload, dict) and "model" in payload else payload
         incompatible = model.load_state_dict(state, strict=False)
         if incompatible.unexpected_keys:
@@ -268,7 +239,6 @@ def load_timeaudio_model(
                 "loaded_keys": len(state),
                 "missing_keys": len(incompatible.missing_keys),
                 "unexpected_keys": 0,
-                "checkpoint_architecture": architecture if label == "official" else None,
             }
         )
     return model, cfg, reports

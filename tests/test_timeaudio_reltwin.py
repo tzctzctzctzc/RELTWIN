@@ -2,29 +2,12 @@ import torch
 
 from timeaudio_reltwin import (
     build_timeaudio_sample,
-    checkpoint_architecture,
     format_timeaudio_v3,
     parse_timeaudio_intervals,
     rbee_objective,
     timeaudio_answer,
     timeaudio_question,
 )
-
-
-def test_checkpoint_architecture_uses_saved_token_merge_setting():
-    saved = {
-        "use_speech_Qformer": True,
-        "window_level_Qformer": True,
-        "num_speech_query_token": 1,
-        "second_per_window": 1 / 3,
-        "second_stride": 1 / 3,
-        "lora": True,
-        "lora_rank": 8,
-        "lora_alpha": 32,
-        "added_time_token": "v3",
-        "use_token_merge": True,
-    }
-    assert checkpoint_architecture({"config": {"model": saved}}) == saved
 
 
 def test_timeaudio_prompt_and_v3_answer_are_canonical():
