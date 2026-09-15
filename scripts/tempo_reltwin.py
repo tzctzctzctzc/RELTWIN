@@ -29,7 +29,7 @@ class TempoAudioFlamingo3ForConditionalGeneration(
     def __init__(self, config):
         super().__init__(config)
         self.time_proj = torch.nn.Linear(
-            TIMESTAMP_DIM, config.audio_config.hidden_size, bias=True
+            TIMESTAMP_DIM, config.audio_config.hidden_size, bias=False
         )
 
     def _time_encoding(self, length: int, device, dtype):
