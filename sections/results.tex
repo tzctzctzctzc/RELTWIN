@@ -1,8 +1,8 @@
 \section{Results and Analysis}
 \subsection{Grounding performance across benchmarks}
-NOVA reaches 59.39 SpotSound mIoU (Table~\ref{tab:main}), exceeding the prior main-table best by 1.49 points. R1@.3 and R1@.5 improve by 2.75 and 3.00 points, respectively: gains extend from loose overlap to the stricter localization criterion. Clotho reaches 86.86 mIoU ($+1.26$), with R1@.3/.5 of 93.49/90.84. Its mIoU improves while recall remains close to the strongest published values. UnAV reaches 73.46 mIoU and 89.00/80.00 recall under the released-subset protocol in Section~\ref{sec:protocol}.
+NOVA reaches 59.39 SpotSound mIoU (Table~\ref{tab:main}), exceeding the prior main-table best by 1.49 points. R1@.3 and R1@.5 improve by 2.75 and 3.00 points, respectively: gains extend from loose overlap to the stricter localization criterion. On Clotho-Moment, NOVA reaches 86.86 mIoU ($+1.26$), with R1@.3/.5 of 93.49/90.84. On UnAV, NOVA reaches 73.46 mIoU and 89.00/80.00 recall under the released-subset protocol in Section~\ref{sec:protocol}.
 
-With direct timestamp generation, RelTwin reaches 59.43 SpotSound mIoU, improving over matched SFT by 1.02 points (CI $[0.23,1.81]$). The comparison yields 92 wins, 239 ties, and 69 losses, including two drops $\geq0.5$ IoU. The replication summary in Table~\ref{tab:training}(c) gives 59.16 mean mIoU. The following analyses examine how candidate supervision changes the response to inverse queries.
+With direct timestamp generation, RelTwin reaches 59.43 SpotSound mIoU, improving over matched SFT by 1.02 points (CI $[0.23,1.81]$). The comparison yields 92 wins, 239 ties, and 69 losses. The replication summary in Table~\ref{tab:training}(c) gives 59.16 mean mIoU. The following analyses examine how candidate supervision changes the response to inverse queries.
 
 \input{sections/bridge_results}
 

@@ -3,4 +3,4 @@ Audio temporal grounding maps a query to event intervals~\cite{xu2021grounding,m
 
 We propose NOVA, combining candidate learning for occurrence selection, audio verification for acoustic support, and refinement for boundary alignment. Our core training contribution is RelTwin (Fig.~\ref{fig:pair}), which introduces \emph{locally valid timestamp contrasts}. Shared excerpts form opposite-order windows with real acoustic support; the query determines which window answers it. Sequence supervision rewards correct answers individually, while candidate supervision compares both answers under each query. The trained generator directly outputs timestamps.
 
-We formulate query--occurrence binding as a choice between locally valid timestamp answers. NOVA is evaluated on SpotSound, Clotho-Moment, and UnAV; matched comparisons, inverse queries, and timing intervention examine RelTwin's training effect.
+We formulate query--occurrence binding as a choice between locally valid timestamp answers. NOVA is evaluated on SpotSound, Clotho-Moment, and UnAV; matched comparisons and inverse-query tests show improved occurrence selection, which persists under timing intervention.
