@@ -2,19 +2,19 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本分支保存可编辑源码和当前编译稿。当前为 v21 基础上的 NOVA 叙事草稿（2026-09-15），标题采用 **NOVA: Query–Occurrence Binding via Locally Valid Timestamp Contrasts for Audio Temporal Grounding**。NOVA 为总体方法名，RelTwin 为核心时间戳对比训练模块。摘要与结果段直接呈现 RelTwin 的 SpotSound 59.43 mIoU 和匹配 SFT 对照提升；主表保留实际 NOVA 系统的三套成绩，不将不同配置拼接成同一行。选取口径及独立的三种子汇总在实验设置集中说明。主图、所有表格数值、预测、训练目标与系统配置不变，未执行新模型实验。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。
+本分支保存可编辑源码和当前编译稿。当前为 **v22（2026-09-15，新主图接入版）**，基于最新 `paper@08ba93b`，保留协作者 `137c6ad` 的正文润色及 `08ba93b` 的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）。标题为 **NOVA: Query–Occurrence Binding via Locally Valid Timestamp Contrasts for Audio Temporal Grounding**。NOVA 为总体方法名，RelTwin 为核心时间戳对比训练模块。已将作者确认的新图替换为 Figure 1，并同步图注、模块引用和固定 `paper.pdf`。为容纳新图，压缩图内纵向留白、精简图表注与方法中的重复说明；训练目标、指标定义、全部结果、统计口径和实验设置不变，未执行新模型实验。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。
 
-本轮落实作者确认的十处最小润色：摘要明确“事件存在不足以决定查询对应实例”，引言从实验清单改为证据结论，主表统一使用总体方法名 NOVA。删除补救式召回评价和无机制解释的附加计数；保留完整胜平负、CI、种子来源、开发用途及评测协议。段落结构、方法公式、主图和全部表格数值保持不变。写作参考只借鉴训练信号与目标能力对应、受控实验检验机制的组织方式，不新增方法或实验主张。
+前一轮 `137c6ad` 落实作者确认的十处最小润色：摘要明确“事件存在不足以决定查询对应实例”，引言从实验清单改为证据结论，主表统一使用总体方法名 NOVA。该轮摘要、引言、结果、完整胜平负、CI、种子来源、开发用途及评测协议均在本版保留。写作参考只借鉴训练信号与目标能力对应、受控实验检验机制的组织方式，不新增方法或实验主张。
 
-Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
+Figure 1 位于第二页：白底、深蓝标题条、蓝/橙查询标识及绿/浅橙答案矩阵，明确展示 NOVA 与内含的 RelTwin 训练模块。主表和机制表分别位于第三、四页，结论止于第四页。没有缩小正文字号或改动页边距、会议样式；跨栏浮动体与正文使用 10 pt 正间距。旧主图及原预览可从 Git 历史恢复。
 
-## 待审阅主图预览（尚未替换论文）
+## 当前主图（已接入论文）
 
-2026-09-15 更新 [NOVA / RelTwin 独立主图预览](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）：保留作者认可的白底、深蓝悬浮标题条、蓝/橙/绿配色和字体层级。NOVA 总览框内直接标出蓝色的 `(A) RelTwin`，以标注 `training` 的短箭头连接候选生成，明确它是系统内的训练模块；推理数据仍从左向右流经候选生成、证据核验、边界修正和输出。下方使用同名同编号的 `(A) RelTwin | Module detail`，展开配对样本→共享模型评分→答案竞争。原无文字虚线已替换为浅蓝放大连接带，并明确写出 `RelTwin module expanded below`，表示上下为同一模块的不同展示尺度，不是额外推理步骤。右侧真实案例保持独立。生成器及路由选择依实际配置，图中高层表示不将 Official/SFT/SetPO 重命名为同一检查点。原案例区间与四个 IoU 均保持不变，仍为可编辑 TikZ 和矢量 PDF。
+[NOVA / RelTwin 主图单独查看](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）。NOVA 总览框内直接标出蓝色的 `(A) RelTwin`，以标注 `training` 的短箭头连接候选生成；推理数据从左向右流经候选生成、证据核验、边界修正和输出。下方使用同名同编号的 `(A) RelTwin | Module detail`，展开配对样本→共享模型评分→答案竞争。浅蓝连接带标注 `RelTwin module expanded below`，表示同一模块的不同展示尺度，不是额外推理步骤。右侧真实案例保持独立，原区间和四个 IoU 不变；生成器及路由选择依实际配置，具体检查点仍由正文设置定义。
 
 视觉设计参考包括作者提供的示例图，以及以下原论文图 1：借鉴 [CLIP](https://arxiv.org/pdf/2103.00020) 的匹配矩阵与颜色对应、[Segment Anything](https://arxiv.org/pdf/2304.02643) 的整体/局部分组、[Transformer](https://arxiv.org/pdf/1706.03762) 的功能分色和显式连接。这些是布局观察与视觉参考；没有复制原图、引入对应方法模块或新增实验主张。字体统一为 Helvetica 风格无衬线，数学字母通过 `sansmath` 对齐风格，保留常规数学符号；仅设分区标题 10.5 pt、步骤名 9.5 pt、正文与公式 9 pt 三个层级。移除重复候选公式和回折连接，保留总训练目标、答案得分矩阵与行交叉熵说明。参考 PDF 和检查用中间图只保存在忽略的 `build/` 中，不提交到论文仓库。
 
-这是设计预览，不是当前论文 Figure 1。新增预览时未改变论文；后续 NOVA 标题与文字更新也未将该预览接入论文，现有主图源码和数据保持不变。确认视觉方案后再单独处理论文替换、图注及四页正文排版。复现预览时从仓库根目录运行：
+图稿现在只有一个可编辑来源：`figures/overview_art.tex`。论文、`overview_figure.tex` 和原 `previews/` 入口均引用它，避免合作者维护两套不同的图。为适配正文，纵向坐标间距压缩至原来的 80%，字体本身不缩放，正文/步骤/分区标题仍为 9/9.5/10.5 pt；补足标题框留白，示意查询简写为 `dog → rooster`。已检查彩色、灰度、字体嵌入与论文内排版。单独复现时从仓库根目录运行：
 
 ```text
 pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build previews/nova_overview.tex
@@ -35,8 +35,8 @@ pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build preview
 | `figures/overview_data.tex` | 主图使用的时间戳与统计值 |
 | `figures/reltwin_overview.tex` | 主图排版和图注 |
 | `overview_figure.tex` | 单独编译主图的入口，可选 |
-| `previews/nova_overview.tex`、`previews/nova_overview_art.tex` | 尚未接入论文的 NOVA 总览＋RelTwin 放大图及独立编译入口 |
-| `previews/nova_overview.pdf`、`previews/nova_overview.png` | 待审阅图的矢量 PDF 和图片预览，不替代 `paper.pdf` |
+| `previews/nova_overview.tex`、`previews/nova_overview_art.tex` | 原独立预览的兼容入口，现在引用 `figures/overview_art.tex` |
+| `previews/nova_overview.pdf`、`previews/nova_overview.png` | 当前 Figure 1 的矢量 PDF 和图片预览，与论文共用图稿 |
 | `references.bib` | 参考文献数据库 |
 | `spconf.sty`、`IEEEbib.bst` | 会议排版与参考文献样式 |
 | `paper.pdf` | 固定名称的当前论文 PDF |

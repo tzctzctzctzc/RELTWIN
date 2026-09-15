@@ -1,6 +1,6 @@
 \begin{figure*}[t]
 \centering
 \input{figures/overview_art}
-\caption{RelTwin binds inverse queries to different windows in one recording. (a) Reused excerpts form two local targets. (b) The dashed enclosure marks training-only computation; shaded diagonal cells identify correct timestamp answers, and up/down arrows indicate training preferences. (c) In a relation-development example, SFT repeats one answer while RelTwin selects the corresponding window for each query. Outlines mark targets; filled bars show predictions, evaluated by set-IoU.}
+\caption{NOVA with RelTwin's training module (A) expanded below. Top: candidate generation, verification, and refinement (Section~\ref{sec:system}). Diagonal cells mark correct query--answer pairs. Right: on one relation-development recording, SFT repeats a window while RelTwin selects query-specific windows. Outlines: targets; filled bars: predictions; scores: set-IoU.}
 \label{fig:pair}
 \end{figure*}
