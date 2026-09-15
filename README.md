@@ -8,7 +8,9 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 
 ## 待审阅主图预览（尚未替换论文）
 
-2026-09-15 新增 [NOVA / RelTwin 独立主图预览](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）：上层展示 NOVA 候选生成、证据路由、边界修正和输出，下层展开 RelTwin 逆关系构造、答案竞争与现有真实案例。虚线连接表示对候选生成器的训练作用，路由按评测配置启用。保持现有配色及案例区间/IoU，采用可编辑 TikZ 和矢量 PDF。
+2026-09-15 更新 [NOVA / RelTwin 独立主图预览](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）：按作者提供的参考图重绘为白底、深蓝悬浮标题条、细圆角分区和线性图标。顶部说明同录音逆关系问题，左下紧凑展示 NOVA 候选生成、证据路由、边界修正和输出，右下大区突出 RelTwin 的共享模型、完整时间戳答案、匹配矩阵与真实定位结果。蓝色/橙色标识两个查询，绿色/浅橙色区分匹配/交换答案；虚线表示训练作用，路由按评测配置启用。原案例区间与四个 IoU 均保持不变，仍为可编辑 TikZ 和矢量 PDF。
+
+视觉设计参考包括作者提供的示例图，以及以下原论文图 1：借鉴 [CLIP](https://arxiv.org/pdf/2103.00020) 的匹配矩阵与颜色对应、[Segment Anything](https://arxiv.org/pdf/2304.02643) 的整体/局部分组、[Transformer](https://arxiv.org/pdf/1706.03762) 的功能分色和显式连接。这些是布局观察与视觉参考；没有复制原图、引入对应方法模块或新增实验主张。字体改为 Helvetica 风格无衬线正文，数学公式保留可编辑矢量排版；参考 PDF 和检查用中间图只保存在忽略的 `build/` 中，不提交到论文仓库。
 
 这是设计预览，不是当前论文 Figure 1：`main.tex`、现有主图源码和 `paper.pdf` 均未改，论文仍为 v21。确认视觉方案后再单独处理论文替换、图注及四页正文排版。复现预览时从仓库根目录运行：
 
