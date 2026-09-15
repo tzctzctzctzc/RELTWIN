@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{Query--window binding on the synthetic relation-development set and transfer to SpotSound. Panel (b) compares seed-0 models with matched data and updates. Panel (c) reports means $\pm$ sample SD; same-answer counts follow seed order 0/1/2. Joint denotes JointPairAcc; same-answer counts identical timestamp answers to inverse queries. Scores are percentages except pair counts.}
+\caption{Query--occurrence binding on the synthetic relation-development set and transfer to SpotSound. Panel (b) matches training data and updates; panel (c) reports replication means $\pm$ sample SD (Section~\ref{sec:protocol}). Joint denotes JointPairAcc; same-answer counts identical timestamp answers to inverse queries. Scores are percentages except pair counts.}
 \label{tab:training}
 \small
 \setlength{\tabcolsep}{7pt}
@@ -13,7 +13,7 @@ Method & mIoU $\uparrow$ & mIoU $\uparrow$ & Joint $\uparrow$ & Swap error $\dow
 \multicolumn{6}{@{}l}{\textit{(a) Backbone reference: shared evaluation protocol}}\\
 SpotSound-A & 58.42 & 37.64 & 0.63 & 65.00 & 15/160\\
 \midrule
-\multicolumn{6}{@{}l}{\textit{(b) Matched training comparison: seed 0}}\\
+\multicolumn{6}{@{}l}{\textit{(b) Matched training comparison}}\\
 Paired SFT & 58.42 & 74.58 & 53.13 & 40.00 & 37/160\\
 RelTwin & \textbf{59.43} & \textbf{88.55} & \textbf{84.38} & \textbf{7.50} & \textbf{1/160}\\
 RelTwin $-$ Paired SFT & +1.02 & +13.97 & +31.25 & $-32.50$ & $-36$ pairs\\
