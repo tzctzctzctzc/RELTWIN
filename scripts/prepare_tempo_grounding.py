@@ -32,7 +32,11 @@ def extract_query(question: str) -> str:
         end = question.rfind(right)
         if start >= 0 and end > start:
             return question[start + len(left) : end].strip()
-    raise ValueError(f"Cannot extract quoted query from: {question}")
+    # Public TEMPO prompts are heterogeneous: some quote the event, while
+    # others directly ask e.g. "when does the power saw happen?".  The exact
+    # source question is preserved separately for model input, so retaining
+    # the full text is the lossless fallback used for logging/evaluation IDs.
+    return question.strip()
 
 
 def parse_intervals(answer: str) -> list[list[float]]:
