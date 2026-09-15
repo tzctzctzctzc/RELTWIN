@@ -29,7 +29,7 @@ fi
   --index-url https://download.pytorch.org/whl/cu124
 "$ENV_DIR/bin/pip" install \
   transformers==4.47.0 peft==0.16.0 accelerate==1.6.0 \
-  sentencepiece==0.2.0 soundfile librosa omegaconf tensorboardX huggingface_hub
+  sentencepiece==0.2.0 soundfile librosa omegaconf tensorboardX huggingface_hub pytest
 
 "$ENV_DIR/bin/python" - <<'PY'
 from pathlib import Path
