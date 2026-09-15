@@ -5,13 +5,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 from pathlib import Path
 
 import pyarrow.parquet as pq
-
-
-_VARIANT_RE = re.compile(r"^(?P<group>.+?)(?P<variant>_rev|_trip)?$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -27,44 +23,41 @@ def main() -> int:
     table = pq.read_table(args.parquet)
     args.audio_dir.mkdir(parents=True, exist_ok=True)
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
-    groups: dict[str, dict[str, dict]] = {}
-
-    for row in table.to_pylist():
+    rows = table.to_pylist()
+    for row in rows:
         file_name = str(row["file_name"])
-        stem = Path(file_name).stem
-        match = _VARIANT_RE.match(stem)
-        if match is None:
-            raise ValueError(f"Unexpected file name: {file_name}")
-        group = match.group("group")
-        variant = match.group("variant") or "base"
-        variant = variant.removeprefix("_")
-        if variant in groups.setdefault(group, {}):
-            raise ValueError(f"Duplicate {group}/{variant}")
-
         payload = row["audio"].get("bytes")
         if not payload:
             raise ValueError(f"Missing audio bytes for {file_name}")
-        (args.audio_dir / file_name).write_bytes(payload)
-        groups[group][variant] = {
-            "file": file_name,
-            "caption": str(row["answer"]),
-        }
+        destination = args.audio_dir / file_name
+        if not destination.is_file():
+            destination.write_bytes(payload)
 
     manifest = []
-    for group in sorted(groups, key=lambda value: int(value)):
-        variants = groups[group]
-        if "base" not in variants or "rev" not in variants:
-            raise ValueError(f"Incomplete base/rev pair for group {group}")
+    index = 0
+    while index < len(rows):
+        pair = rows[index]
+        if Path(str(pair["file_name"])).stem.endswith(("_rev", "_trip")):
+            raise ValueError(f"Expected pair row at index {index}: {pair['file_name']}")
+        if index + 1 >= len(rows):
+            raise ValueError("CompA rows end with an incomplete pair")
+        reversed_pair = rows[index + 1]
+        if not Path(str(reversed_pair["file_name"])).stem.endswith("_rev"):
+            raise ValueError(
+                f"Expected reversed row at index {index + 1}: {reversed_pair['file_name']}"
+            )
         item = {
-            "group_id": group,
-            "pair_file": variants["base"]["file"],
-            "pair_caption": variants["base"]["caption"],
-            "reversed_pair_file": variants["rev"]["file"],
-            "reversed_pair_caption": variants["rev"]["caption"],
+            "group_id": str(len(manifest) + 1),
+            "pair_file": str(pair["file_name"]),
+            "pair_caption": str(pair["answer"]),
+            "reversed_pair_file": str(reversed_pair["file_name"]),
+            "reversed_pair_caption": str(reversed_pair["answer"]),
         }
-        if "trip" in variants:
-            item["triplet_file"] = variants["trip"]["file"]
-            item["triplet_caption"] = variants["trip"]["caption"]
+        index += 2
+        if index < len(rows) and Path(str(rows[index]["file_name"])).stem.endswith("_trip"):
+            item["triplet_file"] = str(rows[index]["file_name"])
+            item["triplet_caption"] = str(rows[index]["answer"])
+            index += 1
         manifest.append(item)
 
     triplets = sum("triplet_file" in item for item in manifest)

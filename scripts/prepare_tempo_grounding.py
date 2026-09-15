@@ -39,7 +39,7 @@ def parse_intervals(answer: str) -> list[list[float]]:
     intervals = [
         [float(start), float(end)]
         for start, end in _INTERVAL_RE.findall(answer)
-        if float(end) > float(start)
+        if float(end) >= float(start)
     ]
     if not intervals:
         raise ValueError(f"Cannot parse any interval from: {answer}")
