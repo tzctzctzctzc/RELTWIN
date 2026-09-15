@@ -8,7 +8,7 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 
 ## 待审阅主图预览（尚未替换论文）
 
-2026-09-15 更新 [NOVA / RelTwin 独立主图预览](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）：保留作者认可的白底、深蓝悬浮标题条、蓝/橙/绿配色和细圆角分区，重排为两条从左到右的流程。上方为 NOVA 的音频与查询→候选生成→证据核验→边界修正→输出；下方为 RelTwin 的配对样本→共享模型评分→答案竞争。实线箭头只表示向右的数据流，候选生成与 RelTwin 之间用无箭头虚线连接，表示训练细节展开；右侧真实定位案例独立成区，不作为计算步骤。路由仍按评测配置启用。原案例区间与四个 IoU 均保持不变，仍为可编辑 TikZ 和矢量 PDF。
+2026-09-15 更新 [NOVA / RelTwin 独立主图预览](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）：保留作者认可的白底、深蓝悬浮标题条、蓝/橙/绿配色和字体层级。NOVA 总览框内直接标出蓝色的 `(A) RelTwin`，以标注 `training` 的短箭头连接候选生成，明确它是系统内的训练模块；推理数据仍从左向右流经候选生成、证据核验、边界修正和输出。下方使用同名同编号的 `(A) RelTwin | Module detail`，展开配对样本→共享模型评分→答案竞争。原无文字虚线已替换为浅蓝放大连接带，并明确写出 `RelTwin module expanded below`，表示上下为同一模块的不同展示尺度，不是额外推理步骤。右侧真实案例保持独立。生成器及路由选择依实际配置，图中高层表示不将 Official/SFT/SetPO 重命名为同一检查点。原案例区间与四个 IoU 均保持不变，仍为可编辑 TikZ 和矢量 PDF。
 
 视觉设计参考包括作者提供的示例图，以及以下原论文图 1：借鉴 [CLIP](https://arxiv.org/pdf/2103.00020) 的匹配矩阵与颜色对应、[Segment Anything](https://arxiv.org/pdf/2304.02643) 的整体/局部分组、[Transformer](https://arxiv.org/pdf/1706.03762) 的功能分色和显式连接。这些是布局观察与视觉参考；没有复制原图、引入对应方法模块或新增实验主张。字体统一为 Helvetica 风格无衬线，数学字母通过 `sansmath` 对齐风格，保留常规数学符号；仅设分区标题 10.5 pt、步骤名 9.5 pt、正文与公式 9 pt 三个层级。移除重复候选公式和回折连接，保留总训练目标、答案得分矩阵与行交叉熵说明。参考 PDF 和检查用中间图只保存在忽略的 `build/` 中，不提交到论文仓库。
 

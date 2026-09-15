@@ -1,10 +1,12 @@
 % Independent preview, 2026-09-15: directional layout and restrained typography.
 % Palette unchanged from the accepted user-reference-inspired design.
-% Top lane: inference, strictly left to right. Lower lane: training examples,
+% Top lane: NOVA system, with RelTwin explicitly inside candidate learning.
+% Horizontal inference flow remains strictly left to right. Lower lane: examples,
 % shared model, and answer competition, also left to right. The right inset is
 % an observed example, not an extra computational stage.
-% Solid arrows: data flow. The vertical dashed line is an unarrowed detail
-% connector, not inference feedback. No arrows connect to the example inset.
+% Horizontal arrows: data flow. The short, labeled vertical arrow denotes
+% generator training. A labeled zoom band links module A to its expansion;
+% it is not a computational connection. No arrows enter the example inset.
 % Audio construction and system output are schematic. Measured intervals/IoUs
 % reuse the unchanged figures/overview_data.tex macros.
 \input{figures/overview_data}
@@ -30,13 +32,13 @@
  flow/.style={-{Latex[length=1.65mm]},line width=.9pt,draw=nvBlue},
  frame/.style={rounded corners=4pt,draw=nvBlueLine,line width=.65pt,fill=white},
  inner/.style={rounded corners=3pt,line width=.55pt}]
-\path[use as bounding box] (0,0) rectangle (17.4,9.16);
-\path[fill=white] (0,0) rectangle (17.4,9.16);
+\path[use as bounding box] (0,0) rectangle (17.4,9.96);
+\path[fill=white] (0,0) rectangle (17.4,9.96);
 
 % A. One continuous inference lane, with a common centerline.
-\draw[frame] (.15,6.54) rectangle (17.25,8.83);
-\draw[inner,draw=nvBlue,fill=nvBlue] (.45,8.62) rectangle (5.67,9.04);
-\node[sectiontitle] at (3.06,8.83) {NOVA | Inference flow};
+\draw[frame] (.15,6.54) rectangle (17.25,9.63);
+\draw[inner,draw=nvBlue,fill=nvBlue] (.45,9.42) rectangle (6.32,9.84);
+\node[sectiontitle] at (3.385,9.63) {NOVA | System overview};
 
 \node[stage] at (1.39,8.15) {Audio + query};
 \draw[nvRule,line width=.5pt] (.39,7.72)--(2.40,7.72);
@@ -45,9 +47,16 @@
 }
 \node[align=center] at (1.39,7.19) {dog followed\\by rooster};
 
-\draw[inner,draw=nvBlueLine,fill=nvBluePale!35] (2.85,7.04) rectangle (6.45,8.42);
+\draw[inner,draw=nvBlueLine,fill=nvBluePale!35] (2.85,7.04) rectangle (6.45,9.20);
+% RelTwin is a training component, not an inference-time scoring operation.
+% Generator variants (including SetPO continuation and reference models) are
+% defined by the manuscript's system configurations, not renamed in this view.
+\draw[inner,draw=nvBlue,fill=nvBlue] (3.26,8.65) rectangle (6.04,9.08);
+\node[stage,text=white] at (4.65,8.865) {(A) RelTwin};
+\draw[flow] (4.65,8.64)--(4.65,8.35);
+\node[anchor=west,text=nvBlue] at (4.91,8.49) {training};
 \node[stage] at (4.65,8.16) {Generate candidates};
-\node at (4.65,7.72) {Official / SFT / SetPO};
+\node at (4.65,7.72) {Model predictions};
 \foreach \yy/\xa/\xb in {7.42/3.31/4.22,7.20/4.47/5.99}{
  \draw[nvBlueLine!25,line width=.45pt] (3.29,\yy)--(6.01,\yy);
  \draw[nvBlueLine,fill=nvBlueBar,line width=.55pt] (\xa,{\yy-.055}) rectangle (\xb,{\yy+.055});
@@ -77,16 +86,19 @@
 \foreach \xa/\xb in {2.41/2.84,6.46/6.89,10.31/10.84,14.26/14.87}{
  \draw[flow] (\xa,7.70)--(\xb,7.70);
 }
-\node[anchor=east] at (17.00,6.77) {*Routing follows the evaluation configuration.};
+\node[anchor=east] at (17.00,6.77) {*Generators and routing vary by configuration.};
 
-% Unarrowed detail connector: no backwards inference path.
-\draw[nvBlueLine,dash pattern=on 2.5pt off 2pt,line width=.7pt] (4.65,7.035)--(4.65,6.14);
+% An explicitly labeled zoom band connects the system component to its
+% expanded view. Matching (A) tags preserve identity across the two scales.
+\path[draw=nvBlueLine!50,fill=nvBluePale!70,line width=.55pt]
+ (2.86,7.01)--(6.44,7.01)--(11.35,6.14)--(.45,6.14)--cycle;
+\node[text=nvBlue] at (5.87,6.37) {RelTwin module expanded below};
 
 % B. The training detail has its own left-to-right order. Labels are outside
 % computation, not extra boxes on the data path.
 \draw[frame] (.15,.20) rectangle (11.64,5.92);
-\draw[inner,draw=nvBlue,fill=nvBlue] (.45,5.72) rectangle (5.78,6.14);
-\node[sectiontitle] at (3.115,5.93) {RelTwin | Training detail};
+\draw[inner,draw=nvBlue,fill=nvBlue] (.45,5.72) rectangle (6.73,6.14);
+\node[sectiontitle] at (3.59,5.93) {(A) RelTwin | Module detail};
 \node[stage] at (2.10,5.37) {Paired examples};
 \node[stage] at (5.87,5.37) {Likelihood scoring};
 \node[stage] at (9.62,5.37) {Answer competition};
