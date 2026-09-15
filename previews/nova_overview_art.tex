@@ -1,13 +1,12 @@
-% Independent NOVA figure preview: user-reference-inspired redesign, 2026-09-15.
-% Visual references only (no reused artwork): user-provided rounded-panel /
-% floating-label diagram; CLIP Fig.1 (matching matrix), SAM Fig.1 (grouping),
-% Transformer Fig.1 (consistent functional colors). See README for links.
-% Blue: framework / A->B query. Orange: B->A query. Green: matched answers.
-% Solid arrows are data/inference flow. Dashed blue arrow is training influence.
-% Top audio construction and system output are schematic. Candidate example
-% targets and all measured prediction bars below reuse unchanged data macros.
-% The loss is controlled RelTwin supervision; deployed continuation settings
-% (consistency / SetPO) remain documented in sec:system.
+% Independent preview, 2026-09-15: directional layout and restrained typography.
+% Palette unchanged from the accepted user-reference-inspired design.
+% Top lane: inference, strictly left to right. Lower lane: training examples,
+% shared model, and answer competition, also left to right. The right inset is
+% an observed example, not an extra computational stage.
+% Solid arrows: data flow. The vertical dashed line is an unarrowed detail
+% connector, not inference feedback. No arrows connect to the example inset.
+% Audio construction and system output are schematic. Measured intervals/IoUs
+% reuse the unchanged figures/overview_data.tex macros.
 \input{figures/overview_data}
 \definecolor{nvInk}{HTML}{20232A}
 \definecolor{nvBlue}{HTML}{174C9B}
@@ -25,194 +24,171 @@
 \definecolor{nvGrayBar}{HTML}{C9CFD8}
 \definecolor{nvRule}{HTML}{C8CDD5}
 \begin{tikzpicture}[x=1cm,y=1cm,
- every node/.style={font=\sffamily\fontsize{9}{10.3}\selectfont,text=nvInk,inner sep=1.5pt},
- head/.style={font=\sffamily\fontsize{10}{11.4}\selectfont\bfseries},
- subhead/.style={font=\sffamily\fontsize{9}{10.3}\selectfont\bfseries},
- flow/.style={-{Latex[length=1.55mm]},line width=.8pt,draw=nvBlue},
- train/.style={-{Latex[length=1.6mm]},line width=.8pt,draw=nvBlue,dash pattern=on 2.5pt off 2pt},
- frame/.style={rounded corners=4pt,draw=nvBlueLine,line width=.7pt,fill=white},
- inner/.style={rounded corners=3pt,line width=.6pt}]
-\path[use as bounding box] (0,0) rectangle (17.4,9.40);
-\path[fill=white] (0,0) rectangle (17.4,9.40);
+ every node/.style={font=\sffamily\fontsize{9}{10.5}\selectfont,text=nvInk,inner sep=1.2pt},
+ sectiontitle/.style={font=\sffamily\fontsize{10.5}{12}\selectfont\bfseries,text=white},
+ stage/.style={font=\sffamily\fontsize{9.5}{11}\selectfont\bfseries},
+ flow/.style={-{Latex[length=1.65mm]},line width=.9pt,draw=nvBlue},
+ frame/.style={rounded corners=4pt,draw=nvBlueLine,line width=.65pt,fill=white},
+ inner/.style={rounded corners=3pt,line width=.55pt}]
+\path[use as bounding box] (0,0) rectangle (17.4,9.16);
+\path[fill=white] (0,0) rectangle (17.4,9.16);
 
-% (1) A compact problem vignette. It is a schematic construction, not a new
-% empirical result. Two real windows answer two different inverse queries.
-\draw[frame] (.12,6.96) rectangle (17.28,9.11);
-\draw[inner,draw=nvBlue,fill=nvBlue] (.48,8.91) rectangle (8.00,9.33);
-\node[font=\sffamily\fontsize{11}{12}\selectfont\bfseries,text=white] at (4.24,9.12) {NOVA: Query-Specific Audio Grounding};
-\node[anchor=west,subhead] at (.43,8.67) {Same audio $x$, opposite event orders};
-% Native signal icon: repeated event material A/B.
+% A. One continuous inference lane, with a common centerline.
+\draw[frame] (.15,6.54) rectangle (17.25,8.83);
+\draw[inner,draw=nvBlue,fill=nvBlue] (.45,8.62) rectangle (5.67,9.04);
+\node[sectiontitle] at (3.06,8.83) {NOVA | Inference flow};
+
+\node[stage] at (1.39,8.15) {Audio + query};
+\draw[nvRule,line width=.5pt] (.39,7.72)--(2.40,7.72);
+\foreach \xx/\hh in {.46/.05,.59/.13,.72/.22,.85/.10,.98/.18,1.11/.25,1.24/.14,1.37/.07,1.50/.16,1.63/.21,1.76/.13,1.89/.06,2.02/.12,2.15/.04,2.28/.07}{
+ \draw[nvBlueLine,line width=.85pt] (\xx,{7.72-\hh})--(\xx,{7.72+\hh});
+}
+\node[align=center] at (1.39,7.19) {dog followed\\by rooster};
+
+\draw[inner,draw=nvBlueLine,fill=nvBluePale!35] (2.85,7.04) rectangle (6.45,8.42);
+\node[stage] at (4.65,8.16) {Generate candidates};
+\node at (4.65,7.72) {Official / SFT / SetPO};
+\foreach \yy/\xa/\xb in {7.42/3.31/4.22,7.20/4.47/5.99}{
+ \draw[nvBlueLine!25,line width=.45pt] (3.29,\yy)--(6.01,\yy);
+ \draw[nvBlueLine,fill=nvBlueBar,line width=.55pt] (\xa,{\yy-.055}) rectangle (\xb,{\yy+.055});
+}
+
+\draw[inner,draw=nvGreen,fill=nvGreenPale!35] (6.90,7.04) rectangle (10.30,8.42);
+\node[stage] at (8.60,8.16) {Verify evidence*};
+\node at (8.60,7.72) {Keep / Drop scores};
+\draw[nvGreen!30,line width=.45pt] (7.28,7.39)--(9.93,7.39);
+\draw[nvGreen,fill=nvGreenMid,line width=.55pt] (8.07,7.32) rectangle (9.00,7.46);
+\draw[nvGreen!30,line width=.45pt] (7.28,7.20)--(9.93,7.20);
+\draw[nvGreen,fill=nvGreenPale,line width=.55pt] (7.28,7.13) rectangle (8.07,7.27);
+\draw[nvGreen,fill=nvGreenPale,line width=.55pt] (9.00,7.13) rectangle (9.93,7.27);
+\draw[nvGreen,dash pattern=on 1pt off 1pt,line width=.5pt] (8.07,7.13) rectangle (9.00,7.27);
+
+\draw[inner,draw=nvOrange,fill=nvOrangePale!35] (10.85,7.04) rectangle (14.25,8.42);
+\node[stage] at (12.55,8.16) {Refine boundaries};
+\node at (12.55,7.72) {Radius + DP + gate};
+\draw[nvOrange!30,line width=.45pt] (11.22,7.32)--(13.92,7.32);
+\draw[nvOrange,fill=nvOrangeBar,line width=.6pt] (11.75,7.25) rectangle (13.49,7.39);
+\draw[nvOrange,dash pattern=on 2pt off 1pt,line width=.65pt] (11.95,7.17) rectangle (13.29,7.47);
+
+\node[stage] at (16.06,8.15) {Intervals};
+\draw[flow,line width=.6pt] (15.07,7.70)--(17.06,7.70);
+\draw[nvBlue,fill=nvBlueBar,line width=.65pt] (15.41,7.60) rectangle (16.70,7.80);
+\node at (16.06,7.21) {Query-aligned};
+\foreach \xa/\xb in {2.41/2.84,6.46/6.89,10.31/10.84,14.26/14.87}{
+ \draw[flow] (\xa,7.70)--(\xb,7.70);
+}
+\node[anchor=east] at (17.00,6.77) {*Routing follows the evaluation configuration.};
+
+% Unarrowed detail connector: no backwards inference path.
+\draw[nvBlueLine,dash pattern=on 2.5pt off 2pt,line width=.7pt] (4.65,7.035)--(4.65,6.14);
+
+% B. The training detail has its own left-to-right order. Labels are outside
+% computation, not extra boxes on the data path.
+\draw[frame] (.15,.20) rectangle (11.64,5.92);
+\draw[inner,draw=nvBlue,fill=nvBlue] (.45,5.72) rectangle (5.78,6.14);
+\node[sectiontitle] at (3.115,5.93) {RelTwin | Training detail};
+\node[stage] at (2.10,5.37) {Paired examples};
+\node[stage] at (5.87,5.37) {Likelihood scoring};
+\node[stage] at (9.62,5.37) {Answer competition};
+
+% Paired windows, compact natural-language query descriptions, fixed colors.
+\node at (2.10,4.98) {$A$: dog \qquad $B$: rooster};
 \foreach \xa/\xb/\event/\stroke/\shade in {
- .52/1.51/A/nvBlueLine/nvBluePale,1.64/2.63/B/nvOrange/nvOrangePale,
- 3.52/4.51/B/nvOrange/nvOrangePale,4.64/5.63/A/nvBlueLine/nvBluePale}{
- \draw[inner,draw=\stroke,fill=\shade] (\xa,7.91) rectangle (\xb,8.42);
- \node[subhead] at ({(\xa+\xb)/2},8.29) {$\event$};
- \foreach \ff/\hh in {.12/.035,.25/.08,.38/.05,.51/.09,.64/.06,.77/.04,.88/.02}{
-  \pgfmathsetmacro{\xx}{\xa+(\xb-\xa)*\ff}
-  \draw[\stroke,line width=.65pt] (\xx,{8.07-\hh})--(\xx,{8.07+\hh});
- }
+ .49/1.09/A/nvBlueLine/nvBluePale,1.19/1.79/B/nvOrange/nvOrangePale,
+ 2.40/3.00/B/nvOrange/nvOrangePale,3.10/3.70/A/nvBlueLine/nvBluePale}{
+ \draw[inner,draw=\stroke,fill=\shade] (\xa,4.37) rectangle (\xb,4.79);
+ \node at ({(\xa+\xb)/2},4.58) {$\event$};
 }
-\draw[flow,line width=.55pt] (.44,7.75)--(5.96,7.75);
-\node[anchor=west] at (5.88,7.76) {$t$};
-\draw[nvBlueLine,line width=.9pt] (.52,7.63)--(.52,7.52)--(2.63,7.52)--(2.63,7.63);
-\draw[nvOrange,line width=.9pt] (3.52,7.63)--(3.52,7.52)--(5.63,7.52)--(5.63,7.63);
-\node at (1.575,7.26) {$W_+: A\rightarrow B$};
-\node at (4.575,7.26) {$W_-: B\rightarrow A$};
-\draw[nvRule,dash pattern=on 2pt off 2pt,line width=.55pt] (6.40,7.19)--(6.40,8.71);
-\draw[inner,draw=nvBlueLine,fill=nvBluePale] (6.78,8.01) rectangle (12.05,8.59);
-\draw[inner,draw=nvOrange,fill=nvOrangePale] (6.78,7.24) rectangle (12.05,7.82);
-% Query symbols carry the paired-window identities through the whole diagram.
-\node[anchor=west] at (6.97,8.30) {$q_+$: dog followed by rooster};
-\node[anchor=west] at (6.97,7.53) {$q_-$: rooster followed by dog};
-\draw[nvRule,dash pattern=on 2pt off 2pt,line width=.55pt] (12.44,7.19)--(12.44,8.71);
-\node[head,align=center] at (14.86,8.37) {Both windows are real.};
-\node[align=center] at (14.86,7.82) {The query determines\\the correct answer.};
+\draw[nvGray,line width=.5pt] (.43,4.21)--(3.77,4.21);
+\draw[nvBlueLine,line width=.85pt] (.49,4.10)--(.49,3.99)--(1.79,3.99)--(1.79,4.10);
+\draw[nvOrange,line width=.85pt] (2.40,4.10)--(2.40,3.99)--(3.70,3.99)--(3.70,4.10);
+\node at (1.14,3.75) {$W_+: A\rightarrow B$};
+\node at (3.05,3.75) {$W_-: B\rightarrow A$};
+\draw[inner,draw=nvBlueLine!60,fill=nvBluePale] (.44,3.09) rectangle (3.77,3.53);
+\draw[inner,draw=nvOrange!60,fill=nvOrangePale] (.44,2.51) rectangle (3.77,2.95);
+\node at (2.105,3.31) {$q_+$: $A$ followed by $B$};
+\node at (2.105,2.73) {$q_-$: $B$ followed by $A$};
+\node[align=center] at (2.105,2.09) {Same audio,\\different correct windows.};
 
-% (2) Compact system panel. The final artifact remains a structured interval
-% prediction; the three stages are not separate novelty claims.
-\draw[frame] (.12,.16) rectangle (5.20,6.48);
-\draw[inner,draw=nvBlue,fill=nvBlue] (.63,6.27) rectangle (4.70,6.69);
-% Native stack-of-candidates icon in the floating title tab.
-\draw[white,rounded corners=.5pt,line width=.55pt] (.83,6.37) rectangle (1.10,6.56);
-\draw[white,line width=.55pt] (.78,6.40)--(.78,6.60)--(1.05,6.60);
-\node[head,text=white] at (2.91,6.48) {NOVA inference};
-% Three functional modules, with compact line icons.
-\draw[inner,draw=nvBlueLine,fill=nvBluePale!35] (.44,5.07) rectangle (4.88,5.98);
-\draw[nvBlueLine,rounded corners=.8pt,line width=.65pt] (.66,5.28) rectangle (1.00,5.66);
-\draw[nvBlueLine,line width=.65pt] (.60,5.35)--(.60,5.73)--(.94,5.73);
-\foreach \yy in {5.36,5.45,5.54}{\draw[nvBlueLine,line width=.5pt] (.73,\yy)--(.93,\yy);}
-\node[subhead] at (2.98,5.73) {Candidate generation};
-\node at (2.98,5.31) {Official / SFT / SetPO};
+% Shared model: one compact model block, consistent font and baseline.
+\draw[inner,draw=nvBlueLine,fill=white] (4.33,3.17) rectangle (7.32,4.78);
+\node[stage] at (5.825,4.53) {Shared model};
+\draw[inner,draw=nvRule,fill=nvGrayPale] (4.50,3.89) rectangle (7.16,4.31);
+\draw[inner,draw=nvGreen!65,fill=nvGreenPale] (4.50,3.35) rectangle (7.16,3.77);
+\node at (5.83,4.10) {Frozen backbone};
+\node at (5.83,3.56) {Trainable LoRA};
+% A single forward arrow between each training stage. No lateral return buses.
+\draw[flow] (3.80,3.94)--(4.32,3.94);
+\draw[flow] (7.33,3.94)--(7.78,3.94);
 
-\draw[inner,draw=nvGreen,fill=nvGreenPale!35] (.44,3.78) rectangle (4.88,4.69);
-\draw[nvGreen,line width=.65pt] (.80,4.24) circle (.18);
-\draw[nvGreen,line width=.65pt] (.80,4.24) circle (.08);
-\draw[nvGreen,line width=.65pt] (.54,4.24)--(.63,4.24) (.97,4.24)--(1.06,4.24) (.80,3.98)--(.80,4.07) (.80,4.41)--(.80,4.50);
-\node[subhead] at (2.98,4.44) {Evidence routing*};
-\node at (2.98,4.02) {Keep / Drop scores};
+% Query-conditioned likelihood matrix. Formula size matches body labels.
+\draw[inner,draw=nvBlueLine!55,fill=nvBluePale] (8.43,4.29) rectangle (9.81,4.72);
+\draw[inner,draw=nvOrange!55,fill=nvOrangePale] (9.97,4.29) rectangle (11.35,4.72);
+\node at (9.12,4.505) {$y(W_+)$};
+\node at (10.66,4.505) {$y(W_-)$};
+\draw[inner,draw=nvBlueLine!55,fill=nvBluePale] (7.85,3.66) rectangle (8.29,4.08);
+\draw[inner,draw=nvOrange!55,fill=nvOrangePale] (7.85,2.97) rectangle (8.29,3.39);
+\node at (8.07,3.87) {$q_+$};
+\node at (8.07,3.18) {$q_-$};
+\path[fill=nvOrangePale!65] (8.43,2.82) rectangle (11.35,4.20);
+\path[fill=nvGreenMid!80] (8.43,3.51) rectangle (9.89,4.20);
+\path[fill=nvGreenMid!80] (9.89,2.82) rectangle (11.35,3.51);
+\draw[nvBlueLine,line width=.7pt] (8.43,2.82) rectangle (11.35,4.20);
+\draw[nvBlueLine!55,line width=.5pt] (9.89,2.82)--(9.89,4.20);
+\draw[nvBlueLine!55,line width=.5pt] (8.43,3.51)--(11.35,3.51);
+\node at (9.16,3.855) {$s_{++}\uparrow$};
+\node at (10.62,3.855) {$s_{+-}\downarrow$};
+\node at (9.16,3.165) {$s_{-+}\downarrow$};
+\node at (10.62,3.165) {$s_{--}\uparrow$};
+\node[align=center] at (9.75,2.26) {$s$: mean token\\log-likelihood};
 
-\draw[inner,draw=nvOrange,fill=nvOrangePale!35] (.44,2.49) rectangle (4.88,3.40);
-\draw[nvOrange,line width=.65pt] (.58,2.98)--(1.04,2.98);
-\draw[nvOrange,line width=.65pt] (.68,2.85)--(.68,3.11) (.96,2.85)--(.96,3.11);
-\draw[nvOrange,dash pattern=on 1pt off 1pt,line width=.55pt] (.59,2.85)--(.59,3.11) (1.04,2.85)--(1.04,3.11);
-\node[subhead] at (2.98,3.15) {Boundary refinement};
-\node at (2.98,2.73) {Radius + DP + gate};
-\foreach \ya/\yb in {5.07/4.69,3.78/3.40,2.49/2.10}{
- \draw[flow] (2.66,\ya)--(2.66,\yb);
-}
-\draw[inner,draw=nvBlueLine,fill=nvBluePale!20] (.69,.99) rectangle (4.63,2.10);
-\node[subhead] at (2.66,1.85) {Final timestamp set};
-\draw[flow,line width=.55pt] (1.12,1.46)--(4.22,1.46);
-\draw[nvBlue,fill=nvBlueBar,line width=.6pt] (1.58,1.37) rectangle (3.50,1.55);
-\node at (2.66,1.15) {Query-aligned intervals};
-\node[align=center] at (2.66,.57) {*Routing follows the\\evaluation configuration.};
+% An objective footer, not an additional inference stage. The duplicate
+% standalone candidate formula/cards have been removed; Eq. 2 is in the paper.
+\draw[inner,draw=nvBlueLine!40,fill=nvBluePale!35] (.43,.51) rectangle (11.35,1.67);
+\node[stage,anchor=west] at (.67,1.39) {Training objective};
+\node[anchor=west] at (.67,.94) {$\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$};
+\node[anchor=west] at (6.95,1.38) {$\mathcal L_{\rm cand}$: row-wise cross-entropy};
+\node[anchor=west] at (6.95,.94) {Matched $\uparrow$ \quad Swapped $\downarrow$};
 
-% (3) The core module dominates the lower canvas. Dark blue tab, fine rounded
-% frames, line icons, restrained peach/green highlights follow the user style.
-\draw[frame] (5.62,.16) rectangle (17.28,6.48);
-\draw[inner,draw=nvBlue,fill=nvBlue] (8.48,6.27) rectangle (14.43,6.69);
-% A 2x2 matching icon, not borrowed artwork.
-\foreach \xx in {8.69,8.85}{
- \foreach \yy in {6.36,6.52}{\draw[white,line width=.5pt] (\xx,\yy) rectangle ({\xx+.11},{\yy+.11});}
-}
-\node[font=\sffamily\fontsize{11}{12}\selectfont\bfseries,text=white] at (11.79,6.48) {Core module: RelTwin};
-
-% Full audio and inverse queries feed a single shared model during training.
-\draw[flow] (6.56,6.95)--(6.56,6.00);
-\node[anchor=west,fill=white] at (6.74,6.74) {$x,q_\pm$};
-\draw[inner,draw=nvBlueLine,fill=white] (6.02,5.12) rectangle (11.20,5.99);
-\node[subhead] at (8.65,5.77) {Audio-language model};
-\draw[inner,draw=nvRule,fill=nvGrayPale] (6.12,5.18) rectangle (8.68,5.60);
-\draw[inner,draw=nvGreen!60,fill=nvGreenPale] (8.77,5.18) rectangle (11.09,5.60);
-\node at (7.40,5.39) {Frozen backbone};
-\node at (9.93,5.39) {Trainable LoRA};
-% Training influence goes to a candidate generator, not to runtime outputs.
-\draw[train] (6.02,5.56)--(4.89,5.56);
-\node[fill=white] at (5.48,5.80) {train};
-
-% Complete timestamp answers shown as small document-like cards. These example
-% windows use the target data macros, also plotted in the measured panel.
-\node[subhead] at (14.22,5.99) {Complete timestamp answers};
-\draw[inner,draw=nvBlueLine,fill=nvBluePale] (11.72,5.09) rectangle (14.03,5.77);
-\draw[inner,draw=nvOrange,fill=nvOrangePale] (14.22,5.09) rectangle (17.00,5.77);
-\node at (12.875,5.58) {$y(W_+)$};
-\node at (12.875,5.25) {$[\FigGTPlusStart,\FigGTPlusEnd]$};
-\node at (15.61,5.58) {$y(W_-)$};
-\node at (15.61,5.25) {$[\FigGTMinusStart,\FigGTMinusEnd]$};
-% Answer cards connect to the score computation through a short shared bus.
-\draw[nvBlueLine,line width=.55pt] (12.875,5.09)--(12.875,4.97);
-\draw[nvBlueLine,line width=.55pt] (15.61,5.09)--(15.61,4.97)--(11.48,4.97)--(11.48,4.47);
-\fill[nvBlueLine] (12.875,4.97) circle (.65pt);
-\draw[flow,line width=.6pt] (11.48,4.47)--(10.46,4.47);
-\draw[flow] (8.65,5.12)--(8.65,4.92);
-
-% Left interior: row-wise competition. Green is query-matched, peach is swapped.
-\node[subhead] at (8.65,4.73) {(a) Answer competition};
-\draw[inner,draw=nvBlueLine!55,fill=nvBluePale] (7.04,3.99) rectangle (8.73,4.37);
-\draw[inner,draw=nvOrange!55,fill=nvOrangePale] (8.83,3.99) rectangle (10.52,4.37);
-\node at (7.885,4.18) {$y(W_+)$};
-\node at (9.675,4.18) {$y(W_-)$};
-\draw[inner,draw=nvBlueLine!55,fill=nvBluePale] (6.26,3.31) rectangle (6.79,3.75);
-\draw[inner,draw=nvOrange!55,fill=nvOrangePale] (6.26,2.53) rectangle (6.79,2.97);
-\node at (6.525,3.53) {$q_+$};
-\node at (6.525,2.75) {$q_-$};
-\path[fill=nvOrangePale!65] (7.04,2.36) rectangle (10.52,3.92);
-\path[fill=nvGreenMid!80] (7.04,3.14) rectangle (8.78,3.92);
-\path[fill=nvGreenMid!80] (8.78,2.36) rectangle (10.52,3.14);
-\draw[nvBlueLine,line width=.75pt] (7.04,2.36) rectangle (10.52,3.92);
-\draw[nvBlueLine!55,line width=.5pt] (8.78,2.36)--(8.78,3.92);
-\draw[nvBlueLine!55,line width=.5pt] (7.04,3.14)--(10.52,3.14);
-\node[font=\fontsize{11}{12}\selectfont] at (7.91,3.53) {$s_{++}\uparrow$};
-\node[font=\fontsize{11}{12}\selectfont] at (9.65,3.53) {$s_{+-}\downarrow$};
-\node[font=\fontsize{11}{12}\selectfont] at (7.91,2.75) {$s_{-+}\downarrow$};
-\node[font=\fontsize{11}{12}\selectfont] at (9.65,2.75) {$s_{--}\uparrow$};
-\node at (8.65,2.10) {$s$: mean token log-likelihood};
-\node at (8.65,1.66) {$\mathcal L_{\rm cand}=-\frac12[\log p_+(+)+\log p_-(-)]$};
-% Legend names supervision roles, not globally invalid sound events.
-\draw[nvGreen,fill=nvGreenMid!80,line width=.5pt] (6.24,1.15) rectangle (6.42,1.33);
-\node[anchor=west] at (6.51,1.24) {matched};
-\draw[nvOrange,fill=nvOrangePale,line width=.5pt] (8.69,1.15) rectangle (8.87,1.33);
-\node[anchor=west] at (8.96,1.24) {swapped};
-\draw[inner,draw=nvBlueLine!45,fill=nvBluePale!45] (6.02,.43) rectangle (11.03,.94);
-\node at (8.525,.685) {$\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$};
-
-% Right interior: a real relation-development example. Target, SFT, and RelTwin
-% have separate rows and identical time axes; every endpoint remains unchanged.
-\draw[nvRule,dash pattern=on 2pt off 2pt,line width=.55pt] (11.39,.44)--(11.39,4.81);
-\node[subhead] at (14.23,4.73) {(b) Query-specific outputs};
-\draw[inner,draw=nvBlueLine!45,fill=nvBluePale] (11.71,4.06) rectangle (17.03,4.45);
-\node[anchor=west,subhead] at (11.87,4.255) {$q_+: A\rightarrow B$};
-\node[anchor=east] at (16.94,4.255) {IoU};
-\draw[inner,draw=nvOrange!45,fill=nvOrangePale] (11.71,2.28) rectangle (17.03,2.67);
-\node[anchor=west,subhead] at (11.87,2.475) {$q_-: B\rightarrow A$};
-\node[anchor=east] at (16.94,2.475) {IoU};
+% C. Independent observed example. It is visibly outside the computational
+% lane and has no incoming/outgoing pipeline arrows.
+\draw[frame,draw=nvRule] (12.03,.20) rectangle (17.25,5.92);
+\draw[inner,draw=nvBlueLine,fill=white] (12.39,5.72) rectangle (16.93,6.14);
+\node[stage] at (14.66,5.93) {Localization example};
+\node at (14.65,5.34) {Same audio; inverse queries};
+\draw[inner,draw=nvBlueLine!45,fill=nvBluePale] (12.26,4.59) rectangle (17.02,5.02);
+\node[anchor=west] at (12.40,4.805) {$q_+: A\rightarrow B$};
+\node[anchor=east] at (16.91,4.805) {IoU};
+\draw[inner,draw=nvOrange!45,fill=nvOrangePale] (12.26,2.58) rectangle (17.02,3.01);
+\node[anchor=west] at (12.40,2.795) {$q_-: B\rightarrow A$};
+\node[anchor=east] at (16.91,2.795) {IoU};
 \foreach \yy/\start/\stop/\stroke in {
- 3.73/\FigGTPlusStart/\FigGTPlusEnd/nvBlueLine,
- 1.95/\FigGTMinusStart/\FigGTMinusEnd/nvOrange}{
- \node[anchor=west] at (11.74,\yy) {Target};
- \draw[nvRule,line width=.4pt] (13.25,\yy)--(16.27,\yy);
- \pgfmathsetmacro{\xa}{13.25+3.02*\start/27}
- \pgfmathsetmacro{\xb}{13.25+3.02*\stop/27}
- \draw[\stroke,fill=white,line width=.8pt] (\xa,{\yy-.08}) rectangle (\xb,{\yy+.08});
- \node[anchor=east] at (16.94,\yy) {--};
+ 4.22/\FigGTPlusStart/\FigGTPlusEnd/nvBlueLine,
+ 2.21/\FigGTMinusStart/\FigGTMinusEnd/nvOrange}{
+ \node[anchor=west] at (12.25,\yy) {Target};
+ \draw[nvRule,line width=.4pt] (13.73,\yy)--(16.29,\yy);
+ \pgfmathsetmacro{\xa}{13.73+2.56*\start/27}
+ \pgfmathsetmacro{\xb}{13.73+2.56*\stop/27}
+ \draw[\stroke,fill=white,line width=.75pt] (\xa,{\yy-.08}) rectangle (\xb,{\yy+.08});
+ \node[anchor=east] at (16.91,\yy) {--};
 }
 \foreach \yy/\start/\stop/\stroke/\shade/\model/\score in {
- 3.36/\FigSFTPlusStart/\FigSFTPlusEnd/nvGray/nvGrayBar/SFT/\FigSftPlusIoU,
- 2.99/\FigCandPlusStart/\FigCandPlusEnd/nvBlueLine/nvBlueBar/RelTwin/\FigCandPlusIoU,
- 1.58/\FigSFTMinusStart/\FigSFTMinusEnd/nvGray/nvGrayBar/SFT/\FigSftMinusIoU,
- 1.21/\FigCandMinusStart/\FigCandMinusEnd/nvOrange/nvOrangeBar/RelTwin/\FigCandMinusIoU}{
- \node[anchor=west] at (11.74,\yy) {\model};
- \draw[nvRule,line width=.4pt] (13.25,\yy)--(16.27,\yy);
- \pgfmathsetmacro{\xa}{13.25+3.02*\start/27}
- \pgfmathsetmacro{\xb}{13.25+3.02*\stop/27}
- \draw[draw=\stroke,fill=\shade,line width=.7pt] (\xa,{\yy-.08}) rectangle (\xb,{\yy+.08});
- \node[anchor=east] at (16.94,\yy) {\score};
+ 3.78/\FigSFTPlusStart/\FigSFTPlusEnd/nvGray/nvGrayBar/SFT/\FigSftPlusIoU,
+ 3.34/\FigCandPlusStart/\FigCandPlusEnd/nvBlueLine/nvBlueBar/RelTwin/\FigCandPlusIoU,
+ 1.77/\FigSFTMinusStart/\FigSFTMinusEnd/nvGray/nvGrayBar/SFT/\FigSftMinusIoU,
+ 1.33/\FigCandMinusStart/\FigCandMinusEnd/nvOrange/nvOrangeBar/RelTwin/\FigCandMinusIoU}{
+ \node[anchor=west] at (12.25,\yy) {\model};
+ \draw[nvRule,line width=.4pt] (13.73,\yy)--(16.29,\yy);
+ \pgfmathsetmacro{\xa}{13.73+2.56*\start/27}
+ \pgfmathsetmacro{\xb}{13.73+2.56*\stop/27}
+ \draw[draw=\stroke,fill=\shade,line width=.65pt] (\xa,{\yy-.08}) rectangle (\xb,{\yy+.08});
+ \node[anchor=east] at (16.91,\yy) {\score};
 }
-\draw[nvGray,line width=.5pt] (13.25,.90)--(16.27,.90);
+\draw[nvGray,line width=.5pt] (13.73,.96)--(16.29,.96);
 \foreach \sec in {0,10,20,27}{
- \pgfmathsetmacro{\xx}{13.25+3.02*\sec/27}
- \draw[nvGray,line width=.5pt] (\xx,.86)--(\xx,.94);
- \node[anchor=north] at (\xx,.86) {\sec};
+ \pgfmathsetmacro{\xx}{13.73+2.56*\sec/27}
+ \draw[nvGray,line width=.5pt] (\xx,.92)--(\xx,1.00);
+ \node[anchor=north] at (\xx,.92) {\sec};
 }
-\node[anchor=west] at (11.74,.64) {Time (s)};
+\node[anchor=west] at (12.25,.69) {Time (s)};
 \end{tikzpicture}
