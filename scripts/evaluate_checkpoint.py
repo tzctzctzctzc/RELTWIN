@@ -35,7 +35,7 @@ AEGBENCH_PROMPT = (
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", type=Path, required=True)
-    parser.add_argument("--adapter", type=Path, required=True)
+    parser.add_argument("--adapter", type=Path)
     parser.add_argument("--annotations", type=Path, required=True)
     parser.add_argument("--audio-dir", type=Path, required=True)
     parser.add_argument("--predictions", type=Path, required=True)
@@ -153,12 +153,13 @@ def main() -> int:
         attn_implementation="sdpa",
         low_cpu_mem_usage=True,
     )
-    model = PeftModel.from_pretrained(
-        model,
-        args.adapter,
-        torch_device="cpu",
-        is_trainable=False,
-    ).merge_and_unload()
+    if args.adapter:
+        model = PeftModel.from_pretrained(
+            model,
+            args.adapter,
+            torch_device="cpu",
+            is_trainable=False,
+        ).merge_and_unload()
     model = model.eval().to("cuda")
     load_seconds = time.perf_counter() - load_started
 
@@ -221,7 +222,7 @@ def main() -> int:
     ious = np.asarray([record["iou"] for record in records], dtype=np.float64)
     summary = {
         "base": str(args.base.resolve()),
-        "adapter": str(args.adapter.resolve()),
+        "adapter": str(args.adapter.resolve()) if args.adapter else None,
         "torch": torch.__version__,
         "device": torch.cuda.get_device_name(0),
         "prompt_mode": args.prompt_mode,
