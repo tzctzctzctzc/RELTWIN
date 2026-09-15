@@ -3,6 +3,7 @@ set -euo pipefail
 
 ROOT=/root/autodl-tmp/SpotSound-ICASSP
 WORK="$ROOT/spotsound_timeaudio_reltwin_20260916"
+WORK_MIN_COMMIT=7317aa56fba5ab9e25e826cea9bc558f80ad7917
 EXTERNAL="$ROOT/external/TimeAudio-22db7136"
 ENV_DIR="$ROOT/env-timeaudio"
 MODEL_DIR="$ROOT/models/timeaudio-public"
@@ -11,12 +12,8 @@ export HF_HOME
 
 mkdir -p "$ROOT/external" "$MODEL_DIR" "$HF_HOME"
 
-if [[ ! -d "$WORK/.git" ]]; then
-  git clone --branch codex/spotsound-q-reltwin --single-branch \
-    https://github.com/tzcinhust/spotsound.git "$WORK"
-else
-  git -C "$WORK" pull --ff-only
-fi
+[[ -d "$WORK/.git" ]]
+git -C "$WORK" merge-base --is-ancestor "$WORK_MIN_COMMIT" HEAD
 
 if [[ ! -d "$EXTERNAL/.git" ]]; then
   git clone https://github.com/lysanderism/TimeAudio.git "$EXTERNAL"
