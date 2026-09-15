@@ -83,6 +83,12 @@ def resolve_audio_path(audio_dir: Path | None, row: dict) -> Path:
     return next((candidate for candidate in candidates if candidate.is_file()), candidates[0])
 
 
+def prepare_beats_waveform(wave: np.ndarray) -> torch.Tensor:
+    # TimeAudio's official loader keeps float64 here. That prevents BEATs fbank
+    # extraction from being autocast to unstable float16 values.
+    return torch.as_tensor(wave, dtype=torch.float64).unsqueeze(0)
+
+
 def prepare_audio_features(audio_path: Path, feature_extractor, max_len: int = 180):
     import librosa
 
@@ -113,7 +119,7 @@ def prepare_audio_features(audio_path: Path, feature_extractor, max_len: int = 1
             raise ValueError(f"No valid TimeAudio chunks for {audio_path}")
         spectrogram = torch.stack(chunks).unsqueeze(0)
 
-    raw_wav = torch.from_numpy(wave).unsqueeze(0)
+    raw_wav = prepare_beats_waveform(wave)
     return {
         "spectrogram": spectrogram,
         "raw_wav": raw_wav,

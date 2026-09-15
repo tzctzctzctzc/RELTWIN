@@ -1,13 +1,21 @@
+import numpy as np
 import torch
 
 from timeaudio_reltwin import (
     build_timeaudio_sample,
     format_timeaudio_v3,
     parse_timeaudio_intervals,
+    prepare_beats_waveform,
     rbee_objective,
     timeaudio_answer,
     timeaudio_question,
 )
+
+
+def test_beats_waveform_preserves_official_float64_path():
+    waveform = prepare_beats_waveform(np.asarray([0.25, -0.5], dtype=np.float32))
+    assert waveform.dtype == torch.float64
+    assert waveform.shape == (1, 2)
 
 
 def test_timeaudio_prompt_and_v3_answer_are_canonical():
