@@ -178,6 +178,8 @@ Q-P5 完成后，接入公开 TimeAudio checkpoint，执行与 Q 相同的审计
 
 TimeAudio official、TimeAudio + SFT、TimeAudio + RelTwin 仍使用相同数据、LoRA 参数预算、训练步数和评测器。前三个 benchmark 保持不变。若时间和数据资产允许，再增加 TimeAudio 原生采用的 AudioGrounding-v2 official 997-query test，作为跨论文官方环境的补充证据；该结果不得与 SpotSound 论文中另一种 AudioGrounding 规模混合。
 
+配置口径固定为：官方零样本评测使用仓库公开的 `configs/infer_config.yaml`；继续训练使用 checkpoint 所对应的 `configs/config_stage2.yaml`，随后显式加载同一官方 checkpoint。两条路径不互换配置，也不依据下游结果覆盖官方推理开关。
+
 TimeAudio 扩展进入论文主线的标准：RelTwin 相对 matched SFT 在至少两个 benchmark 上取得正向结果，且其余 benchmark 没有明显退化。否则只作为补充实验，不扩大“跨底座通用性”主张。
 
 ## 8. 运行管理与阶段审计
