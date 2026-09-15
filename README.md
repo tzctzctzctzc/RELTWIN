@@ -1,8 +1,8 @@
-# RelTwin · ICASSP 2027 论文协作
+# NOVA · ICASSP 2027 论文协作
 
 [当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本分支保存可编辑源码和当前编译稿。当前为 v21（`paper` 协作稿），经作者确认无冲突快进合入 `7f4b800`，论文内容对应该提交。论文按“主表提升 → NOVA 方法组成 → RelTwin 候选训练及机制分析”组织。主表保留 SpotSound、Clotho-Moment、UnAV 三套结果；原 Scope 清单改为局部有效答案为何有助于查询条件选择的讨论，时间干预和结论直接陈述实验证据。具体部署、对照配置与统计口径集中列于实验设置。标题仍为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。没有训练、重新推理或改动预测。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。
+本分支保存可编辑源码和当前编译稿。当前为 v21 基础上的 NOVA 叙事草稿（2026-09-15），标题采用 **NOVA: Query–Occurrence Binding via Locally Valid Timestamp Contrasts for Audio Temporal Grounding**。NOVA 为总体方法名，RelTwin 为核心时间戳对比训练模块。摘要与结果段直接呈现 RelTwin 的 SpotSound 59.43 mIoU 和匹配 SFT 对照提升；主表保留实际 NOVA 系统的三套成绩，不将不同配置拼接成同一行。选取口径及独立的三种子汇总在实验设置集中说明。主图、所有表格数值、预测、训练目标与系统配置不变，未执行新模型实验。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
@@ -12,7 +12,7 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 
 视觉设计参考包括作者提供的示例图，以及以下原论文图 1：借鉴 [CLIP](https://arxiv.org/pdf/2103.00020) 的匹配矩阵与颜色对应、[Segment Anything](https://arxiv.org/pdf/2304.02643) 的整体/局部分组、[Transformer](https://arxiv.org/pdf/1706.03762) 的功能分色和显式连接。这些是布局观察与视觉参考；没有复制原图、引入对应方法模块或新增实验主张。字体统一为 Helvetica 风格无衬线，数学字母通过 `sansmath` 对齐风格，保留常规数学符号；仅设分区标题 10.5 pt、步骤名 9.5 pt、正文与公式 9 pt 三个层级。移除重复候选公式和回折连接，保留总训练目标、答案得分矩阵与行交叉熵说明。参考 PDF 和检查用中间图只保存在忽略的 `build/` 中，不提交到论文仓库。
 
-这是设计预览，不是当前论文 Figure 1：`main.tex`、现有主图源码和 `paper.pdf` 均未改，论文仍为 v21。确认视觉方案后再单独处理论文替换、图注及四页正文排版。复现预览时从仓库根目录运行：
+这是设计预览，不是当前论文 Figure 1。新增预览时未改变论文；后续 NOVA 标题与文字更新也未将该预览接入论文，现有主图源码和数据保持不变。确认视觉方案后再单独处理论文替换、图注及四页正文排版。复现预览时从仓库根目录运行：
 
 ```text
 pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build previews/nova_overview.tex

@@ -2,15 +2,15 @@
 \subsection{Grounding performance across benchmarks}
 NOVA reaches 59.39 SpotSound mIoU (Table~\ref{tab:main}), exceeding the prior main-table best by 1.49 points. R1@.3 and R1@.5 improve by 2.75 and 3.00 points, respectively: gains extend from loose overlap to the stricter localization criterion. Clotho reaches 86.86 mIoU ($+1.26$), with R1@.3/.5 of 93.49/90.84. Its mIoU improves while recall remains close to the strongest published values. UnAV reaches 73.46 mIoU and 89.00/80.00 recall under the released-subset protocol in Section~\ref{sec:protocol}.
 
-RelTwin improves SpotSound mIoU over matched SFT by 1.02 points (CI $[0.23,1.81]$), with 92 wins, 239 ties, and 69 losses, including two drops $\geq0.5$ IoU. Across three RelTwin seeds, mIoU averages 59.16, exceeding published 57.9 by 1.26 points. The following analyses examine how candidate supervision changes the response to inverse queries.
+With direct timestamp generation, RelTwin reaches 59.43 SpotSound mIoU, improving over matched SFT by 1.02 points (CI $[0.23,1.81]$). The comparison yields 92 wins, 239 ties, and 69 losses, including two drops $\geq0.5$ IoU. The replication summary in Table~\ref{tab:training}(c) gives 59.16 mean mIoU. The following analyses examine how candidate supervision changes the response to inverse queries.
 
 \input{sections/bridge_results}
 
 \subsection{Binding gains persist after timing intervention}
 \label{sec:timing}
-To test layout-specific silence, we recompose 80 development audios with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving waveforms, order, and queries. Frozen seed-0 models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
+To test layout-specific silence, we recompose 80 development audios with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving waveforms, order, and queries. The frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
 
-On changed recordings, RelTwin reaches 87.50 JointPairAcc against SFT's 67.50 ($+20.00$; CI $[2.94,33.33]$); originally they scored 85.00 and 42.50. RelTwin retains a 20-point selection advantage under the altered timing, supporting query--window binding across both silence layouts. Across all 160 queries, SFT and RelTwin score 81.34 and 90.65 mIoU.
+On changed recordings, RelTwin reaches 87.50 JointPairAcc against SFT's 67.50 ($+20.00$; CI $[2.94,33.33]$); originally they scored 85.00 and 42.50. RelTwin retains a 20-point selection advantage under the altered timing, supporting query--occurrence binding across both silence layouts. Across all 160 queries, SFT and RelTwin score 81.34 and 90.65 mIoU.
 
 \subsection{Why locally valid answers matter}
 Shared excerpts hold event identity fixed while inverse queries exchange the correct window. Detecting both categories supports both candidates; selecting the requested order requires query-conditioned comparison. RelTwin's reduced same-answer collapse and improved JointPairAcc capture this distinction in the controlled binding test. Timestamp-answer supervision preserves direct generation at inference.

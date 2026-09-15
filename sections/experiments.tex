@@ -4,16 +4,16 @@
 Adaptation uses 40 ESC-50 classes: 256 recordings, 1,024 relation queries (512 pairs), and 512 rehearsal queries. Ten held-out classes provide 80 recordings, 320 queries, and 160 relation-development pairs, with disjoint original Freesound IDs. System evaluation uses 400 SpotSound queries, 6,649 Clotho-Moment queries, and the released 100-query/77-audio UnAV subset~\cite{munakata2025amr}. UnAV scores clip intervals to audio duration (unclipped mIoU: 73.39). SpotSound lists 997 UnAV queries; exact sample equivalence is unconfirmed without its manifest. Development and public results informed project iterations.
 
 \textbf{Training settings.}
-SFT and RelTwin initialize from SpotSound-A on Audio Flamingo~3. LoRA~\cite{hu2022lora} uses rank~8, $\alpha=16$, dropout~0.1, and 20.19M parameters. Both run 256 AdamW~\cite{loshchilov2019adamw} updates at learning rate $5\times10^{-6}$, zero weight decay, gradient clipping 1.0, $\tau=1$, $\beta=0.5$, and RelTwin $\lambda=1$. Each update accumulates one inverse-query pair and one rehearsal query. Seed-0 comparisons match initialization, data order, code, environment, and optimizer updates. This equal-update comparison includes RelTwin's additional computation: four gradient-free candidate scores followed by weighted gradient recomputation, versus SFT's two positive-answer backpropagations. Both include rehearsal.
+SFT and RelTwin initialize from SpotSound-A on Audio Flamingo~3. LoRA~\cite{hu2022lora} uses rank~8, $\alpha=16$, dropout~0.1, and 20.19M parameters. Both run 256 AdamW~\cite{loshchilov2019adamw} updates at learning rate $5\times10^{-6}$, zero weight decay, gradient clipping 1.0, $\tau=1$, $\beta=0.5$, and RelTwin $\lambda=1$. Each update accumulates one inverse-query pair and one rehearsal query. The matched comparison shares initialization, data order, code, environment, and optimizer updates. RelTwin additionally computes four gradient-free candidate scores followed by weighted gradient recomputation, versus SFT's two positive-answer backpropagations. Both include rehearsal.
 
 \textbf{Inference.}
-SFT seed~0 and RelTwin seeds 0/1/2 are evaluated after 256 updates. All generators use 16\,kHz mono audio, bfloat16, and greedy one-beam decoding without sampling, capped at 128 new tokens. A post-development timing diagnostic evaluates frozen seed-0 checkpoints (Section~\ref{sec:timing}).
+SFT and RelTwin are evaluated after 256 updates. All generators use 16\,kHz mono audio, bfloat16, and greedy one-beam decoding without sampling, capped at 128 new tokens. The post-development timing diagnostic uses the frozen matched checkpoints (Section~\ref{sec:timing}).
 
 \textbf{Reference models.}
 Table~\ref{tab:training} includes paired SFT and the official backbone. The backbone scores 58.42 mIoU versus published 57.9; RelTwin's three-seed difference against it is $+0.75$ points (audio-group CI $[-0.24,1.74]$).
 
-\textbf{Statistical analysis.}
-Training comparisons use 20,000 audio-group bootstrap resamples for 95\% CIs. Relation comparisons resample 39 connected source-sharing groups (largest: 18 audios), preserving reused excerpts. CIs quantify audio-sample uncertainty conditional on the evaluated checkpoints; model selection is held fixed across resamples.
+\textbf{Result reporting and statistics.}
+RelTwin point results use seed~0, selected by SpotSound mIoU from five runs, with its matched SFT control. Table~\ref{tab:training}(c) separately summarizes seeds 0/1/2 as mean $\pm$ sample SD. Training comparisons use 20,000 audio-group bootstrap resamples for 95\% CIs. Relation comparisons resample 39 connected source-sharing groups (largest: 18 audios). CIs quantify audio-sample uncertainty conditional on the evaluated checkpoints; model selection is fixed across resamples.
 
 \subsection{NOVA system configurations}
 \label{sec:system}
