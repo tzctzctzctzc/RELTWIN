@@ -25,17 +25,21 @@ done
 
 mkdir -p "$data_root/materialized/val" "$data_root/materialized/train" "$out"
 
-"$python_bin" "$code/scripts/prepare_tempo_grounding.py" \
-  --parquet-dir "$data_root/data/audio_grounding/val" \
-  --audio-dir "$data_root/materialized/val/audio" \
-  --annotations "$data_root/materialized/val/annotations.json" \
-  > "$data_root/materialized/val/prepare.log" 2>&1
+if ! test -s "$data_root/materialized/val/annotations.json"; then
+  "$python_bin" "$code/scripts/prepare_tempo_grounding.py" \
+    --parquet-dir "$data_root/data/audio_grounding/val" \
+    --audio-dir "$data_root/materialized/val/audio" \
+    --annotations "$data_root/materialized/val/annotations.json" \
+    > "$data_root/materialized/val/prepare.log" 2>&1
+fi
 
-"$python_bin" "$code/scripts/prepare_tempo_grounding.py" \
-  --parquet-dir "$data_root/data/audio_grounding/sft_stage2" \
-  --audio-dir "$data_root/materialized/train/audio" \
-  --annotations "$data_root/materialized/train/annotations.json" \
-  > "$data_root/materialized/train/prepare.log" 2>&1
+if ! test -s "$data_root/materialized/train/annotations.json"; then
+  "$python_bin" "$code/scripts/prepare_tempo_grounding.py" \
+    --parquet-dir "$data_root/data/audio_grounding/sft_stage2" \
+    --audio-dir "$data_root/materialized/train/audio" \
+    --annotations "$data_root/materialized/train/annotations.json" \
+    > "$data_root/materialized/train/prepare.log" 2>&1
+fi
 
 mkdir -p "$out/base_val500"
 "$python_bin" "$code/scripts/evaluate_tempo_checkpoint.py" \
