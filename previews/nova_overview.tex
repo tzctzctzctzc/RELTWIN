@@ -1,0 +1,10 @@
+% Standalone preview only. Not included by main.tex or the current Figure 1.
+% Compile from the repository root:
+% pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build previews/nova_overview.tex
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{times,amsmath,amssymb}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\input{previews/nova_overview_art}
+\end{document}

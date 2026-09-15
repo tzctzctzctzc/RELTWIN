@@ -6,6 +6,16 @@
 
 Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#DFEDF2`、淡紫 `#CAC2D7`／`#DDD6E5`、浅绿 `#D9E4C2` 和浅杏 `#F5D8BF`。整图使用浅暖底 `#FBF8F3`，颜色集中于功能区域：青色标音频／模型，紫色组织候选监督，杏色强调正确候选。两类查询用浅绿／淡紫，C 图窗口采用加深的同色填充 `#A8BF8C`／`#B5A3C9`，两个模型使用相同的浅青标题条。全部英文、数学符号和数值保持深黑 `#242424`。按画图 skill 的导出检查方式核对独立图、灰度图和论文内尺寸；原始时间戳与四个 IoU 未改，PDF 中所有主图文字均已核验为同一色值。
 
+## 待审阅主图预览（尚未替换论文）
+
+2026-09-15 新增 [NOVA / RelTwin 独立主图预览](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）：上层展示 NOVA 候选生成、证据路由、边界修正和输出，下层展开 RelTwin 逆关系构造、答案竞争与现有真实案例。虚线连接表示对候选生成器的训练作用，路由按评测配置启用。保持现有配色及案例区间/IoU，采用可编辑 TikZ 和矢量 PDF。
+
+这是设计预览，不是当前论文 Figure 1：`main.tex`、现有主图源码和 `paper.pdf` 均未改，论文仍为 v21。确认视觉方案后再单独处理论文替换、图注及四页正文排版。复现预览时从仓库根目录运行：
+
+```text
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build previews/nova_overview.tex
+```
+
 ## 修改哪里
 
 | 文件或目录 | 用途 |
@@ -21,6 +31,8 @@ Figure 1 参考作者提供的 SplineGS 配色图，采用青色 `#BFDCE7`／`#D
 | `figures/overview_data.tex` | 主图使用的时间戳与统计值 |
 | `figures/reltwin_overview.tex` | 主图排版和图注 |
 | `overview_figure.tex` | 单独编译主图的入口，可选 |
+| `previews/nova_overview.tex`、`previews/nova_overview_art.tex` | 尚未接入论文的 NOVA 总览＋RelTwin 放大图及独立编译入口 |
+| `previews/nova_overview.pdf`、`previews/nova_overview.png` | 待审阅图的矢量 PDF 和图片预览，不替代 `paper.pdf` |
 | `references.bib` | 参考文献数据库 |
 | `spconf.sty`、`IEEEbib.bst` | 会议排版与参考文献样式 |
 | `paper.pdf` | 固定名称的当前论文 PDF |

@@ -1,0 +1,207 @@
+% NOVA overview + RelTwin detail. Standalone design preview, 2026-09-15.
+% Top timelines and excerpt layout are schematic; panel (c) uses unchanged
+% measured intervals and IoUs from figures/overview_data.tex.
+% Solid arrows: inference/data flow. Purple dashed arrow: training influence.
+% Candidate families and configuration-dependent routing follow sec:system.
+% The displayed RelTwin loss is the three-term controlled training objective;
+% the system's consistency/SetPO continuation is specified in the paper text.
+\input{figures/overview_data}
+\definecolor{nvInk}{HTML}{242424}
+\definecolor{nvCanvas}{HTML}{FBF8F3}
+\definecolor{nvCyan}{HTML}{658C99}
+\definecolor{nvCyanFill}{HTML}{BFDCE7}
+\definecolor{nvCyanBg}{HTML}{DFEDF2}
+\definecolor{nvPurple}{HTML}{726082}
+\definecolor{nvPurpleFill}{HTML}{CAC2D7}
+\definecolor{nvPurpleBg}{HTML}{DDD6E5}
+\definecolor{nvGreen}{HTML}{5D7947}
+\definecolor{nvGreenFill}{HTML}{D9E4C2}
+\definecolor{nvGreenBar}{HTML}{A8BF8C}
+\definecolor{nvPurpleBar}{HTML}{B5A3C9}
+\definecolor{nvApricot}{HTML}{F5D8BF}
+\definecolor{nvApricotLine}{HTML}{A67F5D}
+\begin{tikzpicture}[x=1cm,y=1cm,
+ every node/.style={font=\fontsize{9}{10.3}\selectfont,text=nvInk,inner sep=1.4pt},
+ flow/.style={-{Latex[length=1.5mm]},line width=.7pt,draw=nvInk},
+ train/.style={-{Latex[length=1.6mm]},dash pattern=on 3pt off 2pt,line width=.9pt,draw=nvPurple},
+ heading/.style={font=\fontsize{10}{11.3}\selectfont\bfseries},
+ panel/.style={font=\fontsize{10}{11.3}\selectfont\bfseries},
+ box/.style={draw=nvCyan,line width=.7pt,fill=white}]
+\path[use as bounding box] (0,0) rectangle (17.4,9.70);
+\path[fill=nvCanvas] (0,0) rectangle (17.4,9.70);
+
+% System identity and inference lane.
+\node[anchor=west,font=\fontsize{14}{15}\selectfont\bfseries] at (.16,9.38) {NOVA};
+\node[anchor=west,font=\fontsize{10}{11.3}\selectfont] at (1.97,9.38) {Query-specific audio grounding};
+\node[anchor=east] at (17.20,9.38) {System overview};
+
+% Input block.
+\draw[box,fill=nvCyanBg!65] (.16,7.17) rectangle (2.45,8.99);
+\node[heading] at (1.305,8.71) {Audio + query};
+\draw[nvCyan!40,line width=.5pt] (.44,8.20)--(2.17,8.20);
+\foreach \xx/\hh in {.50/.06,.62/.14,.74/.23,.86/.10,.98/.18,1.10/.29,1.22/.16,1.34/.07,1.46/.13,1.58/.23,1.70/.15,1.82/.06,1.94/.12,2.06/.04}{
+ \draw[nvCyan,line width=.9pt] (\xx,{8.20-\hh})--(\xx,{8.20+\hh});
+}
+\node[align=center] at (1.305,7.55) {``dog followed\\by rooster''};
+
+% Candidate generation; model identities are checkpoint families, not
+% additional inference-time training operators.
+\draw[box,fill=nvCyanBg!35] (3.04,7.17) rectangle (6.18,8.99);
+\path[fill=nvCyanFill] (3.045,8.43) rectangle (6.175,8.985);
+\node[font=\fontsize{9}{10.3}\selectfont\bfseries] at (4.61,8.71) {Candidate generation};
+\node at (4.61,8.15) {Official / SFT / SetPO};
+\foreach \yy/\aa/\bb in {7.87/3.50/4.36,7.66/4.49/5.77,7.45/3.58/4.52}{
+ \draw[nvCyan!35,line width=.45pt] (3.46,\yy)--(5.78,\yy);
+ \draw[draw=nvCyan,fill=nvCyanFill,line width=.5pt] (\aa,{\yy-.06}) rectangle (\bb,{\yy+.06});
+}
+
+% Evidence routing: keep and drop illustrate the same candidate mask.
+\draw[box,draw=nvGreen,fill=nvGreenFill!25] (6.78,7.17) rectangle (10.07,8.99);
+\node[heading] at (8.425,8.71) {Evidence routing*};
+\node[anchor=west] at (6.96,8.20) {Keep};
+\node[anchor=west] at (6.96,7.80) {Drop};
+\foreach \yy in {8.20,7.80}{
+ \draw[nvGreen!35,line width=.5pt] (7.92,\yy)--(9.80,\yy);
+}
+\draw[draw=nvGreen,fill=nvGreenBar,line width=.5pt] (8.48,8.115) rectangle (9.19,8.285);
+\draw[draw=nvGreen,fill=nvGreenFill,line width=.5pt] (7.92,7.715) rectangle (8.48,7.885);
+\draw[draw=nvGreen,fill=nvGreenFill,line width=.5pt] (9.19,7.715) rectangle (9.80,7.885);
+\draw[nvGreen,dash pattern=on 1pt off 1pt,line width=.5pt] (8.48,7.715) rectangle (9.19,7.885);
+\node at (8.425,7.43) {Query-existence scores};
+
+% Boundary alignment, with the original outline and a refined filled span.
+\draw[box,draw=nvApricotLine,fill=nvApricot!22] (10.67,7.17) rectangle (13.99,8.99);
+\node[heading] at (12.33,8.71) {Boundary refinement};
+\node at (12.33,8.22) {Duration-scaled radius};
+\draw[nvApricotLine!40,line width=.5pt] (11.09,7.84)--(13.58,7.84);
+\draw[draw=nvApricotLine,fill=nvApricot,line width=.7pt] (11.52,7.76) rectangle (13.19,7.92);
+\draw[nvApricotLine,dash pattern=on 2pt off 1pt,line width=.7pt] (11.73,7.69) rectangle (13.03,7.99);
+\draw[{Latex[length=.9mm]}-{Latex[length=.9mm]},nvApricotLine,line width=.6pt] (11.38,8.06)--(11.88,8.06);
+\draw[{Latex[length=.9mm]}-{Latex[length=.9mm]},nvApricotLine,line width=.6pt] (12.86,8.06)--(13.35,8.06);
+\node at (12.33,7.43) {DP + bootstrap gate};
+
+% Output intervals (schematic, no claimed example prediction).
+\draw[box,fill=nvCyanBg!40] (14.59,7.17) rectangle (17.24,8.99);
+\node[heading] at (15.915,8.71) {Final intervals};
+\draw[flow,line width=.5pt] (14.89,8.18)--(16.98,8.18);
+\draw[draw=nvPurple,fill=nvPurpleBar,line width=.65pt] (15.22,8.08) rectangle (16.39,8.28);
+\node at (15.915,7.72) {$\widehat S=\{[\hat s_k,\hat e_k]\}_k$};
+\node at (15.915,7.40) {Localized events};
+
+\foreach \xa/\xb in {2.45/3.04,6.18/6.78,10.07/10.67,13.99/14.59}{
+ \draw[flow] (\xa,8.10)--(\xb,8.10);
+}
+\node[anchor=east] at (17.20,6.79) {*Evidence routing is configuration-dependent.};
+
+% Focus area: visibly connected to candidate training, not inserted into the
+% runtime data-flow lane. No directed connection to the output example.
+\draw[draw=nvPurple!65,fill=nvPurpleBg!12,line width=.75pt] (.16,.17) rectangle (17.24,6.16);
+\path[fill=nvPurpleFill!65] (.165,5.65) rectangle (17.235,6.155);
+\node[anchor=west,font=\fontsize{11}{12.5}\selectfont\bfseries] at (.37,5.91) {RelTwin};
+\node[anchor=west,font=\fontsize{10}{11.3}\selectfont] at (2.02,5.91) {Locally valid timestamp contrasts};
+\node[anchor=east] at (17.03,5.91) {Training + diagnostic example};
+\draw[train] (4.61,6.16)--(4.61,7.16);
+\node[anchor=west,fill=nvCanvas] at (4.80,6.52) {Trains a candidate generator};
+
+% Subpanel dividers and headings.
+\draw[nvPurple!24,line width=.55pt] (5.37,.48)--(5.37,5.44);
+\draw[nvPurple!24,line width=.55pt] (11.20,.48)--(11.20,5.44);
+\node[panel] at (2.72,5.36) {(a) Inverse-relation pairs};
+\node[panel] at (8.285,5.36) {(b) Answer competition};
+\node[panel] at (14.22,5.36) {(c) Query-specific localization};
+
+% (a): explicit relation pairing within one recording.
+\node at (2.72,4.96) {One audio $x$, shared $A$ and $B$};
+\draw[nvCyan!35,line width=.5pt] (.49,4.43)--(4.99,4.43);
+\foreach \xa/\xb/\event/\eventfill/\eventstroke in {
+ .56/1.34/A/nvCyanFill/nvCyan,1.46/2.24/B/nvApricot/nvApricotLine,
+ 3.03/3.81/B/nvApricot/nvApricotLine,3.93/4.71/A/nvCyanFill/nvCyan}{
+ \draw[draw=\eventstroke,fill=\eventfill,line width=.65pt] (\xa,4.26) rectangle (\xb,4.62);
+ \node at ({(\xa+\xb)/2},4.44) {$\event$};
+}
+\draw[flow,line width=.55pt] (.49,4.09)--(4.99,4.09);
+\node[anchor=west] at (4.96,4.10) {$t$};
+\draw[nvGreen,line width=.85pt] (.56,3.99)--(.56,3.86)--(2.24,3.86)--(2.24,3.99);
+\draw[nvPurple,line width=.85pt] (3.03,3.99)--(3.03,3.86)--(4.71,3.86)--(4.71,3.99);
+\node at (1.40,3.66) {$W_+: A\rightarrow B$};
+\node at (3.87,3.66) {$W_-: B\rightarrow A$};
+\path[fill=nvGreenFill] (.48,2.86) rectangle (5.04,3.35);
+\draw[nvGreen,line width=1.2pt] (.48,2.86)--(.48,3.35);
+\node[anchor=west] at (.62,3.105) {$q_+$: dog followed by rooster};
+\path[fill=nvPurpleFill] (.48,2.17) rectangle (5.04,2.66);
+\draw[nvPurple,line width=1.2pt] (.48,2.17)--(.48,2.66);
+\node[anchor=west] at (.62,2.415) {$q_-$: rooster followed by dog};
+\node[align=center] at (2.72,1.54) {Both windows have acoustic support.\\The query selects its window.};
+\node at (2.72,.78) {Inverse query $\Longrightarrow$ exchanged labels};
+
+% (b): frozen backbone, four query/answer scores, matched diagonal labels.
+\draw[box,fill=nvCyanBg] (5.72,4.40) rectangle (10.88,5.04);
+\node[align=center] at (8.30,4.72) {Shared audio-language model\\Frozen backbone + trainable LoRA};
+% The input bus stays clear of the panel divider and the target brackets.
+\draw[nvInk,line width=.65pt] (5.04,3.105)--(5.22,3.105);
+\draw[nvInk,line width=.65pt] (5.04,2.415)--(5.22,2.415)--(5.22,4.72);
+\fill[nvInk] (5.22,3.105) circle (.8pt);
+\draw[flow] (5.22,4.72)--(5.72,4.72);
+\node[anchor=south] at (5.45,4.78) {$x,q_{\pm}$};
+\draw[flow] (8.30,4.40)--(8.30,4.12);
+\node at (7.72,3.98) {$y(W_+)$};
+\node at (9.38,3.98) {$y(W_-)$};
+\node at (6.57,3.55) {$q_+$};
+\node at (6.57,2.95) {$q_-$};
+\path[fill=nvApricot] (6.89,3.25) rectangle (8.55,3.85);
+\path[fill=nvApricot] (8.55,2.65) rectangle (10.21,3.25);
+\draw[nvPurple,line width=.7pt] (6.89,2.65) rectangle (10.21,3.85);
+\draw[nvPurple!70,line width=.55pt] (8.55,2.65)--(8.55,3.85);
+\draw[nvPurple!70,line width=.55pt] (6.89,3.25)--(10.21,3.25);
+\node at (7.72,3.55) {$s_{++}\ \uparrow$};
+\node at (9.38,3.55) {$s_{+-}\ \downarrow$};
+\node at (7.72,2.95) {$s_{-+}\ \downarrow$};
+\node at (9.38,2.95) {$s_{--}\ \uparrow$};
+\node at (8.30,2.36) {$s$: mean token log-likelihood};
+\draw[flow] (8.30,2.17)--(8.30,1.94);
+\node at (8.30,1.69) {$\mathcal L_{\rm cand}=-\frac12[\log p_+(+)+\log p_-(-)]$};
+\node at (8.30,1.21) {Query-conditioned answer preference};
+\node at (8.30,.74) {$\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$};
+
+% (c): identical data to the current paper. This is a RelTwin-vs-SFT diagnostic,
+% not an example of the full routed/refined NOVA system.
+\foreach \xl/\xr in {12.09/14.43,14.76/17.10}{
+ \path[fill=nvCyanBg] (\xl,4.63) rectangle (\xr,5.04);
+}
+\node[heading] at (13.26,4.835) {SFT};
+\node[heading] at (15.93,4.835) {RelTwin};
+\foreach \xbase in {12.18,14.85}{
+ \draw[nvInk,line width=.55pt] (\xbase,4.29)--({\xbase+2.14},4.29);
+ \foreach \sec/\lab in {0/0,10/10,20/20,27/27}{
+  \pgfmathsetmacro{\xx}{\xbase+2.14*\sec/27}
+  \draw[nvInk,line width=.5pt] (\xx,4.25)--(\xx,4.33);
+  \node[anchor=south] at (\xx,4.33) {\lab};
+ }
+}
+\node[anchor=east] at (11.96,3.38) {$q_+$};
+\node[anchor=east] at (11.96,2.29) {$q_-$};
+\foreach \xbase/\ystart/\ystop/\pstart/\pstop/\yy/\barstroke/\barfill in {
+ 12.18/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/3.38/nvGreen/nvGreenBar,
+ 14.85/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/3.38/nvGreen/nvGreenBar,
+ 12.18/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/2.29/nvPurple/nvPurpleBar,
+ 14.85/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/2.29/nvPurple/nvPurpleBar}{
+ \draw[\barstroke!28,line width=.45pt] (\xbase,\yy)--({\xbase+2.14},\yy);
+ \pgfmathsetmacro{\predstart}{\xbase+2.14*\pstart/27}
+ \pgfmathsetmacro{\predstop}{\xbase+2.14*\pstop/27}
+ \draw[draw=\barstroke,fill=\barfill,line width=.55pt]
+  (\predstart,{\yy-.09}) rectangle (\predstop,{\yy+.09});
+ \pgfmathsetmacro{\targetstart}{\xbase+2.14*\ystart/27}
+ \pgfmathsetmacro{\targetstop}{\xbase+2.14*\ystop/27}
+ \draw[draw=\barstroke,fill=none,line width=.9pt]
+  (\targetstart,{\yy-.15}) rectangle (\targetstop,{\yy+.15});
+}
+\node[anchor=east] at (14.30,3.73) {IoU \FigSftPlusIoU};
+\node[anchor=east,font=\fontsize{9}{10.3}\selectfont\bfseries] at (16.97,3.73) {IoU \FigCandPlusIoU};
+\node[anchor=east] at (14.30,2.64) {IoU \FigSftMinusIoU};
+\node[anchor=east] at (16.97,2.64) {IoU \FigCandMinusIoU};
+\draw[draw=nvInk,fill=none,line width=.8pt] (12.20,1.66) rectangle (12.55,1.84);
+\node[anchor=west] at (12.65,1.75) {target};
+\draw[draw=nvInk,fill=nvPurpleBar,line width=.55pt] (14.33,1.66) rectangle (14.68,1.84);
+\node[anchor=west] at (14.78,1.75) {prediction};
+\node[align=center] at (14.25,.98) {Relation-development example:\\shared time axis in seconds.};
+\end{tikzpicture}
