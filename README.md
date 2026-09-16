@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v31（2026-09-17，干净叙事草稿）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**，作者顺序、通讯作者和声明保持不变。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。未增加历史方法、实验或推理流程。
+当前为 **v32（2026-09-17，共同第一作者标注）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。张跃瀚（Yuehan Zhang）与汤智铖（Zhicheng Tang）为共同第一作者，张跃瀚列第一、汤智铖列第二；Wei Xu 为通讯作者。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。未增加历史方法、实验或推理流程。
 
 本轮沿用 v30 的基线出处、51:1 配对转变和时间干预结果整理；正文暂不展开模型选择过程，供内部讨论使用。两张表的数值和置信区间不变。
 
