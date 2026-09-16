@@ -18,7 +18,10 @@ Table~\ref{tab:training} isolates $\mathcal L_{\rm cand}$ on SpotSound-A after S
 \textbf{Inference.}
 Decoding is greedy, one beam, with at most 128 new tokens. The mechanism experiment uses 16\,kHz mono audio and bfloat16.
 
+\textbf{Timing intervention.}
+We recompose 80 development recordings with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving event waveforms, order, and queries. Frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
+
 \textbf{Comparison and statistics.}
-Table~\ref{tab:main} uses published baseline scores; Table~\ref{tab:training} evaluates the backbone and training variants under shared inference. Relation-development and public benchmark scores informed development. TimeAudio uses seed~0. Mechanism point estimates use seed~0, selected by SpotSound mIoU among five runs, with matched SFT; Table~\ref{tab:training}(c) separately reports seeds 0/1/2 as mean $\pm$ sample SD.
+Table~\ref{tab:training} evaluates the backbone and training variants under shared inference. Relation-development and public benchmark scores informed development. TimeAudio uses seed~0. Mechanism point estimates use seed~0, selected by SpotSound mIoU among five runs, with matched SFT; Table~\ref{tab:training}(c) separately reports seeds 0/1/2 as mean $\pm$ sample SD.
 
 We use 20,000 audio-group bootstrap resamples for 95\% CIs; relation tests resample 39 connected source-sharing groups (largest: 18 audios). The intervals quantify sampling variation for the selected checkpoints.

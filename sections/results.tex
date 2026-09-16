@@ -6,6 +6,4 @@ RelTwin improves both backbones on all three benchmarks (Table~\ref{tab:main}). 
 
 \subsection{Binding gains persist after timing intervention}
 \label{sec:timing}
-We recompose 80 development recordings with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving event waveforms, order, and queries. Frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
-
-On the 40 modified recordings, candidate supervision retains a 20-point JointPairAcc advantage (87.50 vs.\ 67.50; CI $[2.94,33.33]$), compared with original scores of 85.00 and 42.50. Across all 160 queries, paired SFT and candidate supervision score 81.34 and 90.65 mIoU.
+On the 40 recordings with altered silence timing, candidate supervision retains a 20-point JointPairAcc advantage (87.50 vs.\ 67.50; CI $[2.94,33.33]$), compared with original scores of 85.00 and 42.50. The advantage persists when event waveforms, order, and queries are fixed but silence timing changes.
