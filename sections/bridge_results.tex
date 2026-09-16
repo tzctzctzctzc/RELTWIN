@@ -1,6 +1,6 @@
 \subsection{Timestamp contrasts recover query-specific selection}
-Candidate supervision recovers relation-specific answers, raising JointPairAcc from 53.13 to 84.38 (Table~\ref{tab:training}). Identical-answer pairs fall from 37 to 1 out of 160; the original 37 span 22 recordings. Of these collapsed pairs, 27 become jointly correct, with both queries selecting their requested relations. Figure~\ref{fig:pair} illustrates this recovery.
+With matched data and updates, candidate supervision improves SpotSound mIoU by 1.02 points over paired SFT (95\% audio-group CI: $[0.23,1.81]$; Table~\ref{tab:training}).
 
-The JointPairAcc gain is 31.25 points (source-group CI $[22.35,40.50]$), accompanied by a 32.50-point reduction in Swap error. Across all pairs, 51 become jointly correct and one regresses. Relation mIoU increases by 13.97 points (CI $[9.84,17.51]$), showing that improved relation selection also increases temporal overlap.
+JointPairAcc rises by 31.25 points (source-group CI $[22.35,40.50]$). Identical-answer pairs fall from 37 to 1 out of 160; 27 of those 37 become jointly correct. Figure~\ref{fig:pair} illustrates this recovery. Across all pairs, 51 become jointly correct and one regresses.
 
-Across three seeds, mean JointPairAcc is 81.46; same-answer counts are 1, 0, and 0.
+The relation mIoU gain is 13.97 points (CI $[9.84,17.51]$). Three-seed mean JointPairAcc is 81.46, with same-answer counts of 1, 0, and 0. Both windows contain the queried categories, so recovering distinct, jointly correct answers demonstrates relation selection beyond category presence.

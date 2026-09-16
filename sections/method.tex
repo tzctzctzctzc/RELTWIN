@@ -1,29 +1,50 @@
-\section{Query-Specific Window Learning}
-\subsection{Two true relations, two different answers}
-In one recording $x$, RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$. Their local targets $W_+$ and $W_-$ run from the first excerpt's onset to the second's offset, including the gap. Queries $q_+$ and $q_-$ request the respective orders. Reusing the excerpts holds acoustic content fixed across windows, so their labels depend on the queried order: $W_-$ is positive for $q_-$ and negative for $q_+$.
+\section{RelTwin}
+\label{sec:method}
+For recording $x$ of duration $T$ and query $q$, a generative grounder predicts $S=\{[a_k,b_k]\}_{k=1}^{n}$, with $0\leq a_k<b_k\leq T$. RelTwin trains answer preferences in two stages: selecting the query-consistent occurrence, then refining interval-set quality.
 
-We alternate which target order appears first in the recording. Category rehearsal targets the union of both occurrences of $A$ or $B$, retaining category-grounding supervision alongside relation selection.
+\subsection{Query-dependent twin construction}
+RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$ in one recording. Targets $W_\pm$ span each sequence, including its gap; queries $q_\pm$ request the respective orders. Reusing excerpts holds acoustic content fixed: $W_-$ is negative for $q_+$ but positive for $q_-$. We alternate which order appears first.
 
-\subsection{Contrast timestamp answers during training}
-RelTwin scores complete timestamp answers under each query and trains their relative preference. We serialize an interval set $S$ in the backbone's native format: comma-separated spans for SpotSound-A and temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the length-normalized score
+\subsection{Answer competition and query-exchange consistency}
+We serialize $S$ in the backbone's native format: comma-separated spans for SpotSound-A and temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the length-normalized score
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
 \label{eq:score}
 \end{equation}
-The $2\times2$ matrix $M_{ij}=s_\theta(x,q_i,W_j)$ for $i,j\in\{+,-\}$ indexes queries by rows and answers by columns; diagonal entries correspond to correct pairs (Fig.~\ref{fig:pair}b).
-Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$. Candidate supervision explicitly trains the preferences $M_{++}>M_{+-}$ and $M_{--}>M_{-+}$. With row-wise probabilities $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$, $\tau>0$, its loss is
+The $2\times2$ matrix $M_{ij}=s_\theta(x,q_i,W_j)$ indexes queries by rows and answers by columns, $i,j\in\{+,-\}$ (Fig.~\ref{fig:pair}b). Its diagonal entries are the correct query--answer pairs. Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$. Candidate supervision additionally trains each diagonal score to exceed the competing answer in its row. For $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$ with $\tau>0$,
 \begin{equation}
 \mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
 \end{equation}
-Query reversal exchanges the target assignment while preserving the recording. With label permutation $\Pi$, query-exchange consistency $\mathcal L_{\rm JS}=\allowbreak\operatorname{JS}(p_+,\Pi p_-)$ couples the paired preferences after relabeling. For rehearsal example $(x_r,q_r,S_r)$, define $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
+Query reversal exchanges the target assignment, so the two preference distributions should agree after swapping their labels. We enforce this correspondence with $\mathcal L_{\rm JS}=\operatorname{JS}(p_+,\Pi p_-)$, where $\Pi$ swaps the two candidates. For an ordinary localization example $(x_r,q_r,S_r)$, rehearsal uses $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
 \begin{equation}
 \mathcal L_1=\mathcal L_{\rm seq}+\lambda(\mathcal L_{\rm cand}
 +\gamma\mathcal L_{\rm JS})+\beta\mathcal R_1.
 \label{eq:loss}
 \end{equation}
 
-\textbf{Set-level preference learning.}
-Selecting the relevant window also requires controlling its boundaries, coverage, and event count. Stage~2 extends answer competition to six interval sets: $W_\pm$, their expanded versions, their enclosing span, and their union. Quality axes are set-IoU, precision--recall margins above IoU 0.3/0.5, count agreement, and duration-normalized boundary accuracy. Utility $v_{ij}$ averages mean quality and net Pareto dominance (number dominated minus dominating, normalized by candidate count minus one). This yields soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ and $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$ over six answers, replacing $\mathcal L_{\rm cand}$ in Eq.~\ref{eq:loss}. Exchange $\Pi$ swaps targets and their expansions, fixing the span and union.
+\subsection{Set-level preference learning}
+Stage~2 extends selection to coverage, count, and boundaries through six candidates: $W_\pm$, their expanded versions, their enclosing span, and their union. Expansions expose boundary excess; the span includes intervening background; the union adds the competing occurrence. Their relative quality becomes the answer-level training signal.
 
-Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. Stage~2 uses $\mathcal R_2=\mathcal R_1+\lambda\mathcal L_{\rm set,r}+\kappa\operatorname{KL}(p_0\Vert p_r)$, with frozen base-model distribution $p_0$; $\mathcal L_{\rm set,r}$ is the same listwise loss for one replay query. Inference directly generates timestamps.
+For candidate $S_j$ and target $W_i$, a four-axis quality vector $h_{ij}$ measures set-IoU, threshold margin, count agreement, and boundary accuracy. The threshold axis averages soft F1 at $\eta=0.3/0.5$. Each interval's best-match IoU $u$ contributes $\max(0,u-\eta)/(1-\eta)$; averaging over predictions and targets gives soft precision and recall. With $n_S$ denoting interval count, count agreement is $1-|n_{S_j}-n_{W_i}|/\max(n_{S_j},n_{W_i},1)$. Boundary accuracy is $\exp(-e)$: $e$ averages the summed endpoint error for each target's best-IoU match, divided by $2\max(b-a,0.1)$ for target $[a,b]$.
+
+Among $K$ candidates, let $d^+_{ij}$ and $d^-_{ij}$ count those dominated by and dominating $S_j$. Dominance means no worse on any axis and better on at least one. We define utility as
+\begin{equation}
+v_{ij}=\tfrac12\left[\tfrac14\sum_{\ell=1}^{4}h_{ij\ell}
++\frac{d^+_{ij}-d^-_{ij}}{K-1}\right].
+\label{eq:quality}
+\end{equation}
+Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ guide the same answer scores, now normalized over all six candidates. Their listwise loss is $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
+
+Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. The same quality rule defines their listwise loss $\mathcal L_{\rm set,r}$. A frozen base-model distribution $p_0$ anchors replay preferences $p_r$. Stage~2 optimizes
+\begin{equation}
+\begin{aligned}
+\mathcal L_2&=\mathcal L_{\rm seq}+\lambda(\mathcal L_{\rm set}
++\gamma\mathcal L_{\rm JS})+\beta\mathcal R_2,\\
+\mathcal R_2&=\mathcal R_1+\lambda\mathcal L_{\rm set,r}
++\kappa\operatorname{KL}(p_0\Vert p_r).
+\end{aligned}
+\label{eq:stage2}
+\end{equation}
+
+Both backbones share Eq.~\ref{eq:score}. Training updates LoRA parameters and, for TimeAudio, temporal/audio connectors. Inference remains direct timestamp generation from $(x,q)$, without twin construction or candidate scoring.

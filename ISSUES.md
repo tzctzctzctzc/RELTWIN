@@ -4,9 +4,9 @@
 
 目标会议：ICASSP 2027
 
-当前稿：v28（2026-09-16；取消 SetPO 缩写，以 set-level preference learning 描述 RelTwin 内部第二阶段；延续 v27 的查询—窗口绑定主线，所有训练目标与表格数值不变；同事 SpotSound-A 原始记录待归档）
+当前稿：v29（2026-09-17；只讲最终 RelTwin 的查询条件答案竞争，辅助配置不另立概念；补清任务、两阶段目标与候选质量，核验 19 条正文引用；表格、主图和统计身份不变；同事 SpotSound-A 原始记录仍待归档）
 
-清单审计日期：2026-09-16
+清单审计日期：2026-09-17
 
 论文提交截止：2026-09-16（以 [ICASSP 2027 Paper Kit](https://cmsworkshops.com/ICASSP2027/papers/paper_kit.php) 为准）
 
@@ -77,6 +77,8 @@ RelTwin 将这一选择显式加入微调。我们复用相同声音片段，在
 创新对象是**同录音内、都有声学依据、随逆查询交换正负角色的完整时间戳答案**。研究重点是监督目标和候选构造，而不是把交叉熵本身宣称为新损失，也不是重新提出一个骨干或推理系统。对比样本并非随机错误窗口：它对另一条查询恰好是正确答案。
 
 全文统一使用 `query--window binding`、`locally valid timestamp contrasts` 和 `candidate supervision`。RelTwin 定位为查询特定定位的微调框架，SpotSound-A 与 TimeAudio 为承载方法的基础模型。交换一致性和集合级偏好学习用于落实同一答案竞争思路，不作为额外独立贡献罗列。
+
+**长期写作约束（2026-09-17）**：论文呈现最终成立的科学论证，不呈现开发历史。方法节解释核心选择机制，不以实现中存在某个分支、数据配比或训练项为由给它独立命名。类别查询配对只作为实际训练配置交代；中间尝试、版本门禁、运行日志留在开发记录。每段必须推进问题、机制、证据或必要协议，不能仅用于展示工作量。必要训练组成、比较身份和统计口径仍如实保留，不把叙事收拢变成更换实验事实。
 
 ### 1.3 当前结果与比较职责
 
@@ -629,6 +631,55 @@ D01 的配置事实：
 - **构建 QA**：论文及两个单图入口编译通过；四页正文，第五页声明与参考文献，17 条文献不变。独立主图、第二页嵌图及第四页结尾已渲染检查，无标签重叠、overfull box 或未解析引用；全部字体嵌入，无 Type 3 字体。只精炼图注以维持页面布局，科学正文未改。
 - **问题状态**：记录 P1-03 图形工作进展，保留全稿终检；其他问题状态不因本轮图形修改而关闭。
 
+### v29 · 最终方法叙事收拢与引用核验（2026-09-17）
+
+**本轮范围**：在 v28 上修订最终 RelTwin 稿，不引入历史 NOVA/router、独立 SetPO 或新命名的类别配对模块。用户叫停后的扩写草稿未提交；重新收拢后才生成本版。
+
+- **主线**：同一录音里的两个局部有效答案，因查询关系不同而交换正确性。构造、候选监督、交换一致性和集合级偏好学习都服务于这一答案竞争机制，不作为四项独立创新。
+- **引言**：保留具体的逆序声音例子，以“识别到类别仍不足以选择发生位置”引出缺口；删除机械的三条贡献罗列，最后用双骨干成绩与配对恢复承接证据。
+- **方法**：补齐输入与区间集合输出，明确 2×2 得分的行列和正例角色；展开内部第二阶段的六种答案、四项质量、utility、软标签和总目标。保留原生时间戳格式和直接生成，不新增模型结构。类别查询配对移回 TimeAudio 设置，只说明实际目标和 3:1 比例。
+- **结果**：三个小节分别回答整体定位、匹配候选监督、静音时序变化；删除独立且重复的“Why locally valid answers matter”，解释并入机制证据。删去可直接从表格读出的重复数值，未改变或替换成绩。
+- **配置来源**：第二阶段数学定义定向核对现有 TimeAudio 完整训练实现及共享的候选/质量/损失函数；类别配对依据最终训练脚本，不是新增实验。未修改训练代码或启动 GPU。
+
+**ICASSP 结构参照**：
+
+| 已发表工作 | 本轮采用的结构做法 |
+|---|---|
+| [Language-based Audio Moment Retrieval，ICASSP 2025](https://h-munakata.github.io/Language-based-Audio-Moment-Retrieval/)（[公开全文](https://arxiv.org/html/2409.15672v3)） | 先定义任务输入输出，再讲方法；数据/指标/设置与性能论证分工明确。不照搬其数据集论文结构。 |
+| [Learning Audio Concepts from Counterfactual Natural Language，ICASSP 2024](https://ali-vosoughi.github.io/counterfactual-audio/)（[公开全文](https://arxiv.org/html/2401.04935v1)） | 围绕一个训练洞察解释目标与证据，不按过程罗列变体；同时作为真实近邻说明表示学习与完整时间戳答案比较的区别。不复制其措辞或因果主张。 |
+
+**19 条正文引用核验**：
+
+| BibTeX key | 核验来源与引用职责 |
+|---|---|
+| `xu2021grounding` | [原文](https://arxiv.org/abs/2102.11474)及 [DOI](https://doi.org/10.1109/ICASSP39728.2021.9414834)：任务起点、AudioGrounding 数据；改为 ICASSP 2021，606–610 页。 |
+| `munakata2025amr` | [作者项目页](https://h-munakata.github.io/Language-based-Audio-Moment-Retrieval/)及 [DOI](https://doi.org/10.1109/ICASSP49660.2025.10890873)：AMR、Clotho-Moment 与 UnAV-100 subset；改为 ICASSP 2025。 |
+| `xu2024wstag` | [原文](https://arxiv.org/abs/2401.02584)及 [DOI](https://doi.org/10.1109/TMM.2024.3443614)：clip-level 弱监督；改为 IEEE TMM 26，11126–11138 页。 |
+| `deshmukh2023pengi` | [NeurIPS 2023 正式页面](https://proceedings.neurips.cc/paper_files/paper/2023/hash/3a2e5889b4bbef997ddb13b55d5acf77-Abstract-Conference.html)：音频条件文本生成。 |
+| `chu2024qwen2audio` | [arXiv](https://arxiv.org/abs/2407.10759)：音频语言模型背景；保留技术报告身份。 |
+| `goel2025af3` | [arXiv](https://arxiv.org/abs/2507.08128)：音频语言模型背景；作者和标题核对，不补造会议归属。 |
+| `wang2026timeaudio` | [AAAI 官方](https://ojs.aaai.org/index.php/AAAI/article/view/39827)：时间标记、absolute time-aware encoding；使用正式题名 Listening Between the Frames，40(31)，26233–26241 页。 |
+| `sun2026spotsound` | [v2 原文](https://arxiv.org/abs/2604.13023v2)：时间戳交错、缺失事件查询、SpotSound-Bench 和主表公开基线出处。保留预印本身份。 |
+| `wu2023clap` | [IEEE](https://ieeexplore.ieee.org/document/10095969)及 [DOI](https://doi.org/10.1109/ICASSP49357.2023.10095969)：音频—文本表示对齐；按会议版六名作者，不将后续 arXiv 七作者列表混入会议元数据。 |
+| `vosoughi2024counterfactual` | [ICASSP 2024 会议页面](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=8649)、[作者页](https://ali-vosoughi.github.io/counterfactual-audio/)及 [DOI](https://doi.org/10.1109/ICASSP48485.2024.10446736)：反事实描述与 factual consistency；新增为近邻，不称其已研究本文的答案竞争。 |
+| `yuan2024tclap` | [作者机构库](https://openresearch.surrey.ac.uk/esploro/outputs/conferencePaper/T-CLAP-Temporal-enhanced-contrastive-language-audio-pretraining/99912665902346)及 [DOI](https://doi.org/10.1109/MLSP58920.2024.10734763)：时序对比；改为 MLSP 2024，1–6 页，不误标 ICASSP。 |
+| `ghosh2024compa` | [作者项目与 BibTeX](https://sreyan88.github.io/compa_iclr/)、[ICLR 全文](https://openreview.net/attachment?id=86NGO8qeWs&name=pdf)：事件顺序、属性绑定和组合负样本。 |
+| `ren2026costala` | [arXiv 原文](https://arxiv.org/html/2608.24374v1)：时空对比、局部对齐及特征一致性；保留预印本身份。 |
+| `cheng2024shine` | [作者仓库](https://github.com/zxccade/SHINE)及 [Springer DOI](https://doi.org/10.1007/978-3-031-72655-2_23)：视频组合定位的负查询与显著性排序，ECCV 2024，398–416 页；不写成音频方法。 |
+| `piczak2015esc` | [作者原文](https://www.karolpiczak.com/papers/Piczak2015-ESC-Dataset.pdf)及 [DOI](https://doi.org/10.1145/2733373.2806390)：ESC-50 源数据。 |
+| `thrush2022winoground` | [CVF 正式页面](https://openaccess.thecvf.com/content/CVPR2022/html/Thrush_Winoground_Probing_Vision_and_Language_Models_for_Visio-Linguistic_Compositionality_CVPR_2022_paper.html)：成对组合评估的启发，不将本文 JointPairAcc 冒称其原指标。 |
+| `hu2022lora` | [微软作者页面](https://www.microsoft.com/en-us/research/publication/lora-low-rank-adaptation-of-large-language-models/)确认 ICLR 2022：LoRA 适配。 |
+| `kulkarni2026tempo` | [arXiv 及作者列表](https://arxiv.org/abs/2608.29999)：实际 TEMPO 训练数据出处。新增引用不代表新增 TEMPO benchmark 或方法。使用公开预印本，不编造 proceedings 页码。 |
+| `loshchilov2019adamw` | [作者公开论文](https://arxiv.org/abs/1711.05101)明确 ICLR 2019：AdamW 优化器。 |
+
+引用真实性与正文支持分别核对；DOI 元数据由出版方登记的 Crossref 记录交叉检查。IEEE/OpenReview 个别网页访问受限时，使用作者原文及官方会议/机构页面交叉核对，不将访问失败误判为论文不存在。当前 19 个引用键全部存在，无重复键或未引用条目。五条未用历史文献从当前 BibTeX 库移除，可在 Git 中恢复。会议名称使用通行简称，作者列表、题名与年份未为压页随意删改。
+
+**构建与证据保护**：pdfLaTeX/BibTeX 编译为 5 页；第 4 页结束结论，第 5 页仅声明与 19 条参考文献。正文和公式字号、模板、页边距未修改。五页逐页渲染检查，无 overfull、未解析引用或 Type 3 字体，全部字体嵌入。写作检查的句长/分号建议已逐段人工复查，不为满足计数破坏公式和配置含义。两张表、主图源文件/数据、作者文件与 v28 一致。保留公开分数开发用途、五次选择与三种子统计、matched 条件、bootstrap 和 timing 身份。
+
+**仍未关闭**：P0-10 同事完整 SpotSound-A 原始记录/配置归档；P0-08 通讯邮箱与作者信息；P0-09 提交信息及最终门户检查。本轮改稿不替代这些事实材料，不声称完成额外实验或已满足全部投稿条件。
+
+---
+
 ## 8. 原 96 条审阅意见到当前问题的追溯
 
 原意见已在 Git 历史中完整保存。这里仅保留到当前稳定 ID 的映射，避免同一问题在正文重复维护。
@@ -716,6 +767,7 @@ D01 的配置事实：
 | 2026-09-16 | v26，主图配色与流程重绘 | 白底蓝橙分区与浅绿高亮，统一字号；完整训练、直接推理和真实机制案例分开，矢量图与论文同步。正文和结果不变，四页正文加第五页声明与文献；无新实验 |
 | 2026-09-16 | v27，全文故事与语言修订 | 聚焦局部有效答案间的查询条件竞争；补清 JS/SetPO 动机，指标移入设置，结果从读表改为解释。统一术语与图注，移除对 Clotho +0.01 的正文提升强调；表值/案例/必要统计条件不变。SetPO 暂保留名称，完成本轮语言和版面项，P0 证据/作者项继续跟踪；无新实验 |
 | 2026-09-16 | v28，第二阶段统一纳入 RelTwin | 取消 SetPO 缩写，以 set-level preference learning 描述内部第二阶段；同步正文、主图、预览和维护清单。实际训练目标、全部数值与统计身份不变；无新实验 |
+| 2026-09-17 | v29，最终方法叙事与引用核验 | 去除辅助配对概念的独立展开，补清核心机制与两阶段目标；结果按整体效果、关系选择、时序干预组织。逐条核验 19 条正文引用并更新正式发表元数据；图表和实验事实不变，正文四页，无新实验。 |
 
 - v26 PDF SHA-256（历史版本）：`88c49d524dbc5e252d71c31f60defb52707de400747021c14711fe3e5ef574f4`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`

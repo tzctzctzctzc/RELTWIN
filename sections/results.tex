@@ -1,16 +1,11 @@
 \section{Results and Analysis}
 \subsection{Grounding performance across benchmarks}
-RelTwin improves mIoU for both backbones on all three benchmarks (Table~\ref{tab:main}). SpotSound-A gains 1.53, 1.08, and 4.23 points on SpotSound-Bench, Clotho-Moment, and UnAV-100, respectively; TimeAudio gains 8.16, 5.48, and 14.48 points. The improvements extend across both model families and datasets, with the highest absolute scores attained by adapted SpotSound-A among the listed methods.
-
-On 400 SpotSound queries, candidate supervision improves mIoU by 1.02 points over matched paired SFT (95\% audio-group bootstrap CI: $[0.23,1.81]$). Its three-seed mean is 59.16 (Table~\ref{tab:training}c).
+RelTwin improves both backbones on all three benchmarks (Table~\ref{tab:main}). The mIoU gains range from 1.08 to 4.23 points for SpotSound-A and 5.48 to 14.48 for TimeAudio. Adapted SpotSound-A leads the listed methods. Gains on both backbones support adaptation across timestamp representations.
 
 \input{sections/bridge_results}
 
 \subsection{Binding gains persist after timing intervention}
 \label{sec:timing}
-We test whether the binding advantage persists when silence durations change while event waveforms, order, and queries remain fixed. We recompose 80 development recordings with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail. The frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
+We recompose 80 development recordings with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving event waveforms, order, and queries. Frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
 
-On the 40 modified recordings, candidate supervision retains a 20-point JointPairAcc advantage over paired SFT (87.50 vs.\ 67.50; CI $[2.94,33.33]$), compared with original scores of 85.00 and 42.50. The advantage persists under the changed silence layout. Across all 160 queries, SFT and candidate supervision score 81.34 and 90.65 mIoU.
-
-\subsection{Why locally valid answers matter}
-Both candidate windows contain the queried categories, yet inverse queries require different answers. Reduced same-answer collapse and higher JointPairAcc distinguish improved relation selection from event recognition in the controlled test. Candidate supervision trains this distinction by placing acoustically supported windows in direct competition under each query.
+On the 40 modified recordings, candidate supervision retains a 20-point JointPairAcc advantage (87.50 vs.\ 67.50; CI $[2.94,33.33]$), compared with original scores of 85.00 and 42.50. Across all 160 queries, paired SFT and candidate supervision score 81.34 and 90.65 mIoU.
