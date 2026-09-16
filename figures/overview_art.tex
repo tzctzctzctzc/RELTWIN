@@ -87,7 +87,7 @@
  (5.34,1.50) rectangle (11.05,6.00);
 \node[fill=rtCanvasBg] at (8.195,6.00) {Training only};
 \draw[module] (5.71,5.02) rectangle (10.68,5.75);
-\node[align=center] at (8.195,5.385) {Audio-language model\\Frozen backbone + trainable LoRA};
+\node[align=center] at (8.195,5.385) {Audio-language model\\Backbone + trainable adapters};
 % Explicit fan-in: recording and both query strips enter the same model.
 \draw[rtInk,line width=.65pt] (4.63,5.16)--(4.95,5.16);
 \draw[rtInk,line width=.65pt] (4.62,3.56)--(4.95,3.56);
@@ -97,7 +97,7 @@
 \draw[flow] (4.95,5.38)--(5.71,5.38);
 \node[anchor=east] at (5.28,5.68) {$x,q_{\pm}$};
 \draw[flow] (8.195,5.01)--(8.195,4.76);
-\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (8.195,4.56) {RelTwin candidate supervision};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (8.195,4.56) {RelTwin answer competition};
 \node at (7.74,4.18) {$y(W_+)$};
 \node at (9.32,4.18) {$y(W_-)$};
 \node at (6.48,3.78) {$q_+$};
@@ -113,15 +113,15 @@
 \node at (9.32,3.23) {$s_{--}\ \uparrow$};
 \node[note] at (8.195,2.71) {$s$: mean token log-likelihood};
 \draw[flow] (8.195,2.52)--(8.195,2.32);
-\node at (8.195,2.14) {Row-wise cross-entropy: $\mathcal L_{\rm cand}$};
-\node at (8.195,1.74) {$\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$};
+\node at (8.195,2.14) {1. Candidate supervision + exchange JS};
+\node at (8.195,1.74) {2. SetPO: interval-set preferences};
 
 % (c) The same cached example as a compact comparison matrix.
 % Columns are models, rows are inverse queries. Each cell overlays the target
 % outline and prediction fill on an identical 0--27 s axis.
 \node[note] at (14.50,6.00) {Same recording, inverse queries};
 \node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (13.42,5.59) {SFT};
-\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (16.13,5.59) {RelTwin};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (16.13,5.59) {Cand. supervision};
 \foreach \xbase in {12.32,15.03}{
  \draw[rtInk,line width=.55pt] (\xbase,5.08)--({\xbase+2.20},5.08);
  \foreach \sec/\lab in {0/0,10/10,20/20,27/{27 s}}{
@@ -159,7 +159,7 @@
 
 % Labels outside content, following the reference figures.
 \node[title] at (2.36,1.14) {(a) Inverse-relation pairs};
-\node[title] at (8.195,1.14) {(b) Paired answer supervision};
+\node[title] at (8.195,1.14) {(b) Two-stage RelTwin training};
 \node[title] at (14.47,1.14) {(c) Query-specific localization};
 
 \end{tikzpicture}

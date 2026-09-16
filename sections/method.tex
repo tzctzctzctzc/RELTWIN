@@ -16,13 +16,17 @@ Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$, reward
 \mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
 \end{equation}
-For a separately sampled category example $(x_r,q_r,S_r)$, the rehearsal loss is $\mathcal L_{\rm replay}=-s_\theta(x_r,q_r,S_r)$. The core objective is
+Exchange $\Pi$ swaps candidate labels; $\mathcal L_{\rm JS}=\allowbreak\operatorname{JS}(p_+,\Pi p_-)$ aligns their distributions. For rehearsal example $(x_r,q_r,S_r)$, define $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
 \begin{equation}
-\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}
-+\beta\mathcal L_{\rm replay}.
+\mathcal L_1=\mathcal L_{\rm seq}+\lambda(\mathcal L_{\rm cand}
++\gamma\mathcal L_{\rm JS})+\beta\mathcal R_1.
 \label{eq:loss}
 \end{equation}
-Paired SFT sets $\lambda=0$; RelTwin uses $\lambda>0$ with identical relation and rehearsal data. Both directly generate timestamps at inference, without candidates or an additional scorer.
+
+\textbf{Set-level preference optimization (SetPO).}
+Stage~2 compares six answers: $W_\pm$, their expanded versions, their enclosing span, and their union. Quality axes are set-IoU, precision--recall margins above IoU 0.3/0.5, count agreement, and duration-normalized boundary accuracy. Utility $v_{ij}$ averages mean quality and net Pareto dominance (number dominated minus dominating, normalized by candidate count minus one). Targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ yield $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$ over six answers, replacing $\mathcal L_{\rm cand}$ in Eq.~\ref{eq:loss}. Exchange $\Pi$ swaps targets and their expansions, fixing the span and union.
+
+Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. Stage~2 uses $\mathcal R_2=\mathcal R_1+\lambda\mathcal L_{\rm set,r}+\kappa\operatorname{KL}(p_0\Vert p_r)$, with frozen base-model distribution $p_0$; $\mathcal L_{\rm set,r}$ is the same listwise loss for one replay query. Inference directly generates timestamps.
 
 \subsection{Joint localization and relation selection}
 For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$ (zero for an empty union). Given predictions $\widehat W_i$, define $u_{ij}=\setiou(\widehat W_i,W_j)$. PairAcc requires $\min(u_{++},u_{--})\geq0.5$. Swap error occurs if $u_{++}\leq u_{+-}$ or $u_{--}\leq u_{-+}$, including ties. JointPairAcc requires PairAcc success without Swap error. We report pair-level percentages; same-answer counts use exact equality of parsed interval lists.

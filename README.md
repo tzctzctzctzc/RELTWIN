@@ -2,13 +2,13 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v24（2026-09-16，补齐 TimeAudio 完整配置结果的导师审阅稿）**。科学主线和方法图以 v18 `094566e` 为基础，保留确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 是现有生成式音频定位模型的附加微调方法；方法节展开核心答案竞争，实验设置说明本轮 TimeAudio 的 exchange consistency + SetPO 完整训练配置。
+当前为 **v25（2026-09-16，统一完整 RelTwin 框架的导师审阅稿）**。保留确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 统一指候选答案竞争、查询交换一致性和 SetPO 构成的两阶段微调框架；摘要、引言、方法、主图、主表、结果与结论使用同一方法定义。
 
-Table 1 包含 SpotSound-Bench、Clotho-Moment、UnAV-100 subset 三组，每组按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距区分 benchmark。TimeAudio / TimeAudio + RelTwin、SpotSound-A / SpotSound-A + RelTwin 分别相邻排列，各有相对对应原文基础模型的增益行。TimeAudio 完整配置的单个 seed-0 检查点获得 **18.36 / 34.08 / 30.48 mIoU**，增益为 **+8.16 / +5.48 / +14.48 点**。SpotSound-A 核心配置保持 **59.43 / 86.68 / 74.03 mIoU**，增益 **+1.53 / +1.08 / +4.23 点**。表注以 † 标识完整配置；两行的实际训练组成分别在设置中说明。
+Table 1 包含 SpotSound-Bench、Clotho-Moment、UnAV-100 subset 三组，每组按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距区分 benchmark。TimeAudio / TimeAudio + RelTwin、SpotSound-A / SpotSound-A + RelTwin 分别相邻排列，各有相对对应原文基础模型的增益行。TimeAudio 获得 **18.36 / 34.08 / 30.48 mIoU**，增益 **+8.16 / +5.48 / +14.48 点**；SpotSound-A 为 **59.43 / 86.68 / 74.03 mIoU**，增益 **+1.53 / +1.08 / +4.23 点**。所有数字与 v24 相同，删除 † 及版本区分表注。作者本轮确认 SpotSound-A 这组数值来自同事在另一机器上的完整 RelTwin 实验，按此确认保留；其原始记录待归档（P0-10），不沿用旧 `no_exchange` 日志充当本次完整实验依据。
 
-本轮补齐主表、结果说明和配置身份；摘要、引言、结论、Figure 1 和 Table 2 的既有证据保持不变。后续补跑 SpotSound-A 完整配置及完整训练方法的正式展开由 `ISSUES.md` 的 P0-10 跟踪，尚未启动，也不预设提升。五种子配对汇总由 P3-02 跟踪。最新稿为四页正文、第五页声明与 17 条已引用文献；本轮只读取完成的实验记录，没有训练或重新推理。
+Table 2、逆查询诊断和 timing 仍承担候选监督的机制验证，标签明确为 candidate supervision，既有数值和 CI 不变。主表负责整体性能，两者不再共用含混的实验身份。逐处用语审查与改法见 `ISSUES.md` 第 7 节 v25；必要统计条件集中于设置，正文不叙述开发过程。五种子汇总仍由 P3-02 跟踪。本轮没有训练或重新推理。
 
-Figure 1 恢复 v18 的三分图：同录音逆关系构造、训练期 2×2 时间戳答案竞争、SFT 与 RelTwin 的真实预测对照。唯一图稿来源为 `figures/overview_art.tex`。原有 `previews/nova_overview.*` 名称保留为兼容入口，生成内容与当前 RelTwin 主图同步；旧 NOVA 系统图可从 Git 历史 `bf5d5ea` 恢复。
+Figure 1 保留 v18 的三分布局：同录音逆关系构造、两阶段 RelTwin 训练、候选监督的真实预测对照。中间面板补充 JS → SetPO 的训练顺序，案例端点和 IoU 不变。唯一图稿来源为 `figures/overview_art.tex`；`previews/nova_overview.*` 为历史命名的兼容入口，与论文图同步。
 
 ## 修改哪里
 
@@ -104,3 +104,5 @@ v21 清理防御性论述：引言明确 NOVA 三阶段的作用，结果中的�
 v23 回到 v18 的 RelTwin 单方法主线，接入经核实的三 benchmark 独立推理结果，保留 TimeAudio 占位并添加对应基础模型增益。同步恢复 RelTwin 标题、方法图、完整方法与相关工作，移出 NOVA 系统组成；保留最新作者信息及三种子/匹配统计。所有改动在现有 `paper` 历史上提交，不重置到旧提交；具体来源、故事建议和剩余问题见 `ISSUES.md`。
 
 v24 填入 TimeAudio 完整配置的三 benchmark 全量结果及九项增益，逐行核对 400/6649/100 条和同一 checkpoint。方法节将答案序列化按骨干说明，设置补充两阶段训练与 replay 来源；压缩重复表述保持四页正文。原 SpotSound-A 行、Table 2、主图、作者和全部既有统计保持不变。SpotSound-A 完整配置留待后续实验，当前稿先供导师审阅。
+
+v25 根据作者对同事完整 SpotSound-A 实验的最新确认保留原主表全部数据，统一完整 RelTwin 叙事，删除 † 和 core/full 区分。方法正式写入 JS、SetPO 及 replay；主图同步训练顺序；已核验的旧候选监督记录继续作为 Table 2 机制证据。原始同事实验追溯另由 P0-10 归档，不把数值相同当作检查点相同。段落结构保持，相关工作仅压缩重复句以容纳方法定义。

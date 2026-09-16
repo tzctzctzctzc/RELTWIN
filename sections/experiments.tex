@@ -1,18 +1,18 @@
 \section{Experimental Setup}
 \label{sec:protocol}
 \textbf{Data and evaluation protocol.}
-Core SpotSound-A adaptation uses 40 ESC-50 classes and 256 recordings: 1,024 relation queries (512 pairs) and 512 rehearsal queries. Ten held-out classes provide 80 recordings, 320 queries, and 160 inverse pairs for relation development, with disjoint classes and original Freesound IDs at adaptation. Evaluation covers all 400 SpotSound-Bench queries over 387 audios, 6,649 Clotho-Moment queries, and UnAV-100's 100 queries over 77 audios~\cite{munakata2025amr}. We report set-mIoU and R1 at IoU 0.3/0.5, clipping intervals to duration. Relation-development and public scores informed method development.
+Twin construction uses 40 ESC-50 classes and 256 recordings: 1,024 relation queries (512 pairs) and 512 category queries. Ten held-out classes provide 80 recordings, 320 queries, and 160 inverse pairs for relation development, with disjoint classes and original Freesound IDs at adaptation. Evaluation covers 400 SpotSound-Bench queries over 387 audios, 6,649 Clotho-Moment queries, and UnAV-100's 100 queries over 77 audios~\cite{munakata2025amr}. We report set-mIoU and R1 at IoU 0.3/0.5, clipping intervals to duration. Relation-development and public scores informed development.
 
-\textbf{SpotSound-A training.}
-SFT and RelTwin initialize from SpotSound-A on Audio Flamingo~3. LoRA~\cite{hu2022lora} uses rank~8, $\alpha=16$, dropout~0.1, and 20.19M parameters. Both run 256 AdamW~\cite{loshchilov2019adamw} updates at $5\times10^{-6}$, zero weight decay, gradient clipping~1, $\tau=1$, $\beta=0.5$; RelTwin uses $\lambda=1$. Each update accumulates one inverse-query pair and one rehearsal query. Initialization, data order, code, environment, and updates are matched. RelTwin computes four gradient-free scores then weighted gradient recomputation; SFT backpropagates through two positive answers. Both include rehearsal.
+\textbf{RelTwin training.}
+From official TimeAudio, seed~0 runs 384 Stage~1 and 128 SetPO updates. Its 31.76M trainable parameters use rates $2\times10^{-6}$ (LoRA~\cite{hu2022lora}) and $5\times10^{-6}$ (temporal/audio connectors). Event/relation twins mix 3:1; replay mixes Clotho training, synthetic scale/cardinality, TEMPO training, and AudioGrounding training at 4:3:2:1. We use $\lambda=\gamma=1$, $\beta=0.75$, $\kappa=0.2$, $\tau=1$, $\tau_q=0.15$, and 15\% interval expansion (minimum 0.05\,s).
 
-\textbf{TimeAudio full configuration.}
-Official TimeAudio, seed~0, receives 384 candidate-training updates with Jensen--Shannon consistency under inverse-query label exchange, then 128 SetPO updates (interval-set listwise preferences with quality-based soft targets). Its 31.76M parameters use rates $2\times10^{-6}$ (LoRA) and $5\times10^{-6}$ (temporal/audio connectors). Event/relation twins mix 3:1; replay mixes Clotho training, synthetic scale/cardinality, TEMPO training, and AudioGrounding training at 4:3:2:1.
+\textbf{Matched mechanism experiment.}
+Table~\ref{tab:training} isolates $\mathcal L_{\rm cand}$ on SpotSound-A: Eq.~\ref{eq:loss} with $\gamma=0$, $\beta=0.5$, and $\lambda=0$ (paired SFT) or 1 (candidate supervision), evaluated after Stage~1. Both use identical relation/rehearsal data and 256 AdamW~\cite{loshchilov2019adamw} updates at $5\times10^{-6}$, zero weight decay and gradient clipping~1. LoRA has rank~8, $\alpha=16$, dropout~0.1, and 20.19M parameters. Each update accumulates one pair and one rehearsal query, sharing initialization, data order, code, and environment. Candidate training adds four gradient-free scores and weighted gradient recomputation to SFT's two positive-answer backpropagations.
 
 \textbf{Inference.}
-Both backbones use greedy one-beam decoding, capped at 128 new tokens. SpotSound-A uses 16\,kHz mono audio and bfloat16; post-development timing tests use frozen matched checkpoints (Section~\ref{sec:timing}).
+We use greedy one-beam decoding, capped at 128 new tokens. The mechanism experiment uses 16\,kHz mono audio and bfloat16; timing tests use its frozen checkpoints (Section~\ref{sec:timing}).
 
 \textbf{Comparison and statistics.}
-Table~\ref{tab:main} compares published baselines; Table~\ref{tab:training} compares official SpotSound-A, paired SFT, and RelTwin under shared inference. Official SpotSound-A scores 58.42 mIoU versus published 57.9; RelTwin's three-seed gain over this re-evaluation is $+0.75$ (audio-group CI $[-0.24,1.74]$).
+Table~\ref{tab:main} compares published baselines; Table~\ref{tab:training} tests candidate supervision under shared inference. Mechanism point results use seed~0, selected by SpotSound mIoU from five runs, and matched SFT; Table~\ref{tab:training}(c) reports seeds 0/1/2 as mean $\pm$ sample SD.
 
-SpotSound-A uses seed~0, selected by SpotSound mIoU from five runs, and matched SFT. Table~\ref{tab:training}(c) reports seeds 0/1/2 as mean $\pm$ sample SD. We use 20,000 audio-group bootstrap resamples for 95\% CIs; relation tests resample 39 connected source-sharing groups (largest: 18 audios). CIs condition on fixed checkpoints and selection.
+We use 20,000 audio-group bootstrap resamples for 95\% CIs; relation tests resample 39 connected source-sharing groups (largest: 18 audios). CIs condition on fixed checkpoints and selection.

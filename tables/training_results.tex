@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{SpotSound transfer and synthetic relation-development binding. (b) Matched data and updates; (c) mean $\pm$ sample SD (Section~\ref{sec:protocol}). Joint: JointPairAcc; same-answer: inverse-query pairs with identical timestamp answers. Scores are percentages except counts.}
+\caption{Mechanism experiment: isolating RelTwin's candidate supervision on SpotSound-A. (b) Matched data and updates; (c) mean $\pm$ sample SD. Joint: JointPairAcc; same-answer: inverse-query pairs with identical timestamp answers. Scores are percentages except counts.}
 \label{tab:training}
 \small
 \setlength{\tabcolsep}{7pt}
@@ -15,11 +15,11 @@ SpotSound-A & 58.42 & 37.64 & 0.63 & 65.00 & 15/160\\
 \midrule
 \multicolumn{6}{@{}l}{\textit{(b) Matched training comparison}}\\
 Paired SFT & 58.42 & 74.58 & 53.13 & 40.00 & 37/160\\
-RelTwin & \textbf{59.43} & \textbf{88.55} & \textbf{84.38} & \textbf{7.50} & \textbf{1/160}\\
-RelTwin $-$ Paired SFT & +1.02 & +13.97 & +31.25 & $-32.50$ & $-36$ pairs\\
+Candidate supervision & \textbf{59.43} & \textbf{88.55} & \textbf{84.38} & \textbf{7.50} & \textbf{1/160}\\
+Gain over paired SFT & +1.02 & +13.97 & +31.25 & $-32.50$ & $-36$ pairs\\
 \midrule
-\multicolumn{6}{@{}l}{\textit{(c) RelTwin replication: three training seeds}}\\
-RelTwin & $59.16\pm0.26$ & $87.05\pm1.43$ & $81.46\pm2.53$ & $8.13\pm0.63$ & $(1,0,0)/160$\\
+\multicolumn{6}{@{}l}{\textit{(c) Candidate supervision: three training seeds}}\\
+Candidate supervision & $59.16\pm0.26$ & $87.05\pm1.43$ & $81.46\pm2.53$ & $8.13\pm0.63$ & $(1,0,0)/160$\\
 \bottomrule
 \end{tabular*}
 \end{table*}

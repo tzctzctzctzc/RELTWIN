@@ -1,6 +1,6 @@
 \subsection{Timestamp contrasts recover query-specific selection}
-Paired SFT returns identical answers for 37/160 inverse-query pairs across 22 recordings; RelTwin reduces this to one (Table~\ref{tab:training}). Of those 37 pairs, 27 become jointly correct: the two predictions recover their respective requested relations. Figure~\ref{fig:pair} illustrates this query-specific recovery, with each inverse query selecting its corresponding event window.
+Paired SFT returns identical answers for 37/160 inverse-query pairs across 22 recordings; candidate supervision reduces this to one (Table~\ref{tab:training}). Of those 37 pairs, 27 become jointly correct: the two predictions recover their respective requested relations. Figure~\ref{fig:pair} illustrates this query-specific recovery, with each inverse query selecting its corresponding event window.
 
 JointPairAcc increases by 31.25 points (source-group CI $[22.35,40.50]$) and Swap error decreases by 32.50. Across all pairs, 51 become jointly correct and one regresses. Relation mIoU increases by 13.97 points (CI $[9.84,17.51]$), connecting selection with overlap.
 
-Across three RelTwin seeds, JointPairAcc averages 81.46 and identical-answer counts are 1, 0, and 0, reproducing the reduction in same-answer collapse.
+Across three seeds, mean JointPairAcc is 81.46; same-answer counts are 1, 0, and 0.
