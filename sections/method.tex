@@ -5,7 +5,7 @@ In one recording $x$, RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015
 The templates ``followed by'' and ``and then'' yield two inverse-query pairs per recording. Earlier-order layouts alternate (Section~\ref{sec:timing}). Category rehearsal targets the union of both occurrences of $A$ or $B$, retaining category-grounding supervision.
 
 \subsection{Contrast timestamp answers during training}
-We serialize an interval set $S$ as comma-separated spans, each formatted like \texttt{from 1.500s to 11.750s} (three-decimal precision). Its supervised assistant-completion tokens $y(S)$ exclude the prompt and are scored by
+We serialize an interval set $S$ in the backbone's timestamp format: SpotSound-A uses comma-separated spans such as \texttt{from 1.500s to 11.750s}; TimeAudio uses its native temporal tokens. The supervised answer tokens $y(S)$ exclude the prompt and are scored by
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
 \label{eq:score}
@@ -16,7 +16,7 @@ Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$, reward
 \mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
 \end{equation}
-For a separately sampled category example $(x_r,q_r,S_r)$, the rehearsal loss is $\mathcal L_{\rm replay}=-s_\theta(x_r,q_r,S_r)$. Together,
+For a separately sampled category example $(x_r,q_r,S_r)$, the rehearsal loss is $\mathcal L_{\rm replay}=-s_\theta(x_r,q_r,S_r)$. The core objective is
 \begin{equation}
 \mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}
 +\beta\mathcal L_{\rm replay}.

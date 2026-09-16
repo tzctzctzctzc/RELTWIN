@@ -1,8 +1,8 @@
 \section{Results and Analysis}
 \subsection{Grounding performance across benchmarks}
-SpotSound-A + RelTwin reaches 59.43, 86.68, and 74.03 mIoU on SpotSound-Bench, Clotho-Moment, and UnAV-100 (Table~\ref{tab:main}). The gains over the published base model are 1.53, 1.08, and 4.23 points. SpotSound recall increases by 1.50/2.50 points at IoU 0.3/0.5; UnAV recall increases by 3.00/5.00 points. These gains extend to the stricter localization criterion. Clotho recall reaches 93.61/91.01 versus published 93.4/91.0. One adapted checkpoint provides all three results.
+On SpotSound-Bench, Clotho-Moment, and UnAV-100, SpotSound-A + RelTwin reaches 59.43, 86.68, and 74.03 mIoU (Table~\ref{tab:main}), exceeding its published baseline by 1.53, 1.08, and 4.23 points. Full-configuration TimeAudio reaches 18.36, 34.08, and 30.48, with gains of 8.16, 5.48, and 14.48 points. Each backbone uses one adapted checkpoint across benchmarks.
 
-On the same 400 SpotSound queries, the gain over matched paired SFT is 1.02 mIoU points, with audio-group CI $[0.23,1.81]$: 92 wins, 239 ties, and 69 losses. The three-seed mean is 59.16 (Table~\ref{tab:training}c). The following analyses examine how candidate supervision changes the response to inverse queries.
+On the same 400 SpotSound queries, RelTwin gains 1.02 mIoU over matched paired SFT (audio-group CI $[0.23,1.81]$): 92 wins, 239 ties, and 69 losses. Its three-seed mean is 59.16 (Table~\ref{tab:training}c). We next examine responses to inverse queries.
 
 \input{sections/bridge_results}
 
