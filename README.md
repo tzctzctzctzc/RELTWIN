@@ -2,9 +2,9 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v30（2026-09-17，精简重复说明、聚焦配对收益与时间干预）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**，作者顺序、通讯作者和声明保持不变。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。未增加历史方法、实验或推理流程。
+当前为 **v31（2026-09-17，干净叙事草稿）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**，作者顺序、通讯作者和声明保持不变。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。未增加历史方法、实验或推理流程。
 
-本轮将基线分数来源集中为 Table 1 的一次简短标注；机制段以 51:1 完整呈现恢复与回退，时间干预设置集中在 Experimental Setup，结果聚焦真正改变静音布局的 40 条录音。两张表的数值、置信区间和模型选择说明保持不变。
+本轮沿用 v30 的基线出处、51:1 配对转变和时间干预结果整理；正文暂不展开模型选择过程，供内部讨论使用。两张表的数值和置信区间不变。
 
 Table 1 包含 SpotSound-Bench、Clotho-Moment、UnAV-100 subset 三组，每组按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距区分 benchmark。TimeAudio / TimeAudio + RelTwin、SpotSound-A / SpotSound-A + RelTwin 分别相邻排列，各有相对对应原文基础模型的增益行。TimeAudio 获得 **18.36 / 34.08 / 30.48 mIoU**，增益 **+8.16 / +5.48 / +14.48 点**；SpotSound-A 为 **59.43 / 86.68 / 74.03 mIoU**，增益 **+1.53 / +1.08 / +4.23 点**。所有数字与 v24 相同，删除 † 及版本区分表注。作者本轮确认 SpotSound-A 这组数值来自同事在另一机器上的完整 RelTwin 实验，按此确认保留；其原始记录待归档（P0-10），不沿用旧 `no_exchange` 日志充当本次完整实验依据。
 
