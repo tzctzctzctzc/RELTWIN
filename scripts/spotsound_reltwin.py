@@ -138,14 +138,10 @@ def configure_spotsound_parameters(
 def set_spotsound_training_mode(model, scope: str = "full") -> None:
     if scope not in {"lora", "full"}:
         raise ValueError(f"Unsupported SpotSound RelTwin scope: {scope}")
-    model.eval()
-    for name, module in model.named_modules():
-        if "lora_dropout" in name:
-            module.train()
-    if scope == "full":
-        base = model.get_base_model()
-        base.multi_modal_projector.train()
-        base.audio_tower.layer_norm.train()
+    # Transformers activates gradient checkpointing only while the owning
+    # modules are in training mode. Exact RNG replay in the outer objectives
+    # makes the two dropout-bearing forward passes numerically consistent.
+    model.train()
 
 
 def capture_rng_state() -> dict:

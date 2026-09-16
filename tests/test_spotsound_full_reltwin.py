@@ -10,6 +10,7 @@ from spotsound_reltwin import (
     load_bridge_delta,
     restore_rng_state,
     save_bridge_delta,
+    set_spotsound_training_mode,
     weighted_schedule,
 )
 
@@ -128,6 +129,14 @@ def test_rng_state_replays_dropout_exactly():
     restore_rng_state(state)
     second = dropout(value)
     assert torch.equal(first, second)
+
+
+def test_training_mode_keeps_gradient_checkpointing_eligible():
+    model = FakePeft().eval()
+    set_spotsound_training_mode(model, scope="full")
+    assert model.training
+    assert model.base_model.language_model.training
+    assert model.base_model.audio_tower.training
 
 
 def test_weighted_schedule_respects_declared_mix():
