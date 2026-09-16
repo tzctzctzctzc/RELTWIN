@@ -23,7 +23,7 @@ Query reversal exchanges the target assignment while preserving the recording. W
 \label{eq:loss}
 \end{equation}
 
-\textbf{Set-level preference optimization (SetPO).}
+\textbf{Set-level preference learning.}
 Selecting the relevant window also requires controlling its boundaries, coverage, and event count. Stage~2 extends answer competition to six interval sets: $W_\pm$, their expanded versions, their enclosing span, and their union. Quality axes are set-IoU, precision--recall margins above IoU 0.3/0.5, count agreement, and duration-normalized boundary accuracy. Utility $v_{ij}$ averages mean quality and net Pareto dominance (number dominated minus dominating, normalized by candidate count minus one). This yields soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ and $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$ over six answers, replacing $\mathcal L_{\rm cand}$ in Eq.~\ref{eq:loss}. Exchange $\Pi$ swaps targets and their expansions, fixing the span and union.
 
 Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. Stage~2 uses $\mathcal R_2=\mathcal R_1+\lambda\mathcal L_{\rm set,r}+\kappa\operatorname{KL}(p_0\Vert p_r)$, with frozen base-model distribution $p_0$; $\mathcal L_{\rm set,r}$ is the same listwise loss for one replay query. Inference directly generates timestamps.
