@@ -1,16 +1,16 @@
-# NOVA / RelTwin 论文长期维护清单
+# RelTwin 论文长期维护清单
 
 当前论文：[paper.pdf](paper.pdf)
 
 目标会议：ICASSP 2027
 
-当前稿：v22（2026-09-15；基于 `paper@08ba93b` 接入 NOVA / RelTwin 新主图，保留最新作者顺序与正文润色）
+当前稿：v23（2026-09-16；以 v18 的 RelTwin 单方法主线为基础，接入三 benchmark 主表和基础模型增益行）
 
-清单审计日期：2026-09-15
+清单审计日期：2026-09-16
 
 论文提交截止：2026-09-16（以 [ICASSP 2027 Paper Kit](https://cmsworkshops.com/ICASSP2027/papers/paper_kit.php) 为准）
 
-> 当前策略：NOVA 为总体方法名，RelTwin 为核心训练模块。摘要和正文直接呈现对应配置的最佳结果，统计口径集中说明；三 benchmark 系统主表与 RelTwin 独立对照保留各自身份。已按作者要求接入新主图并编译为正文四页、第五页声明与参考文献；不执行新模型实验。
+> 当前策略：RelTwin 是现有生成式音频定位模型的附加微调方法。科学正文只保留同录音局部有效时间戳答案之间的查询条件竞争；三 benchmark 主表使用同一个 RelTwin 检查点的直接推理结果。TimeAudio + RelTwin 按作者要求留空；其结果确定前不宣称已验证跨骨干增益。v18 的科学主线与方法图在现有 paper 历史上恢复，保留最新作者信息，不重置 Git。
 
 ---
 
@@ -53,100 +53,76 @@
 
 | 优先级 | 活动问题 | 当前判断 |
 |---|---:|---|
-| P0 | 4 | P0-05、P0-07 为内容或终检，P0-08、P0-09 涉及作者信息与提交合规；P0-01 至 P0-04、P0-06 已完成 |
+| P0 | 5 | P0-05、P0-07 待全稿终检；P0-08、P0-09 为作者与提交信息；P0-10 跟踪 TimeAudio 主表占位；P0-01 至 P0-04、P0-06 已完成 |
 | P1 | 4 | P1-02、P1-05、P1-06、P1-07 已完成；其余为设置、图注、时间干预和版面终检 |
 | P2 | 3 | 最后一轮语言与 PDF QA |
-| P3 | 4 | 新实验或后续证据整合，当前延后 |
+| P3 | 3 | P3-01 的跨 benchmark 推理已纳入；五种子汇总及后续机制增强仍分项跟踪 |
 
 ---
 
 ## 1. 全文冻结的核心故事
 
-这不是额外待办，而是后续所有改稿都必须服从的统一口径。
+### 1.1 研究问题与故事线
 
-### 1.1 一句话科学问题
+现有音频定位模型已经能够识别声音并生成时间戳。本文聚焦另一个决定答案正确性的步骤：当同一录音中两个窗口都包含真实事件时，模型能否依据查询中的关系选择对应窗口。例如，“狗叫后鸡鸣”和“鸡鸣后狗叫”同时出现，检测到两个类别仍不足以决定答案。
 
-> When inverse relations co-occur in the same recording, temporal grounding requires more than detecting the constituent events: each query must be bound to its own locally correct window.
+RelTwin 将这一选择显式加入微调。我们复用相同声音片段，在同一录音内构造相反顺序的两个窗口；对一条查询为正确答案的窗口，在逆查询下成为错误答案。模型用自身生成完整时间戳答案的条件似然比较两个窗口，训练“当前查询应选择哪个真实窗口”。序列监督和类别 rehearsal 保留，推理仍直接生成时间戳。
 
-即：当两个逆序关系同时出现在一段录音中，困难不再是判断声音是否存在，而是把每个查询绑定到其描述的局部窗口。
+论文主表先展示附加 RelTwin 后的公开定位表现；matched SFT 对照回答额外答案竞争带来什么变化；同答案 37/160 → 1/160、JointPairAcc +31.25 点展示关系选择的恢复；改变静音布局后仍有 +20 点优势，进一步检验这一现象。TimeAudio 是后续跨骨干证据的入口，未填数值时不写成已实现的结果。
 
-### 1.2 RelTwin 的关键区别
+### 1.2 核心创新的准确表述
 
-RelTwin 的负答案不是其他录音中的随机窗口，也不是音频中不存在的事件。它是：
+> RelTwin contrasts locally valid timestamp answers whose correctness changes with the query.
 
-> 同一录音中真实存在、声学上有效、甚至是另一条查询的正确答案，但对当前查询而言关系错误的时间窗口。
+创新对象是**同录音内、都有声学依据、随逆查询交换正负角色的完整时间戳答案**。研究重点是监督目标和候选构造，而不是把交叉熵本身宣称为新损失，也不是重新提出一个骨干或推理系统。对比样本并非随机错误窗口：它对另一条查询恰好是正确答案。
 
-全文优先统一为以下一种表述：
+全文统一使用 `query--window binding`、`locally valid timestamp contrasts` 和 `candidate supervision`。RelTwin 定位为附加微调方法，SpotSound-A 与 TimeAudio 为承载方法的基础模型。
 
-> **locally valid timestamp contrasts**
+### 1.3 当前结果与比较职责
 
-需要更完整解释时使用：
+- Table 1：同一个 `no_exchange_seed0` 检查点，在 SpotSound / Clotho / UnAV-100 的 mIoU 为 **59.43 / 86.68 / 74.03**；相对原文 SpotSound-A 的差值为 **+1.53 / +1.08 / +4.23** 点。
+- 主表各 Δ 行只减去相邻的基础模型原文数值，不代表同环境消融，也不把去掉 SpotSound-Q 后的列最大值包装成完整榜单结论。
+- Table 2：matched seed-0 paired SFT → RelTwin 的 SpotSound 增益 **+1.02**，音频组 CI **[0.23, 1.81]**；JointPairAcc **+31.25**，source-group CI **[22.35, 40.50]**。
+- seeds 0/1/2 的 RelTwin 均值仍为 **59.16 ± 0.26**，不能将单点 59.43 写成均值。seed 0 由五次 SpotSound 运行选出，设置中保留这一选择口径。
+- 本环境 official 重评为 58.42，与原文 57.9 分开；三种子均值相对重评为 +0.75，CI [-0.24, 1.74]。
+- TimeAudio + RelTwin 及其 Δ 行保留为“--”。待同一策略和三 benchmark 的记录确定后填写；TEMPO 是另一骨干，不能填入 TimeAudio 行。
 
-> **globally valid but query-conditionally wrong timestamp answers**
+### 1.4 推荐的叙事落点
 
-不要在 `hard answer negative`、`locally confusable negative`、`competing window`、`opposite answer` 等多个名称之间频繁切换。
-
-### 1.3 三层贡献
-
-1. **问题层**：识别 `query–occurrence binding error`——模型知道事件存在，却把不同关系查询绑定到同一时间窗口；这是原 `query–window binding` 的统一命名，不是新增任务。
-2. **方法层**：构造同录音内的逆关系最小对照，并比较完整时间戳答案的查询条件似然。
-3. **证据层**：paired diagnostic 证明 same-answer collapse 明显减少；timing intervention 表明固定静音布局不能完全解释增益；RelTwin 匹配对照支持 SpotSound 迁移，NOVA 三 benchmark 主表报告各实际配置的系统成绩。
-
-### 1.4 当前允许的最强结论
-
-- 主表 NOVA 系统配置：SpotSound 59.39/79.25/62.50，Clotho 86.86/93.49/90.84；相对此前主表逐项最佳的差值分别为 +1.49/+2.75/+3.00 和 +1.26/−0.11/−0.36。
-- UnAV public-100 为 73.46/89.00/80.00，相对引用值 +1.06/+1.00/+6.00；保留原论文统计表与公开数据条数不一致的协议限定，不能声称已确认同样本排名。
-- RelTwin 独立三种子均值仍为 59.16/77.17/62.08，SpotSound mIoU 相对发表主表 57.9 提高 1.26 点；该模型不是主表中的 NOVA 部署检查点。
-- 摘要和结果段直接报告 RelTwin 的 59.43 mIoU、相对匹配 SFT 的 +1.02，以及音频组 bootstrap CI `[0.23, 1.81]`。结果来自 seed 0，选取口径在设置集中交代；不反复加“最佳单 seed”标签，也不将它写成三种子均值。
-- 可以说相对本环境 official re-evaluation 的三种子均值差为 +0.75，但其 CI `[-0.24, 1.74]` 跨零。
-- 不得把“主表点估计 SOTA”扩写成“对 official 复评统计显著优于”。
+主线是“**从事件存在到查询对应窗口的选择**”。主表提供性能证据，关系诊断解释变化，时间干预检验机制。正文优先写局部真实答案如何竞争、模型响应如何改变，不以模块数量或微小边界修正作为贡献。跨骨干泛化待 TimeAudio 结果补齐后形成第三层证据。
 
 ---
 
 ## 2. P0：提交前必须解决
 
-P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节。v20 调整主线与措辞，活动问题状态保持不变。
+P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节。v23 恢复 RelTwin 单方法主线；历史修改见第 7、11 节。
 
-### P0-05 · 核心结果没有形成“失败模式 → 绑定恢复 → 公共迁移”的证据链
+### P0-05 · 核心结果的性能与机制证据链
 
-- **状态**：待终检
-- **位置**：`sections/bridge_results.tex`；`sections/results.tex`；`tables/training_results.tex`
-- **v16 进展**：结果先解释同答案 37/160 → 1/160 及其中 27 对的联合正确恢复，再给 JointPairAcc、Swap、relation mIoU 与三种子证据；公开结果另成段。原先首段数字堆叠已处理。两条大幅下降案例的错误类型尚未补核，本项继续保留。
-- **v20 呈现顺序**：按作者决定，Results 先呈现 NOVA 主表提升与 RelTwin 的公共训练对照，再进入原有绑定恢复和 timing 机制链。两条大降案例的核查事项保留。
-- **为什么重要**：本文最有区分度的证据不是单一 mIoU，而是模型从“两个逆查询返回同一答案”转向“按查询选择不同正确窗口”。数字顺序若不服务这个故事，实验容易被看成普通小幅刷榜。
-- **处理方向**：按以下阶梯叙述：
-  1. **失败模式**：SpotSound-A/SFT 是否产生 same-answer collapse；
-  2. **关系选择**：SFT 的 identical-answer 37/160 降至 RelTwin 的 1/160，JointPairAcc 提升 31.25 点；
-  3. **边界质量**：relation mIoU 提升 13.97 点，同时诚实保留案例中的边界误差；
-  4. **公开迁移**：matched seed-0 SpotSound +1.02，再报告三种子点估计 59.16；与 Table 1 的 NOVA 系统成绩分开。
-- **2026-09-15 最小润色**：按作者确认的方案，删除正文中孤立的“两条 IoU 下降至少 0.5”附加统计，完整 92/239/69 胜平负保留；机制段保留 51 对恢复与 1 对退化，删除不承担变化分析的 24 对静态余数。上述既有事实仍由本条和历史版本保存，不推测错误原因。引言将实验枚举改为发生选择恢复且在时间干预下保持优势的结论，本项进入全稿终检。
-- **验收标准**：先明确 benchmark 成绩，再回答“核心失败是否被修复”；机制段形成失败模式、绑定恢复、公共迁移的连续解释。
-- **来源映射**：C04；原审阅 #51–#64；新增包装审计第 12、16 节。
+- **状态**：待终检。
+- **位置**：摘要、Results、`sections/bridge_results.tex` 和 Table 2。
+- **当前进展**：v23 先呈现三个公开 benchmark 的单个 RelTwin 检查点成绩，再以 matched SFT → RelTwin、37/160 → 1/160 同答、+31.25 JointPairAcc 和 timing +20 解释查询选择的变化。主图恢复 v18 的构造、监督与真实案例。
+- **保留事实**：92/239/69 胜平负、51 对恢复与 1 对退化、CI 和三种子统计保留；历史记录中的两条 IoU 大降事实未改写或推测原因。
+- **验收标准**：读者能够区分“公开成绩如何”“附加监督有什么作用”“机制测试观察到什么”。TimeAudio 留空期间不写跨骨干提升结论。
+- **来源映射**：C04；原审阅 #51–#64；新增包装审计第 12、16 节。此前 v16–v22 处理保留在 Git 历史。
 
-### P0-07 · 三种比较口径必须清楚分工，避免 SOTA 主张被反驳
+### P0-07 · 公开表、匹配训练和种子统计的口径
 
-- **状态**：待终检
-- **位置**：摘要；`tables/training_results.tex`；`tables/main_results.tex`；Results 5.1/5.2
-- **当前正确口径**：
+- **状态**：待终检。
+- **位置**：摘要、Table 1/2、Experimental Setup、Results。
+- **当前口径**：
 
-| 用途 | 结果 | 可以支持的结论 |
+| 用途 | 结果 | 支持的结论 |
 |---|---|---|
-| matched seed-0：SFT → RelTwin | SpotSound 58.42 → 59.43，+1.02；CI `[0.23, 1.81]` | 候选监督在该匹配运行中的增益 |
-| RelTwin 三种子均值 vs SpotSound 论文主表最佳 | 59.16 vs 57.9，+1.26 | 引用主表口径下新的最高点估计 |
-| RelTwin 三种子均值 vs 本环境 official re-evaluation | 59.16 vs 58.42，+0.75；CI `[-0.24, 1.74]` | 正的点估计差，但该区间不排除零差异 |
-| NOVA 实际系统配置 vs 发表主表 | SpotSound 59.39、Clotho 86.86、UnAV public-100 73.46 | 系统级点估计比较；对应 Section 4.1 的部署配置，UnAV 保留样本协议限定 |
+| 主表：同一 SpotSound-A + RelTwin 检查点 | 59.43 / 86.68 / 74.03 mIoU | 三 benchmark 上直接生成的成绩 |
+| Δ vs. published SpotSound-A | +1.53 / +1.08 / +4.23 | 相对原文同一基础模型行的数值差 |
+| matched seed-0 SFT → RelTwin | 58.42 → 59.43，+1.02；CI [0.23, 1.81] | 给定 matched 检查点下额外候选监督的提升 |
+| RelTwin seeds 0/1/2 | 59.16 ± 0.26 | 三次运行的均值和样本标准差 |
+| 三种子均值 vs. official 重评 | +0.75；CI [-0.24, 1.74] | 点估计正向，区间不排除零差异 |
 
-- **v16 进展**：Table 1 仅列公开分数与三种子主结果；Table 2 以 (a)/(b)/(c) 分开基础模型、匹配训练对照和三种子汇总。设置新增比较口径段，保留 official 对照及跨零 CI；公开结果段不再以其收尾。三种口径已按本轮方案分开，待全稿统一终检。
-- **v19 进展**：恢复 NOVA 三 benchmark 系统主表；Table 2 保留当前 RelTwin 的精确模型身份。Section 4.1 区分旧训练/SetPO、SpotSound 路由与 Clotho/UnAV 官方初始预测，结果段保留后两者初始分数和边界增益。仍待作者审查系统主表与 RelTwin 主线的连接，本轮未完成同版本系统去模块实验。
-- **2026-09-15 呈现更新**：摘要直接报告 RelTwin 59.43，表内仍归属独立训练配置；NOVA 系统 59.39/86.86/73.46 未替换。Table 2(b) 删除重复 seed 标签，设置统一交代所选运行及 Table 2(c) 的独立三种子均值。没有把最大值写成均值，未据此关闭同版本归因和比较口径终检。
-- **v20 进展**：删除结果段用途对比和重复提醒，以主表成绩、RelTwin 对照、绑定分析顺序论述；Clotho/UnAV 初始分数移至 Section 4.1，训练对照明确使用 Eq. 3。所有模型身份、未完成实验记录与现有数值保持可追溯。
-- **处理方向**：
-  1. Table 1 服务 NOVA 系统配置与公开主表的点估计比较；
-  2. Table 2 服务 `backbone/paired SFT → RelTwin` 的机制与训练对照，并单列三种子汇总；
-  3. 正文一次说明 published 57.9 与本地 official 58.42 的身份不同；
-  4. 系统分数、RelTwin 三种子和 matched SFT 有各自身份，不能把旧系统结果填到 RelTwin 行；
-  5. 不把 +1.26 写成 loss 消融增益，也不写成统计显著优势。
-- **验收标准**：任意数字都能回答“与谁比、为何可比、支持什么结论”；`SOTA` 仅修饰引用主表上最高列出的点估计。
+- **v23 更新**：删除 NOVA 系统行、SpotSound-Q 和系统路由配置；改用已经完成的独立 RelTwin Clotho/UnAV 结果。Table 1 的增益以各自原文基础模型为参照，Table 2 保留原统计值。原文截图表头明确为 UnAV-100 subset；新主表和本次 100-query 评测沿用该名称，不再把该表写成 997-query 对比。
+- **选择与精度**：主表 seed 0 是五次 SpotSound 运行中选出的单点，设置集中说明；基线保持原文一位小数，新的结果用两位小数。+0.01 R1@.5 是按已公布舍入数字计算的差值。
+- **验收标准**：每个结果能追溯到检查点、样本规模、指标和参照；不把 published-score 差值当成 matched 消融，不把样本 bootstrap 当作种子不确定性。
 - **来源映射**：C05；原审阅 #9、#40–#50、#68–#73、#84–#86；新增包装审计第 18 节。
 
 ### P0-08 · 通讯邮箱与全员 ORCID 尚未完成
@@ -182,6 +158,17 @@ P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节�
 
 ---
 
+### P0-10 · TimeAudio + RelTwin 主表数据待定
+
+- **状态**：待结果确认。
+- **位置**：Table 1 的 TimeAudio + RelTwin 和 Δ 行。
+- **当前处理**：按作者要求保留三 benchmark 九个指标的空位。本轮检查已看到 TimeAudio 的阶段性结果及不止一种适配方案，尚未由作者确定用于主表的完整实验组合；不能从不同变体拼接最优数值。
+- **完成方式**：确认同一 RelTwin 方法配置、TimeAudio 基础检查点、推理协议及三个 benchmark 的完整输出，再填入主表和对应增益；若写跨骨干有效性，应同时检查匹配 SFT 对照。
+- **主线约束**：当前叙事可以说明方法用于现有生成式定位模型的微调，不把尚空缺的 TimeAudio 行写成已验证的跨骨干结果。
+- **验收标准**：九项结果有可复现来源，表内无待填占位，正文与该组实验配置一致。
+
+---
+
 ## 3. P1：显著影响成熟度和说服力
 
 ### P1-01 · Experimental Setup 应从审计记录改成科学协议说明
@@ -211,10 +198,10 @@ P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节�
 - **同日模块归属优化**：NOVA 总览内新增醒目的 `(A) RelTwin` 训练模块，以标注 `training` 的短箭头连接候选生成；下方展开区域使用同名同编号，并用标有 `RelTwin module expanded below` 的浅蓝放大连接带替换无文字虚线。总览改称 `System overview`，区分训练作用和水平推理数据流；生成器/路由的配置说明保留，具体检查点名称仍在正文设置中定义。原案例、损失、数据宏、论文主图和 `paper.pdf` 未改，预览继续待审。
 - **v22 接入**：按作者要求将该图替换为第二页 Figure 1。`figures/overview_art.tex` 为唯一图稿来源，原预览入口改为引用它；同步图注和方法中的 module A 引用。图内只压缩纵向留白、不缩放字体，所有案例端点、IoU、总损失与得分矩阵保留。彩色/灰度、单图/论文编译及字体检查已完成；本项保留全稿终检状态。
 - **处理方向**：
-  1. 上方总览明确 NOVA 内含 RelTwin 训练模块，并区分训练和推理；
-  2. module A 对齐同录音逆查询、2×2 score matrix、`Y=I_2` 和 row-wise candidate CE；
-  3. 右侧案例呈现“同答塌缩 → 查询对应窗口恢复”，保留真实端点和 IoU；
-  4. 图注和正文引用对应新布局，不再使用旧的 (a)/(b)/(c) 分图定位。
+  1. v23 恢复 v18 的 (a)/(b)/(c) 方法图：同录音逆关系、2×2 答案得分与真实恢复案例；
+  2. 训练期候选竞争使用 `Y=I_2` 和 row-wise candidate CE，推理直接生成；
+  3. 真实案例保留原端点、IoU、target outline 与 prediction fill；
+  4. 方法和图注重新使用 (a)/(b)/(c)，不保留 NOVA 系统流程。
 - **验收标准**：Figure 1 单独阅读即可理解问题、监督和一个真实恢复案例；不篡改时间戳、IoU 或残余边界误差。
 - **来源映射**：W05；原审阅 #55–#57；新增包装审计第 11 节。
 
@@ -278,14 +265,15 @@ P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节�
 
 ## 5. P3：未来增强项，当前不阻塞投稿
 
-这些项目涉及新实验或已完成实验的正式证据整合。当前不扩展实验叙事，因此统一标为 `延后`，不要在 P0/P1 中反复出现，也不要在正文中写成一长串自我否定。
+这些项目分别记录已纳入和后续可整合的证据。本轮只整理已有实验；不启动新训练。TimeAudio 当前主表占位由 P0-10 统一跟踪。
 
-### P3-01 · 第二个自然关系 benchmark
+### P3-01 · 独立 RelTwin 的跨 benchmark 推理
 
-- **状态**：延后
-- **价值**：检验 RelTwin 是否超出 SpotSound 与合成 relation development 的当前证据范围。
-- **候选**：Clotho-Moment 或其他具有自然关系、多事件和可比评测协议的数据集。
-- **触发条件**：只有下一版本明确扩展论文证据时再启动；不得把旧 Clotho 86.86 重新归于当前 RelTwin。
+- **状态**：已完成。
+- **v23 纳入**：Clotho-Moment 6,649 条和 UnAV-100 100 条完整结果，均来自 `no_exchange_seed0`，未经过 NOVA 路由或边界修正。
+- **数值**：Clotho 86.67913151236526 mIoU；UnAV 74.03427211227492 mIoU。
+- **证据身份**：公开定位评测，不能单凭 benchmark 名称将全部查询称为自然逆关系诊断。样本规模、指标和路径见 v23 记录。
+- **历史**：原 Clotho 1,000 条小测及 NOVA 86.86 配置保留于历史，不替换当前检查点结果。
 
 ### P3-02 · matched SFT/RelTwin 多种子汇总纳入论文
 
@@ -303,26 +291,26 @@ P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节�
 
 - **状态**：延后
 - **价值**：扩大外部有效性，检验固定模板、短时关系和特定 backbone 之外的表现。
-- **触发条件**：作为后续完整版本或期刊扩展，不挤占当前投稿。
-- **已有跨 benchmark 记录**：服务器 `spotsound_reltwin_polish_20260913/results/reltwin_real_bench_20260914` 留有 Clotho 前 1,000 条同批 seed-0 小测：当前 RelTwin 89.644274、匹配 SFT 89.743765（−0.099491 点）。该结果不是随机盲测或 6,649 条全量，不能用 NOVA 的 86.86 替代它。本轮未启动后续全量队列；恢复系统主表不改变这项记录。
+- **触发条件**：自然重叠和长距离关系作为后续增强；TimeAudio 跨骨干的当前占位由 P0-10 跟踪。
+- **历史小测**：服务器 `spotsound_reltwin_polish_20260913/results/reltwin_real_bench_20260914` 留有 Clotho 前 1,000 条同批 seed-0 小测：RelTwin 89.644274、匹配 SFT 89.743765（−0.099491 点）。该结果不是 6,649 条全量；v23 另行纳入已完成的独立 RelTwin 全量 86.679132，两个子集口径分别保留，不相互替代。
 
 ---
 
 ## 6. 不得因“包装”而改变的事实
 
-1. 论文总体方法名为 **NOVA**；核心训练模块 **RelTwin** 的独立匹配对照对应历史 RelTwin-Cand `no_exchange` 配置。统一命名不改变主表系统和独立训练对照的实际配置。
-2. v19 按作者决定恢复 NOVA 系统结果及必要配置说明；旧 RBEE/SetPO 扩展不是当前 `no_exchange` 检查点，不声称当前匹配对照独立验证了这些扩展。
-3. 主表包含 SpotSound、Clotho-Moment 和 UnAV public-100 系统评测；当前 RelTwin 完整公共对照仍是 SpotSound。合成 relation development 是机制诊断，不是新增自然 benchmark。
-4. SpotSound 主表比较使用论文主表最佳 57.9；本环境 official re-evaluation 58.42 是另一个比较口径，二者不能混写。
-5. RelTwin 三种子 59.16 相对 57.9 是 +1.26 的点估计提升；相对 58.42 是 +0.75，且 CI 跨零。
-6. matched seed-0 SFT 58.42 → RelTwin 59.43 的 +1.02 才是当前候选监督的直接匹配消融。
-7. 相同更新数不代表相同 FLOPs 或 wall time；该事实集中说明一次即可。
-8. relation split 与 public scores 参与过项目开发；不得写成从未接触的独立测试集。
-9. adaptation/development 来源隔离不等于审计了基础模型全部预训练数据。
-10. Figure 1 的真实时间戳、IoU、边界欠覆盖和残余失败不得为了视觉完美而修改。
-11. Clotho 按作者指定比较此前主表最佳 85.6，不拿消融中的 87.2 作为该行参照，两者身份不混淆。
-12. Clotho 86.86 和 UnAV 73.46 属于官方预测加边界修正的配置，不是当前 RelTwin 单独模型结果。边界提取用了冻结 SetPO/SpanTool 特征，但没有分离该特征来源的训练贡献。
-13. 当前稿可以声称“引用主表上最高点估计”，不能声称所有公平重评口径下均统计显著领先。
+1. 当前总体方法为 **RelTwin**，对应 `no_exchange` 候选监督配置；不包含 RBEE 的 exchange 项、SetPO、router 或 boundary refinement。
+2. RelTwin 从官方 SpotSound-A adapter 开始微调；三 benchmark 主表使用相同 seed-0 检查点。
+3. 59.43 / 86.68 / 74.03 是该检查点的直接推理结果；旧 NOVA 的 59.39 / 86.86 / 73.46 不再出现在正文主结果中。
+4. 基线来自原文 Table 3；Δ 相对同一基础模型行，SpotSound-Q 按作者要求暂不展示，不据此抹去其历史成绩。
+5. 主表单点、三个种子均值、matched SFT、official 重评是不同统计身份；seed 0 的选择口径集中说明。
+6. matched seed-0 的 +1.02、关系 +31.25 和 timing +20 保持原样；CI 为给定检查点的样本不确定性。
+7. 相同更新数不代表相同 FLOPs 或 wall time，设置保留候选计算说明。
+8. relation development 和 public scores 参与过项目开发，不写成从未查看的独立盲测。
+9. adaptation/development 来源隔离不等于审计了基础模型所有预训练数据。
+10. Figure 1 的真实端点、IoU 和覆盖不足不能为叙事改动。
+11. UnAV 当前评测为公开 100-query/77-audio 子集；该原文主表同样标注 UnAV-100 subset。区间按时长裁剪后 mIoU 为 74.034272，未裁剪推理摘要为 73.957494。
+12. TimeAudio 和 TEMPO 是不同骨干；TimeAudio 不同微调变体也不能拼成一行。待填项确认前不宣称跨骨干增益。
+13. 当前完整五种子 matched 记录可用于后续汇总；本稿 Table 2 暂保留既有三种子统计，不用五种子平均数替换某一列却保留三种子标签。
 
 ---
 
@@ -333,7 +321,7 @@ P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节�
 | ID | 状态 | 已完成内容 | 验证依据 |
 |---|---|---|---|
 | D01 | 已完成 | 补齐 LoRA rank 8、alpha 16、dropout 0.1、每步样本组成、梯度累积含义与解码配置 | `sections/experiments.tex`；v12 `paper.pdf` |
-| D02 | 已完成 | 论文聚焦 RelTwin，删除 RBEE、SetPO、旧路由/边界系统与无关 Clotho/UnAV 支线 | 当前 LaTeX 与两张主表 |
+| D02 | 已完成 | v23 聚焦 RelTwin，移出 RBEE/SetPO/路由/边界系统；Clotho/UnAV 仅纳入当前 RelTwin 的独立结果 | 当前 LaTeX 与两张主表 |
 | D03 | 已完成 | Figure 1 删除底部 inference pipeline 和整体 160 统计，panel (c) 改为 SFT/RelTwin 查询—窗口对照 | `figures/reltwin_overview.tex` 与当前 PDF |
 | D04 | 已完成 | Figure 1 改为浅暖底与局部功能色，英文、公式、符号统一深色，减少大面积灰底 | 当前 Figure 1 与 PDF |
 | D05 | 已完成 | 当前 PDF 可独立编译为 5 页 US Letter，无未解析引用和 overfull box | v12 构建记录；终稿后仍需重跑 P2-03 |
@@ -551,6 +539,20 @@ D01 的配置事实：
 
 ---
 
+### v23 · 基于 v18 的 RelTwin 单方法与三 benchmark 主表（2026-09-16）
+
+- **基础与协作**：从最新 `paper@bf5d5ea` 开始，核对 v18 `094566e` 的全部科学正文与方法图；以现有历史正常编辑，保留 `08ba93b` 作者顺序和最新通讯信息，没有回滚提交或覆盖协作者变更。
+- **变更**：恢复 RelTwin 标题、v18 方法定义、Related Work 和三分方法图；摘要、引言、设置、结果与结论同步为附加微调主线。移出 NOVA 系统配置和结果，保留独立 RelTwin 的既有机制与统计证据。声明的数据集列表与当前稿对齐，17 条相关参考文献仍在引用。
+- **主表**：SpotSound / Clotho / UnAV-100 各三列，按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距分隔。删除 SpotSound-Q；两个基础模型及 +RelTwin 行相邻，各有 Δ 行。TimeAudio 数值按作者要求留空；增益按对应原文基础模型计算。
+- **当前结果**：SpotSound-A + RelTwin 三 benchmark 的九项值分别为 78.00/62.00/59.43、93.61/91.01/86.68、89.00/79.00/74.03。差值分别为 +1.50/+2.50/+1.53、+0.21/+0.01/+1.08、+3.00/+5.00/+4.23。Table 2 及既有 CI、胜平负、timing 数值保持不变。
+- **原始记录**：服务器项目根目录 `/root/autodl-tmp/SpotSound-ICASSP`。SpotSound：`outputs/reltwin_review_controls_20260912/no_exchange_seed0/public_summary.json`；Clotho：`outputs/reltwin_crossbench_direct_20260915/clotho_full6649/metrics.json`；UnAV：`outputs/reltwin_crossbench_direct_20260915/unav100/metrics.json`。后两者读取 `spotsound_protocol`，不是其他 F1 字段。
+- **配置来源**：`scripts/run_reltwin_review_controls.py` 的 `no_exchange_seed0` 从 `models/SpotSound` 初始化，256 步、5e-6、exchange_weight=0；推理摘要统一引用同一 adapter。此前已核对 Clotho/UnAV 完整行数、唯一索引、输入一致性并复算指标。
+- **未舍入 mIoU**：SpotSound 59.43287334410579；Clotho 86.67913151236526；UnAV 74.03427211227492。UnAV 未裁剪摘要的 73.95749423767893 不用于这张表。
+- **故事审查**：创新位于“同录音局部真实答案之间的查询条件竞争”；不把标准 CE 当作新公式。主表展示能力，matched 对照解释附加监督，逆关系和 timing 解释机制。TimeAudio 数值未定前不写成已证明跨骨干泛化。
+- **构建验证**：逐项核对九个原文基线的 81 个数值、RelTwin 的九个新指标及全部增益，TimeAudio 两行均保留九个待填项。编译为 5 页 US Letter，主图第 2 页、主表第 3 页、机制表和结论第 4 页；第 5 页仅声明和 17 条参考文献。五页已逐页渲染检查，所有字体嵌入，无 Type 3、overfull 或未解析引用。作者、Table 2、Figure 1 数据宏与修改前逐字一致；主图仅恢复 v18 布局和标签。独立图 PDF/PNG 同步更新，未改变正文字号、页边距或会议样式。
+
+---
+
 ## 8. 原 96 条审阅意见到当前问题的追溯
 
 原意见已在 Git 历史中完整保存。这里仅保留到当前稳定 ID 的映射，避免同一问题在正文重复维护。
@@ -573,17 +575,13 @@ D01 的配置事实：
 
 ## 9. 推荐修改顺序
 
-按依赖顺序执行，避免先润色后重写造成返工：
-
-1. **P0-01 至 P0-04 已完成**：标题、摘要与贡献主线已统一；相关工作已独立成章，方法动机、对象、损失和指标已核对执行代码并补齐；
-2. **保持已完成项一致性**：后续改动不得改变候选身份、数据作用、损失含义或成对指标统计口径；
-3. **P0-05 + P0-07**：重排结果证据链和三种比较口径；
-4. **P0-06 已完成**：设置和正文已清理内部审计语言；P1-01 待全稿协议与表注衔接终检，P1-02 的机制表分组已完成；
-5. **P1-03、P1-04**：图注与 timing 待终检；P1-05 的公开结果重点、P1-06 的机制讨论和 P1-07 的结论已完成；
-6. **P1-08 + P2-01 + P2-02**：统一语言、图表和分页；
-7. **P0-08 + P0-09 + P2-03**：作者信息、声明、最终 PDF 和门户提交检查。
-
-P0-08 不依赖正文改写，作者应立即并行提供邮箱和 ORCID。
+1. **P0-08**：作者补齐通讯邮箱与 ORCID；无需 GPU。
+2. **P0-10**：确认 TimeAudio 三 benchmark 的同一配置后填写主表；无需为排版而重启实验。
+3. **P3-02**：优先整合已经完成的五种子 matched SFT/RelTwin 汇总，增强单点之外的稳定性证据；先核对记录，不新增大训练。
+4. **P0-05/P0-07**：全文终检公开成绩、matched 增益、机制诊断和 checkpoint selection 的对应关系。
+5. **P1-01/P1-03/P1-04**：设置、主图和 timing 的术语与证据范围统一。
+6. **P1-08/P2**：表格数值定稿后再做最终分页、语言、引用与 PDF QA。
+7. **P0-09**：作者完成提交信息与门户检查。
 
 ---
 
@@ -595,9 +593,9 @@ P0-08 不依赖正文改写，作者应立即并行提供邮箱和 ORCID。
 2. Reviewer 不会把方法简化成“多加一个 CE”，因为正文明确解释 SFT 缺失的相对偏好约束。
 3. Related Work 准确区分时间表示、组合/顺序对比、hard-negative 监督与 RelTwin 的同录音答案竞争。
 4. 方法节独立定义录音、窗口、答案序列、三个损失、2×2 标签和三个 paired metrics。
-5. 结果先呈现 NOVA 主表成绩，再通过 same-answer collapse、JointPairAcc 与 timing 解释 RelTwin 的 query-specific selection。
+5. 结果先呈现 RelTwin 主表成绩，再通过 matched SFT、same-answer collapse、JointPairAcc 与 timing 解释 query-specific selection。
 6. Table 2 一眼区分 backbone reference、matched SFT/RelTwin 和三种子摘要。
-7. Table 1 的 NOVA 系统结果、Table 2 的 RelTwin 对照身份清楚；UnAV 协议限定保留，不误称 official 对照统计显著。
+7. Table 1 的单 checkpoint 公开结果、各基础模型原文差值、Table 2 的匹配与种子统计身份清楚；TimeAudio 不留待填项。
 8. 全文不再出现无必要的 `Current`、`re-eval.`、`cached`、hash、内部样本 ID 和 QA 清单。
 9. 必要限制只集中出现一次，不把 P3 未来实验写成拒稿理由列表。
 10. 结论落在“事件存在不等于关系绑定；局部真实答案仍需查询条件选择”。
@@ -636,7 +634,9 @@ P0-08 不依赖正文改写，作者应立即并行提供邮箱和 ORCID。
 | 2026-09-15 | NOVA 叙事草稿，作者顺序更新 | `authors.tex` 将 Yuehan Zhang 调整至 Zhicheng Tang 前，邮箱顺序同步；重新编译五页 PDF，正文、主图、表格和实验结果不变 |
 | 2026-09-15 | v22，新主图接入 | 先快进合并 `137c6ad` 和 `08ba93b`，保留最新润色、作者顺序及全部实验设置和结果。新图替换 Figure 1，统一论文/预览图稿来源，更新图注与 module A 引用；精简图表注及方法重复说明以适配四页正文。三处显示公式、全部表格数据、案例宏、统计口径和声明未改，无新实验；五页 PDF 及独立图已重编译并检查 |
 
-- 当前 PDF SHA-256：`0d4f12c97f89a242cc354ec5e366f7779757a9beddfc673973e4b88c42517302`
+| 2026-09-16 | v23，基于 v18 的 RelTwin 三 benchmark 草稿 | 恢复单方法标题/主图/主线，接入 59.43/86.68/74.03 及基础模型增益；TimeAudio 留空。保留作者和既有统计，未运行新模型实验 |
+
+- 当前 PDF SHA-256：`3a9d02e91ca52d3144f017e4fbc9f0e5af42d2a54108e8fa5b754bfad907f4d9`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`
 - 原交付审计提交：`a190b11`
 - 原开发分支：`codex/reltwin-core-only-20260913`

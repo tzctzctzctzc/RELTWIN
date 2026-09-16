@@ -1,212 +1,165 @@
-% Figure 1: approved NOVA / RelTwin overview, promoted on 2026-09-15.
-% Canonical editable source shared by the paper and standalone preview.
-% Compress vertical coordinates only; retain all text at 9--10.5 pt.
-% Palette unchanged from the accepted user-reference-inspired design.
-% Top lane: NOVA system, with RelTwin explicitly inside candidate learning.
-% Horizontal inference flow remains strictly left to right. Lower lane: examples,
-% shared model, and answer competition, also left to right. The right inset is
-% an observed example, not an extra computational stage.
-% Horizontal arrows: data flow. The short, labeled vertical arrow denotes
-% generator training. A labeled zoom band links module A to its expansion;
-% it is not a computational connection. No arrows enter the example inset.
-% Audio construction and system output are schematic. Measured intervals/IoUs
-% reuse the unchanged figures/overview_data.tex macros.
-\begingroup
-\sffamily
-\sansmath
+% Native TikZ, authored at the final 17.4 cm two-column width.
+% Style references (layout only, no borrowed scientific artwork):
+% - Sound-VECaps, ICASSP 2025, Fig. 1: white background, short connectors,
+%   pale functional blocks, no panel cards. DOI: 10.1109/ICASSP49660.2025.10889473
+% - Counterfactual Audio, ICASSP 2024, Fig. 2: compact training flow,
+%   meaningful dashed groups, labels below the subfigures. arXiv:2401.04935
+% - Text-to-Audio Grounding, ICASSP 2021, Fig. 2: aligned inputs/model/output,
+%   consistent query/interval color correspondence. arXiv:2102.11474
+% Synthesized contract: 9 pt Times body, 10 pt panel labels, 0.65 pt lines,
+% sharp rectangles, 0.3--0.5 cm functional gaps, no gradients/shadows/icons.
+% Current palette: annotated swatches in the user-supplied SplineGS reference
+% image (2026-09-14): BFDCE7/DFEDF2 cyan, CAC2D7/DDD6E5 lavender,
+% D9E4C2 sage, F5D8BF/F9ECE0 apricot. Style reference only.
+% Warm near-neutral canvas supports local functional regions instead of three
+% full-height color slabs. Cyan identifies audio/model context, lavender groups
+% candidate supervision, and apricot highlights the correct candidate cells.
+% Sage/lavender link query strips to windows; deeper companion window fills
+% remain distinct from the canvas. All text and math use rtInk.
+% Both models in (c) share the same header style and canvas; outline vs fill
+% encodes target vs prediction independently of color.
+% Four excerpt blocks = A,B,B,A; four cells = query/answer likelihoods;
+% solid arrows = data flow; dashed enclosure = training-only computation.
+% Panel (a) is schematic; panel (c) uses unchanged measured interval macros.
 \input{figures/overview_data}
-\definecolor{nvInk}{HTML}{20232A}
-\definecolor{nvBlue}{HTML}{174C9B}
-\definecolor{nvBlueLine}{HTML}{3973BE}
-\definecolor{nvBluePale}{HTML}{ECF3FD}
-\definecolor{nvBlueBar}{HTML}{72A0DF}
-\definecolor{nvOrange}{HTML}{D46D3D}
-\definecolor{nvOrangePale}{HTML}{FFF1E7}
-\definecolor{nvOrangeBar}{HTML}{F2B18E}
-\definecolor{nvGreen}{HTML}{488C40}
-\definecolor{nvGreenPale}{HTML}{EAF4E2}
-\definecolor{nvGreenMid}{HTML}{B5D49B}
-\definecolor{nvGray}{HTML}{8D97A5}
-\definecolor{nvGrayPale}{HTML}{F6F7F9}
-\definecolor{nvGrayBar}{HTML}{C9CFD8}
-\definecolor{nvRule}{HTML}{C8CDD5}
-\begin{tikzpicture}[x=1cm,y=.8cm,
- every node/.style={font=\sffamily\fontsize{9}{10.5}\selectfont,text=nvInk,inner sep=1.2pt},
- sectiontitle/.style={font=\sffamily\fontsize{10.5}{12}\selectfont\bfseries,text=white},
- stage/.style={font=\sffamily\fontsize{9.5}{11}\selectfont\bfseries},
- flow/.style={-{Latex[length=1.65mm]},line width=.9pt,draw=nvBlue},
- frame/.style={rounded corners=4pt,draw=nvBlueLine,line width=.65pt,fill=white},
- inner/.style={rounded corners=3pt,line width=.55pt}]
-\path[use as bounding box] (0,.15) rectangle (17.4,9.92);
-\path[fill=white] (0,.15) rectangle (17.4,9.92);
-
-% A. One continuous inference lane, with a common centerline.
-\draw[frame] (.15,6.54) rectangle (17.25,9.63);
-\draw[inner,draw=nvBlue,fill=nvBlue] (.45,9.36) rectangle (6.32,9.90);
-\node[sectiontitle] at (3.385,9.63) {NOVA | System overview};
-
-\node[stage] at (1.39,8.15) {Audio + query};
-\draw[nvRule,line width=.5pt] (.39,7.72)--(2.40,7.72);
-\foreach \xx/\hh in {.46/.05,.59/.13,.72/.22,.85/.10,.98/.18,1.11/.25,1.24/.14,1.37/.07,1.50/.16,1.63/.21,1.76/.13,1.89/.06,2.02/.12,2.15/.04,2.28/.07}{
- \draw[nvBlueLine,line width=.85pt] (\xx,{7.72-\hh})--(\xx,{7.72+\hh});
-}
-\node at (1.39,7.19) {dog $\to$ rooster};
-
-\draw[inner,draw=nvBlueLine,fill=nvBluePale!35] (2.85,7.04) rectangle (6.45,9.20);
-% RelTwin is a training component, not an inference-time scoring operation.
-% Generator variants (including SetPO continuation and reference models) are
-% defined by the manuscript's system configurations, not renamed in this view.
-\draw[inner,draw=nvBlue,fill=nvBlue] (3.26,8.65) rectangle (6.04,9.08);
-\node[stage,text=white] at (4.65,8.865) {(A) RelTwin};
-\draw[flow] (4.65,8.64)--(4.65,8.35);
-\node[anchor=west,text=nvBlue] at (4.91,8.49) {training};
-\node[stage] at (4.65,8.16) {Generate candidates};
-\node at (4.65,7.72) {Model predictions};
-\foreach \yy/\xa/\xb in {7.42/3.31/4.22,7.20/4.47/5.99}{
- \draw[nvBlueLine!25,line width=.45pt] (3.29,\yy)--(6.01,\yy);
- \draw[nvBlueLine,fill=nvBlueBar,line width=.55pt] (\xa,{\yy-.055}) rectangle (\xb,{\yy+.055});
+\definecolor{rtPlusFill}{HTML}{D9E4C2}
+\definecolor{rtMinusFill}{HTML}{CAC2D7}
+\definecolor{rtAccentFill}{HTML}{F5D8BF}
+\definecolor{rtPlus}{HTML}{5D7947}
+\definecolor{rtMinus}{HTML}{726082}
+\definecolor{rtAccent}{HTML}{A67F5D}
+\definecolor{rtCyanFill}{HTML}{BFDCE7}
+\definecolor{rtCyanBg}{HTML}{DFEDF2}
+\definecolor{rtCyan}{HTML}{658C99}
+\definecolor{rtPlusBar}{HTML}{A8BF8C}
+\definecolor{rtMinusBar}{HTML}{B5A3C9}
+\definecolor{rtInk}{HTML}{242424}
+\definecolor{rtLavenderBg}{HTML}{DDD6E5}
+\definecolor{rtCanvasBg}{HTML}{FBF8F3}
+\colorlet{rtSupervisionBg}{rtLavenderBg!55}
+\begin{tikzpicture}[x=1cm,y=1cm,
+ every node/.style={font=\fontsize{9}{10.4}\selectfont,text=rtInk,inner sep=1.5pt},
+ flow/.style={-{Latex[length=1.5mm]},line width=.65pt,draw=rtInk},
+ title/.style={font=\fontsize{10}{11.4}\selectfont\bfseries},
+ note/.style={font=\fontsize{9}{10.4}\selectfont,text=rtInk},
+ module/.style={draw=rtCyan,fill=rtCyanFill,line width=.65pt}]
+\path[use as bounding box] (0,.93) rectangle (17.4,6.22);
+% Color areas follow data/model/competition roles, rather than filling A/B/C.
+\path[fill=rtCanvasBg] (0,1.50) rectangle (17.4,6.22);
+\path[fill=rtCyanBg!72] (.04,4.90) rectangle (4.65,6.16);
+\path[fill=rtSupervisionBg] (5.59,2.55) rectangle (10.80,4.77);
+\path[fill=rtMinusFill] (5.59,4.37) rectangle (10.80,4.77);
+% Matched model headers organize (c) without tinting its entire plotting area.
+\foreach \xlo/\xhi in {12.20/14.64,14.91/17.35}{
+ \path[fill=rtCyanBg] (\xlo,5.39) rectangle (\xhi,5.82);
 }
 
-\draw[inner,draw=nvGreen,fill=nvGreenPale!35] (6.90,7.04) rectangle (10.30,8.42);
-\node[stage] at (8.60,8.16) {Verify evidence*};
-\node at (8.60,7.72) {Keep / Drop scores};
-\draw[nvGreen!30,line width=.45pt] (7.28,7.39)--(9.93,7.39);
-\draw[nvGreen,fill=nvGreenMid,line width=.55pt] (8.07,7.32) rectangle (9.00,7.46);
-\draw[nvGreen!30,line width=.45pt] (7.28,7.20)--(9.93,7.20);
-\draw[nvGreen,fill=nvGreenPale,line width=.55pt] (7.28,7.13) rectangle (8.07,7.27);
-\draw[nvGreen,fill=nvGreenPale,line width=.55pt] (9.00,7.13) rectangle (9.93,7.27);
-\draw[nvGreen,dash pattern=on 1pt off 1pt,line width=.5pt] (8.07,7.13) rectangle (9.00,7.27);
-
-\draw[inner,draw=nvOrange,fill=nvOrangePale!35] (10.85,7.04) rectangle (14.25,8.42);
-\node[stage] at (12.55,8.16) {Refine boundaries};
-\node at (12.55,7.72) {Radius + DP + gate};
-\draw[nvOrange!30,line width=.45pt] (11.22,7.32)--(13.92,7.32);
-\draw[nvOrange,fill=nvOrangeBar,line width=.6pt] (11.75,7.25) rectangle (13.49,7.39);
-\draw[nvOrange,dash pattern=on 2pt off 1pt,line width=.65pt] (11.95,7.17) rectangle (13.29,7.47);
-
-\node[stage] at (16.06,8.15) {Intervals};
-\draw[flow,line width=.6pt] (15.07,7.70)--(17.06,7.70);
-\draw[nvBlue,fill=nvBlueBar,line width=.65pt] (15.41,7.60) rectangle (16.70,7.80);
-\node at (16.06,7.21) {Query-aligned};
-\foreach \xa/\xb in {2.41/2.84,6.46/6.89,10.31/10.84,14.26/14.87}{
- \draw[flow] (\xa,7.70)--(\xb,7.70);
+% (a) Repeated A/B excerpts use consistent cyan/apricot fills. Sage/lavender
+% identifies each inverse query and its answer window.
+\node[anchor=west] at (.06,6.00) {One recording $x$};
+\node[note,anchor=west] at (.06,5.65) {$A$ = dog, $B$ = rooster};
+\draw[rtCyan!45,line width=.6pt] (.13,5.16)--(4.63,5.16);
+\foreach \xa/\xb/\event/\eventfill/\eventstroke in {
+ .2/1.0/A/rtCyanFill/rtCyan,1.13/1.93/B/rtAccentFill/rtAccent,
+ 2.78/3.58/B/rtAccentFill/rtAccent,3.71/4.51/A/rtCyanFill/rtCyan}{
+ \draw[draw=\eventstroke,fill=\eventfill,line width=.65pt] (\xa,4.98) rectangle (\xb,5.36);
+ \node at ({(\xa+\xb)/2},5.17) {$\event$};
 }
-\node[anchor=east] at (17.00,6.77) {*Generators and routing vary by configuration.};
+\draw[flow] (.13,4.74)--(4.63,4.74);
+\node[note,fill=rtCanvasBg] at (2.35,4.75) {$t$};
+\draw[rtPlus,line width=.9pt] (.2,4.54)--(.2,4.40)--(1.93,4.40)--(1.93,4.54);
+\draw[rtMinus,line width=.9pt] (2.78,4.54)--(2.78,4.40)--(4.51,4.40)--(4.51,4.54);
+\node at (1.065,4.15) {$W_+: A\rightarrow B$};
+\node at (3.645,4.15) {$W_-: B\rightarrow A$};
 
-% An explicitly labeled zoom band connects the system component to its
-% expanded view. Matching (A) tags preserve identity across the two scales.
-\path[draw=nvBlueLine!50,fill=nvBluePale!70,line width=.55pt]
- (2.86,7.01)--(6.44,7.01)--(11.35,6.14)--(.45,6.14)--cycle;
-\node[text=nvBlue] at (5.87,6.42) {RelTwin module expanded below};
+% Query strips are data, not model blocks. Colored rules identify the pair.
+\path[fill=rtPlusFill] (.10,3.31) rectangle (4.62,3.81);
+\draw[rtPlus,line width=1.3pt] (.10,3.31)--(.10,3.81);
+\node[anchor=west] at (.24,3.56) {$q_+$: dog followed by rooster};
+\path[fill=rtMinusFill] (.10,2.63) rectangle (4.62,3.13);
+\draw[rtMinus,line width=1.3pt] (.10,2.63)--(.10,3.13);
+\node[anchor=west] at (.24,2.88) {$q_-$: rooster followed by dog};
+\node[align=center] at (2.36,2.12) {Both relations hold in $x$;\\each query has a different target.};
 
-% B. The training detail has its own left-to-right order. Labels are outside
-% computation, not extra boxes on the data path.
-\draw[frame] (.15,.20) rectangle (11.64,5.92);
-\draw[inner,draw=nvBlue,fill=nvBlue] (.45,5.65) rectangle (6.73,6.16);
-\node[sectiontitle] at (3.59,5.90) {(A) RelTwin | Module detail};
-\node[stage] at (2.10,5.37) {Paired examples};
-\node[stage] at (5.87,5.37) {Likelihood scoring};
-\node[stage] at (9.62,5.37) {Answer competition};
+% (b) Shared model, conditioned on the full recording and each inverse query.
+% Each of the four cells is one timestamp-answer mean log-likelihood.
+\draw[draw=rtMinus!70,dash pattern=on 3pt off 2pt,line width=.75pt]
+ (5.34,1.50) rectangle (11.05,6.00);
+\node[fill=rtCanvasBg] at (8.195,6.00) {Training only};
+\draw[module] (5.71,5.02) rectangle (10.68,5.75);
+\node[align=center] at (8.195,5.385) {Audio-language model\\Frozen backbone + trainable LoRA};
+% Explicit fan-in: recording and both query strips enter the same model.
+\draw[rtInk,line width=.65pt] (4.63,5.16)--(4.95,5.16);
+\draw[rtInk,line width=.65pt] (4.62,3.56)--(4.95,3.56);
+\draw[rtInk,line width=.65pt] (4.62,2.88)--(4.95,2.88)--(4.95,5.38);
+\fill[rtInk] (4.95,3.56) circle (.8pt);
+\fill[rtInk] (4.95,5.16) circle (.8pt);
+\draw[flow] (4.95,5.38)--(5.71,5.38);
+\node[anchor=east] at (5.28,5.68) {$x,q_{\pm}$};
+\draw[flow] (8.195,5.01)--(8.195,4.76);
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (8.195,4.56) {RelTwin candidate supervision};
+\node at (7.74,4.18) {$y(W_+)$};
+\node at (9.32,4.18) {$y(W_-)$};
+\node at (6.48,3.78) {$q_+$};
+\node at (6.48,3.23) {$q_-$};
+\path[fill=rtAccentFill] (6.95,3.505) rectangle (8.53,4.055);
+\path[fill=rtAccentFill] (8.53,2.955) rectangle (10.11,3.505);
+\draw[rtMinus!75,line width=.65pt] (6.95,2.955) rectangle (10.11,4.055);
+\draw[rtMinus!65,line width=.5pt] (8.53,2.955)--(8.53,4.055);
+\draw[rtMinus!65,line width=.5pt] (6.95,3.505)--(10.11,3.505);
+\node at (7.74,3.78) {$s_{++}\ \uparrow$};
+\node at (9.32,3.78) {$s_{+-}\ \downarrow$};
+\node at (7.74,3.23) {$s_{-+}\ \downarrow$};
+\node at (9.32,3.23) {$s_{--}\ \uparrow$};
+\node[note] at (8.195,2.71) {$s$: mean token log-likelihood};
+\draw[flow] (8.195,2.52)--(8.195,2.32);
+\node at (8.195,2.14) {Row-wise cross-entropy: $\mathcal L_{\rm cand}$};
+\node at (8.195,1.74) {$\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$};
 
-% Paired windows, compact natural-language query descriptions, fixed colors.
-\node at (2.10,4.98) {$A$: dog \qquad $B$: rooster};
-\foreach \xa/\xb/\event/\stroke/\shade in {
- .49/1.09/A/nvBlueLine/nvBluePale,1.19/1.79/B/nvOrange/nvOrangePale,
- 2.40/3.00/B/nvOrange/nvOrangePale,3.10/3.70/A/nvBlueLine/nvBluePale}{
- \draw[inner,draw=\stroke,fill=\shade] (\xa,4.26) rectangle (\xb,4.74);
- \node at ({(\xa+\xb)/2},4.50) {$\event$};
+% (c) The same cached example as a compact comparison matrix.
+% Columns are models, rows are inverse queries. Each cell overlays the target
+% outline and prediction fill on an identical 0--27 s axis.
+\node[note] at (14.50,6.00) {Same recording, inverse queries};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (13.42,5.59) {SFT};
+\node[font=\fontsize{9}{10.4}\selectfont\bfseries] at (16.13,5.59) {RelTwin};
+\foreach \xbase in {12.32,15.03}{
+ \draw[rtInk,line width=.55pt] (\xbase,5.08)--({\xbase+2.20},5.08);
+ \foreach \sec/\lab in {0/0,10/10,20/20,27/{27 s}}{
+  \pgfmathsetmacro{\xx}{\xbase+2.20*\sec/27}
+  \draw[rtInk,line width=.55pt] (\xx,5.04)--(\xx,5.12);
+  \node[note,anchor=south] at (\xx,5.12) {\lab};
+ }
 }
-\draw[nvGray,line width=.5pt] (.43,4.21)--(3.77,4.21);
-\draw[nvBlueLine,line width=.85pt] (.49,4.10)--(.49,3.99)--(1.79,3.99)--(1.79,4.10);
-\draw[nvOrange,line width=.85pt] (2.40,4.10)--(2.40,3.99)--(3.70,3.99)--(3.70,4.10);
-\node at (1.14,3.75) {$W_+: A\rightarrow B$};
-\node at (3.05,3.75) {$W_-: B\rightarrow A$};
-\draw[inner,draw=nvBlueLine!60,fill=nvBluePale] (.44,3.09) rectangle (3.77,3.53);
-\draw[inner,draw=nvOrange!60,fill=nvOrangePale] (.44,2.51) rectangle (3.77,2.95);
-\node at (2.105,3.31) {$q_+$: $A$ followed by $B$};
-\node at (2.105,2.73) {$q_-$: $B$ followed by $A$};
-\node[align=center] at (2.105,2.09) {Same audio,\\different correct windows.};
-
-% Shared model: one compact model block, consistent font and baseline.
-\draw[inner,draw=nvBlueLine,fill=white] (4.33,3.17) rectangle (7.32,4.78);
-\node[stage] at (5.825,4.53) {Shared model};
-\draw[inner,draw=nvRule,fill=nvGrayPale] (4.50,3.89) rectangle (7.16,4.31);
-\draw[inner,draw=nvGreen!65,fill=nvGreenPale] (4.50,3.35) rectangle (7.16,3.77);
-\node at (5.83,4.10) {Frozen backbone};
-\node at (5.83,3.56) {Trainable LoRA};
-% A single forward arrow between each training stage. No lateral return buses.
-\draw[flow] (3.80,3.94)--(4.32,3.94);
-\draw[flow] (7.33,3.94)--(7.78,3.94);
-
-% Query-conditioned likelihood matrix. Formula size matches body labels.
-\draw[inner,draw=nvBlueLine!55,fill=nvBluePale] (8.43,4.29) rectangle (9.81,4.72);
-\draw[inner,draw=nvOrange!55,fill=nvOrangePale] (9.97,4.29) rectangle (11.35,4.72);
-\node at (9.12,4.505) {$y(W_+)$};
-\node at (10.66,4.505) {$y(W_-)$};
-\draw[inner,draw=nvBlueLine!55,fill=nvBluePale] (7.85,3.66) rectangle (8.29,4.08);
-\draw[inner,draw=nvOrange!55,fill=nvOrangePale] (7.85,2.97) rectangle (8.29,3.39);
-\node at (8.07,3.87) {$q_+$};
-\node at (8.07,3.18) {$q_-$};
-\path[fill=nvOrangePale!65] (8.43,2.82) rectangle (11.35,4.20);
-\path[fill=nvGreenMid!80] (8.43,3.51) rectangle (9.89,4.20);
-\path[fill=nvGreenMid!80] (9.89,2.82) rectangle (11.35,3.51);
-\draw[nvBlueLine,line width=.7pt] (8.43,2.82) rectangle (11.35,4.20);
-\draw[nvBlueLine!55,line width=.5pt] (9.89,2.82)--(9.89,4.20);
-\draw[nvBlueLine!55,line width=.5pt] (8.43,3.51)--(11.35,3.51);
-\node at (9.16,3.855) {$s_{++}\uparrow$};
-\node at (10.62,3.855) {$s_{+-}\downarrow$};
-\node at (9.16,3.165) {$s_{-+}\downarrow$};
-\node at (10.62,3.165) {$s_{--}\uparrow$};
-\node[align=center] at (9.75,2.26) {$s$: mean token\\log-likelihood};
-
-% An objective footer, not an additional inference stage. The duplicate
-% standalone candidate formula/cards have been removed; Eq. 2 is in the paper.
-\draw[inner,draw=nvBlueLine!40,fill=nvBluePale!35] (.43,.51) rectangle (11.35,1.67);
-\node[stage,anchor=west] at (.67,1.39) {Training objective};
-\node[anchor=west] at (.67,.94) {$\mathcal L=\mathcal L_{\rm seq}+\lambda\mathcal L_{\rm cand}+\beta\mathcal L_{\rm replay}$};
-\node[anchor=west] at (6.95,1.38) {$\mathcal L_{\rm cand}$: row-wise cross-entropy};
-\node[anchor=west] at (6.95,.94) {Matched $\uparrow$ \quad Swapped $\downarrow$};
-
-% C. Independent observed example. It is visibly outside the computational
-% lane and has no incoming/outgoing pipeline arrows.
-\draw[frame,draw=nvRule] (12.03,.20) rectangle (17.25,5.92);
-\draw[inner,draw=nvBlueLine,fill=white] (12.39,5.72) rectangle (16.93,6.14);
-\node[stage] at (14.66,5.93) {Localization example};
-\node at (14.65,5.34) {Same audio; inverse queries};
-\draw[inner,draw=nvBlueLine!45,fill=nvBluePale] (12.26,4.59) rectangle (17.02,5.02);
-\node[anchor=west] at (12.40,4.805) {$q_+: A\rightarrow B$};
-\node[anchor=east] at (16.91,4.805) {IoU};
-\draw[inner,draw=nvOrange!45,fill=nvOrangePale] (12.26,2.58) rectangle (17.02,3.01);
-\node[anchor=west] at (12.40,2.795) {$q_-: B\rightarrow A$};
-\node[anchor=east] at (16.91,2.795) {IoU};
-\foreach \yy/\start/\stop/\stroke in {
- 4.22/\FigGTPlusStart/\FigGTPlusEnd/nvBlueLine,
- 2.21/\FigGTMinusStart/\FigGTMinusEnd/nvOrange}{
- \node[anchor=west] at (12.25,\yy) {Target};
- \draw[nvRule,line width=.4pt] (13.73,\yy)--(16.29,\yy);
- \pgfmathsetmacro{\xa}{13.73+2.56*\start/27}
- \pgfmathsetmacro{\xb}{13.73+2.56*\stop/27}
- \draw[\stroke,fill=white,line width=.75pt] (\xa,{\yy-.08}) rectangle (\xb,{\yy+.08});
- \node[anchor=east] at (16.91,\yy) {--};
+\node[anchor=east] at (12.08,4.28) {$q_+$};
+\node[anchor=east] at (12.08,2.92) {$q_-$};
+% Darker bars separate the predictions from the shared warm canvas.
+\foreach \xbase/\ystart/\ystop/\pstart/\pstop/\yy/\barstroke/\barfill in {
+ 12.32/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/4.28/rtPlus/rtPlusBar,
+ 15.03/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/4.28/rtPlus/rtPlusBar,
+ 12.32/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/2.92/rtMinus/rtMinusBar,
+ 15.03/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/2.92/rtMinus/rtMinusBar}{
+ \draw[\barstroke!25,line width=.45pt] (\xbase,\yy)--({\xbase+2.20},\yy);
+ \pgfmathsetmacro{\predstart}{\xbase+2.20*\pstart/27}
+ \pgfmathsetmacro{\predstop}{\xbase+2.20*\pstop/27}
+ \draw[draw=\barstroke,fill=\barfill,line width=.55pt]
+  (\predstart,\yy-.09) rectangle (\predstop,\yy+.09);
+ \pgfmathsetmacro{\targetstart}{\xbase+2.20*\ystart/27}
+ \pgfmathsetmacro{\targetstop}{\xbase+2.20*\ystop/27}
+ \draw[draw=\barstroke,fill=none,line width=.9pt]
+  (\targetstart,\yy-.145) rectangle (\targetstop,\yy+.145);
 }
-\foreach \yy/\start/\stop/\stroke/\shade/\model/\score in {
- 3.78/\FigSFTPlusStart/\FigSFTPlusEnd/nvGray/nvGrayBar/SFT/\FigSftPlusIoU,
- 3.34/\FigCandPlusStart/\FigCandPlusEnd/nvBlueLine/nvBlueBar/RelTwin/\FigCandPlusIoU,
- 1.77/\FigSFTMinusStart/\FigSFTMinusEnd/nvGray/nvGrayBar/SFT/\FigSftMinusIoU,
- 1.33/\FigCandMinusStart/\FigCandMinusEnd/nvOrange/nvOrangeBar/RelTwin/\FigCandMinusIoU}{
- \node[anchor=west] at (12.25,\yy) {\model};
- \draw[nvRule,line width=.4pt] (13.73,\yy)--(16.29,\yy);
- \pgfmathsetmacro{\xa}{13.73+2.56*\start/27}
- \pgfmathsetmacro{\xb}{13.73+2.56*\stop/27}
- \draw[draw=\stroke,fill=\shade,line width=.65pt] (\xa,{\yy-.08}) rectangle (\xb,{\yy+.08});
- \node[anchor=east] at (16.91,\yy) {\score};
-}
-\draw[nvGray,line width=.5pt] (13.73,.96)--(16.29,.96);
-\foreach \sec in {0,10,20,27}{
- \pgfmathsetmacro{\xx}{13.73+2.56*\sec/27}
- \draw[nvGray,line width=.5pt] (\xx,.92)--(\xx,1.00);
- \node[anchor=north] at (\xx,.92) {\sec};
-}
-\node[anchor=west] at (12.25,.69) {Time (s)};
+\node[note,anchor=east] at (14.50,4.68) {IoU \FigSftPlusIoU};
+\node[anchor=east,font=\fontsize{9}{10.4}\selectfont\bfseries] at (17.21,4.68) {IoU \FigCandPlusIoU};
+\node[note,anchor=east] at (14.50,3.32) {IoU \FigSftMinusIoU};
+\node[note,anchor=east] at (17.21,3.32) {IoU \FigCandMinusIoU};
+\draw[draw=rtInk,fill=none,line width=.8pt] (12.86,1.80) rectangle (13.21,1.98);
+\node[note,anchor=west] at (13.31,1.89) {target};
+\draw[draw=rtInk,fill=rtMinusBar,line width=.55pt] (14.69,1.80) rectangle (15.04,1.98);
+\node[note,anchor=west] at (15.14,1.89) {prediction};
+
+% Labels outside content, following the reference figures.
+\node[title] at (2.36,1.14) {(a) Inverse-relation pairs};
+\node[title] at (8.195,1.14) {(b) Paired answer supervision};
+\node[title] at (14.47,1.14) {(c) Query-specific localization};
+
 \end{tikzpicture}
-\endgroup

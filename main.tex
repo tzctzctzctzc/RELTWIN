@@ -1,4 +1,4 @@
-% NOVA audio grounding with RelTwin timestamp contrasts; pdfLaTeX + BibTeX.
+% RelTwin add-on adaptation for audio grounding; pdfLaTeX + BibTeX.
 \documentclass[10pt,letterpaper]{article}
 \usepackage{spconf,amsmath,amssymb,graphicx}
 \usepackage[T1]{fontenc}
@@ -6,16 +6,16 @@
 \usepackage{booktabs,balance,tikz}
 \usetikzlibrary{arrows.meta}
 \usepackage[hidelinks]{hyperref}
-% Standard positive separation for the larger, two-column system figure.
+% Standard positive separation for two-column figures and tables.
 \setlength{\dbltextfloatsep}{10pt plus 2pt minus 2pt}
-\title{\fontsize{14}{16}\selectfont NOVA: Query--Occurrence Binding via Locally Valid\\Timestamp Contrasts for Audio Temporal Grounding}
+\title{\fontsize{14}{16}\selectfont RelTwin: Contrasting Locally Valid Timestamp Answers\\for Query-Specific Audio Grounding}
 \input{authors}
 \newcommand{\setiou}{\operatorname{IoU}_{\mathrm{set}}}
 \begin{document}
 \maketitle
 \input{sections/abstract}
 \begin{keywords}
-Audio temporal grounding, timestamp contrasts, query--occurrence binding, paired supervision
+Audio temporal grounding, timestamp answer contrasts, query--window binding, paired supervision
 \end{keywords}
 \input{sections/introduction}
 \input{figures/reltwin_overview}

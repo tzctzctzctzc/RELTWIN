@@ -1,7 +1,7 @@
 \section{Experimental Setup}
 \label{sec:protocol}
 \textbf{Data and evaluation protocol.}
-Adaptation uses 40 ESC-50 classes: 256 recordings, 1,024 relation queries (512 pairs), and 512 rehearsal queries. Ten held-out classes provide 80 recordings, 320 queries, and 160 relation-development pairs, with disjoint original Freesound IDs. System evaluation uses 400 SpotSound queries, 6,649 Clotho-Moment queries, and the released 100-query/77-audio UnAV subset~\cite{munakata2025amr}. UnAV scores clip intervals to audio duration (unclipped mIoU: 73.39). SpotSound reports 997 UnAV queries; our evaluation uses the released 100-query subset. Development and public-benchmark scores were used during method development.
+Adaptation uses 40 ESC-50 classes and 256 constructed recordings: 1,024 relation queries (512 pairs) and 512 rehearsal queries. Ten held-out classes provide 80 recordings, 320 queries, and 160 inverse pairs for relation development. Training and development use disjoint classes and original Freesound IDs at the adaptation stage. Public evaluation uses all 400 SpotSound-Bench queries over 387 audios, 6,649 Clotho-Moment queries, and the released UnAV-100 subset with 100 queries over 77 audios~\cite{munakata2025amr}. We report set-mIoU and R1 at IoU thresholds 0.3 and 0.5, clipping intervals to audio duration. Relation-development and public-benchmark scores informed method development.
 
 \textbf{Training settings.}
 SFT and RelTwin initialize from SpotSound-A on Audio Flamingo~3. LoRA~\cite{hu2022lora} uses rank~8, $\alpha=16$, dropout~0.1, and 20.19M parameters. Both run 256 AdamW~\cite{loshchilov2019adamw} updates at learning rate $5\times10^{-6}$, zero weight decay, gradient clipping 1.0, $\tau=1$, $\beta=0.5$, and RelTwin $\lambda=1$. Each update accumulates one inverse-query pair and one rehearsal query. The matched comparison shares initialization, data order, code, environment, and optimizer updates. RelTwin additionally computes four gradient-free candidate scores followed by weighted gradient recomputation, versus SFT's two positive-answer backpropagations. Both include rehearsal.
@@ -9,14 +9,8 @@ SFT and RelTwin initialize from SpotSound-A on Audio Flamingo~3. LoRA~\cite{hu20
 \textbf{Inference.}
 SFT and RelTwin are evaluated after 256 updates. All generators use 16\,kHz mono audio, bfloat16, and greedy one-beam decoding without sampling, capped at 128 new tokens. The post-development timing diagnostic uses the frozen matched checkpoints (Section~\ref{sec:timing}).
 
-\textbf{Reference models.}
-Table~\ref{tab:training} includes paired SFT and the official backbone. The backbone scores 58.42 mIoU versus published 57.9; RelTwin's three-seed difference against it is $+0.75$ points (audio-group CI $[-0.24,1.74]$).
+\textbf{Comparison roles.}
+Table~\ref{tab:main} quotes published baselines; $\Delta$ subtracts the corresponding base-model row. SpotSound-A + RelTwin uses one seed-0 checkpoint across all three benchmarks. Table~\ref{tab:training} compares the official backbone, paired SFT, and RelTwin under shared inference. The backbone scores 58.42 SpotSound mIoU versus published 57.9; RelTwin's three-seed gain against this re-evaluation is $+0.75$ points (audio-group CI $[-0.24,1.74]$).
 
 \textbf{Result reporting and statistics.}
 RelTwin point results use seed~0, selected by SpotSound mIoU from five runs, with its matched SFT control. Table~\ref{tab:training}(c) separately summarizes seeds 0/1/2 as mean $\pm$ sample SD. Training comparisons use 20,000 audio-group bootstrap resamples for 95\% CIs. Relation comparisons resample 39 connected source-sharing groups (largest: 18 audios). CIs quantify audio-sample uncertainty conditional on the evaluated checkpoints; model selection is fixed across resamples.
-
-\subsection{NOVA system configurations}
-\label{sec:system}
-NOVA (Necessity-Oriented Verification over Audio) combines candidate generation, verification, and refinement. SpotSound uses RelTwin data with Jensen--Shannon consistency between $p_+$ and label-swapped $p_-$ added to Eq.~\ref{eq:loss}. Setwise preference optimization (SetPO) continues for 64 updates at $2\times10^{-6}$ over six candidates: both windows, their expansions, enclosing span, and union. Soft targets combine set-IoU and interval-coverage quality. The RelTwin training comparison in Table~\ref{tab:training} uses the three-term objective in Eq.~\ref{eq:loss}.
-
-Official, SFT, and SetPO seed-1 SpotSound predictions enter a LongNeedle-ESC50-fitted ridge router, using geometry and frozen query-existence scores after keeping/removing candidate intervals. Clotho and UnAV apply refinement to official predictions, whose initial mIoUs are 86.8543 and 73.4513. Refinement uses frozen SetPO/SpanTool features and ridge edit utilities: dynamic programming selects compatible boundaries, accepted when the 200-model bootstrap 5th percentile exceeds 0.02. Event count is preserved; radius $\min(0.25\,\mathrm{s},0.625\,\text{event duration})$ is shared. AudioGrounding/AEGBench development evaluations selected the duration coefficient before these applications. Table~\ref{tab:main} reports these NOVA configurations.

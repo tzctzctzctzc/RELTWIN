@@ -1,24 +1,14 @@
-# NOVA · ICASSP 2027 论文协作
+# RelTwin · ICASSP 2027 论文协作
 
-[当前论文 PDF](paper.pdf) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
+[当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-本分支保存可编辑源码和当前编译稿。当前为 **v22（2026-09-15，新主图接入版）**，基于最新 `paper@08ba93b`，保留协作者 `137c6ad` 的正文润色及 `08ba93b` 的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）。标题为 **NOVA: Query–Occurrence Binding via Locally Valid Timestamp Contrasts for Audio Temporal Grounding**。NOVA 为总体方法名，RelTwin 为核心时间戳对比训练模块。已将作者确认的新图替换为 Figure 1，并同步图注、模块引用和固定 `paper.pdf`。为容纳新图，压缩图内纵向留白、精简图表注与方法中的重复说明；训练目标、指标定义、全部结果、统计口径和实验设置不变，未执行新模型实验。正文四页，第五页为声明和 18 条参考文献。待处理问题和作者信息占位统一记录在 `ISSUES.md`。
+当前为 **v23（2026-09-16，基于 v18 主线的 RelTwin 三 benchmark 草稿）**。科学主线和方法图以 v18 `094566e` 为基础，保留后续确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题恢复为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 是现有生成式音频定位模型的附加微调方法；当前正文只描述完整时间戳答案之间的查询条件竞争及其直接生成推理。
 
-前一轮 `137c6ad` 落实作者确认的十处最小润色：摘要明确“事件存在不足以决定查询对应实例”，引言从实验清单改为证据结论，主表统一使用总体方法名 NOVA。该轮摘要、引言、结果、完整胜平负、CI、种子来源、开发用途及评测协议均在本版保留。写作参考只借鉴训练信号与目标能力对应、受控实验检验机制的组织方式，不新增方法或实验主张。
+Table 1 已替换为 SpotSound-Bench、Clotho-Moment、UnAV-100 subset 三组，每组按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距区分 benchmark。删除 SpotSound-Q；TimeAudio / TimeAudio + RelTwin、SpotSound-A / SpotSound-A + RelTwin 分别相邻排列，并各有相对于对应原文基础模型的增益行。SpotSound-A + RelTwin 的单个 seed-0 检查点获得 **59.43 / 86.68 / 74.03 mIoU**，对应原文基础模型的差值为 **+1.53 / +1.08 / +4.23 点**。TimeAudio 的 RelTwin 数值和差值按作者要求留空，尚未据此撰写跨骨干有效性结论。
 
-Figure 1 位于第二页：白底、深蓝标题条、蓝/橙查询标识及绿/浅橙答案矩阵，明确展示 NOVA 与内含的 RelTwin 训练模块。主表和机制表分别位于第三、四页，结论止于第四页。没有缩小正文字号或改动页边距、会议样式；跨栏浮动体与正文使用 10 pt 正间距。旧主图及原预览可从 Git 历史恢复。
+摘要、引言、实验设置、结果和结论已与新表保持一致。Table 2 继续保留 matched seed-0 对照、三个 RelTwin 种子的均值及关系诊断，所有已有统计值未改。更完整的五种子配对结果如何纳入下一轮，由 `ISSUES.md` 的 P3-02 跟踪。最新稿为四页正文、第五页声明与 17 条已引用文献；本轮没有训练或重新推理。
 
-## 当前主图（已接入论文）
-
-[NOVA / RelTwin 主图单独查看](previews/nova_overview.pdf)（[PNG](previews/nova_overview.png)）。NOVA 总览框内直接标出蓝色的 `(A) RelTwin`，以标注 `training` 的短箭头连接候选生成；推理数据从左向右流经候选生成、证据核验、边界修正和输出。下方使用同名同编号的 `(A) RelTwin | Module detail`，展开配对样本→共享模型评分→答案竞争。浅蓝连接带标注 `RelTwin module expanded below`，表示同一模块的不同展示尺度，不是额外推理步骤。右侧真实案例保持独立，原区间和四个 IoU 不变；生成器及路由选择依实际配置，具体检查点仍由正文设置定义。
-
-视觉设计参考包括作者提供的示例图，以及以下原论文图 1：借鉴 [CLIP](https://arxiv.org/pdf/2103.00020) 的匹配矩阵与颜色对应、[Segment Anything](https://arxiv.org/pdf/2304.02643) 的整体/局部分组、[Transformer](https://arxiv.org/pdf/1706.03762) 的功能分色和显式连接。这些是布局观察与视觉参考；没有复制原图、引入对应方法模块或新增实验主张。字体统一为 Helvetica 风格无衬线，数学字母通过 `sansmath` 对齐风格，保留常规数学符号；仅设分区标题 10.5 pt、步骤名 9.5 pt、正文与公式 9 pt 三个层级。移除重复候选公式和回折连接，保留总训练目标、答案得分矩阵与行交叉熵说明。参考 PDF 和检查用中间图只保存在忽略的 `build/` 中，不提交到论文仓库。
-
-图稿现在只有一个可编辑来源：`figures/overview_art.tex`。论文、`overview_figure.tex` 和原 `previews/` 入口均引用它，避免合作者维护两套不同的图。为适配正文，纵向坐标间距压缩至原来的 80%，字体本身不缩放，正文/步骤/分区标题仍为 9/9.5/10.5 pt；补足标题框留白，示意查询简写为 `dog → rooster`。已检查彩色、灰度、字体嵌入与论文内排版。单独复现时从仓库根目录运行：
-
-```text
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build previews/nova_overview.tex
-```
+Figure 1 恢复 v18 的三分图：同录音逆关系构造、训练期 2×2 时间戳答案竞争、SFT 与 RelTwin 的真实预测对照。唯一图稿来源为 `figures/overview_art.tex`。原有 `previews/nova_overview.*` 名称保留为兼容入口，生成内容与当前 RelTwin 主图同步；旧 NOVA 系统图可从 Git 历史 `bf5d5ea` 恢复。
 
 ## 修改哪里
 
@@ -29,13 +19,13 @@ pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build preview
 | `sections/` | 摘要、引言、相关工作、方法、实验、讨论、结论与声明 |
 | `sections/related_work.tex` | 独立 Related Work 章节及与最近邻方法的结构比较 |
 | `sections/method.tex` | 局部目标构造、查询—答案得分矩阵、训练目标与成对指标定义 |
-| `tables/main_results.tex` | Table 1：跨栏的 SpotSound／Clotho／UnAV 系统比较，以此前主表逐项最佳为参照 |
+| `tables/main_results.tex` | Table 1：三个 benchmark 的基础模型与 RelTwin 附加微调结果，差值相对对应原文基础模型 |
 | `tables/training_results.tex` | Table 2：跨栏的匹配训练、关系绑定诊断与三种子汇总 |
 | `figures/overview_art.tex` | 可编辑的 TikZ 主图 |
 | `figures/overview_data.tex` | 主图使用的时间戳与统计值 |
 | `figures/reltwin_overview.tex` | 主图排版和图注 |
 | `overview_figure.tex` | 单独编译主图的入口，可选 |
-| `previews/nova_overview.tex`、`previews/nova_overview_art.tex` | 原独立预览的兼容入口，现在引用 `figures/overview_art.tex` |
+| `previews/nova_overview.tex`、`previews/nova_overview_art.tex` | 历史命名的兼容入口，现在引用 RelTwin 图稿 `figures/overview_art.tex` |
 | `previews/nova_overview.pdf`、`previews/nova_overview.png` | 当前 Figure 1 的矢量 PDF 和图片预览，与论文共用图稿 |
 | `references.bib` | 参考文献数据库 |
 | `spconf.sty`、`IEEEbib.bst` | 会议排版与参考文献样式 |
@@ -110,3 +100,5 @@ v20 改为直接的成果与方法叙事：Results 先呈现主表提升，再�
 v21 清理防御性论述：引言明确 NOVA 三阶段的作用，结果中的未做实验清单改为机制讨论，图例分析直接说明查询对应窗口的恢复，时间干预突出改变布局后的 20 点优势。结论落在“监督哪个真实事件实例回答查询”。必要的配置、协议、CI、全部正负结果和数据开发用途保持可核对；两张表、方法公式、主图及作者信息未改。P1-06、P1-07 已完成，其他问题只记录关联进展。编译仍为四页正文加第五页声明与参考文献，全部字体嵌入，无 overfull 或未解析引用。
 
 2026-09-14 经作者确认，将 `7f4b800` 无冲突快进合入 `paper`，同步协作入口和台账，LaTeX 与 `paper.pdf` 保持 v21 原样。后续改稿改为直接维护 `paper`，具体规则同时写入本仓库 `AGENTS.md`；此约定仅针对论文仓库，不改变其他实验仓库的分支管理规则。
+
+v23 回到 v18 的 RelTwin 单方法主线，接入经核实的三 benchmark 独立推理结果，保留 TimeAudio 占位并添加对应基础模型增益。同步恢复 RelTwin 标题、方法图、完整方法与相关工作，移出 NOVA 系统组成；保留最新作者信息及三种子/匹配统计。所有改动在现有 `paper` 历史上提交，不重置到旧提交；具体来源、故事建议和剩余问题见 `ISSUES.md`。
