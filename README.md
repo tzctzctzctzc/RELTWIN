@@ -2,13 +2,13 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v25（2026-09-16，统一完整 RelTwin 框架的导师审阅稿）**。保留确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 统一指候选答案竞争、查询交换一致性和 SetPO 构成的两阶段微调框架；摘要、引言、方法、主图、主表、结果与结论使用同一方法定义。
+当前为 **v26（2026-09-16，重绘 RelTwin 矢量主图）**。保留确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 统一指候选答案竞争、查询交换一致性和 SetPO 构成的两阶段微调框架；摘要、引言、方法、主图、主表、结果与结论使用同一方法定义。
 
 Table 1 包含 SpotSound-Bench、Clotho-Moment、UnAV-100 subset 三组，每组按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距区分 benchmark。TimeAudio / TimeAudio + RelTwin、SpotSound-A / SpotSound-A + RelTwin 分别相邻排列，各有相对对应原文基础模型的增益行。TimeAudio 获得 **18.36 / 34.08 / 30.48 mIoU**，增益 **+8.16 / +5.48 / +14.48 点**；SpotSound-A 为 **59.43 / 86.68 / 74.03 mIoU**，增益 **+1.53 / +1.08 / +4.23 点**。所有数字与 v24 相同，删除 † 及版本区分表注。作者本轮确认 SpotSound-A 这组数值来自同事在另一机器上的完整 RelTwin 实验，按此确认保留；其原始记录待归档（P0-10），不沿用旧 `no_exchange` 日志充当本次完整实验依据。
 
 Table 2、逆查询诊断和 timing 仍承担候选监督的机制验证，标签明确为 candidate supervision，既有数值和 CI 不变。主表负责整体性能，两者不再共用含混的实验身份。逐处用语审查与改法见 `ISSUES.md` 第 7 节 v25；必要统计条件集中于设置，正文不叙述开发过程。五种子汇总仍由 P3-02 跟踪。本轮没有训练或重新推理。
 
-Figure 1 保留 v18 的三分布局：同录音逆关系构造、两阶段 RelTwin 训练、候选监督的真实预测对照。中间面板补充 JS → SetPO 的训练顺序，案例端点和 IoU 不变。唯一图稿来源为 `figures/overview_art.tex`；`previews/nova_overview.*` 为历史命名的兼容入口，与论文图同步。
+Figure 1 按作者提供的配色参考重绘：上方为共享音频与逆查询，下方蓝色 RelTwin 框从左到右展示候选竞争与交换一致性 → SetPO；绿色推理条单独成行，右侧橙色面板展示候选监督的真实预测对照。采用白底细边框、深蓝与橙色悬浮标题、浅绿与浅杏色高亮；无衬线字体统一为 8 pt 正文和 9 pt 标题。案例端点和 IoU 不变。唯一图稿来源为 `figures/overview_art.tex`；`previews/nova_overview.*` 为历史命名的兼容入口，与论文图同步。
 
 ## 修改哪里
 
@@ -106,3 +106,5 @@ v23 回到 v18 的 RelTwin 单方法主线，接入经核实的三 benchmark 独
 v24 填入 TimeAudio 完整配置的三 benchmark 全量结果及九项增益，逐行核对 400/6649/100 条和同一 checkpoint。方法节将答案序列化按骨干说明，设置补充两阶段训练与 replay 来源；压缩重复表述保持四页正文。原 SpotSound-A 行、Table 2、主图、作者和全部既有统计保持不变。SpotSound-A 完整配置留待后续实验，当前稿先供导师审阅。
 
 v25 根据作者对同事完整 SpotSound-A 实验的最新确认保留原主表全部数据，统一完整 RelTwin 叙事，删除 † 和 core/full 区分。方法正式写入 JS、SetPO 及 replay；主图同步训练顺序；已核验的旧候选监督记录继续作为 Table 2 机制证据。原始同事实验追溯另由 P0-10 归档，不把数值相同当作检查点相同。段落结构保持，相关工作仅压缩重复句以容纳方法定义。
+
+v26 仅重绘主图并同步图注、单图预览与论文 PDF：训练阶段以实线箭头连接，推理路径与诊断面板明确分开。保留所有实际时间戳、IoU、两张表和正文源码。检查单图、双栏嵌入、字体嵌入和页数；论文仍为四页正文，第五页声明与参考文献，无 overfull box 或未解析引用。未运行新实验。
