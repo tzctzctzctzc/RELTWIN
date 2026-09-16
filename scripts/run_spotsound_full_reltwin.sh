@@ -3,7 +3,7 @@ set -euo pipefail
 
 project=/root/autodl-tmp/SpotSound-ICASSP
 repo="$project/spotsound_timeaudio_reltwin_20260916"
-python_bin=/root/miniconda3/bin/python
+python_bin="$project/env-conda/bin/python"
 output="$project/outputs/spotsound_full_reltwin_20260916"
 base="$project/models/audio-flamingo-3-hf"
 official="$project/models/SpotSound"
