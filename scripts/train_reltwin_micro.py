@@ -19,6 +19,11 @@ from spotsound import (
     AudioFlamingo3TemporalProcessor,
     GROUNDING_PROMPT,
 )
+from spotsound_reltwin import (
+    capture_rng_state,
+    restore_rng_state,
+    set_spotsound_training_mode,
+)
 
 
 def parse_args():
@@ -192,7 +197,8 @@ def main():
     model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
     model.enable_input_require_grads()
     model.config.use_cache = False
-    model = model.train().to("cuda")
+    model = model.to("cuda")
+    set_spotsound_training_mode(model, scope="lora")
     trainable = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(trainable, lr=args.learning_rate, weight_decay=0.0)
     history = []
@@ -218,10 +224,14 @@ def main():
             diagnostics = {"sft": sum(losses) / len(losses)}
             total_value = diagnostics["sft"]
         else:
-            model.eval()
+            set_spotsound_training_mode(model, scope="lora")
+            rng_states = []
             with torch.no_grad():
-                values = [float(sequence_score(model, example).detach()) for example in examples]
-            model.train()
+                values = []
+                for example in examples:
+                    rng_states.append(capture_rng_state())
+                    values.append(float(sequence_score(model, example).detach()))
+                final_rng_state = capture_rng_state()
             score_variables = torch.tensor(values, device="cuda", dtype=torch.float32, requires_grad=True)
             outer, diagnostics = outer_objective(
                 args.mode,
@@ -233,9 +243,11 @@ def main():
             )
             coefficients = torch.autograd.grad(outer, score_variables)[0].detach()
             total_value = float(outer.detach())
-            for index, coefficient in enumerate(coefficients):
+            for index, (coefficient, rng_state) in enumerate(zip(coefficients, rng_states)):
+                restore_rng_state(rng_state)
                 score = sequence_score(model, examples[index])
                 score.backward(gradient=coefficient.to(score.dtype))
+            restore_rng_state(final_rng_state)
         if rehearsal:
             rehearsal_position = step % len(rehearsal)
             if rehearsal_position == 0 and step > 0:

@@ -24,6 +24,11 @@ from setpo_candidates import (
 )
 from setpo_objective import relation_objective, rehearsal_objective, token_kl_from_logits
 from spotsound import AudioFlamingo3ForTemporalConditionalGeneration, AudioFlamingo3TemporalProcessor
+from spotsound_reltwin import (
+    capture_rng_state,
+    restore_rng_state,
+    set_spotsound_training_mode,
+)
 from train_reltwin_micro import answer_for, move_example, prepare_example, sequence_score
 
 
@@ -118,19 +123,25 @@ def make_rehearsal_schedule(rows: list[dict], steps: int, rng, sampling: str) ->
 
 
 def backward_outer(model, examples, objective_builder, scale=1.0):
-    model.eval()
+    set_spotsound_training_mode(model, scope="lora")
+    rng_states = []
     with torch.no_grad():
-        values = [float(sequence_score(model, example).detach()) for example in examples]
-    model.train()
+        values = []
+        for example in examples:
+            rng_states.append(capture_rng_state())
+            values.append(float(sequence_score(model, example).detach()))
+        final_rng_state = capture_rng_state()
     score_variables = torch.tensor(values, device="cuda", dtype=torch.float32, requires_grad=True)
     outer, diagnostics = objective_builder(score_variables)
     scaled_outer = outer * scale
     coefficients = torch.autograd.grad(scaled_outer, score_variables)[0].detach()
-    for example, coefficient in zip(examples, coefficients):
+    for example, coefficient, rng_state in zip(examples, coefficients, rng_states):
         if float(coefficient) == 0.0:
             continue
+        restore_rng_state(rng_state)
         score = sequence_score(model, example)
         score.backward(gradient=coefficient.to(score.dtype))
+    restore_rng_state(final_rng_state)
     return float(scaled_outer.detach()), diagnostics
 
 
@@ -268,7 +279,8 @@ def main():
     model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
     model.enable_input_require_grads()
     model.config.use_cache = False
-    model = model.train().to("cuda")
+    model = model.to("cuda")
+    set_spotsound_training_mode(model, scope="lora")
     trainable = [parameter for parameter in model.parameters() if parameter.requires_grad]
     optimizer = torch.optim.AdamW(trainable, lr=args.learning_rate, weight_decay=0.0)
     rng = np.random.default_rng(args.seed)
@@ -365,7 +377,7 @@ def main():
                         ),
                         flush=True,
                     )
-        model.train()
+        set_spotsound_training_mode(model, scope="lora")
     history = []
     torch.cuda.reset_peak_memory_stats()
     started = time.perf_counter()
