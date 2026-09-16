@@ -2,11 +2,11 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v26（2026-09-16，重绘 RelTwin 矢量主图）**。保留确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 统一指候选答案竞争、查询交换一致性和 SetPO 构成的两阶段微调框架；摘要、引言、方法、主图、主表、结果与结论使用同一方法定义。
+当前为 **v27（2026-09-16，全文故事与语言修订）**。保留确认的作者顺序（Yuehan Zhang、Zhicheng Tang、Wei Xu）、通讯作者和声明。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。RelTwin 统一指候选监督、查询交换一致性和 SetPO 构成的两阶段微调框架。全文聚焦“两个窗口都有真实声学支持，但查询决定哪一个是答案”；补清两阶段动机，指标定义移入评估设置，结果段以能力变化而非数字罗列组织。SetPO 名称与实际目标暂保留，不作为额外独立贡献。
 
 Table 1 包含 SpotSound-Bench、Clotho-Moment、UnAV-100 subset 三组，每组按 R1@.3、R1@.5、mIoU 排列，分组横线和 12 pt 额外列间距区分 benchmark。TimeAudio / TimeAudio + RelTwin、SpotSound-A / SpotSound-A + RelTwin 分别相邻排列，各有相对对应原文基础模型的增益行。TimeAudio 获得 **18.36 / 34.08 / 30.48 mIoU**，增益 **+8.16 / +5.48 / +14.48 点**；SpotSound-A 为 **59.43 / 86.68 / 74.03 mIoU**，增益 **+1.53 / +1.08 / +4.23 点**。所有数字与 v24 相同，删除 † 及版本区分表注。作者本轮确认 SpotSound-A 这组数值来自同事在另一机器上的完整 RelTwin 实验，按此确认保留；其原始记录待归档（P0-10），不沿用旧 `no_exchange` 日志充当本次完整实验依据。
 
-Table 2、逆查询诊断和 timing 仍承担候选监督的机制验证，标签明确为 candidate supervision，既有数值和 CI 不变。主表负责整体性能，两者不再共用含混的实验身份。逐处用语审查与改法见 `ISSUES.md` 第 7 节 v25；必要统计条件集中于设置，正文不叙述开发过程。五种子汇总仍由 P3-02 跟踪。本轮没有训练或重新推理。
+Table 2、逆查询诊断和 timing 仍承担候选监督的机制验证，标签明确为 candidate supervision，既有数值和 CI 不变。主表负责整体性能；开发用途、五次运行选择与三种子统计集中于设置。全文修订记录见 `ISSUES.md` 第 7 节 v27，五种子汇总仍由 P3-02 跟踪。修订未运行训练或重新推理，也未补造完整 SpotSound-A 的缺失参数。
 
 Figure 1 按作者提供的配色参考重绘：上方为共享音频与逆查询，下方蓝色 RelTwin 框从左到右展示候选竞争与交换一致性 → SetPO；绿色推理条单独成行，右侧橙色面板展示候选监督的真实预测对照。采用白底细边框、深蓝与橙色悬浮标题、浅绿与浅杏色高亮；无衬线字体统一为 8 pt 正文和 9 pt 标题。案例端点和 IoU 不变。唯一图稿来源为 `figures/overview_art.tex`；`previews/nova_overview.*` 为历史命名的兼容入口，与论文图同步。
 
@@ -18,7 +18,8 @@ Figure 1 按作者提供的配色参考重绘：上方为共享音频与逆查�
 | `authors.tex` | 作者、单位与通讯作者信息 |
 | `sections/` | 摘要、引言、相关工作、方法、实验、讨论、结论与声明 |
 | `sections/related_work.tex` | 独立 Related Work 章节及与最近邻方法的结构比较 |
-| `sections/method.tex` | 局部目标构造、查询—答案得分矩阵、训练目标与成对指标定义 |
+| `sections/method.tex` | 局部目标构造、查询—答案得分矩阵与两阶段训练目标 |
+| `sections/experiments.tex` | 数据、成对指标、训练与评测设置、比较及统计口径 |
 | `tables/main_results.tex` | Table 1：三个 benchmark 的基础模型与 RelTwin 附加微调结果，差值相对对应原文基础模型 |
 | `tables/training_results.tex` | Table 2：跨栏的匹配训练、关系绑定诊断与三种子汇总 |
 | `figures/overview_art.tex` | 可编辑的 TikZ 主图 |

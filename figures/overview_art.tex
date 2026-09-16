@@ -31,8 +31,8 @@
 
 % (a) A shared recording contains both requested event orders.
 \draw[frame,draw=rtLine,fill=white] (.02,4.15) rectangle (17.38,5.27);
-\node[heading,anchor=west,text=rtBlue] at (.20,5.06) {(a) Shared audio};
-\node[small,anchor=west] at (2.90,5.06) {$A$: dog\quad $B$: rooster};
+\node[heading,anchor=west,text=rtBlue] at (.20,5.06) {(a) Shared excerpts};
+\node[small,anchor=west] at (3.48,5.06) {$A$: dog\quad $B$: rooster};
 \foreach \xlo/\xhi/\event/\tone in {
  .35/1.35/A/rtBlueTint,1.48/2.48/B/rtSage,
  3.39/4.39/B/rtSage,4.52/5.52/A/rtBlueTint}{
@@ -118,7 +118,7 @@
 \draw[frame,draw=rtOrange,fill=white] (12.00,.02) rectangle (17.38,3.84);
 \path[rounded corners=2pt,fill=rtOrange] (12.24,3.63) rectangle (17.14,4.00);
 \node[heading,text=white] at (14.69,3.815) {(c) Query-specific selection};
-\node[small] at (14.69,3.43) {SpotSound-A mechanism example};
+\node[small] at (14.69,3.43) {Inverse-query grounding example};
 \draw[frame,draw=rtOrange!60,fill=rtOrangeTint] (12.69,2.86) rectangle (14.60,3.22);
 \draw[frame,draw=rtGreen!60,fill=rtGreenTint] (15.14,2.86) rectangle (17.05,3.22);
 \node[heading,text=rtOrange] at (13.645,3.04) {Paired SFT};

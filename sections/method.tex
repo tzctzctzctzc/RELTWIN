@@ -1,22 +1,22 @@
 \section{Query-Specific Window Learning}
 \subsection{Two true relations, two different answers}
-In one recording $x$, RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$. Their local targets $W_+$ and $W_-$ run from the first excerpt's onset to the second's offset, including the gap. Queries $q_+$ and $q_-$ request the respective orders. Both windows have acoustic support, but $W_-$ is positive for $q_-$ and negative for $q_+$; reversing the query exchanges their labels.
+In one recording $x$, RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$. Their local targets $W_+$ and $W_-$ run from the first excerpt's onset to the second's offset, including the gap. Queries $q_+$ and $q_-$ request the respective orders. Reusing the excerpts holds acoustic content fixed across windows, so their labels depend on the queried order: $W_-$ is positive for $q_-$ and negative for $q_+$.
 
-The templates ``followed by'' and ``and then'' yield two inverse-query pairs per recording. Earlier-order layouts alternate (Section~\ref{sec:timing}). Category rehearsal targets the union of both occurrences of $A$ or $B$, retaining category-grounding supervision.
+We alternate which target order appears first in the recording. Category rehearsal targets the union of both occurrences of $A$ or $B$, retaining category-grounding supervision alongside relation selection.
 
 \subsection{Contrast timestamp answers during training}
-We serialize an interval set $S$ in the backbone's timestamp format: SpotSound-A uses comma-separated spans such as \texttt{from 1.500s to 11.750s}; TimeAudio uses its native temporal tokens. The supervised answer tokens $y(S)$ exclude the prompt and are scored by
+RelTwin scores complete timestamp answers under each query and trains their relative preference. We serialize an interval set $S$ in the backbone's native format: comma-separated spans for SpotSound-A and temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the length-normalized score
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
 \label{eq:score}
 \end{equation}
-The $2\times2$ matrix $M$, with entries $M_{ij}=s_\theta(x,q_i,W_j)$ for $i,j\in\{+,-\}$, indexes queries by rows and answers by columns. Its diagonal labels $Y=I_2$ identify the correct query--answer pairs (Fig.~\ref{fig:pair}b).
-Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$, rewarding the two correct responses individually. It does not explicitly compare them with the other locally valid window. RelTwin trains the relative preferences $M_{++}>M_{+-}$ and $M_{--}>M_{-+}$ through row-wise probabilities $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$, where $\tau>0$. The candidate loss is
+The $2\times2$ matrix $M_{ij}=s_\theta(x,q_i,W_j)$ for $i,j\in\{+,-\}$ indexes queries by rows and answers by columns; diagonal entries correspond to correct pairs (Fig.~\ref{fig:pair}b).
+Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$. Candidate supervision explicitly trains the preferences $M_{++}>M_{+-}$ and $M_{--}>M_{-+}$. With row-wise probabilities $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$, $\tau>0$, its loss is
 \begin{equation}
 \mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
 \end{equation}
-Exchange $\Pi$ swaps candidate labels; $\mathcal L_{\rm JS}=\allowbreak\operatorname{JS}(p_+,\Pi p_-)$ aligns their distributions. For rehearsal example $(x_r,q_r,S_r)$, define $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
+Query reversal exchanges the target assignment while preserving the recording. With label permutation $\Pi$, query-exchange consistency $\mathcal L_{\rm JS}=\allowbreak\operatorname{JS}(p_+,\Pi p_-)$ couples the paired preferences after relabeling. For rehearsal example $(x_r,q_r,S_r)$, define $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
 \begin{equation}
 \mathcal L_1=\mathcal L_{\rm seq}+\lambda(\mathcal L_{\rm cand}
 +\gamma\mathcal L_{\rm JS})+\beta\mathcal R_1.
@@ -24,11 +24,6 @@ Exchange $\Pi$ swaps candidate labels; $\mathcal L_{\rm JS}=\allowbreak\operator
 \end{equation}
 
 \textbf{Set-level preference optimization (SetPO).}
-Stage~2 compares six answers: $W_\pm$, their expanded versions, their enclosing span, and their union. Quality axes are set-IoU, precision--recall margins above IoU 0.3/0.5, count agreement, and duration-normalized boundary accuracy. Utility $v_{ij}$ averages mean quality and net Pareto dominance (number dominated minus dominating, normalized by candidate count minus one). Targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ yield $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$ over six answers, replacing $\mathcal L_{\rm cand}$ in Eq.~\ref{eq:loss}. Exchange $\Pi$ swaps targets and their expansions, fixing the span and union.
+Selecting the relevant window also requires controlling its boundaries, coverage, and event count. Stage~2 extends answer competition to six interval sets: $W_\pm$, their expanded versions, their enclosing span, and their union. Quality axes are set-IoU, precision--recall margins above IoU 0.3/0.5, count agreement, and duration-normalized boundary accuracy. Utility $v_{ij}$ averages mean quality and net Pareto dominance (number dominated minus dominating, normalized by candidate count minus one). This yields soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ and $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$ over six answers, replacing $\mathcal L_{\rm cand}$ in Eq.~\ref{eq:loss}. Exchange $\Pi$ swaps targets and their expansions, fixing the span and union.
 
 Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. Stage~2 uses $\mathcal R_2=\mathcal R_1+\lambda\mathcal L_{\rm set,r}+\kappa\operatorname{KL}(p_0\Vert p_r)$, with frozen base-model distribution $p_0$; $\mathcal L_{\rm set,r}$ is the same listwise loss for one replay query. Inference directly generates timestamps.
-
-\subsection{Joint localization and relation selection}
-For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$ (zero for an empty union). Given predictions $\widehat W_i$, define $u_{ij}=\setiou(\widehat W_i,W_j)$. PairAcc requires $\min(u_{++},u_{--})\geq0.5$. Swap error occurs if $u_{++}\leq u_{+-}$ or $u_{--}\leq u_{-+}$, including ties. JointPairAcc requires PairAcc success without Swap error. We report pair-level percentages; same-answer counts use exact equality of parsed interval lists.
-
-Predicting the union of two disjoint, equal-length targets for both queries passes PairAcc (IoU $0.5$) but fails JointPairAcc. Inspired by paired compositional evaluation~\cite{thrush2022winoground}, JointPairAcc distinguishes query-specific selection from coverage.
