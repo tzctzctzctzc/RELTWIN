@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v32（2026-09-17，共同第一作者标注）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。张跃瀚（Yuehan Zhang）与汤智铖（Zhicheng Tang）为共同第一作者，张跃瀚列第一、汤智铖列第二；Wei Xu 为通讯作者。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。未增加历史方法、实验或推理流程。
+当前为 **v33（2026-09-22，补充结果分析段）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。张跃瀚（Yuehan Zhang）与汤智铖（Zhicheng Tang）为共同第一作者，张跃瀚列第一、汤智铖列第二；Wei Xu 为通讯作者。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。结果部分新增一段对公开迁移、配对机制和 timing intervention 的关系分析，未增加实验或改变数据。
 
 本轮沿用 v30 的基线出处、51:1 配对转变和时间干预结果整理；正文暂不展开模型选择过程，供内部讨论使用。两张表的数值和置信区间不变。
 
@@ -13,6 +13,8 @@ Table 2、逆查询诊断和 timing 仍承担候选监督的机制验证，标�
 当前正文引用 **19 篇真实文献**，真实性、发表元数据与引用用途核对记录见 `ISSUES.md` 第 7 节 v29。将 Text-to-Audio Grounding、Audio Moment Retrieval、T-CLAP 和弱监督 TAG 更新为核验过的正式发表版本；补入 ICASSP 2024 反事实音频学习近邻和 TEMPO 训练数据来源。未引用的五条历史条目已从当前文献库清理，可由 Git 恢复。正文四页、第五页声明与参考文献，固定文件仍为 `paper.pdf`。
 
 Figure 1 按作者提供的配色参考重绘：上方为共享音频与逆查询，下方蓝色 RelTwin 框从左到右展示候选竞争与交换一致性 → 集合级偏好学习；绿色推理条单独成行，右侧橙色面板展示候选监督的真实预测对照。采用白底细边框、深蓝与橙色悬浮标题、浅绿与浅杏色高亮；无衬线字体统一为 8 pt 正文和 9 pt 标题。案例端点和 IoU 不变。唯一图稿来源为 `figures/overview_art.tex`；`previews/nova_overview.*` 为历史命名的兼容入口，与论文图同步。
+
+v33 在第 4 页 Results 的 timing intervention 后补充一段短分析：明确公开 benchmark、配对关系测试和静音布局干预分别承担迁移、机制和位置泛化证据；同时说明集合级偏好学习覆盖 coverage、event count 与 boundaries。正文仍在第 4 页结束，第 5 页仅声明与参考文献。
 
 ## 修改哪里
 

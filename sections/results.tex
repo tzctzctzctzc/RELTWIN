@@ -7,3 +7,5 @@ RelTwin improves both backbones on all three benchmarks (Table~\ref{tab:main}). 
 \subsection{Binding gains persist after timing intervention}
 \label{sec:timing}
 On the 40 recordings with altered silence timing, candidate supervision retains a 20-point JointPairAcc advantage (87.50 vs.\ 67.50; CI $[2.94,33.33]$), compared with original scores of 85.00 and 42.50. The advantage persists when event waveforms, order, and queries are fixed but silence timing changes.
+
+Together, these evaluations separate transfer from mechanism. Public gains show that the preference signal survives ordinary timestamp generation. The paired test isolates selection because both windows contain the queried categories. Changing silence placement while preserving event waveforms and order shows that the learned preference follows the requested relation rather than a fixed position. Set-level learning extends this decision to coverage and boundaries.
