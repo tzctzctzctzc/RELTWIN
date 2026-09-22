@@ -4,7 +4,7 @@
 
 目标会议：ICASSP 2027
 
-当前稿：v33（2026-09-22；在 Results 补充三类证据之间的关系分析，保持共同第一作者、最终 RelTwin 主线和 19 条引用）
+当前稿：v34（2026-09-22；在 Introduction 与 Results 补充评估职责和证据关系分析，保持共同第一作者、最终 RelTwin 主线和 19 条引用）
 
 清单审计日期：2026-09-22
 
@@ -781,10 +781,11 @@ D01 的配置事实：
 | 2026-09-17 | v30，重复说明精简与结果聚焦 | 基线出处集中表注，配对转变呈现为 51:1，时间干预设置与结果分开；表格数值、模型选择事实与核心方法不变，五页 PDF 重编译并逐页检查。 |
 | 2026-09-17 | v31，干净叙事草稿 | 按作者要求从正文暂时移除模型选择过程说明，删除内部草稿页眉；同步正式源码并重新生成固定 `paper.pdf`，表格、主图、分数与方法不变。 |
 | 2026-09-17 | v32，共同第一作者标注 | 张跃瀚（Yuehan Zhang）与汤智铖（Zhicheng Tang）标为共同第一作者，张跃瀚列第一；首页添加等同贡献脚注，Wei Xu 继续为通讯作者。同步作者源码与固定 PDF，正文和实验数据不变。 |
-| 2026-09-22 | v33，结果分析补充 | 在 timing intervention 后增加短段，明确公开 benchmark、配对机制测试和静音布局干预的互补论证职责；说明集合级偏好学习覆盖 coverage、event count 与 boundaries。未增加实验，正文仍四页、第五页为声明与参考文献。 |
+| 2026-09-22 | v34，Introduction 与结果分析补充 | 在 Introduction 末尾交代公开 benchmark、配对关系测试和 timing intervention 的评估职责，并在结果段压缩补充三类证据的互补关系；说明集合级偏好学习覆盖 coverage、event count 与 boundaries。未增加实验，正文仍四页、第五页为声明与参考文献。 |
 
 - v26 PDF SHA-256（历史版本）：`88c49d524dbc5e252d71c31f60defb52707de400747021c14711fe3e5ef574f4`
-- v33 PDF SHA-256：`c1e3be655454e691bd6a7ddc48ad7ecd7b78a08ba693b0d4d997d4c0eaeacaeb`
+- v33 PDF SHA-256（上一版）：`c1e3be655454e691bd6a7ddc48ad7ecd7b78a08ba693b0d4d997d4c0eaeacaeb`
+- 当前 PDF SHA-256：`706fa198483e3b40483eedbd30107d51d5897aa7e04e42174c7393096dcee37f`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`
 - 原交付审计提交：`a190b11`
 - 原开发分支：`codex/reltwin-core-only-20260913`

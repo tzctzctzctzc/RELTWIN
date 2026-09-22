@@ -6,3 +6,5 @@ RelTwin (Fig.~\ref{fig:pair}) makes this competition explicit through \emph{loca
 RelTwin trains the model's timestamp-answer scores to favor the query-consistent window and couples the preferences under query reversal. The same competition extends to interval sets with different coverage, event counts, and boundaries. This answer-level formulation adapts SpotSound-A and TimeAudio while preserving direct generation at inference.
 
 Evaluations on three benchmarks show localization gains for both backbones. Matched candidate-supervision experiments link answer competition to relation selection: identical answers to inverse queries fall from 37 to 1 out of 160 pairs, and the binding advantage persists when silence timing changes.
+
+Accordingly, we evaluate the method at two levels: public benchmark scores test transfer to standard grounding, while inverse-query pairs test whether the model selects the requested occurrence. Timing intervention provides a controlled test of positional shortcuts.
