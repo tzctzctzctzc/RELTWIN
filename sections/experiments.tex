@@ -1,28 +1,17 @@
 \section{Experiments}
 \subsection{Experimental setup}
 \label{sec:protocol}
-\textbf{Public benchmarks.}
-We evaluate general localization on SpotSound-Bench (400 queries, 387 audios)~\cite{sun2026spotsound}, Clotho-Moment (6,649 queries), and UnAV-100 (100 queries, 77 audios)~\cite{munakata2025amr}. We report set-mIoU and R1 at IoU 0.3/0.5, clipping intervals to recording duration.
+\textit{Datasets.}
+We evaluate general localization on SpotSound-Bench (400 queries, 387 audios)~\cite{sun2026spotsound}, Clotho-Moment (6,649 queries), and the UnAV-100 subset (100 queries, 77 audios)~\cite{munakata2025amr}. For controlled relation learning, 40 ESC-50 classes produce 256 training recordings, 1,024 relation queries (512 pairs), and 512 category queries. The templates ``followed by'' and ``and then'' give two inverse-query pairs per recording. Relation development uses 10 held-out classes, 80 recordings, and 320 queries (160 pairs), with classes and original Freesound IDs disjoint from adaptation data.
 
-\textbf{Twin data and relation evaluation.}
-Forty ESC-50 classes yield 256 training recordings, 1,024 relation queries (512 pairs), and 512 category queries. Templates ``followed by'' and ``and then'' give two inverse-query pairs per recording. Relation development uses 10 held-out classes, 80 recordings, and 320 queries (160 pairs), with disjoint classes and original Freesound IDs at adaptation. It tests query-specific selection; timing intervention tests persistence under changed silence (Section~\ref{sec:timing}).
+\textit{Evaluation.}
+Public benchmarks use set-mIoU and R1 at IoU 0.3/0.5, with predictions clipped to the recording duration. For inverse-query pairs, let $u_{ij}=\setiou(\widehat W_i,W_j)$, where $\setiou(S,G)=|S\cap G|/|S\cup G|$ and an empty union scores zero. PairAcc requires $\min(u_{++},u_{--})\geq0.5$; a swap occurs if $u_{++}\leq u_{+-}$ or $u_{--}\leq u_{-+}$, including ties. JointPairAcc requires PairAcc without a swap. Inspired by paired compositional evaluation~\cite{thrush2022winoground}, it separates selection from coverage: the union of two disjoint targets can pass PairAcc but fails JointPairAcc. These are pair-level percentages; same-answer counts require identical interval lists.
 
-\textbf{Joint localization and relation selection.}
-For interval unions, $\setiou(S,G)=|S\cap G|/|S\cup G|$ (zero for an empty union). Given predictions $\widehat W_i$, let $u_{ij}=\setiou(\widehat W_i,W_j)$. PairAcc requires $\min(u_{++},u_{--})\geq0.5$. Swap error occurs if $u_{++}\leq u_{+-}$ or $u_{--}\leq u_{-+}$, including ties. JointPairAcc requires PairAcc success without Swap error. Inspired by paired compositional evaluation~\cite{thrush2022winoground}, it distinguishes query-specific selection from coverage: returning the union of two disjoint, equal-length targets passes PairAcc (IoU $0.5$) but fails JointPairAcc. We report pair-level percentages; same-answer counts require identical parsed interval lists.
+\textit{Training and implementation.}
+TimeAudio starts from its official checkpoint for 384 Stage~1 and 128 Stage~2 updates. Its 31.76M trainable parameters use learning rates $2\times10^{-6}$ for LoRA~\cite{hu2022lora} and $5\times10^{-6}$ for temporal/audio connectors. Category queries target both occurrences of $A$ or $B$; category and relation pairs enter the paired objective at 3:1. Replay combines Clotho-Moment training~\cite{munakata2025amr}, synthetic scale/cardinality data, TEMPO training~\cite{kulkarni2026tempo}, and AudioGrounding training~\cite{xu2021grounding} at 4:3:2:1. We use $\lambda=\gamma=1$, $\beta=0.75$, $\kappa=0.2$, $\tau=1$, $\tau_q=0.15$, and 15\% interval expansion with a 0.05\,s minimum. Decoding is greedy with one beam and at most 128 new tokens.
 
-\textbf{RelTwin training.}
-TimeAudio starts from its official checkpoint with 384/128 updates in Stages~1/2. Its 31.76M trainable parameters use learning rates $2\times10^{-6}$ for LoRA~\cite{hu2022lora} and $5\times10^{-6}$ for temporal/audio connectors. Category queries target both occurrences of $A$ or $B$; category- and relation-query pairs enter the paired objective at 3:1. Replay mixes Clotho-Moment training~\cite{munakata2025amr}, synthetic scale/cardinality, TEMPO training~\cite{kulkarni2026tempo}, and AudioGrounding training~\cite{xu2021grounding} at 4:3:2:1. We use $\lambda=\gamma=1$, $\beta=0.75$, $\kappa=0.2$, $\tau=1$, $\tau_q=0.15$, and 15\% interval expansion (minimum 0.05\,s).
+Table~\ref{tab:training} isolates Stage~1 competition on SpotSound-A. Paired SFT uses $\lambda=0$ and candidate supervision $\lambda=1$, both with $\gamma=0$ and $\beta=0.5$. They share initialization, data, order, and 256 AdamW~\cite{loshchilov2019adamw} updates at $5\times10^{-6}$, with zero weight decay and gradient clipping~1. LoRA has rank~8, $\alpha=16$, dropout~0.1, and 20.19M trainable parameters. Each update accumulates one inverse-query pair and one replay query. Candidate supervision adds four gradient-free answer scores and weighted gradient recomputation to SFT's two positive-answer backpropagations. All variants use 16\,kHz mono audio, bfloat16, and direct timestamp generation.
 
-\textbf{Matched mechanism experiment.}
-Table~\ref{tab:training} isolates $\mathcal L_{\rm cand}$ on SpotSound-A after Stage~1: $\gamma=0$, $\beta=0.5$, and $\lambda=0$ (paired SFT) or 1 (candidate supervision). Both share initialization, relation/rehearsal data, data order, and 256 AdamW~\cite{loshchilov2019adamw} updates at $5\times10^{-6}$, with zero weight decay and gradient clipping~1. LoRA uses rank~8, $\alpha=16$, dropout~0.1, and 20.19M parameters. Each update accumulates one pair and one rehearsal query. Candidate supervision adds four gradient-free scores and weighted gradient recomputation to SFT's two positive-answer backpropagations.
+For the timing intervention, we recompose 80 development recordings with a 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and a 2\,s tail while preserving waveforms, order, and queries. Frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain identical.
 
-\textbf{Inference.}
-Decoding is greedy, one beam, with at most 128 new tokens. The mechanism experiment uses 16\,kHz mono audio and bfloat16.
-
-\textbf{Timing intervention.}
-We recompose 80 development recordings with 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and 2\,s tail, preserving event waveforms, order, and queries. Frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain waveform-identical.
-
-\textbf{Comparison and statistics.}
-Table~\ref{tab:training} evaluates the backbone and training variants under shared inference. TimeAudio uses seed~0. Mechanism point estimates use seed~0, with matched SFT; Table~\ref{tab:training}(c) separately reports seeds 0/1/2 as mean $\pm$ sample SD.
-
-We use 20,000 audio-group bootstrap resamples for 95\% CIs; relation tests resample 39 connected source-sharing groups (largest: 18 audios). The intervals quantify sampling variation for the selected checkpoints.
+TimeAudio and matched point estimates use seed~0; Table~\ref{tab:training}(c) reports candidate supervision over seeds 0/1/2 as mean $\pm$ sample SD. We obtain 95\% CIs from 20,000 audio-group bootstrap resamples; relation tests resample 39 connected source-sharing groups (largest: 18 recordings).

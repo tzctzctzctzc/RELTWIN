@@ -1,6 +1,6 @@
 % Results continue within Section 3 (Experiments).
 \subsection{Grounding performance across benchmarks}
-RelTwin improves both backbones on all three benchmarks (Table~\ref{tab:main}). The mIoU gains range from 1.08 to 4.23 points for SpotSound-A and 5.48 to 14.48 for TimeAudio. Adapted SpotSound-A leads the listed methods. Gains on both backbones support adaptation across timestamp representations.
+RelTwin improves both backbones on all three benchmarks (Table~\ref{tab:main}). TimeAudio gains 8.16, 5.48, and 14.48 mIoU points; SpotSound-A gains 1.53, 1.08, and 4.23. R1 rises at both thresholds on every dataset, and adapted SpotSound-A leads every listed column. Gains with span-style and temporal-token outputs support complete-answer supervision across timestamp representations.
 
 \input{sections/bridge_results}
 
@@ -8,4 +8,4 @@ RelTwin improves both backbones on all three benchmarks (Table~\ref{tab:main}). 
 \label{sec:timing}
 On the 40 recordings with altered silence timing, candidate supervision retains a 20-point JointPairAcc advantage (87.50 vs.\ 67.50; CI $[2.94,33.33]$), compared with original scores of 85.00 and 42.50. The advantage persists when event waveforms, order, and queries are fixed but silence timing changes.
 
-Together, public gains test transfer, paired tests isolate selection, and timing changes test position-independent relation learning; set-level learning extends this decision to coverage and boundaries.
+Fixed silence duration or window placement therefore cannot solely explain the binding gain. Public benchmarks test general localization. The matched ablation isolates complete-answer competition, while temporal recomposition tests whether relation selection survives changed timing. Stage~2 extends this competition from occurrence choice to interval coverage, count, and boundaries.

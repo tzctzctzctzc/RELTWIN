@@ -1,17 +1,17 @@
 \section{Method}
 \label{sec:method}
-RelTwin combines training-pair construction with two successive learning stages (Fig.~\ref{fig:pair}). Section~2.1 describes twin construction: shared sound excerpts form competing windows paired with inverse queries. Section~2.2 introduces query-conditioned answer learning (Stage~1), which trains the model to select the window matching each query and to reverse its preference when the query changes. Section~2.3 presents set-level preference learning (Stage~2), which extends answer comparison to interval sets with different coverage, interval counts, and boundaries. For recording $x$ of duration $T$ and query $q$, the output is an interval set $S=\{[a_k,b_k]\}_{k=1}^{n}$, with $0\leq a_k<b_k\leq T$.
+RelTwin organizes supervision around competition between locally valid timestamp answers (Fig.~\ref{fig:pair}). Section~2.1 constructs query-dependent twins from shared excerpts and inverse queries. Section~2.2 uses complete-answer competition (Stage~1) to select the queried window and reverse the preference with the query. Section~2.3 introduces quality-aware interval-set preferences (Stage~2) for coverage, count, and boundary errors. For recording $x$ of duration $T$ and query $q$, the output is $S=\{[a_k,b_k]\}_{k=1}^{n}$, where $0\leq a_k<b_k\leq T$.
 
-\subsection{Twin construction}
+\subsection{Query-dependent twin construction}
 This construction supplies the competing examples used by both training stages. To make the query determine window selection, we arrange the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$ in one recording. Targets $W_\pm$ span each sequence, including its gap; queries $q_\pm$ request the respective orders. Both windows contain the same categories, but $W_-$ is negative for $q_+$ and positive for $q_-$. We alternate which order appears first.
 
-\subsection{Query-conditioned answer learning}
-This is Stage~1: it establishes query-specific selection by comparing complete answers under each query. We serialize $S$ as comma-separated spans for SpotSound-A or temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the mean log-probability
+\subsection{Stage 1: complete-answer competition}
+Stage~1 establishes query-specific selection by comparing complete answers under each query. We serialize $S$ as comma-separated spans for SpotSound-A or temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the mean log-probability
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
 \label{eq:score}
 \end{equation}
-The $2\times2$ matrix $M_{ij}=s_\theta(x,q_i,W_j)$ indexes queries by rows and answers by columns, $i,j\in\{+,-\}$ (Fig.~\ref{fig:pair}b). Its diagonal entries are the correct query--answer pairs. Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$. Candidate supervision additionally trains each diagonal score to exceed the competing answer in its row. For $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$ with $\tau>0$,
+The $2\times2$ matrix $M_{ij}=s_\theta(x,q_i,W_j)$ indexes queries by rows and answers by columns, $i,j\in\{+,-\}$ (Fig.~\ref{fig:pair}b). Its diagonal entries are the correct query--answer pairs. Sequence supervision minimizes $\mathcal L_{\rm seq}=-(M_{++}+M_{--})/2$, rewarding each correct answer independently. Candidate supervision adds the missing competition by training each diagonal score to exceed the other acoustically valid answer in its row. For $p_i(j)=\operatorname{softmax}_j(M_{ij}/\tau)$ with $\tau>0$,
 \begin{equation}
 \mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
@@ -23,7 +23,7 @@ Query reversal should also reverse the answer preference. We align the two distr
 \label{eq:loss}
 \end{equation}
 
-\subsection{Set-level preference learning}
+\subsection{Stage 2: quality-aware interval-set preferences}
 Stage~2 assigns graded preferences to imperfect answers according to coverage, interval count, and boundaries, rather than treating them as equally wrong. Its six candidates are $W_\pm$, their expanded versions, their enclosing span, and their union. Expansions expose boundary excess; the span includes intervening background; the union adds the competing occurrence.
 
 For candidate $S_j$ and target $W_i$, a four-axis quality vector $h_{ij}$ measures set-IoU, threshold margin, count agreement, and boundary accuracy. The threshold axis averages soft F1 at $\eta=0.3/0.5$. Each interval's best-match IoU $u$ contributes $\max(0,u-\eta)/(1-\eta)$; averaging over predictions and targets gives soft precision and recall. With $n_S$ denoting interval count, count agreement is $1-|n_{S_j}-n_{W_i}|/\max(n_{S_j},n_{W_i},1)$. Boundary accuracy is $\exp(-e)$: $e$ averages the summed endpoint error for each target's best-IoU match, divided by $2\max(b-a,0.1)$ for target $[a,b]$.
