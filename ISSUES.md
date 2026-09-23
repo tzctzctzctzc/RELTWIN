@@ -16,6 +16,8 @@
 
 ## v35 定向修订交接（2026-09-23）
 
+**后续澄清**：Method 首段明确对应 2.1 数据构造、2.2 第一训练阶段、2.3 第二训练阶段；三个组成部分与两个训练阶段分开表述。三个小节首句同步说明职责，公式与其他章节保持不变。重新编译并检查受影响的第 2–4 页，仍为四页正文加第五页声明与文献。
+
 **基准**：远端 `paper` 提交 `6bd94091a51ffe96fd895ebca485bf4a45ea6a0b`。本节为当前进度，后文历史版本中的邮箱占位和独立 Related Work 描述不再代表现稿。
 
 **本轮完成**：重组 Abstract；Introduction 整合为五段，将相关工作融入第二段；Method 开头串起 twin construction、query-conditioned answer learning 和 set-level preference learning，五个显示公式原样保留。缩短主图标签和图注，保留蓝橙绿配色、两阶段标识、独立推理路径和真实候选监督案例。六章目录为 Introduction、Method、Experiments、Conclusion、Acknowledgements、References。实验设置降为 3.1，结果小节接入 3.2–3.4。
@@ -823,7 +825,7 @@ D01 的配置事实：
 - v26 PDF SHA-256（历史版本）：`88c49d524dbc5e252d71c31f60defb52707de400747021c14711fe3e5ef574f4`
 - v33 PDF SHA-256（上一版）：`c1e3be655454e691bd6a7ddc48ad7ecd7b78a08ba693b0d4d997d4c0eaeacaeb`
 - v34 PDF SHA-256（历史版本）：`706fa198483e3b40483eedbd30107d51d5897aa7e04e42174c7393096dcee37f`
-- 当前 v35 PDF SHA-256：`06ed32d61dc2323d25ba5e8e1f900b2bf96f57ae4df0d7ba9089446cd5a300cc`
+- 当前 v35 PDF SHA-256：`341ce542c2c8b1282015117b9bf6ee7505b817a929f2698c788c0ea4d5e6c372`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`
 - 原交付审计提交：`a190b11`
 - 原开发分支：`codex/reltwin-core-only-20260913`
