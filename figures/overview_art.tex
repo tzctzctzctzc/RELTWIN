@@ -1,4 +1,5 @@
 % Editable vector figure at its final 17.4 cm two-column width.
+% v35: short labels, unchanged intervals, 90% vertical coordinate spacing.
 % Style only: user-supplied AtomMem example, 2026-09-16.
 % White canvas, cobalt method frames, orange diagnostic frame, sage highlights.
 % Scientific content is RelTwin's own. Cached diagnostic intervals are unchanged.
@@ -18,7 +19,7 @@
 \definecolor{rtRule}{HTML}{B8C4D3}
 \begingroup
 \sffamily\sansmath
-\begin{tikzpicture}[x=1cm,y=1cm,
+\begin{tikzpicture}[x=1cm,y=.90cm,
  every node/.style={font=\sffamily\fontsize{8}{9.2}\selectfont,
    text=rtInk,inner sep=1.2pt},
  heading/.style={font=\sffamily\bfseries\fontsize{9}{10.2}\selectfont},
@@ -31,7 +32,7 @@
 
 % (a) A shared recording contains both requested event orders.
 \draw[frame,draw=rtLine,fill=white] (.02,4.15) rectangle (17.38,5.27);
-\node[heading,anchor=west,text=rtBlue] at (.20,5.06) {(a) Shared excerpts};
+\node[heading,anchor=west,text=rtBlue] at (.20,5.06) {(a) Twin construction};
 \node[small,anchor=west] at (3.48,5.06) {$A$: dog\quad $B$: rooster};
 \foreach \xlo/\xhi/\event/\tone in {
  .35/1.35/A/rtBlueTint,1.48/2.48/B/rtSage,
@@ -46,7 +47,7 @@
 \node[small,text=rtGreen] at (1.415,4.30) {$W_+: A\rightarrow B$};
 \node[small,text=rtBlue] at (4.455,4.30) {$W_-: B\rightarrow A$};
 \draw[divider] (6.12,4.34)--(6.12,5.12);
-\node[heading,anchor=west,text=rtBlue] at (6.43,5.05) {Inverse queries exchange the correct answer};
+\node[heading,anchor=west,text=rtBlue] at (6.43,5.05) {Reverse query $\leftrightarrow$ swap target};
 \draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.38) rectangle (11.57,4.85);
 \node[anchor=west] at (6.58,4.615) {$q_+$: dog followed by rooster};
 \node[anchor=east,text=rtGreen] at (11.43,4.615) {$\rightarrow W_+$};
@@ -57,14 +58,12 @@
 % (b) One RelTwin frame contains both training stages, in reading order.
 \draw[frame,draw=rtLine,fill=white] (.02,.02) rectangle (11.71,3.84);
 \path[badge] (.27,3.63) rectangle (8.80,4.00);
-\node[heading,text=white] at (4.535,3.815) {(b) RelTwin: two-stage fine-tuning};
-\node[small,text=rtBlue,anchor=east] at (11.48,3.71) {TRAINING};
+\node[heading,text=white] at (4.535,3.815) {(b) RelTwin training};
 \draw[flow] (3.02,4.14)--(3.02,4.01);
 
 % Stage 1: query-conditioned answer competition plus exchanged consistency.
 \draw[frame,draw=rtLine!65,fill=rtBlueTint] (.27,1.14) rectangle (5.66,3.38);
-\node[heading,text=rtBlue] at (2.965,3.16) {1\quad Query-conditioned competition};
-\node[small] at (2.965,2.88) {Score complete timestamp answers};
+\node[heading,text=rtBlue] at (2.965,3.16) {Stage 1: Answer learning};
 \node at (2.55,2.61) {$y(W_+)$};
 \node at (4.07,2.61) {$y(W_-)$};
 \node at (1.29,2.28) {$q_+$};
@@ -80,15 +79,14 @@
 \node[text=rtOrange] at (4.07,2.28) {$s_{+-}\ \downarrow$};
 \node[text=rtOrange] at (2.55,1.88) {$s_{-+}\ \downarrow$};
 \node[text=rtGreen] at (4.07,1.88) {$s_{--}\ \uparrow$};
-\node[small,text=rtBlue] at (2.965,1.39) {Candidate CE + label-exchange JS};
+\node[small,text=rtBlue] at (2.965,1.39) {Compare answers + exchange labels};
 
 % A single solid arrow explicitly denotes the sequential training stages.
 \draw[flow] (5.71,2.30)--(6.04,2.30);
 
 % Stage 2: six interval-set candidates with a quality-based soft target.
 \draw[frame,draw=rtLine!65,fill=rtBlueTint] (6.09,1.14) rectangle (11.46,3.38);
-\node[heading,text=rtBlue] at (8.775,3.16) {2\quad Set-level preference learning};
-\node[small] at (8.775,2.88) {Compare coverage, count, and boundaries};
+\node[heading,text=rtBlue] at (8.775,3.16) {Stage 2: Set preferences};
 % Display order groups originals, expansions, and set aggregations.
 \foreach \xc/\yy/\lab in {
  6.93/2.47/{$W_+$},8.76/2.47/{$W_-$},10.59/2.47/{span},
@@ -103,7 +101,7 @@
  10.09/10.47/1.98/rtGreen,10.71/11.09/1.98/rtBlue}{
  \draw[\tone,line width=2.7pt] (\xlo,\yy)--(\xhi,\yy);
 }
-\node[small,text=rtBlue] at (8.775,1.39) {Quality scores $\rightarrow$ soft preference targets};
+\node[small,text=rtBlue] at (8.775,1.39) {Coverage $\cdot$ count $\cdot$ boundaries};
 
 % Inference is separate from training and has its own left-to-right direction.
 \draw[frame,draw=rtGreen!65,fill=rtGreenTint] (.27,.22) rectangle (11.46,.86);
@@ -117,8 +115,7 @@
 % (c) Independent candidate-supervision diagnostic; all real values unchanged.
 \draw[frame,draw=rtOrange,fill=white] (12.00,.02) rectangle (17.38,3.84);
 \path[rounded corners=2pt,fill=rtOrange] (12.24,3.63) rectangle (17.14,4.00);
-\node[heading,text=white] at (14.69,3.815) {(c) Query-specific selection};
-\node[small] at (14.69,3.43) {Inverse-query grounding example};
+\node[heading,text=white] at (14.69,3.815) {(c) Window selection};
 \draw[frame,draw=rtOrange!60,fill=rtOrangeTint] (12.69,2.86) rectangle (14.60,3.22);
 \draw[frame,draw=rtGreen!60,fill=rtGreenTint] (15.14,2.86) rectangle (17.05,3.22);
 \node[heading,text=rtOrange] at (13.645,3.04) {Paired SFT};

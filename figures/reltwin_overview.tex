@@ -1,6 +1,6 @@
 \begin{figure*}[t]
 \centering
 \input{figures/overview_art}
-\caption{RelTwin overview. (a) Shared excerpts hold acoustic content fixed while inverse queries exchange the target window. (b) Candidate supervision and query-exchange consistency train relation selection; set-level preference learning extends it to interval sets. Inference directly generates timestamps. Green/orange matrix cells indicate matching/competing answers. (c) A SpotSound-A inverse-query example compares paired SFT with candidate supervision. Blue outlines denote targets; filled bars denote predictions, with set-IoU above.}
+\caption{RelTwin. (a) Shared excerpts form opposite-order windows $W_\pm$ for queries $q_\pm$. (b) Green/orange cells mark matching/competing timestamp answers; arrows indicate the desired score changes. Stage~2 compares interval sets. (c) SpotSound-A paired SFT versus candidate supervision: outlines are targets, filled bars are predictions, and numbers are set-IoU.}
 \label{fig:pair}
 \end{figure*}

@@ -4,15 +4,52 @@
 
 目标会议：ICASSP 2027
 
-当前稿：v34（2026-09-22；在 Introduction 与 Results 补充评估职责和证据关系分析，保持共同第一作者、最终 RelTwin 主线和 19 条引用）
+当前稿：v35（2026-09-23；定向修订摘要、引言、方法和主图，六章目录接入，补齐五位作者信息；实验与结论正文及表格数据不变）
 
-清单审计日期：2026-09-22
+清单审计日期：2026-09-23
 
 论文提交截止：2026-09-16（以 [ICASSP 2027 Paper Kit](https://cmsworkshops.com/ICASSP2027/papers/paper_kit.php) 为准）
 
 > 当前策略：RelTwin 统一指候选答案竞争、查询交换一致性和集合级偏好学习的两阶段微调框架，不为内部第二阶段另设缩写。作者最新确认主表 SpotSound-A 数值由同事在另一机器按完整配置获得，现按该确认保留，与 TimeAudio 统一方法名称。论文按问题→方法→公开性能→机制证据组织，不写开发过程。旧候选监督日志仅用于机制实验；同事完整实验的预测、checkpoint 和设置待 P0-10 归档，不因分数相同复用旧出处。
 
 ---
+
+## v35 定向修订交接（2026-09-23）
+
+**基准**：远端 `paper` 提交 `6bd94091a51ffe96fd895ebca485bf4a45ea6a0b`。本节为当前进度，后文历史版本中的邮箱占位和独立 Related Work 描述不再代表现稿。
+
+**本轮完成**：重组 Abstract；Introduction 整合为五段，将相关工作融入第二段；Method 开头串起 twin construction、query-conditioned answer learning 和 set-level preference learning，五个显示公式原样保留。缩短主图标签和图注，保留蓝橙绿配色、两阶段标识、独立推理路径和真实候选监督案例。六章目录为 Introduction、Method、Experiments、Conclusion、Acknowledgements、References。实验设置降为 3.1，结果小节接入 3.2–3.4。
+
+**保护检查**：`tables/main_results.tex`、`tables/training_results.tex`、`figures/overview_data.tex`、`sections/conclusion.tex`、`sections/bridge_results.tex`、模板和参考文献样式与基准完全一致；实验和结果文件除约定的标题接入外完全一致。没有新训练、推理或数据替换。编译后为四页正文，第五页仅致谢、合规声明与文献；19 个引用键与 19 个条目一一对应，无缺键、未引用或重复条目，无未解析引用、溢出和未嵌入字体。
+
+### 交给合作者的正文待办（本轮不修改）
+
+| 优先级 | 位置 | 建议与论证职责 |
+|---|---|---|
+| 内容 | 3.1 Experimental setup | 将过多加粗标签整理为数据集、评价体系、训练设置几段；逐项检查沿用的实验协议是否就近给出出处。 |
+| 内容 | 3.3 / Table 2 | 单独明确消融职责：现有 matched comparison 隔离候选监督；保留现有统计身份，不改称交换一致性或集合级学习的独立消融。 |
+| 内容 | 3.4 末段 | `position-independent relation learning` 比静音布局干预的证据范围更宽；建议改为在改变静音布局后仍保持关系选择优势，不扩大到所有位置捷径。 |
+| 表达 | 4 Conclusion | 增加通俗的结果解释：两个骨干收益说明适配能力；逆查询选不同正确窗口说明关系选择；静音变化后优势保留。措辞限于现有证据，不新增实验主张。 |
+
+以上为合作者待办，不因本轮编译通过而关闭；P0-05/P0-07 全稿终检、P0-09 门户事项和 P0-10 原始实验归档继续保留。
+
+### 作者登记（用于投稿系统，不在首页添加 ORCID）
+
+| 顺序 | 作者 | 邮箱 | ORCID | 标注 |
+|---|---|---|---|---|
+| 1 | Yuehan Zhang | yuehanzhang2005@hotmail.com | 0009-0003-0591-8822 | 共同第一作者 |
+| 2 | Zhicheng Tang | u202414252@hust.edu.cn | 0009-0005-5817-9001 | 共同第一作者 |
+| 3 | Haowen Kan | u202415694@hust.edu.cn | 0009-0008-8375-978X | 作者 |
+| 4 | Wei Xu | xuwei@hust.edu.cn | 0000-0003-4705-7189 | 通讯作者 |
+| 5 | Zheng Zhang | leaf@hust.edu.cn | 0000-0003-2502-8707 | 通讯作者 |
+
+单位均按作者确认使用 Huazhong University of Science and Technology。ORCID 为作者提供，尚未完成门户身份绑定核验。致谢保留 Wei Xu 资助 GPU、无机构或企业经费、无利益冲突、公开数据与无新增人工研究的既有事实；未推断新增作者的额外资助或贡献。
+
+### 本轮相关工作核查
+
+保留 v29 的文献元数据核验记录，本轮针对改写论断核对：[SpotSound 原文](https://arxiv.org/html/2604.13023v2)的交错时间戳和存在/不存在查询训练；[T-CLAP](https://arxiv.org/html/2404.17806)的时序对比学习；[反事实音频学习](https://arxiv.org/html/2401.04935)的描述与音文学习；[CompA 作者页](https://sreyan88.github.io/compa_iclr/)的顺序/属性评测与组合负样本；[CoSTALA](https://arxiv.org/html/2608.24374)的时空对比、局部对齐与特征一致性；[SHINE](https://arxiv.org/html/2407.05118)的负查询与显著性排序。没有将这些工作的监督对象笼统归为中间特征。
+
+TimeAudio 出版社网页本轮连接失败，使用[出版方登记的摘要与元数据](https://api.crossref.org/works/10.1609/aaai.v40i31.39827)核对时间标记与绝对时间感知编码。卷 40、期 31、页 26233–26241、2026 年；为兼容 IEEEbib 的 proceedings 格式，BibTeX 仅保留卷和页，期号在此归档。未声称本轮重新通读全部 19 篇文献。
 
 ## 0. 这份清单如何维护
 
@@ -131,16 +168,16 @@ P0-01 至 P0-04、P0-06 已完成，具体修改与合理性审查见第 7 节�
 - **验收标准**：每个结果能追溯到检查点、样本规模、指标和参照；不把 published-score 差值当成 matched 消融，不把样本 bootstrap 当作种子不确定性。
 - **来源映射**：C05；原审阅 #9、#40–#50、#68–#73、#84–#86；新增包装审计第 18 节。
 
-### P0-08 · 通讯邮箱与全员 ORCID 尚未完成
+### P0-08 · 作者信息已补齐，待投稿系统核对
 
 - **状态**：待作者
 - **位置**：`authors.tex`；投稿系统
-- **当前问题**：Wei Xu 的通讯邮箱仍为 `[to be provided]`；尚未取得并核验三位作者的有效 ORCID。
+- **当前问题**：v35 已按作者提供的信息补齐五位作者邮箱，移除占位符，登记五个 ORCID；投稿系统绑定及身份核验尚待作者完成。
 - **为什么重要**：这是真正的提交阻断项。ICASSP 2027 要求所有作者有有效 ORCID，PDF 与投稿系统作者列表及顺序必须一致。
 - **作者待办**：
-  1. 提供 Wei Xu 的真实通讯邮箱；
-  2. 提供 Zhicheng Tang、Yuehan Zhang、Wei Xu 的 ORCID；
-  3. 核对作者顺序、单位、邮箱、题目、摘要和主题分类与投稿系统完全一致。当前 PDF 顺序为 Yuehan Zhang、Zhicheng Tang、Wei Xu。
+  1. 核对下方 v35 作者登记表并完成五个 ORCID 的门户绑定；
+  2. 核对共同一作、两位通讯作者标注和投稿系统信息；
+  3. 核对作者顺序、单位、邮箱、题目、摘要和主题分类与投稿系统完全一致。当前 PDF 顺序为 Yuehan Zhang、Zhicheng Tang、Haowen Kan、Wei Xu、Zheng Zhang。
 - **2026-09-15 更新**：按作者要求将 Yuehan Zhang 调整至 Zhicheng Tang 前，地址栏同步调整两位作者邮箱顺序；通讯作者、单位及其余内容不变。邮箱占位符和 ORCID 仍待作者提供。
 - **禁止事项**：不得猜测邮箱、ORCID 或单位信息。
 - **验收标准**：PDF 不含占位符；全体 ORCID 可验证；投稿系统与 PDF 作者信息逐项一致。
@@ -712,7 +749,7 @@ D01 的配置事实：
 
 ## 9. 推荐修改顺序
 
-1. **P0-08**：作者补齐通讯邮箱与 ORCID；无需 GPU。
+1. **P0-08**：五位作者信息已补齐，作者完成 ORCID 绑定与门户一致性核验；无需 GPU。
 2. **P0-10**：框架与方法说明已统一；归档同事完整 SpotSound-A 的配置、checkpoint 和逐行结果，补齐复现参数，不因数值相同复用旧记录。
 3. **P3-02**：优先整合已经完成的五种子 matched SFT/RelTwin 汇总，增强单点之外的稳定性证据；先核对记录，不新增大训练。
 4. **P0-05/P0-07**：全文终检公开成绩、matched 增益、机制诊断和 checkpoint selection 的对应关系。
@@ -785,7 +822,8 @@ D01 的配置事实：
 
 - v26 PDF SHA-256（历史版本）：`88c49d524dbc5e252d71c31f60defb52707de400747021c14711fe3e5ef574f4`
 - v33 PDF SHA-256（上一版）：`c1e3be655454e691bd6a7ddc48ad7ecd7b78a08ba693b0d4d997d4c0eaeacaeb`
-- 当前 PDF SHA-256：`706fa198483e3b40483eedbd30107d51d5897aa7e04e42174c7393096dcee37f`
+- v34 PDF SHA-256（历史版本）：`706fa198483e3b40483eedbd30107d51d5897aa7e04e42174c7393096dcee37f`
+- 当前 v35 PDF SHA-256：`06ed32d61dc2323d25ba5e8e1f900b2bf96f57ae4df0d7ba9089446cd5a300cc`
 - v11 源起点：`3841a85d00ed4487be2cca7e1022b2279d079d79`
 - 原交付审计提交：`a190b11`
 - 原开发分支：`codex/reltwin-core-only-20260913`

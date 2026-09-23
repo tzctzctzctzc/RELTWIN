@@ -2,7 +2,7 @@
 
 [当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
 
-当前为 **v34（2026-09-22，补充 Introduction 与结果分析）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。张跃瀚（Yuehan Zhang）与汤智铖（Zhicheng Tang）为共同第一作者，张跃瀚列第一、汤智铖列第二；Wei Xu 为通讯作者。全文只围绕“两个窗口都有真实声学支持，但查询决定哪一个是答案”组织。Method 按局部有效答案构造、查询条件竞争、集合级偏好学习展开；辅助类别查询配对仅在训练设置交代，不命名为新模块或贡献。Introduction 新增评估职责说明，结果部分补充公开迁移、配对机制和 timing intervention 的关系分析，未增加实验或改变数据。
+当前为 **v35（2026-09-23，定向修订与六章目录接入）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。作者依次为 Yuehan Zhang、Zhicheng Tang、Haowen Kan、Wei Xu、Zheng Zhang，前两位共同第一作者，后两位共同通讯作者，均属华中科技大学。邮箱已补齐，ORCID 见 `ISSUES.md`。摘要、引言和方法按“查询决定真实候选窗口中的正确答案”展开；Related Work 融入 Introduction，Method 先说明三个组成部分，再解释两阶段目标。本轮未改实验与结论正文、两张表、案例数据或五个显示公式，未新增实验。
 
 本轮沿用 v30 的基线出处、51:1 配对转变和时间干预结果整理；正文暂不展开模型选择过程，供内部讨论使用。两张表的数值和置信区间不变。
 
@@ -23,7 +23,7 @@ v33 在 Introduction 末尾补充评估职责说明，并在第 4 页 Results �
 | `main.tex` | 论文入口、宏包与标题 |
 | `authors.tex` | 作者、单位与通讯作者信息 |
 | `sections/` | 摘要、引言、相关工作、方法、实验、讨论、结论与声明 |
-| `sections/related_work.tex` | 独立 Related Work 章节及与最近邻方法的结构比较 |
+| `sections/related_work.tex` | 融入 Introduction 第二段的相关工作，不单设章节 |
 | `sections/method.tex` | 局部目标构造、查询—答案得分矩阵与两阶段训练目标 |
 | `sections/experiments.tex` | 数据、成对指标、训练与评测设置、比较及统计口径 |
 | `tables/main_results.tex` | Table 1：三个 benchmark 的基础模型与 RelTwin 附加微调结果，差值相对对应原文基础模型 |

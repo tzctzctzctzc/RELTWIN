@@ -1,12 +1,12 @@
-\section{RelTwin}
+\section{Method}
 \label{sec:method}
-For recording $x$ of duration $T$ and query $q$, a generative grounder predicts $S=\{[a_k,b_k]\}_{k=1}^{n}$, with $0\leq a_k<b_k\leq T$. RelTwin trains answer preferences in two stages: selecting the query-consistent occurrence, then refining interval-set quality.
+RelTwin has three parts (Fig.~\ref{fig:pair}): twin construction creates competing windows; query-conditioned answer learning selects the matching window (Stage~1); set-level preference learning compares coverage, count, and boundaries (Stage~2). For recording $x$ of duration $T$ and query $q$, the output is an interval set $S=\{[a_k,b_k]\}_{k=1}^{n}$, with $0\leq a_k<b_k\leq T$.
 
-\subsection{Query-dependent twin construction}
-RelTwin arranges the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$ in one recording. Targets $W_\pm$ span each sequence, including its gap; queries $q_\pm$ request the respective orders. Reusing excerpts holds acoustic content fixed: $W_-$ is negative for $q_+$ but positive for $q_-$. We alternate which order appears first.
+\subsection{Twin construction}
+To make the query determine window selection, we arrange the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$ in one recording. Targets $W_\pm$ span each sequence, including its gap; queries $q_\pm$ request the respective orders. Both windows contain the same categories, but $W_-$ is negative for $q_+$ and positive for $q_-$. We alternate which order appears first.
 
-\subsection{Answer competition and query-exchange consistency}
-We serialize $S$ in the backbone's native format: comma-separated spans for SpotSound-A and temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the length-normalized score
+\subsection{Query-conditioned answer learning}
+Stage~1 compares complete answers under each query. We serialize $S$ as comma-separated spans for SpotSound-A or temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the mean log-probability
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
 \label{eq:score}
@@ -16,7 +16,7 @@ The $2\times2$ matrix $M_{ij}=s_\theta(x,q_i,W_j)$ indexes queries by rows and a
 \mathcal L_{\rm cand}=-\tfrac12[\log p_+(+)+\log p_-(-)].
 \label{eq:candidate}
 \end{equation}
-Query reversal exchanges the target assignment, so the two preference distributions should agree after swapping their labels. We enforce this correspondence with $\mathcal L_{\rm JS}=\operatorname{JS}(p_+,\Pi p_-)$, where $\Pi$ swaps the two candidates. For an ordinary localization example $(x_r,q_r,S_r)$, rehearsal uses $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
+Query reversal should also reverse the answer preference. We align the two distributions after exchanging candidate labels using the Jensen--Shannon divergence $\mathcal L_{\rm JS}=\operatorname{JS}(p_+,\Pi p_-)$, where $\Pi$ swaps the candidates. To retain ordinary localization supervision, we rehearse examples $(x_r,q_r,S_r)$ with $\mathcal R_1=-s_\theta(x_r,q_r,S_r)$. Stage~1 optimizes
 \begin{equation}
 \mathcal L_1=\mathcal L_{\rm seq}+\lambda(\mathcal L_{\rm cand}
 +\gamma\mathcal L_{\rm JS})+\beta\mathcal R_1.
@@ -34,7 +34,7 @@ v_{ij}=\tfrac12\left[\tfrac14\sum_{\ell=1}^{4}h_{ij\ell}
 +\frac{d^+_{ij}-d^-_{ij}}{K-1}\right].
 \label{eq:quality}
 \end{equation}
-Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ guide the same answer scores, now normalized over all six candidates. Their listwise loss is $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
+Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ assign higher probability to better interval sets. The same answer scores, normalized over all six candidates, learn this distribution through $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
 
 Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. The same quality rule defines their listwise loss $\mathcal L_{\rm set,r}$. A frozen base-model distribution $p_0$ anchors replay preferences $p_r$. Stage~2 optimizes
 \begin{equation}
