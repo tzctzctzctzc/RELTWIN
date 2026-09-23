@@ -1,6 +1,8 @@
 # RelTwin · ICASSP 2027 论文协作
 
-[当前论文 PDF](paper.pdf) · [问题清单与故事线](ISSUES.md) · [LaTeX 主文件](main.tex)
+[当前论文 PDF](paper_incremental_v36.pdf) · [修改报告](CHANGELOG.md) · [合作者交接](HANDOFF_NOTES.md) · [问题清单](ISSUES.md) · [LaTeX 主文件](main.tex)
+
+**当前为 v36（2026-09-23）**：按作者要求基于 GitHub `b28b3e9` 做有限范围增量修改；摘要限定机制实验身份、统一 interval count、拆分相关工作段落、补充 Stage 2 与 KL 动机、校正图内一致性标签，并给作者姓名加入 ORCID 链接。实验、结论、表格和公式未改。按本轮“不覆盖输入 PDF”的明确要求，`paper.pdf` 保留为 v35 底稿，新源码对应 `paper_incremental_v36.pdf`，均为四页正文加第五页声明与文献。以下 v35 说明及旧固定文件约定作为历史记录；本轮详情以 CHANGELOG 与 HANDOFF_NOTES 为准。
 
 当前为 **v35（2026-09-23，定向修订与六章目录接入）**。标题为 **RelTwin: Contrasting Locally Valid Timestamp Answers for Query-Specific Audio Grounding**。作者依次为 Yuehan Zhang、Zhicheng Tang、Haowen Kan、Wei Xu、Zheng Zhang，前两位共同第一作者，后两位共同通讯作者，均属华中科技大学。邮箱已补齐，ORCID 见 `ISSUES.md`。摘要、引言和方法按“查询决定真实候选窗口中的正确答案”展开；Related Work 融入 Introduction，Method 先说明三个组成部分，再解释两阶段目标。本轮未改实验与结论正文、两张表、案例数据或五个显示公式，未新增实验。
 
