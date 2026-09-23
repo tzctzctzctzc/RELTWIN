@@ -6,7 +6,7 @@
 
 入口 `main.tex`；分章 `sections/`；文献 `references.bib`；可编辑主图 `figures/overview_art.tex`，数值来自 `figures/overview_data.tex`；单图入口 `overview_figure.tex`。
 
-按本轮“不覆盖输入 PDF”的要求，保留底稿 `paper.pdf`，新编译稿为 **`paper_incremental_v36.pdf`**。后续阅读以新稿为准。单图 PDF/PNG/SVG 与兼容预览同步更新，均由原图源生成。
+按作者后续确认，新编译稿统一保存为 **`paper.pdf`**，不另设版本文件名；移除重复命名的 PDF，旧稿可从 Git 历史恢复。本次文件名统一不改变 v36 论文内容。单图 PDF/PNG/SVG 与兼容预览同步更新，均由原图源生成。
 
 ## 按章节的修改
 

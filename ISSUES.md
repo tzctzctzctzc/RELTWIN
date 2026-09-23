@@ -1,6 +1,6 @@
 # RelTwin 论文长期维护清单
 
-当前论文：[paper_incremental_v36.pdf](paper_incremental_v36.pdf)；本轮输入 `paper.pdf` 按要求保留不覆盖。
+当前论文：[paper.pdf](paper.pdf)；按作者最新要求统一固定文件名，旧版由 Git 历史保留。本次仅统一交付名称及入口，论文内容和 v36 哈希不变。
 
 目标会议：ICASSP 2027
 
