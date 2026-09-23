@@ -1,25 +1,20 @@
 \begin{table*}[t]
 \centering
-\caption{Mechanism experiment: isolating RelTwin's candidate supervision on SpotSound-A. (b) Matched data and updates; (c) mean $\pm$ sample SD. Joint: JointPairAcc; same-answer: inverse-query pairs with identical timestamp answers. Scores are percentages except counts.}
+\caption{Inverse-query evaluation on 300 pairs (600 queries). SpotSound-A compares paired SFT and candidate supervision after 256 updates; TimeAudio compares paired SFT and RelTwin after 384+128 updates. Joint denotes JointPairAcc at IoU 0.5. Scores are percentages except same-answer counts.}
 \label{tab:training}
 \small
 \setlength{\tabcolsep}{7pt}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrr@{}}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrr@{}}
 \toprule
- & SpotSound & \multicolumn{4}{c}{Relation development (160 inverse-query pairs)}\\
-\cmidrule(lr){2-2}\cmidrule(l){3-6}
-Method & mIoU $\uparrow$ & mIoU $\uparrow$ & Joint $\uparrow$ & Swap error $\downarrow$ & Same-answer pairs $\downarrow$\\
+Backbone & Training & mIoU $\uparrow$ & Joint $\uparrow$ & Swap error $\downarrow$ & Same-answer pairs $\downarrow$\\
 \midrule
-\multicolumn{6}{@{}l}{\textit{(a) Backbone reference: shared evaluation protocol}}\\
-SpotSound-A & 58.42 & 37.64 & 0.63 & 65.00 & 15/160\\
+SpotSound-A & Official checkpoint & 37.19 & 0.67 & 66.33 & 32/300\\
+SpotSound-A & Paired SFT & 76.08 & 55.33 & 36.33 & 61/300\\
+SpotSound-A & Candidate supervision & \textbf{87.70} & \textbf{81.67} & \textbf{7.00} & \textbf{2/300}\\
 \midrule
-\multicolumn{6}{@{}l}{\textit{(b) Matched training comparison}}\\
-Paired SFT & 58.42 & 74.58 & 53.13 & 40.00 & 37/160\\
-Candidate supervision & \textbf{59.43} & \textbf{88.55} & \textbf{84.38} & \textbf{7.50} & \textbf{1/160}\\
-Gain over paired SFT & +1.02 & +13.97 & +31.25 & $-32.50$ & $-36$ pairs\\
-\midrule
-\multicolumn{6}{@{}l}{\textit{(c) Candidate supervision: three training seeds}}\\
-Candidate supervision & $59.16\pm0.26$ & $87.05\pm1.43$ & $81.46\pm2.53$ & $8.13\pm0.63$ & $(1,0,0)/160$\\
+TimeAudio & Official checkpoint & 40.23 & 0.00 & 83.67 & 67/300\\
+TimeAudio & Paired SFT & 38.89 & 2.67 & 78.33 & 160/300\\
+TimeAudio & RelTwin & \textbf{43.86} & \textbf{10.67} & \textbf{54.33} & \textbf{34/300}\\
 \bottomrule
 \end{tabular*}
 \end{table*}
