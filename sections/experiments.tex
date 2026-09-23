@@ -16,4 +16,4 @@ Table~\ref{tab:training} isolates Stage~1 competition on SpotSound-A. Paired SFT
 
 For the timing intervention, we recompose 80 development recordings with a 1.5\,s lead-in, 0.25\,s within-window gaps, 3\,s between windows, and a 2\,s tail while preserving waveforms, order, and queries. Frozen matched models evaluate one template (160 queries). Timing changes for 40 BA-first recordings; 40 AB-first recordings remain identical.
 
-TimeAudio and matched point estimates use seed~0; Table~\ref{tab:training}(c) reports candidate supervision over seeds 0/1/2 as mean $\pm$ sample SD. We obtain 95\% CIs from 20,000 audio-group bootstrap resamples; relation tests resample 39 connected source-sharing groups (largest: 18 recordings).
+Both backbones' main results and matched point estimates use seed~0; Table~\ref{tab:training}(c) reports candidate supervision over seeds 0/1/2 as mean $\pm$ sample SD. We obtain 95\% CIs from 20,000 audio-group bootstrap resamples; relation tests resample 39 connected source-sharing groups (largest: 18 recordings).

@@ -47,4 +47,4 @@ Replay candidates perturb boundaries, add/drop events, merge spans, split the lo
 \label{eq:stage2}
 \end{equation}
 
-Both backbones share Eq.~\ref{eq:score}. Training updates LoRA parameters and, for TimeAudio, temporal/audio connectors. Inference remains direct timestamp generation from $(x,q)$, without twin construction or candidate scoring.
+Both backbones share Eq.~\ref{eq:score}. Training updates each backbone's LoRA adapters and bridge modules. Inference uses both adapted components for direct timestamp generation from $(x,q)$, without twin construction or candidate scoring.

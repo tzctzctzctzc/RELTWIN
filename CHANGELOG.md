@@ -1,5 +1,9 @@
 # RelTwin v36 有限范围增量修改
 
+## 2026-09-24：统一两个骨干的训练与推理描述
+
+全文核查后修正 Method 中只提 TimeAudio 更新连接模块的残留表述，统一为两个骨干各自的 LoRA adapters 和 bridge modules；统计段将主表 seed 0 的说明覆盖两个骨干。保留真实参数量与输出格式差异，以及表 2 的独立消融设置。未修改公式、表格或分数。重新编译固定 `paper.pdf`，检查四页正文与第五页声明/文献，无越界或未解析引用。
+
 ## 2026-09-23：补充完整 RelTwin 配置
 
 在 `sections/experiments.tex` 写入同事提供的完整配置：384/128 两阶段步数、LoRA 与 bridge 学习率、exchange/JS、replay、reference-KL 权重、两骨干可训练参数量、seed 0 和 adapter+bridge 推理权重。未凭截图补写 LoRA rank、数据配比或温度；其余实验数据与表格不变。重新编译为五页并检查无溢出或未解析引用。
