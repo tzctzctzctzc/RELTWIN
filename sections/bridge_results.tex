@@ -1,6 +1,6 @@
-\subsection{Controlled ablation: complete-answer competition}
-Under matched data and updates, paired SFT rewards both correct answers independently, whereas candidate supervision requires each to outrank the competing window. Candidate supervision improves SpotSound mIoU by 1.02 points over paired SFT (95\% audio-group CI: $[0.23,1.81]$; Table~\ref{tab:training}).
+\subsection{Inverse-query selection across backbones}
+Table~\ref{tab:training} evaluates 300 inverse-query pairs. On SpotSound-A, the 256-update comparison isolates candidate supervision: paired SFT rewards correct answers independently, whereas candidate supervision also requires each to outrank the competing window. Relation mIoU rises from 76.08 to 87.70, and JointPairAcc from 55.33 to 81.67. Swap error falls from 36.33 to 7.00, while identical-answer pairs decrease from 61 to 2.
 
-JointPairAcc rises by 31.25 points (source-group CI $[22.35,40.50]$). Identical-answer pairs fall from 37 to 1 out of 160; 27 of those 37 become jointly correct. Figure~\ref{fig:pair} illustrates this recovery. Across all pairs, transitions to joint correctness outnumber regressions by 51 to 1.
+TimeAudio compares paired SFT with the two-stage RelTwin framework after 384+128 updates. Relation mIoU increases from 38.89 to 43.86, and JointPairAcc from 2.67 to 10.67. Swap error decreases from 78.33 to 54.33, and identical-answer pairs from 160 to 34. The two comparisons test candidate supervision on SpotSound-A and the complete framework on TimeAudio, respectively.
 
-The relation mIoU gain is 13.97 points (CI $[9.84,17.51]$). Because both candidate windows contain the queried categories, producing distinct, jointly correct answers demonstrates selection of the queried relation rather than category detection alone.
+Both comparisons improve joint correctness while reducing swaps and identical answers. Because both windows contain the queried categories, these results support query-specific occurrence selection beyond category recognition. Figure~\ref{fig:pair} shows a qualitative SpotSound-A candidate-supervision example.
