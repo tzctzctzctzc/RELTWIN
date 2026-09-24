@@ -2,6 +2,8 @@
 \subsection{Grounding performance across benchmarks}
 RelTwin improves mIoU and both R1 metrics for both backbones on all three benchmarks (Table~\ref{tab:main}); adapted SpotSound-A leads every listed column. Gains with span-style and temporal-token outputs support complete-answer supervision across timestamp representations.
 
+Threshold metrics complement mean overlap by counting predictions that meet a localization criterion. SpotSound-A's R1@0.5 gains correspond to net increases of ten successful queries on SpotSound-Bench and five on UnAV-100. Thus, adaptation improves both average overlap and the number of queries meeting the stricter threshold.
+
 \input{sections/bridge_results}
 
 \subsection{Binding gains persist after timing intervention}
