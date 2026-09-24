@@ -8,6 +8,7 @@ ENTRY
     author
     booktitle
     chapter
+    doi
     edition
     editor
     howpublished
@@ -24,6 +25,7 @@ ENTRY
     series
     title
     type
+    url
     volume
     year
   }
@@ -278,7 +280,18 @@ FUNCTION {format.editors}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { "``" title "t" change.case$ * }
+    { "``"
+      doi empty$
+        { url empty$
+            { title "t" change.case$ }
+            { "\href{" url * "}{" * title "t" change.case$ * "}" * }
+          if$
+        }
+        { "\href{https://doi.org/" doi * "}{" *
+          title "t" change.case$ * "}" * }
+      if$
+      *
+    }
   if$
 }
 
