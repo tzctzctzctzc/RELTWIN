@@ -23,6 +23,8 @@ Query reversal should also reverse the answer preference. We align the two distr
 \label{eq:loss}
 \end{equation}
 
+% Enqueue the two-column main-results float on page 2 for page 3.
+\input{tables/main_results}
 \subsection{Stage 2: quality-aware interval-set preferences}
 Stage~2 assigns graded preferences to imperfect answers according to coverage, interval count, and boundaries, rather than treating them as equally wrong. Its six candidates are $W_\pm$, their expanded versions, their enclosing span, and their union. Expansions expose boundary excess; the span includes intervening background; the union adds the competing occurrence.
 
