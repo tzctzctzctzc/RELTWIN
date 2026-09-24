@@ -4,3 +4,5 @@ On 300 inverse-query pairs (Table~\ref{tab:training}), SpotSound-A's 256-update 
 TimeAudio compares paired SFT with complete two-stage RelTwin after 384+128 updates. Relation mIoU rises from 38.89 to 43.86 and JointPairAcc from 2.67 to 10.67; swap error falls from 78.33 to 54.33 and identical-answer pairs from 160 to 34.
 
 Both windows contain the queried categories, so improved joint correctness supports occurrence selection beyond category recognition. Figure~\ref{fig:pair} illustrates SpotSound-A candidate supervision.
+
+Fewer identical answers indicate query sensitivity; higher JointPairAcc confirms correct localization without window swaps. Together, they support query-specific selection beyond answer diversity.
