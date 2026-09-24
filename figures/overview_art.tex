@@ -1,7 +1,7 @@
 % Editable vector figure at its final 17.4 cm two-column width.
-% 2026-09-24: 9 pt text; revised top-panel spacing, unchanged interval data.
+% 2026-09-24: 9 pt text and 8 pt IoU labels; unchanged interval data.
 % Style only: user-supplied AtomMem example, 2026-09-16.
-% White canvas, cobalt method frames, orange diagnostic frame, sage highlights.
+% White canvas, aligned cobalt panel frames, sage highlights.
 % Scientific content is RelTwin's own. Cached diagnostic intervals are unchanged.
 % Reading order: (a) shared input, (b) left-to-right training, (c) separate evidence.
 \input{figures/overview_data}
@@ -26,14 +26,14 @@
  small/.style={font=\sffamily\fontsize{9}{10.2}\selectfont},
  flow/.style={-{Latex[length=1.45mm,width=1mm]},draw=rtBlue,line width=.8pt},
  frame/.style={rounded corners=2.5pt,line width=.7pt},
- badge/.style={rounded corners=2pt,fill=rtBlue,draw=none},
+ metric/.style={font=\sffamily\fontsize{8}{9.2}\selectfont},
  divider/.style={draw=rtRule,dash pattern=on 2pt off 1.7pt,line width=.5pt}]
 \path[use as bounding box] (0,0) rectangle (17.4,5.69);
 
 % (a) A shared recording contains both requested event orders.
 \draw[frame,draw=rtLine,fill=white] (.02,4.15) rectangle (17.38,5.67);
 \node[heading,anchor=west,text=rtBlue] at (.20,5.45) {(a) Twin construction};
-\node[small,anchor=west] at (6.43,5.45) {$A$: dog\quad $B$: rooster};
+\node[small,anchor=west] at (3.50,5.45) {$A$=dog, $B$=rooster};
 \foreach \xlo/\xhi/\event/\tone in {
  .35/1.35/A/rtBlueTint,1.48/2.48/B/rtSage,
  3.39/4.39/B/rtSage,4.52/5.52/A/rtBlueTint}{
@@ -46,22 +46,21 @@
 \draw[rtBlue,line width=.7pt] (3.39,4.77)--(3.39,4.71)--(5.52,4.71)--(5.52,4.77);
 \node[small,text=rtGreen] at (1.415,4.42) {$W_+$};
 \node[small,text=rtBlue] at (4.455,4.42) {$W_-$};
-\draw[divider] (6.12,4.34)--(6.12,5.50);
-\draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.42) rectangle (11.57,4.92);
-\node[anchor=west] at (6.58,4.67) {$q_+$: dog followed by rooster};
-\node[anchor=east,text=rtGreen] at (11.43,4.67) {$\rightarrow W_+$};
-\draw[frame,draw=rtLine!65,fill=rtBlueTint] (11.89,4.42) rectangle (17.06,4.92);
-\node[anchor=west] at (12.02,4.67) {$q_-$: rooster followed by dog};
-\node[anchor=east,text=rtBlue] at (16.92,4.67) {$\rightarrow W_-$};
+\draw[divider] (6.24,4.34)--(6.24,5.50);
+\draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.66) rectangle (11.57,5.16);
+\node[anchor=west] at (6.58,4.91) {$q_+$: dog followed by rooster};
+\node[anchor=east,text=rtGreen] at (11.43,4.91) {$\rightarrow W_+$};
+\draw[frame,draw=rtLine!65,fill=rtBlueTint] (11.89,4.66) rectangle (17.06,5.16);
+\node[anchor=west] at (12.02,4.91) {$q_-$: rooster followed by dog};
+\node[anchor=east,text=rtBlue] at (16.92,4.91) {$\rightarrow W_-$};
 
 % (b) One RelTwin frame contains both training stages, in reading order.
 \draw[frame,draw=rtLine,fill=white] (.02,.02) rectangle (11.71,3.84);
-\path[badge] (.27,3.63) rectangle (5.55,4.00);
-\node[heading,text=white] at (2.91,3.815) {(b) RelTwin training};
-\draw[flow] (5.95,4.15)--(5.95,3.48)--(2.965,3.48)--(2.965,3.38);
+\node[heading,anchor=west,text=rtBlue] at (.27,3.66) {(b) RelTwin training};
+\draw[flow] (5.86,4.28)--(5.86,3.92);
 
 % Stage 1: query-conditioned answer competition plus exchanged consistency.
-\draw[frame,draw=rtLine!65,fill=rtBlueTint] (.27,.25) rectangle (5.66,3.38);
+\draw[frame,draw=rtLine!65,fill=rtBlueTint] (.27,.65) rectangle (5.66,3.38);
 \node[heading,text=rtBlue] at (2.965,3.16) {Stage 1: Answer learning};
 \node at (2.55,2.67) {$y(W_+)$};
 \node at (4.07,2.67) {$y(W_-)$};
@@ -83,7 +82,7 @@
 \draw[flow] (5.71,1.82)--(6.04,1.82);
 
 % Stage 2: six interval-set candidates with a quality-based soft target.
-\draw[frame,draw=rtLine!65,fill=rtBlueTint] (6.09,.25) rectangle (11.46,3.38);
+\draw[frame,draw=rtLine!65,fill=rtBlueTint] (6.09,.65) rectangle (11.46,3.38);
 \node[heading,text=rtBlue] at (8.775,3.16) {Stage 2: Set preferences};
 % Display order groups originals, expansions, and set aggregations.
 \foreach \xc/\yy/\lab in {
@@ -101,28 +100,20 @@
 }
 
 % (c) Independent candidate-supervision diagnostic; all real values unchanged.
-\draw[frame,draw=rtOrange,fill=white] (12.00,.02) rectangle (17.38,3.84);
-\path[rounded corners=2pt,fill=rtOrange] (12.24,3.63) rectangle (17.14,4.00);
-\node[heading,text=white] at (14.69,3.815) {(c) Window selection};
+\draw[frame,draw=rtLine,fill=white] (12.00,.02) rectangle (17.38,3.84);
+\node[heading,anchor=west,text=rtBlue] at (12.24,3.66) {(c) Window selection};
 \draw[frame,draw=rtOrange!60,fill=rtOrangeTint] (12.69,2.86) rectangle (14.60,3.22);
 \draw[frame,draw=rtGreen!60,fill=rtGreenTint] (15.14,2.86) rectangle (17.05,3.22);
 \node[heading,text=rtOrange] at (13.645,3.04) {Paired SFT};
 \node[heading,text=rtGreen] at (16.095,3.04) {+ Candidate};
-\foreach \xbase in {12.71,15.16}{
- \draw[rtGray,line width=.45pt] (\xbase,2.49)--({\xbase+1.87},2.49);
- \foreach \sec/\lab in {0/0,27/{27 s}}{
-  \pgfmathsetmacro{\xx}{\xbase+1.87*\sec/27}
-  \draw[rtGray,line width=.45pt] (\xx,2.45)--(\xx,2.53);
-  \node[small,anchor=south] at (\xx,2.515) {\lab};
- }
-}
+\node[metric,text=rtGray] at (14.69,2.58) {0--27 s};
 \node at (12.32,1.91) {$q_+$};
-\node at (12.32,1.12) {$q_-$};
+\node at (12.32,.83) {$q_-$};
 \foreach \xbase/\ystart/\ystop/\pstart/\pstop/\yy/\tone/\filltone in {
  12.71/\FigGTPlusStart/\FigGTPlusEnd/\FigSFTPlusStart/\FigSFTPlusEnd/1.91/rtOrange/rtPeach,
  15.16/\FigGTPlusStart/\FigGTPlusEnd/\FigCandPlusStart/\FigCandPlusEnd/1.91/rtGreen/rtSage,
- 12.71/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/1.12/rtOrange/rtPeach,
- 15.16/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/1.12/rtGreen/rtSage}{
+ 12.71/\FigGTMinusStart/\FigGTMinusEnd/\FigSFTMinusStart/\FigSFTMinusEnd/.83/rtOrange/rtPeach,
+ 15.16/\FigGTMinusStart/\FigGTMinusEnd/\FigCandMinusStart/\FigCandMinusEnd/.83/rtGreen/rtSage}{
  \draw[rtRule,line width=.45pt] (\xbase,\yy)--({\xbase+1.87},\yy);
  \pgfmathsetmacro{\predstart}{\xbase+1.87*\pstart/27}
  \pgfmathsetmacro{\predstop}{\xbase+1.87*\pstop/27}
@@ -133,14 +124,9 @@
  \draw[draw=rtBlue,fill=none,line width=.8pt]
   (\targetstart,\yy-.14) rectangle (\targetstop,\yy+.14);
 }
-\node[small,text=rtOrange] at (13.645,2.24) {IoU \FigSftPlusIoU};
-\node[small,text=rtGreen] at (16.095,2.24) {IoU \FigCandPlusIoU};
-\node[small] at (13.645,1.45) {IoU \FigSftMinusIoU};
-\node[small] at (16.095,1.45) {IoU \FigCandMinusIoU};
-\draw[divider] (12.28,.80)--(17.10,.80);
-\draw[rtBlue,line width=.8pt] (12.45,.45) rectangle (12.73,.62);
-\node[small,anchor=west] at (12.85,.535) {target};
-\draw[rtGreen,fill=rtSage,line width=.5pt] (14.68,.45) rectangle (14.96,.62);
-\node[small,anchor=west] at (15.08,.535) {prediction};
+\node[metric,text=rtOrange] at (13.645,2.24) {IoU \FigSftPlusIoU};
+\node[metric,text=rtGreen] at (16.095,2.24) {IoU \FigCandPlusIoU};
+\node[metric] at (13.645,1.16) {IoU \FigSftMinusIoU};
+\node[metric] at (16.095,1.16) {IoU \FigCandMinusIoU};
 \end{tikzpicture}
 \endgroup
