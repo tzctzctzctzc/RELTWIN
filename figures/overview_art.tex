@@ -33,19 +33,19 @@
 % (a) A shared recording contains both requested event orders.
 \draw[frame,draw=rtLine,fill=white] (.02,4.15) rectangle (17.38,5.67);
 \node[heading,anchor=west,text=rtBlue] at (.20,5.45) {(a) Twin construction};
-\node[small,anchor=west] at (.35,5.10) {$A$: dog\quad $B$: rooster};
+\node[small,anchor=west] at (6.43,5.45) {$A$: dog\quad $B$: rooster};
 \foreach \xlo/\xhi/\event/\tone in {
  .35/1.35/A/rtBlueTint,1.48/2.48/B/rtSage,
  3.39/4.39/B/rtSage,4.52/5.52/A/rtBlueTint}{
  \draw[draw=rtLine!70,fill=\tone,line width=.5pt,rounded corners=1pt]
-   (\xlo,4.61) rectangle (\xhi,4.91);
- \node at ({(\xlo+\xhi)/2},4.76) {$\event$};
+   (\xlo,4.94) rectangle (\xhi,5.20);
+ \node at ({(\xlo+\xhi)/2},5.07) {$\event$};
 }
-\draw[flow] (.26,4.54)--(5.79,4.54);
-\draw[rtGreen,line width=.7pt] (.35,4.48)--(.35,4.42)--(2.48,4.42)--(2.48,4.48);
-\draw[rtBlue,line width=.7pt] (3.39,4.48)--(3.39,4.42)--(5.52,4.42)--(5.52,4.48);
-\node[small,text=rtGreen] at (1.415,4.32) {$W_+$};
-\node[small,text=rtBlue] at (4.455,4.32) {$W_-$};
+\draw[flow] (.26,4.85)--(5.79,4.85);
+\draw[rtGreen,line width=.7pt] (.35,4.77)--(.35,4.71)--(2.48,4.71)--(2.48,4.77);
+\draw[rtBlue,line width=.7pt] (3.39,4.77)--(3.39,4.71)--(5.52,4.71)--(5.52,4.77);
+\node[small,text=rtGreen] at (1.415,4.42) {$W_+$};
+\node[small,text=rtBlue] at (4.455,4.42) {$W_-$};
 \draw[divider] (6.12,4.34)--(6.12,5.50);
 \node[heading,anchor=west,text=rtBlue] at (6.43,5.05) {Reverse query $\leftrightarrow$ swap target};
 \draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.38) rectangle (11.57,4.85);
