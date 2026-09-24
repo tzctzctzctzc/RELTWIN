@@ -1,5 +1,9 @@
 # RelTwin v36 有限范围增量修改
 
+## 2026-09-24：恢复训练配比与 TEMPO 引用
+
+恢复 `78d95bc` 删除的 TimeAudio category:relation 3:1 与 replay（Clotho-Moment、合成 scale/cardinality、TEMPO、AudioGrounding）4:3:2:1 配比及对应来源引用。参考文献恢复为 19 条。通过压缩重复措辞维持 4+1 页，未删除超参、对照身份或实验结果，未改模板、图表或方法公式；更新固定 `paper.pdf`。
+
 ## 2026-09-24：同步远端 300-pair Table 2
 
 快进拉取 1c14164，保留新表全部数值。同步摘要、引言、3.1 与 3.3；后者改名为 Inverse-query selection across backbones，并分别解释候选监督与完整框架对照。删除旧表的 +1.02、+31.25、+13.97、37→1、51:1、三种子及旧 CI 的现行正文引用。静音干预保留独立口径，不替换其样本数和结果。新集合元数据与 TimeAudio SFT 细项待归档，未推测。更新 paper.pdf，编译维持 4+1 页，无新实验。

@@ -1,6 +1,6 @@
 \subsection{Inverse-query selection across backbones}
-Table~\ref{tab:training} evaluates 300 inverse-query pairs. On SpotSound-A, the 256-update comparison isolates candidate supervision: paired SFT rewards correct answers independently, whereas candidate supervision also requires each to outrank the competing window. Relation mIoU rises from 76.08 to 87.70, and JointPairAcc from 55.33 to 81.67. Swap error falls from 36.33 to 7.00, while identical-answer pairs decrease from 61 to 2.
+On 300 inverse-query pairs (Table~\ref{tab:training}), SpotSound-A's 256-update comparison isolates candidate supervision. Relation mIoU rises from 76.08 to 87.70 and JointPairAcc from 55.33 to 81.67; swap error falls from 36.33 to 7.00 and identical-answer pairs from 61 to 2.
 
-TimeAudio compares paired SFT with the two-stage RelTwin framework after 384+128 updates. Relation mIoU increases from 38.89 to 43.86, and JointPairAcc from 2.67 to 10.67. Swap error decreases from 78.33 to 54.33, and identical-answer pairs from 160 to 34. The two comparisons test candidate supervision on SpotSound-A and the complete framework on TimeAudio, respectively.
+TimeAudio compares paired SFT with complete two-stage RelTwin after 384+128 updates. Relation mIoU rises from 38.89 to 43.86 and JointPairAcc from 2.67 to 10.67; swap error falls from 78.33 to 54.33 and identical-answer pairs from 160 to 34.
 
-Both comparisons improve joint correctness while reducing swaps and identical answers. Because both windows contain the queried categories, these results support query-specific occurrence selection beyond category recognition. Figure~\ref{fig:pair} shows a qualitative SpotSound-A candidate-supervision example.
+Both windows contain the queried categories, so improved joint correctness supports occurrence selection beyond category recognition. Figure~\ref{fig:pair} illustrates SpotSound-A candidate supervision.
