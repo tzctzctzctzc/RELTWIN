@@ -1,5 +1,5 @@
 % Editable vector figure at its final 17.4 cm two-column width.
-% 2026-09-24: 9 pt text throughout; unchanged intervals and coordinate spacing.
+% 2026-09-24: 9 pt text; revised top-panel spacing, unchanged interval data.
 % Style only: user-supplied AtomMem example, 2026-09-16.
 % White canvas, cobalt method frames, orange diagnostic frame, sage highlights.
 % Scientific content is RelTwin's own. Cached diagnostic intervals are unchanged.
@@ -28,12 +28,12 @@
  frame/.style={rounded corners=2.5pt,line width=.7pt},
  badge/.style={rounded corners=2pt,fill=rtBlue,draw=none},
  divider/.style={draw=rtRule,dash pattern=on 2pt off 1.7pt,line width=.5pt}]
-\path[use as bounding box] (0,0) rectangle (17.4,5.29);
+\path[use as bounding box] (0,0) rectangle (17.4,5.69);
 
 % (a) A shared recording contains both requested event orders.
-\draw[frame,draw=rtLine,fill=white] (.02,4.15) rectangle (17.38,5.27);
-\node[heading,anchor=west,text=rtBlue] at (.20,5.06) {(a) Twin construction};
-\node[small,anchor=west] at (3.48,5.06) {$A$: dog\quad $B$: rooster};
+\draw[frame,draw=rtLine,fill=white] (.02,4.15) rectangle (17.38,5.67);
+\node[heading,anchor=west,text=rtBlue] at (.20,5.45) {(a) Twin construction};
+\node[small,anchor=west] at (.35,5.10) {$A$: dog\quad $B$: rooster};
 \foreach \xlo/\xhi/\event/\tone in {
  .35/1.35/A/rtBlueTint,1.48/2.48/B/rtSage,
  3.39/4.39/B/rtSage,4.52/5.52/A/rtBlueTint}{
@@ -44,9 +44,9 @@
 \draw[flow] (.26,4.54)--(5.79,4.54);
 \draw[rtGreen,line width=.7pt] (.35,4.48)--(.35,4.42)--(2.48,4.42)--(2.48,4.48);
 \draw[rtBlue,line width=.7pt] (3.39,4.48)--(3.39,4.42)--(5.52,4.42)--(5.52,4.48);
-\node[small,text=rtGreen] at (1.415,4.30) {$W_+: A\rightarrow B$};
-\node[small,text=rtBlue] at (4.455,4.30) {$W_-: B\rightarrow A$};
-\draw[divider] (6.12,4.34)--(6.12,5.12);
+\node[small,text=rtGreen] at (1.415,4.32) {$W_+$};
+\node[small,text=rtBlue] at (4.455,4.32) {$W_-$};
+\draw[divider] (6.12,4.34)--(6.12,5.50);
 \node[heading,anchor=west,text=rtBlue] at (6.43,5.05) {Reverse query $\leftrightarrow$ swap target};
 \draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.38) rectangle (11.57,4.85);
 \node[anchor=west] at (6.58,4.615) {$q_+$: dog followed by rooster};
@@ -57,9 +57,9 @@
 
 % (b) One RelTwin frame contains both training stages, in reading order.
 \draw[frame,draw=rtLine,fill=white] (.02,.02) rectangle (11.71,3.84);
-\path[badge] (.27,3.63) rectangle (8.80,4.00);
-\node[heading,text=white] at (4.535,3.815) {(b) RelTwin training};
-\draw[flow] (3.02,4.14)--(3.02,4.01);
+\path[badge] (.27,3.63) rectangle (5.55,4.00);
+\node[heading,text=white] at (2.91,3.815) {(b) RelTwin training};
+\draw[flow] (5.95,4.15)--(5.95,3.48)--(2.965,3.48)--(2.965,3.38);
 
 % Stage 1: query-conditioned answer competition plus exchanged consistency.
 \draw[frame,draw=rtLine!65,fill=rtBlueTint] (.27,1.14) rectangle (5.66,3.38);

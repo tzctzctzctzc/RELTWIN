@@ -1,6 +1,2 @@
 \section{Conclusion}
-RelTwin addresses query--window binding by contrasting acoustically valid timestamp answers with different relational meanings. It improves two backbones on three benchmarks, selects different correct windows for inverse queries, and retains the advantage after silence timing changes. The framework learns relation-aware occurrence selection while preserving direct timestamp generation.
-
-Gains across timestamp representations support transferable answer competition, retaining native inference without candidate scoring or reranking.
-
-The key is query-dependent correctness: the same audible window becomes the target or competitor as the requested relation changes.
+RelTwin learns query--window binding through competition between acoustically valid timestamp answers. Gains across two backbones and three benchmarks, inverse-query selection, and silence interventions support this approach while preserving direct generation. Future work will extend answer competition to overlapping events and more complex temporal relations, and mine competing windows from natural recordings to broaden training coverage.
