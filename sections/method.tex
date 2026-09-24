@@ -34,7 +34,7 @@ v_{ij}=\tfrac12\left[\tfrac14\sum_{\ell=1}^{4}h_{ij\ell}
 +\frac{d^+_{ij}-d^-_{ij}}{K-1}\right].
 \label{eq:quality}
 \end{equation}
-Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ assign higher probability to better interval sets. Following listwise distribution matching~\cite{cao2007listnet}, scores normalized over six candidates learn this distribution through $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
+Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ assign higher probability to better interval sets. Related to listwise preference learning~\cite{liu2025lipo}, our six-candidate distribution learns these quality targets through $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
 
 Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. The same quality rule defines their listwise loss $\mathcal L_{\rm set,r}$. On replay examples, the frozen base model supplies a reference distribution $p_0$; the KL constraint anchors preferences $p_r$ to this reference to help retain existing localization preferences. Stage~2 optimizes
 \begin{equation}
