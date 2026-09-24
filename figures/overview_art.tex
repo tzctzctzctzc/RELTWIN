@@ -47,13 +47,12 @@
 \node[small,text=rtGreen] at (1.415,4.42) {$W_+$};
 \node[small,text=rtBlue] at (4.455,4.42) {$W_-$};
 \draw[divider] (6.12,4.34)--(6.12,5.50);
-\node[heading,anchor=west,text=rtBlue] at (6.43,5.05) {Reverse query $\leftrightarrow$ swap target};
-\draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.38) rectangle (11.57,4.85);
-\node[anchor=west] at (6.58,4.615) {$q_+$: dog followed by rooster};
-\node[anchor=east,text=rtGreen] at (11.43,4.615) {$\rightarrow W_+$};
-\draw[frame,draw=rtLine!65,fill=rtBlueTint] (11.89,4.38) rectangle (17.06,4.85);
-\node[anchor=west] at (12.02,4.615) {$q_-$: rooster followed by dog};
-\node[anchor=east,text=rtBlue] at (16.92,4.615) {$\rightarrow W_-$};
+\draw[frame,draw=rtGreen!65,fill=rtGreenTint] (6.45,4.42) rectangle (11.57,4.92);
+\node[anchor=west] at (6.58,4.67) {$q_+$: dog followed by rooster};
+\node[anchor=east,text=rtGreen] at (11.43,4.67) {$\rightarrow W_+$};
+\draw[frame,draw=rtLine!65,fill=rtBlueTint] (11.89,4.42) rectangle (17.06,4.92);
+\node[anchor=west] at (12.02,4.67) {$q_-$: rooster followed by dog};
+\node[anchor=east,text=rtBlue] at (16.92,4.67) {$\rightarrow W_-$};
 
 % (b) One RelTwin frame contains both training stages, in reading order.
 \draw[frame,draw=rtLine,fill=white] (.02,.02) rectangle (11.71,3.84);
@@ -62,55 +61,44 @@
 \draw[flow] (5.95,4.15)--(5.95,3.48)--(2.965,3.48)--(2.965,3.38);
 
 % Stage 1: query-conditioned answer competition plus exchanged consistency.
-\draw[frame,draw=rtLine!65,fill=rtBlueTint] (.27,1.14) rectangle (5.66,3.38);
+\draw[frame,draw=rtLine!65,fill=rtBlueTint] (.27,.25) rectangle (5.66,3.38);
 \node[heading,text=rtBlue] at (2.965,3.16) {Stage 1: Answer learning};
-\node at (2.55,2.61) {$y(W_+)$};
-\node at (4.07,2.61) {$y(W_-)$};
-\node at (1.29,2.28) {$q_+$};
-\node at (1.29,1.88) {$q_-$};
-\fill[rtSage] (1.80,2.08) rectangle (3.31,2.48);
-\fill[rtPeach] (3.31,2.08) rectangle (4.83,2.48);
-\fill[rtPeach] (1.80,1.68) rectangle (3.31,2.08);
-\fill[rtSage] (3.31,1.68) rectangle (4.83,2.08);
-\draw[rtLine!65,line width=.55pt] (1.80,1.68) rectangle (4.83,2.48);
-\draw[rtLine!65,line width=.5pt] (3.31,1.68)--(3.31,2.48);
-\draw[rtLine!65,line width=.5pt] (1.80,2.08)--(4.83,2.08);
-\node[text=rtGreen] at (2.55,2.28) {$s_{++}\ \uparrow$};
-\node[text=rtOrange] at (4.07,2.28) {$s_{+-}\ \downarrow$};
-\node[text=rtOrange] at (2.55,1.88) {$s_{-+}\ \downarrow$};
-\node[text=rtGreen] at (4.07,1.88) {$s_{--}\ \uparrow$};
-\node[small,text=rtBlue] at (2.965,1.39) {Competition + reversal consistency};
+\node at (2.55,2.67) {$y(W_+)$};
+\node at (4.07,2.67) {$y(W_-)$};
+\node at (1.29,2.12) {$q_+$};
+\node at (1.29,1.36) {$q_-$};
+\fill[rtSage] (1.80,1.74) rectangle (3.31,2.50);
+\fill[rtPeach] (3.31,1.74) rectangle (4.83,2.50);
+\fill[rtPeach] (1.80,.98) rectangle (3.31,1.74);
+\fill[rtSage] (3.31,.98) rectangle (4.83,1.74);
+\draw[rtLine!65,line width=.55pt] (1.80,.98) rectangle (4.83,2.50);
+\draw[rtLine!65,line width=.5pt] (3.31,.98)--(3.31,2.50);
+\draw[rtLine!65,line width=.5pt] (1.80,1.74)--(4.83,1.74);
+\node[text=rtGreen] at (2.55,2.12) {$s_{++}\ \uparrow$};
+\node[text=rtOrange] at (4.07,2.12) {$s_{+-}\ \downarrow$};
+\node[text=rtOrange] at (2.55,1.36) {$s_{-+}\ \downarrow$};
+\node[text=rtGreen] at (4.07,1.36) {$s_{--}\ \uparrow$};
 
 % A single solid arrow explicitly denotes the sequential training stages.
-\draw[flow] (5.71,2.30)--(6.04,2.30);
+\draw[flow] (5.71,1.82)--(6.04,1.82);
 
 % Stage 2: six interval-set candidates with a quality-based soft target.
-\draw[frame,draw=rtLine!65,fill=rtBlueTint] (6.09,1.14) rectangle (11.46,3.38);
+\draw[frame,draw=rtLine!65,fill=rtBlueTint] (6.09,.25) rectangle (11.46,3.38);
 \node[heading,text=rtBlue] at (8.775,3.16) {Stage 2: Set preferences};
 % Display order groups originals, expansions, and set aggregations.
 \foreach \xc/\yy/\lab in {
- 6.93/2.47/{$W_+$},8.76/2.47/{$W_-$},10.59/2.47/{span},
- 6.93/1.98/{expand $W_+$},8.76/1.98/{expand $W_-$},10.59/1.98/{union}}{
+ 6.93/2.46/{$W_+$},8.76/2.46/{$W_-$},10.59/2.46/{span},
+ 6.93/1.39/{expand $W_+$},8.76/1.39/{expand $W_-$},10.59/1.39/{union}}{
  \draw[rtRule,line width=.6pt] ({\xc-.57},\yy)--({\xc+.57},\yy);
- \node[small] at (\xc,{\yy-.21}) {\lab};
+ \node[small] at (\xc,{\yy-.28}) {\lab};
 }
 \foreach \xlo/\xhi/\yy/\tone in {
- 6.43/6.81/2.47/rtGreen,8.89/9.27/2.47/rtBlue,
- 10.09/11.09/2.47/rtOrange,
- 6.36/6.88/1.98/rtGreen,8.82/9.34/1.98/rtBlue,
- 10.09/10.47/1.98/rtGreen,10.71/11.09/1.98/rtBlue}{
+ 6.43/6.81/2.46/rtGreen,8.89/9.27/2.46/rtBlue,
+ 10.09/11.09/2.46/rtOrange,
+ 6.36/6.88/1.39/rtGreen,8.82/9.34/1.39/rtBlue,
+ 10.09/10.47/1.39/rtGreen,10.71/11.09/1.39/rtBlue}{
  \draw[\tone,line width=2.7pt] (\xlo,\yy)--(\xhi,\yy);
 }
-\node[small,text=rtBlue] at (8.775,1.39) {Coverage $\cdot$ count $\cdot$ boundaries};
-
-% Inference is separate from training and has its own left-to-right direction.
-\draw[frame,draw=rtGreen!65,fill=rtGreenTint] (.27,.22) rectangle (11.46,.86);
-\node[heading,text=rtGreen,anchor=west] at (.46,.54) {Inference};
-\node at (3.15,.54) {Audio + query};
-\node at (6.52,.54) {Adapted backbone};
-\node at (9.93,.54) {Timestamps};
-\draw[flow,draw=rtGreen] (4.18,.54)--(5.07,.54);
-\draw[flow,draw=rtGreen] (7.95,.54)--(8.98,.54);
 
 % (c) Independent candidate-supervision diagnostic; all real values unchanged.
 \draw[frame,draw=rtOrange,fill=white] (12.00,.02) rectangle (17.38,3.84);
