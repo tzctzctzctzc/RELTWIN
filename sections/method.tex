@@ -6,7 +6,7 @@ RelTwin organizes supervision around competition between locally valid timestamp
 This construction supplies the competing examples used by both training stages. To make the query determine window selection, we arrange the same ESC-50 excerpts~\cite{piczak2015esc}, $A$ and $B$, as $A\!\rightarrow\!B$ and $B\!\rightarrow\!A$ in one recording. Targets $W_\pm$ span each sequence, including its gap; queries $q_\pm$ request the respective orders. Both windows contain the same categories, but $W_-$ is negative for $q_+$ and positive for $q_-$. We alternate which order appears first.
 
 \subsection{Stage 1: complete-answer competition}
-Stage~1 establishes query-specific selection by comparing complete answers under each query. We serialize $S$ as comma-separated spans for SpotSound-A or temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude the prompt and receive the mean log-probability
+Stage~1 learns query-specific answer selection. We serialize $S$ as comma-separated spans for SpotSound-A or temporal tokens for TimeAudio. Answer tokens $y(S)$ exclude prompts and use SimPO-style length normalization~\cite{meng2024simpo}:
 \begin{equation}
 s_\theta(x,q,S)=\frac{1}{|y(S)|}\sum_t\log P_\theta(y_t\mid x,q,y_{<t}).
 \label{eq:score}
@@ -34,7 +34,7 @@ v_{ij}=\tfrac12\left[\tfrac14\sum_{\ell=1}^{4}h_{ij\ell}
 +\frac{d^+_{ij}-d^-_{ij}}{K-1}\right].
 \label{eq:quality}
 \end{equation}
-Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ assign higher probability to better interval sets. The same answer scores, normalized over all six candidates, learn this distribution through $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
+Mean quality preserves graded differences; dominance rewards improvements without sacrificing another axis. Soft targets $t_i=\operatorname{softmax}(v_i/\tau_q)$ assign higher probability to better interval sets. Following listwise distribution matching~\cite{cao2007listnet}, scores normalized over six candidates learn this distribution through $\mathcal L_{\rm set}=-\tfrac12\sum_{i,j}t_i(j)\log p_i(j)$. The six-way permutation $\Pi=(2,1,4,3,5,6)$ swaps targets and expansions, fixing the span and union.
 
 Replay candidates perturb boundaries, add/drop events, merge spans, split the longest interval, or cover the recording. The same quality rule defines their listwise loss $\mathcal L_{\rm set,r}$. On replay examples, the frozen base model supplies a reference distribution $p_0$; the KL constraint anchors preferences $p_r$ to this reference to help retain existing localization preferences. Stage~2 optimizes
 \begin{equation}
