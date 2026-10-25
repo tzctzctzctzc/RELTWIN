@@ -1,0 +1,49 @@
+{
+  "predictions": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/e002_matched_pipeline_corrected/seed_1/rbee/reltwin_predictions.jsonl",
+  "scale": "percent",
+  "records": 320,
+  "present_records": 320,
+  "absent_records": 0,
+  "multi_ground_truth_records": 0,
+  "multi_prediction_records": 4,
+  "parser_audit": {
+    "spotsound_raw_nonempty": 318,
+    "auto_aeg_raw_nonempty": 0,
+    "canonical_raw_nonempty": 318
+  },
+  "spotsound_protocol": {
+    "mIoU": 86.17564115609045,
+    "R1@0.3": 97.5,
+    "R1@0.5": 89.375
+  },
+  "auto_aeg_core": {
+    "mIoU": 86.53271322234073,
+    "R_IoU@0.3": 97.5,
+    "R_IoU@0.5": 89.6875,
+    "R_IoU@0.7": 81.25,
+    "All_R_IoU@0.3": 97.5,
+    "All_R_IoU@0.5": 89.6875,
+    "All_R_IoU@0.7": 81.25,
+    "seg_F1": 90.51408075332607,
+    "ev_F1_public_code_onset_0.5s": 84.53125
+  },
+  "paper_faithful_symmetric": {
+    "soft_P_IoU": 85.99861673965054,
+    "soft_R_IoU": 86.53271322234073,
+    "soft_F1_IoU": 86.15989746601414,
+    "P_IoU@0.3": 96.82291666666669,
+    "P_IoU@0.5": 89.16666666666669,
+    "P_IoU@0.7": 80.88541666666667,
+    "F1_IoU@0.3": 97.03125,
+    "F1_IoU@0.5": 89.32291666666666,
+    "F1_IoU@0.7": 80.98958333333333,
+    "event_F1_IoU@0.3": 97.03125,
+    "event_F1_IoU@0.5": 89.32291666666666,
+    "event_F1_IoU@0.7": 80.98958333333333
+  },
+  "rejection": {
+    "correct_rejections": 0,
+    "false_activations": 0,
+    "FPR_absent": null
+  }
+}

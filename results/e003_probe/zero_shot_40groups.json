@@ -1,0 +1,1941 @@
+{
+  "status": "diagnostic_only",
+  "groups": 40,
+  "comparisons": 80,
+  "accuracies": {
+    "component_mean": 0.85,
+    "component_min": 0.85,
+    "complement_no": 0.85,
+    "mean_plus_complement": 0.85,
+    "min_plus_complement": 0.85
+  },
+  "ties": {
+    "component_mean": 0,
+    "component_min": 0,
+    "complement_no": 0,
+    "mean_plus_complement": 0,
+    "min_plus_complement": 0
+  },
+  "rows": [
+    {
+      "group_index": 0,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby, and then dog",
+      "correct": {
+        "component_mean": 1.8750144035147969,
+        "component_min": 1.8750144035147969,
+        "complement_no": -1.6562551388633437,
+        "mean_plus_complement": 0.21875926465145312,
+        "min_plus_complement": 0.21875926465145312,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.656255377427442,
+        "component_min": 1.656255377427442,
+        "complement_no": -1.9062654380395543,
+        "mean_plus_complement": -0.2500100606121123,
+        "min_plus_complement": -0.2500100606121123,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 0,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog, and then crying baby",
+      "correct": {
+        "component_mean": 1.7187737677013502,
+        "component_min": 1.7187737677013502,
+        "complement_no": -1.6250101492041722,
+        "mean_plus_complement": 0.09376361849717796,
+        "min_plus_complement": 0.09376361849717796,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6250071392278187,
+        "component_min": 1.6250071392278187,
+        "complement_no": -1.687524908425985,
+        "mean_plus_complement": -0.0625177691981662,
+        "min_plus_complement": -0.0625177691981662,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 1,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby, and then dog",
+      "correct": {
+        "component_mean": 1.875004419722245,
+        "component_min": 1.875004419722245,
+        "complement_no": -1.531253611203283,
+        "mean_plus_complement": 0.343750808518962,
+        "min_plus_complement": 0.343750808518962,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.562503716442734,
+        "component_min": 1.562503716442734,
+        "complement_no": -1.875004419722245,
+        "mean_plus_complement": -0.31250070327951107,
+        "min_plus_complement": -0.31250070327951107,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 1,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog, and then crying baby",
+      "correct": {
+        "component_mean": 1.6562610993278213,
+        "component_min": 1.6562610993278213,
+        "complement_no": -1.562502107466571,
+        "mean_plus_complement": 0.09375899186125025,
+        "min_plus_complement": 0.09375899186125025,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.562502107466571,
+        "component_min": 1.562502107466571,
+        "complement_no": -1.6875110504915938,
+        "mean_plus_complement": -0.12500894302502275,
+        "min_plus_complement": -0.12500894302502275,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 2,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby followed by dog",
+      "correct": {
+        "component_mean": 1.9375078616576502,
+        "component_min": 1.9375078616576502,
+        "complement_no": -1.7187526974303182,
+        "mean_plus_complement": 0.218755164227332,
+        "min_plus_complement": 0.218755164227332,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7187526974303182,
+        "component_min": 1.7187526974303182,
+        "complement_no": -1.937507384820492,
+        "mean_plus_complement": -0.21875468739017379,
+        "min_plus_complement": -0.21875468739017379,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 2,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog followed by crying baby",
+      "correct": {
+        "component_mean": 1.7187675389286596,
+        "component_min": 1.7187675389286596,
+        "complement_no": -1.7500099692988442,
+        "mean_plus_complement": -0.031242430370184593,
+        "min_plus_complement": -0.031242430370184593,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.781259588577086,
+        "component_min": 1.781259588577086,
+        "complement_no": -1.7500208173441933,
+        "mean_plus_complement": 0.03123877123289276,
+        "min_plus_complement": 0.03123877123289276,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 3,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby followed by dog",
+      "correct": {
+        "component_mean": 1.9062520866573323,
+        "component_min": 1.9062520866573323,
+        "complement_no": -1.593751735665137,
+        "mean_plus_complement": 0.3125003509921953,
+        "min_plus_complement": 0.3125003509921953,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5937515868572518,
+        "component_min": 1.5937515868572518,
+        "complement_no": -1.9062520866573323,
+        "mean_plus_complement": -0.31250049980008043,
+        "min_plus_complement": -0.31250049980008043,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 3,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog followed by crying baby",
+      "correct": {
+        "component_mean": 1.7500067507644417,
+        "component_min": 1.7500067507644417,
+        "complement_no": -1.6875016925041564,
+        "mean_plus_complement": 0.0625050582602853,
+        "min_plus_complement": 0.0625050582602853,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6875016925041564,
+        "component_min": 1.6875016925041564,
+        "complement_no": -1.7500067507644417,
+        "mean_plus_complement": -0.0625050582602853,
+        "min_plus_complement": -0.0625050582602853,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 4,
+      "pair_id": 10001,
+      "relation": "AB",
+      "query": "crying baby, and then keyboard typing",
+      "correct": {
+        "component_mean": 1.9687570218302426,
+        "component_min": 1.9687570218302426,
+        "complement_no": -1.8750037340505514,
+        "mean_plus_complement": 0.09375328777969116,
+        "min_plus_complement": 0.09375328777969116,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.8750029890070437,
+        "component_min": 1.8750029890070437,
+        "complement_no": -1.9687566344146035,
+        "mean_plus_complement": -0.09375364540755982,
+        "min_plus_complement": -0.09375364540755982,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 4,
+      "pair_id": 10001,
+      "relation": "BA",
+      "query": "keyboard typing, and then crying baby",
+      "correct": {
+        "component_mean": 2.0312554053089116,
+        "component_min": 2.0312554053089116,
+        "complement_no": -1.7187515946279746,
+        "mean_plus_complement": 0.312503810680937,
+        "min_plus_complement": 0.312503810680937,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500015352270566,
+        "component_min": 1.7500015352270566,
+        "complement_no": -2.0312567762375693,
+        "mean_plus_complement": -0.2812552410105127,
+        "min_plus_complement": -0.2812552410105127,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 5,
+      "pair_id": 10001,
+      "relation": "AB",
+      "query": "crying baby, and then keyboard typing",
+      "correct": {
+        "component_mean": 1.2812568956287578,
+        "component_min": 1.2812568956287578,
+        "complement_no": -1.1250037248246372,
+        "mean_plus_complement": 0.1562531708041206,
+        "min_plus_complement": 0.1562531708041206,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.1562534379772842,
+        "component_min": 1.1562534379772842,
+        "complement_no": -1.3125062171602622,
+        "mean_plus_complement": -0.15625277918297797,
+        "min_plus_complement": -0.15625277918297797,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 5,
+      "pair_id": 10001,
+      "relation": "BA",
+      "query": "keyboard typing, and then crying baby",
+      "correct": {
+        "component_mean": 1.3437577510485426,
+        "component_min": 1.3437577510485426,
+        "complement_no": -1.0937541278544813,
+        "mean_plus_complement": 0.2500036231940612,
+        "min_plus_complement": 0.2500036231940612,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.1250052077230066,
+        "component_min": 1.1250052077230066,
+        "complement_no": -1.3437570952810347,
+        "mean_plus_complement": -0.2187518875580281,
+        "min_plus_complement": -0.2187518875580281,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 6,
+      "pair_id": 10001,
+      "relation": "AB",
+      "query": "crying baby followed by keyboard typing",
+      "correct": {
+        "component_mean": 2.031255912013876,
+        "component_min": 2.031255912013876,
+        "complement_no": -1.906250953907147,
+        "mean_plus_complement": 0.12500495810672874,
+        "min_plus_complement": 0.12500495810672874,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.9062509241193766,
+        "component_min": 1.9062509241193766,
+        "complement_no": -2.0625059095327742,
+        "mean_plus_complement": -0.15625498541339766,
+        "min_plus_complement": -0.15625498541339766,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 6,
+      "pair_id": 10001,
+      "relation": "BA",
+      "query": "keyboard typing followed by crying baby",
+      "correct": {
+        "component_mean": 2.0625077870863606,
+        "component_min": 2.0625077870863606,
+        "complement_no": -1.718750968837412,
+        "mean_plus_complement": 0.34375681824894855,
+        "min_plus_complement": 0.34375681824894855,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500012372474885,
+        "component_min": 1.7500012372474885,
+        "complement_no": -2.0625087705557235,
+        "mean_plus_complement": -0.312507533308235,
+        "min_plus_complement": -0.312507533308235,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 7,
+      "pair_id": 10001,
+      "relation": "AB",
+      "query": "crying baby followed by keyboard typing",
+      "correct": {
+        "component_mean": 1.2500003983732313,
+        "component_min": 1.2500003983732313,
+        "complement_no": -1.1562502491287887,
+        "mean_plus_complement": 0.09375014924444258,
+        "min_plus_complement": 0.09375014924444258,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.1562503094319254,
+        "component_min": 1.1562503094319254,
+        "complement_no": -1.2187503961613402,
+        "mean_plus_complement": -0.06250008672941476,
+        "min_plus_complement": -0.06250008672941476,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 7,
+      "pair_id": 10001,
+      "relation": "BA",
+      "query": "keyboard typing followed by crying baby",
+      "correct": {
+        "component_mean": 1.3750003918539733,
+        "component_min": 1.3750003918539733,
+        "complement_no": -1.0312500237487257,
+        "mean_plus_complement": 0.3437503681052476,
+        "min_plus_complement": 0.3437503681052476,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.0625000086147338,
+        "component_min": 1.0625000086147338,
+        "complement_no": -1.4062502880697139,
+        "mean_plus_complement": -0.34375027945498005,
+        "min_plus_complement": -0.34375027945498005,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 8,
+      "pair_id": 10002,
+      "relation": "AB",
+      "query": "rooster, and then sea waves",
+      "correct": {
+        "component_mean": 1.9062549773516366,
+        "component_min": 1.9062549773516366,
+        "complement_no": -1.9062564377090894,
+        "mean_plus_complement": -1.4603574527427554e-06,
+        "min_plus_complement": -1.4603574527427554e-06,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.8437577685399447,
+        "component_min": 1.8437577685399447,
+        "complement_no": -1.8750041812309064,
+        "mean_plus_complement": -0.031246412690961733,
+        "min_plus_complement": -0.031246412690961733,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 8,
+      "pair_id": 10002,
+      "relation": "BA",
+      "query": "sea waves, and then rooster",
+      "correct": {
+        "component_mean": 2.0312792770855594,
+        "component_min": 2.0312792770855594,
+        "complement_no": -1.9375792082209955,
+        "mean_plus_complement": 0.09370006886456395,
+        "min_plus_complement": 0.09370006886456395,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.8750857501581777,
+        "component_min": 1.8750857501581777,
+        "complement_no": -2.0625256387356785,
+        "mean_plus_complement": -0.18743988857750082,
+        "min_plus_complement": -0.18743988857750082,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 9,
+      "pair_id": 10002,
+      "relation": "AB",
+      "query": "rooster, and then sea waves",
+      "correct": {
+        "component_mean": 1.8125021199812181,
+        "component_min": 1.8125021199812181,
+        "complement_no": -1.6562595496070571,
+        "mean_plus_complement": 0.156242570374161,
+        "min_plus_complement": 0.156242570374161,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6562616656010505,
+        "component_min": 1.6562616656010505,
+        "complement_no": -1.7500023401080398,
+        "mean_plus_complement": -0.09374067450698931,
+        "min_plus_complement": -0.09374067450698931,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 9,
+      "pair_id": 10002,
+      "relation": "BA",
+      "query": "sea waves, and then rooster",
+      "correct": {
+        "component_mean": 1.8437667390244314,
+        "component_min": 1.8437667390244314,
+        "complement_no": -1.7187575850111898,
+        "mean_plus_complement": 0.12500915401324164,
+        "min_plus_complement": 0.12500915401324164,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7187587473308668,
+        "component_min": 1.7187587473308668,
+        "complement_no": -1.8125153524015332,
+        "mean_plus_complement": -0.09375660507066641,
+        "min_plus_complement": -0.09375660507066641,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 10,
+      "pair_id": 10002,
+      "relation": "AB",
+      "query": "rooster followed by sea waves",
+      "correct": {
+        "component_mean": 2.0000065410058596,
+        "component_min": 2.0000065410058596,
+        "complement_no": -1.9687542503234,
+        "mean_plus_complement": 0.031252290682459716,
+        "min_plus_complement": 0.031252290682459716,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.9687549953669077,
+        "component_min": 1.9687549953669077,
+        "complement_no": -2.0000058257501223,
+        "mean_plus_complement": -0.031250830383214634,
+        "min_plus_complement": -0.031250830383214634,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 10,
+      "pair_id": 10002,
+      "relation": "BA",
+      "query": "sea waves followed by rooster",
+      "correct": {
+        "component_mean": 2.156284992084693,
+        "component_min": 2.156284992084693,
+        "complement_no": -1.937537842663005,
+        "mean_plus_complement": 0.21874714942168794,
+        "min_plus_complement": 0.21874714942168794,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.937543624342652,
+        "component_min": 1.937543624342652,
+        "complement_no": -2.156282846317481,
+        "mean_plus_complement": -0.21873922197482898,
+        "min_plus_complement": -0.21873922197482898,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 11,
+      "pair_id": 10002,
+      "relation": "AB",
+      "query": "rooster followed by sea waves",
+      "correct": {
+        "component_mean": 1.8437511224619811,
+        "component_min": 1.8437511224619811,
+        "complement_no": -1.7500008497445378,
+        "mean_plus_complement": 0.0937502727174433,
+        "min_plus_complement": 0.0937502727174433,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500009689538274,
+        "component_min": 1.7500009689538274,
+        "complement_no": -1.87500102208287,
+        "mean_plus_complement": -0.1250000531290425,
+        "min_plus_complement": -0.1250000531290425,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 11,
+      "pair_id": 10002,
+      "relation": "BA",
+      "query": "sea waves followed by rooster",
+      "correct": {
+        "component_mean": 1.9375047323701438,
+        "component_min": 1.9375047323701438,
+        "complement_no": -1.718754724104656,
+        "mean_plus_complement": 0.21875000826548785,
+        "min_plus_complement": 0.21875000826548785,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.71875451534288,
+        "component_min": 1.71875451534288,
+        "complement_no": -1.9062540535232984,
+        "mean_plus_complement": -0.1874995381804183,
+        "min_plus_complement": -0.1874995381804183,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 12,
+      "pair_id": 10003,
+      "relation": "AB",
+      "query": "chainsaw, and then thunderstorm",
+      "correct": {
+        "component_mean": 1.7812658172333613,
+        "component_min": 1.7812658172333613,
+        "complement_no": -1.6250063334300648,
+        "mean_plus_complement": 0.15625948380329646,
+        "min_plus_complement": 0.15625948380329646,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6562548999791034,
+        "component_min": 1.6562548999791034,
+        "complement_no": -1.7812669199047377,
+        "mean_plus_complement": -0.12501201992563438,
+        "min_plus_complement": -0.12501201992563438,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 12,
+      "pair_id": 10003,
+      "relation": "BA",
+      "query": "thunderstorm, and then chainsaw",
+      "correct": {
+        "component_mean": 1.9375041957537178,
+        "component_min": 1.9375041957537178,
+        "complement_no": -1.7812531510862755,
+        "mean_plus_complement": 0.15625104466744233,
+        "min_plus_complement": 0.15625104466744233,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.750004098052159,
+        "component_min": 1.750004098052159,
+        "complement_no": -1.8750044195185183,
+        "mean_plus_complement": -0.1250003214663593,
+        "min_plus_complement": -0.1250003214663593,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 13,
+      "pair_id": 10003,
+      "relation": "AB",
+      "query": "chainsaw, and then thunderstorm",
+      "correct": {
+        "component_mean": 1.718779668357456,
+        "component_min": 1.718779668357456,
+        "complement_no": -1.750005767098628,
+        "mean_plus_complement": -0.03122609874117188,
+        "min_plus_complement": -0.03122609874117188,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7812544922344387,
+        "component_min": 1.7812544922344387,
+        "complement_no": -1.6875300639076158,
+        "mean_plus_complement": 0.09372442832682282,
+        "min_plus_complement": 0.09372442832682282,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 13,
+      "pair_id": 10003,
+      "relation": "BA",
+      "query": "thunderstorm, and then chainsaw",
+      "correct": {
+        "component_mean": 1.843752105924068,
+        "component_min": 1.843752105924068,
+        "complement_no": -1.5312510470976122,
+        "mean_plus_complement": 0.31250105882645585,
+        "min_plus_complement": 0.31250105882645585,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5312510470976122,
+        "component_min": 1.5312510470976122,
+        "complement_no": -1.8437522549065761,
+        "mean_plus_complement": -0.31250120780896395,
+        "min_plus_complement": -0.31250120780896395,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 14,
+      "pair_id": 10003,
+      "relation": "AB",
+      "query": "chainsaw followed by thunderstorm",
+      "correct": {
+        "component_mean": 1.812503371576895,
+        "component_min": 1.812503371576895,
+        "complement_no": -1.5937501553853508,
+        "mean_plus_complement": 0.2187532161915442,
+        "min_plus_complement": 0.2187532161915442,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.656250071915565,
+        "component_min": 1.656250071915565,
+        "complement_no": -1.7812535982375266,
+        "mean_plus_complement": -0.12500352632196154,
+        "min_plus_complement": -0.12500352632196154,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 14,
+      "pair_id": 10003,
+      "relation": "BA",
+      "query": "thunderstorm followed by chainsaw",
+      "correct": {
+        "component_mean": 1.9375019307772163,
+        "component_min": 1.9375019307772163,
+        "complement_no": -1.812500808533514,
+        "mean_plus_complement": 0.1250011222437024,
+        "min_plus_complement": 0.1250011222437024,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.8750008431670722,
+        "component_min": 1.8750008431670722,
+        "complement_no": -1.906252265209332,
+        "mean_plus_complement": -0.031251422042259946,
+        "min_plus_complement": -0.031251422042259946,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 15,
+      "pair_id": 10003,
+      "relation": "AB",
+      "query": "chainsaw followed by thunderstorm",
+      "correct": {
+        "component_mean": 1.7187523097672965,
+        "component_min": 1.7187523097672965,
+        "complement_no": -1.8437519568542484,
+        "mean_plus_complement": -0.12499964708695188,
+        "min_plus_complement": -0.12499964708695188,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.9062517585844034,
+        "component_min": 1.9062517585844034,
+        "complement_no": -1.6250023104366846,
+        "mean_plus_complement": 0.2812494481477188,
+        "min_plus_complement": 0.2812494481477188,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 15,
+      "pair_id": 10003,
+      "relation": "BA",
+      "query": "thunderstorm followed by chainsaw",
+      "correct": {
+        "component_mean": 1.8750008730858099,
+        "component_min": 1.8750008730858099,
+        "complement_no": -1.5312501229345798,
+        "mean_plus_complement": 0.34375075015123,
+        "min_plus_complement": 0.34375075015123,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.562500139552867,
+        "component_min": 1.562500139552867,
+        "complement_no": -1.8437508243951015,
+        "mean_plus_complement": -0.2812506848422345,
+        "min_plus_complement": -0.2812506848422345,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 16,
+      "pair_id": 10004,
+      "relation": "AB",
+      "query": "clapping, and then keyboard typing",
+      "correct": {
+        "component_mean": 1.5937515269906726,
+        "component_min": 1.5937515269906726,
+        "complement_no": -1.4687502441811375,
+        "mean_plus_complement": 0.12500128280953504,
+        "min_plus_complement": 0.12500128280953504,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.500000115018338,
+        "component_min": 1.500000115018338,
+        "complement_no": -1.5937515571713448,
+        "mean_plus_complement": -0.09375144215300679,
+        "min_plus_complement": -0.09375144215300679,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 16,
+      "pair_id": 10004,
+      "relation": "BA",
+      "query": "keyboard typing, and then clapping",
+      "correct": {
+        "component_mean": 1.5625003486929927,
+        "component_min": 1.5625003486929927,
+        "complement_no": -1.4687505430774763,
+        "mean_plus_complement": 0.09374980561551638,
+        "min_plus_complement": 0.09374980561551638,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4687504535540938,
+        "component_min": 1.4687504535540938,
+        "complement_no": -1.5312504218309186,
+        "mean_plus_complement": -0.0624999682768248,
+        "min_plus_complement": -0.0624999682768248,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 17,
+      "pair_id": 10004,
+      "relation": "AB",
+      "query": "clapping, and then keyboard typing",
+      "correct": {
+        "component_mean": 1.4375002573942766,
+        "component_min": 1.4375002573942766,
+        "complement_no": -1.5312502431333996,
+        "mean_plus_complement": -0.09374998573912308,
+        "min_plus_complement": -0.09374998573912308,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5312503623426892,
+        "component_min": 1.5312503623426892,
+        "complement_no": -1.4687502448796295,
+        "mean_plus_complement": 0.06250011746305972,
+        "min_plus_complement": 0.06250011746305972,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 17,
+      "pair_id": 10004,
+      "relation": "BA",
+      "query": "keyboard typing, and then clapping",
+      "correct": {
+        "component_mean": 1.78125359833939,
+        "component_min": 1.78125359833939,
+        "complement_no": -1.5625011831580196,
+        "mean_plus_complement": 0.21875241518137045,
+        "min_plus_complement": 0.21875241518137045,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5625010341464076,
+        "component_min": 1.5625010341464076,
+        "complement_no": -1.7812525552290026,
+        "mean_plus_complement": -0.218751521082595,
+        "min_plus_complement": -0.218751521082595,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 18,
+      "pair_id": 10004,
+      "relation": "AB",
+      "query": "clapping followed by keyboard typing",
+      "correct": {
+        "component_mean": 1.5937503648747224,
+        "component_min": 1.5937503648747224,
+        "complement_no": -1.4374999885330908,
+        "mean_plus_complement": 0.15625037634163164,
+        "min_plus_complement": 0.15625037634163164,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4375001077423804,
+        "component_min": 1.4375001077423804,
+        "complement_no": -1.5625003493623808,
+        "mean_plus_complement": -0.12500024162000045,
+        "min_plus_complement": -0.12500024162000045,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 18,
+      "pair_id": 10004,
+      "relation": "BA",
+      "query": "keyboard typing followed by clapping",
+      "correct": {
+        "component_mean": 1.5624999908322934,
+        "component_min": 1.5624999908322934,
+        "complement_no": -1.499999966355972,
+        "mean_plus_complement": 0.06250002447632141,
+        "min_plus_complement": 0.06250002447632141,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5000001156004146,
+        "component_min": 1.5000001156004146,
+        "complement_no": -1.5624999908322934,
+        "mean_plus_complement": -0.06249987523187883,
+        "min_plus_complement": -0.06249987523187883,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 19,
+      "pair_id": 10004,
+      "relation": "AB",
+      "query": "clapping followed by keyboard typing",
+      "correct": {
+        "component_mean": 1.375000034691766,
+        "component_min": 1.375000034691766,
+        "complement_no": -1.5312499449937604,
+        "mean_plus_complement": -0.15624991030199453,
+        "min_plus_complement": -0.15624991030199453,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.53125000448199,
+        "component_min": 1.53125000448199,
+        "complement_no": -1.3749999451683834,
+        "mean_plus_complement": 0.15625005931360647,
+        "min_plus_complement": 0.15625005931360647,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 19,
+      "pair_id": 10004,
+      "relation": "BA",
+      "query": "keyboard typing followed by clapping",
+      "correct": {
+        "component_mean": 1.8125004212924978,
+        "component_min": 1.8125004212924978,
+        "complement_no": -1.49999999551801,
+        "mean_plus_complement": 0.31250042577448767,
+        "min_plus_complement": 0.31250042577448767,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5312499742140062,
+        "component_min": 1.5312499742140062,
+        "complement_no": -1.8125003616441973,
+        "mean_plus_complement": -0.28125038743019104,
+        "min_plus_complement": -0.28125038743019104,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 20,
+      "pair_id": 10005,
+      "relation": "AB",
+      "query": "dog, and then fireworks",
+      "correct": {
+        "component_mean": 1.1250010789372027,
+        "component_min": 1.1250010789372027,
+        "complement_no": -1.3125010397052392,
+        "mean_plus_complement": -0.18749996076803654,
+        "min_plus_complement": -0.18749996076803654,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.2812507058260962,
+        "component_min": 1.2812507058260962,
+        "complement_no": -1.125001219799742,
+        "mean_plus_complement": 0.15624948602635413,
+        "min_plus_complement": 0.15624948602635413,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 20,
+      "pair_id": 10005,
+      "relation": "BA",
+      "query": "fireworks, and then dog",
+      "correct": {
+        "component_mean": 1.468753553868737,
+        "component_min": 1.468753553868737,
+        "complement_no": -0.7187501164153218,
+        "mean_plus_complement": 0.7500034374534152,
+        "min_plus_complement": 0.7500034374534152,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 0.6875001741573215,
+        "component_min": 0.6875001741573215,
+        "complement_no": -1.468753553868737,
+        "mean_plus_complement": -0.7812533797114156,
+        "min_plus_complement": -0.7812533797114156,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 21,
+      "pair_id": 10005,
+      "relation": "AB",
+      "query": "dog, and then fireworks",
+      "correct": {
+        "component_mean": 0.9062501089647412,
+        "component_min": 0.9062501089647412,
+        "complement_no": -0.8437500344589353,
+        "mean_plus_complement": 0.06250007450580597,
+        "min_plus_complement": 0.06250007450580597,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 0.8437500149011612,
+        "component_min": 0.8437500149011612,
+        "complement_no": -0.9375000111758709,
+        "mean_plus_complement": -0.0937499962747097,
+        "min_plus_complement": -0.0937499962747097,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 21,
+      "pair_id": 10005,
+      "relation": "BA",
+      "query": "fireworks, and then dog",
+      "correct": {
+        "component_mean": 1.250000703963451,
+        "component_min": 1.250000703963451,
+        "complement_no": -0.7812499515712261,
+        "mean_plus_complement": 0.46875075239222497,
+        "min_plus_complement": 0.46875075239222497,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 0.7812499674037099,
+        "component_min": 0.7812499674037099,
+        "complement_no": -1.250000643194653,
+        "mean_plus_complement": -0.4687506757909432,
+        "min_plus_complement": -0.4687506757909432,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 22,
+      "pair_id": 10005,
+      "relation": "AB",
+      "query": "dog followed by fireworks",
+      "correct": {
+        "component_mean": 1.1562499564606696,
+        "component_min": 1.1562499564606696,
+        "complement_no": -1.1562504672911018,
+        "mean_plus_complement": -5.1083043217659e-07,
+        "min_plus_complement": -5.1083043217659e-07,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.156250555999577,
+        "component_min": 1.156250555999577,
+        "complement_no": -1.156250049592927,
+        "mean_plus_complement": 5.064066499471664e-07,
+        "min_plus_complement": 5.064066499471664e-07,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 22,
+      "pair_id": 10005,
+      "relation": "BA",
+      "query": "fireworks followed by dog",
+      "correct": {
+        "component_mean": 1.5000012191012502,
+        "component_min": 1.5000012191012502,
+        "complement_no": -0.7500001983717084,
+        "mean_plus_complement": 0.7500010207295418,
+        "min_plus_complement": 0.7500010207295418,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 0.7187502030283213,
+        "component_min": 0.7187502030283213,
+        "complement_no": -1.4687515267869458,
+        "mean_plus_complement": -0.7500013237586245,
+        "min_plus_complement": -0.7500013237586245,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 23,
+      "pair_id": 10005,
+      "relation": "AB",
+      "query": "dog followed by fireworks",
+      "correct": {
+        "component_mean": 0.8437499757856131,
+        "component_min": 0.8437499757856131,
+        "complement_no": -0.8750001322478056,
+        "mean_plus_complement": -0.031250156462192535,
+        "min_plus_complement": -0.031250156462192535,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 0.8750001545995474,
+        "component_min": 0.8750001545995474,
+        "complement_no": -0.8437500884756446,
+        "mean_plus_complement": 0.0312500661239028,
+        "min_plus_complement": 0.0312500661239028,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 23,
+      "pair_id": 10005,
+      "relation": "BA",
+      "query": "fireworks followed by dog",
+      "correct": {
+        "component_mean": 1.2812500175787136,
+        "component_min": 1.2812500175787136,
+        "complement_no": -0.7499999888241291,
+        "mean_plus_complement": 0.5312500287545845,
+        "min_plus_complement": 0.5312500287545845,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 0.7500000149011612,
+        "component_min": 0.7500000149011612,
+        "complement_no": -1.2812500471482053,
+        "mean_plus_complement": -0.5312500322470441,
+        "min_plus_complement": -0.5312500322470441,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 24,
+      "pair_id": 10006,
+      "relation": "AB",
+      "query": "clapping, and then sea waves",
+      "correct": {
+        "component_mean": 1.8125108521053335,
+        "component_min": 1.8125108521053335,
+        "complement_no": -1.7187504323082976,
+        "mean_plus_complement": 0.09376041979703587,
+        "min_plus_complement": 0.09376041979703587,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500003727909643,
+        "component_min": 1.7500003727909643,
+        "complement_no": -1.8125088851957116,
+        "mean_plus_complement": -0.06250851240474731,
+        "min_plus_complement": -0.06250851240474731,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 24,
+      "pair_id": 10006,
+      "relation": "BA",
+      "query": "sea waves, and then clapping",
+      "correct": {
+        "component_mean": 1.906254261979484,
+        "component_min": 1.906254261979484,
+        "complement_no": -1.9062544408225222,
+        "mean_plus_complement": -1.788430381566286e-07,
+        "min_plus_complement": -1.788430381566286e-07,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.9375037487552618,
+        "component_min": 1.9375037487552618,
+        "complement_no": -1.8750048963556765,
+        "mean_plus_complement": 0.0624988523995853,
+        "min_plus_complement": 0.0624988523995853,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 25,
+      "pair_id": 10006,
+      "relation": "AB",
+      "query": "clapping, and then sea waves",
+      "correct": {
+        "component_mean": 1.2812515938421711,
+        "component_min": 1.2812515938421711,
+        "complement_no": -1.4062504980829544,
+        "mean_plus_complement": -0.1249989042407833,
+        "min_plus_complement": -0.1249989042407833,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.406250646978151,
+        "component_min": 1.406250646978151,
+        "complement_no": -1.3125013621756807,
+        "mean_plus_complement": 0.09374928480247036,
+        "min_plus_complement": 0.09374928480247036,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 25,
+      "pair_id": 10006,
+      "relation": "BA",
+      "query": "sea waves, and then clapping",
+      "correct": {
+        "component_mean": 1.6562527548230719,
+        "component_min": 1.6562527548230719,
+        "complement_no": -1.4687515865080059,
+        "mean_plus_complement": 0.18750116831506602,
+        "min_plus_complement": 0.18750116831506602,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4375015396508388,
+        "component_min": 1.4375015396508388,
+        "complement_no": -1.6562523971952032,
+        "mean_plus_complement": -0.2187508575443644,
+        "min_plus_complement": -0.2187508575443644,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 26,
+      "pair_id": 10006,
+      "relation": "AB",
+      "query": "clapping followed by sea waves",
+      "correct": {
+        "component_mean": 1.9375043746404117,
+        "component_min": 1.9375043746404117,
+        "complement_no": -1.7812501708540367,
+        "mean_plus_complement": 0.156254203786375,
+        "min_plus_complement": 0.156254203786375,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.8125000634900061,
+        "component_min": 1.8125000634900061,
+        "complement_no": -1.9687545780689106,
+        "mean_plus_complement": -0.1562545145789045,
+        "min_plus_complement": -0.1562545145789045,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 26,
+      "pair_id": 10006,
+      "relation": "BA",
+      "query": "sea waves followed by clapping",
+      "correct": {
+        "component_mean": 1.9375012155724107,
+        "component_min": 1.9375012155724107,
+        "complement_no": -2.0000013851677068,
+        "mean_plus_complement": -0.06250016959529603,
+        "min_plus_complement": -0.06250016959529603,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 2.000001623586286,
+        "component_min": 2.000001623586286,
+        "complement_no": -1.9375011261508917,
+        "mean_plus_complement": 0.06250049743539421,
+        "min_plus_complement": 0.06250049743539421,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 27,
+      "pair_id": 10006,
+      "relation": "AB",
+      "query": "clapping followed by sea waves",
+      "correct": {
+        "component_mean": 1.3125000189756975,
+        "component_min": 1.3125000189756975,
+        "complement_no": -1.500000144704245,
+        "mean_plus_complement": -0.18750012572854757,
+        "min_plus_complement": -0.18750012572854757,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4687499456922524,
+        "component_min": 1.4687499456922524,
+        "complement_no": -1.3750000654254109,
+        "mean_plus_complement": 0.0937498802668415,
+        "min_plus_complement": 0.0937498802668415,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 27,
+      "pair_id": 10006,
+      "relation": "BA",
+      "query": "sea waves followed by clapping",
+      "correct": {
+        "component_mean": 1.7187504623434506,
+        "component_min": 1.7187504623434506,
+        "complement_no": -1.5000002951710485,
+        "mean_plus_complement": 0.21875016717240214,
+        "min_plus_complement": 0.21875016717240214,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4687502452288754,
+        "component_min": 1.4687502452288754,
+        "complement_no": -1.7500004325556802,
+        "mean_plus_complement": -0.28125018732680473,
+        "min_plus_complement": -0.28125018732680473,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 28,
+      "pair_id": 10007,
+      "relation": "AB",
+      "query": "dog, and then rooster",
+      "correct": {
+        "component_mean": 1.5937767406867351,
+        "component_min": 1.5937767406867351,
+        "complement_no": -1.593751288979547,
+        "mean_plus_complement": 2.5451707188040018e-05,
+        "min_plus_complement": 2.5451707188040018e-05,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5937513185490388,
+        "component_min": 1.5937513185490388,
+        "complement_no": -1.5937769489537459,
+        "mean_plus_complement": -2.5630404707044363e-05,
+        "min_plus_complement": -2.5630404707044363e-05,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 28,
+      "pair_id": 10007,
+      "relation": "BA",
+      "query": "rooster, and then dog",
+      "correct": {
+        "component_mean": 1.6875098288001027,
+        "component_min": 1.6875098288001027,
+        "complement_no": -1.4062606661464088,
+        "mean_plus_complement": 0.28124916265369393,
+        "min_plus_complement": 0.28124916265369393,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4062596526928246,
+        "component_min": 1.4062596526928246,
+        "complement_no": -1.7187606547959149,
+        "mean_plus_complement": -0.3125010021030903,
+        "min_plus_complement": -0.3125010021030903,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 29,
+      "pair_id": 10007,
+      "relation": "AB",
+      "query": "dog, and then rooster",
+      "correct": {
+        "component_mean": 1.6250012380478438,
+        "component_min": 1.6250012380478438,
+        "complement_no": -1.56250070722308,
+        "mean_plus_complement": 0.0625005308247637,
+        "min_plus_complement": 0.0625005308247637,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5625006175250746,
+        "component_min": 1.5625006175250746,
+        "complement_no": -1.6250015661062207,
+        "mean_plus_complement": -0.06250094858114608,
+        "min_plus_complement": -0.06250094858114608,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 29,
+      "pair_id": 10007,
+      "relation": "BA",
+      "query": "rooster, and then dog",
+      "correct": {
+        "component_mean": 1.5937519455619622,
+        "component_min": 1.5937519455619622,
+        "complement_no": -1.5312506033224054,
+        "mean_plus_complement": 0.06250134223955683,
+        "min_plus_complement": 0.06250134223955683,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5000006244517863,
+        "component_min": 1.5000006244517863,
+        "complement_no": -1.6250017753336579,
+        "mean_plus_complement": -0.12500115088187158,
+        "min_plus_complement": -0.12500115088187158,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 30,
+      "pair_id": 10007,
+      "relation": "AB",
+      "query": "dog followed by rooster",
+      "correct": {
+        "component_mean": 1.5937562961771619,
+        "component_min": 1.5937562961771619,
+        "complement_no": -1.5937500665313564,
+        "mean_plus_complement": 6.2296458054333925e-06,
+        "min_plus_complement": 6.2296458054333925e-06,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.562500080501195,
+        "component_min": 1.562500080501195,
+        "complement_no": -1.6250051723618526,
+        "mean_plus_complement": -0.06250509186065756,
+        "min_plus_complement": -0.06250509186065756,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 30,
+      "pair_id": 10007,
+      "relation": "BA",
+      "query": "rooster followed by dog",
+      "correct": {
+        "component_mean": 1.7187519822909962,
+        "component_min": 1.7187519822909962,
+        "complement_no": -1.4375009745708667,
+        "mean_plus_complement": 0.28125100772012956,
+        "min_plus_complement": 0.28125100772012956,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4375009745708667,
+        "component_min": 1.4375009745708667,
+        "complement_no": -1.7187524292385206,
+        "mean_plus_complement": -0.2812514546676539,
+        "min_plus_complement": -0.2812514546676539,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 31,
+      "pair_id": 10007,
+      "relation": "AB",
+      "query": "dog followed by rooster",
+      "correct": {
+        "component_mean": 1.656250191590516,
+        "component_min": 1.656250191590516,
+        "complement_no": -1.5625001701992005,
+        "mean_plus_complement": 0.09375002139131539,
+        "min_plus_complement": 0.09375002139131539,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.531250094238203,
+        "component_min": 1.531250094238203,
+        "complement_no": -1.6250002543092705,
+        "mean_plus_complement": -0.09375016007106751,
+        "min_plus_complement": -0.09375016007106751,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 31,
+      "pair_id": 10007,
+      "relation": "BA",
+      "query": "rooster followed by dog",
+      "correct": {
+        "component_mean": 1.562500469502993,
+        "component_min": 1.562500469502993,
+        "complement_no": -1.5000000572181307,
+        "mean_plus_complement": 0.06250041228486225,
+        "min_plus_complement": 0.06250041228486225,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.4687500972650014,
+        "component_min": 1.4687500972650014,
+        "complement_no": -1.562500380037818,
+        "mean_plus_complement": -0.09375028277281672,
+        "min_plus_complement": -0.09375028277281672,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 32,
+      "pair_id": 10008,
+      "relation": "AB",
+      "query": "crying baby, and then vacuum cleaner",
+      "correct": {
+        "component_mean": 1.9062537256832002,
+        "component_min": 1.9062537256832002,
+        "complement_no": -1.8125021794839995,
+        "mean_plus_complement": 0.09375154619920067,
+        "min_plus_complement": 0.09375154619920067,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.81250206027471,
+        "component_min": 1.81250206027471,
+        "complement_no": -1.968752611137461,
+        "mean_plus_complement": -0.15625055086275097,
+        "min_plus_complement": -0.15625055086275097,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 32,
+      "pair_id": 10008,
+      "relation": "BA",
+      "query": "vacuum cleaner, and then crying baby",
+      "correct": {
+        "component_mean": 1.9375072654584073,
+        "component_min": 1.9375072654584073,
+        "complement_no": -1.71875222059316,
+        "mean_plus_complement": 0.21875504486524733,
+        "min_plus_complement": 0.21875504486524733,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6875032123352867,
+        "component_min": 1.6875032123352867,
+        "complement_no": -1.9375070270398282,
+        "mean_plus_complement": -0.2500038147045416,
+        "min_plus_complement": -0.2500038147045416,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 33,
+      "pair_id": 10008,
+      "relation": "AB",
+      "query": "crying baby, and then vacuum cleaner",
+      "correct": {
+        "component_mean": 1.781252197601134,
+        "component_min": 1.781252197601134,
+        "complement_no": -1.5000008599599823,
+        "mean_plus_complement": 0.2812513376411516,
+        "min_plus_complement": 0.2812513376411516,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5000008005299605,
+        "component_min": 1.5000008005299605,
+        "complement_no": -1.750002161046723,
+        "mean_plus_complement": -0.25000136051676236,
+        "min_plus_complement": -0.25000136051676236,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 33,
+      "pair_id": 10008,
+      "relation": "BA",
+      "query": "vacuum cleaner, and then crying baby",
+      "correct": {
+        "component_mean": 1.6562570762762334,
+        "component_min": 1.6562570762762334,
+        "complement_no": -1.6250029068323784,
+        "mean_plus_complement": 0.03125416944385506,
+        "min_plus_complement": 0.03125416944385506,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6562534997065086,
+        "component_min": 1.6562534997065086,
+        "complement_no": -1.6250062748149503,
+        "mean_plus_complement": 0.03124722489155829,
+        "min_plus_complement": 0.03124722489155829,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 34,
+      "pair_id": 10008,
+      "relation": "AB",
+      "query": "crying baby followed by vacuum cleaner",
+      "correct": {
+        "component_mean": 2.0000036203928175,
+        "component_min": 2.0000036203928175,
+        "complement_no": -1.843750764761353,
+        "mean_plus_complement": 0.15625285563146463,
+        "min_plus_complement": 0.15625285563146463,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.843750764761353,
+        "component_min": 1.843750764761353,
+        "complement_no": -2.0000031435556593,
+        "mean_plus_complement": -0.15625237879430642,
+        "min_plus_complement": -0.15625237879430642,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 34,
+      "pair_id": 10008,
+      "relation": "BA",
+      "query": "vacuum cleaner followed by crying baby",
+      "correct": {
+        "component_mean": 1.9687595849027275,
+        "component_min": 1.9687595849027275,
+        "complement_no": -1.7812531512754504,
+        "mean_plus_complement": 0.18750643362727715,
+        "min_plus_complement": 0.18750643362727715,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500040088343667,
+        "component_min": 1.7500040088343667,
+        "complement_no": -1.9687587802254711,
+        "mean_plus_complement": -0.21875477139110444,
+        "min_plus_complement": -0.21875477139110444,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 35,
+      "pair_id": 10008,
+      "relation": "AB",
+      "query": "crying baby followed by vacuum cleaner",
+      "correct": {
+        "component_mean": 1.8125014940887922,
+        "component_min": 1.8125014940887922,
+        "complement_no": -1.5625001397856977,
+        "mean_plus_complement": 0.25000135430309456,
+        "min_plus_complement": 0.25000135430309456,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5625001102744136,
+        "component_min": 1.5625001102744136,
+        "complement_no": -1.8125015238765627,
+        "mean_plus_complement": -0.2500014136021491,
+        "min_plus_complement": -0.2500014136021491,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 35,
+      "pair_id": 10008,
+      "relation": "BA",
+      "query": "vacuum cleaner followed by crying baby",
+      "correct": {
+        "component_mean": 1.7500049031805247,
+        "component_min": 1.7500049031805247,
+        "complement_no": -1.6562545725901145,
+        "mean_plus_complement": 0.09375033059041016,
+        "min_plus_complement": 0.09375033059041016,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6562561520549934,
+        "component_min": 1.6562561520549934,
+        "complement_no": -1.7187540088489186,
+        "mean_plus_complement": -0.062497856793925166,
+        "min_plus_complement": -0.062497856793925166,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 36,
+      "pair_id": 10009,
+      "relation": "AB",
+      "query": "clapping, and then fireworks",
+      "correct": {
+        "component_mean": 1.968771982625185,
+        "component_min": 1.968771982625185,
+        "complement_no": -1.7187512371747289,
+        "mean_plus_complement": 0.25002074545045616,
+        "min_plus_complement": 0.25002074545045616,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500012670498108,
+        "component_min": 1.7500012670498108,
+        "complement_no": -1.9375197526387637,
+        "mean_plus_complement": -0.1875184855889529,
+        "min_plus_complement": -0.1875184855889529,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 36,
+      "pair_id": 10009,
+      "relation": "BA",
+      "query": "fireworks, and then clapping",
+      "correct": {
+        "component_mean": 1.937502944128937,
+        "component_min": 1.937502944128937,
+        "complement_no": -1.7812505883193808,
+        "mean_plus_complement": 0.15625235580955632,
+        "min_plus_complement": 0.15625235580955632,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.843750645624823,
+        "component_min": 1.843750645624823,
+        "complement_no": -1.9375033911783248,
+        "mean_plus_complement": -0.09375274555350188,
+        "min_plus_complement": -0.09375274555350188,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 37,
+      "pair_id": 10009,
+      "relation": "AB",
+      "query": "clapping, and then fireworks",
+      "correct": {
+        "component_mean": 1.718752161017619,
+        "component_min": 1.718752161017619,
+        "complement_no": -1.4687504542525858,
+        "mean_plus_complement": 0.2500017067650333,
+        "min_plus_complement": 0.2500017067650333,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.531250422645826,
+        "component_min": 1.531250422645826,
+        "complement_no": -1.7187523993488867,
+        "mean_plus_complement": -0.1875019767030608,
+        "min_plus_complement": -0.1875019767030608,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 37,
+      "pair_id": 10009,
+      "relation": "BA",
+      "query": "fireworks, and then clapping",
+      "correct": {
+        "component_mean": 1.8437507648341125,
+        "component_min": 1.8437507648341125,
+        "complement_no": -1.5937502154847607,
+        "mean_plus_complement": 0.2500005493493518,
+        "min_plus_complement": 0.2500005493493518,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5937500665313564,
+        "component_min": 1.5937500665313564,
+        "complement_no": -1.750000551881385,
+        "mean_plus_complement": -0.1562504853500286,
+        "min_plus_complement": -0.1562504853500286,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 38,
+      "pair_id": 10009,
+      "relation": "AB",
+      "query": "clapping followed by fireworks",
+      "correct": {
+        "component_mean": 2.000008031100151,
+        "component_min": 2.000008031100151,
+        "complement_no": -1.7812499623105396,
+        "mean_plus_complement": 0.21875806878961157,
+        "min_plus_complement": 0.21875806878961157,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7500001045991667,
+        "component_min": 1.7500001045991667,
+        "complement_no": -2.03125668685243,
+        "mean_plus_complement": -0.28125658225326333,
+        "min_plus_complement": -0.28125658225326333,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 38,
+      "pair_id": 10009,
+      "relation": "BA",
+      "query": "fireworks followed by clapping",
+      "correct": {
+        "component_mean": 2.0312508157730917,
+        "component_min": 2.0312508157730917,
+        "complement_no": -1.8437501091393642,
+        "mean_plus_complement": 0.18750070663372753,
+        "min_plus_complement": 0.18750070663372753,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.9062501194421202,
+        "component_min": 1.9062501194421202,
+        "complement_no": -1.9687505845795386,
+        "mean_plus_complement": -0.06250046513741836,
+        "min_plus_complement": -0.06250046513741836,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 39,
+      "pair_id": 10009,
+      "relation": "AB",
+      "query": "clapping followed by fireworks",
+      "correct": {
+        "component_mean": 1.8125004212051863,
+        "component_min": 1.8125004212051863,
+        "complement_no": -1.5625002294837032,
+        "mean_plus_complement": 0.25000019172148313,
+        "min_plus_complement": 0.25000019172148313,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5937502752058208,
+        "component_min": 1.5937502752058208,
+        "complement_no": -1.7812504391476978,
+        "mean_plus_complement": -0.18750016394187696,
+        "min_plus_complement": -0.18750016394187696,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 39,
+      "pair_id": 10009,
+      "relation": "BA",
+      "query": "fireworks followed by clapping",
+      "correct": {
+        "component_mean": 1.8437501390726538,
+        "component_min": 1.8437501390726538,
+        "complement_no": -1.6250001049775165,
+        "mean_plus_complement": 0.21875003409513738,
+        "min_plus_complement": 0.21875003409513738,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6249999560241122,
+        "component_min": 1.6249999560241122,
+        "complement_no": -1.8125000635773176,
+        "mean_plus_complement": -0.18750010755320545,
+        "min_plus_complement": -0.18750010755320545,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    }
+  ]
+}

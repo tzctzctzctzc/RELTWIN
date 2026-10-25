@@ -1,0 +1,35 @@
+{
+  "protocol_id": "P-RBEE-004",
+  "status": "preregistered_before_ESC50_results",
+  "hypothesis_id": "H001",
+  "purpose": "Independent-source scale-up pilot with class-disjoint held-out evaluation.",
+  "data": {
+    "source": "ESC-50 official release",
+    "train": "256 relation audios from 40 classes, 1024 inverse-relation queries, plus 512 ordinary localization rehearsal queries",
+    "test": "40 class pairs from 10 classes never used in training, two independent source/layout replicates per pair, 320 inverse-relation queries",
+    "leakage_rule": "No ESC-50 held-out class or source file may occur in training; SpotSound-Bench is not used for training or hyperparameter selection."
+  },
+  "matched_runs": [
+    "SFT plus ordinary localization rehearsal",
+    "RBEE plus the same ordinary localization rehearsal"
+  ],
+  "fixed_hyperparameters": {
+    "initialization": "official SpotSound adapter",
+    "steps": 256,
+    "learning_rate": 0.000005,
+    "optimizer": "AdamW",
+    "seed": 0,
+    "rehearsal_weight": 0.5,
+    "rbee_weight": 1.0,
+    "temperature": 1.0
+  },
+  "primary_metric": "ESC-50 held-out PairAcc@0.5",
+  "diagnostic_metrics": [
+    "Swap Error",
+    "wrong-window preference rate",
+    "query mIoU"
+  ],
+  "go_rule": "Continue RBEE if it improves PairAcc@0.5 over matched SFT by at least 0.0625, or lowers Swap Error by at least 0.0625 without lowering query mIoU by more than 0.02.",
+  "stop_rule": "If RBEE fails the independent held-out rule, retain the RelTwin data paradigm but reject the current exchange objective; do not tune on ESC-50 held-out classes.",
+  "future_guardrail": "Only the selected fixed adapter will receive one 400-query SpotSound-Bench evaluation after the independent decision."
+}

@@ -1,0 +1,12 @@
+{
+  "model": "reltwin",
+  "manifest_sha256": "790e606c53f1a0e732854c506083003dbc9a8bbdd0f44fe363f4e2031ef86f18",
+  "predictions_sha256": "0900c600633da4cc85eb04f6e08d3ca995220bfe5b7a2ce446c2a6287528fe89",
+  "query_count": 600,
+  "pair_count": 300,
+  "mIoU": 43.86338020095481,
+  "PairAcc@0.5": 10.666666666666668,
+  "SwapError": 54.333333333333336,
+  "JointPairAcc@0.5": 10.666666666666668,
+  "same_answer_pairs": 34
+}

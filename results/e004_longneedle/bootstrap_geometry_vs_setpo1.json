@@ -1,0 +1,80 @@
+{
+  "source_predictions": [
+    "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/runs/e002_matched_pipeline_corrected/seed_1/setpo/public_predictions.jsonl"
+  ],
+  "target_predictions": [
+    "results/e004_longneedle/public_geometry_predictions.jsonl"
+  ],
+  "records": 400,
+  "seeds": 1,
+  "bootstrap_samples": 50000,
+  "bootstrap_seed": 20260831,
+  "delta_target_minus_source": {
+    "mIoU": {
+      "per_seed_delta": [
+        0.0030220604013570084
+      ],
+      "mean_delta": 0.0030220604013570084,
+      "paired_record": {
+        "mean": 0.003005464202357256,
+        "ci95": [
+          0.00027375662526853286,
+          0.007566875187801272
+        ],
+        "p_nonpositive": 0.00644
+      },
+      "hierarchical_seed_record": {
+        "mean": 0.003025035059249897,
+        "ci95": [
+          0.00027196048935585214,
+          0.007688903855161329
+        ],
+        "p_nonpositive": 0.00648
+      }
+    },
+    "R1@0.3": {
+      "per_seed_delta": [
+        0.005
+      ],
+      "mean_delta": 0.005,
+      "paired_record": {
+        "mean": 0.00498905,
+        "ci95": [
+          -0.005,
+          0.015
+        ],
+        "p_nonpositive": 0.22624
+      },
+      "hierarchical_seed_record": {
+        "mean": 0.005006150000000001,
+        "ci95": [
+          -0.005,
+          0.015
+        ],
+        "p_nonpositive": 0.22458
+      }
+    },
+    "R1@0.5": {
+      "per_seed_delta": [
+        0.0025
+      ],
+      "mean_delta": 0.0025,
+      "paired_record": {
+        "mean": 0.0024855000000000003,
+        "ci95": [
+          0.0,
+          0.0075
+        ],
+        "p_nonpositive": 0.37034
+      },
+      "hierarchical_seed_record": {
+        "mean": 0.00251395,
+        "ci95": [
+          0.0,
+          0.0075
+        ],
+        "p_nonpositive": 0.36616
+      }
+    }
+  }
+}

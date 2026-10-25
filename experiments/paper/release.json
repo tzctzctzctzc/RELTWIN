@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "submission_filename": "finalpaper.pdf",
+    "submission_confirmed_on": "2026-10-24",
+    "commit": "652c5cf420b1c0d5ab63d1620ab826a466bc00b6",
+    "pdf_sha256": "942e5c14ba195325d9634bd9c89eedb155e00209cd35f70d1caf5919b262ea71",
+    "text_sha256_lf": {
+      "sections/method.tex": "9e7bc38064d775b1b06f1f166aebc305d7db2d88348b9992e975fba2f10f8e16",
+      "sections/experiments.tex": "e4d3d6dd7202147ef272d8b610ef18059f6086b119d66817525f5ab2d6b34022",
+      "tables/main_results.tex": "f9cc19ea4637c0bbcb3aa8b9bafbe846151059751dd65f1b25f12e7b85c47f06",
+      "tables/training_results.tex": "62897fc15d81f8dc04e0da93a754bf8f1cb3aa10daa6e4cf0927c21d503d0b94"
+    }
+  },
+  "benchmarks": [
+    {
+      "id": "spotsound",
+      "name": "SpotSound-Bench",
+      "queries": 400,
+      "audios": 387
+    },
+    {
+      "id": "clotho",
+      "name": "Clotho-Moment",
+      "queries": 6649,
+      "audios": null
+    },
+    {
+      "id": "unav100",
+      "name": "UnAV-100 subset",
+      "queries": 100,
+      "audios": 77
+    }
+  ],
+  "metric_order": [
+    "R1@0.3",
+    "R1@0.5",
+    "mIoU"
+  ],
+  "main_table": [
+    {
+      "method": "TimeAudio",
+      "provenance": "published_baseline",
+      "values": [
+        [
+          7.8,
+          1.8,
+          10.2
+        ],
+        [
+          39.5,
+          24.9,
+          28.6
+        ],
+        [
+          21,
+          7,
+          16
+        ]
+      ]
+    },
+    {
+      "method": "TimeAudio + RelTwin",
+      "provenance": "paper_reported",
+      "values": [
+        [
+          24.25,
+          13.25,
+          18.36
+        ],
+        [
+          45.63,
+          30.92,
+          34.08
+        ],
+        [
+          44,
+          25,
+          30.48
+        ]
+      ]
+    },
+    {
+      "method": "SpotSound-A",
+      "provenance": "published_baseline",
+      "values": [
+        [
+          76.5,
+          59.5,
+          57.9
+        ],
+        [
+          93.4,
+          91,
+          85.6
+        ],
+        [
+          86,
+          74,
+          69.8
+        ]
+      ]
+    },
+    {
+      "method": "SpotSound-A + RelTwin",
+      "provenance": "paper_reported",
+      "values": [
+        [
+          78,
+          62,
+          59.43
+        ],
+        [
+          93.61,
+          91.01,
+          86.68
+        ],
+        [
+          89,
+          79,
+          74.03
+        ]
+      ]
+    }
+  ],
+  "relation_table": {
+    "pairs": 300,
+    "queries": 600,
+    "metric_order": [
+      "mIoU",
+      "JointPairAcc@0.5",
+      "swap_error",
+      "same_answer_count"
+    ],
+    "rows": [
+      {
+        "backbone": "SpotSound-A",
+        "training": "Official checkpoint",
+        "values": [
+          37.19,
+          0.67,
+          66.33,
+          32
+        ]
+      },
+      {
+        "backbone": "SpotSound-A",
+        "training": "Paired SFT",
+        "values": [
+          76.08,
+          55.33,
+          36.33,
+          61
+        ]
+      },
+      {
+        "backbone": "SpotSound-A",
+        "training": "Candidate supervision",
+        "values": [
+          87.7,
+          81.67,
+          7,
+          2
+        ]
+      },
+      {
+        "backbone": "TimeAudio",
+        "training": "Official checkpoint",
+        "values": [
+          40.23,
+          0,
+          83.67,
+          67
+        ]
+      },
+      {
+        "backbone": "TimeAudio",
+        "training": "Paired SFT",
+        "values": [
+          38.89,
+          2.67,
+          78.33,
+          160
+        ]
+      },
+      {
+        "backbone": "TimeAudio",
+        "training": "RelTwin",
+        "values": [
+          43.86,
+          10.67,
+          54.33,
+          34
+        ]
+      }
+    ]
+  },
+  "configuration_kind": "submitted_paper_specification",
+  "run_confirmations": [
+    {
+      "method": "SpotSound-A + RelTwin",
+      "table": "main_table",
+      "source": "author_confirmation",
+      "confirmed_on": "2026-10-24",
+      "training_configuration": "full_reltwin",
+      "checkpoint_selection": "latest_full_configuration_checkpoint",
+      "original_run_archive_available": false
+    }
+  ],
+  "training_launcher": "reproduction/train_paper.sh",
+  "timeaudio_paper_config": "configs/timeaudio_paper.yaml",
+  "full_reltwin": {
+    "stage1_updates": 384,
+    "stage2_updates": 128,
+    "lora_learning_rate": 0.000002,
+    "bridge_learning_rate": 0.000005,
+    "lambda": 1,
+    "gamma": 1,
+    "beta": 0.75,
+    "kappa_replay_reference": 0.2,
+    "kappa_relation_reference": 0,
+    "tau": 1,
+    "tau_q": 0.15,
+    "pareto_weight": 0.5,
+    "expansion_ratio": 0.15,
+    "min_expansion_seconds": 0.05,
+    "seed": 0,
+    "inference": "direct_generation",
+    "num_beams": 1,
+    "max_new_tokens": 128,
+    "trainable_parameters_millions": {
+      "TimeAudio": 31.76,
+      "SpotSound-A": 37.63
+    },
+    "lora_rank": null,
+    "effective_batch_size": null
+  },
+  "table2_spotsound": {
+    "updates": 256,
+    "paired_sft_lambda": 0,
+    "candidate_lambda": 1,
+    "gamma": 0,
+    "beta": 0.5,
+    "learning_rate": 0.000005,
+    "weight_decay": 0,
+    "gradient_clipping": 1,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.1,
+    "trainable_parameters_millions": 20.19,
+    "queries_per_update": {
+      "inverse_pair": 1,
+      "replay_query": 1
+    }
+  },
+  "table2_timeaudio": {
+    "stage1_updates": 384,
+    "stage2_updates": 128,
+    "paired_sft_lambda": 0,
+    "reltwin_lambda": 1,
+    "shared": [
+      "official_initialization",
+      "data",
+      "order",
+      "update_count"
+    ],
+    "seed": 0
+  },
+  "checkpoint_profiles": "configs/release_profiles.json",
+  "evaluation": {
+    "profile": "paper",
+    "prediction_clipping": "audio_duration",
+    "target_clipping": "none",
+    "empty_union_iou": 0,
+    "recall_thresholds": [0.3, 0.5],
+    "percentage_scale": 100
+  },
+  "reproduction_status": "archived_prediction_tables_verified"
+}

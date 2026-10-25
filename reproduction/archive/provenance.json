@@ -1,0 +1,103 @@
+{
+  "archive": "reltwin_preservation_20261008/research_evidence.tar",
+  "retrieved_on": "2026-10-24",
+  "verification": "Archived files matched backup_hashes.json; environment snapshot was hashed at retrieval. Text hashes use LF line endings.",
+  "files": [
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/train_spotsound_reltwin_full.py",
+      "target": "scripts/train_spotsound_reltwin_full.py",
+      "sha256": "b84a6770236d016aa1af0c8212659f00ad1729190eaa670de603b364190ec72f",
+      "released_sha256": "d9016bcdee85ad81bf0a88a94ac7ffd203fa14c8cfe8742808ed1cae84ba1308",
+      "release_change": "Paper Eq. (5) defaults to replay-only reference KL; optional relation references are skipped when disabled."
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/spotsound_reltwin.py",
+      "target": "scripts/spotsound_reltwin.py",
+      "sha256": "b17e3923b9fc720c3daa716c2e85d5c767dfafce1bc67ade811d73327c63a795"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/train_reltwin_micro.py",
+      "target": "scripts/train_reltwin_micro.py",
+      "sha256": "b0e7b333bc1f92b494b884e4d812c81b0da3db0aa40a515228c2307eb29e5c2c"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/evaluate_checkpoint.py",
+      "target": "scripts/evaluate_checkpoint.py",
+      "sha256": "ea544b9b42e66029ff44cd431d8d8ad70abfe4d7622c84bc05fccbedec3b49bf",
+      "released_sha256": "e9d59f6526a76166c2c197f843b749aa7107ab7e5135eb2bed95075439fccb3c",
+      "release_change": "Explicit one-beam generation and generation/manifest metadata in new evaluation summaries."
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/run_spotsound_full_reltwin.sh",
+      "target": "reproduction/archive/run_spotsound_full_reltwin_20260916.sh",
+      "sha256": "6bc4d204b1d6021e86014795e0f4ce3cb28728e67895f6d248abed2a1cfad378"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/tests/test_spotsound_full_reltwin.py",
+      "target": "tests/test_spotsound_full_reltwin.py",
+      "sha256": "df760b3a48f8be0871a7a77bad2cbd74784e89e242dda187aaac249cfa036ba6"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/tests/test_rbee_exchange_control.py",
+      "target": "tests/test_rbee_exchange_control.py",
+      "sha256": "f9021b91bf52b2fa882214c9b216574f9f2e7e32aec3ebd5aadce0f2b0d56254"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/tests/test_timeaudio_reltwin.py",
+      "target": "tests/test_timeaudio_reltwin.py",
+      "sha256": "e8c8cb27a25fea07ce53678e95811b3a8a8b90ec78ca22ccad5cd7b6bd789ea4"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/tests/test_timeaudio_reltwin_full.py",
+      "target": "tests/test_timeaudio_reltwin_full.py",
+      "sha256": "1278c1ce0a4553f438b16de15cbffcdc31cca4e006f97687f9389415917cceba"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/clotho/predictions.jsonl",
+      "target": "results/released_spotsound/clotho/predictions.jsonl",
+      "sha256": "3e69e32babb024310c43a73ac8707d848cb93aa4959db4981766c561b1675f7e"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/clotho/summary.json",
+      "target": "results/released_spotsound/clotho/summary.json",
+      "sha256": "3f19edf2f1c2fe645eb6271dbce860eb051b27ecc74d4fc7d4a9b35063413bf4"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/spotsound400/predictions.jsonl",
+      "target": "results/released_spotsound/spotsound400/predictions.jsonl",
+      "sha256": "8b0fe5afc665dda903c28ca6a4cea941f8390b5afe6613ef2e5454f7925d4ebf"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/spotsound400/summary.json",
+      "target": "results/released_spotsound/spotsound400/summary.json",
+      "sha256": "8ef62c8310358033974c520c4de2bd227dda01ab8f35fb29f5c4df83a665203e"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/train_summary.json",
+      "target": "results/released_spotsound/train_summary.json",
+      "sha256": "e713cc107daabaf038230ac6335cf087eb66b9e59bee7e411bc81cb4772a4ead"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/unav100/predictions.jsonl",
+      "target": "results/released_spotsound/unav100/predictions.jsonl",
+      "sha256": "74bc128e83676b5e59b9503d1b6c0302ec7f90e40c6d4e5bc2449deaf434d68b"
+    },
+    {
+      "source": "outputs/spotsound_full_reltwin_20260916/unav100/summary.json",
+      "target": "results/released_spotsound/unav100/summary.json",
+      "sha256": "182a9f794be5677e1101dfdef31539935837b1b61e83143b65e9579016abd795"
+    },
+    {
+      "source": "external/TimeAudio-22db7136/configs/infer_config.yaml",
+      "target": "reproduction/archive/timeaudio_infer_config.yaml",
+      "sha256": "cc29a2994ffce64afa86d6ea79a4176a92ae22681e6ca3d2197e66793fcb1b51",
+      "released_sha256": "32e8333054b2a8723cf832262808942eccf9a21acd45678e86f974f99cc8fc5f",
+      "format_change": "Added final newline; YAML settings unchanged."
+    },
+    {
+      "source": "env-timeaudio-requirements.txt",
+      "target": "reproduction/archive/timeaudio_environment.txt",
+      "sha256": "1c12d4a9a41bcf3fd69ef43b42aa0c346662389bb021b52d93439df8931ab750"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": "independent_development_only",
+  "partition_sizes": {
+    "train": 76,
+    "calibration": 41,
+    "heldout": 43
+  },
+  "calibration": {
+    "rows": 41,
+    "official_mIoU_percent": 24.29415898629038,
+    "router_mIoU_percent": 24.29415898629038,
+    "oracle_mIoU_percent": 31.07853287685969,
+    "oracle_capture": 0.0,
+    "mean_downside_points": 0.0,
+    "mean_upside_points": 0.0,
+    "regressed_rows": 0,
+    "improved_rows": 0,
+    "selection_counts": {
+      "official": 0,
+      "sft": 0,
+      "setpo": 41
+    }
+  },
+  "heldout": {
+    "rows": 43,
+    "official_mIoU_percent": 22.153355826652298,
+    "router_mIoU_percent": 22.153355826652298,
+    "oracle_mIoU_percent": 25.096758271962173,
+    "oracle_capture": 0.0,
+    "mean_downside_points": 0.0,
+    "mean_upside_points": 0.0,
+    "regressed_rows": 0,
+    "improved_rows": 0,
+    "selection_counts": {
+      "official": 0,
+      "sft": 0,
+      "setpo": 43
+    }
+  },
+  "heldout_candidate_mIoU_percent": {
+    "official": 23.333792302125765,
+    "sft": 20.730688145930646,
+    "setpo": 22.153355826652298
+  },
+  "gate": {
+    "min_heldout_capture": 0.2,
+    "requires_router_above_best_single": true,
+    "passed": false
+  },
+  "model": {
+    "method": "relative_ridge_with_official_fallback",
+    "feature_names": [
+      "complement_no"
+    ],
+    "official": "setpo",
+    "mean": [
+      0.20476973684210525
+    ],
+    "scale": [
+      2.351404139496662
+    ],
+    "weights": [
+      -0.016363208841553584,
+      0.037489340721685784
+    ],
+    "alpha": 0.1,
+    "threshold": Infinity,
+    "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+  }
+}

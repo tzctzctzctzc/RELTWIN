@@ -1,0 +1,22 @@
+{
+  "prediction_file": "results/official_spotsound_a/public_predictions.jsonl",
+  "rows": 400,
+  "unique_indices": 400,
+  "unique_audio_files": 387,
+  "additional_query_rows_reusing_audio": 13,
+  "multiply_queried_audio_files": 11,
+  "duplicate_audio_row_counts": {
+    "0mZQ6Q-viPw_0_33.wav": 2,
+    "5MeHhWGqSrw_0_40.wav": 2,
+    "5VElNpaNPoo_0_60.wav": 3,
+    "F1qVm133XJg_220_280.wav": 2,
+    "HDZySzpYw0g_0_60.wav": 2,
+    "I5W0Nnn1zFk_0_60.wav": 2,
+    "Jn8fQ-ZmvBE_700_760.wav": 2,
+    "Y8Ku0WMqT1I_0_60.wav": 2,
+    "eW4EvkJze-A_0_60.wav": 2,
+    "oXKgkoodS40_0_60.wav": 2,
+    "s9d-2nhuJCQ_30_90.wav": 3
+  },
+  "nonempty_predictions": 400
+}

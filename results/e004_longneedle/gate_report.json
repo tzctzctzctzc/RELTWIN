@@ -1,0 +1,86 @@
+{
+  "status": "independent_development_only",
+  "partition_sizes": {
+    "train": 76,
+    "calibration": 41,
+    "heldout": 43
+  },
+  "calibration": {
+    "rows": 41,
+    "official_mIoU_percent": 24.29415898629038,
+    "router_mIoU_percent": 29.301459549215743,
+    "oracle_mIoU_percent": 31.07853287685969,
+    "oracle_capture": 0.7380637688447291,
+    "mean_downside_points": 0.15904643741753777,
+    "mean_upside_points": 5.166347000342896,
+    "regressed_rows": 2,
+    "improved_rows": 12,
+    "selection_counts": {
+      "official": 19,
+      "sft": 5,
+      "setpo": 17
+    }
+  },
+  "heldout": {
+    "rows": 43,
+    "official_mIoU_percent": 22.153355826652298,
+    "router_mIoU_percent": 24.35830551195043,
+    "oracle_mIoU_percent": 25.096758271962173,
+    "oracle_capture": 0.7491159385328292,
+    "mean_downside_points": 0.5065807947026418,
+    "mean_upside_points": 2.7115304800007713,
+    "regressed_rows": 1,
+    "improved_rows": 8,
+    "selection_counts": {
+      "official": 11,
+      "sft": 2,
+      "setpo": 30
+    }
+  },
+  "heldout_candidate_mIoU_percent": {
+    "official": 23.333792302125765,
+    "sft": 20.730688145930646,
+    "setpo": 22.153355826652298
+  },
+  "gate": {
+    "min_heldout_capture": 0.2,
+    "requires_router_above_best_single": true,
+    "passed": true
+  },
+  "model": {
+    "method": "relative_ridge_with_official_fallback",
+    "feature_names": [
+      "component_mean",
+      "component_min",
+      "complement_no",
+      "duration_fraction",
+      "interval_count"
+    ],
+    "official": "setpo",
+    "mean": [
+      -0.08888432017543861,
+      -0.140625,
+      0.20476973684210525,
+      0.00906118421052632,
+      0.046052631578947366
+    ],
+    "scale": [
+      3.352020866689358,
+      3.4159405401512313,
+      2.351404139496663,
+      0.06834556816487027,
+      0.3107464652268301
+    ],
+    "weights": [
+      -0.0163632088415536,
+      0.214760743729133,
+      -0.13428623942144768,
+      0.012693609496528759,
+      -0.02391317855615952,
+      -0.023454996215659427
+    ],
+    "alpha": 0.1,
+    "threshold": -0.008910575334633871,
+    "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+  }
+}

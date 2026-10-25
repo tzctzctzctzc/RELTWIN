@@ -1,0 +1,39 @@
+{
+  "experiment_id": "E003_nova_independent_pilot",
+  "status": "locked_before_ordinary_candidate_evaluation",
+  "date": "2026-08-31",
+  "scope": "independent_RelTwin_ordinary_event_development_only",
+  "hypothesis": "Paired Keep/Drop audio interventions provide a label-free necessity-sufficiency signal that can conservatively select among complementary SpotSound checkpoints.",
+  "candidate_pool": [
+    "official_SpotSound-A",
+    "ordinary_SFT_seed0",
+    "E002_SetPO_seed1"
+  ],
+  "verifier": {
+    "checkpoint": "official_SpotSound-A_frozen",
+    "score": "first-token logit(Yes)-logit(No) under the official detection prompt",
+    "features": [
+      "mean component Keep log-odds",
+      "minimum component Keep log-odds",
+      "negative union Drop log-odds",
+      "candidate duration fraction",
+      "candidate interval count"
+    ],
+    "audio_intervention": "timeline-preserving zero mask with 10 ms squared-sine boundary fades"
+  },
+  "router": {
+    "target": "candidate IoU minus official IoU",
+    "model": "relative ridge regression with official fallback",
+    "ridge_alphas": [0.1, 1.0, 10.0, 100.0],
+    "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3",
+    "threshold_selection": "maximize calibration mIoU subject to mean downside <= 0.25 point; ties prefer the larger threshold"
+  },
+  "development_gate": {
+    "primary_manifest": "ordinary event queries reconstructed from RelTwin held-out test mixtures",
+    "relation_query_role": "mechanism diagnostic only; relation-query router results cannot unlock public evaluation",
+    "heldout_oracle_capture_min": 0.35,
+    "router_mIoU_must_exceed_every_single_candidate": true,
+    "public_evaluation_allowed_only_if_passed": true
+  },
+  "public_guardrail": "If the pilot passes, write and lock a separate confirmatory public protocol before extracting any SpotSound-Bench NOVA features. SpotSound labels must not be used for fitting, thresholding, checkpoint selection, or feature normalization."
+}

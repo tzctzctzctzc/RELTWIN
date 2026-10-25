@@ -1,0 +1,104 @@
+{
+  "archive": "reltwin_preservation_20261008/research_evidence.tar",
+  "retrieved_on": "2026-10-24",
+  "verification": "Each imported file matched backup_hashes.json before transfer; local files checked with LF normalization.",
+  "files": [
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/train_timeaudio_reltwin_full.py",
+      "target": "scripts/train_timeaudio_reltwin_full.py",
+      "sha256": "643f64b1163dd4e40cd5edc5c35992adc7a1bb0032c37a09072f7908509c89e9"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/timeaudio_reltwin.py",
+      "target": "scripts/timeaudio_reltwin.py",
+      "sha256": "98a16cd4da65b748816bb8a9762f63f7ed34bc95cb428f637ae4246e3fc6c232"
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/evaluate_timeaudio_checkpoint.py",
+      "target": "scripts/evaluate_timeaudio_checkpoint.py",
+      "sha256": "dedef1db269e312d97eaac963a09e1835c2f783d8d13203e2d082f192229f972",
+      "released_sha256": "85dfb8a044951f4b3f4a751d08045871d73471d58528ea40ac7d0532dd8ce274",
+      "release_change": "Record resolved generation settings and configuration hash in new evaluation summaries."
+    },
+    {
+      "source": "spotsound_timeaudio_reltwin_20260916/scripts/run_timeaudio_full_reltwin.sh",
+      "target": "reproduction/archive/run_timeaudio_full_reltwin_20260916.sh",
+      "sha256": "32f79e02446d10afd7cc67c55e272af9f148bbb600a55184bd72156535966c8a"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/seed0/train_summary.json",
+      "target": "results/paper_timeaudio/train_summary.json",
+      "sha256": "26f278a66c65e37a932f6b4f0a2ccfd50bab4ebfe73bc5eed973e40b5cf80496"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/seed0/train_summary.json",
+      "target": "results/paper_timeaudio/table2_sft_train_summary.json",
+      "sha256": "18962fcdfea8c6c7edf1c20a6c7b2ed06a72d1eb4fffb565505c98ecbf2e5ad2"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/eval/spotsound400/summary.json",
+      "target": "results/paper_timeaudio/spotsound400/summary.json",
+      "sha256": "354b86ee080ddefbffb33cff880e18e7fc14c686729f1ce43f194b7e9cb156b6"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/eval/spotsound400/predictions.jsonl",
+      "target": "results/paper_timeaudio/spotsound400/predictions.jsonl",
+      "sha256": "828da071b82b800fa2b25c1a839c1c829ccc974547662fe227cedb011ba5df12"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/eval/clotho1000/summary.json",
+      "target": "results/paper_timeaudio/clotho1000/summary.json",
+      "sha256": "c0d811ea0d3a7426b0fb14c9b6fe74b3705c107866ead10ea58739a37f7a4271"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/eval/clotho1000/predictions.jsonl",
+      "target": "results/paper_timeaudio/clotho1000/predictions.jsonl",
+      "sha256": "cdbaeffb6228776804c7d49ab56e5dbe147028a1b5b0066cc3055f253730ba62"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/eval/unav100/summary.json",
+      "target": "results/paper_timeaudio/unav100/summary.json",
+      "sha256": "72a25a38dede7aeb03ba3aea921a58e841932c11ee0a066a7d110ffd9f2157ab"
+    },
+    {
+      "source": "outputs/timeaudio_full_reltwin_20260916/eval/unav100/predictions.jsonl",
+      "target": "results/paper_timeaudio/unav100/predictions.jsonl",
+      "sha256": "604ad1eb4dd3806ca8fd8d12a9b48a56eeff38f40cedc40ad29a35b0744d90f0"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/eval_expanded/official/relation_metrics_300.json",
+      "target": "results/paper_timeaudio/table2_official/relation_metrics_300.json",
+      "sha256": "04f1ec1fce1e3cb6cb732c4cd300e757076f72108da25ce25a57ebe8cfe5c90a"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/eval_expanded/official/combined_predictions.jsonl",
+      "target": "results/paper_timeaudio/table2_official/combined_predictions.jsonl",
+      "sha256": "7192de56632e657178dfa5f1df13febe0b3e4070fc29f32a9cc29a5e61668ecd"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/eval_expanded/reltwin/relation_metrics_300.json",
+      "target": "results/paper_timeaudio/table2_reltwin/relation_metrics_300.json",
+      "sha256": "baacd4011af78c161c38fe779ec58974e26a3ca004898c8072ecea224824de30"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/eval_expanded/reltwin/combined_predictions.jsonl",
+      "target": "results/paper_timeaudio/table2_reltwin/combined_predictions.jsonl",
+      "sha256": "0900c600633da4cc85eb04f6e08d3ca995220bfe5b7a2ce446c2a6287528fe89"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/eval_expanded/sft/relation_metrics_300.json",
+      "target": "results/paper_timeaudio/table2_sft/relation_metrics_300.json",
+      "sha256": "1745da0119c637d66bfab313a8916e23f8391bd053fde3c33cd6e08355ef3ff9"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/eval_expanded/sft/combined_predictions.jsonl",
+      "target": "results/paper_timeaudio/table2_sft/combined_predictions.jsonl",
+      "sha256": "8ff897e9934a5378b27447c4ca0915f66ffc0e9e1732cace89b1230e8619dc9f"
+    },
+    {
+      "source": "outputs/timeaudio_table2_matched_sft_20260923/relation_expansion_300/expanded_manifest.json",
+      "target": "results/paper_timeaudio/table2_manifest.json",
+      "sha256": "790e606c53f1a0e732854c506083003dbc9a8bbdd0f44fe363f4e2031ef86f18"
+    }
+  ]
+}

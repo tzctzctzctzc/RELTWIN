@@ -1,0 +1,44 @@
+{
+  "benchmark": "Clotho-Moment",
+  "rows": 6649,
+  "audio_groups": 5472,
+  "incumbent_mIoU_percent": 86.85426304851973,
+  "nova_mbr_mIoU_percent": 86.85559161889014,
+  "delta_mIoU_points": 0.0013285703704173934,
+  "delta_mIoU_audio_group_bootstrap_95ci": [
+    -0.001366271001075164,
+    0.004152369969705967
+  ],
+  "fixed_threshold_mIoU_percent": 86.85426304851973,
+  "dinkelbach_minus_threshold_points": 0.001328570370418003,
+  "R1@0.3_percent": 93.48774251767183,
+  "R1@0.5_percent": 90.84072792901188,
+  "R1@0.7_percent": 85.35118062866597,
+  "event_F1@0.5_percent": 90.82568807339449,
+  "wins": 5,
+  "ties": 6640,
+  "losses": 4,
+  "new_catastrophic_regressions": 0,
+  "switches": 9,
+  "switch_rate": 0.0013535870055647466,
+  "abstain_reasons": {
+    "gain_lower_bound_below_margin": 6262,
+    "identity_or_non_positive_gain": 378
+  },
+  "boundary_shift_seconds": {
+    "mean": 0.00026725823432095016,
+    "p95": 0.0,
+    "max": 0.25
+  },
+  "alignment_valid": true,
+  "promotion_gate": {
+    "positive_delta": true,
+    "zero_catastrophic": true,
+    "beats_fixed_threshold": true,
+    "diagnostic_only": false,
+    "passed": true
+  },
+  "predictions_sha256": "9b7665f8d0c6a7c79dcd7e074f29fc8fbb16370ac7182124bed8cc8f4b7fdbd6",
+  "seed": 20260903,
+  "bootstrap_samples": 10000
+}

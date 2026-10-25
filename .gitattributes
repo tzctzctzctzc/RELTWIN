@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.jsonl text eol=lf
+*.sh text eol=lf
+checkpoints/**/*.pt filter=lfs diff=lfs merge=lfs -text
+checkpoints/**/*.safetensors filter=lfs diff=lfs merge=lfs -text
+checkpoints/**/adapter_config.json text eol=lf

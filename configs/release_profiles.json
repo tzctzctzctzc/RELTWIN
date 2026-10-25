@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "benchmarks": {
+    "spotsound": 400,
+    "clotho": 6649,
+    "unav100": 100
+  },
+  "spotsound": {
+    "checkpoint": "checkpoints/spotsound/adapter",
+    "checkpoint_sha256": "2b1ae8c344175afcf5116f603747c446ce6f8e46f5fa991212bdc909ccf248b7",
+    "training": {
+      "entry": "scripts/train_reltwin_micro.py",
+      "mode": "rbee",
+      "steps": 256,
+      "learning_rate": 0.000005,
+      "temperature": 1,
+      "method_weight": 1,
+      "exchange_weight": 0,
+      "rehearsal_weight": 0.5,
+      "seed": 0,
+      "trainable_parameters": 20185088
+    },
+    "generation": {
+      "num_beams": 1,
+      "max_new_tokens": 128,
+      "do_sample": false
+    },
+    "scoring": "duration_clipped_sets"
+  },
+  "timeaudio": {
+    "checkpoint": "checkpoints/timeaudio/delta.pt",
+    "checkpoint_sha256": "0979e739e65a61fc105e853d6f1f77bc6f6a234d7d976439e6d5c3df11d59251",
+    "training": {
+      "entry": "scripts/train_timeaudio_reltwin_full.py",
+      "rbee_steps": 384,
+      "setpo_steps": 128,
+      "lora_learning_rate": 0.000002,
+      "temporal_learning_rate": 0.000005,
+      "prediction_temperature": 1,
+      "target_temperature": 0.15,
+      "method_weight": 1,
+      "exchange_weight": 1,
+      "rbee_replay_weight": 0.75,
+      "setpo_replay_weight": 0.75,
+      "replay_reference_kl_weight": 0.2,
+      "seed": 0,
+      "trainable_parameters": 31759104
+    },
+    "generation": {
+      "num_beams": 4,
+      "max_new_tokens": 128,
+      "do_sample": false
+    },
+    "scoring": "native_timeaudio"
+  }
+}

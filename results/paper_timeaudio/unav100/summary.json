@@ -1,0 +1,35 @@
+{
+  "model": "TimeAudio + Full RelTwin",
+  "official_checkpoint_sha256": "2d1752697035435e01fdfa75d76c6ac2c0272fd14f209582d55dd3411c975016",
+  "delta_sha256": "0979e739e65a61fc105e853d6f1f77bc6f6a234d7d976439e6d5c3df11d59251",
+  "manifest_sha256": "1dc96c6cca4bbaa5f09f2c0db5706466025bce24ccd86b69e4563a5995663c4f",
+  "load_report": [
+    {
+      "label": "official",
+      "path": "/root/autodl-tmp/SpotSound-ICASSP/models/timeaudio-public/timeaudio.pth",
+      "sha256": "2d1752697035435e01fdfa75d76c6ac2c0272fd14f209582d55dd3411c975016",
+      "loaded_keys": 237,
+      "missing_keys": 1016,
+      "unexpected_keys": 0
+    },
+    {
+      "label": "delta",
+      "path": "/root/autodl-tmp/SpotSound-ICASSP/outputs/timeaudio_full_reltwin_20260916/seed0/final_delta.pt",
+      "sha256": "0979e739e65a61fc105e853d6f1f77bc6f6a234d7d976439e6d5c3df11d59251",
+      "loaded_keys": 190,
+      "missing_keys": 1063,
+      "unexpected_keys": 0
+    }
+  ],
+  "device": "NVIDIA GeForce RTX 4080 SUPER",
+  "expected_count": 100,
+  "completed_count": 100,
+  "mIoU": 30.48011945175102,
+  "R1@0.3": 44.0,
+  "R1@0.5": 25.0,
+  "valid_output_rate": 100.0,
+  "parse_failure_count": 0,
+  "load_seconds": 36.423042168840766,
+  "mean_inference_seconds": 1.1858361271955074,
+  "predictions_sha256": "604ad1eb4dd3806ca8fd8d12a9b48a56eeff38f40cedc40ad29a35b0744d90f0"
+}

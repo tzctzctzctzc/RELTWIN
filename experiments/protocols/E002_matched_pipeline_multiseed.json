@@ -1,0 +1,24 @@
+{
+  "experiment_id": "E002",
+  "hypothesis_id": "H001-SetPO",
+  "label": "confirmatory-end-to-end-matched-before-training",
+  "question": "Does the full RBEE-256 plus SetPO-64 pipeline yield a seed-robust improvement over official SpotSound-A?",
+  "causal_rationale": "E001 used unequal parent quality. Repeating the complete seed-0 pipeline isolates seed variance from parent under-training and supplies a fair RBEE ablation.",
+  "pipeline": {
+    "rbee": "Official SpotSound-A parent; 256 steps; lr=5e-6; 512 cached relation groups; method_weight=1.0; rehearsal_weight=0.5; seed in {0,1,2}.",
+    "setpo": "Matched RBEE parent; 64 steps over the same 512 available relation groups with a four-group memory cache; lr=2e-6; method_weight=0.5; exchange_weight=1.0; rehearsal_weight=0.5 every 4 steps; target_temperature=0.15; jitter_ratio=0.15; same seed as parent."
+  },
+  "development_dataset": "RelTwin-ESC50 v1 train/test split; method selection and gate use only its held-out test set.",
+  "public_dataset": "SpotSound-Bench revision 2e64ad197b90d6bd3b43efc73738cb9f86810735, all 400 annotation rows and 387 unique audio files.",
+  "baseline": "Official SpotSound-A adapter evaluated by the identical frozen 400-row harness.",
+  "primary_metric": "SpotSound mIoU, higher is better.",
+  "secondary_metrics": ["R1@0.3", "R1@0.5", "Auto-AEG-compatible mIoU", "paper-faithful F1-IoU@0.5"],
+  "seed_policy": [0, 1, 2],
+  "checkpoint_policy": "Final checkpoint at the fixed step count; no checkpoint or seed selection.",
+  "development_gate": "Before public evaluation, both new seeds must improve their matched RBEE parent on held-out RelTwin query mIoU and pair_acc_0.5; the three-seed SetPO mean must exceed the three-seed RBEE mean on both metrics.",
+  "public_success_criterion": "All three SetPO seeds exceed the same-harness official baseline in SpotSound mIoU, and the paired hierarchical seed-record bootstrap 95% CI of the three-seed mean delta excludes zero.",
+  "failure_criterion": "The development gate fails, any public seed regresses, or the public mIoU confidence interval includes zero.",
+  "stop_criterion": "No hyperparameter changes may use E002 SpotSound results. A later method must be selected using a separate development protocol and evaluated once.",
+  "expected_artifacts": ["per-stage train summaries", "RelTwin raw predictions and analyses", "public raw predictions", "dual evaluator summaries", "paired hierarchical bootstrap summary", "checkpoint and input hashes"],
+  "timing_note": "Locked after E001 exposed the parent mismatch and before training either matched seed 1 or seed 2. Existing seed-0 stage results are retained; no seed-1/2 matched result was available. A first seed-1 attempt was stopped at RBEE step 92/256 with no checkpoint after an operational cache mismatch was found; the corrected run restarts from step zero and the aborted trace is excluded."
+}

@@ -1,0 +1,5486 @@
+[
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0000.wav",
+    "pair_id": 20000,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        15.41525,
+        17.565062
+      ]
+    ],
+    "target_density": 0.03583020000000001,
+    "source_files": [
+      "1-34119-A-1.wav",
+      "3-160119-A-15.wav",
+      "4-182034-A-30.wav",
+      "5-242711-A-9.wav",
+      "3-164594-A-15.wav",
+      "4-213915-B-3.wav",
+      "2-182508-A-8.wav",
+      "1-50625-A-17.wav",
+      "2-135649-B-45.wav",
+      "2-144137-A-43.wav",
+      "3-93010-A-18.wav",
+      "1-77160-A-3.wav",
+      "3-115382-A-44.wav"
+    ],
+    "target_source": "1-34119-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0001.wav",
+    "pair_id": 20001,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        10.581687,
+        11.951063
+      ],
+      [
+        42.110937,
+        43.480312
+      ],
+      [
+        45.803625,
+        47.173
+      ]
+    ],
+    "target_density": 0.06846876666666671,
+    "source_files": [
+      "4-195497-A-11.wav",
+      "1-208757-C-2.wav",
+      "4-175855-A-43.wav",
+      "2-119161-B-8.wav",
+      "5-198891-A-8.wav",
+      "1-56380-A-5.wav",
+      "1-88409-B-45.wav",
+      "5-214362-A-17.wav",
+      "2-205966-A-16.wav",
+      "2-108766-A-9.wav",
+      "5-202020-A-18.wav",
+      "3-216284-A-39.wav",
+      "1-101404-A-34.wav"
+    ],
+    "target_source": "4-195497-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0002.wav",
+    "pair_id": 20002,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        20.793875,
+        22.499
+      ],
+      [
+        29.488187,
+        31.193313
+      ],
+      [
+        36.388625,
+        38.09375
+      ]
+    ],
+    "target_density": 0.08525626666666669,
+    "source_files": [
+      "3-103051-C-19.wav",
+      "3-51376-A-42.wav",
+      "3-105235-A-7.wav",
+      "3-246513-A-16.wav",
+      "4-136381-A-9.wav",
+      "1-208757-C-2.wav",
+      "3-155578-A-14.wav",
+      "1-68670-A-34.wav",
+      "3-107123-A-26.wav",
+      "3-128160-A-44.wav",
+      "4-163606-A-16.wav",
+      "3-110536-A-26.wav",
+      "1-76831-D-42.wav"
+    ],
+    "target_source": "3-103051-C-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0003.wav",
+    "pair_id": 20003,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        5.98325,
+        7.190812
+      ],
+      [
+        21.93425,
+        23.141813
+      ]
+    ],
+    "target_density": 0.04025208333333334,
+    "source_files": [
+      "3-118657-B-41.wav",
+      "5-213836-B-9.wav",
+      "3-162786-A-13.wav",
+      "1-254507-A-43.wav",
+      "2-135649-B-45.wav",
+      "1-260640-C-2.wav",
+      "1-172649-A-40.wav",
+      "5-242932-A-26.wav",
+      "1-181071-A-40.wav",
+      "4-232495-A-6.wav",
+      "3-120526-B-37.wav",
+      "4-213915-C-3.wav",
+      "4-188703-D-8.wav"
+    ],
+    "target_source": "3-118657-B-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0004.wav",
+    "pair_id": 20004,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        32.469437,
+        34.357375
+      ],
+      [
+        53.148562,
+        55.0365
+      ]
+    ],
+    "target_density": 0.06293126666666661,
+    "source_files": [
+      "5-203128-A-0.wav",
+      "5-191131-A-40.wav",
+      "4-186940-A-44.wav",
+      "5-252248-A-34.wav",
+      "1-101404-A-34.wav",
+      "5-189795-A-4.wav",
+      "2-54962-A-23.wav",
+      "5-213293-A-23.wav",
+      "4-205526-A-23.wav",
+      "1-45641-A-27.wav",
+      "2-158746-A-2.wav",
+      "5-141683-A-35.wav",
+      "2-73260-A-10.wav"
+    ],
+    "target_source": "5-203128-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0005.wav",
+    "pair_id": 20005,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        49.98825,
+        51.749563
+      ]
+    ],
+    "target_density": 0.029355216666666687,
+    "source_files": [
+      "3-155312-A-0.wav",
+      "5-188945-A-45.wav",
+      "1-27165-A-35.wav",
+      "5-211408-A-37.wav",
+      "4-102844-A-49.wav",
+      "2-78651-A-44.wav",
+      "3-96606-B-49.wav",
+      "5-207781-A-17.wav",
+      "1-32579-A-29.wav",
+      "3-249913-A-25.wav",
+      "2-82455-A-23.wav",
+      "2-158746-B-2.wav",
+      "1-50623-A-15.wav"
+    ],
+    "target_source": "3-155312-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0006.wav",
+    "pair_id": 20006,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        15.60175,
+        17.129938
+      ],
+      [
+        25.468625,
+        26.996813
+      ],
+      [
+        55.074937,
+        56.603125
+      ]
+    ],
+    "target_density": 0.0764094,
+    "source_files": [
+      "1-32318-A-0.wav",
+      "3-105235-A-7.wav",
+      "5-253094-A-49.wav",
+      "4-191246-B-7.wav",
+      "1-18527-B-44.wav",
+      "4-185619-A-21.wav",
+      "5-177957-D-40.wav",
+      "5-177957-E-40.wav",
+      "5-156026-D-4.wav",
+      "3-169907-A-29.wav",
+      "3-108791-A-18.wav",
+      "2-68595-B-15.wav",
+      "4-150364-A-46.wav"
+    ],
+    "target_source": "1-32318-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0007.wav",
+    "pair_id": 20007,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        54.27225,
+        55.5465
+      ],
+      [
+        56.843875,
+        58.118125
+      ]
+    ],
+    "target_density": 0.04247500000000007,
+    "source_files": [
+      "2-39443-B-19.wav",
+      "3-156581-A-14.wav",
+      "1-7974-A-49.wav",
+      "4-197103-A-6.wav",
+      "2-60791-A-26.wav",
+      "5-117118-A-42.wav",
+      "4-198360-B-49.wav",
+      "4-171652-A-44.wav",
+      "1-24076-A-43.wav",
+      "1-155858-B-25.wav",
+      "2-30322-A-12.wav",
+      "1-80841-A-13.wav",
+      "2-117116-A-37.wav"
+    ],
+    "target_source": "2-39443-B-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0008.wav",
+    "pair_id": 20008,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        10.52675,
+        12.202563
+      ]
+    ],
+    "target_density": 0.027930216666666664,
+    "source_files": [
+      "4-158653-A-32.wav",
+      "3-108791-A-18.wav",
+      "4-171706-A-23.wav",
+      "3-155583-A-14.wav",
+      "5-248341-B-6.wav",
+      "3-197408-B-8.wav",
+      "2-85292-A-24.wav",
+      "4-168155-A-15.wav",
+      "4-261068-A-30.wav",
+      "5-250026-A-30.wav",
+      "5-209992-A-44.wav",
+      "3-151212-A-24.wav",
+      "4-216349-A-34.wav"
+    ],
+    "target_source": "4-158653-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0009.wav",
+    "pair_id": 20009,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        4.33375,
+        5.702125
+      ],
+      [
+        14.326063,
+        15.694437
+      ],
+      [
+        31.7635,
+        33.131875
+      ]
+    ],
+    "target_density": 0.06841873333333334,
+    "source_files": [
+      "5-192191-A-19.wav",
+      "4-150364-B-46.wav",
+      "5-209719-A-24.wav",
+      "4-197103-A-6.wav",
+      "5-221528-A-39.wav",
+      "3-140199-D-8.wav",
+      "1-51805-B-33.wav",
+      "2-127109-A-6.wav",
+      "4-163609-B-16.wav",
+      "5-252248-A-34.wav",
+      "1-77160-A-3.wav",
+      "4-167571-A-26.wav",
+      "4-197103-A-6.wav"
+    ],
+    "target_source": "5-192191-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0010.wav",
+    "pair_id": 20010,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        3.955312,
+        5.604687
+      ],
+      [
+        43.947125,
+        45.5965
+      ]
+    ],
+    "target_density": 0.054979166666666655,
+    "source_files": [
+      "3-153444-A-32.wav",
+      "3-167096-A-31.wav",
+      "3-157187-A-12.wav",
+      "3-166546-B-34.wav",
+      "2-101676-A-10.wav",
+      "5-218981-A-30.wav",
+      "4-182795-A-14.wav",
+      "5-188796-A-45.wav",
+      "4-145081-A-9.wav",
+      "1-34094-B-5.wav",
+      "2-158746-B-2.wav",
+      "2-81731-A-10.wav",
+      "5-207836-D-29.wav"
+    ],
+    "target_source": "3-153444-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0011.wav",
+    "pair_id": 20011,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        26.909375,
+        28.255875
+      ]
+    ],
+    "target_density": 0.022441666666666648,
+    "source_files": [
+      "1-19898-A-41.wav",
+      "3-119459-A-26.wav",
+      "4-169508-A-37.wav",
+      "4-174860-A-3.wav",
+      "1-51805-C-33.wav",
+      "1-49409-B-8.wav",
+      "4-117630-A-25.wav",
+      "3-150979-A-40.wav",
+      "2-166644-C-2.wav",
+      "3-166546-A-34.wav",
+      "4-207116-A-23.wav",
+      "1-64473-A-45.wav",
+      "5-248341-C-6.wav"
+    ],
+    "target_source": "1-19898-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0012.wav",
+    "pair_id": 20012,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        18.350938,
+        20.31325
+      ],
+      [
+        35.666875,
+        37.629188
+      ]
+    ],
+    "target_density": 0.06541041666666671,
+    "source_files": [
+      "1-30226-A-0.wav",
+      "3-146972-A-5.wav",
+      "1-43807-C-47.wav",
+      "2-59241-A-35.wav",
+      "4-177835-A-24.wav",
+      "3-164595-A-15.wav",
+      "2-69131-A-5.wav",
+      "4-108352-A-33.wav",
+      "5-250026-A-30.wav",
+      "4-182795-A-14.wav",
+      "1-43807-A-47.wav",
+      "4-171519-A-21.wav",
+      "2-72970-A-10.wav"
+    ],
+    "target_source": "1-30226-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0013.wav",
+    "pair_id": 20013,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        10.231625,
+        11.96
+      ],
+      [
+        26.585687,
+        28.314062
+      ]
+    ],
+    "target_density": 0.057612500000000025,
+    "source_files": [
+      "5-182007-A-36.wav",
+      "2-68595-B-15.wav",
+      "5-253094-C-49.wav",
+      "5-221878-A-34.wav",
+      "1-33658-A-26.wav",
+      "4-132839-A-33.wav",
+      "5-221528-A-39.wav",
+      "3-154926-B-40.wav",
+      "4-149940-A-5.wav",
+      "1-47274-A-21.wav",
+      "1-155858-A-25.wav",
+      "1-79220-A-17.wav",
+      "5-51149-A-25.wav"
+    ],
+    "target_source": "5-182007-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0014.wav",
+    "pair_id": 20014,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        12.99975,
+        14.300625
+      ],
+      [
+        37.928312,
+        39.229188
+      ]
+    ],
+    "target_density": 0.0433625166666667,
+    "source_files": [
+      "3-152007-B-20.wav",
+      "2-128465-B-43.wav",
+      "3-95695-A-5.wav",
+      "3-126358-B-3.wav",
+      "3-160993-A-3.wav",
+      "2-78651-A-44.wav",
+      "4-90014-B-42.wav",
+      "2-70367-A-33.wav",
+      "2-104877-A-3.wav",
+      "1-49409-B-8.wav",
+      "5-214759-B-5.wav",
+      "3-155556-A-31.wav",
+      "2-84965-A-23.wav"
+    ],
+    "target_source": "3-152007-B-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0015.wav",
+    "pair_id": 20015,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        30.440812,
+        31.796688
+      ],
+      [
+        45.368125,
+        46.724
+      ]
+    ],
+    "target_density": 0.04519584999999993,
+    "source_files": [
+      "5-198411-C-20.wav",
+      "3-118059-A-18.wav",
+      "3-147342-A-34.wav",
+      "1-24796-A-47.wav",
+      "3-92637-A-18.wav",
+      "4-108352-A-33.wav",
+      "4-144083-B-16.wav",
+      "2-70938-A-42.wav",
+      "5-220026-A-21.wav",
+      "3-140199-A-8.wav",
+      "5-215172-A-13.wav",
+      "1-19111-A-24.wav",
+      "5-254832-B-15.wav"
+    ],
+    "target_source": "5-198411-C-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0016.wav",
+    "pair_id": 20016,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        29.882125,
+        31.254125
+      ]
+    ],
+    "target_density": 0.022866666666666664,
+    "source_files": [
+      "2-118817-A-32.wav",
+      "2-83934-B-5.wav",
+      "2-70052-A-42.wav",
+      "5-207836-D-29.wav",
+      "4-186962-A-44.wav",
+      "5-248341-A-6.wav",
+      "1-9841-A-13.wav",
+      "2-144137-A-43.wav",
+      "3-157615-A-10.wav",
+      "2-118624-A-30.wav",
+      "1-68734-A-34.wav",
+      "5-251957-A-47.wav",
+      "1-88574-A-8.wav"
+    ],
+    "target_source": "2-118817-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0017.wav",
+    "pair_id": 20017,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        45.151313,
+        46.904625
+      ]
+    ],
+    "target_density": 0.029221866666666686,
+    "source_files": [
+      "1-100210-A-36.wav",
+      "3-154926-A-40.wav",
+      "1-9886-A-49.wav",
+      "2-158746-C-2.wav",
+      "3-147343-A-34.wav",
+      "2-188822-D-40.wav",
+      "5-156698-A-18.wav",
+      "2-94807-A-29.wav",
+      "2-107228-B-44.wav",
+      "5-194899-B-3.wav",
+      "5-218980-A-30.wav",
+      "2-89516-A-37.wav",
+      "2-101676-A-10.wav"
+    ],
+    "target_source": "1-100210-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0018.wav",
+    "pair_id": 20018,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        50.436813,
+        52.496812
+      ]
+    ],
+    "target_density": 0.03433331666666663,
+    "source_files": [
+      "4-119647-B-48.wav",
+      "2-86160-A-27.wav",
+      "4-171396-A-24.wav",
+      "2-120587-A-6.wav",
+      "2-81731-A-10.wav",
+      "2-85292-A-24.wav",
+      "4-99193-B-4.wav",
+      "4-156844-A-21.wav",
+      "4-188293-B-15.wav",
+      "4-99193-B-4.wav",
+      "1-27405-A-28.wav",
+      "5-181766-A-10.wav",
+      "4-205526-A-23.wav"
+    ],
+    "target_source": "4-119647-B-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0019.wav",
+    "pair_id": 20019,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        9.216125,
+        11.644438
+      ],
+      [
+        16.957187,
+        19.3855
+      ]
+    ],
+    "target_density": 0.08094376666666664,
+    "source_files": [
+      "1-47250-A-41.wav",
+      "3-51909-A-42.wav",
+      "5-207836-B-29.wav",
+      "3-147342-A-34.wav",
+      "4-188293-A-15.wav",
+      "3-160119-A-15.wav",
+      "5-202898-A-10.wav",
+      "4-197103-A-6.wav",
+      "3-104761-A-7.wav",
+      "5-244315-A-6.wav",
+      "1-16568-A-3.wav",
+      "3-172179-A-31.wav",
+      "1-31836-A-4.wav"
+    ],
+    "target_source": "1-47250-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0020.wav",
+    "pair_id": 20020,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        3.684687,
+        6.088687
+      ],
+      [
+        11.911062,
+        14.315062
+      ],
+      [
+        33.582875,
+        35.986875
+      ]
+    ],
+    "target_density": 0.12019999999999993,
+    "source_files": [
+      "1-28135-B-11.wav",
+      "4-261068-A-30.wav",
+      "4-175025-A-34.wav",
+      "4-163264-A-10.wav",
+      "5-223810-A-35.wav",
+      "1-59324-A-21.wav",
+      "1-26143-A-21.wav",
+      "3-125418-A-24.wav",
+      "1-155858-B-25.wav",
+      "1-54065-B-45.wav",
+      "3-166546-B-34.wav",
+      "3-140199-A-8.wav",
+      "4-187769-A-14.wav"
+    ],
+    "target_source": "1-28135-B-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0021.wav",
+    "pair_id": 20021,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        5.737,
+        8.097812
+      ],
+      [
+        55.084313,
+        57.445125
+      ]
+    ],
+    "target_density": 0.07869373333333325,
+    "source_files": [
+      "3-151080-A-20.wav",
+      "5-235956-A-47.wav",
+      "2-37870-A-2.wav",
+      "3-155584-A-14.wav",
+      "5-179860-A-43.wav",
+      "1-79146-A-29.wav",
+      "3-62878-B-42.wav",
+      "5-238021-A-35.wav",
+      "2-173607-A-39.wav",
+      "5-182404-A-18.wav",
+      "2-209476-A-25.wav",
+      "2-103426-A-3.wav",
+      "2-102435-A-37.wav"
+    ],
+    "target_source": "3-151080-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0022.wav",
+    "pair_id": 20022,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        7.500938,
+        9.077687
+      ]
+    ],
+    "target_density": 0.02627914999999999,
+    "source_files": [
+      "3-154957-A-1.wav",
+      "2-100648-A-43.wav",
+      "2-32515-D-4.wav",
+      "1-21934-A-38.wav",
+      "5-179294-A-46.wav",
+      "5-189212-A-12.wav",
+      "5-214759-B-5.wav",
+      "1-49098-A-35.wav",
+      "1-155858-A-25.wav",
+      "4-151242-A-37.wav",
+      "3-161010-A-43.wav",
+      "3-102583-A-49.wav",
+      "2-30322-B-12.wav"
+    ],
+    "target_source": "3-154957-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0023.wav",
+    "pair_id": 20023,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        45.51125,
+        47.922063
+      ]
+    ],
+    "target_density": 0.04018021666666674,
+    "source_files": [
+      "5-215005-A-32.wav",
+      "3-128512-B-47.wav",
+      "3-51376-A-42.wav",
+      "4-188703-C-8.wav",
+      "1-17124-A-43.wav",
+      "4-187504-A-17.wav",
+      "4-204119-A-39.wav",
+      "1-59102-A-13.wav",
+      "2-72268-A-6.wav",
+      "2-188822-A-40.wav",
+      "3-156907-A-15.wav",
+      "5-209719-A-24.wav",
+      "4-132383-A-2.wav"
+    ],
+    "target_source": "5-215005-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0024.wav",
+    "pair_id": 20024,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        54.476813,
+        56.913313
+      ]
+    ],
+    "target_density": 0.04060833333333337,
+    "source_files": [
+      "1-100032-A-0.wav",
+      "1-46040-A-14.wav",
+      "4-197454-A-28.wav",
+      "1-155858-D-25.wav",
+      "2-73260-A-10.wav",
+      "4-163606-A-16.wav",
+      "4-188191-B-29.wav",
+      "3-98771-A-18.wav",
+      "4-218199-B-35.wav",
+      "3-110913-D-7.wav",
+      "2-130978-A-21.wav",
+      "5-219242-A-37.wav",
+      "4-107122-A-33.wav"
+    ],
+    "target_source": "1-100032-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0025.wav",
+    "pair_id": 20025,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        26.428687,
+        27.944375
+      ],
+      [
+        34.70275,
+        36.218438
+      ]
+    ],
+    "target_density": 0.050522933333333304,
+    "source_files": [
+      "4-172736-A-36.wav",
+      "1-76831-B-42.wav",
+      "4-210593-A-29.wav",
+      "2-188822-B-40.wav",
+      "2-73027-A-10.wav",
+      "5-133989-B-42.wav",
+      "4-183882-A-28.wav",
+      "1-73585-A-7.wav",
+      "5-204114-A-29.wav",
+      "2-141563-A-39.wav",
+      "4-234644-A-2.wav",
+      "3-117504-A-16.wav",
+      "1-77241-A-3.wav"
+    ],
+    "target_source": "4-172736-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0026.wav",
+    "pair_id": 20026,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        3.659125,
+        5.647125
+      ],
+      [
+        26.553625,
+        28.541625
+      ],
+      [
+        31.346688,
+        33.334688
+      ]
+    ],
+    "target_density": 0.09939999999999997,
+    "source_files": [
+      "5-160614-A-48.wav",
+      "2-87794-A-24.wav",
+      "3-257858-A-2.wav",
+      "3-142593-A-38.wav",
+      "2-102567-A-35.wav",
+      "4-117630-A-25.wav",
+      "4-173865-B-9.wav",
+      "5-207836-D-29.wav",
+      "5-188716-A-46.wav",
+      "5-232816-A-23.wav",
+      "5-204741-A-46.wav",
+      "4-99644-D-4.wav",
+      "2-103427-A-3.wav"
+    ],
+    "target_source": "5-160614-A-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0027.wav",
+    "pair_id": 20027,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        1.596812,
+        4.094437
+      ]
+    ],
+    "target_density": 0.041627083333333335,
+    "source_files": [
+      "4-172736-B-36.wav",
+      "4-126532-A-18.wav",
+      "2-102567-A-35.wav",
+      "3-182710-A-35.wav",
+      "1-84705-A-39.wav",
+      "2-120587-A-6.wav",
+      "1-14262-A-37.wav",
+      "4-178881-A-45.wav",
+      "1-85168-A-39.wav",
+      "5-251426-B-30.wav",
+      "4-152958-A-18.wav",
+      "2-127108-A-38.wav",
+      "1-49409-B-8.wav"
+    ],
+    "target_source": "4-172736-B-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0028.wav",
+    "pair_id": 20028,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        7.638187,
+        9.258437
+      ]
+    ],
+    "target_density": 0.027004166666666673,
+    "source_files": [
+      "1-47250-B-41.wav",
+      "2-64963-A-15.wav",
+      "4-149940-B-5.wav",
+      "5-251971-A-47.wav",
+      "5-207681-A-24.wav",
+      "1-12654-B-15.wav",
+      "4-175856-A-43.wav",
+      "4-123680-A-18.wav",
+      "4-175846-A-43.wav",
+      "1-39937-A-28.wav",
+      "4-178881-A-45.wav",
+      "1-19118-A-24.wav",
+      "5-179866-A-43.wav"
+    ],
+    "target_source": "1-47250-B-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0029.wav",
+    "pair_id": 20029,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        49.167812,
+        50.450938
+      ]
+    ],
+    "target_density": 0.02138543333333338,
+    "source_files": [
+      "5-200334-B-1.wav",
+      "5-207811-B-35.wav",
+      "3-157492-A-45.wav",
+      "4-197103-A-6.wav",
+      "4-161099-B-47.wav",
+      "5-220026-A-21.wav",
+      "4-143118-A-7.wav",
+      "4-107120-A-33.wav",
+      "2-108766-A-9.wav",
+      "1-30039-A-26.wav",
+      "4-123680-A-18.wav",
+      "3-145387-A-29.wav",
+      "2-43802-A-42.wav"
+    ],
+    "target_source": "5-200334-B-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0030.wav",
+    "pair_id": 20030,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        33.105812,
+        34.824562
+      ]
+    ],
+    "target_density": 0.028645833333333332,
+    "source_files": [
+      "4-185575-C-20.wav",
+      "3-203375-A-39.wav",
+      "5-244315-C-6.wav",
+      "1-68734-A-34.wav",
+      "2-52001-A-28.wav",
+      "2-119161-C-8.wav",
+      "4-168155-A-15.wav",
+      "5-193473-B-12.wav",
+      "4-198962-B-25.wav",
+      "2-139749-A-15.wav",
+      "2-102568-A-35.wav",
+      "2-84943-A-18.wav",
+      "5-223103-A-31.wav"
+    ],
+    "target_source": "4-185575-C-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0031.wav",
+    "pair_id": 20031,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        2.264625,
+        4.406313
+      ],
+      [
+        51.23025,
+        53.371938
+      ]
+    ],
+    "target_density": 0.07138960000000004,
+    "source_files": [
+      "4-149294-B-41.wav",
+      "3-127890-C-9.wav",
+      "2-139748-B-15.wav",
+      "4-178402-A-43.wav",
+      "1-18810-A-49.wav",
+      "5-161270-A-33.wav",
+      "1-52266-A-24.wav",
+      "5-236288-A-28.wav",
+      "5-194899-A-3.wav",
+      "3-155579-A-14.wav",
+      "2-87282-A-34.wav",
+      "1-51035-A-16.wav",
+      "1-42139-A-38.wav"
+    ],
+    "target_source": "4-149294-B-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0032.wav",
+    "pair_id": 20032,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        4.6625,
+        6.615687
+      ],
+      [
+        13.805687,
+        15.758875
+      ]
+    ],
+    "target_density": 0.06510624999999999,
+    "source_files": [
+      "4-165823-A-41.wav",
+      "4-171396-A-24.wav",
+      "4-198360-B-49.wav",
+      "3-128160-A-44.wav",
+      "4-213915-B-3.wav",
+      "1-81001-B-30.wav",
+      "4-160036-A-33.wav",
+      "5-219242-B-37.wav",
+      "2-51630-A-49.wav",
+      "3-181132-A-14.wav",
+      "1-51037-A-16.wav",
+      "3-155579-A-14.wav",
+      "3-181132-A-14.wav"
+    ],
+    "target_source": "4-165823-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0033.wav",
+    "pair_id": 20033,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        31.325625,
+        32.594
+      ]
+    ],
+    "target_density": 0.021139583333333375,
+    "source_files": [
+      "4-167063-A-11.wav",
+      "1-19118-A-24.wav",
+      "2-109371-B-16.wav",
+      "5-188945-A-45.wav",
+      "1-30214-A-18.wav",
+      "2-146877-B-31.wav",
+      "1-53467-A-47.wav",
+      "2-102567-A-35.wav",
+      "5-248341-B-6.wav",
+      "2-54961-A-23.wav",
+      "4-188033-A-38.wav",
+      "2-108767-A-9.wav",
+      "1-181071-B-40.wav"
+    ],
+    "target_source": "4-167063-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0034.wav",
+    "pair_id": 20034,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        21.831875,
+        23.224625
+      ]
+    ],
+    "target_density": 0.02321249999999999,
+    "source_files": [
+      "2-117615-C-48.wav",
+      "4-251645-B-49.wav",
+      "3-98193-A-46.wav",
+      "2-79769-A-26.wav",
+      "5-257349-A-15.wav",
+      "3-140199-A-8.wav",
+      "2-158746-B-2.wav",
+      "3-62878-B-42.wav",
+      "4-165606-A-45.wav",
+      "4-186936-A-44.wav",
+      "5-244315-C-6.wav",
+      "3-164593-A-15.wav",
+      "1-118206-A-31.wav"
+    ],
+    "target_source": "2-117615-C-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0035.wav",
+    "pair_id": 20035,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        38.735375,
+        41.018687
+      ]
+    ],
+    "target_density": 0.03805520000000004,
+    "source_files": [
+      "1-115921-A-22.wav",
+      "2-118625-A-30.wav",
+      "1-68670-A-34.wav",
+      "5-217186-C-16.wav",
+      "1-75190-A-8.wav",
+      "2-87412-A-24.wav",
+      "4-210000-A-23.wav",
+      "4-187769-B-14.wav",
+      "2-122066-B-45.wav",
+      "4-186938-A-44.wav",
+      "1-30039-A-26.wav",
+      "1-38559-A-14.wav",
+      "3-151255-A-28.wav"
+    ],
+    "target_source": "1-115921-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0036.wav",
+    "pair_id": 20036,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        28.050125,
+        29.703563
+      ]
+    ],
+    "target_density": 0.02755729999999996,
+    "source_files": [
+      "3-159347-A-36.wav",
+      "4-144085-A-16.wav",
+      "5-218196-B-27.wav",
+      "1-58277-A-3.wav",
+      "5-194892-A-10.wav",
+      "5-186924-A-12.wav",
+      "5-218196-A-27.wav",
+      "5-221518-A-21.wav",
+      "4-204683-A-31.wav",
+      "4-107120-A-33.wav",
+      "4-184237-A-28.wav",
+      "4-144083-B-16.wav",
+      "4-183882-A-28.wav"
+    ],
+    "target_source": "3-159347-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0037.wav",
+    "pair_id": 20037,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        38.504937,
+        40.56
+      ]
+    ],
+    "target_density": 0.03425105000000007,
+    "source_files": [
+      "2-76408-A-22.wav",
+      "4-188191-B-29.wav",
+      "3-95697-A-5.wav",
+      "3-124958-A-28.wav",
+      "4-183882-A-28.wav",
+      "1-40967-A-28.wav",
+      "3-203375-A-39.wav",
+      "4-185415-A-21.wav",
+      "5-198891-C-8.wav",
+      "3-134802-A-13.wav",
+      "2-108017-A-24.wav",
+      "2-122616-A-14.wav",
+      "1-18074-B-6.wav"
+    ],
+    "target_source": "2-76408-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0038.wav",
+    "pair_id": 20038,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        14.722062,
+        16.190375
+      ]
+    ],
+    "target_density": 0.024471883333333336,
+    "source_files": [
+      "2-165801-A-48.wav",
+      "1-15689-A-4.wav",
+      "5-263775-B-26.wav",
+      "3-197408-A-8.wav",
+      "3-161010-A-43.wav",
+      "5-117118-A-42.wav",
+      "4-175855-A-43.wav",
+      "5-215172-A-13.wav",
+      "1-29561-A-10.wav",
+      "2-109759-B-26.wav",
+      "3-167096-A-31.wav",
+      "4-188703-D-8.wav",
+      "4-160036-B-33.wav"
+    ],
+    "target_source": "2-165801-A-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0039.wav",
+    "pair_id": 20039,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        32.637813,
+        34.439312
+      ],
+      [
+        35.66775,
+        37.46925
+      ]
+    ],
+    "target_density": 0.060049983333333404,
+    "source_files": [
+      "2-76408-D-22.wav",
+      "3-156581-A-14.wav",
+      "1-155858-E-25.wav",
+      "2-72547-D-14.wav",
+      "1-75162-A-9.wav",
+      "1-84536-A-39.wav",
+      "1-31251-A-6.wav",
+      "3-203374-A-39.wav",
+      "4-232495-A-6.wav",
+      "3-203377-A-39.wav",
+      "5-117122-A-42.wav",
+      "3-161010-A-43.wav",
+      "1-88807-A-39.wav"
+    ],
+    "target_source": "2-76408-D-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0040.wav",
+    "pair_id": 20040,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        46.79575,
+        48.968875
+      ]
+    ],
+    "target_density": 0.03621874999999998,
+    "source_files": [
+      "5-244178-A-32.wav",
+      "5-214759-B-5.wav",
+      "5-244459-A-28.wav",
+      "5-179866-A-43.wav",
+      "5-236288-A-28.wav",
+      "1-87565-A-29.wav",
+      "3-253084-E-2.wav",
+      "5-161270-B-33.wav",
+      "4-198025-A-23.wav",
+      "2-109371-C-16.wav",
+      "5-210540-A-13.wav",
+      "5-217186-A-16.wav",
+      "5-235593-A-23.wav"
+    ],
+    "target_source": "5-244178-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0041.wav",
+    "pair_id": 20041,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        14.229563,
+        16.6725
+      ],
+      [
+        43.908125,
+        46.351062
+      ]
+    ],
+    "target_density": 0.08143123333333332,
+    "source_files": [
+      "1-24524-A-19.wav",
+      "3-117883-A-37.wav",
+      "1-24076-A-43.wav",
+      "5-207681-A-24.wav",
+      "5-156698-A-18.wav",
+      "1-172649-E-40.wav",
+      "2-153388-A-31.wav",
+      "4-154405-A-27.wav",
+      "3-180147-A-30.wav",
+      "3-145387-A-29.wav",
+      "2-87781-A-10.wav",
+      "5-171118-A-26.wav",
+      "3-151273-A-35.wav"
+    ],
+    "target_source": "1-24524-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0042.wav",
+    "pair_id": 20042,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        38.172063,
+        39.397562
+      ]
+    ],
+    "target_density": 0.02042498333333332,
+    "source_files": [
+      "3-151081-A-20.wav",
+      "4-184237-A-28.wav",
+      "3-170383-A-38.wav",
+      "5-189212-A-12.wav",
+      "1-20545-A-28.wav",
+      "3-155234-A-43.wav",
+      "2-54961-A-23.wav",
+      "1-103298-A-9.wav",
+      "3-117293-A-9.wav",
+      "4-212604-B-15.wav",
+      "2-70344-A-33.wav",
+      "3-110913-B-7.wav",
+      "3-108451-A-17.wav"
+    ],
+    "target_source": "3-151081-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0043.wav",
+    "pair_id": 20043,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        10.9165,
+        12.266187
+      ],
+      [
+        30.7945,
+        32.144188
+      ]
+    ],
+    "target_density": 0.04498958333333336,
+    "source_files": [
+      "2-107351-A-20.wav",
+      "3-164216-B-6.wav",
+      "4-172500-D-27.wav",
+      "3-115382-A-44.wav",
+      "2-104475-A-37.wav",
+      "4-198025-A-23.wav",
+      "2-37806-C-40.wav",
+      "1-68734-A-34.wav",
+      "2-37806-D-40.wav",
+      "4-160999-A-10.wav",
+      "2-114254-A-30.wav",
+      "1-51805-B-33.wav",
+      "2-106849-A-47.wav"
+    ],
+    "target_source": "2-107351-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0044.wav",
+    "pair_id": 20044,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        5.597,
+        7.6795
+      ],
+      [
+        50.816375,
+        52.898875
+      ]
+    ],
+    "target_density": 0.0694166666666666,
+    "source_files": [
+      "2-100786-A-1.wav",
+      "2-7321-A-33.wav",
+      "4-197103-A-6.wav",
+      "4-205526-B-23.wav",
+      "5-223176-A-37.wav",
+      "1-30830-A-24.wav",
+      "1-9887-B-49.wav",
+      "3-216280-A-39.wav",
+      "5-220026-A-21.wav",
+      "3-153057-A-43.wav",
+      "5-253101-C-49.wav",
+      "1-56234-A-9.wav",
+      "2-188822-D-40.wav"
+    ],
+    "target_source": "2-100786-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0045.wav",
+    "pair_id": 20045,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        44.892375,
+        46.939687
+      ]
+    ],
+    "target_density": 0.03412186666666663,
+    "source_files": [
+      "5-160614-C-48.wav",
+      "5-237499-A-4.wav",
+      "1-12654-B-15.wav",
+      "1-56270-A-29.wav",
+      "2-117116-A-37.wav",
+      "2-82077-A-7.wav",
+      "2-64963-A-15.wav",
+      "4-147657-A-46.wav",
+      "4-251645-B-49.wav",
+      "1-51147-A-25.wav",
+      "5-233645-A-37.wav",
+      "5-207781-A-17.wav",
+      "1-29680-A-21.wav"
+    ],
+    "target_source": "5-160614-C-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0046.wav",
+    "pair_id": 20046,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        17.059562,
+        19.206125
+      ]
+    ],
+    "target_density": 0.03577605000000001,
+    "source_files": [
+      "1-19898-C-41.wav",
+      "3-246513-B-16.wav",
+      "5-202020-A-18.wav",
+      "2-122067-B-45.wav",
+      "4-156827-A-46.wav",
+      "3-171281-A-6.wav",
+      "1-80841-A-13.wav",
+      "4-198962-A-25.wav",
+      "3-110913-B-7.wav",
+      "3-257858-A-2.wav",
+      "5-260434-A-39.wav",
+      "3-118059-A-18.wav",
+      "4-201800-A-31.wav"
+    ],
+    "target_source": "1-19898-C-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0047.wav",
+    "pair_id": 20047,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        35.223687,
+        36.73975
+      ],
+      [
+        57.969437,
+        59.4855
+      ]
+    ],
+    "target_density": 0.05053543333333342,
+    "source_files": [
+      "1-115521-A-19.wav",
+      "3-97909-A-49.wav",
+      "3-119459-A-26.wav",
+      "3-164595-A-15.wav",
+      "5-189795-A-4.wav",
+      "4-179984-A-38.wav",
+      "3-132852-A-10.wav",
+      "1-58846-A-34.wav",
+      "5-210540-A-13.wav",
+      "3-104761-B-7.wav",
+      "3-62878-B-42.wav",
+      "3-246513-B-16.wav",
+      "2-130978-A-21.wav"
+    ],
+    "target_source": "1-115521-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0048.wav",
+    "pair_id": 20048,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        26.155375,
+        28.062562
+      ],
+      [
+        49.484625,
+        51.391813
+      ]
+    ],
+    "target_density": 0.06357291666666663,
+    "source_files": [
+      "3-119120-A-48.wav",
+      "2-152964-A-31.wav",
+      "4-151242-A-37.wav",
+      "1-46938-A-7.wav",
+      "2-72547-C-14.wav",
+      "4-181599-A-26.wav",
+      "4-181563-A-12.wav",
+      "4-209698-A-37.wav",
+      "2-128631-A-21.wav",
+      "1-58923-B-27.wav",
+      "2-106487-A-44.wav",
+      "1-13571-A-46.wav",
+      "5-251963-A-47.wav"
+    ],
+    "target_source": "3-119120-A-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0049.wav",
+    "pair_id": 20049,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        4.343625,
+        5.930813
+      ],
+      [
+        54.000875,
+        55.588062
+      ]
+    ],
+    "target_density": 0.052906249999999995,
+    "source_files": [
+      "5-216370-A-41.wav",
+      "4-132383-B-2.wav",
+      "4-180453-A-17.wav",
+      "3-95694-A-5.wav",
+      "2-96063-A-37.wav",
+      "2-101676-A-10.wav",
+      "4-198962-B-25.wav",
+      "2-81731-A-10.wav",
+      "3-156581-B-14.wav",
+      "3-83527-A-4.wav",
+      "2-135728-A-38.wav",
+      "1-16568-A-3.wav",
+      "4-182839-A-17.wav"
+    ],
+    "target_source": "5-216370-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0050.wav",
+    "pair_id": 20050,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        9.602,
+        11.061813
+      ]
+    ],
+    "target_density": 0.024330216666666675,
+    "source_files": [
+      "1-104089-B-22.wav",
+      "2-28314-B-12.wav",
+      "3-108791-A-18.wav",
+      "5-51149-A-25.wav",
+      "4-198360-A-49.wav",
+      "5-233019-A-31.wav",
+      "5-244327-A-34.wav",
+      "5-213836-B-9.wav",
+      "1-172649-E-40.wav",
+      "5-210540-A-13.wav",
+      "2-131943-A-38.wav",
+      "4-181628-A-17.wav",
+      "3-143562-A-47.wav"
+    ],
+    "target_source": "1-104089-B-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0051.wav",
+    "pair_id": 20051,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        5.54975,
+        8.0365
+      ]
+    ],
+    "target_density": 0.04144583333333333,
+    "source_files": [
+      "1-39923-A-1.wav",
+      "2-78799-A-47.wav",
+      "1-40967-A-28.wav",
+      "1-31251-A-6.wav",
+      "5-218196-B-27.wav",
+      "3-187549-A-6.wav",
+      "4-163608-B-16.wav",
+      "3-20861-A-8.wav",
+      "2-52001-A-28.wav",
+      "3-124376-B-3.wav",
+      "1-69422-A-3.wav",
+      "5-182404-A-18.wav",
+      "5-198321-A-10.wav"
+    ],
+    "target_source": "1-39923-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0052.wav",
+    "pair_id": 20052,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        11.2355,
+        13.623563
+      ]
+    ],
+    "target_density": 0.03980105000000001,
+    "source_files": [
+      "2-117616-A-48.wav",
+      "4-185619-A-21.wav",
+      "2-70939-A-42.wav",
+      "1-30830-A-24.wav",
+      "3-197408-C-8.wav",
+      "3-171012-A-38.wav",
+      "3-170312-A-31.wav",
+      "5-117120-A-42.wav",
+      "3-149448-A-17.wav",
+      "3-126358-B-3.wav",
+      "1-36164-B-26.wav",
+      "3-143562-A-47.wav",
+      "2-138465-A-43.wav"
+    ],
+    "target_source": "2-117616-A-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0053.wav",
+    "pair_id": 20053,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        18.00225,
+        20.140062
+      ],
+      [
+        21.478375,
+        23.616187
+      ],
+      [
+        34.509062,
+        36.646875
+      ]
+    ],
+    "target_density": 0.1068906166666667,
+    "source_files": [
+      "1-19872-A-36.wav",
+      "4-165845-A-45.wav",
+      "3-120526-B-37.wav",
+      "2-105270-A-47.wav",
+      "2-85434-A-27.wav",
+      "5-198373-A-46.wav",
+      "1-172649-F-40.wav",
+      "2-69131-B-5.wav",
+      "2-92978-A-29.wav",
+      "3-157615-A-10.wav",
+      "1-84536-A-39.wav",
+      "1-67230-A-29.wav",
+      "1-39835-B-9.wav"
+    ],
+    "target_source": "1-19872-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0054.wav",
+    "pair_id": 20054,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        44.041312,
+        46.38
+      ]
+    ],
+    "target_density": 0.038978133333333415,
+    "source_files": [
+      "2-106072-A-36.wav",
+      "4-188033-A-38.wav",
+      "4-155670-A-26.wav",
+      "2-158746-C-2.wav",
+      "1-51433-A-17.wav",
+      "5-216214-A-13.wav",
+      "1-85123-A-31.wav",
+      "5-203739-A-10.wav",
+      "2-7321-A-33.wav",
+      "5-244315-B-6.wav",
+      "2-94807-A-29.wav",
+      "2-188822-C-40.wav",
+      "3-187549-A-6.wav"
+    ],
+    "target_source": "2-106072-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0055.wav",
+    "pair_id": 20055,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        4.541938,
+        6.059437
+      ]
+    ],
+    "target_density": 0.02529165,
+    "source_files": [
+      "1-160563-B-48.wav",
+      "4-169508-A-37.wav",
+      "5-188796-A-45.wav",
+      "1-37226-A-29.wav",
+      "4-188703-A-8.wav",
+      "2-52001-A-28.wav",
+      "5-172299-A-5.wav",
+      "3-144510-A-30.wav",
+      "4-169726-A-24.wav",
+      "4-172500-D-27.wav",
+      "5-243036-A-29.wav",
+      "3-108677-A-18.wav",
+      "1-7974-A-49.wav"
+    ],
+    "target_source": "1-160563-B-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0056.wav",
+    "pair_id": 20056,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        19.088,
+        21.197875
+      ],
+      [
+        49.307125,
+        51.417
+      ]
+    ],
+    "target_density": 0.07032916666666669,
+    "source_files": [
+      "5-156999-E-19.wav",
+      "3-149448-A-17.wav",
+      "3-152039-A-3.wav",
+      "4-125929-A-40.wav",
+      "2-130245-A-34.wav",
+      "2-52001-A-28.wav",
+      "1-121951-A-8.wav",
+      "4-125825-A-46.wav",
+      "2-101676-A-10.wav",
+      "2-124564-A-15.wav",
+      "5-253085-B-3.wav",
+      "4-198841-A-37.wav",
+      "4-151242-A-37.wav"
+    ],
+    "target_source": "5-156999-E-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0057.wav",
+    "pair_id": 20057,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        7.406438,
+        9.457812
+      ],
+      [
+        25.874125,
+        27.9255
+      ]
+    ],
+    "target_density": 0.06837915000000001,
+    "source_files": [
+      "5-212059-A-36.wav",
+      "2-118625-A-30.wav",
+      "3-144259-A-29.wav",
+      "1-17808-A-12.wav",
+      "2-73260-A-10.wav",
+      "3-51731-A-42.wav",
+      "2-65484-A-18.wav",
+      "5-207836-D-29.wav",
+      "5-244651-A-31.wav",
+      "3-111102-B-46.wav",
+      "2-80313-A-28.wav",
+      "4-191015-A-43.wav",
+      "4-212604-B-15.wav"
+    ],
+    "target_source": "5-212059-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0058.wav",
+    "pair_id": 20058,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        5.44975,
+        6.744313
+      ],
+      [
+        19.993063,
+        21.287625
+      ]
+    ],
+    "target_density": 0.04315208333333332,
+    "source_files": [
+      "2-104168-A-32.wav",
+      "2-108763-A-9.wav",
+      "3-130998-B-28.wav",
+      "5-189212-A-12.wav",
+      "4-186935-A-44.wav",
+      "2-85434-A-27.wav",
+      "3-127890-C-9.wav",
+      "2-139749-A-15.wav",
+      "2-118104-A-21.wav",
+      "1-75190-A-8.wav",
+      "4-164243-A-26.wav",
+      "1-43764-A-34.wav",
+      "3-126358-A-3.wav"
+    ],
+    "target_source": "2-104168-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0059.wav",
+    "pair_id": 20059,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        14.027437,
+        15.37125
+      ]
+    ],
+    "target_density": 0.02239688333333332,
+    "source_files": [
+      "2-116400-A-0.wav",
+      "2-52789-A-4.wav",
+      "3-158476-A-12.wav",
+      "1-47819-A-5.wav",
+      "4-143118-B-7.wav",
+      "3-161010-A-43.wav",
+      "3-126113-A-26.wav",
+      "2-73544-A-27.wav",
+      "2-94807-A-29.wav",
+      "1-19026-A-43.wav",
+      "5-250026-B-30.wav",
+      "2-72547-C-14.wav",
+      "4-159426-A-9.wav"
+    ],
+    "target_source": "2-116400-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0060.wav",
+    "pair_id": 20060,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        5.645875,
+        7.659187
+      ]
+    ],
+    "target_density": 0.0335552,
+    "source_files": [
+      "1-160563-A-48.wav",
+      "4-154405-A-27.wav",
+      "1-76831-B-42.wav",
+      "2-103427-A-3.wav",
+      "4-111671-B-42.wav",
+      "1-19026-A-43.wav",
+      "3-94355-A-33.wav",
+      "5-207811-B-35.wav",
+      "1-29680-A-21.wav",
+      "1-56233-A-9.wav",
+      "1-51805-H-33.wav",
+      "2-96033-A-13.wav",
+      "1-67230-A-29.wav"
+    ],
+    "target_source": "1-160563-A-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0061.wav",
+    "pair_id": 20061,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        24.407812,
+        26.624625
+      ],
+      [
+        55.03,
+        57.246812
+      ]
+    ],
+    "target_density": 0.07389375,
+    "source_files": [
+      "2-137162-A-11.wav",
+      "5-235593-A-23.wav",
+      "1-32373-B-35.wav",
+      "1-50625-A-17.wav",
+      "2-80844-A-13.wav",
+      "1-19118-A-24.wav",
+      "5-197988-A-46.wav",
+      "3-127890-C-9.wav",
+      "2-100648-A-43.wav",
+      "2-109371-B-16.wav",
+      "1-85909-A-29.wav",
+      "2-138465-A-43.wav",
+      "1-85168-A-39.wav"
+    ],
+    "target_source": "2-137162-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0062.wav",
+    "pair_id": 20062,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        28.29525,
+        30.536375
+      ]
+    ],
+    "target_density": 0.037352083333333334,
+    "source_files": [
+      "1-79236-A-36.wav",
+      "5-250026-B-30.wav",
+      "3-132340-A-37.wav",
+      "2-72547-D-14.wav",
+      "2-72970-A-10.wav",
+      "4-164661-B-12.wav",
+      "5-251963-A-47.wav",
+      "3-68630-B-40.wav",
+      "3-187549-A-6.wav",
+      "5-242492-A-3.wav",
+      "4-187504-A-17.wav",
+      "3-151206-A-23.wav",
+      "1-53663-A-24.wav"
+    ],
+    "target_source": "1-79236-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0063.wav",
+    "pair_id": 20063,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        22.150437,
+        24.075
+      ],
+      [
+        44.611625,
+        46.536187
+      ]
+    ],
+    "target_density": 0.06415208333333335,
+    "source_files": [
+      "1-60997-A-20.wav",
+      "3-170383-A-38.wav",
+      "4-171396-A-24.wav",
+      "4-155670-A-26.wav",
+      "5-242932-A-26.wav",
+      "2-182508-A-8.wav",
+      "5-177034-A-18.wav",
+      "3-151273-A-35.wav",
+      "2-85434-A-27.wav",
+      "1-30709-A-23.wav",
+      "1-9886-A-49.wav",
+      "1-90797-A-15.wav",
+      "3-129678-A-13.wav"
+    ],
+    "target_source": "1-60997-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0064.wav",
+    "pair_id": 20064,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        10.506438,
+        12.669625
+      ],
+      [
+        14.896313,
+        17.0595
+      ],
+      [
+        47.887437,
+        50.050625
+      ]
+    ],
+    "target_density": 0.10815936666666666,
+    "source_files": [
+      "3-132830-A-32.wav",
+      "3-119455-A-44.wav",
+      "1-7974-B-49.wav",
+      "4-102844-B-49.wav",
+      "1-51436-A-17.wav",
+      "3-151089-A-30.wav",
+      "3-138212-A-45.wav",
+      "1-208757-A-2.wav",
+      "4-180453-A-17.wav",
+      "4-102871-A-42.wav",
+      "2-93030-A-21.wav",
+      "2-109505-A-21.wav",
+      "3-171012-A-38.wav"
+    ],
+    "target_source": "3-132830-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0065.wav",
+    "pair_id": 20065,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        47.79125,
+        50.245438
+      ]
+    ],
+    "target_density": 0.04090313333333337,
+    "source_files": [
+      "2-50667-A-41.wav",
+      "3-117883-A-37.wav",
+      "2-158746-B-2.wav",
+      "3-161010-A-43.wav",
+      "3-161010-A-43.wav",
+      "1-32373-A-35.wav",
+      "5-233260-A-23.wav",
+      "5-179496-B-16.wav",
+      "5-223176-A-37.wav",
+      "1-21421-A-46.wav",
+      "5-253085-B-3.wav",
+      "2-82274-A-5.wav",
+      "3-216281-A-39.wav"
+    ],
+    "target_source": "2-50667-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0066.wav",
+    "pair_id": 20066,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        31.19125,
+        33.433188
+      ]
+    ],
+    "target_density": 0.03736563333333335,
+    "source_files": [
+      "1-39901-B-11.wav",
+      "2-188822-C-40.wav",
+      "5-177614-A-5.wav",
+      "1-16568-A-3.wav",
+      "1-21896-A-35.wav",
+      "5-250026-B-30.wav",
+      "4-102844-B-49.wav",
+      "1-21934-A-38.wav",
+      "1-49409-B-8.wav",
+      "2-66205-A-23.wav",
+      "2-43802-A-42.wav",
+      "5-202898-A-10.wav",
+      "2-166644-C-2.wav"
+    ],
+    "target_source": "1-39901-B-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0067.wav",
+    "pair_id": 20067,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        10.034375,
+        11.411625
+      ],
+      [
+        18.330875,
+        19.708125
+      ],
+      [
+        39.559188,
+        40.936437
+      ]
+    ],
+    "target_density": 0.06886248333333332,
+    "source_files": [
+      "5-160614-H-48.wav",
+      "3-203375-A-39.wav",
+      "5-257349-A-15.wav",
+      "3-110913-D-7.wav",
+      "4-149940-B-5.wav",
+      "4-123680-A-18.wav",
+      "5-177957-D-40.wav",
+      "2-126756-A-29.wav",
+      "3-158056-B-31.wav",
+      "1-39937-A-28.wav",
+      "1-23996-B-35.wav",
+      "4-167571-A-26.wav",
+      "5-179860-A-43.wav"
+    ],
+    "target_source": "5-160614-H-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0068.wav",
+    "pair_id": 20068,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        15.042063,
+        17.22
+      ]
+    ],
+    "target_density": 0.03629894999999997,
+    "source_files": [
+      "1-84393-A-32.wav",
+      "4-161103-A-47.wav",
+      "5-215658-A-12.wav",
+      "4-218199-F-35.wav",
+      "1-47819-B-5.wav",
+      "2-82274-B-5.wav",
+      "5-221878-A-34.wav",
+      "3-118069-A-27.wav",
+      "2-95567-A-23.wav",
+      "4-181628-A-17.wav",
+      "3-151269-A-35.wav",
+      "3-246513-A-16.wav",
+      "2-106881-A-39.wav"
+    ],
+    "target_source": "1-84393-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0069.wav",
+    "pair_id": 20069,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        40.781687,
+        42.984875
+      ],
+      [
+        46.184625,
+        48.387813
+      ]
+    ],
+    "target_density": 0.07343960000000015,
+    "source_files": [
+      "3-154781-A-32.wav",
+      "4-171706-A-23.wav",
+      "5-207781-A-17.wav",
+      "3-155766-A-13.wav",
+      "2-106881-A-39.wav",
+      "5-202020-A-18.wav",
+      "3-152039-A-3.wav",
+      "2-101676-A-10.wav",
+      "1-58277-A-3.wav",
+      "3-171281-A-6.wav",
+      "2-52001-A-28.wav",
+      "5-177034-A-18.wav",
+      "3-121348-A-9.wav"
+    ],
+    "target_source": "3-154781-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0070.wav",
+    "pair_id": 20070,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        38.040687,
+        39.458375
+      ],
+      [
+        42.886313,
+        44.304
+      ]
+    ],
+    "target_density": 0.047256249999999986,
+    "source_files": [
+      "5-194930-B-1.wav",
+      "4-186938-A-44.wav",
+      "3-95697-A-5.wav",
+      "1-24796-A-47.wav",
+      "3-149042-A-24.wav",
+      "5-204352-B-13.wav",
+      "3-146033-A-13.wav",
+      "2-87282-A-34.wav",
+      "5-201172-A-46.wav",
+      "2-135860-A-49.wav",
+      "5-204114-A-29.wav",
+      "2-123712-A-33.wav",
+      "3-166326-A-15.wav"
+    ],
+    "target_source": "5-194930-B-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0071.wav",
+    "pair_id": 20071,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        48.567687,
+        50.106187
+      ],
+      [
+        50.740687,
+        52.279187
+      ]
+    ],
+    "target_density": 0.051283333333333306,
+    "source_files": [
+      "2-124662-A-11.wav",
+      "4-147240-B-2.wav",
+      "5-243459-A-14.wav",
+      "1-26188-A-30.wav",
+      "5-156026-A-4.wav",
+      "1-82817-A-30.wav",
+      "5-213293-A-23.wav",
+      "4-194246-A-13.wav",
+      "3-156391-A-35.wav",
+      "4-176631-A-43.wav",
+      "4-155650-A-24.wav",
+      "1-23996-A-35.wav",
+      "5-179863-A-43.wav"
+    ],
+    "target_source": "2-124662-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0072.wav",
+    "pair_id": 20072,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        13.424812,
+        15.417375
+      ]
+    ],
+    "target_density": 0.03320938333333334,
+    "source_files": [
+      "2-117615-B-48.wav",
+      "4-102844-C-49.wav",
+      "3-163727-A-3.wav",
+      "1-23094-B-15.wav",
+      "4-209698-A-37.wav",
+      "5-180156-A-43.wav",
+      "1-54505-A-21.wav",
+      "3-130998-A-28.wav",
+      "3-185456-A-29.wav",
+      "5-204741-A-46.wav",
+      "5-233645-A-37.wav",
+      "2-122067-B-45.wav",
+      "2-109231-B-9.wav"
+    ],
+    "target_source": "2-117615-B-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0073.wav",
+    "pair_id": 20073,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        27.190875,
+        28.594812
+      ],
+      [
+        40.531438,
+        41.935375
+      ]
+    ],
+    "target_density": 0.04679790000000003,
+    "source_files": [
+      "5-182010-A-36.wav",
+      "4-198025-A-23.wav",
+      "3-95694-A-5.wav",
+      "3-182710-B-35.wav",
+      "4-152958-A-18.wav",
+      "5-209992-A-44.wav",
+      "4-218199-G-35.wav",
+      "4-164661-B-12.wav",
+      "2-157488-A-6.wav",
+      "2-209472-A-25.wav",
+      "3-151206-A-23.wav",
+      "2-59566-A-46.wav",
+      "3-144510-A-30.wav"
+    ],
+    "target_source": "5-182010-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0074.wav",
+    "pair_id": 20074,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        45.194875,
+        46.56125
+      ]
+    ],
+    "target_density": 0.022772916666666632,
+    "source_files": [
+      "1-115920-B-22.wav",
+      "4-172500-D-27.wav",
+      "4-205526-B-23.wav",
+      "1-26188-A-30.wav",
+      "2-123712-A-33.wav",
+      "4-175000-A-40.wav",
+      "2-123712-A-33.wav",
+      "1-36397-A-23.wav",
+      "4-186935-A-44.wav",
+      "2-122763-A-29.wav",
+      "5-233645-A-37.wav",
+      "2-135649-A-45.wav",
+      "1-42139-A-38.wav"
+    ],
+    "target_source": "1-115920-B-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0075.wav",
+    "pair_id": 20075,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        42.863687,
+        44.121125
+      ]
+    ],
+    "target_density": 0.02095730000000001,
+    "source_files": [
+      "1-115920-A-22.wav",
+      "2-65747-A-12.wav",
+      "4-157297-A-21.wav",
+      "1-80785-A-7.wav",
+      "3-164216-B-6.wav",
+      "1-181071-B-40.wav",
+      "2-92627-A-27.wav",
+      "3-253084-E-2.wav",
+      "3-111102-B-46.wav",
+      "2-85292-A-24.wav",
+      "4-204612-A-31.wav",
+      "4-173865-B-9.wav",
+      "4-99193-B-4.wav"
+    ],
+    "target_source": "1-115920-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0076.wav",
+    "pair_id": 20076,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        6.357312,
+        7.706688
+      ]
+    ],
+    "target_density": 0.02248959999999999,
+    "source_files": [
+      "3-116135-A-1.wav",
+      "2-82274-B-5.wav",
+      "1-30043-A-26.wav",
+      "1-33658-A-26.wav",
+      "1-74517-A-37.wav",
+      "3-107123-A-26.wav",
+      "2-117795-B-3.wav",
+      "5-212050-A-27.wav",
+      "1-13572-A-46.wav",
+      "5-243036-A-29.wav",
+      "4-144468-A-27.wav",
+      "4-159426-A-9.wav",
+      "5-207681-A-24.wav"
+    ],
+    "target_source": "3-116135-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0077.wav",
+    "pair_id": 20077,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        9.954812,
+        12.077
+      ]
+    ],
+    "target_density": 0.03536979999999999,
+    "source_files": [
+      "5-156999-A-19.wav",
+      "3-152039-A-3.wav",
+      "1-19111-A-24.wav",
+      "1-88409-B-45.wav",
+      "2-70938-A-42.wav",
+      "3-151273-A-35.wav",
+      "5-248341-C-6.wav",
+      "3-128160-A-44.wav",
+      "3-171041-A-38.wav",
+      "3-97909-B-49.wav",
+      "3-71964-A-4.wav",
+      "5-234263-A-25.wav",
+      "4-163697-A-13.wav"
+    ],
+    "target_source": "5-156999-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0078.wav",
+    "pair_id": 20078,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        2.328,
+        3.64175
+      ],
+      [
+        14.439875,
+        15.753625
+      ],
+      [
+        55.401063,
+        56.714813
+      ]
+    ],
+    "target_density": 0.06568749999999997,
+    "source_files": [
+      "5-200461-A-11.wav",
+      "2-85292-A-24.wav",
+      "5-198321-A-10.wav",
+      "3-154378-A-30.wav",
+      "2-135649-A-45.wav",
+      "4-188191-B-29.wav",
+      "3-126113-A-26.wav",
+      "5-234247-A-37.wav",
+      "5-257349-A-15.wav",
+      "3-160993-A-3.wav",
+      "1-155858-B-25.wav",
+      "2-37870-A-2.wav",
+      "2-109759-B-26.wav"
+    ],
+    "target_source": "5-200461-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0079.wav",
+    "pair_id": 20079,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        41.681312,
+        43.811
+      ]
+    ],
+    "target_density": 0.03549480000000003,
+    "source_files": [
+      "4-165823-B-41.wav",
+      "5-193339-A-10.wav",
+      "4-151242-A-37.wav",
+      "3-117883-A-37.wav",
+      "5-217186-C-16.wav",
+      "5-263491-A-25.wav",
+      "4-132383-B-2.wav",
+      "3-159445-B-45.wav",
+      "1-27165-A-35.wav",
+      "2-209473-A-25.wav",
+      "1-47923-A-28.wav",
+      "2-173559-A-39.wav",
+      "3-68630-A-40.wav"
+    ],
+    "target_source": "4-165823-B-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0080.wav",
+    "pair_id": 20080,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        14.298625,
+        16.541563
+      ],
+      [
+        36.928688,
+        39.171625
+      ],
+      [
+        45.823813,
+        48.06675
+      ]
+    ],
+    "target_density": 0.1121468666666666,
+    "source_files": [
+      "4-185613-A-32.wav",
+      "4-175855-A-43.wav",
+      "4-160036-B-33.wav",
+      "4-164661-B-12.wav",
+      "3-118194-A-33.wav",
+      "4-102844-C-49.wav",
+      "1-36164-A-26.wav",
+      "3-94343-A-25.wav",
+      "1-47709-A-16.wav",
+      "1-51433-A-17.wav",
+      "2-7321-A-33.wav",
+      "1-155858-E-25.wav",
+      "2-51630-B-49.wav"
+    ],
+    "target_source": "4-185613-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0081.wav",
+    "pair_id": 20081,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        33.204,
+        35.552375
+      ]
+    ],
+    "target_density": 0.03913958333333329,
+    "source_files": [
+      "2-71162-A-1.wav",
+      "4-216349-A-34.wav",
+      "1-28808-A-43.wav",
+      "1-15689-B-4.wav",
+      "3-182023-A-30.wav",
+      "3-124958-A-28.wav",
+      "4-218199-D-35.wav",
+      "2-70052-A-42.wav",
+      "2-119102-A-21.wav",
+      "3-166546-B-34.wav",
+      "5-237795-A-34.wav",
+      "2-122763-B-29.wav",
+      "1-29561-A-10.wav"
+    ],
+    "target_source": "2-71162-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0082.wav",
+    "pair_id": 20082,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        13.210313,
+        14.441937
+      ],
+      [
+        17.6485,
+        18.880125
+      ],
+      [
+        23.76625,
+        24.997875
+      ]
+    ],
+    "target_density": 0.06158123333333337,
+    "source_files": [
+      "1-137-A-32.wav",
+      "5-209719-A-24.wav",
+      "3-128160-A-44.wav",
+      "5-207681-A-24.wav",
+      "2-120587-A-6.wav",
+      "4-132383-A-2.wav",
+      "1-80785-A-7.wav",
+      "1-38559-A-14.wav",
+      "1-47273-A-21.wav",
+      "3-128160-A-44.wav",
+      "3-158056-B-31.wav",
+      "1-34094-B-5.wav",
+      "4-99644-D-4.wav"
+    ],
+    "target_source": "1-137-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0083.wav",
+    "pair_id": 20083,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        50.2565,
+        51.73775
+      ]
+    ],
+    "target_density": 0.024687499999999928,
+    "source_files": [
+      "4-119648-D-48.wav",
+      "1-26143-A-21.wav",
+      "4-171519-A-21.wav",
+      "1-56270-A-29.wav",
+      "5-257349-A-15.wav",
+      "1-56380-A-5.wav",
+      "1-61221-A-17.wav",
+      "4-99644-B-4.wav",
+      "1-9886-A-49.wav",
+      "1-30709-A-23.wav",
+      "3-203377-A-39.wav",
+      "3-197408-C-8.wav",
+      "3-171012-A-38.wav"
+    ],
+    "target_source": "4-119648-D-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0084.wav",
+    "pair_id": 20084,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        27.569063,
+        29.783562
+      ],
+      [
+        35.899313,
+        38.113813
+      ]
+    ],
+    "target_density": 0.07381665000000001,
+    "source_files": [
+      "4-204618-A-11.wav",
+      "5-204604-A-24.wav",
+      "2-70939-A-42.wav",
+      "2-118625-A-30.wav",
+      "3-136608-A-16.wav",
+      "1-56311-A-10.wav",
+      "2-79775-A-26.wav",
+      "2-209478-A-25.wav",
+      "4-188293-A-15.wav",
+      "1-56270-A-29.wav",
+      "1-20736-A-18.wav",
+      "2-209473-A-25.wav",
+      "1-23094-B-15.wav"
+    ],
+    "target_source": "4-204618-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0085.wav",
+    "pair_id": 20085,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        31.043813,
+        32.847875
+      ]
+    ],
+    "target_density": 0.03006770000000003,
+    "source_files": [
+      "2-25293-A-22.wav",
+      "3-182023-A-30.wav",
+      "1-59324-A-21.wav",
+      "3-153057-A-43.wav",
+      "4-102871-A-42.wav",
+      "5-233607-A-39.wav",
+      "3-141240-A-44.wav",
+      "4-125825-A-46.wav",
+      "2-93030-A-21.wav",
+      "2-127109-A-6.wav",
+      "5-251962-A-47.wav",
+      "1-18527-A-44.wav",
+      "5-204114-A-29.wav"
+    ],
+    "target_source": "2-25293-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0086.wav",
+    "pair_id": 20086,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        19.83975,
+        22.0315
+      ]
+    ],
+    "target_density": 0.03652916666666671,
+    "source_files": [
+      "3-159346-A-36.wav",
+      "4-261068-A-30.wav",
+      "3-187549-B-6.wav",
+      "5-263775-B-26.wav",
+      "1-82817-A-30.wav",
+      "4-193480-B-40.wav",
+      "4-152958-A-18.wav",
+      "5-207836-D-29.wav",
+      "1-35687-A-38.wav",
+      "4-194246-A-13.wav",
+      "1-26177-A-43.wav",
+      "2-61618-A-46.wav",
+      "5-215179-A-13.wav"
+    ],
+    "target_source": "3-159346-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0087.wav",
+    "pair_id": 20087,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        25.232312,
+        27.650312
+      ],
+      [
+        39.787813,
+        42.205813
+      ],
+      [
+        54.075375,
+        56.493375
+      ]
+    ],
+    "target_density": 0.12089999999999997,
+    "source_files": [
+      "3-155642-B-11.wav",
+      "1-64473-A-45.wav",
+      "3-141240-A-44.wav",
+      "5-186924-A-12.wav",
+      "3-126391-A-27.wav",
+      "1-36164-B-26.wav",
+      "5-250026-A-30.wav",
+      "4-163264-A-10.wav",
+      "1-181071-B-40.wav",
+      "4-212604-C-15.wav",
+      "3-65748-A-12.wav",
+      "5-219044-A-46.wav",
+      "1-101404-A-34.wav"
+    ],
+    "target_source": "3-155642-B-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0088.wav",
+    "pair_id": 20088,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        12.40925,
+        14.442875
+      ]
+    ],
+    "target_density": 0.033893750000000014,
+    "source_files": [
+      "3-163288-A-1.wav",
+      "2-69131-A-5.wav",
+      "5-263831-A-6.wav",
+      "3-102583-B-49.wav",
+      "5-177957-B-40.wav",
+      "4-99644-A-4.wav",
+      "3-185313-A-31.wav",
+      "4-145081-A-9.wav",
+      "2-108763-A-9.wav",
+      "3-118069-B-27.wav",
+      "1-88409-A-45.wav",
+      "1-103995-A-30.wav",
+      "1-26143-A-21.wav"
+    ],
+    "target_source": "3-163288-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0089.wav",
+    "pair_id": 20089,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        46.888937,
+        49.322688
+      ]
+    ],
+    "target_density": 0.04056251666666668,
+    "source_files": [
+      "1-94231-B-32.wav",
+      "5-257349-A-15.wav",
+      "2-110417-B-28.wav",
+      "3-118059-A-18.wav",
+      "1-36393-A-23.wav",
+      "3-127890-A-9.wav",
+      "1-181071-A-40.wav",
+      "2-82274-B-5.wav",
+      "2-166644-C-2.wav",
+      "1-46938-A-7.wav",
+      "2-131943-A-38.wav",
+      "2-64963-A-15.wav",
+      "1-30709-C-23.wav"
+    ],
+    "target_source": "1-94231-B-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0090.wav",
+    "pair_id": 20090,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        40.2695,
+        42.336312
+      ]
+    ],
+    "target_density": 0.034446866666666645,
+    "source_files": [
+      "5-231551-A-36.wav",
+      "2-119139-A-31.wav",
+      "5-198278-A-7.wav",
+      "3-126391-B-27.wav",
+      "4-188703-D-8.wav",
+      "1-20545-A-28.wav",
+      "2-138465-A-43.wav",
+      "2-104952-B-16.wav",
+      "5-263831-A-6.wav",
+      "4-172500-A-27.wav",
+      "2-81970-B-7.wav",
+      "2-66205-A-23.wav",
+      "4-172500-D-27.wav"
+    ],
+    "target_source": "5-231551-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0091.wav",
+    "pair_id": 20091,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        38.94975,
+        40.6925
+      ],
+      [
+        51.275375,
+        53.018125
+      ]
+    ],
+    "target_density": 0.058091666666666694,
+    "source_files": [
+      "2-50666-A-20.wav",
+      "4-179836-A-34.wav",
+      "3-157615-A-10.wav",
+      "1-9887-A-49.wav",
+      "1-7057-A-12.wav",
+      "4-193480-B-40.wav",
+      "4-154405-A-27.wav",
+      "5-133989-B-42.wav",
+      "2-72970-A-10.wav",
+      "2-82274-A-5.wav",
+      "3-117883-A-37.wav",
+      "3-171281-A-6.wav",
+      "4-90014-B-42.wav"
+    ],
+    "target_source": "2-50666-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0092.wav",
+    "pair_id": 20092,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        17.775437,
+        19.734813
+      ]
+    ],
+    "target_density": 0.03265626666666665,
+    "source_files": [
+      "4-185575-B-20.wav",
+      "4-99644-D-4.wav",
+      "1-21189-A-10.wav",
+      "5-201274-A-21.wav",
+      "4-184235-A-28.wav",
+      "5-188796-A-45.wav",
+      "3-203374-A-39.wav",
+      "4-171519-A-21.wav",
+      "1-31251-B-6.wav",
+      "2-70939-A-42.wav",
+      "1-24076-A-43.wav",
+      "3-161010-A-43.wav",
+      "1-80841-A-13.wav"
+    ],
+    "target_source": "4-185575-B-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0093.wav",
+    "pair_id": 20093,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        23.432375,
+        24.718937
+      ],
+      [
+        36.427813,
+        37.714375
+      ]
+    ],
+    "target_density": 0.04288539999999994,
+    "source_files": [
+      "1-91359-A-11.wav",
+      "2-86160-A-27.wav",
+      "2-78781-A-47.wav",
+      "1-62850-A-38.wav",
+      "1-36164-B-26.wav",
+      "5-207836-B-29.wav",
+      "2-32515-A-4.wav",
+      "2-72547-D-14.wav",
+      "4-156843-A-21.wav",
+      "1-88409-A-45.wav",
+      "3-51376-A-42.wav",
+      "1-17367-A-10.wav",
+      "2-82274-B-5.wav"
+    ],
+    "target_source": "1-91359-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0094.wav",
+    "pair_id": 20094,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        13.792813,
+        15.121
+      ],
+      [
+        47.794312,
+        49.1225
+      ],
+      [
+        56.419812,
+        57.748
+      ]
+    ],
+    "target_density": 0.06640938333333336,
+    "source_files": [
+      "2-77945-A-41.wav",
+      "1-81001-B-30.wav",
+      "4-174860-A-3.wav",
+      "4-204115-A-39.wav",
+      "1-38559-A-14.wav",
+      "1-49098-A-35.wav",
+      "4-186962-A-44.wav",
+      "1-23094-B-15.wav",
+      "5-244459-A-28.wav",
+      "4-163264-A-10.wav",
+      "4-212604-C-15.wav",
+      "2-70366-A-33.wav",
+      "5-202020-A-18.wav"
+    ],
+    "target_source": "2-77945-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0095.wav",
+    "pair_id": 20095,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        21.656125,
+        23.188813
+      ],
+      [
+        28.5075,
+        30.040187
+      ]
+    ],
+    "target_density": 0.05108958333333333,
+    "source_files": [
+      "2-117617-A-48.wav",
+      "2-130978-A-21.wav",
+      "2-123712-A-33.wav",
+      "1-9887-A-49.wav",
+      "5-193339-A-10.wav",
+      "2-158746-D-2.wav",
+      "5-243635-A-29.wav",
+      "1-223162-A-25.wav",
+      "3-182710-A-35.wav",
+      "4-111671-B-42.wav",
+      "2-104952-B-16.wav",
+      "4-180453-A-17.wav",
+      "1-58846-A-34.wav"
+    ],
+    "target_source": "2-117617-A-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0096.wav",
+    "pair_id": 20096,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        35.193812,
+        37.656062
+      ]
+    ],
+    "target_density": 0.041037499999999956,
+    "source_files": [
+      "3-136288-A-0.wav",
+      "1-16568-A-3.wav",
+      "5-248341-B-6.wav",
+      "1-50623-A-15.wav",
+      "5-238938-A-27.wav",
+      "1-58923-B-27.wav",
+      "5-233607-A-39.wav",
+      "4-152995-A-24.wav",
+      "5-238938-A-27.wav",
+      "5-189212-A-12.wav",
+      "4-187769-A-14.wav",
+      "3-253084-E-2.wav",
+      "1-11687-A-47.wav"
+    ],
+    "target_source": "3-136288-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0097.wav",
+    "pair_id": 20097,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        38.061312,
+        40.076313
+      ]
+    ],
+    "target_density": 0.03358334999999997,
+    "source_files": [
+      "4-192236-A-0.wav",
+      "5-204741-A-46.wav",
+      "3-104761-B-7.wav",
+      "4-204684-A-37.wav",
+      "3-203373-A-39.wav",
+      "3-143119-A-21.wav",
+      "5-251971-A-47.wav",
+      "5-219242-A-37.wav",
+      "4-164243-A-26.wav",
+      "5-193339-A-10.wav",
+      "5-244315-C-6.wav",
+      "4-204202-A-29.wav",
+      "5-103420-A-2.wav"
+    ],
+    "target_source": "4-192236-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0098.wav",
+    "pair_id": 20098,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        26.452875,
+        28.607187
+      ],
+      [
+        29.675438,
+        31.82975
+      ],
+      [
+        41.309438,
+        43.46375
+      ]
+    ],
+    "target_density": 0.10771559999999998,
+    "source_files": [
+      "2-114587-A-0.wav",
+      "4-133047-A-5.wav",
+      "4-159426-A-9.wav",
+      "1-23094-B-15.wav",
+      "3-147343-A-34.wav",
+      "5-253534-A-26.wav",
+      "1-36393-A-23.wav",
+      "3-151255-A-28.wav",
+      "1-38559-A-14.wav",
+      "5-259640-A-29.wav",
+      "5-180156-A-43.wav",
+      "2-103424-A-3.wav",
+      "5-260011-A-34.wav"
+    ],
+    "target_source": "2-114587-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0099.wav",
+    "pair_id": 20099,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        44.886375,
+        46.102562
+      ]
+    ],
+    "target_density": 0.020269783333333298,
+    "source_files": [
+      "3-118656-A-41.wav",
+      "1-51436-A-17.wav",
+      "4-197103-A-6.wav",
+      "4-152995-A-24.wav",
+      "3-187549-A-6.wav",
+      "1-181071-B-40.wav",
+      "5-157204-B-16.wav",
+      "4-175000-A-40.wav",
+      "4-161579-B-40.wav",
+      "2-82274-B-5.wav",
+      "2-60180-A-49.wav",
+      "2-73027-A-10.wav",
+      "5-117122-A-42.wav"
+    ],
+    "target_source": "3-118656-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0100.wav",
+    "pair_id": 20100,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        41.176875,
+        42.43725
+      ],
+      [
+        57.715875,
+        58.97625
+      ]
+    ],
+    "target_density": 0.042012499999999994,
+    "source_files": [
+      "5-222524-A-41.wav",
+      "2-72970-A-10.wav",
+      "1-72195-A-37.wav",
+      "2-102581-A-29.wav",
+      "1-172649-B-40.wav",
+      "5-250026-B-30.wav",
+      "5-197121-B-45.wav",
+      "1-46938-A-7.wav",
+      "3-148330-A-21.wav",
+      "4-182839-A-17.wav",
+      "3-216280-A-39.wav",
+      "1-88807-A-39.wav",
+      "1-27405-A-28.wav"
+    ],
+    "target_source": "5-222524-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0101.wav",
+    "pair_id": 20101,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        9.636625,
+        11.8845
+      ],
+      [
+        24.0725,
+        26.320375
+      ],
+      [
+        55.731063,
+        57.978938
+      ]
+    ],
+    "target_density": 0.11239374999999993,
+    "source_files": [
+      "1-24524-C-19.wav",
+      "3-160993-A-3.wav",
+      "5-253101-C-49.wav",
+      "2-81970-B-7.wav",
+      "1-29680-A-21.wav",
+      "2-126756-A-29.wav",
+      "3-103597-A-25.wav",
+      "4-191015-A-43.wav",
+      "5-188716-A-46.wav",
+      "5-180229-A-27.wav",
+      "4-218199-F-35.wav",
+      "2-73027-A-10.wav",
+      "3-141240-A-44.wav"
+    ],
+    "target_source": "1-24524-C-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0102.wav",
+    "pair_id": 20102,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        51.208,
+        53.194563
+      ],
+      [
+        54.203313,
+        56.189875
+      ]
+    ],
+    "target_density": 0.06621875000000005,
+    "source_files": [
+      "1-94231-A-32.wav",
+      "5-242492-A-3.wav",
+      "1-103999-A-30.wav",
+      "3-93010-A-18.wav",
+      "4-185619-A-21.wav",
+      "5-194892-A-10.wav",
+      "2-32515-C-4.wav",
+      "3-118069-B-27.wav",
+      "5-217186-A-16.wav",
+      "3-95697-A-5.wav",
+      "1-30709-B-23.wav",
+      "4-178402-A-43.wav",
+      "2-84943-A-18.wav"
+    ],
+    "target_source": "1-94231-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0103.wav",
+    "pair_id": 20103,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        24.569688,
+        25.92525
+      ],
+      [
+        27.732625,
+        29.088188
+      ]
+    ],
+    "target_density": 0.04518541666666665,
+    "source_files": [
+      "5-233160-A-1.wav",
+      "5-233605-A-39.wav",
+      "1-19111-A-24.wav",
+      "5-204741-A-46.wav",
+      "3-163727-A-3.wav",
+      "2-173607-A-39.wav",
+      "2-122616-A-14.wav",
+      "2-52789-A-4.wav",
+      "2-67422-A-18.wav",
+      "5-250026-B-30.wav",
+      "5-189795-A-4.wav",
+      "2-122616-A-14.wav",
+      "2-32515-A-4.wav"
+    ],
+    "target_source": "5-233160-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0104.wav",
+    "pair_id": 20104,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        43.340063,
+        45.666063
+      ]
+    ],
+    "target_density": 0.03876666666666668,
+    "source_files": [
+      "1-115545-B-48.wav",
+      "4-188595-A-29.wav",
+      "5-177957-E-40.wav",
+      "3-102583-A-49.wav",
+      "4-204684-A-37.wav",
+      "3-51376-A-42.wav",
+      "3-180147-A-30.wav",
+      "1-87565-A-29.wav",
+      "2-106849-A-47.wav",
+      "5-244315-A-6.wav",
+      "5-189237-A-12.wav",
+      "1-56233-A-9.wav",
+      "3-135650-B-45.wav"
+    ],
+    "target_source": "1-115545-B-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0105.wav",
+    "pair_id": 20105,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        9.7635,
+        11.369312
+      ]
+    ],
+    "target_density": 0.026763533333333336,
+    "source_files": [
+      "5-221950-A-22.wav",
+      "4-186938-A-44.wav",
+      "2-52085-B-4.wav",
+      "5-243459-A-14.wav",
+      "3-166324-A-15.wav",
+      "4-209536-A-37.wav",
+      "4-121532-A-42.wav",
+      "4-186938-A-44.wav",
+      "2-120586-A-6.wav",
+      "2-32515-B-4.wav",
+      "2-60180-A-49.wav",
+      "5-179860-A-43.wav",
+      "2-209478-A-25.wav"
+    ],
+    "target_source": "5-221950-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0106.wav",
+    "pair_id": 20106,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        44.5795,
+        45.859812
+      ]
+    ],
+    "target_density": 0.02133853333333325,
+    "source_files": [
+      "2-141682-B-36.wav",
+      "5-179860-A-43.wav",
+      "2-37806-C-40.wav",
+      "1-9887-A-49.wav",
+      "3-246513-B-16.wav",
+      "1-18655-A-31.wav",
+      "4-232495-A-6.wav",
+      "2-173559-A-39.wav",
+      "5-161270-A-33.wav",
+      "1-17150-A-12.wav",
+      "4-99644-B-4.wav",
+      "2-82274-A-5.wav",
+      "1-11687-A-47.wav"
+    ],
+    "target_source": "2-141682-B-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0107.wav",
+    "pair_id": 20107,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        8.092063,
+        10.406437
+      ]
+    ],
+    "target_density": 0.038572900000000014,
+    "source_files": [
+      "2-117271-A-0.wav",
+      "4-125825-A-46.wav",
+      "5-241846-A-15.wav",
+      "4-155650-B-24.wav",
+      "2-120218-B-30.wav",
+      "1-52323-A-24.wav",
+      "1-59102-A-13.wav",
+      "3-129338-A-13.wav",
+      "3-257858-A-2.wav",
+      "5-188796-A-45.wav",
+      "4-187504-A-17.wav",
+      "5-253101-B-49.wav",
+      "1-101404-A-34.wav"
+    ],
+    "target_source": "2-117271-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0108.wav",
+    "pair_id": 20108,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        47.014375,
+        48.40675
+      ]
+    ],
+    "target_density": 0.023206250000000022,
+    "source_files": [
+      "5-160614-D-48.wav",
+      "1-36164-A-26.wav",
+      "3-119455-A-44.wav",
+      "1-64473-A-45.wav",
+      "2-209472-A-25.wav",
+      "1-50454-A-44.wav",
+      "3-249913-A-25.wav",
+      "4-191327-A-38.wav",
+      "5-215179-A-13.wav",
+      "5-219044-A-46.wav",
+      "5-197988-A-46.wav",
+      "4-102871-A-42.wav",
+      "2-30322-A-12.wav"
+    ],
+    "target_source": "5-160614-D-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0109.wav",
+    "pair_id": 20109,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        8.211438,
+        10.365875
+      ],
+      [
+        39.552813,
+        41.70725
+      ]
+    ],
+    "target_density": 0.07181456666666672,
+    "source_files": [
+      "4-205738-A-22.wav",
+      "2-64963-A-15.wav",
+      "3-169907-A-29.wav",
+      "2-108767-B-9.wav",
+      "5-193473-A-12.wav",
+      "4-102844-A-49.wav",
+      "1-84704-A-39.wav",
+      "3-155130-A-43.wav",
+      "4-213193-A-29.wav",
+      "3-146873-A-24.wav",
+      "1-47819-A-5.wav",
+      "3-118194-A-33.wav",
+      "1-121951-A-8.wav"
+    ],
+    "target_source": "4-205738-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0110.wav",
+    "pair_id": 20110,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        13.708625,
+        16.115063
+      ]
+    ],
+    "target_density": 0.04010729999999999,
+    "source_files": [
+      "5-218494-A-22.wav",
+      "3-164216-A-6.wav",
+      "5-234335-A-23.wav",
+      "5-235874-A-28.wav",
+      "2-102414-B-17.wav",
+      "4-99644-B-4.wav",
+      "4-198360-B-49.wav",
+      "5-233607-A-39.wav",
+      "4-204612-A-31.wav",
+      "3-134802-A-13.wav",
+      "2-102414-A-17.wav",
+      "1-34094-B-5.wav",
+      "2-51630-B-49.wav"
+    ],
+    "target_source": "5-218494-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0111.wav",
+    "pair_id": 20111,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        19.253062,
+        21.35625
+      ]
+    ],
+    "target_density": 0.035053133333333326,
+    "source_files": [
+      "3-177083-A-22.wav",
+      "5-208624-A-38.wav",
+      "2-152964-A-31.wav",
+      "1-51147-A-25.wav",
+      "3-98771-A-18.wav",
+      "4-147658-A-46.wav",
+      "1-57795-A-8.wav",
+      "1-181071-A-40.wav",
+      "5-103421-A-2.wav",
+      "3-119455-A-44.wav",
+      "2-106881-A-39.wav",
+      "3-155556-A-31.wav",
+      "1-196660-A-8.wav"
+    ],
+    "target_source": "3-177083-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0112.wav",
+    "pair_id": 20112,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        50.802312,
+        52.485937
+      ]
+    ],
+    "target_density": 0.028060416666666654,
+    "source_files": [
+      "4-146200-A-36.wav",
+      "4-261068-A-30.wav",
+      "1-40967-A-28.wav",
+      "4-184237-A-28.wav",
+      "3-167096-A-31.wav",
+      "1-36164-B-26.wav",
+      "5-195518-A-7.wav",
+      "2-107228-A-44.wav",
+      "3-103597-A-25.wav",
+      "3-180147-A-30.wav",
+      "3-246513-A-16.wav",
+      "4-188703-A-8.wav",
+      "3-127890-B-9.wav"
+    ],
+    "target_source": "4-146200-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0113.wav",
+    "pair_id": 20113,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        21.760687,
+        23.721688
+      ],
+      [
+        25.8385,
+        27.7995
+      ],
+      [
+        33.861562,
+        35.822562
+      ]
+    ],
+    "target_density": 0.09805001666666661,
+    "source_files": [
+      "2-39945-A-19.wav",
+      "1-84536-A-39.wav",
+      "3-171281-A-6.wav",
+      "1-62509-A-45.wav",
+      "5-179868-A-43.wav",
+      "3-164595-A-15.wav",
+      "5-221528-A-39.wav",
+      "5-210571-A-38.wav",
+      "4-204202-A-29.wav",
+      "2-37870-A-2.wav",
+      "4-147658-A-46.wav",
+      "4-188703-A-8.wav",
+      "3-158056-B-31.wav"
+    ],
+    "target_source": "2-39945-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0114.wav",
+    "pair_id": 20114,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        17.377813,
+        19.744688
+      ],
+      [
+        56.86425,
+        59.231125
+      ]
+    ],
+    "target_density": 0.07889583333333335,
+    "source_files": [
+      "1-23222-A-19.wav",
+      "4-191297-A-28.wav",
+      "2-102414-C-17.wav",
+      "1-61534-A-27.wav",
+      "4-152995-A-24.wav",
+      "3-253084-C-2.wav",
+      "5-188655-A-10.wav",
+      "4-191246-A-7.wav",
+      "3-102583-C-49.wav",
+      "4-175855-A-43.wav",
+      "5-243448-A-14.wav",
+      "3-94355-A-33.wav",
+      "4-170247-A-12.wav"
+    ],
+    "target_source": "1-23222-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0115.wav",
+    "pair_id": 20115,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        9.064813,
+        10.770563
+      ]
+    ],
+    "target_density": 0.02842916666666667,
+    "source_files": [
+      "1-24524-B-19.wav",
+      "1-7973-A-7.wav",
+      "2-114254-A-30.wav",
+      "3-142593-A-38.wav",
+      "3-151089-A-30.wav",
+      "5-237315-A-31.wav",
+      "3-143933-A-38.wav",
+      "3-117883-A-37.wav",
+      "2-103424-A-3.wav",
+      "3-155556-A-31.wav",
+      "4-251645-B-49.wav",
+      "2-103426-A-3.wav",
+      "2-122616-A-14.wav"
+    ],
+    "target_source": "1-24524-B-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0116.wav",
+    "pair_id": 20116,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        3.289438,
+        4.816625
+      ],
+      [
+        32.214062,
+        33.74125
+      ]
+    ],
+    "target_density": 0.05090625000000004,
+    "source_files": [
+      "1-61252-A-11.wav",
+      "2-73260-A-10.wav",
+      "1-18810-A-49.wav",
+      "2-110613-A-13.wav",
+      "5-187201-B-4.wav",
+      "4-210309-A-31.wav",
+      "5-242711-A-9.wav",
+      "1-155858-C-25.wav",
+      "5-219242-A-37.wav",
+      "5-233260-A-23.wav",
+      "3-154378-A-30.wav",
+      "1-73585-A-7.wav",
+      "3-145387-A-29.wav"
+    ],
+    "target_source": "1-61252-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0117.wav",
+    "pair_id": 20117,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        28.83275,
+        30.256375
+      ]
+    ],
+    "target_density": 0.023727083333333295,
+    "source_files": [
+      "1-22694-A-20.wav",
+      "4-175000-B-40.wav",
+      "1-17808-B-12.wav",
+      "3-171281-A-6.wav",
+      "4-209698-A-37.wav",
+      "1-47714-A-16.wav",
+      "2-37870-A-2.wav",
+      "4-102844-C-49.wav",
+      "1-84705-A-39.wav",
+      "4-151242-A-37.wav",
+      "3-71964-B-4.wav",
+      "2-141563-A-39.wav",
+      "4-173865-B-9.wav"
+    ],
+    "target_source": "1-22694-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0118.wav",
+    "pair_id": 20118,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        40.75325,
+        43.2075
+      ]
+    ],
+    "target_density": 0.0409041666666667,
+    "source_files": [
+      "3-152007-D-20.wav",
+      "5-188796-A-45.wav",
+      "3-102583-B-49.wav",
+      "1-16746-A-15.wav",
+      "4-157296-A-24.wav",
+      "5-199284-B-45.wav",
+      "1-64473-A-45.wav",
+      "2-109231-B-9.wav",
+      "2-72970-A-10.wav",
+      "5-223176-A-37.wav",
+      "4-147657-A-46.wav",
+      "4-133047-A-5.wav",
+      "1-13571-A-46.wav"
+    ],
+    "target_source": "3-152007-D-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0119.wav",
+    "pair_id": 20119,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        29.495812,
+        31.542562
+      ]
+    ],
+    "target_density": 0.03411249999999999,
+    "source_files": [
+      "5-213855-A-0.wav",
+      "3-155766-A-13.wav",
+      "1-82817-A-30.wav",
+      "3-130998-B-28.wav",
+      "2-81970-C-7.wav",
+      "4-181563-A-12.wav",
+      "4-150364-B-46.wav",
+      "4-136381-A-9.wav",
+      "2-104952-B-16.wav",
+      "1-13571-A-46.wav",
+      "3-154439-A-17.wav",
+      "4-218199-A-35.wav",
+      "2-135860-A-49.wav"
+    ],
+    "target_source": "5-213855-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0120.wav",
+    "pair_id": 20120,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        43.619937,
+        45.398812
+      ]
+    ],
+    "target_density": 0.029647916666666656,
+    "source_files": [
+      "3-170015-A-0.wav",
+      "2-54962-A-23.wav",
+      "3-124376-B-3.wav",
+      "5-237795-A-34.wav",
+      "3-118059-A-18.wav",
+      "2-108760-B-14.wav",
+      "1-43807-B-47.wav",
+      "3-246513-A-16.wav",
+      "1-56380-A-5.wav",
+      "4-184237-A-28.wav",
+      "2-82077-A-7.wav",
+      "2-120586-A-6.wav",
+      "5-235956-A-47.wav"
+    ],
+    "target_source": "3-170015-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0121.wav",
+    "pair_id": 20121,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        52.24125,
+        53.6005
+      ]
+    ],
+    "target_density": 0.022654166666666597,
+    "source_files": [
+      "4-156993-A-19.wav",
+      "2-114254-A-30.wav",
+      "4-216349-A-34.wav",
+      "1-137296-A-16.wav",
+      "5-179868-A-43.wav",
+      "5-156026-A-4.wav",
+      "3-164216-A-6.wav",
+      "1-155858-E-25.wav",
+      "2-78651-A-44.wav",
+      "5-235956-A-47.wav",
+      "2-209475-A-25.wav",
+      "3-108791-A-18.wav",
+      "2-104952-B-16.wav"
+    ],
+    "target_source": "4-156993-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0122.wav",
+    "pair_id": 20122,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        37.777563,
+        39.529812
+      ]
+    ],
+    "target_density": 0.029204149999999984,
+    "source_files": [
+      "1-211527-A-20.wav",
+      "1-49098-A-35.wav",
+      "2-83270-A-13.wav",
+      "2-85292-A-24.wav",
+      "2-158746-D-2.wav",
+      "5-217186-B-16.wav",
+      "1-17367-A-10.wav",
+      "1-23094-A-15.wav",
+      "2-104877-A-3.wav",
+      "1-30039-A-26.wav",
+      "3-170312-A-31.wav",
+      "1-54752-A-18.wav",
+      "4-133895-A-7.wav"
+    ],
+    "target_source": "1-211527-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0123.wav",
+    "pair_id": 20123,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        8.286563,
+        9.51625
+      ],
+      [
+        32.819875,
+        34.049563
+      ]
+    ],
+    "target_density": 0.04098958333333327,
+    "source_files": [
+      "1-105224-A-22.wav",
+      "1-47274-A-21.wav",
+      "5-244651-A-31.wav",
+      "2-125875-A-13.wav",
+      "1-82817-A-30.wav",
+      "5-238021-A-35.wav",
+      "1-51805-E-33.wav",
+      "5-202898-A-10.wav",
+      "5-233787-A-7.wav",
+      "4-197454-B-28.wav",
+      "2-61311-A-12.wav",
+      "3-126358-A-3.wav",
+      "3-159445-B-45.wav"
+    ],
+    "target_source": "1-105224-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0124.wav",
+    "pair_id": 20124,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        10.785438,
+        12.838375
+      ],
+      [
+        44.634125,
+        46.687063
+      ]
+    ],
+    "target_density": 0.06843125000000008,
+    "source_files": [
+      "2-50665-A-20.wav",
+      "3-153057-A-43.wav",
+      "5-186924-A-12.wav",
+      "4-212604-C-15.wav",
+      "1-7456-A-13.wav",
+      "2-128631-A-21.wav",
+      "5-195518-A-7.wav",
+      "3-119459-A-26.wav",
+      "4-201300-A-31.wav",
+      "2-50774-A-23.wav",
+      "5-180156-A-43.wav",
+      "5-161270-B-33.wav",
+      "3-170851-A-31.wav"
+    ],
+    "target_source": "2-50665-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0125.wav",
+    "pair_id": 20125,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        15.059688,
+        17.374938
+      ]
+    ],
+    "target_density": 0.03858750000000001,
+    "source_files": [
+      "5-249937-A-22.wav",
+      "1-38560-A-14.wav",
+      "4-204115-A-39.wav",
+      "1-30709-A-23.wav",
+      "2-70280-A-18.wav",
+      "4-160999-A-10.wav",
+      "4-179836-A-34.wav",
+      "1-9886-A-49.wav",
+      "3-164594-A-15.wav",
+      "5-221528-A-39.wav",
+      "3-71964-C-4.wav",
+      "1-73585-A-7.wav",
+      "1-56380-A-5.wav"
+    ],
+    "target_source": "5-249937-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0126.wav",
+    "pair_id": 20126,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        36.769937,
+        38.480938
+      ]
+    ],
+    "target_density": 0.028516683333333386,
+    "source_files": [
+      "4-189832-A-22.wav",
+      "3-164216-A-6.wav",
+      "5-257642-A-39.wav",
+      "4-197454-B-28.wav",
+      "3-151213-A-24.wav",
+      "3-144259-A-29.wav",
+      "1-54505-A-21.wav",
+      "2-73027-A-10.wav",
+      "2-84693-A-49.wav",
+      "3-155130-A-43.wav",
+      "4-218199-E-35.wav",
+      "1-49409-B-8.wav",
+      "1-54505-A-21.wav"
+    ],
+    "target_source": "4-189832-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0127.wav",
+    "pair_id": 20127,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        6.953688,
+        8.1575
+      ]
+    ],
+    "target_density": 0.02006353333333335,
+    "source_files": [
+      "2-107351-B-20.wav",
+      "3-151269-A-35.wav",
+      "1-103298-A-9.wav",
+      "3-149042-A-24.wav",
+      "1-57316-A-13.wav",
+      "1-36393-A-23.wav",
+      "5-259640-A-29.wav",
+      "3-145387-A-29.wav",
+      "4-130891-A-7.wav",
+      "4-111671-B-42.wav",
+      "1-29532-A-16.wav",
+      "2-32515-D-4.wav",
+      "5-210612-A-37.wav"
+    ],
+    "target_source": "2-107351-B-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0128.wav",
+    "pair_id": 20128,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        11.948688,
+        14.20475
+      ],
+      [
+        38.052687,
+        40.30875
+      ]
+    ],
+    "target_density": 0.0752020833333334,
+    "source_files": [
+      "1-110537-A-22.wav",
+      "5-185516-A-27.wav",
+      "3-127890-A-9.wav",
+      "1-72229-B-6.wav",
+      "1-24074-A-43.wav",
+      "4-164661-A-12.wav",
+      "5-233260-A-23.wav",
+      "5-244933-A-34.wav",
+      "4-163264-A-10.wav",
+      "4-213915-B-3.wav",
+      "3-101381-A-33.wav",
+      "5-188796-A-45.wav",
+      "3-127890-C-9.wav"
+    ],
+    "target_source": "1-110537-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0129.wav",
+    "pair_id": 20129,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        8.605875,
+        10.363375
+      ],
+      [
+        24.306313,
+        26.063813
+      ]
+    ],
+    "target_density": 0.05858333333333334,
+    "source_files": [
+      "2-68391-A-41.wav",
+      "1-56234-A-9.wav",
+      "5-257642-A-39.wav",
+      "1-155858-B-25.wav",
+      "2-61311-A-12.wav",
+      "3-160993-A-3.wav",
+      "4-145006-A-18.wav",
+      "4-204612-A-31.wav",
+      "2-119161-A-8.wav",
+      "5-223103-A-31.wav",
+      "4-164661-B-12.wav",
+      "4-188033-A-38.wav",
+      "4-165606-A-45.wav"
+    ],
+    "target_source": "2-68391-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0130.wav",
+    "pair_id": 20130,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        16.693313,
+        18.2975
+      ]
+    ],
+    "target_density": 0.02673644999999999,
+    "source_files": [
+      "3-123224-A-19.wav",
+      "3-93010-A-18.wav",
+      "5-179294-A-46.wav",
+      "5-197121-B-45.wav",
+      "2-131943-A-38.wav",
+      "4-204202-A-29.wav",
+      "1-40967-A-28.wav",
+      "2-109231-A-9.wav",
+      "5-177614-A-5.wav",
+      "5-248341-A-6.wav",
+      "2-89516-A-37.wav",
+      "1-7456-A-13.wav",
+      "1-18527-B-44.wav"
+    ],
+    "target_source": "3-123224-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0131.wav",
+    "pair_id": 20131,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        21.71325,
+        23.759438
+      ]
+    ],
+    "target_density": 0.03410313333333335,
+    "source_files": [
+      "3-144028-A-0.wav",
+      "5-238021-A-35.wav",
+      "4-210309-A-31.wav",
+      "3-126391-B-27.wav",
+      "1-155858-A-25.wav",
+      "3-152039-B-3.wav",
+      "1-62850-A-38.wav",
+      "3-104761-B-7.wav",
+      "1-172649-C-40.wav",
+      "3-163727-A-3.wav",
+      "4-182314-A-7.wav",
+      "3-155583-A-14.wav",
+      "5-248341-C-6.wav"
+    ],
+    "target_source": "3-144028-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0132.wav",
+    "pair_id": 20132,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        22.734375,
+        24.446313
+      ],
+      [
+        27.753875,
+        29.465812
+      ],
+      [
+        51.476375,
+        53.188313
+      ]
+    ],
+    "target_density": 0.08559688333333337,
+    "source_files": [
+      "4-207124-A-0.wav",
+      "1-85168-A-39.wav",
+      "5-209992-A-44.wav",
+      "4-191327-A-38.wav",
+      "1-33658-A-26.wav",
+      "5-237315-A-31.wav",
+      "1-23996-B-35.wav",
+      "5-257349-A-15.wav",
+      "1-59102-A-13.wav",
+      "2-91912-B-33.wav",
+      "5-257642-A-39.wav",
+      "4-123680-A-18.wav",
+      "3-170574-A-30.wav"
+    ],
+    "target_source": "4-207124-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0133.wav",
+    "pair_id": 20133,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        42.26025,
+        44.303125
+      ]
+    ],
+    "target_density": 0.034047916666666705,
+    "source_files": [
+      "4-157611-B-41.wav",
+      "3-125418-A-24.wav",
+      "2-102568-A-35.wav",
+      "3-101381-B-33.wav",
+      "1-23094-A-15.wav",
+      "1-21896-A-35.wav",
+      "1-103298-A-9.wav",
+      "3-20861-A-8.wav",
+      "1-15689-B-4.wav",
+      "3-150363-A-38.wav",
+      "1-49409-B-8.wav",
+      "4-250864-A-8.wav",
+      "2-135860-A-49.wav"
+    ],
+    "target_source": "4-157611-B-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0134.wav",
+    "pair_id": 20134,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        52.2835,
+        53.85675
+      ]
+    ],
+    "target_density": 0.02622083333333336,
+    "source_files": [
+      "5-234879-B-1.wav",
+      "2-209475-A-25.wav",
+      "1-39937-A-28.wav",
+      "2-82077-A-7.wav",
+      "2-75726-A-6.wav",
+      "5-253101-C-49.wav",
+      "5-242711-A-9.wav",
+      "1-18074-B-6.wav",
+      "1-72229-A-6.wav",
+      "5-179496-B-16.wav",
+      "5-117118-A-42.wav",
+      "5-242711-A-9.wav",
+      "1-31482-B-42.wav"
+    ],
+    "target_source": "5-234879-B-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0135.wav",
+    "pair_id": 20135,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        14.113062,
+        15.698
+      ]
+    ],
+    "target_density": 0.02641563333333335,
+    "source_files": [
+      "4-164021-A-1.wav",
+      "3-105235-A-7.wav",
+      "3-203375-A-39.wav",
+      "1-37226-A-29.wav",
+      "3-51731-A-42.wav",
+      "2-124564-A-15.wav",
+      "5-207781-A-17.wav",
+      "4-175846-A-43.wav",
+      "4-187769-A-14.wav",
+      "2-102568-A-35.wav",
+      "3-68630-A-40.wav",
+      "4-186936-A-44.wav",
+      "4-198962-A-25.wav"
+    ],
+    "target_source": "4-164021-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0136.wav",
+    "pair_id": 20136,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "chainsaw",
+    "annotations": [
+      [
+        14.067,
+        16.413125
+      ],
+      [
+        36.191375,
+        38.5375
+      ]
+    ],
+    "target_density": 0.07820416666666669,
+    "source_files": [
+      "2-50668-A-41.wav",
+      "5-203739-A-10.wav",
+      "2-60791-A-26.wav",
+      "4-167571-A-26.wav",
+      "3-154926-B-40.wav",
+      "3-115387-A-47.wav",
+      "2-102435-A-37.wav",
+      "3-134802-A-13.wav",
+      "2-102414-E-17.wav",
+      "2-70939-A-42.wav",
+      "2-102414-B-17.wav",
+      "3-182710-A-35.wav",
+      "5-243025-A-25.wav"
+    ],
+    "target_source": "2-50668-A-41.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0137.wav",
+    "pair_id": 20137,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        32.629875,
+        34.452562
+      ]
+    ],
+    "target_density": 0.030378116666666698,
+    "source_files": [
+      "3-144891-A-19.wav",
+      "2-130245-A-34.wav",
+      "5-177614-A-5.wav",
+      "3-253084-E-2.wav",
+      "4-130891-A-7.wav",
+      "2-52085-B-4.wav",
+      "5-251957-A-47.wav",
+      "1-72695-A-26.wav",
+      "2-120586-A-6.wav",
+      "3-107123-A-26.wav",
+      "2-173618-A-39.wav",
+      "4-204121-A-39.wav",
+      "3-151273-A-35.wav"
+    ],
+    "target_source": "3-144891-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0138.wav",
+    "pair_id": 20138,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        28.919062,
+        30.177312
+      ]
+    ],
+    "target_density": 0.020970833333333338,
+    "source_files": [
+      "3-124600-A-19.wav",
+      "2-130245-A-34.wav",
+      "5-161270-A-33.wav",
+      "3-182023-A-30.wav",
+      "1-69165-A-34.wav",
+      "1-76831-B-42.wav",
+      "2-32515-B-4.wav",
+      "5-244327-A-34.wav",
+      "2-109374-A-16.wav",
+      "4-102871-A-42.wav",
+      "3-92637-A-18.wav",
+      "1-68670-A-34.wav",
+      "1-22804-A-46.wav"
+    ],
+    "target_source": "3-124600-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0139.wav",
+    "pair_id": 20139,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        37.53825,
+        39.351125
+      ],
+      [
+        50.026562,
+        51.839438
+      ]
+    ],
+    "target_density": 0.06042918333333347,
+    "source_files": [
+      "5-234923-A-32.wav",
+      "3-154439-A-17.wav",
+      "5-187201-B-4.wav",
+      "5-244651-A-31.wav",
+      "4-163606-A-16.wav",
+      "1-51433-A-17.wav",
+      "5-202898-A-10.wav",
+      "4-187769-B-14.wav",
+      "1-51805-B-33.wav",
+      "5-233645-A-37.wav",
+      "3-139331-A-27.wav",
+      "1-119125-A-45.wav",
+      "1-52266-A-24.wav"
+    ],
+    "target_source": "5-234923-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0140.wav",
+    "pair_id": 20140,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        43.061937,
+        44.937125
+      ]
+    ],
+    "target_density": 0.031253133333333356,
+    "source_files": [
+      "5-200339-A-1.wav",
+      "4-205526-A-23.wav",
+      "1-88409-A-45.wav",
+      "3-155579-A-14.wav",
+      "3-163727-A-3.wav",
+      "3-161010-A-43.wav",
+      "1-21189-A-10.wav",
+      "5-193473-A-12.wav",
+      "5-171118-A-26.wav",
+      "1-85909-A-29.wav",
+      "4-156843-A-21.wav",
+      "5-193473-A-12.wav",
+      "1-47714-A-16.wav"
+    ],
+    "target_source": "5-200339-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0141.wav",
+    "pair_id": 20141,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        35.953375,
+        37.49725
+      ],
+      [
+        46.42925,
+        47.973125
+      ]
+    ],
+    "target_density": 0.051462499999999994,
+    "source_files": [
+      "4-172732-A-36.wav",
+      "4-180453-A-17.wav",
+      "5-251957-A-47.wav",
+      "2-79775-A-26.wav",
+      "4-175000-B-40.wav",
+      "5-220939-A-27.wav",
+      "2-103427-A-3.wav",
+      "3-103599-A-25.wav",
+      "5-260011-A-34.wav",
+      "4-188703-D-8.wav",
+      "1-15689-B-4.wav",
+      "3-164593-A-15.wav",
+      "4-167571-A-26.wav"
+    ],
+    "target_source": "4-172732-A-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0142.wav",
+    "pair_id": 20142,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        20.066688,
+        21.817812
+      ]
+    ],
+    "target_density": 0.029185400000000014,
+    "source_files": [
+      "2-122104-B-0.wav",
+      "5-185908-A-18.wav",
+      "5-250026-B-30.wav",
+      "2-84943-A-18.wav",
+      "2-82077-A-7.wav",
+      "4-181599-A-26.wav",
+      "3-157615-A-10.wav",
+      "3-105235-A-7.wav",
+      "3-147342-A-34.wav",
+      "4-143118-A-7.wav",
+      "4-176638-A-43.wav",
+      "1-172649-C-40.wav",
+      "2-78562-B-37.wav"
+    ],
+    "target_source": "2-122104-B-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0143.wav",
+    "pair_id": 20143,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        31.087062,
+        32.580062
+      ],
+      [
+        36.017938,
+        37.510937
+      ],
+      [
+        52.000937,
+        53.493938
+      ]
+    ],
+    "target_density": 0.07464999999999992,
+    "source_files": [
+      "3-152007-E-20.wav",
+      "5-210540-A-13.wav",
+      "4-186518-A-30.wav",
+      "5-241846-A-15.wav",
+      "4-183882-B-28.wav",
+      "5-253101-C-49.wav",
+      "1-15689-B-4.wav",
+      "3-203377-A-39.wav",
+      "2-32515-D-4.wav",
+      "3-246513-A-16.wav",
+      "1-81851-A-31.wav",
+      "4-210309-A-31.wav",
+      "5-256452-A-5.wav"
+    ],
+    "target_source": "3-152007-E-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0144.wav",
+    "pair_id": 20144,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        17.190313,
+        19.417562
+      ]
+    ],
+    "target_density": 0.037120816666666674,
+    "source_files": [
+      "5-208810-A-11.wav",
+      "4-251645-B-49.wav",
+      "2-87781-A-10.wav",
+      "5-204114-A-29.wav",
+      "3-110913-B-7.wav",
+      "2-109231-A-9.wav",
+      "2-77347-A-46.wav",
+      "1-36164-A-26.wav",
+      "5-242711-A-9.wav",
+      "2-28314-B-12.wav",
+      "2-122066-B-45.wav",
+      "5-209719-A-24.wav",
+      "2-83270-A-13.wav"
+    ],
+    "target_source": "5-208810-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0145.wav",
+    "pair_id": 20145,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "fireworks",
+    "annotations": [
+      [
+        42.90325,
+        44.260438
+      ]
+    ],
+    "target_density": 0.022619800000000013,
+    "source_files": [
+      "2-117615-D-48.wav",
+      "2-102414-F-17.wav",
+      "2-107228-B-44.wav",
+      "2-70052-A-42.wav",
+      "5-215179-A-13.wav",
+      "1-34094-B-5.wav",
+      "5-127990-A-2.wav",
+      "2-205966-A-16.wav",
+      "5-238938-A-27.wav",
+      "2-65747-A-12.wav",
+      "2-72268-A-6.wav",
+      "3-151212-A-24.wav",
+      "5-213836-B-9.wav"
+    ],
+    "target_source": "2-117615-D-48.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0146.wav",
+    "pair_id": 20146,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "vacuum cleaner",
+    "annotations": [
+      [
+        16.177875,
+        18.014813
+      ],
+      [
+        37.111688,
+        38.948625
+      ],
+      [
+        46.062562,
+        47.8995
+      ]
+    ],
+    "target_density": 0.09184688333333338,
+    "source_files": [
+      "2-122820-B-36.wav",
+      "4-164243-A-26.wav",
+      "5-232272-A-44.wav",
+      "4-125825-A-46.wav",
+      "5-205898-A-40.wav",
+      "5-177957-E-40.wav",
+      "2-37806-C-40.wav",
+      "2-108763-A-9.wav",
+      "4-209698-A-37.wav",
+      "1-50625-A-17.wav",
+      "1-51147-A-25.wav",
+      "3-164216-A-6.wav",
+      "4-161127-A-10.wav"
+    ],
+    "target_source": "2-122820-B-36.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0147.wav",
+    "pair_id": 20147,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "crying baby",
+    "annotations": [
+      [
+        15.988687,
+        18.1735
+      ]
+    ],
+    "target_density": 0.03641355,
+    "source_files": [
+      "4-185575-A-20.wav",
+      "2-102414-A-17.wav",
+      "5-261325-A-9.wav",
+      "3-158476-A-12.wav",
+      "1-31251-B-6.wav",
+      "1-51433-A-17.wav",
+      "3-156581-B-14.wav",
+      "1-85168-A-39.wav",
+      "5-220027-A-21.wav",
+      "2-138465-A-43.wav",
+      "5-253094-C-49.wav",
+      "3-141559-A-45.wav",
+      "4-207116-A-23.wav"
+    ],
+    "target_source": "4-185575-A-20.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0148.wav",
+    "pair_id": 20148,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        4.1345,
+        5.557625
+      ]
+    ],
+    "target_density": 0.023718749999999997,
+    "source_files": [
+      "3-166422-A-11.wav",
+      "4-176914-A-23.wav",
+      "3-65748-A-12.wav",
+      "5-218981-A-30.wav",
+      "4-188191-C-29.wav",
+      "4-183882-A-28.wav",
+      "1-80841-A-13.wav",
+      "2-119161-B-8.wav",
+      "2-130245-A-34.wav",
+      "3-145387-A-29.wav",
+      "2-108767-C-9.wav",
+      "1-50661-A-44.wav",
+      "2-79775-A-26.wav"
+    ],
+    "target_source": "3-166422-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0149.wav",
+    "pair_id": 20149,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "dog",
+    "annotations": [
+      [
+        21.148812,
+        23.217562
+      ]
+    ],
+    "target_density": 0.03447916666666669,
+    "source_files": [
+      "4-194754-A-0.wav",
+      "4-218304-B-25.wav",
+      "1-260640-A-2.wav",
+      "1-62565-A-44.wav",
+      "5-186924-A-12.wav",
+      "4-172500-D-27.wav",
+      "4-197454-A-28.wav",
+      "2-82077-A-7.wav",
+      "5-250026-A-30.wav",
+      "2-91912-A-33.wav",
+      "2-80844-A-13.wav",
+      "5-186924-A-12.wav",
+      "3-197408-B-8.wav"
+    ],
+    "target_source": "4-194754-A-0.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0150.wav",
+    "pair_id": 20150,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        16.126562,
+        17.89625
+      ],
+      [
+        49.117688,
+        50.887375
+      ]
+    ],
+    "target_density": 0.05898958333333327,
+    "source_files": [
+      "1-40730-A-1.wav",
+      "2-141563-A-39.wav",
+      "1-53467-A-47.wav",
+      "3-151255-A-28.wav",
+      "1-172649-A-40.wav",
+      "5-241846-A-15.wav",
+      "2-109374-A-16.wav",
+      "3-147965-A-12.wav",
+      "1-64473-A-45.wav",
+      "5-216213-A-13.wav",
+      "1-30709-A-23.wav",
+      "2-188822-D-40.wav",
+      "4-196672-A-8.wav"
+    ],
+    "target_source": "1-40730-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0151.wav",
+    "pair_id": 20151,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        30.521937,
+        32.902875
+      ]
+    ],
+    "target_density": 0.03968230000000001,
+    "source_files": [
+      "2-95035-A-1.wav",
+      "2-54962-A-23.wav",
+      "3-108677-A-18.wav",
+      "3-117504-A-16.wav",
+      "3-98771-A-18.wav",
+      "3-154378-A-30.wav",
+      "2-73027-A-10.wav",
+      "2-107228-B-44.wav",
+      "3-156558-A-21.wav",
+      "4-218199-D-35.wav",
+      "3-182710-A-35.wav",
+      "4-198841-A-37.wav",
+      "2-95567-A-23.wav"
+    ],
+    "target_source": "2-95035-A-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0152.wav",
+    "pair_id": 20152,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        15.663875,
+        17.332625
+      ],
+      [
+        54.899437,
+        56.568188
+      ]
+    ],
+    "target_density": 0.05562501666666666,
+    "source_files": [
+      "1-43760-A-11.wav",
+      "1-17970-A-4.wav",
+      "4-161103-A-47.wav",
+      "3-146873-A-24.wav",
+      "1-26143-A-21.wav",
+      "2-209478-A-25.wav",
+      "1-21189-A-10.wav",
+      "4-250864-A-8.wav",
+      "1-39937-A-28.wav",
+      "1-18757-A-4.wav",
+      "3-197408-B-8.wav",
+      "3-93010-A-18.wav",
+      "5-209992-A-44.wav"
+    ],
+    "target_source": "1-43760-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0153.wav",
+    "pair_id": 20153,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "thunderstorm",
+    "annotations": [
+      [
+        33.483875,
+        35.681812
+      ],
+      [
+        52.187312,
+        54.38525
+      ]
+    ],
+    "target_density": 0.0732645833333334,
+    "source_files": [
+      "2-104105-A-19.wav",
+      "1-36397-A-23.wav",
+      "2-83667-A-34.wav",
+      "1-75162-A-9.wav",
+      "2-209472-A-25.wav",
+      "2-144137-A-43.wav",
+      "5-150409-A-42.wav",
+      "4-207116-A-23.wav",
+      "5-218981-A-30.wav",
+      "1-103995-A-30.wav",
+      "1-23996-A-35.wav",
+      "3-174866-A-29.wav",
+      "1-62565-A-44.wav"
+    ],
+    "target_source": "2-104105-A-19.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0154.wav",
+    "pair_id": 20154,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        47.679437,
+        48.974063
+      ]
+    ],
+    "target_density": 0.021577100000000016,
+    "source_files": [
+      "1-79711-A-32.wav",
+      "2-102568-A-35.wav",
+      "4-171706-A-23.wav",
+      "1-12654-A-15.wav",
+      "1-18074-B-6.wav",
+      "2-102568-A-35.wav",
+      "1-38560-A-14.wav",
+      "3-148330-A-21.wav",
+      "1-20545-A-28.wav",
+      "1-54752-A-18.wav",
+      "3-68630-A-40.wav",
+      "3-182710-B-35.wav",
+      "3-117883-A-37.wav"
+    ],
+    "target_source": "1-79711-A-32.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0155.wav",
+    "pair_id": 20155,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "clapping",
+    "annotations": [
+      [
+        12.672313,
+        14.9405
+      ],
+      [
+        27.276,
+        29.544187
+      ],
+      [
+        31.672375,
+        33.940562
+      ]
+    ],
+    "target_density": 0.11340935000000002,
+    "source_files": [
+      "3-197435-A-22.wav",
+      "4-125929-A-40.wav",
+      "3-120526-B-37.wav",
+      "4-121532-A-42.wav",
+      "2-166644-C-2.wav",
+      "5-191497-A-33.wav",
+      "1-49409-B-8.wav",
+      "5-238021-A-35.wav",
+      "1-155858-A-25.wav",
+      "3-127890-B-9.wav",
+      "2-96654-A-47.wav",
+      "2-182508-A-8.wav",
+      "1-62565-A-44.wav"
+    ],
+    "target_source": "3-197435-A-22.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0156.wav",
+    "pair_id": 20156,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        44.005313,
+        45.753625
+      ]
+    ],
+    "target_density": 0.02913853333333331,
+    "source_files": [
+      "2-132157-B-11.wav",
+      "3-151206-A-23.wav",
+      "2-120587-A-6.wav",
+      "1-56380-B-5.wav",
+      "5-177957-D-40.wav",
+      "5-156026-A-4.wav",
+      "2-110613-A-13.wav",
+      "1-79146-A-29.wav",
+      "5-215179-A-13.wav",
+      "5-244651-A-31.wav",
+      "1-18074-B-6.wav",
+      "2-70938-A-42.wav",
+      "2-70367-A-33.wav"
+    ],
+    "target_source": "2-132157-B-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0157.wav",
+    "pair_id": 20157,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        27.563562,
+        29.4325
+      ]
+    ],
+    "target_density": 0.031148966666666666,
+    "source_files": [
+      "2-102852-A-11.wav",
+      "5-209992-B-44.wav",
+      "2-166644-B-2.wav",
+      "2-57191-A-46.wav",
+      "2-209473-A-25.wav",
+      "2-61618-A-46.wav",
+      "4-188191-C-29.wav",
+      "4-163606-A-16.wav",
+      "1-54918-A-14.wav",
+      "3-117504-A-16.wav",
+      "1-45641-A-27.wav",
+      "2-43806-A-42.wav",
+      "1-47709-A-16.wav"
+    ],
+    "target_source": "2-102852-A-11.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0158.wav",
+    "pair_id": 20158,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "rooster",
+    "annotations": [
+      [
+        52.049062,
+        53.455562
+      ]
+    ],
+    "target_density": 0.023441666666666687,
+    "source_files": [
+      "2-95258-B-1.wav",
+      "5-213293-A-23.wav",
+      "1-74517-A-37.wav",
+      "5-237315-A-31.wav",
+      "1-72195-A-37.wav",
+      "1-31482-B-42.wav",
+      "5-198891-C-8.wav",
+      "5-141683-A-35.wav",
+      "3-157492-A-45.wav",
+      "5-253094-C-49.wav",
+      "2-81970-A-7.wav",
+      "4-99644-A-4.wav",
+      "5-133989-A-42.wav"
+    ],
+    "target_source": "2-95258-B-1.wav",
+    "source_dataset": "ESC-50"
+  },
+  {
+    "audio_path": "/root/autodl-tmp/SpotSound-ICASSP/autoresearch/06_experiments/data/longneedle_esc50_v1/audio/longneedle_0159.wav",
+    "pair_id": 20159,
+    "variant": 0,
+    "template": "longneedle_ordinary",
+    "relation": "target",
+    "caption": "keyboard typing",
+    "annotations": [
+      [
+        26.100438,
+        28.414125
+      ]
+    ],
+    "target_density": 0.03856144999999997,
+    "source_files": [
+      "1-61212-A-32.wav",
+      "4-175025-A-34.wav",
+      "3-203371-A-39.wav",
+      "1-223162-A-25.wav",
+      "4-218199-B-35.wav",
+      "3-95698-A-5.wav",
+      "5-237499-A-4.wav",
+      "4-155670-A-26.wav",
+      "2-95567-A-23.wav",
+      "3-146186-A-44.wav",
+      "2-32834-A-4.wav",
+      "5-171118-A-26.wav",
+      "3-143560-A-47.wav"
+    ],
+    "target_source": "1-61212-A-32.wav",
+    "source_dataset": "ESC-50"
+  }
+]

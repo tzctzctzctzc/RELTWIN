@@ -1,0 +1,12 @@
+{
+  "model": "sft",
+  "manifest_sha256": "790e606c53f1a0e732854c506083003dbc9a8bbdd0f44fe363f4e2031ef86f18",
+  "predictions_sha256": "8ff897e9934a5378b27447c4ca0915f66ffc0e9e1732cace89b1230e8619dc9f",
+  "query_count": 600,
+  "pair_count": 300,
+  "mIoU": 38.89069091664597,
+  "PairAcc@0.5": 2.666666666666667,
+  "SwapError": 78.33333333333333,
+  "JointPairAcc@0.5": 2.666666666666667,
+  "same_answer_pairs": 160
+}

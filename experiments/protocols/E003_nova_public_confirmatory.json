@@ -1,0 +1,43 @@
+{
+  "experiment_id": "E003_nova_public_confirmatory",
+  "status": "locked_before_public_feature_extraction",
+  "date": "2026-08-31",
+  "benchmark": {
+    "name": "SpotSound-Bench",
+    "rows": 400,
+    "annotation_sha256": "b914d9fb4035913cb42167380f12b7cc1f2f79a3ad4afd76fe1c2b7ba7ac77a9"
+  },
+  "candidate_predictions": {
+    "official": "7835b9c25c34ec0a423b242adda99ba2acdef441cc85c21fa103cbd4dbf07430",
+    "sft": "bbfe6aa6945c98d67444748ab7bd7a11c50e636f657f754da4fa4b60eea7a61f",
+    "setpo": "55958c46713509086e14b6007db38ffecb46facd94a029bc0badbbc9bc1c4e7b"
+  },
+  "frozen_verifier": "official_SpotSound-A",
+  "routers": {
+    "primary_nova_necessity": {
+      "features": ["complement_no"],
+      "sha256": "7dc22b8d0e9046c49f01da7d556504df1e8de3c2690dbfc3c710e0964696dad7",
+      "development_heldout_mIoU_percent": 81.13735297420189
+    },
+    "secondary_full_score_seeking": {
+      "features": ["component_mean", "component_min", "complement_no", "duration_fraction", "interval_count"],
+      "sha256": "02ece79019cfb9117362c1a32fa7b1e9e8a49a2e8975e2dd42b642437afba662",
+      "development_heldout_mIoU_percent": 82.64792484097737
+    },
+    "ablation_geometry_only": {
+      "features": ["duration_fraction", "interval_count"],
+      "sha256": "04d8759aef9860456fb9d773c9c988ab524bf2b6b1b98bfed030dfff9176896b",
+      "development_heldout_mIoU_percent": 82.64792484097737
+    }
+  },
+  "evaluation": {
+    "primary_metric": "temporal-set mIoU under the frozen 400-row same-harness evaluator",
+    "secondary_metrics": ["R1@0.3", "R1@0.5", "R1@0.7", "Auto-AEG-compatible mIoU"],
+    "no_public_use": "Public labels and public feature distributions may not change candidates, coefficients, normalization, thresholds, or router choice."
+  },
+  "decision_rule": {
+    "new_point_estimate_required_above_percent": 59.233805308820344,
+    "novelty_supported_only_if_primary_nova_necessity_exceeds_best_single_candidate": true,
+    "full_router_gain_must_be_reported_with_geometry_only_ablation": true
+  }
+}

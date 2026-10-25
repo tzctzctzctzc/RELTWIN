@@ -1,0 +1,96 @@
+{
+  "retrieved_on": "2026-10-24",
+  "checkpoint_sha256": "2b1ae8c344175afcf5116f603747c446ce6f8e46f5fa991212bdc909ccf248b7",
+  "files": [
+    {
+      "source": "outputs/reltwin_review_controls_20260912/no_exchange_seed0/public_summary.json",
+      "target": "results/paper_spotsound/spotsound400/summary.json",
+      "sha256": "05c3e974f3c47423d266447afdd0b7eaa7a39c686e4ede61e032592cb3e2668d",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_review_controls_20260912/no_exchange_seed0/public_predictions.jsonl",
+      "target": "results/paper_spotsound/spotsound400/predictions.jsonl",
+      "sha256": "c4c9a5a25d68afb6b15323d37a2593501236c495d83d73a0c1e5ba86bb996d7c",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_review_controls_20260912/no_exchange_seed0/train_summary.json",
+      "target": "results/paper_spotsound/train_summary.json",
+      "sha256": "8a106f1c39b42edef248c90d6bb032afb44b6f5ae88112657e3cf10eff8093d4",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_crossbench_direct_20260915/clotho_full6649/summary.json",
+      "target": "results/paper_spotsound/clotho6649/summary.json",
+      "sha256": "98dcd7fbd91227c3c967fca9d6a197ac9a80133e3a4dc493514aa2eee409245c",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_crossbench_direct_20260915/clotho_full6649/predictions.jsonl",
+      "target": "results/paper_spotsound/clotho6649/predictions.jsonl",
+      "sha256": "0c0d814bcdeb6eaf9b7ca083ad23bbb206853b2760da63cf6b00a3389002c799",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_crossbench_direct_20260915/unav100/summary.json",
+      "target": "results/paper_spotsound/unav100/summary.json",
+      "sha256": "b0a8d8eac3752b411f42840cfd01d7b2819841cc4ecb8e5235d6c200d2c06943",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_crossbench_direct_20260915/unav100/metrics.json",
+      "target": "results/paper_spotsound/unav100/metrics.json",
+      "sha256": "6515074247fb9477bac543376828f5996374375358f504d025389f4c5781f943",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_crossbench_direct_20260915/unav100/predictions.jsonl",
+      "target": "results/paper_spotsound/unav100/predictions.jsonl",
+      "sha256": "9e17da179540c8dad49a49aac947a1a018b6e2c95582d10f815aadd9bb3bc6ef",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/reltwin_review_controls_20260912/no_exchange_seed0/adapter/adapter_config.json",
+      "target": "checkpoints/spotsound/adapter/adapter_config.json",
+      "sha256": "18286dd9d5474ca331eedf290657fffb16a5d016ccab34fd449c199ae6f12a79",
+      "terminal_newline_added": true
+    },
+    {
+      "source": "outputs/spotsound_table2_300/official.summary.json",
+      "target": "results/paper_spotsound/table2_official/summary.json",
+      "sha256": "d1f7468471d22d2a1a447bf41d0663c5bec5435f81b1b3d526ccd701ff178cc0",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/spotsound_table2_300/official.predictions.jsonl",
+      "target": "results/paper_spotsound/table2_official/predictions.jsonl",
+      "sha256": "bfeefad5970bd7f0da41ab47d622e4a62b3946a03ec866d28d77d80f55edd019",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/spotsound_table2_300/sft256.summary.json",
+      "target": "results/paper_spotsound/table2_sft256/summary.json",
+      "sha256": "e1aed314956e3ec059b7caa2f7ae175a8cc837c72de6efeee050d4c1bd15a522",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/spotsound_table2_300/sft256.predictions.jsonl",
+      "target": "results/paper_spotsound/table2_sft256/predictions.jsonl",
+      "sha256": "e3e8f974534ee55e8b7c6c719dc7f15a9bef0efb1617d2bbf7a8a8efc936254a",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/spotsound_table2_300/candidate256.summary.json",
+      "target": "results/paper_spotsound/table2_candidate256/summary.json",
+      "sha256": "6f698362932efa26bab4fc79caf8878ab08d24d3c5ac4b1109f9b20aa285c53c",
+      "terminal_newline_added": false
+    },
+    {
+      "source": "outputs/spotsound_table2_300/candidate256.predictions.jsonl",
+      "target": "results/paper_spotsound/table2_candidate256/predictions.jsonl",
+      "sha256": "f9a9810ca502075f7a6ac7f477a471e95bf0a437d0c26cf2c8c9ca2bb686ee78",
+      "terminal_newline_added": false
+    }
+  ]
+}

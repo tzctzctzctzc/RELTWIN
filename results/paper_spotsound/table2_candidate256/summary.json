@@ -1,0 +1,17 @@
+{
+  "base": "/root/autodl-tmp/SpotSound-ICASSP/models/audio-flamingo-3-hf",
+  "adapter": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_review_controls_20260912/no_exchange_seed0/adapter",
+  "adapter_sha256": "2b1ae8c344175afcf5116f603747c446ce6f8e46f5fa991212bdc909ccf248b7",
+  "delta": null,
+  "delta_report": null,
+  "torch": "2.8.0+cu128",
+  "device": "NVIDIA GeForce RTX 4080 SUPER",
+  "prompt_mode": "spotsound",
+  "load_seconds": 21.132782420143485,
+  "expected_count": 600,
+  "completed_count": 600,
+  "R1@0.3": 97.5,
+  "R1@0.5": 90.0,
+  "mIoU": 87.69898299251705,
+  "mean_inference_seconds": 0.6820093230903148
+}

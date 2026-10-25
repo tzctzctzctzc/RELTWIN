@@ -1,0 +1,49 @@
+{
+  "predictions": "/root/autodl-tmp/SpotSound-ICASSP/outputs/reltwin_crossbench_direct_20260915/unav100/predictions.jsonl",
+  "scale": "percent",
+  "records": 100,
+  "present_records": 100,
+  "absent_records": 0,
+  "multi_ground_truth_records": 0,
+  "multi_prediction_records": 0,
+  "parser_audit": {
+    "spotsound_raw_nonempty": 100,
+    "auto_aeg_raw_nonempty": 0,
+    "canonical_raw_nonempty": 100
+  },
+  "spotsound_protocol": {
+    "mIoU": 74.03427211227492,
+    "R1@0.3": 89.0,
+    "R1@0.5": 79.0
+  },
+  "auto_aeg_core": {
+    "mIoU": 74.03427211227492,
+    "R_IoU@0.3": 89.0,
+    "R_IoU@0.5": 79.0,
+    "R_IoU@0.7": 73.0,
+    "All_R_IoU@0.3": 89.0,
+    "All_R_IoU@0.5": 79.0,
+    "All_R_IoU@0.7": 73.0,
+    "seg_F1": 80.45519013138424,
+    "ev_F1_public_code_onset_0.5s": 56.99999999999999
+  },
+  "paper_faithful_symmetric": {
+    "soft_P_IoU": 74.03427211227492,
+    "soft_R_IoU": 74.03427211227492,
+    "soft_F1_IoU": 74.03427211227492,
+    "P_IoU@0.3": 89.0,
+    "P_IoU@0.5": 79.0,
+    "P_IoU@0.7": 73.0,
+    "F1_IoU@0.3": 89.0,
+    "F1_IoU@0.5": 79.0,
+    "F1_IoU@0.7": 73.0,
+    "event_F1_IoU@0.3": 89.0,
+    "event_F1_IoU@0.5": 79.0,
+    "event_F1_IoU@0.7": 73.0
+  },
+  "rejection": {
+    "correct_rejections": 0,
+    "false_activations": 0,
+    "FPR_absent": null
+  }
+}

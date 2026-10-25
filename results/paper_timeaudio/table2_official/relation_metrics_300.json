@@ -1,0 +1,12 @@
+{
+  "model": "official",
+  "manifest_sha256": "790e606c53f1a0e732854c506083003dbc9a8bbdd0f44fe363f4e2031ef86f18",
+  "predictions_sha256": "7192de56632e657178dfa5f1df13febe0b3e4070fc29f32a9cc29a5e61668ecd",
+  "query_count": 600,
+  "pair_count": 300,
+  "mIoU": 40.22714463747023,
+  "PairAcc@0.5": 0.0,
+  "SwapError": 83.66666666666667,
+  "JointPairAcc@0.5": 0.0,
+  "same_answer_pairs": 67
+}

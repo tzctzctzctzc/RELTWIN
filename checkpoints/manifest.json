@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "release": "reltwin-paper",
+  "paper_commit": "652c5cf420b1c0d5ab63d1620ab826a466bc00b6",
+  "files": [
+    {
+      "path": "checkpoints/spotsound/adapter/adapter_model.safetensors",
+      "bytes": 80797976,
+      "sha256": "2b1ae8c344175afcf5116f603747c446ce6f8e46f5fa991212bdc909ccf248b7"
+    },
+    {
+      "path": "checkpoints/spotsound/adapter/adapter_config.json",
+      "bytes": 4337,
+      "sha256": "7df7d0101bf8743eb3d299c2bfb5491934a097cede4e406b5ae7570eec7a28dc"
+    },
+    {
+      "path": "checkpoints/timeaudio/delta.pt",
+      "bytes": 127124862,
+      "sha256": "0979e739e65a61fc105e853d6f1f77bc6f6a234d7d976439e6d5c3df11d59251"
+    }
+  ],
+  "results": {
+    "spotsound": "results/paper_spotsound",
+    "timeaudio": "results/paper_timeaudio"
+  },
+  "profiles": "configs/release_profiles.json"
+}

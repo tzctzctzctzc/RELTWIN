@@ -1,0 +1,213 @@
+{
+  "status": "diagnostic_only",
+  "groups": 4,
+  "comparisons": 8,
+  "accuracies": {
+    "component_mean": 0.875,
+    "component_min": 0.875,
+    "complement_no": 1.0,
+    "mean_plus_complement": 0.875,
+    "min_plus_complement": 0.875
+  },
+  "ties": {
+    "component_mean": 0,
+    "component_min": 0,
+    "complement_no": 0,
+    "mean_plus_complement": 0,
+    "min_plus_complement": 0
+  },
+  "rows": [
+    {
+      "group_index": 0,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby, and then dog",
+      "correct": {
+        "component_mean": 1.8750144035147969,
+        "component_min": 1.8750144035147969,
+        "complement_no": -1.6562551388633437,
+        "mean_plus_complement": 0.21875926465145312,
+        "min_plus_complement": 0.21875926465145312,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.656255377427442,
+        "component_min": 1.656255377427442,
+        "complement_no": -1.9062654380395543,
+        "mean_plus_complement": -0.2500100606121123,
+        "min_plus_complement": -0.2500100606121123,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 0,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog, and then crying baby",
+      "correct": {
+        "component_mean": 1.7187737677013502,
+        "component_min": 1.7187737677013502,
+        "complement_no": -1.6250101492041722,
+        "mean_plus_complement": 0.09376361849717796,
+        "min_plus_complement": 0.09376361849717796,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6250071392278187,
+        "component_min": 1.6250071392278187,
+        "complement_no": -1.687524908425985,
+        "mean_plus_complement": -0.0625177691981662,
+        "min_plus_complement": -0.0625177691981662,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 1,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby, and then dog",
+      "correct": {
+        "component_mean": 1.875004419722245,
+        "component_min": 1.875004419722245,
+        "complement_no": -1.531253611203283,
+        "mean_plus_complement": 0.343750808518962,
+        "min_plus_complement": 0.343750808518962,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.562503716442734,
+        "component_min": 1.562503716442734,
+        "complement_no": -1.875004419722245,
+        "mean_plus_complement": -0.31250070327951107,
+        "min_plus_complement": -0.31250070327951107,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 1,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog, and then crying baby",
+      "correct": {
+        "component_mean": 1.6562610993278213,
+        "component_min": 1.6562610993278213,
+        "complement_no": -1.562502107466571,
+        "mean_plus_complement": 0.09375899186125025,
+        "min_plus_complement": 0.09375899186125025,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.562502107466571,
+        "component_min": 1.562502107466571,
+        "complement_no": -1.6875110504915938,
+        "mean_plus_complement": -0.12500894302502275,
+        "min_plus_complement": -0.12500894302502275,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 2,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby followed by dog",
+      "correct": {
+        "component_mean": 1.9375078616576502,
+        "component_min": 1.9375078616576502,
+        "complement_no": -1.7187526974303182,
+        "mean_plus_complement": 0.218755164227332,
+        "min_plus_complement": 0.218755164227332,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.7187526974303182,
+        "component_min": 1.7187526974303182,
+        "complement_no": -1.937507384820492,
+        "mean_plus_complement": -0.21875468739017379,
+        "min_plus_complement": -0.21875468739017379,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 2,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog followed by crying baby",
+      "correct": {
+        "component_mean": 1.7187675389286596,
+        "component_min": 1.7187675389286596,
+        "complement_no": -1.7500099692988442,
+        "mean_plus_complement": -0.031242430370184593,
+        "min_plus_complement": -0.031242430370184593,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.781259588577086,
+        "component_min": 1.781259588577086,
+        "complement_no": -1.7500208173441933,
+        "mean_plus_complement": 0.03123877123289276,
+        "min_plus_complement": 0.03123877123289276,
+        "duration_fraction": 0.37962962962962965,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 3,
+      "pair_id": 10000,
+      "relation": "AB",
+      "query": "crying baby followed by dog",
+      "correct": {
+        "component_mean": 1.9062520866573323,
+        "component_min": 1.9062520866573323,
+        "complement_no": -1.593751735665137,
+        "mean_plus_complement": 0.3125003509921953,
+        "min_plus_complement": 0.3125003509921953,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.5937515868572518,
+        "component_min": 1.5937515868572518,
+        "complement_no": -1.9062520866573323,
+        "mean_plus_complement": -0.31250049980008043,
+        "min_plus_complement": -0.31250049980008043,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      }
+    },
+    {
+      "group_index": 3,
+      "pair_id": 10000,
+      "relation": "BA",
+      "query": "dog followed by crying baby",
+      "correct": {
+        "component_mean": 1.7500067507644417,
+        "component_min": 1.7500067507644417,
+        "complement_no": -1.6875016925041564,
+        "mean_plus_complement": 0.0625050582602853,
+        "min_plus_complement": 0.0625050582602853,
+        "duration_fraction": 0.35148514851485146,
+        "interval_count": 1.0
+      },
+      "wrong": {
+        "component_mean": 1.6875016925041564,
+        "component_min": 1.6875016925041564,
+        "complement_no": -1.7500067507644417,
+        "mean_plus_complement": -0.0625050582602853,
+        "min_plus_complement": -0.0625050582602853,
+        "duration_fraction": 0.3514851485148515,
+        "interval_count": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "audit_date": "2026-08-31",
+  "benchmark_scope": "SpotSound-Bench v2, 400 audio-query-timestamp rows",
+  "strongest_published_result_found": {
+    "system": "SpotSound-A",
+    "paper": "https://arxiv.org/abs/2604.13023v2",
+    "R1@0.3_percent": 76.5,
+    "R1@0.5_percent": 59.5,
+    "mIoU_percent": 57.9
+  },
+  "same_harness_reference": {
+    "system": "official SpotSound-A checkpoint",
+    "R1@0.3_percent": 77.0,
+    "R1@0.5_percent": 60.75,
+    "mIoU_percent": 58.317225,
+    "evaluator": "reconstructed from the released response format and paper metric definition"
+  },
+  "follow_up_search": {
+    "outcome": "No later paper reporting SpotSound-Bench numbers was found in the searched web/arXiv results.",
+    "qualification": "This is a dated literature audit, not proof that no unpublished or unindexed result exists."
+  },
+  "previous_locked_result": {
+    "system": "RelTwin-RBEE plus SetPO",
+    "seeds": 3,
+    "mIoU_mean_percent": 59.192659,
+    "best_single_seed_mIoU_percent": 59.233805
+  },
+  "our_locked_result": {
+    "system": "E004 LongNeedle-calibrated NOVA full router",
+    "deterministic": true,
+    "mIoU_percent": 59.328548,
+    "R1@0.3_percent": 78.75,
+    "R1@0.5_percent": 62.25,
+    "mIoU_delta_vs_previous_best_single_points": 0.094743,
+    "paired_mIoU_ci95_points": [-0.706133, 0.926146],
+    "p_nonpositive": 0.41478,
+    "public_iteration_is_pristine_confirmatory": false
+  },
+  "claim_rule": "A new open-extra-data, same-harness point-estimate SOTA must exceed the published number, the same-harness official checkpoint, and every earlier audited repository result under the 400-row v2 protocol; it must not be described as a same-training-data comparison.",
+  "decision": "The E004 point-estimate rule passes. The paired mIoU interval includes zero, so claims must not say statistically significant. E003 public aggregates were observed before E004, so the E004 rerun must also be described as iterative rather than pristine confirmatory evidence."
+}

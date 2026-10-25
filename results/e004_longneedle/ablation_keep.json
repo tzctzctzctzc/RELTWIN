@@ -1,0 +1,74 @@
+{
+  "status": "independent_development_only",
+  "partition_sizes": {
+    "train": 76,
+    "calibration": 41,
+    "heldout": 43
+  },
+  "calibration": {
+    "rows": 41,
+    "official_mIoU_percent": 24.29415898629038,
+    "router_mIoU_percent": 30.46425772769941,
+    "oracle_mIoU_percent": 31.07853287685969,
+    "oracle_capture": 0.9094573561144447,
+    "mean_downside_points": 0.1777607234356271,
+    "mean_upside_points": 6.347859464844661,
+    "regressed_rows": 3,
+    "improved_rows": 15,
+    "selection_counts": {
+      "official": 29,
+      "sft": 11,
+      "setpo": 1
+    }
+  },
+  "heldout": {
+    "rows": 43,
+    "official_mIoU_percent": 22.153355826652298,
+    "router_mIoU_percent": 23.386662033594614,
+    "oracle_mIoU_percent": 25.096758271962173,
+    "oracle_capture": 0.4190069927092403,
+    "mean_downside_points": 1.3011192680208985,
+    "mean_upside_points": 2.5344254749632142,
+    "regressed_rows": 4,
+    "improved_rows": 8,
+    "selection_counts": {
+      "official": 20,
+      "sft": 18,
+      "setpo": 5
+    }
+  },
+  "heldout_candidate_mIoU_percent": {
+    "official": 23.333792302125765,
+    "sft": 20.730688145930646,
+    "setpo": 22.153355826652298
+  },
+  "gate": {
+    "min_heldout_capture": 0.2,
+    "requires_router_above_best_single": true,
+    "passed": true
+  },
+  "model": {
+    "method": "relative_ridge_with_official_fallback",
+    "feature_names": [
+      "component_mean",
+      "component_min"
+    ],
+    "official": "setpo",
+    "mean": [
+      -0.08888432017543861,
+      -0.140625
+    ],
+    "scale": [
+      3.352020866689358,
+      3.4159405401512313
+    ],
+    "weights": [
+      -0.016363208841553588,
+      0.03364239448279498,
+      0.03330620078587937
+    ],
+    "alpha": 100.0,
+    "threshold": -0.016573334786279266,
+    "split": "sha256(pair_id|template|variant) mod 4; train={0,1}, calibration=2, heldout=3"
+  }
+}

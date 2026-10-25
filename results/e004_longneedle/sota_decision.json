@@ -1,0 +1,54 @@
+{
+  "experiment": "E004_longneedle_anchor_pilot",
+  "system": "NOVA full-feature SetPO-anchor router",
+  "benchmark_rows": 400,
+  "selection_is_label_free": true,
+  "artifact_sha256": {
+    "development_manifest": "ddd333ea1c31a3a9de86239bc7dff012d167f399d77040976b22881170551a62",
+    "router": "59a756c59f3aef4554a9bce68e05b1fd8182ab836b193750c9af42d437824ff3",
+    "public_features": "c1e867563fef95656973d2e1131782cfe2970a0be916c27a5377f10c36229cfe",
+    "public_predictions": "61b81927dc7491e509685f7720a8f3af6dab698cae1dea2c6a4d97aa75f3fc55"
+  },
+  "development_gate": {
+    "heldout_rows": 43,
+    "setpo_anchor_mIoU_percent": 22.153356,
+    "best_single_mIoU_percent": 23.333792,
+    "router_mIoU_percent": 24.358306,
+    "oracle_mIoU_percent": 25.096758,
+    "oracle_capture": 0.749116,
+    "passed": true
+  },
+  "public": {
+    "mIoU_percent": 59.328548,
+    "R1@0.3_percent": 78.75,
+    "R1@0.5_percent": 62.25,
+    "R1@0.7_percent": 42.75,
+    "selection_counts": {"official": 115, "sft": 29, "setpo": 256},
+    "delta_vs_previous_best_single_points": 0.094743,
+    "improved_rows_vs_previous_best": 74,
+    "regressed_rows_vs_previous_best": 55,
+    "tied_rows_vs_previous_best": 271
+  },
+  "paired_bootstrap_vs_previous_best": {
+    "samples": 50000,
+    "mIoU_ci95_points": [-0.706133, 0.926146],
+    "p_nonpositive": 0.41478,
+    "significant": false
+  },
+  "claim": {
+    "point_estimate_rule_passed": true,
+    "allowed": "open-extra-data, reconstructed-same-harness point-estimate SOTA",
+    "forbidden": [
+      "statistically significant SOTA",
+      "pristine confirmatory public evaluation",
+      "same-training-data SOTA"
+    ],
+    "iteration_disclosure": "SpotSound-Bench aggregate results had already been observed in E003 before E004 was designed. E004 fitting and threshold calibration use LongNeedle-ESC50 only, but the public rerun is iterative rather than pristine confirmatory evidence."
+  },
+  "exploratory_ablations": {
+    "keep_only_mIoU_percent": 59.515039,
+    "intervention_only_mIoU_percent": 59.460948,
+    "geometry_only_mIoU_percent": 59.536011,
+    "note": "These variants were evaluated after the locked E004 full-feature result and are not the confirmatory headline."
+  }
+}
