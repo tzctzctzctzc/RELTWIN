@@ -1,0 +1,13 @@
+{
+  "manifest_sha256": "b914d9fb4035913cb42167380f12b7cc1f2f79a3ad4afd76fe1c2b7ba7ac77a9",
+  "base_index_sha256": "3f5c8f9d6180a27f734c754b4be5d60dfd3a9e86a912e4b95760f633414e8c9a",
+  "adapter_sha256": "f67c4d0ca45539e2eb90cbf7dc60d4f1382cd9c2223babc4f2b7117196eec6bf",
+  "delta_sha256": null,
+  "prompt_mode": "spotsound",
+  "generation": {
+    "max_new_tokens": 128,
+    "num_beams": 1,
+    "do_sample": false
+  },
+  "evaluator_sha256": "a8239e9371bb4e9d6ec96697ff66ea2b65dba9acf44d29975490df712b691d42"
+}

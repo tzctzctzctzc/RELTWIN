@@ -1,0 +1,13 @@
+{
+  "all_metrics_contrasts_bootstrap_recomputed": true,
+  "arms": 10,
+  "backup_bytes": 4221090163,
+  "backup_files": 304,
+  "fork_parent_and_reference_verified": true,
+  "github_pushed": false,
+  "new_training_arms": 7,
+  "paired_seeds_verified": true,
+  "paper_changed": false,
+  "rows_verified": 10000,
+  "status": "verified"
+}

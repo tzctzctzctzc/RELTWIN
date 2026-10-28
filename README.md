@@ -44,6 +44,8 @@ Results use seed 0. The timing intervention retains a 20-point JointPairAcc adva
 
 ## Reproduction and release contents
 
+Supplementary controlled ablations: [answer competition across three seeds, JS factorial controls, and matched-update set-level learning](results/rebuttal_ablation_20261027/README.md). The package includes per-query predictions, paired audio-bootstrap intervals, training configurations, and a CPU-only verification script; the paper tables above are unchanged.
+
 See the [guide](docs/PAPER_REPRODUCTION.md) for environment setup, training, and evaluation commands.
 
 - Full two-stage training and direct evaluation code for **both SpotSound-A and TimeAudio**, with bridge loading, shared objectives, and metric utilities.

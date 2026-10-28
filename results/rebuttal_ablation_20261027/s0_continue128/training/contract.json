@@ -1,0 +1,1713 @@
+{
+  "code": {
+    "ablation748_spec.py": "cb5d56a60e31e086f38d642338d6e8508c30fae6dd8edf412dca67542a0bc134",
+    "interval_metrics.py": "a8eb693a750697c3a043340b2e71c0ee743deaf80dbeac2033251e1993259df2",
+    "rebuttal_objective.py": "bb27bb9c3beb3a5d4621b095249b036ef448eb700c421651ecc1a1df1e008af0",
+    "rebuttal_state.py": "66e56a9bd8003835bf68bb9a2f0b19aad58e633c4412785a76e3e6bd63557891",
+    "setpo_candidates.py": "501cd9bc53251728f58dd128b6b92e9c1cf79000318725c187a0219a9590a153",
+    "setpo_objective.py": "8d4435a0b6abd5dcc82cc59462655285ba4ebcd0b25c3156325ed657c7b2287d",
+    "spotsound_reltwin.py": "b17e3923b9fc720c3daa716c2e85d5c767dfafce1bc67ade811d73327c63a795",
+    "train_ablation748.py": "03833817963e9f00beb1c0cca8ce746632d9c86342c3865e673654918904808b",
+    "train_reltwin_micro.py": "b0e7b333bc1f92b494b884e4d812c81b0da3db0aa40a515228c2307eb29e5c2c"
+  },
+  "config": {
+    "arm": "s0_continue128",
+    "bridge_training": false,
+    "candidate_weight": 1.0,
+    "deterministic_algorithms": false,
+    "exchange_weight": 1.0,
+    "executed_updates": 128,
+    "extension": true,
+    "extension_shared_grid": true,
+    "jitter_ratio": 0.15,
+    "kind": "continue128",
+    "learning_rate": 5e-06,
+    "parent_step": 256,
+    "pareto_weight": 0.5,
+    "prediction_temperature": 1.0,
+    "quality_mode": "pareto",
+    "reference_kl_weight": 0.2,
+    "replay_weight": 0.5,
+    "seed": 0,
+    "target_temperature": 0.15,
+    "trainable_parameters": 20185088,
+    "updates": 128
+  },
+  "contract_sha256": "2a462394b79bc9b06cb013b558bf063c98f0584369a15d18dca6bd2350646524",
+  "inputs": {
+    "event_twin.json": "5a77a3b92a2673ecb6275812d1ae734763cd2b478dc39ec6076218e69ed8b406",
+    "relation_twin.json": "4ec456df80795a9fdadef38a3a529b1651b07c658d3b89dd7d0df3ff24749e70"
+  },
+  "official": {
+    "adapter_config.json": "67e69cec48b0217dce4109a9227ea176d4e3ee4689267fa058cd8960596d59b7",
+    "adapter_model.safetensors": "ab87de32fc6ae5acfaccc22c5f9792230a4ac8f11ca15f968d21b9c26075cf5e"
+  },
+  "parent_state_sha256": "a7763c92ae8dca2688a341b0471caff9114232ab712feeb41908e53b8e53fe77",
+  "reference_cache_sha256": "984d9a9017419ba0723a317fdc394408001b67a85ffa4e71e14bf1ac108b6994",
+  "schedule": [
+    {
+      "positive_indices": [
+        48,
+        49
+      ],
+      "relation_group": [
+        12,
+        "followed_by",
+        0
+      ],
+      "replay_index": 471,
+      "update": 257
+    },
+    {
+      "positive_indices": [
+        382,
+        383
+      ],
+      "relation_group": [
+        95,
+        "and_then",
+        1
+      ],
+      "replay_index": 330,
+      "update": 258
+    },
+    {
+      "positive_indices": [
+        18,
+        19
+      ],
+      "relation_group": [
+        4,
+        "and_then",
+        0
+      ],
+      "replay_index": 285,
+      "update": 259
+    },
+    {
+      "positive_indices": [
+        976,
+        977
+      ],
+      "relation_group": [
+        244,
+        "followed_by",
+        0
+      ],
+      "replay_index": 45,
+      "update": 260
+    },
+    {
+      "positive_indices": [
+        658,
+        659
+      ],
+      "relation_group": [
+        164,
+        "and_then",
+        0
+      ],
+      "replay_index": 78,
+      "update": 261
+    },
+    {
+      "positive_indices": [
+        764,
+        765
+      ],
+      "relation_group": [
+        191,
+        "followed_by",
+        1
+      ],
+      "replay_index": 439,
+      "update": 262
+    },
+    {
+      "positive_indices": [
+        750,
+        751
+      ],
+      "relation_group": [
+        187,
+        "and_then",
+        1
+      ],
+      "replay_index": 299,
+      "update": 263
+    },
+    {
+      "positive_indices": [
+        534,
+        535
+      ],
+      "relation_group": [
+        133,
+        "and_then",
+        1
+      ],
+      "replay_index": 223,
+      "update": 264
+    },
+    {
+      "positive_indices": [
+        470,
+        471
+      ],
+      "relation_group": [
+        117,
+        "and_then",
+        1
+      ],
+      "replay_index": 171,
+      "update": 265
+    },
+    {
+      "positive_indices": [
+        828,
+        829
+      ],
+      "relation_group": [
+        207,
+        "followed_by",
+        1
+      ],
+      "replay_index": 391,
+      "update": 266
+    },
+    {
+      "positive_indices": [
+        128,
+        129
+      ],
+      "relation_group": [
+        32,
+        "followed_by",
+        0
+      ],
+      "replay_index": 421,
+      "update": 267
+    },
+    {
+      "positive_indices": [
+        956,
+        957
+      ],
+      "relation_group": [
+        239,
+        "followed_by",
+        1
+      ],
+      "replay_index": 192,
+      "update": 268
+    },
+    {
+      "positive_indices": [
+        14,
+        15
+      ],
+      "relation_group": [
+        3,
+        "and_then",
+        1
+      ],
+      "replay_index": 383,
+      "update": 269
+    },
+    {
+      "positive_indices": [
+        796,
+        797
+      ],
+      "relation_group": [
+        199,
+        "followed_by",
+        1
+      ],
+      "replay_index": 427,
+      "update": 270
+    },
+    {
+      "positive_indices": [
+        120,
+        121
+      ],
+      "relation_group": [
+        30,
+        "followed_by",
+        0
+      ],
+      "replay_index": 48,
+      "update": 271
+    },
+    {
+      "positive_indices": [
+        358,
+        359
+      ],
+      "relation_group": [
+        89,
+        "and_then",
+        1
+      ],
+      "replay_index": 298,
+      "update": 272
+    },
+    {
+      "positive_indices": [
+        662,
+        663
+      ],
+      "relation_group": [
+        165,
+        "and_then",
+        1
+      ],
+      "replay_index": 418,
+      "update": 273
+    },
+    {
+      "positive_indices": [
+        748,
+        749
+      ],
+      "relation_group": [
+        187,
+        "followed_by",
+        1
+      ],
+      "replay_index": 449,
+      "update": 274
+    },
+    {
+      "positive_indices": [
+        744,
+        745
+      ],
+      "relation_group": [
+        186,
+        "followed_by",
+        0
+      ],
+      "replay_index": 283,
+      "update": 275
+    },
+    {
+      "positive_indices": [
+        862,
+        863
+      ],
+      "relation_group": [
+        215,
+        "and_then",
+        1
+      ],
+      "replay_index": 361,
+      "update": 276
+    },
+    {
+      "positive_indices": [
+        24,
+        25
+      ],
+      "relation_group": [
+        6,
+        "followed_by",
+        0
+      ],
+      "replay_index": 213,
+      "update": 277
+    },
+    {
+      "positive_indices": [
+        192,
+        193
+      ],
+      "relation_group": [
+        48,
+        "followed_by",
+        0
+      ],
+      "replay_index": 429,
+      "update": 278
+    },
+    {
+      "positive_indices": [
+        592,
+        593
+      ],
+      "relation_group": [
+        148,
+        "followed_by",
+        0
+      ],
+      "replay_index": 323,
+      "update": 279
+    },
+    {
+      "positive_indices": [
+        498,
+        499
+      ],
+      "relation_group": [
+        124,
+        "and_then",
+        0
+      ],
+      "replay_index": 198,
+      "update": 280
+    },
+    {
+      "positive_indices": [
+        974,
+        975
+      ],
+      "relation_group": [
+        243,
+        "and_then",
+        1
+      ],
+      "replay_index": 263,
+      "update": 281
+    },
+    {
+      "positive_indices": [
+        424,
+        425
+      ],
+      "relation_group": [
+        106,
+        "followed_by",
+        0
+      ],
+      "replay_index": 375,
+      "update": 282
+    },
+    {
+      "positive_indices": [
+        266,
+        267
+      ],
+      "relation_group": [
+        66,
+        "and_then",
+        0
+      ],
+      "replay_index": 268,
+      "update": 283
+    },
+    {
+      "positive_indices": [
+        318,
+        319
+      ],
+      "relation_group": [
+        79,
+        "and_then",
+        1
+      ],
+      "replay_index": 319,
+      "update": 284
+    },
+    {
+      "positive_indices": [
+        344,
+        345
+      ],
+      "relation_group": [
+        86,
+        "followed_by",
+        0
+      ],
+      "replay_index": 267,
+      "update": 285
+    },
+    {
+      "positive_indices": [
+        904,
+        905
+      ],
+      "relation_group": [
+        226,
+        "followed_by",
+        0
+      ],
+      "replay_index": 366,
+      "update": 286
+    },
+    {
+      "positive_indices": [
+        238,
+        239
+      ],
+      "relation_group": [
+        59,
+        "and_then",
+        1
+      ],
+      "replay_index": 490,
+      "update": 287
+    },
+    {
+      "positive_indices": [
+        672,
+        673
+      ],
+      "relation_group": [
+        168,
+        "followed_by",
+        0
+      ],
+      "replay_index": 456,
+      "update": 288
+    },
+    {
+      "positive_indices": [
+        262,
+        263
+      ],
+      "relation_group": [
+        65,
+        "and_then",
+        1
+      ],
+      "replay_index": 402,
+      "update": 289
+    },
+    {
+      "positive_indices": [
+        582,
+        583
+      ],
+      "relation_group": [
+        145,
+        "and_then",
+        1
+      ],
+      "replay_index": 63,
+      "update": 290
+    },
+    {
+      "positive_indices": [
+        618,
+        619
+      ],
+      "relation_group": [
+        154,
+        "and_then",
+        0
+      ],
+      "replay_index": 221,
+      "update": 291
+    },
+    {
+      "positive_indices": [
+        780,
+        781
+      ],
+      "relation_group": [
+        195,
+        "followed_by",
+        1
+      ],
+      "replay_index": 216,
+      "update": 292
+    },
+    {
+      "positive_indices": [
+        684,
+        685
+      ],
+      "relation_group": [
+        171,
+        "followed_by",
+        1
+      ],
+      "replay_index": 0,
+      "update": 293
+    },
+    {
+      "positive_indices": [
+        866,
+        867
+      ],
+      "relation_group": [
+        216,
+        "and_then",
+        0
+      ],
+      "replay_index": 322,
+      "update": 294
+    },
+    {
+      "positive_indices": [
+        516,
+        517
+      ],
+      "relation_group": [
+        129,
+        "followed_by",
+        1
+      ],
+      "replay_index": 479,
+      "update": 295
+    },
+    {
+      "positive_indices": [
+        72,
+        73
+      ],
+      "relation_group": [
+        18,
+        "followed_by",
+        0
+      ],
+      "replay_index": 325,
+      "update": 296
+    },
+    {
+      "positive_indices": [
+        58,
+        59
+      ],
+      "relation_group": [
+        14,
+        "and_then",
+        0
+      ],
+      "replay_index": 474,
+      "update": 297
+    },
+    {
+      "positive_indices": [
+        296,
+        297
+      ],
+      "relation_group": [
+        74,
+        "followed_by",
+        0
+      ],
+      "replay_index": 465,
+      "update": 298
+    },
+    {
+      "positive_indices": [
+        16,
+        17
+      ],
+      "relation_group": [
+        4,
+        "followed_by",
+        0
+      ],
+      "replay_index": 140,
+      "update": 299
+    },
+    {
+      "positive_indices": [
+        602,
+        603
+      ],
+      "relation_group": [
+        150,
+        "and_then",
+        0
+      ],
+      "replay_index": 165,
+      "update": 300
+    },
+    {
+      "positive_indices": [
+        10,
+        11
+      ],
+      "relation_group": [
+        2,
+        "and_then",
+        0
+      ],
+      "replay_index": 291,
+      "update": 301
+    },
+    {
+      "positive_indices": [
+        98,
+        99
+      ],
+      "relation_group": [
+        24,
+        "and_then",
+        0
+      ],
+      "replay_index": 408,
+      "update": 302
+    },
+    {
+      "positive_indices": [
+        958,
+        959
+      ],
+      "relation_group": [
+        239,
+        "and_then",
+        1
+      ],
+      "replay_index": 261,
+      "update": 303
+    },
+    {
+      "positive_indices": [
+        462,
+        463
+      ],
+      "relation_group": [
+        115,
+        "and_then",
+        1
+      ],
+      "replay_index": 447,
+      "update": 304
+    },
+    {
+      "positive_indices": [
+        122,
+        123
+      ],
+      "relation_group": [
+        30,
+        "and_then",
+        0
+      ],
+      "replay_index": 290,
+      "update": 305
+    },
+    {
+      "positive_indices": [
+        660,
+        661
+      ],
+      "relation_group": [
+        165,
+        "followed_by",
+        1
+      ],
+      "replay_index": 277,
+      "update": 306
+    },
+    {
+      "positive_indices": [
+        300,
+        301
+      ],
+      "relation_group": [
+        75,
+        "followed_by",
+        1
+      ],
+      "replay_index": 472,
+      "update": 307
+    },
+    {
+      "positive_indices": [
+        940,
+        941
+      ],
+      "relation_group": [
+        235,
+        "followed_by",
+        1
+      ],
+      "replay_index": 345,
+      "update": 308
+    },
+    {
+      "positive_indices": [
+        908,
+        909
+      ],
+      "relation_group": [
+        227,
+        "followed_by",
+        1
+      ],
+      "replay_index": 335,
+      "update": 309
+    },
+    {
+      "positive_indices": [
+        392,
+        393
+      ],
+      "relation_group": [
+        98,
+        "followed_by",
+        0
+      ],
+      "replay_index": 82,
+      "update": 310
+    },
+    {
+      "positive_indices": [
+        864,
+        865
+      ],
+      "relation_group": [
+        216,
+        "followed_by",
+        0
+      ],
+      "replay_index": 187,
+      "update": 311
+    },
+    {
+      "positive_indices": [
+        454,
+        455
+      ],
+      "relation_group": [
+        113,
+        "and_then",
+        1
+      ],
+      "replay_index": 452,
+      "update": 312
+    },
+    {
+      "positive_indices": [
+        132,
+        133
+      ],
+      "relation_group": [
+        33,
+        "followed_by",
+        1
+      ],
+      "replay_index": 235,
+      "update": 313
+    },
+    {
+      "positive_indices": [
+        350,
+        351
+      ],
+      "relation_group": [
+        87,
+        "and_then",
+        1
+      ],
+      "replay_index": 251,
+      "update": 314
+    },
+    {
+      "positive_indices": [
+        206,
+        207
+      ],
+      "relation_group": [
+        51,
+        "and_then",
+        1
+      ],
+      "replay_index": 406,
+      "update": 315
+    },
+    {
+      "positive_indices": [
+        838,
+        839
+      ],
+      "relation_group": [
+        209,
+        "and_then",
+        1
+      ],
+      "replay_index": 123,
+      "update": 316
+    },
+    {
+      "positive_indices": [
+        166,
+        167
+      ],
+      "relation_group": [
+        41,
+        "and_then",
+        1
+      ],
+      "replay_index": 43,
+      "update": 317
+    },
+    {
+      "positive_indices": [
+        102,
+        103
+      ],
+      "relation_group": [
+        25,
+        "and_then",
+        1
+      ],
+      "replay_index": 30,
+      "update": 318
+    },
+    {
+      "positive_indices": [
+        278,
+        279
+      ],
+      "relation_group": [
+        69,
+        "and_then",
+        1
+      ],
+      "replay_index": 442,
+      "update": 319
+    },
+    {
+      "positive_indices": [
+        934,
+        935
+      ],
+      "relation_group": [
+        233,
+        "and_then",
+        1
+      ],
+      "replay_index": 315,
+      "update": 320
+    },
+    {
+      "positive_indices": [
+        356,
+        357
+      ],
+      "relation_group": [
+        89,
+        "followed_by",
+        1
+      ],
+      "replay_index": 304,
+      "update": 321
+    },
+    {
+      "positive_indices": [
+        68,
+        69
+      ],
+      "relation_group": [
+        17,
+        "followed_by",
+        1
+      ],
+      "replay_index": 503,
+      "update": 322
+    },
+    {
+      "positive_indices": [
+        788,
+        789
+      ],
+      "relation_group": [
+        197,
+        "followed_by",
+        1
+      ],
+      "replay_index": 114,
+      "update": 323
+    },
+    {
+      "positive_indices": [
+        306,
+        307
+      ],
+      "relation_group": [
+        76,
+        "and_then",
+        0
+      ],
+      "replay_index": 400,
+      "update": 324
+    },
+    {
+      "positive_indices": [
+        340,
+        341
+      ],
+      "relation_group": [
+        85,
+        "followed_by",
+        1
+      ],
+      "replay_index": 352,
+      "update": 325
+    },
+    {
+      "positive_indices": [
+        30,
+        31
+      ],
+      "relation_group": [
+        7,
+        "and_then",
+        1
+      ],
+      "replay_index": 473,
+      "update": 326
+    },
+    {
+      "positive_indices": [
+        44,
+        45
+      ],
+      "relation_group": [
+        11,
+        "followed_by",
+        1
+      ],
+      "replay_index": 441,
+      "update": 327
+    },
+    {
+      "positive_indices": [
+        484,
+        485
+      ],
+      "relation_group": [
+        121,
+        "followed_by",
+        1
+      ],
+      "replay_index": 396,
+      "update": 328
+    },
+    {
+      "positive_indices": [
+        694,
+        695
+      ],
+      "relation_group": [
+        173,
+        "and_then",
+        1
+      ],
+      "replay_index": 422,
+      "update": 329
+    },
+    {
+      "positive_indices": [
+        276,
+        277
+      ],
+      "relation_group": [
+        69,
+        "followed_by",
+        1
+      ],
+      "replay_index": 37,
+      "update": 330
+    },
+    {
+      "positive_indices": [
+        492,
+        493
+      ],
+      "relation_group": [
+        123,
+        "followed_by",
+        1
+      ],
+      "replay_index": 161,
+      "update": 331
+    },
+    {
+      "positive_indices": [
+        540,
+        541
+      ],
+      "relation_group": [
+        135,
+        "followed_by",
+        1
+      ],
+      "replay_index": 58,
+      "update": 332
+    },
+    {
+      "positive_indices": [
+        496,
+        497
+      ],
+      "relation_group": [
+        124,
+        "followed_by",
+        0
+      ],
+      "replay_index": 468,
+      "update": 333
+    },
+    {
+      "positive_indices": [
+        464,
+        465
+      ],
+      "relation_group": [
+        116,
+        "followed_by",
+        0
+      ],
+      "replay_index": 196,
+      "update": 334
+    },
+    {
+      "positive_indices": [
+        162,
+        163
+      ],
+      "relation_group": [
+        40,
+        "and_then",
+        0
+      ],
+      "replay_index": 232,
+      "update": 335
+    },
+    {
+      "positive_indices": [
+        342,
+        343
+      ],
+      "relation_group": [
+        85,
+        "and_then",
+        1
+      ],
+      "replay_index": 163,
+      "update": 336
+    },
+    {
+      "positive_indices": [
+        812,
+        813
+      ],
+      "relation_group": [
+        203,
+        "followed_by",
+        1
+      ],
+      "replay_index": 64,
+      "update": 337
+    },
+    {
+      "positive_indices": [
+        616,
+        617
+      ],
+      "relation_group": [
+        154,
+        "followed_by",
+        0
+      ],
+      "replay_index": 486,
+      "update": 338
+    },
+    {
+      "positive_indices": [
+        532,
+        533
+      ],
+      "relation_group": [
+        133,
+        "followed_by",
+        1
+      ],
+      "replay_index": 430,
+      "update": 339
+    },
+    {
+      "positive_indices": [
+        202,
+        203
+      ],
+      "relation_group": [
+        50,
+        "and_then",
+        0
+      ],
+      "replay_index": 168,
+      "update": 340
+    },
+    {
+      "positive_indices": [
+        194,
+        195
+      ],
+      "relation_group": [
+        48,
+        "and_then",
+        0
+      ],
+      "replay_index": 423,
+      "update": 341
+    },
+    {
+      "positive_indices": [
+        1020,
+        1021
+      ],
+      "relation_group": [
+        255,
+        "followed_by",
+        1
+      ],
+      "replay_index": 109,
+      "update": 342
+    },
+    {
+      "positive_indices": [
+        738,
+        739
+      ],
+      "relation_group": [
+        184,
+        "and_then",
+        0
+      ],
+      "replay_index": 41,
+      "update": 343
+    },
+    {
+      "positive_indices": [
+        948,
+        949
+      ],
+      "relation_group": [
+        237,
+        "followed_by",
+        1
+      ],
+      "replay_index": 62,
+      "update": 344
+    },
+    {
+      "positive_indices": [
+        528,
+        529
+      ],
+      "relation_group": [
+        132,
+        "followed_by",
+        0
+      ],
+      "replay_index": 178,
+      "update": 345
+    },
+    {
+      "positive_indices": [
+        172,
+        173
+      ],
+      "relation_group": [
+        43,
+        "followed_by",
+        1
+      ],
+      "replay_index": 303,
+      "update": 346
+    },
+    {
+      "positive_indices": [
+        874,
+        875
+      ],
+      "relation_group": [
+        218,
+        "and_then",
+        0
+      ],
+      "replay_index": 149,
+      "update": 347
+    },
+    {
+      "positive_indices": [
+        438,
+        439
+      ],
+      "relation_group": [
+        109,
+        "and_then",
+        1
+      ],
+      "replay_index": 101,
+      "update": 348
+    },
+    {
+      "positive_indices": [
+        726,
+        727
+      ],
+      "relation_group": [
+        181,
+        "and_then",
+        1
+      ],
+      "replay_index": 390,
+      "update": 349
+    },
+    {
+      "positive_indices": [
+        428,
+        429
+      ],
+      "relation_group": [
+        107,
+        "followed_by",
+        1
+      ],
+      "replay_index": 120,
+      "update": 350
+    },
+    {
+      "positive_indices": [
+        814,
+        815
+      ],
+      "relation_group": [
+        203,
+        "and_then",
+        1
+      ],
+      "replay_index": 271,
+      "update": 351
+    },
+    {
+      "positive_indices": [
+        260,
+        261
+      ],
+      "relation_group": [
+        65,
+        "followed_by",
+        1
+      ],
+      "replay_index": 373,
+      "update": 352
+    },
+    {
+      "positive_indices": [
+        34,
+        35
+      ],
+      "relation_group": [
+        8,
+        "and_then",
+        0
+      ],
+      "replay_index": 65,
+      "update": 353
+    },
+    {
+      "positive_indices": [
+        810,
+        811
+      ],
+      "relation_group": [
+        202,
+        "and_then",
+        0
+      ],
+      "replay_index": 83,
+      "update": 354
+    },
+    {
+      "positive_indices": [
+        208,
+        209
+      ],
+      "relation_group": [
+        52,
+        "followed_by",
+        0
+      ],
+      "replay_index": 88,
+      "update": 355
+    },
+    {
+      "positive_indices": [
+        966,
+        967
+      ],
+      "relation_group": [
+        241,
+        "and_then",
+        1
+      ],
+      "replay_index": 476,
+      "update": 356
+    },
+    {
+      "positive_indices": [
+        386,
+        387
+      ],
+      "relation_group": [
+        96,
+        "and_then",
+        0
+      ],
+      "replay_index": 481,
+      "update": 357
+    },
+    {
+      "positive_indices": [
+        982,
+        983
+      ],
+      "relation_group": [
+        245,
+        "and_then",
+        1
+      ],
+      "replay_index": 384,
+      "update": 358
+    },
+    {
+      "positive_indices": [
+        222,
+        223
+      ],
+      "relation_group": [
+        55,
+        "and_then",
+        1
+      ],
+      "replay_index": 306,
+      "update": 359
+    },
+    {
+      "positive_indices": [
+        224,
+        225
+      ],
+      "relation_group": [
+        56,
+        "followed_by",
+        0
+      ],
+      "replay_index": 266,
+      "update": 360
+    },
+    {
+      "positive_indices": [
+        62,
+        63
+      ],
+      "relation_group": [
+        15,
+        "and_then",
+        1
+      ],
+      "replay_index": 425,
+      "update": 361
+    },
+    {
+      "positive_indices": [
+        0,
+        1
+      ],
+      "relation_group": [
+        0,
+        "followed_by",
+        0
+      ],
+      "replay_index": 16,
+      "update": 362
+    },
+    {
+      "positive_indices": [
+        390,
+        391
+      ],
+      "relation_group": [
+        97,
+        "and_then",
+        1
+      ],
+      "replay_index": 3,
+      "update": 363
+    },
+    {
+      "positive_indices": [
+        256,
+        257
+      ],
+      "relation_group": [
+        64,
+        "followed_by",
+        0
+      ],
+      "replay_index": 227,
+      "update": 364
+    },
+    {
+      "positive_indices": [
+        1008,
+        1009
+      ],
+      "relation_group": [
+        252,
+        "followed_by",
+        0
+      ],
+      "replay_index": 262,
+      "update": 365
+    },
+    {
+      "positive_indices": [
+        346,
+        347
+      ],
+      "relation_group": [
+        86,
+        "and_then",
+        0
+      ],
+      "replay_index": 148,
+      "update": 366
+    },
+    {
+      "positive_indices": [
+        942,
+        943
+      ],
+      "relation_group": [
+        235,
+        "and_then",
+        1
+      ],
+      "replay_index": 185,
+      "update": 367
+    },
+    {
+      "positive_indices": [
+        512,
+        513
+      ],
+      "relation_group": [
+        128,
+        "followed_by",
+        0
+      ],
+      "replay_index": 39,
+      "update": 368
+    },
+    {
+      "positive_indices": [
+        876,
+        877
+      ],
+      "relation_group": [
+        219,
+        "followed_by",
+        1
+      ],
+      "replay_index": 125,
+      "update": 369
+    },
+    {
+      "positive_indices": [
+        518,
+        519
+      ],
+      "relation_group": [
+        129,
+        "and_then",
+        1
+      ],
+      "replay_index": 321,
+      "update": 370
+    },
+    {
+      "positive_indices": [
+        722,
+        723
+      ],
+      "relation_group": [
+        180,
+        "and_then",
+        0
+      ],
+      "replay_index": 438,
+      "update": 371
+    },
+    {
+      "positive_indices": [
+        946,
+        947
+      ],
+      "relation_group": [
+        236,
+        "and_then",
+        0
+      ],
+      "replay_index": 469,
+      "update": 372
+    },
+    {
+      "positive_indices": [
+        352,
+        353
+      ],
+      "relation_group": [
+        88,
+        "followed_by",
+        0
+      ],
+      "replay_index": 42,
+      "update": 373
+    },
+    {
+      "positive_indices": [
+        916,
+        917
+      ],
+      "relation_group": [
+        229,
+        "followed_by",
+        1
+      ],
+      "replay_index": 119,
+      "update": 374
+    },
+    {
+      "positive_indices": [
+        226,
+        227
+      ],
+      "relation_group": [
+        56,
+        "and_then",
+        0
+      ],
+      "replay_index": 240,
+      "update": 375
+    },
+    {
+      "positive_indices": [
+        20,
+        21
+      ],
+      "relation_group": [
+        5,
+        "followed_by",
+        1
+      ],
+      "replay_index": 24,
+      "update": 376
+    },
+    {
+      "positive_indices": [
+        760,
+        761
+      ],
+      "relation_group": [
+        190,
+        "followed_by",
+        0
+      ],
+      "replay_index": 239,
+      "update": 377
+    },
+    {
+      "positive_indices": [
+        460,
+        461
+      ],
+      "relation_group": [
+        115,
+        "followed_by",
+        1
+      ],
+      "replay_index": 170,
+      "update": 378
+    },
+    {
+      "positive_indices": [
+        610,
+        611
+      ],
+      "relation_group": [
+        152,
+        "and_then",
+        0
+      ],
+      "replay_index": 278,
+      "update": 379
+    },
+    {
+      "positive_indices": [
+        328,
+        329
+      ],
+      "relation_group": [
+        82,
+        "followed_by",
+        0
+      ],
+      "replay_index": 9,
+      "update": 380
+    },
+    {
+      "positive_indices": [
+        362,
+        363
+      ],
+      "relation_group": [
+        90,
+        "and_then",
+        0
+      ],
+      "replay_index": 15,
+      "update": 381
+    },
+    {
+      "positive_indices": [
+        100,
+        101
+      ],
+      "relation_group": [
+        25,
+        "followed_by",
+        1
+      ],
+      "replay_index": 155,
+      "update": 382
+    },
+    {
+      "positive_indices": [
+        852,
+        853
+      ],
+      "relation_group": [
+        213,
+        "followed_by",
+        1
+      ],
+      "replay_index": 367,
+      "update": 383
+    },
+    {
+      "positive_indices": [
+        690,
+        691
+      ],
+      "relation_group": [
+        172,
+        "and_then",
+        0
+      ],
+      "replay_index": 494,
+      "update": 384
+    }
+  ]
+}

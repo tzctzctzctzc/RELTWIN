@@ -1,0 +1,19 @@
+{
+  "status": "verified",
+  "arm": "paired_sft",
+  "step": 256,
+  "planned_steps": 256,
+  "checkpoint_sha256": "942f09ca3f580b3d4a5d75b4c3dd9ffd127fc2e268fbea9fb9ad50fcffc13d9d",
+  "contract_sha256": "9a0b6453ad52fe74ac7a8ad9411e41df4f6f1323fda797337c3ddffca40c2249",
+  "parameter_tensors": 392,
+  "trainable_parameters": 20185088,
+  "parameter_dtype": "float32",
+  "adam_state_count": 392,
+  "adam_moment_dtype": "float32",
+  "optimizer_update_counter": 256,
+  "scheduler_update_counter": 256,
+  "frozen_sampling_prefix_matches": true,
+  "rng_and_buffers_present": true,
+  "matching_adapter_tensors": 392,
+  "cpu_audit_only": true
+}

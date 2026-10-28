@@ -1,0 +1,4978 @@
+[
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/_Uro9suV3xU_130_187.wav",
+    "caption": "hair dryer drying",
+    "annotations": [
+      [
+        8.1,
+        10.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/_Uro9suV3xU_45_135.wav",
+    "caption": "hair dryer drying",
+    "annotations": [
+      [
+        81.0,
+        84.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/fTcSVQJ2h8g_0_90.wav",
+    "caption": "police car siren",
+    "annotations": [
+      [
+        59.0,
+        65.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/ClTzzGQatXo_30_48.wav",
+    "caption": "ambulance siren",
+    "annotations": [
+      [
+        0.0,
+        3.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/eXQYEfqCU08_38_68.wav",
+    "caption": "train horning",
+    "annotations": [
+      [
+        0.0,
+        4.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/OD54eF2XKJA_0_30.wav",
+    "caption": "people cheering",
+    "annotations": [
+      [
+        23.8,
+        30.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/Knhb_BCn5Bc_55_75.wav",
+    "caption": "church bell ringing",
+    "annotations": [
+      [
+        11.4,
+        12.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/TP_CVBCc4-U_100_129.wav",
+    "caption": "people shouting",
+    "annotations": [
+      [
+        12.0,
+        12.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/TP_CVBCc4-U_50_110.wav",
+    "caption": "people shouting",
+    "annotations": [
+      [
+        44.7,
+        46.9
+      ],
+      [
+        6.2,
+        6.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/CljO1-A89-g_0_60.wav",
+    "caption": "people clapping",
+    "annotations": [
+      [
+        29.9,
+        32.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/_jcVnmRQD_U_90_150.wav",
+    "caption": "people whistling",
+    "annotations": [
+      [
+        41.0,
+        42.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/vfUgQTKgKDI_0_35.wav",
+    "caption": "police car siren",
+    "annotations": [
+      [
+        16.0,
+        20.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/THhP1idrWXA_0_60.wav",
+    "caption": "people coughing",
+    "annotations": [
+      [
+        37.8,
+        39.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/I5W0Nnn1zFk_0_60.wav",
+    "caption": "bird chirping",
+    "annotations": [
+      [
+        22.0,
+        23.4
+      ],
+      [
+        28.0,
+        29.5
+      ],
+      [
+        42.0,
+        42.8
+      ],
+      [
+        48.7,
+        50.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/I5W0Nnn1zFk_0_60.wav",
+    "caption": "frog croaking",
+    "annotations": [
+      [
+        31.1,
+        31.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/CHkE7YL08Zo_0_45.wav",
+    "caption": "people sneezing",
+    "annotations": [
+      [
+        21.1,
+        21.9
+      ],
+      [
+        34.9,
+        35.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/b62RgDBmly8_0_58.wav",
+    "caption": "female singing",
+    "annotations": [
+      [
+        46.2,
+        52.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/b62RgDBmly8_0_50.wav",
+    "caption": "male singing",
+    "annotations": [
+      [
+        39.2,
+        45.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/b62RgDBmly8_0_30.wav",
+    "caption": "singing choir",
+    "annotations": [
+      [
+        26.1,
+        30.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/b62RgDBmly8_40_65.wav",
+    "caption": "singing choir",
+    "annotations": [
+      [
+        19.7,
+        25.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/gJ1EjXFq5vQ_390_450.wav",
+    "caption": "people whistling",
+    "annotations": [
+      [
+        20.7,
+        23.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5VElNpaNPoo_0_60.wav",
+    "caption": "baby babbling",
+    "annotations": [
+      [
+        42.0,
+        43.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5VElNpaNPoo_0_60.wav",
+    "caption": "machine gun shooting",
+    "annotations": [
+      [
+        33.4,
+        33.9
+      ],
+      [
+        35.1,
+        35.8
+      ],
+      [
+        36.6,
+        37.1
+      ],
+      [
+        38.4,
+        38.9
+      ],
+      [
+        44.0,
+        44.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5VElNpaNPoo_180_230.wav",
+    "caption": "machine gun shooting",
+    "annotations": [
+      [
+        31.6,
+        32.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5VElNpaNPoo_180_240.wav",
+    "caption": "man speaking",
+    "annotations": [
+      [
+        30.9,
+        31.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5VElNpaNPoo_0_60.wav",
+    "caption": "police car siren",
+    "annotations": [
+      [
+        3.4,
+        6.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/QIRX5273XKk_0_30.wav",
+    "caption": "male singing",
+    "annotations": [
+      [
+        23.9,
+        27.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/QIRX5273XKk_0_58.wav",
+    "caption": "people cheering",
+    "annotations": [
+      [
+        28.3,
+        33.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/QIRX5273XKk_0_27.wav",
+    "caption": "people shouting",
+    "annotations": [
+      [
+        5.3,
+        6.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/4arad6my08E_0_20.wav",
+    "caption": "fire truck siren",
+    "annotations": [
+      [
+        17.9,
+        20.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/ebRLSVHIGEE_20_75.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        31.8,
+        35.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/ebRLSVHIGEE_10_50.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        2.6,
+        4.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/gBWmcmIfN98_0_60.wav",
+    "caption": "people clapping",
+    "annotations": [
+      [
+        3.7,
+        5.7
+      ],
+      [
+        24.2,
+        25.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5MeHhWGqSrw_0_40.wav",
+    "caption": "dog barking",
+    "annotations": [
+      [
+        37.4,
+        38.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/5MeHhWGqSrw_0_40.wav",
+    "caption": "dog howling",
+    "annotations": [
+      [
+        39.0,
+        40.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/HShbaC9ORSo_366_426.wav",
+    "caption": "driving motorcycle",
+    "annotations": [
+      [
+        51.0,
+        57.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/zMveZHACzmo_10_100.wav",
+    "caption": "fire truck siren",
+    "annotations": [
+      [
+        86.8,
+        90.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/SUFOgc9Pkd8_0_25.wav",
+    "caption": "dog barking",
+    "annotations": [
+      [
+        5.9,
+        6.7
+      ],
+      [
+        7.3,
+        8.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/wg0LlkP_K3c_0_60.wav",
+    "caption": "telephone bell ringing",
+    "annotations": [
+      [
+        0.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/AJttSbZwVew_0_42.wav",
+    "caption": "driving motorcycle",
+    "annotations": [
+      [
+        38.7,
+        42.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/LHY9L1MjQvQ_0_60.wav",
+    "caption": "cat meowing",
+    "annotations": [
+      [
+        8.7,
+        9.3
+      ],
+      [
+        40.0,
+        40.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/QCovzjYMK5c_150_210.wav",
+    "caption": "child singing",
+    "annotations": [
+      [
+        23.1,
+        25.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/7-Wm2TyvMs8_9_49.wav",
+    "caption": "woman speaking",
+    "annotations": [
+      [
+        10.0,
+        10.8
+      ],
+      [
+        22.1,
+        23.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/39IZIbmQPzA_0_60.wav",
+    "caption": "cat meowing",
+    "annotations": [
+      [
+        42.6,
+        43.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/Lx4poQw1mZo_124_174.wav",
+    "caption": "chainsawing trees",
+    "annotations": [
+      [
+        41.7,
+        45.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/0QTme5iyg4A_0_60.wav",
+    "caption": "basketball bounce",
+    "annotations": [
+      [
+        0.0,
+        1.1
+      ],
+      [
+        1.7,
+        2.3
+      ],
+      [
+        2.7,
+        3.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/0QTme5iyg4A_100_160.wav",
+    "caption": "fireworks banging",
+    "annotations": [
+      [
+        55.2,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/0QTme5iyg4A_161_221.wav",
+    "caption": "fireworks banging",
+    "annotations": [
+      [
+        4.9,
+        5.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/PxV5flu0hi4_10_70.wav",
+    "caption": "machine gun shooting",
+    "annotations": [
+      [
+        56.8,
+        57.2
+      ],
+      [
+        58.2,
+        58.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/F1qVm133XJg_240_300.wav",
+    "caption": "bird chirping",
+    "annotations": [
+      [
+        16.7,
+        17.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/F1qVm133XJg_190_250.wav",
+    "caption": "bird chirping",
+    "annotations": [
+      [
+        42.5,
+        43.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/F1qVm133XJg_220_280.wav",
+    "caption": "frog croaking",
+    "annotations": [
+      [
+        31.9,
+        32.3
+      ],
+      [
+        32.8,
+        33.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/F1qVm133XJg_220_280.wav",
+    "caption": "water burbling",
+    "annotations": [
+      [
+        29.2,
+        31.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/A2NtJ12KIuU_0_40.wav",
+    "caption": "people crowd",
+    "annotations": [
+      [
+        37.6,
+        40.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/A2NtJ12KIuU_25_60.wav",
+    "caption": "playing table tennis",
+    "annotations": [
+      [
+        10.2,
+        11.4
+      ],
+      [
+        3.9,
+        5.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/ZBaYrfz5afo_300_330.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        11.3,
+        14.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/vYP60jdTupc_8_40.wav",
+    "caption": "female singing",
+    "annotations": [
+      [
+        29.1,
+        30.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/k1aqrzHl3qI_0_50.wav",
+    "caption": "cat meowing",
+    "annotations": [
+      [
+        32.3,
+        33.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/ipKCHDizaQI_0_40.wav",
+    "caption": "people sneezing",
+    "annotations": [
+      [
+        37.8,
+        38.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/WChnH2EJr_8_0_30.wav",
+    "caption": "people burping",
+    "annotations": [
+      [
+        25.7,
+        29.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/EyAkVnhBJuU_0_30.wav",
+    "caption": "horse clip-clop",
+    "annotations": [
+      [
+        25.6,
+        30.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/EyAkVnhBJuU_28_78.wav",
+    "caption": "horse clip-clop",
+    "annotations": [
+      [
+        0.0,
+        7.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/03c-hmoUfuc_0_40.wav",
+    "caption": "telephone bell ringing",
+    "annotations": [
+      [
+        35.6,
+        37.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/ZyiDGq0qh2s_25_60.wav",
+    "caption": "people coughing",
+    "annotations": [
+      [
+        6.5,
+        7.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/-hJ1YTZ5AGI_0_57.wav",
+    "caption": "people clapping",
+    "annotations": [
+      [
+        0.0,
+        2.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/fdqAbnGs-fw_0_89.wav",
+    "caption": "people coughing",
+    "annotations": [
+      [
+        85.9,
+        89.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/T2F6euNVT5Y_0_60.wav",
+    "caption": "helicopter",
+    "annotations": [
+      [
+        16.8,
+        17.5
+      ],
+      [
+        23.8,
+        25.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/yIx3ml9_nsQ_40_90.wav",
+    "caption": "people sneezing",
+    "annotations": [
+      [
+        24.6,
+        25.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/c8FxPxMeZ_Q_30_90.wav",
+    "caption": "people whispering",
+    "annotations": [
+      [
+        50.6,
+        53.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/0PHUQku2P5I_50_95.wav",
+    "caption": "singing choir",
+    "annotations": [
+      [
+        2.2,
+        4.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/eW4EvkJze-A_0_60.wav",
+    "caption": "dog howling",
+    "annotations": [
+      [
+        58.1,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/eW4EvkJze-A_0_60.wav",
+    "caption": "people whistling",
+    "annotations": [
+      [
+        50.1,
+        55.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/KwwcpaxWT5E_0_35.wav",
+    "caption": "chainsawing trees",
+    "annotations": [
+      [
+        24.7,
+        27.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/FLcqMSBS0H8_75_135.wav",
+    "caption": "helicopter",
+    "annotations": [
+      [
+        30.5,
+        32.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/QBMDnMRwQCc_30_90.wav",
+    "caption": "helicopter",
+    "annotations": [
+      [
+        44.9,
+        47.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/USlCCt8En7A_371_431.wav",
+    "caption": "baby laughter",
+    "annotations": [
+      [
+        56.4,
+        58.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/USlCCt8En7A_5_45.wav",
+    "caption": "baby laughter",
+    "annotations": [
+      [
+        1.3,
+        2.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0401/USlCCt8En7A_15_75.wav",
+    "caption": "female singing",
+    "annotations": [
+      [
+        25.2,
+        27.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/nxvoVBUYCeY_0_62.wav",
+    "caption": "airplane flyby",
+    "annotations": [
+      [
+        51.8,
+        59.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/VQc-haIJXSM_25_68.wav",
+    "caption": "ambulance siren",
+    "annotations": [
+      [
+        16.3,
+        31.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/VQc-haIJXSM_437_460.wav",
+    "caption": "ambulance siren",
+    "annotations": [
+      [
+        11.5,
+        13.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/mWxjRXR7nWI_227_234.wav",
+    "caption": "auto racing",
+    "annotations": [
+      [
+        2.8,
+        7.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/mWxjRXR7nWI_650_710.wav",
+    "caption": "auto racing",
+    "annotations": [
+      [
+        53.3,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/GVGw7gumeSI_10_47.wav",
+    "caption": "baby babbling",
+    "annotations": [
+      [
+        3.4,
+        7.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/GVGw7gumeSI_200_260.wav",
+    "caption": "baby babbling",
+    "annotations": [
+      [
+        38.0,
+        43.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/buK45NW_ikI_0_60.wav",
+    "caption": "baby crying",
+    "annotations": [
+      [
+        22.4,
+        33.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/buK45NW_ikI_120_180.wav",
+    "caption": "baby crying",
+    "annotations": [
+      [
+        5.5,
+        6.2
+      ],
+      [
+        7.1,
+        7.8
+      ],
+      [
+        8.8,
+        9.3
+      ],
+      [
+        11.2,
+        12.0
+      ],
+      [
+        12.9,
+        13.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/aISXCw0Pi94_175_235.wav",
+    "caption": "baby laughter",
+    "annotations": [
+      [
+        45.0,
+        46.1
+      ],
+      [
+        53.7,
+        55.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/aISXCw0Pi94_306_366.wav",
+    "caption": "baby laughter",
+    "annotations": [
+      [
+        2.7,
+        3.5
+      ],
+      [
+        4.2,
+        5.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/0_56e5GKKwA_0_60.wav",
+    "caption": "basketball bounce",
+    "annotations": [
+      [
+        0.5,
+        3.7
+      ],
+      [
+        16.1,
+        19.1
+      ],
+      [
+        42.6,
+        44.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/mhVsO7wVIfk_140_200.wav",
+    "caption": "basketball bounce",
+    "annotations": [
+      [
+        42.2,
+        51.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/EAHExoZIgjM_0_52.wav",
+    "caption": "beat boxing",
+    "annotations": [
+      [
+        5.0,
+        12.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/fIueCTO8sWM_0_58.wav",
+    "caption": "beat boxing",
+    "annotations": [
+      [
+        46.3,
+        48.4
+      ],
+      [
+        49.5,
+        51.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eNUpTV9BGac_380_420.wav",
+    "caption": "bird chirping",
+    "annotations": [
+      [
+        15.5,
+        22.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eNUpTV9BGac_447_520.wav",
+    "caption": "bird chirping",
+    "annotations": [
+      [
+        46.7,
+        60.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/sXSDR4qLkuQ_120_180.wav",
+    "caption": "bull bellowing",
+    "annotations": [
+      [
+        31.6,
+        36.1
+      ],
+      [
+        47.0,
+        48.0
+      ],
+      [
+        57.6,
+        59.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/p7k7ivFz-ko_10_70.wav",
+    "caption": "bull bellowing",
+    "annotations": [
+      [
+        4.7,
+        7.1
+      ],
+      [
+        14.9,
+        20.3
+      ],
+      [
+        22.7,
+        24.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/uFLRA4lgKYo_119_135.wav",
+    "caption": "car passing by",
+    "annotations": [
+      [
+        10.2,
+        13.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/uFLRA4lgKYo_0_30.wav",
+    "caption": "car passing by",
+    "annotations": [
+      [
+        24.7,
+        28.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/nZhNjmBFRns_0_60.wav",
+    "caption": "cat meowing",
+    "annotations": [
+      [
+        14.8,
+        17.0
+      ],
+      [
+        20.5,
+        21.4
+      ],
+      [
+        26.5,
+        27.6
+      ],
+      [
+        31.0,
+        32.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/LVp7zH3yCi0_60_120.wav",
+    "caption": "cat meowing",
+    "annotations": [
+      [
+        29.5,
+        33.0
+      ],
+      [
+        45.4,
+        46.2
+      ],
+      [
+        54.6,
+        55.6
+      ],
+      [
+        58.2,
+        59.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/3mTd8ZTG_cc_69_159.wav",
+    "caption": "chainsawing trees",
+    "annotations": [
+      [
+        48.0,
+        59.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/3mTd8ZTG_cc_305_365.wav",
+    "caption": "chainsawing trees",
+    "annotations": [
+      [
+        16.6,
+        18.2
+      ],
+      [
+        20.4,
+        22.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/_hjCSQ56RWc_0_38.wav",
+    "caption": "child singing",
+    "annotations": [
+      [
+        30.1,
+        38.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/hAaokN2qZYQ_0_40.wav",
+    "caption": "child singing",
+    "annotations": [
+      [
+        33.0,
+        40.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/B-VtZW1vJc4_2_62.wav",
+    "caption": "church bell ringing",
+    "annotations": [
+      [
+        53.4,
+        55.7
+      ],
+      [
+        51.0,
+        51.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/UHHoHUEznBU_0_51.wav",
+    "caption": "church bell ringing",
+    "annotations": [
+      [
+        28.5,
+        43.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/vLvTLjZcibI_20_80.wav",
+    "caption": "dog barking",
+    "annotations": [
+      [
+        9.4,
+        19.1
+      ],
+      [
+        2.4,
+        3.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/vLvTLjZcibI_160_220.wav",
+    "caption": "dog barking",
+    "annotations": [
+      [
+        32.8,
+        38.3
+      ],
+      [
+        49.3,
+        50.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/2QmpHws37pM_240_300.wav",
+    "caption": "dog howling",
+    "annotations": [
+      [
+        50.2,
+        51.7
+      ],
+      [
+        23.8,
+        24.7
+      ],
+      [
+        55.8,
+        56.3
+      ],
+      [
+        53.0,
+        53.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/hZfIwRPjkvM_30_90.wav",
+    "caption": "dog howling",
+    "annotations": [
+      [
+        42.3,
+        44.7
+      ],
+      [
+        51.4,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/WTNleVY7wuE_71_131.wav",
+    "caption": "driving buses",
+    "annotations": [
+      [
+        50.0,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ElbBWjNpNWI_0_27.wav",
+    "caption": "driving buses",
+    "annotations": [
+      [
+        20.6,
+        27.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/6_VlZuPDOSM_150_210.wav",
+    "caption": "driving motorcycle",
+    "annotations": [
+      [
+        19.1,
+        26.2
+      ],
+      [
+        50.4,
+        56.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/6_VlZuPDOSM_220_280.wav",
+    "caption": "driving motorcycle",
+    "annotations": [
+      [
+        21.0,
+        25.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/EuHy_Vpx514_0_60.wav",
+    "caption": "engine knocking",
+    "annotations": [
+      [
+        5.7,
+        11.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Bad9JIBFoOI_20_80.wav",
+    "caption": "engine knocking",
+    "annotations": [
+      [
+        0.1,
+        10.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Ud0MIgXET3g_158_201.wav",
+    "caption": "female singing",
+    "annotations": [
+      [
+        11.6,
+        19.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Ud0MIgXET3g_0_62.wav",
+    "caption": "female singing",
+    "annotations": [
+      [
+        54.2,
+        61.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/RyUAFrXu5ng_80_140.wav",
+    "caption": "fire truck siren",
+    "annotations": [
+      [
+        33.4,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/RyUAFrXu5ng_330_390.wav",
+    "caption": "fire truck siren",
+    "annotations": [
+      [
+        17.0,
+        39.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/_qsWAzHnwQ0_0_60.wav",
+    "caption": "fireworks banging",
+    "annotations": [
+      [
+        10.6,
+        13.1
+      ],
+      [
+        32.8,
+        35.4
+      ],
+      [
+        43.3,
+        45.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/_qsWAzHnwQ0_150_210.wav",
+    "caption": "fireworks banging",
+    "annotations": [
+      [
+        4.2,
+        19.7
+      ],
+      [
+        32.7,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/upcu7SKNGV4_0_33.wav",
+    "caption": "frog croaking",
+    "annotations": [
+      [
+        15.8,
+        23.8
+      ],
+      [
+        27.0,
+        27.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/upcu7SKNGV4_40_80.wav",
+    "caption": "frog croaking",
+    "annotations": [
+      [
+        0.3,
+        1.0
+      ],
+      [
+        6.4,
+        12.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/vGIs0GU1V6M_0_60.wav",
+    "caption": "hair dryer drying",
+    "annotations": [
+      [
+        17.9,
+        24.3
+      ],
+      [
+        34.9,
+        36.7
+      ],
+      [
+        44.6,
+        49.2
+      ],
+      [
+        51.4,
+        55.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/vGIs0GU1V6M_90_150.wav",
+    "caption": "hair dryer drying",
+    "annotations": [
+      [
+        0.0,
+        8.3
+      ],
+      [
+        31.3,
+        50.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/R-zSFC6DUb8_27_87.wav",
+    "caption": "helicopter",
+    "annotations": [
+      [
+        54.7,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/R-zSFC6DUb8_127_157.wav",
+    "caption": "helicopter",
+    "annotations": [
+      [
+        23.2,
+        29.1
+      ],
+      [
+        0.0,
+        1.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/OZVfvDBbwdI_695_735.wav",
+    "caption": "horse clip-clop",
+    "annotations": [
+      [
+        30.1,
+        40.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/OZVfvDBbwdI_520_580.wav",
+    "caption": "horse clip-clop",
+    "annotations": [
+      [
+        41.1,
+        57.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/OZVfvDBbwdI_556_587.wav",
+    "caption": "kid speaking",
+    "annotations": [
+      [
+        9.3,
+        17.5
+      ],
+      [
+        21.5,
+        26.7
+      ],
+      [
+        5.6,
+        6.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/OZVfvDBbwdI_1020_1060.wav",
+    "caption": "kid speaking",
+    "annotations": [
+      [
+        0.0,
+        3.2
+      ],
+      [
+        30.3,
+        34.1
+      ],
+      [
+        35.9,
+        37.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/P6lwyRmOk30_140_180.wav",
+    "caption": "lawn mowing",
+    "annotations": [
+      [
+        15.9,
+        20.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/uHU8V6w-H5c_82_167.wav",
+    "caption": "lawn mowing",
+    "annotations": [
+      [
+        66.8,
+        85.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/OMkEVX23BdM_0_31.wav",
+    "caption": "lions roaring",
+    "annotations": [
+      [
+        19.4,
+        23.6
+      ],
+      [
+        24.4,
+        29.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/OMkEVX23BdM_190_250.wav",
+    "caption": "lions roaring",
+    "annotations": [
+      [
+        47.9,
+        49.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Jk-UdLEfRPY_90_150.wav",
+    "caption": "machine gun shooting",
+    "annotations": [
+      [
+        42.0,
+        43.1
+      ],
+      [
+        47.9,
+        49.0
+      ],
+      [
+        54.6,
+        55.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/FidGPhNC4sc_0_60.wav",
+    "caption": "machine gun shooting",
+    "annotations": [
+      [
+        38.0,
+        41.9
+      ],
+      [
+        43.3,
+        44.4
+      ],
+      [
+        45.6,
+        49.8
+      ],
+      [
+        57.0,
+        58.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/1nnndhSc4iw_12_72.wav",
+    "caption": "male singing",
+    "annotations": [
+      [
+        12.3,
+        17.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/DT6yrXYdED4_90_150.wav",
+    "caption": "male singing",
+    "annotations": [
+      [
+        21.4,
+        32.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/NCi-VqerJlI_47_60.wav",
+    "caption": "man speaking",
+    "annotations": [
+      [
+        3.6,
+        5.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/NCi-VqerJlI_115_139.wav",
+    "caption": "man speaking",
+    "annotations": [
+      [
+        0.0,
+        0.2
+      ],
+      [
+        5.4,
+        5.8
+      ],
+      [
+        10.1,
+        10.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/QW_m5t16010_82_118.wav",
+    "caption": "orchestra",
+    "annotations": [
+      [
+        2.0,
+        26.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/QW_m5t16010_415_466.wav",
+    "caption": "orchestra",
+    "annotations": [
+      [
+        9.7,
+        29.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/oNTF2t8gUIM_184_276.wav",
+    "caption": "people battle cry",
+    "annotations": [
+      [
+        22.6,
+        44.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/oNTF2t8gUIM_0_60.wav",
+    "caption": "people battle cry",
+    "annotations": [
+      [
+        18.6,
+        31.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/LMKxK3ZHLMY_0_30.wav",
+    "caption": "people burping",
+    "annotations": [
+      [
+        3.6,
+        4.3
+      ],
+      [
+        12.4,
+        12.8
+      ],
+      [
+        27.0,
+        27.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/LMKxK3ZHLMY_30_60.wav",
+    "caption": "people burping",
+    "annotations": [
+      [
+        6.5,
+        6.9
+      ],
+      [
+        15.7,
+        16.0
+      ],
+      [
+        28.6,
+        28.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/l22_mm7qDoI_0_60.wav",
+    "caption": "people cheering",
+    "annotations": [
+      [
+        10.0,
+        20.0
+      ],
+      [
+        37.2,
+        41.0
+      ],
+      [
+        48.7,
+        52.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/l22_mm7qDoI_79_139.wav",
+    "caption": "people cheering",
+    "annotations": [
+      [
+        7.4,
+        13.6
+      ],
+      [
+        29.1,
+        40.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/aISXCw0Pi94_33_93.wav",
+    "caption": "people clapping",
+    "annotations": [
+      [
+        26.3,
+        29.9
+      ],
+      [
+        34.6,
+        38.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/aISXCw0Pi94_330_420.wav",
+    "caption": "people clapping",
+    "annotations": [
+      [
+        59.8,
+        71.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/1Y-C9RMyaQQ_0_53.wav",
+    "caption": "people coughing",
+    "annotations": [
+      [
+        5.8,
+        6.4
+      ],
+      [
+        46.5,
+        52.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/1Y-C9RMyaQQ_53_77.wav",
+    "caption": "people coughing",
+    "annotations": [
+      [
+        2.8,
+        3.1
+      ],
+      [
+        5.8,
+        7.1
+      ],
+      [
+        9.3,
+        9.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/0us2UbWFTCI_47_69.wav",
+    "caption": "people crowd",
+    "annotations": [
+      [
+        0.0,
+        6.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ATv_bcvl_68_0_60.wav",
+    "caption": "people eating",
+    "annotations": [
+      [
+        52.4,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/5TyhXTdRTmo_0_75.wav",
+    "caption": "people eating",
+    "annotations": [
+      [
+        66.6,
+        75.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Y8Ku0WMqT1I_0_60.wav",
+    "caption": "people laughing",
+    "annotations": [
+      [
+        23.3,
+        24.1
+      ],
+      [
+        52.8,
+        53.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/slrHpGlxHQA_30_90.wav",
+    "caption": "people laughing",
+    "annotations": [
+      [
+        44.1,
+        46.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/kw6sagBOLw0_0_57.wav",
+    "caption": "people nose blowing",
+    "annotations": [
+      [
+        1.7,
+        7.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/kw6sagBOLw0_36_96.wav",
+    "caption": "people nose blowing",
+    "annotations": [
+      [
+        22.0,
+        23.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/FCBJ1C6_hig_90_120.wav",
+    "caption": "people running",
+    "annotations": [
+      [
+        23.6,
+        26.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/FCBJ1C6_hig_120_150.wav",
+    "caption": "people running",
+    "annotations": [
+      [
+        19.1,
+        24.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/goaBcQ9Nb8k_60_90.wav",
+    "caption": "people shouting",
+    "annotations": [
+      [
+        21.1,
+        22.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/goaBcQ9Nb8k_90_120.wav",
+    "caption": "people shouting",
+    "annotations": [
+      [
+        23.2,
+        24.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/hHZvUeAdzeI_0_40.wav",
+    "caption": "people slapping",
+    "annotations": [
+      [
+        33.8,
+        34.3
+      ],
+      [
+        36.1,
+        40.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/svGaoZgFKAE_0_30.wav",
+    "caption": "people slapping",
+    "annotations": [
+      [
+        1.3,
+        1.7
+      ],
+      [
+        26.6,
+        27.1
+      ],
+      [
+        28.3,
+        29.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/N9TTWfEjNwI_0_55.wav",
+    "caption": "people slurping",
+    "annotations": [
+      [
+        9.0,
+        9.8
+      ],
+      [
+        40.7,
+        43.3
+      ],
+      [
+        49.0,
+        50.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/IMu64HnPEt8_0_60.wav",
+    "caption": "people slurping",
+    "annotations": [
+      [
+        36.4,
+        40.6
+      ],
+      [
+        53.3,
+        54.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/zVmzQuxlfw8_0_60.wav",
+    "caption": "people sneezing",
+    "annotations": [
+      [
+        22.7,
+        23.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/GJ-I3XqXJp4_0_60.wav",
+    "caption": "people sneezing",
+    "annotations": [
+      [
+        7.0,
+        8.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/to28kxXlvDM_43_103.wav",
+    "caption": "people sobbing",
+    "annotations": [
+      [
+        55.8,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/8VDn54munVo_100_160.wav",
+    "caption": "people sobbing",
+    "annotations": [
+      [
+        5.7,
+        9.1
+      ],
+      [
+        21.5,
+        22.6
+      ],
+      [
+        47.8,
+        48.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/k-dhOJF2MuY_120_162.wav",
+    "caption": "people whispering",
+    "annotations": [
+      [
+        5.6,
+        7.8
+      ],
+      [
+        21.8,
+        34.1
+      ],
+      [
+        36.3,
+        37.5
+      ],
+      [
+        40.0,
+        40.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/k-dhOJF2MuY_280_325.wav",
+    "caption": "people whispering",
+    "annotations": [
+      [
+        14.9,
+        23.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/XKfTTHqbk-4_0_43.wav",
+    "caption": "people whistling",
+    "annotations": [
+      [
+        13.3,
+        14.2
+      ],
+      [
+        25.7,
+        26.4
+      ],
+      [
+        39.1,
+        40.0
+      ],
+      [
+        40.9,
+        41.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/n9tNhq9EhoQ_0_90.wav",
+    "caption": "people whistling",
+    "annotations": [
+      [
+        5.4,
+        6.5
+      ],
+      [
+        59.1,
+        61.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/pBtKznMVur4_210_270.wav",
+    "caption": "playing accordion",
+    "annotations": [
+      [
+        43.8,
+        48.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/pBtKznMVur4_290_350.wav",
+    "caption": "playing accordion",
+    "annotations": [
+      [
+        13.8,
+        17.1
+      ],
+      [
+        39.0,
+        44.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/BBz-Jyr23M4_387_447.wav",
+    "caption": "playing acoustic guitar",
+    "annotations": [
+      [
+        44.7,
+        49.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/BBz-Jyr23M4_540_620.wav",
+    "caption": "playing acoustic guitar",
+    "annotations": [
+      [
+        3.7,
+        5.2
+      ],
+      [
+        15.5,
+        17.3
+      ],
+      [
+        19.7,
+        21.3
+      ],
+      [
+        23.8,
+        24.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/_5TXy_J6xJI_120_180.wav",
+    "caption": "playing badminton",
+    "annotations": [
+      [
+        42.2,
+        43.1
+      ],
+      [
+        45.4,
+        49.2
+      ],
+      [
+        54.3,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/5bS37_a39PM_10_70.wav",
+    "caption": "playing badminton",
+    "annotations": [
+      [
+        49.5,
+        50.4
+      ],
+      [
+        58.2,
+        59.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Tm4ZJWTQXng_0_90.wav",
+    "caption": "playing banjo",
+    "annotations": [
+      [
+        1.1,
+        18.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Tm4ZJWTQXng_150_210.wav",
+    "caption": "playing banjo",
+    "annotations": [
+      [
+        27.0,
+        35.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/y_p4cSklyik_0_60.wav",
+    "caption": "playing bass guitar",
+    "annotations": [
+      [
+        0.0,
+        13.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Z8tPJMXc1jU_15_75.wav",
+    "caption": "playing bass guitar",
+    "annotations": [
+      [
+        0.0,
+        14.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/-ds37ADTopw_4_82.wav",
+    "caption": "playing cello",
+    "annotations": [
+      [
+        8.8,
+        35.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/MDYGUZTu2x0_0_51.wav",
+    "caption": "playing cello",
+    "annotations": [
+      [
+        0.0,
+        4.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ApUqq2bp87o_263_323.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        45.3,
+        47.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ApUqq2bp87o_342_432.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        10.6,
+        13.0
+      ],
+      [
+        14.3,
+        15.7
+      ],
+      [
+        16.9,
+        18.1
+      ],
+      [
+        19.5,
+        20.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/QW_m5t16010_110_170.wav",
+    "caption": "playing cornet",
+    "annotations": [
+      [
+        9.5,
+        19.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/QW_m5t16010_187_237.wav",
+    "caption": "playing cornet",
+    "annotations": [
+      [
+        39.1,
+        47.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/lql92_54KrQ_0_60.wav",
+    "caption": "playing drum kit",
+    "annotations": [
+      [
+        20.8,
+        32.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/6BmPZifNZos_30_90.wav",
+    "caption": "playing drum kit",
+    "annotations": [
+      [
+        30.2,
+        41.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/x5hH5PRjpY4_48_108.wav",
+    "caption": "playing electronic organ",
+    "annotations": [
+      [
+        24.0,
+        39.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/HJTzRPK_Log_138_198.wav",
+    "caption": "playing electronic organ",
+    "annotations": [
+      [
+        26.3,
+        34.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/kA59yNSvfa8_122_182.wav",
+    "caption": "playing erhu",
+    "annotations": [
+      [
+        15.4,
+        27.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/26buZudMN-M_0_75.wav",
+    "caption": "playing erhu",
+    "annotations": [
+      [
+        34.7,
+        36.5
+      ],
+      [
+        38.8,
+        44.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eZOya7BqOc0_270_330.wav",
+    "caption": "playing flute",
+    "annotations": [
+      [
+        43.5,
+        44.9
+      ],
+      [
+        46.2,
+        48.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Jn8fQ-ZmvBE_700_760.wav",
+    "caption": "playing flute",
+    "annotations": [
+      [
+        33.9,
+        36.4
+      ],
+      [
+        38.7,
+        41.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Zc-EcRFrxcA_13_73.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        8.4,
+        13.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Zc-EcRFrxcA_775_835.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        47.1,
+        56.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/HDZySzpYw0g_0_60.wav",
+    "caption": "playing harp",
+    "annotations": [
+      [
+        0.0,
+        3.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/bRZ1EDf2ybU_0_90.wav",
+    "caption": "playing harp",
+    "annotations": [
+      [
+        31.2,
+        50.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/VXD0p_g_UTg_0_31.wav",
+    "caption": "playing piano",
+    "annotations": [
+      [
+        22.5,
+        30.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/VXD0p_g_UTg_31_121.wav",
+    "caption": "playing piano",
+    "annotations": [
+      [
+        0.5,
+        15.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/GbM7EszlDFw_0_60.wav",
+    "caption": "playing saxophone",
+    "annotations": [
+      [
+        25.1,
+        29.7
+      ],
+      [
+        46.8,
+        52.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/GbM7EszlDFw_52_98.wav",
+    "caption": "playing saxophone",
+    "annotations": [
+      [
+        16.9,
+        21.2
+      ],
+      [
+        29.4,
+        33.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/X5wA7DSspmc_0_90.wav",
+    "caption": "playing snare drum",
+    "annotations": [
+      [
+        0.3,
+        15.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/X5wA7DSspmc_400_449.wav",
+    "caption": "playing snare drum",
+    "annotations": [
+      [
+        25.9,
+        26.7
+      ],
+      [
+        29.0,
+        29.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eu0zpa7OiYA_0_60.wav",
+    "caption": "playing synthesizer",
+    "annotations": [
+      [
+        0.0,
+        2.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eu0zpa7OiYA_755_815.wav",
+    "caption": "playing synthesizer",
+    "annotations": [
+      [
+        7.2,
+        11.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/asx3wwdO178_12_72.wav",
+    "caption": "playing tabla",
+    "annotations": [
+      [
+        1.9,
+        15.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/zlljHJtVaPw_15_105.wav",
+    "caption": "playing tabla",
+    "annotations": [
+      [
+        0.0,
+        22.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/yrFQCOcTlFY_0_48.wav",
+    "caption": "playing table tennis",
+    "annotations": [
+      [
+        38.3,
+        48.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/yrFQCOcTlFY_140_200.wav",
+    "caption": "playing table tennis",
+    "annotations": [
+      [
+        21.8,
+        32.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/r1KRhB4QeCg_81_91.wav",
+    "caption": "playing tennis",
+    "annotations": [
+      [
+        1.8,
+        2.1
+      ],
+      [
+        5.1,
+        5.7
+      ],
+      [
+        8.3,
+        8.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/r1KRhB4QeCg_160_170.wav",
+    "caption": "playing tennis",
+    "annotations": [
+      [
+        1.4,
+        1.9
+      ],
+      [
+        5.1,
+        5.4
+      ],
+      [
+        8.9,
+        9.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/TflgyCIZEYM_131_170.wav",
+    "caption": "playing trombone",
+    "annotations": [
+      [
+        15.7,
+        20.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ZWeaikbm57M_0_60.wav",
+    "caption": "playing trombone",
+    "annotations": [
+      [
+        0.0,
+        8.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/FFJ4FGlW5Zo_160_220.wav",
+    "caption": "playing trumpet",
+    "annotations": [
+      [
+        6.2,
+        11.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/j5hZ5ombwns_180_240.wav",
+    "caption": "playing trumpet",
+    "annotations": [
+      [
+        47.1,
+        50.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/3vJ6kN5H7FA_256_306.wav",
+    "caption": "playing ukulele",
+    "annotations": [
+      [
+        0.9,
+        5.3
+      ],
+      [
+        6.7,
+        9.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/tty1MswuD78_23_65.wav",
+    "caption": "playing violin",
+    "annotations": [
+      [
+        9.6,
+        13.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/slrHpGlxHQA_0_75.wav",
+    "caption": "playing violin",
+    "annotations": [
+      [
+        55.3,
+        68.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/zXkCycV2G7A_150_210.wav",
+    "caption": "playing volleyball",
+    "annotations": [
+      [
+        9.0,
+        9.6
+      ],
+      [
+        25.3,
+        32.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/zXkCycV2G7A_210_270.wav",
+    "caption": "playing volleyball",
+    "annotations": [
+      [
+        19.5,
+        24.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/q8PSwyIEkj4_104_164.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        41.4,
+        44.8
+      ],
+      [
+        50.2,
+        53.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ZDB9fuxt1zc_0_30.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        0.0,
+        9.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/2aLhy0_XOxY_5_65.wav",
+    "caption": "police car siren",
+    "annotations": [
+      [
+        0.0,
+        6.1
+      ],
+      [
+        7.9,
+        10.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/2aLhy0_XOxY_180_230.wav",
+    "caption": "police car siren",
+    "annotations": [
+      [
+        26.4,
+        35.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/CrlCjMJNjxs_0_22.wav",
+    "caption": "raining",
+    "annotations": [
+      [
+        0.0,
+        3.9
+      ],
+      [
+        12.1,
+        15.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/CrlCjMJNjxs_30_70.wav",
+    "caption": "raining",
+    "annotations": [
+      [
+        5.5,
+        12.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/3dwMzERxpRw_640_720.wav",
+    "caption": "rope skipping",
+    "annotations": [
+      [
+        62.4,
+        64.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/1-KvIEU03yc_320_380.wav",
+    "caption": "rope skipping",
+    "annotations": [
+      [
+        10.6,
+        19.7
+      ],
+      [
+        25.0,
+        35.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/WjBYRUZbU4Y_1006_1046.wav",
+    "caption": "sailing",
+    "annotations": [
+      [
+        9.7,
+        18.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/WjBYRUZbU4Y_1024_1054.wav",
+    "caption": "sailing",
+    "annotations": [
+      [
+        23.1,
+        30.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/8vsdnrrnWZA_0_30.wav",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        23.5,
+        27.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/8vsdnrrnWZA_190_250.wav",
+    "caption": "sea waves",
+    "annotations": [
+      [
+        15.2,
+        23.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eyOPSZ9mFz0_65_105.wav",
+    "caption": "sheep bleating",
+    "annotations": [
+      [
+        20.0,
+        21.1
+      ],
+      [
+        24.8,
+        26.0
+      ],
+      [
+        27.3,
+        28.4
+      ],
+      [
+        4.7,
+        7.0
+      ],
+      [
+        36.2,
+        37.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eyOPSZ9mFz0_210_260.wav",
+    "caption": "sheep bleating",
+    "annotations": [
+      [
+        11.4,
+        13.6
+      ],
+      [
+        19.5,
+        20.5
+      ],
+      [
+        38.1,
+        39.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ND_r33yFG0Q_0_52.wav",
+    "caption": "singing choir",
+    "annotations": [
+      [
+        44.2,
+        52.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/ND_r33yFG0Q_76_110.wav",
+    "caption": "singing choir",
+    "annotations": [
+      [
+        16.4,
+        18.4
+      ],
+      [
+        20.3,
+        22.1
+      ],
+      [
+        29.1,
+        34.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/Y8Ku0WMqT1I_0_60.wav",
+    "caption": "skateboarding",
+    "annotations": [
+      [
+        49.5,
+        52.5
+      ],
+      [
+        56.9,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/EM7GxFZ7uSo_148_205.wav",
+    "caption": "skateboarding",
+    "annotations": [
+      [
+        26.4,
+        31.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/-1q1otOq9TU_285_315.wav",
+    "caption": "skidding",
+    "annotations": [
+      [
+        13.3,
+        17.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/-1q1otOq9TU_315_345.wav",
+    "caption": "skidding",
+    "annotations": [
+      [
+        11.4,
+        19.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/evL2_-GibLk_790_850.wav",
+    "caption": "striking bowling",
+    "annotations": [
+      [
+        45.7,
+        51.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/evL2_-GibLk_830_890.wav",
+    "caption": "striking bowling",
+    "annotations": [
+      [
+        39.4,
+        44.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/udc_NPwrSK0_0_57.wav",
+    "caption": "tap dancing",
+    "annotations": [
+      [
+        11.0,
+        18.3
+      ],
+      [
+        34.1,
+        39.0
+      ],
+      [
+        44.1,
+        50.0
+      ],
+      [
+        52.2,
+        56.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/LBDMSBCqEMM_0_78.wav",
+    "caption": "tap dancing",
+    "annotations": [
+      [
+        43.0,
+        46.0
+      ],
+      [
+        54.7,
+        71.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/MftOONlDQac_180_240.wav",
+    "caption": "telephone bell ringing",
+    "annotations": [
+      [
+        7.6,
+        8.7
+      ],
+      [
+        9.8,
+        10.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/rEnBNeV5toY_0_92.wav",
+    "caption": "telephone bell ringing",
+    "annotations": [
+      [
+        18.2,
+        31.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/7ZNOCgxSi5Y_11_71.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        2.7,
+        12.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/jdAXaXg44S0_0_18.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        0.2,
+        2.4
+      ],
+      [
+        9.4,
+        11.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/_Gg3M-GF9sE_3_63.wav",
+    "caption": "train horning",
+    "annotations": [
+      [
+        48.4,
+        51.5
+      ],
+      [
+        54.0,
+        55.8
+      ],
+      [
+        57.6,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/_Gg3M-GF9sE_273_292.wav",
+    "caption": "train horning",
+    "annotations": [
+      [
+        0.4,
+        7.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/yTA0nmQVfq4_0_33.wav",
+    "caption": "train wheels squealing",
+    "annotations": [
+      [
+        9.4,
+        19.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/4qgyGAJkvWY_0_20.wav",
+    "caption": "train wheels squealing",
+    "annotations": [
+      [
+        15.2,
+        20.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/HE13qoYreRU_90_160.wav",
+    "caption": "typing on computer keyboard",
+    "annotations": [
+      [
+        8.4,
+        27.0
+      ],
+      [
+        44.9,
+        48.1
+      ],
+      [
+        55.8,
+        60.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/s6twpD2TrzM_1200_1290.wav",
+    "caption": "typing on computer keyboard",
+    "annotations": [
+      [
+        32.7,
+        36.8
+      ],
+      [
+        40.7,
+        41.8
+      ],
+      [
+        50.2,
+        63.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/pzVspJzpwQ0_0_60.wav",
+    "caption": "vacuum cleaner cleaning floors",
+    "annotations": [
+      [
+        0.6,
+        1.5
+      ],
+      [
+        23.2,
+        25.3
+      ],
+      [
+        44.1,
+        47.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/pzVspJzpwQ0_60_120.wav",
+    "caption": "vacuum cleaner cleaning floors",
+    "annotations": [
+      [
+        26.4,
+        29.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/uhqVEpoQLJE_65_125.wav",
+    "caption": "vehicle honking",
+    "annotations": [
+      [
+        8.3,
+        9.5
+      ],
+      [
+        28.5,
+        31.2
+      ],
+      [
+        41.9,
+        43.8
+      ],
+      [
+        55.4,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/uhqVEpoQLJE_145_205.wav",
+    "caption": "vehicle honking",
+    "annotations": [
+      [
+        3.4,
+        4.4
+      ],
+      [
+        25.0,
+        26.0
+      ],
+      [
+        38.2,
+        39.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eNUpTV9BGac_413_477.wav",
+    "caption": "water burbling",
+    "annotations": [
+      [
+        0.0,
+        9.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eNUpTV9BGac_250_350.wav",
+    "caption": "water burbling",
+    "annotations": [
+      [
+        49.9,
+        65.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eNUpTV9BGac_403_477.wav",
+    "caption": "wind noise",
+    "annotations": [
+      [
+        44.3,
+        56.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/eNUpTV9BGac_460_507.wav",
+    "caption": "wind noise",
+    "annotations": [
+      [
+        18.0,
+        33.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/NCi-VqerJlI_20_41.wav",
+    "caption": "woman speaking",
+    "annotations": [
+      [
+        11.4,
+        14.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/phwfile/medai_p/sunluoyi/atg/datasets/stag/audio/NCi-VqerJlI_60_85.wav",
+    "caption": "woman speaking",
+    "annotations": [
+      [
+        9.8,
+        11.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/BiEt6Hc62go_0_60.wav",
+    "caption": "bird chirping",
+    "annotations": [
+      [
+        0.0,
+        1.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/eoINKEFklgM_0_60.wav",
+    "caption": "bull bellowing",
+    "annotations": [
+      [
+        1.0,
+        2.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/0mZQ6Q-viPw_0_33.wav",
+    "caption": "dog barking",
+    "annotations": [
+      [
+        0.4,
+        2.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/QhFtABqY9cs_180_240.wav",
+    "caption": "driving motorcycle",
+    "annotations": [
+      [
+        46.5,
+        48.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/YAyTfJI5u4k_45_125.wav",
+    "caption": "machine gun shooting",
+    "annotations": [
+      [
+        47.1,
+        48.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/s9d-2nhuJCQ_30_90.wav",
+    "caption": "people cheering",
+    "annotations": [
+      [
+        3.1,
+        7.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/s9d-2nhuJCQ_30_90.wav",
+    "caption": "people clapping",
+    "annotations": [
+      [
+        7.3,
+        8.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/2VjbDttFK44_490_550.wav",
+    "caption": "people laughing",
+    "annotations": [
+      [
+        58.3,
+        59.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/6LhTLg3dr-w_30_90.wav",
+    "caption": "people nose blowing",
+    "annotations": [
+      [
+        52.0,
+        53.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/s9d-2nhuJCQ_30_90.wav",
+    "caption": "people whistling",
+    "annotations": [
+      [
+        5.7,
+        6.5
+      ],
+      [
+        8.3,
+        8.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/usoBcNXsN_8_11_53.wav",
+    "caption": "playing accordion",
+    "annotations": [
+      [
+        14.8,
+        16.4
+      ],
+      [
+        30.4,
+        32.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/usoBcNXsN_8_90_150.wav",
+    "caption": "playing accordion",
+    "annotations": [
+      [
+        28.8,
+        31.2
+      ],
+      [
+        32.9,
+        35.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/rFZO-JoyfnA_65_125.wav",
+    "caption": "playing accordion",
+    "annotations": [
+      [
+        48.7,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/BJKYjXe6ACE_0_55.wav",
+    "caption": "playing acoustic guitar",
+    "annotations": [
+      [
+        44.8,
+        55.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/WN4IoK7ecAU_197_257.wav",
+    "caption": "playing acoustic guitar",
+    "annotations": [
+      [
+        53.9,
+        58.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/WN4IoK7ecAU_300_380.wav",
+    "caption": "playing acoustic guitar",
+    "annotations": [
+      [
+        33.1,
+        36.0
+      ],
+      [
+        38.1,
+        41.6
+      ],
+      [
+        42.6,
+        45.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/ZGYN5mMXpFM_0_25.wav",
+    "caption": "playing banjo",
+    "annotations": [
+      [
+        2.1,
+        7.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/Tzo9RV-7BHk_34_94.wav",
+    "caption": "playing banjo",
+    "annotations": [
+      [
+        16.9,
+        22.2
+      ],
+      [
+        45.2,
+        46.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/riCDOFyRIZ4_0_50.wav",
+    "caption": "playing bass guitar",
+    "annotations": [
+      [
+        0.0,
+        4.5
+      ],
+      [
+        15.7,
+        18.2
+      ],
+      [
+        18.7,
+        21.2
+      ],
+      [
+        22.1,
+        26.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/riCDOFyRIZ4_60_88.wav",
+    "caption": "playing bass guitar",
+    "annotations": [
+      [
+        0.0,
+        4.8
+      ],
+      [
+        14.0,
+        16.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/9JJWzpB7MmA_100_190.wav",
+    "caption": "playing bass guitar",
+    "annotations": [
+      [
+        67.5,
+        72.9
+      ],
+      [
+        78.7,
+        83.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/Jd0xfgwofkQ_140_220.wav",
+    "caption": "playing cello",
+    "annotations": [
+      [
+        73.2,
+        80.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/Jd0xfgwofkQ_220_280.wav",
+    "caption": "playing cello",
+    "annotations": [
+      [
+        0.0,
+        7.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/28YVOGk5uGY_10_70.wav",
+    "caption": "playing cello",
+    "annotations": [
+      [
+        39.2,
+        40.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/28YVOGk5uGY_60_130.wav",
+    "caption": "playing cello",
+    "annotations": [
+      [
+        25.0,
+        31.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/vqOmk5fQM68_190_240.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        23.6,
+        24.9
+      ],
+      [
+        39.6,
+        40.5
+      ],
+      [
+        48.9,
+        49.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/vqOmk5fQM68_260_320.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        23.3,
+        27.2
+      ],
+      [
+        28.7,
+        32.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/sHlOsAxGnY8_50_110.wav",
+    "caption": "playing cornet",
+    "annotations": [
+      [
+        54.2,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/eWDmKCmDPBc_30_75.wav",
+    "caption": "playing drum kit",
+    "annotations": [
+      [
+        38.9,
+        42.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/kyWcuQW-tII_0_68.wav",
+    "caption": "playing drum kit",
+    "annotations": [
+      [
+        47.6,
+        53.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/DuFX6MxDYPY_0_60.wav",
+    "caption": "playing electronic organ",
+    "annotations": [
+      [
+        46.4,
+        47.4
+      ],
+      [
+        48.5,
+        49.5
+      ],
+      [
+        51.1,
+        55.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/DuFX6MxDYPY_120_180.wav",
+    "caption": "playing electronic organ",
+    "annotations": [
+      [
+        21.4,
+        24.4
+      ],
+      [
+        39.3,
+        47.2
+      ],
+      [
+        51.1,
+        57.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/LP4UObyZy6w_75_135.wav",
+    "caption": "playing electronic organ",
+    "annotations": [
+      [
+        54.4,
+        56.4
+      ],
+      [
+        57.9,
+        59.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/hNKFL02U8W4_120_180.wav",
+    "caption": "playing erhu",
+    "annotations": [
+      [
+        30.2,
+        31.5
+      ],
+      [
+        33.2,
+        34.2
+      ],
+      [
+        51.0,
+        53.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/hNKFL02U8W4_180_240.wav",
+    "caption": "playing erhu",
+    "annotations": [
+      [
+        35.0,
+        36.3
+      ],
+      [
+        38.0,
+        39.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/hNKFL02U8W4_360_420.wav",
+    "caption": "playing erhu",
+    "annotations": [
+      [
+        30.6,
+        31.7
+      ],
+      [
+        34.9,
+        36.6
+      ],
+      [
+        44.5,
+        45.6
+      ],
+      [
+        48.3,
+        49.4
+      ],
+      [
+        52.3,
+        53.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/Jn8fQ-ZmvBE_640_700.wav",
+    "caption": "playing flute",
+    "annotations": [
+      [
+        50.5,
+        52.6
+      ],
+      [
+        56.3,
+        58.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/Jn8fQ-ZmvBE_700_760.wav",
+    "caption": "playing flute",
+    "annotations": [
+      [
+        33.9,
+        36.4
+      ],
+      [
+        38.6,
+        41.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/eZOya7BqOc0_30_90.wav",
+    "caption": "playing flute",
+    "annotations": [
+      [
+        38.8,
+        42.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/hpvneTcHaEI_20_80.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        33.0,
+        35.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/hpvneTcHaEI_80_140.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        14.8,
+        19.7
+      ],
+      [
+        6.6,
+        9.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/agjYDv78kCs_10_70.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        47.3,
+        50.8
+      ],
+      [
+        55.9,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/HDZySzpYw0g_0_60.wav",
+    "caption": "playing harp",
+    "annotations": [
+      [
+        0.0,
+        2.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/VW0H8b2OHSM_44_104.wav",
+    "caption": "playing harp",
+    "annotations": [
+      [
+        14.5,
+        15.9
+      ],
+      [
+        17.4,
+        21.4
+      ],
+      [
+        48.2,
+        49.6
+      ],
+      [
+        54.0,
+        56.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/RTaKsn1Por8_0_45.wav",
+    "caption": "playing piano",
+    "annotations": [
+      [
+        10.9,
+        15.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/efCmmDDnT74_0_80.wav",
+    "caption": "playing piano",
+    "annotations": [
+      [
+        59.4,
+        65.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/p00zsi71t6I_0_90.wav",
+    "caption": "playing piano",
+    "annotations": [
+      [
+        0.0,
+        7.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/nVhgAtMUgBk_0_40.wav",
+    "caption": "playing saxophone",
+    "annotations": [
+      [
+        0.0,
+        4.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/YAyTfJI5u4k_45_105.wav",
+    "caption": "playing saxophone",
+    "annotations": [
+      [
+        43.2,
+        47.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/IxffSFoVK78_240_300.wav",
+    "caption": "playing saxophone",
+    "annotations": [
+      [
+        28.3,
+        33.2
+      ],
+      [
+        49.8,
+        54.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/X5wA7DSspmc_10_70.wav",
+    "caption": "playing snare drum",
+    "annotations": [
+      [
+        0.0,
+        6.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/X5wA7DSspmc_70_130.wav",
+    "caption": "playing snare drum",
+    "annotations": [
+      [
+        40.8,
+        43.2
+      ],
+      [
+        49.0,
+        50.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/X5wA7DSspmc_150_210.wav",
+    "caption": "playing snare drum",
+    "annotations": [
+      [
+        14.9,
+        19.0
+      ],
+      [
+        27.5,
+        30.5
+      ],
+      [
+        36.7,
+        40.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/u2c41xBR9L4_120_180.wav",
+    "caption": "playing synthesizer",
+    "annotations": [
+      [
+        49.5,
+        50.6
+      ],
+      [
+        52.4,
+        53.9
+      ],
+      [
+        55.7,
+        56.9
+      ],
+      [
+        59.0,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/txKxk6S4IvQ_15_75.wav",
+    "caption": "playing tabla",
+    "annotations": [
+      [
+        0.0,
+        3.4
+      ],
+      [
+        42.0,
+        43.8
+      ],
+      [
+        52.6,
+        55.6
+      ],
+      [
+        59.2,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/zlljHJtVaPw_510_570.wav",
+    "caption": "playing tabla",
+    "annotations": [
+      [
+        56.5,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/zlljHJtVaPw_600_660.wav",
+    "caption": "playing tabla",
+    "annotations": [
+      [
+        0.0,
+        1.2
+      ],
+      [
+        15.2,
+        16.1
+      ],
+      [
+        31.7,
+        37.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/ZWeaikbm57M_280_340.wav",
+    "caption": "playing trombone",
+    "annotations": [
+      [
+        32.1,
+        35.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/Ymt3UbVPBm4_126_186.wav",
+    "caption": "playing trombone",
+    "annotations": [
+      [
+        57.3,
+        58.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/uDbZvKBd-sk_90_150.wav",
+    "caption": "playing trombone",
+    "annotations": [
+      [
+        52.7,
+        56.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/FFJ4FGlW5Zo_120_180.wav",
+    "caption": "playing trumpet",
+    "annotations": [
+      [
+        28.5,
+        29.2
+      ],
+      [
+        31.1,
+        33.7
+      ],
+      [
+        46.8,
+        52.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/FFJ4FGlW5Zo_210_260.wav",
+    "caption": "playing trumpet",
+    "annotations": [
+      [
+        35.7,
+        38.5
+      ],
+      [
+        40.8,
+        43.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/fBgbJcDjsLs_25_68.wav",
+    "caption": "playing trumpet",
+    "annotations": [
+      [
+        20.9,
+        24.9
+      ],
+      [
+        33.5,
+        36.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/uvBbvPUfYfE_19_79.wav",
+    "caption": "playing ukulele",
+    "annotations": [
+      [
+        16.1,
+        18.7
+      ],
+      [
+        36.2,
+        41.3
+      ],
+      [
+        50.1,
+        51.8
+      ],
+      [
+        59.2,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/uvBbvPUfYfE_120_180.wav",
+    "caption": "playing ukulele",
+    "annotations": [
+      [
+        20.8,
+        22.8
+      ],
+      [
+        32.7,
+        35.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/yqOuNOfLyUE_0_60.wav",
+    "caption": "playing ukulele",
+    "annotations": [
+      [
+        35.4,
+        36.4
+      ],
+      [
+        39.4,
+        41.6
+      ],
+      [
+        44.9,
+        46.0
+      ],
+      [
+        47.8,
+        54.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/28YVOGk5uGY_0_60.wav",
+    "caption": "playing violin",
+    "annotations": [
+      [
+        46.2,
+        48.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/28YVOGk5uGY_50_110.wav",
+    "caption": "playing violin",
+    "annotations": [
+      [
+        15.6,
+        19.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/awNdAWg1oik_130_190.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        28.4,
+        30.5
+      ],
+      [
+        37.1,
+        42.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/awNdAWg1oik_230_290.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        9.9,
+        12.4
+      ],
+      [
+        46.1,
+        48.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/hnsC3mxVZf8_15_75.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        38.4,
+        40.0
+      ],
+      [
+        40.6,
+        42.1
+      ],
+      [
+        43.4,
+        44.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/KT-rYg9B_CM_420_480.wav",
+    "caption": "skateboarding",
+    "annotations": [
+      [
+        6.2,
+        10.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/KT-rYg9B_CM_160_190.wav",
+    "caption": "skateboarding",
+    "annotations": [
+      [
+        12.3,
+        15.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/5So_E6yPW40_0_40.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        9.8,
+        11.9
+      ],
+      [
+        26.9,
+        28.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/DIkH3opVS8o_0_30.wav",
+    "caption": "thunder",
+    "annotations": [
+      [
+        26.6,
+        30.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/qiV8azj6bDY_360_420.wav",
+    "caption": "train horning",
+    "annotations": [
+      [
+        50.0,
+        52.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/qiV8azj6bDY_300_360.wav",
+    "caption": "train horning",
+    "annotations": [
+      [
+        16.9,
+        19.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/gUZOZP-sgng_310_370.wav",
+    "caption": "typing on computer keyboard",
+    "annotations": [
+      [
+        27.3,
+        30.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/gUZOZP-sgng_0_60.wav",
+    "caption": "typing on computer keyboard",
+    "annotations": [
+      [
+        50.7,
+        52.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/QhlmKHbPFhU_0_40.wav",
+    "caption": "vacuum cleaner cleaning floors",
+    "annotations": [
+      [
+        35.5,
+        40.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/QhlmKHbPFhU_40_80.wav",
+    "caption": "vacuum cleaner cleaning floors",
+    "annotations": [
+      [
+        0.0,
+        3.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/ZWJqgdi1yU4_80_140.wav",
+    "caption": "vehicle honking",
+    "annotations": [
+      [
+        21.9,
+        22.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/YScsKu7Txnw_164_224.wav",
+    "caption": "water burbling",
+    "annotations": [
+      [
+        55.4,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/YScsKu7Txnw_251_311.wav",
+    "caption": "water burbling",
+    "annotations": [
+      [
+        0.0,
+        5.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/YScsKu7Txnw_330_390.wav",
+    "caption": "water burbling",
+    "annotations": [
+      [
+        55.2,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/0mZQ6Q-viPw_0_33.wav",
+    "caption": "woman speaking",
+    "annotations": [
+      [
+        20.6,
+        21.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0604/eoINKEFklgM_0_35.wav",
+    "caption": "woman speaking",
+    "annotations": [
+      [
+        21.4,
+        23.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/MVqxKEaQHM0_148_208.wav",
+    "caption": "playing ukulele",
+    "annotations": [
+      [
+        44.6,
+        46.2
+      ],
+      [
+        56.6,
+        57.7
+      ],
+      [
+        59.1,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/0fvIVtEECsU_569_629.wav",
+    "caption": "playing violin",
+    "annotations": [
+      [
+        41.9,
+        45.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/b5AL0K5UByI_10_100.wav",
+    "caption": "playing trombone",
+    "annotations": [
+      [
+        17.9,
+        27.2
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/Ir-KZH0uEC0_0_60.wav",
+    "caption": "playing tabla",
+    "annotations": [
+      [
+        55.8,
+        56.5
+      ],
+      [
+        58.9,
+        59.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/YxUJYNttd0A_330_450.wav",
+    "caption": "playing saxophone",
+    "annotations": [
+      [
+        80.8,
+        91.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/hTmjb9CtsTQ_0_58.wav",
+    "caption": "playing piano",
+    "annotations": [
+      [
+        16.1,
+        17.6
+      ],
+      [
+        25.3,
+        26.8
+      ],
+      [
+        21.7,
+        23.7
+      ],
+      [
+        19.2,
+        20.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/9DNxxqBrD3M_0_60.wav",
+    "caption": "playing harp",
+    "annotations": [
+      [
+        46.4,
+        49.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/yBJWAmYDnIU_480_540.wav",
+    "caption": "playing flute",
+    "annotations": [
+      [
+        22.9,
+        25.6
+      ],
+      [
+        46.3,
+        48.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/YJ2O7vQfeiE_155_215.wav",
+    "caption": "playing erhu",
+    "annotations": [
+      [
+        46.8,
+        51.6
+      ],
+      [
+        54.3,
+        58.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/Izf5sGMI1CY_0_40.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        5.6,
+        6.9
+      ],
+      [
+        10.0,
+        11.4
+      ],
+      [
+        14.0,
+        16.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/mnt/petrelfs/sunluoyi/atg/data/stag/new_bench/audio_clips_0726/KZU9oEtNxY8_0_60.wav",
+    "caption": "playing banjo",
+    "annotations": [
+      [
+        13.8,
+        16.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/GDE8R51FqJw_80_140.wav",
+    "caption": "hammering nails",
+    "annotations": [
+      [
+        51.7,
+        53.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/GDE8R51FqJw_145_190.wav",
+    "caption": "hammering nails",
+    "annotations": [
+      [
+        4.5,
+        6.4
+      ],
+      [
+        12.5,
+        14.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/9EnPEkBCzeo_60_120.wav",
+    "caption": "hammering nails",
+    "annotations": [
+      [
+        40.8,
+        46.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/9EnPEkBCzeo_106_150.wav",
+    "caption": "hammering nails",
+    "annotations": [
+      [
+        19.3,
+        20.6
+      ],
+      [
+        41.0,
+        44.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/T6B1r0-CYf0_70_160.wav",
+    "caption": "hammering nails",
+    "annotations": [
+      [
+        81.4,
+        82.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/T6B1r0-CYf0_154_204.wav",
+    "caption": "hammering nails",
+    "annotations": [
+      [
+        7.7,
+        8.6
+      ],
+      [
+        12.3,
+        13.3
+      ],
+      [
+        43.4,
+        47.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/B5Ban9347es_0_36.wav",
+    "caption": "beat boxing",
+    "annotations": [
+      [
+        4.8,
+        8.2
+      ],
+      [
+        24.2,
+        27.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/DmX_p990A0Y_36_66.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        20.5,
+        22.1
+      ],
+      [
+        22.8,
+        24.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/DmX_p990A0Y_206_246.wav",
+    "caption": "playing harmonica",
+    "annotations": [
+      [
+        7.7,
+        12.5
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/pPNdzlgkG3M_110_170.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        7.9,
+        9.9
+      ],
+      [
+        23.7,
+        25.9
+      ],
+      [
+        44.6,
+        47.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/pPNdzlgkG3M_50_110.wav",
+    "caption": "playing clarinet",
+    "annotations": [
+      [
+        26.0,
+        27.3
+      ],
+      [
+        50.0,
+        51.6
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/oXKgkoodS40_0_60.wav",
+    "caption": "playing cornet",
+    "annotations": [
+      [
+        37.6,
+        39.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/oXKgkoodS40_0_60.wav",
+    "caption": "playing trumpet",
+    "annotations": [
+      [
+        34.3,
+        35.7
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/ckHzSVkWpII_0_80.wav",
+    "caption": "playing cornet",
+    "annotations": [
+      [
+        40.1,
+        43.9
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/ckHzSVkWpII_90_135.wav",
+    "caption": "playing cornet",
+    "annotations": [
+      [
+        15.3,
+        16.4
+      ],
+      [
+        21.3,
+        22.8
+      ],
+      [
+        37.7,
+        41.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/xyVFIPtOsm8_68_95.wav",
+    "caption": "playing synthesizer",
+    "annotations": [
+      [
+        22.7,
+        27.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/j1igAXICxjU_300_350.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        39.3,
+        41.4
+      ],
+      [
+        46.5,
+        50.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/j1igAXICxjU_518_578.wav",
+    "caption": "playing zither",
+    "annotations": [
+      [
+        0.0,
+        5.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/5ZJdSxMW3rs_91_151.wav",
+    "caption": "people eating",
+    "annotations": [
+      [
+        56.6,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/Eq7Ll9ok-Hw_120_180.wav",
+    "caption": "people eating",
+    "annotations": [
+      [
+        36.3,
+        41.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/bY5zL4P3bR4_8_38.wav",
+    "caption": "people whispering",
+    "annotations": [
+      [
+        12.2,
+        13.9
+      ],
+      [
+        15.2,
+        18.9
+      ],
+      [
+        20.6,
+        22.0
+      ],
+      [
+        23.3,
+        25.3
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/bY5zL4P3bR4_80_118.wav",
+    "caption": "people whispering",
+    "annotations": [
+      [
+        9.8,
+        12.9
+      ],
+      [
+        18.0,
+        19.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/kKsT1xzVLDk_0_60.wav",
+    "caption": "people eating",
+    "annotations": [
+      [
+        54.0,
+        60.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/kKsT1xzVLDk_115_145.wav",
+    "caption": "people whispering",
+    "annotations": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        12.0,
+        13.5
+      ],
+      [
+        19.1,
+        20.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/QkDXn5QQ-kk_0_60.wav",
+    "caption": "playing volleyball",
+    "annotations": [
+      [
+        0.4,
+        1.1
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/QkDXn5QQ-kk_180_240.wav",
+    "caption": "playing volleyball",
+    "annotations": [
+      [
+        16.7,
+        17.8
+      ],
+      [
+        23.5,
+        24.4
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0726/J6_-SaW_GUE_0_60.wav",
+    "caption": "basketball bounce",
+    "annotations": [
+      [
+        34.3,
+        36.0
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0728/zbWFCrbyMYQ_20_105.wav",
+    "caption": "people crowd",
+    "annotations": [
+      [
+        1.4,
+        2.7
+      ],
+      [
+        29.5,
+        31.5
+      ],
+      [
+        48.7,
+        50.4
+      ],
+      [
+        76.3,
+        79.8
+      ]
+    ]
+  },
+  {
+    "audio_path": "/Users/loiesun/Desktop/audio_clips_0728/WFjHILsPhh0_0_20.wav",
+    "caption": "driving buses",
+    "annotations": [
+      [
+        2.2,
+        6.0
+      ],
+      [
+        16.2,
+        20.0
+      ]
+    ]
+  }
+]

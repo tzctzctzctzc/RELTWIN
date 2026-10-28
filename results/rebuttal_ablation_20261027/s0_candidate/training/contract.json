@@ -1,0 +1,36 @@
+{
+  "config": {
+    "arm": "candidate",
+    "steps": 256,
+    "candidate_weight": 1.0,
+    "exchange_weight": 0.0,
+    "seed": 0,
+    "learning_rate": 5e-06,
+    "temperature": 1.0,
+    "replay_weight": 0.5,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 1.0,
+    "parameter_scope": "language LoRA only",
+    "bridge_training": false,
+    "four_score_rng_path_for_all_arms": true,
+    "deterministic_algorithms": false
+  },
+  "inputs": {
+    "experiments/rebuttal/relation_reference_v1/inputs/relation_twin.json": "4ec456df80795a9fdadef38a3a529b1651b07c658d3b89dd7d0df3ff24749e70",
+    "experiments/rebuttal/relation_reference_v1/inputs/event_twin.json": "5a77a3b92a2673ecb6275812d1ae734763cd2b478dc39ec6076218e69ed8b406",
+    "experiments/rebuttal/relation_reference_v1/sampling_schedule.json": "e504e19eb4312947690d68fe16a4222240829e9a6fcc797b2ea9d286fe0f9c63",
+    "experiments/rebuttal/relation_reference_v1/lock.json": "eaeeb5387db7e1b4c3c20777d75898c081b8629b4ba7b5b757671029524100e2"
+  },
+  "code": {
+    "scripts/train_candidate256_ablation.py": "c392e4e1107c16020d3c91483851570512b5e40b7d77cd3c78282c4b3e88971b",
+    "scripts/train_reltwin_micro.py": "b0e7b333bc1f92b494b884e4d812c81b0da3db0aa40a515228c2307eb29e5c2c",
+    "scripts/rebuttal_objective.py": "bb27bb9c3beb3a5d4621b095249b036ef448eb700c421651ecc1a1df1e008af0",
+    "scripts/rebuttal_state.py": "66e56a9bd8003835bf68bb9a2f0b19aad58e633c4412785a76e3e6bd63557891"
+  },
+  "official": {
+    "adapter_model.safetensors": "ab87de32fc6ae5acfaccc22c5f9792230a4ac8f11ca15f968d21b9c26075cf5e",
+    "adapter_config.json": "67e69cec48b0217dce4109a9227ea176d4e3ee4689267fa058cd8960596d59b7"
+  },
+  "contract_sha256": "68ddd3c595dbc7a096d22dac1c92c7e6f0e728e93180a3b854a3cb958ec07cfe"
+}

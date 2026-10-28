@@ -1,0 +1,18 @@
+{
+  "adam_moment_dtype": "float32",
+  "adapter_sha256": "7ab8d24f3783ab45094c9848632026f7354d335c65e56f1de22381016a0ab508",
+  "arm": "s0_setpo128",
+  "child_updates": 128,
+  "contract_sha256": "80007f51c1168db55f75996591481d74c5be7ef598fa8d8e5691881ea54a613f",
+  "final_step": 384,
+  "matching_adapter_tensors": 392,
+  "optimizer_update_counter": 384,
+  "parameter_dtype": "float32",
+  "parameter_tensors": 392,
+  "rng_and_buffers_present": true,
+  "sampling_verified": true,
+  "scheduler_update_counter": 384,
+  "state_sha256": "a2fc7a69f2f5522f03b257ded8ff386e1f39c62d123dc59ab95dd9f579d44a1a",
+  "status": "verified",
+  "trainable_parameters": 20185088
+}

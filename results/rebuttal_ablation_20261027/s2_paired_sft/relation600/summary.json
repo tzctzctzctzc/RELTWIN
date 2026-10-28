@@ -1,0 +1,25 @@
+{
+  "base": "/root/autodl-tmp/RelTwin_complete_ablation748_20261027/base",
+  "adapter": "/root/autodl-tmp/RelTwin_complete_ablation748_20261027/runs/s2_paired_sft/training/adapter",
+  "adapter_sha256": "2b3bbce249a50e323d844638df0e01a6ede4330568584acd721333c55e9019f8",
+  "delta": null,
+  "delta_report": null,
+  "torch": "2.8.0+cu128",
+  "device": "NVIDIA GeForce RTX 4080 SUPER",
+  "prompt_mode": "spotsound",
+  "generation": {
+    "max_new_tokens": 128,
+    "num_beams": 1,
+    "do_sample": false
+  },
+  "manifest_sha256": "790e606c53f1a0e732854c506083003dbc9a8bbdd0f44fe363f4e2031ef86f18",
+  "load_seconds": 32.1457623206079,
+  "expected_count": 600,
+  "completed_count": 600,
+  "R1@0.3": 81.16666666666667,
+  "R1@0.5": 75.83333333333333,
+  "R1@0.7": 71.5,
+  "evaluation_hash": "7d3265bded012e77314ad2029c72ebd4de486160ee6f523287e7724b45b190f2",
+  "mIoU": 74.2061612809338,
+  "mean_inference_seconds": 0.645846084424605
+}
